@@ -1,110 +1,158 @@
+'use client'
+
 import Link from 'next/link'
-import { FaFacebookF, FaInstagram, FaWhatsapp } from 'react-icons/fa'
-
-const PHONE = '+39 080 840 7861'
-const PHONE_E164 = '390808407861'
-
-// TODO: sostituisci con i link ufficiali AYROMEX
-const SOCIAL = {
-  facebook: '#',
-  instagram: '#',
-}
+import { FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa'
 
 export default function Footer() {
-  const waLink = `https://wa.me/${PHONE_E164}?text=${encodeURIComponent(
-    'Ciao AYROMEX, vorrei un preventivo.'
-  )}`
+  const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="border-t border-black/10 bg-white">
-      <div className="mx-auto max-w-[1200px] px-4 py-14">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
-          {/* Brand */}
+    <footer className="bg-dark-950 border-t border-gray-700/30 py-16">
+      <div className="section-container">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+          {/* Col 1: Brand */}
           <div>
-            <div className="font-display font-bold text-xl mb-3">AYROMEX</div>
-            <p className="text-sm text-black/70 leading-relaxed">
-              Start-up creativa specializzata in <b>branding</b>, <b>grafica</b> e <b>social design</b>.
-              <br />
-              <span className="inline-block mt-2 text-orange-600 font-semibold">
-                Automazioni: coming soon.
-              </span>
+            <div className="text-2xl font-bold mb-4">
+              <span className="text-orange-500">AYRO</span>
+              <span className="text-light-50">MEX</span>
+            </div>
+            <p className="text-light-50/70 text-sm mb-4 leading-relaxed">
+              Start-up creativa specializzata in <strong>branding</strong>, <strong>grafica</strong> e <strong>social design</strong>.
+            </p>
+            <p className="text-light-50/60 text-xs">
+              Automazioni: coming soon.
             </p>
           </div>
-
-          {/* Links */}
+          
+          {/* Col 2: Sezioni */}
           <div>
-            <div className="font-semibold mb-3">Sezioni</div>
-            <ul className="space-y-2 text-sm text-black/70">
-              <li><Link className="hover:text-black" href="/servizi">Servizi</Link></li>
-              <li><Link className="hover:text-black" href="/portfolio">Portfolio</Link></li>
-              <li><Link className="hover:text-black" href="/chi-siamo">Chi siamo</Link></li>
-              <li><Link className="hover:text-black" href="/contatti">Contatti</Link></li>
-            </ul>
-          </div>
-
-          {/* Contatti */}
-          <div>
-            <div className="font-semibold mb-3">Contatti</div>
-            <ul className="space-y-2 text-sm text-black/70">
+            <h4 className="font-semibold text-light-50 mb-4">Sezioni</h4>
+            <ul className="space-y-3">
               <li>
-                <a className="hover:text-black" href="tel:+390808407861">{PHONE}</a>
-                <div className="text-xs text-black/50 mt-1">Numero voce AYROMEX</div>
+                <Link 
+                  href="/servizi" 
+                  className="text-sm text-light-50/70 hover:text-orange-500 transition-colors"
+                >
+                  Servizi
+                </Link>
               </li>
               <li>
-                <a className="hover:text-black" href={waLink} target="_blank" rel="noopener noreferrer">
-                  WhatsApp: {PHONE}
+                <Link 
+                  href="/portfolio" 
+                  className="text-sm text-light-50/70 hover:text-orange-500 transition-colors"
+                >
+                  Portfolio
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/chi-siamo" 
+                  className="text-sm text-light-50/70 hover:text-orange-500 transition-colors"
+                >
+                  Chi siamo
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/blog" 
+                  className="text-sm text-light-50/70 hover:text-orange-500 transition-colors"
+                >
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/contatti" 
+                  className="text-sm text-light-50/70 hover:text-orange-500 transition-colors"
+                >
+                  Contatti
+                </Link>
+              </li>
+            </ul>
+          </div>
+          
+          {/* Col 3: Contatti */}
+          <div>
+            <h4 className="font-semibold text-light-50 mb-4">Contatti</h4>
+            <ul className="space-y-3">
+              <li>
+                <a 
+                  href="tel:+390808407861" 
+                  className="text-sm text-light-50/70 hover:text-orange-500 transition-colors flex items-center"
+                >
+                  <span className="mr-2">📞</span>
+                  +39 080 840 7861
+                </a>
+                <p className="text-xs text-light-50/50 mt-1 ml-6">Numero voce AYROMEX</p>
+              </li>
+              <li>
+                <a 
+                  href="https://wa.me/390808407861?text=Ciao%20AYROMEX%2C%20vorrei%20un%20preventivo." 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-light-50/70 hover:text-orange-500 transition-colors flex items-center"
+                >
+                  <FaWhatsapp className="mr-2 text-green-500" />
+                  WhatsApp: +39 080 840 7861
                 </a>
               </li>
-              <li className="text-black/60">Bari (IT) • Operiamo anche da remoto</li>
+              <li className="text-sm text-light-50/70 pt-2">
+                <span className="mr-2">📍</span>
+                Bari (IT)
+                <p className="text-xs text-light-50/50 mt-1 ml-6">Operiamo anche da remoto</p>
+              </li>
             </ul>
           </div>
-
-          {/* Social */}
+          
+          {/* Col 4: Social */}
           <div>
-            <div className="font-semibold mb-3">Social</div>
-            <div className="flex items-center gap-3">
+            <h4 className="font-semibold text-light-50 mb-4">Social</h4>
+            <div className="flex items-center space-x-4">
               <a
-                href={SOCIAL.facebook}
+                href="https://www.facebook.com/profile.php?id=61586097166352"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center hover:bg-black/5"
-                aria-label="Facebook"
+                className="w-10 h-10 bg-orange-500/10 hover:bg-orange-500/20 rounded-full flex items-center justify-center transition-colors group"
+                aria-label="Facebook AYROMEX"
               >
-                <FaFacebookF className="w-4 h-4" />
+                <FaFacebook className="w-5 h-5 text-orange-500 group-hover:scale-110 transition-transform" />
               </a>
-
+              
               <a
-                href={SOCIAL.instagram}
+                href="https://www.instagram.com/ayromex_srl/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center hover:bg-black/5"
-                aria-label="Instagram"
+                className="w-10 h-10 bg-orange-500/10 hover:bg-orange-500/20 rounded-full flex items-center justify-center transition-colors group"
+                aria-label="Instagram AYROMEX"
               >
-                <FaInstagram className="w-4 h-4" />
-              </a>
-
-              <a
-                href={waLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center hover:bg-black/5"
-                aria-label="WhatsApp"
-              >
-                <FaWhatsapp className="w-4 h-4" />
+                <FaInstagram className="w-5 h-5 text-orange-500 group-hover:scale-110 transition-transform" />
               </a>
             </div>
-
-            <p className="text-xs text-black/50 mt-3">
-              Inserisci i link reali in <code>components/Footer.tsx</code> (SOCIAL).
+            
+            <p className="text-xs text-light-50/50 mt-6 leading-relaxed">
+              Seguici per aggiornamenti, progetti e insights sul branding.
             </p>
           </div>
         </div>
-
-        <div className="mt-10 pt-6 border-t border-black/10 flex flex-col sm:flex-row justify-between gap-3 text-xs text-black/50">
-          <div>© {new Date().getFullYear()} AYROMEX — Creative Studio</div>
-          <div className="flex gap-4">
-            <Link className="hover:text-black" href="/privacy">Privacy</Link>
-            <Link className="hover:text-black" href="/cookie">Cookie</Link>
+        
+        {/* Bottom Bar */}
+        <div className="border-t border-gray-700/30 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-light-50/60">
+          <p>
+            © {currentYear} AYROMEX — Digital Creations
+          </p>
+          <div className="flex space-x-6 mt-4 md:mt-0">
+            <Link 
+              href="/privacy" 
+              className="hover:text-orange-500 transition-colors"
+            >
+              Privacy
+            </Link>
+            <Link 
+              href="/cookie" 
+              className="hover:text-orange-500 transition-colors"
+            >
+              Cookie
+            </Link>
           </div>
         </div>
       </div>
