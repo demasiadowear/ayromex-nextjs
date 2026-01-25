@@ -7,10 +7,11 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
     <ReactLenis 
       root 
       options={{ 
-        duration: 1.2, // Era troppo alto. 1.2 è il giusto compromesso "Apple style"
+        duration: 0.8, // Abbassato da 1.2 a 0.8 (più veloce)
         smoothWheel: true,
-        wheelMultiplier: 1, // Risposta 1:1 col dito/mouse
-        touchMultiplier: 2, // Più reattivo su mobile
+        wheelMultiplier: 1.2, // Scrolla un po' più pixel per ogni tocco (meno faticoso)
+        touchMultiplier: 2, // Reattivo su mobile
+        infinite: false,
       }}
     >
       {children}
