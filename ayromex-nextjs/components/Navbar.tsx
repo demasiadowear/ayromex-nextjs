@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import Image from 'next/image' // Importiamo Image
+import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { HiBars3BottomRight, HiXMark } from 'react-icons/hi2'
 
@@ -22,21 +22,18 @@ export default function Navbar() {
     }`}>
       <div className="section-container flex items-center justify-between">
         
-        {/* LOGO AYROMEX */}
+        {/* LOGO AYROMEX (Aggiornato a SVG) */}
         <Link href="/" className="relative z-50">
           <div className="flex items-center gap-3">
-             {/* Assicurati di aver messo logo.png in /public */}
-            <div className="relative w-12 h-12 md:w-16 md:h-16"> 
+            <div className="relative w-12 h-12 md:w-40 md:h-12"> 
+              {/* QUI ERA L'ERRORE: Ora punta a logo.svg */}
               <Image 
-                src="/logo.png" 
+                src="/logo.svg" 
                 alt="AYROMEX Logo" 
-                fill
-                className="object-contain"
+                width={160}
+                height={50}
+                className="object-contain object-left"
               />
-            </div>
-            <div className="hidden md:block">
-              <span className="block text-xl font-bold tracking-widest text-white">AYROMEX</span>
-              <span className="block text-[10px] text-orange-500 font-mono tracking-[0.2em] uppercase">Digital Creations</span>
             </div>
           </div>
         </Link>

@@ -6,8 +6,7 @@ import Image from 'next/image'
 import Navbar from '@/components/Navbar'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import Footer from '@/components/Footer'
-import { fadeInUp, staggerContainer, staggerItem } from '@/lib/animations'
-import { HiSparkles, HiArrowRight } from 'react-icons/hi2'
+import { fadeInUp, staggerContainer } from '@/lib/animations'
 import { FaUtensils, FaHotel, FaStore, FaUserTie } from 'react-icons/fa'
 
 export default function Home() {
@@ -40,7 +39,7 @@ export default function Home() {
             variants={staggerContainer}
             className="max-w-5xl mx-auto"
           >
-            {/* Logo Big Animato - FIXATO */}
+            {/* Logo Big Animato */}
             <motion.div 
               variants={fadeInUp} 
               className="relative w-full max-w-[300px] md:max-w-[500px] h-auto mx-auto mb-10"
@@ -60,7 +59,7 @@ export default function Home() {
               MAKE IT <span className="text-orange-500">REAL.</span>
             </motion.h1>
 
-            {/* Sottotitolo (Qui mancava il tag di apertura!) */}
+            {/* Sottotitolo */}
             <motion.p variants={fadeInUp} className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto mb-12 leading-relaxed">
               Il tuo brand merita di più di una grafichetta fatta con Canva. 
               Costruiamo identità, siti web e strategie che portano fatturato.
@@ -85,41 +84,8 @@ export default function Home() {
         </div>
       </div>
 
-      {/* 3. CASE STUDIES */}
-      <section className="py-24 bg-dark-900">
-        <div className="section-container">
-          <div className="flex justify-between items-end mb-12">
-             <div>
-                <span className="text-orange-500 font-bold uppercase tracking-widest text-sm">Portfolio</span>
-                <h2 className="text-4xl font-display font-bold text-white mt-2">Lavori in evidenza</h2>
-             </div>
-             <Link href="/portfolio" className="hidden md:flex items-center gap-2 text-white hover:text-orange-500 transition-colors">
-                Tutti i progetti <HiArrowRight />
-             </Link>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <ProjectCard 
-              category="Food & Beverage" 
-              title="Rilancio Pizzeria" 
-              desc="Rebranding completo e gestione social per locale storico."
-            />
-            <ProjectCard 
-              category="Corporate" 
-              title="Studio Legale" 
-              desc="Sito web istituzionale e immagine coordinata."
-            />
-            <ProjectCard 
-              category="Retail" 
-              title="E-commerce Moda" 
-              desc="Shopify store e campagne advertising."
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* 4. TARGET SECTION */}
-      <section className="py-24 bg-dark-950 border-t border-white/5">
+      {/* 3. TARGET SECTION (I Case Study sono stati rimossi da qui) */}
+      <section className="py-24 bg-dark-900 border-t border-white/5">
         <div className="section-container text-center">
            <h2 className="text-3xl font-display font-bold text-white mb-16">Chi aiutiamo a crescere</h2>
            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
@@ -136,26 +102,9 @@ export default function Home() {
   )
 }
 
-function ProjectCard({ category, title, desc }: any) {
-  return (
-    <div className="group cursor-pointer">
-      <div className="aspect-[4/3] bg-dark-800 rounded-2xl border border-white/5 relative overflow-hidden mb-6 flex items-center justify-center group-hover:border-orange-500/50 transition-colors">
-         <div className="w-24 h-24 relative opacity-20 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500">
-            {/* Usa logo.svg anche qui per coerenza */}
-            <Image src="/logo.svg" alt="Project" fill className="object-contain" />
-         </div>
-         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-      </div>
-      <span className="text-orange-500 text-xs font-bold uppercase tracking-wider">{category}</span>
-      <h3 className="text-2xl font-bold text-white mt-2 mb-1 group-hover:text-orange-500 transition-colors">{title}</h3>
-      <p className="text-gray-400 text-sm">{desc}</p>
-    </div>
-  )
-}
-
 function TargetCard({ icon, title }: any) {
   return (
-    <div className="bg-dark-900 p-6 rounded-xl border border-white/5 hover:bg-orange-500 hover:text-white transition-all duration-300 group">
+    <div className="bg-dark-950 p-6 rounded-xl border border-white/5 hover:bg-orange-500 hover:text-white transition-all duration-300 group">
       <div className="text-3xl text-orange-500 mb-4 flex justify-center group-hover:text-white">{icon}</div>
       <h4 className="text-lg font-bold">{title}</h4>
     </div>
