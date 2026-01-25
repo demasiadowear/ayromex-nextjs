@@ -1,6 +1,5 @@
 'use client'
 
-import { useState, useEffect } from 'react'
 import { motion, useMotionValue, useMotionTemplate } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -63,7 +62,7 @@ export default function Home() {
             variants={staggerContainer}
             className="max-w-6xl mx-auto"
           >
-            {/* Logo Gigante */}
+            {/* Logo Gigante SVG */}
             <motion.div variants={fadeInUp} className="relative w-full max-w-[600px] mx-auto mb-12">
                <Image 
                   src="/logo.svg" 
@@ -81,7 +80,7 @@ export default function Home() {
             </motion.h1>
 
             <motion.p variants={fadeInUp} className="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto mb-12 font-light leading-relaxed">
-              Il branding non è un gioco. Costruiamo identità digitali che <span className="text-white font-medium">dominano il mercato locale</span>.
+              Il branding non è un gioco. Costruiamo identità digitali solide per chi vuole <span className="text-white font-medium">dominare il mercato locale</span>.
             </motion.p>
 
             <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-6 justify-center items-center">
@@ -105,7 +104,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* 3. TARGET MINIMAL */}
+      {/* 3. TARGET MINIMAL (Chi serviamo) */}
       <section className="py-32 bg-[#030303]">
         <div className="section-container">
            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-7xl mx-auto">
@@ -113,6 +112,12 @@ export default function Home() {
               <TargetCard icon={<FaHotel />} title="HOSPITALITY" />
               <TargetCard icon={<FaStore />} title="RETAIL" />
               <TargetCard icon={<FaUserTie />} title="PERSONAL BRAND" />
+           </div>
+           
+           <div className="text-center mt-20">
+             <Link href="/servizi" className="text-gray-500 hover:text-white transition-colors underline decoration-orange-500 underline-offset-4">
+                Scopri cosa possiamo fare per te
+             </Link>
            </div>
         </div>
       </section>

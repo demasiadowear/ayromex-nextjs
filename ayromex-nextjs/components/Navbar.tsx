@@ -22,11 +22,10 @@ export default function Navbar() {
     }`}>
       <div className="section-container flex items-center justify-between">
         
-        {/* LOGO AYROMEX (Aggiornato a SVG) */}
+        {/* LOGO AYROMEX (SVG) */}
         <Link href="/" className="relative z-50">
           <div className="flex items-center gap-3">
             <div className="relative w-12 h-12 md:w-40 md:h-12"> 
-              {/* QUI ERA L'ERRORE: Ora punta a logo.svg */}
               <Image 
                 src="/logo.svg" 
                 alt="AYROMEX Logo" 
@@ -92,9 +91,10 @@ export default function Navbar() {
   )
 }
 
+// LINK AGGIORNATI: Journal al posto di Portfolio
 const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'Chi Siamo', href: '/chi-siamo' },
   { label: 'Servizi', href: '/servizi' },
-  { label: 'Portfolio', href: '/portfolio' },
+  { label: 'Journal', href: '/blog' }, 
 ]
