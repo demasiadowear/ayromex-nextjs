@@ -11,9 +11,7 @@ import {
   staggerItem, 
 } from '@/lib/animations'
 import { 
-  HiSparkles, 
-  HiRocketLaunch, 
-  HiUserGroup,
+  HiSparkles,
   HiPaintBrush,
   HiPhoto,
   HiDocumentText,
@@ -21,7 +19,6 @@ import {
   HiPrinter,
   HiCog,
   HiArrowRight,
-  HiCheckCircle
 } from 'react-icons/hi2'
 
 export default function Home() {
@@ -39,12 +36,12 @@ export default function Home() {
             initial="hidden"
             animate="visible"
             variants={staggerContainer}
-            className="max-w-5xl mx-auto text-center"
+            className="max-w-4xl mx-auto text-center"
           >
-            {/* Badge */}
-            <motion.div variants={fadeInUp} className="inline-flex items-center space-x-2 bg-orange-500/10 border border-orange-500/30 rounded-full px-6 py-2 mb-8">
-              <HiSparkles className="w-5 h-5 text-orange-500" />
-              <span className="text-sm font-medium text-orange-500">AYROMEX • Digital Creations • Branding • Visual • Social</span>
+            {/* Badge Pulito */}
+            <motion.div variants={fadeInUp} className="inline-flex items-center space-x-2 bg-orange-500/10 border border-orange-500/30 rounded-full px-5 py-2 mb-8">
+              <HiSparkles className="w-4 h-4 text-orange-500" />
+              <span className="text-xs font-bold text-orange-500 uppercase tracking-widest">AYROMEX Creative Studio</span>
             </motion.div>
 
             {/* Main Headline */}
@@ -56,48 +53,40 @@ export default function Home() {
               <span className="text-gradient">il tuo brand</span>
             </motion.h1>
 
-            {/* Subheadline */}
+            {/* Subheadline - Più leggibile */}
             <motion.p
               variants={fadeInUp}
-              className="text-xl md:text-2xl text-light-50/80 max-w-3xl mx-auto mb-12"
+              className="text-xl md:text-2xl text-light-50/80 max-w-2xl mx-auto mb-10 leading-relaxed"
             >
-              Niente "grafichette". Sistemi visivi coerenti: identità, social, materiali, presentazioni. 
-              Roba che regge quando la stampi, quando la pubblichi, quando la vendi.
+              Niente "grafichette". Creiamo sistemi visivi coerenti per stampa e digitale.
+              Identità solide per chi vuole smettere di giocare e iniziare a competere.
             </motion.p>
 
-            {/* CTAs */}
+            {/* CTAs - Senza distrazioni sotto */}
             <motion.div
               variants={fadeInUp}
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8"
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             >
               <Link href="/contatti" className="btn-primary w-full sm:w-auto">
                 Richiedi preventivo
               </Link>
               <Link href="/portfolio" className="btn-secondary w-full sm:w-auto">
-                Guarda lavori
+                Guarda i lavori
               </Link>
             </motion.div>
-
-            <motion.p
-              variants={fadeInUp}
-              className="text-light-50/60 text-sm"
-            >
-              Risposta rapida • Print-ready • Template riutilizzabili • Zero caos
-            </motion.p>
 
             {/* Scroll Indicator */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1, duration: 0.6 }}
-              className="mt-20"
+              className="mt-24"
             >
               <motion.div
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 2, repeat: Infinity }}
-                className="flex flex-col items-center text-light-50/50"
+                className="flex flex-col items-center text-light-50/30"
               >
-                <span className="text-sm mb-2">Scopri di più</span>
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                 </svg>
@@ -107,38 +96,31 @@ export default function Home() {
         </div>
       </section>
 
-      {/* USP CARDS */}
-      <section className="section-spacing bg-dark-900">
+      {/* USP CARDS - Semplificate */}
+      <section className="py-12 bg-dark-900 border-y border-white/5">
         <div className="section-container">
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "-50px" }}
             variants={staggerContainer}
-            className="grid grid-cols-1 md:grid-cols-4 gap-6"
+            className="grid grid-cols-2 md:grid-cols-4 gap-8"
           >
-            {/* USP 1 */}
             <motion.div variants={staggerItem} className="text-center">
-              <h3 className="text-lg font-bold mb-2">Sistemi</h3>
-              <p className="text-light-50/70 text-sm">Identità coerenti</p>
+              <h3 className="text-lg font-bold text-white mb-1">Sistemi</h3>
+              <p className="text-light-50/50 text-sm">Identità coerenti</p>
             </motion.div>
-
-            {/* USP 2 */}
             <motion.div variants={staggerItem} className="text-center">
-              <h3 className="text-lg font-bold mb-2">Output</h3>
-              <p className="text-light-50/70 text-sm">Stampa + digitale</p>
+              <h3 className="text-lg font-bold text-white mb-1">Output</h3>
+              <p className="text-light-50/50 text-sm">Stampa + Web</p>
             </motion.div>
-
-            {/* USP 3 */}
             <motion.div variants={staggerItem} className="text-center">
-              <h3 className="text-lg font-bold mb-2">Focus</h3>
-              <p className="text-light-50/70 text-sm">Business first</p>
+              <h3 className="text-lg font-bold text-white mb-1">Focus</h3>
+              <p className="text-light-50/50 text-sm">Business first</p>
             </motion.div>
-
-            {/* USP 4 */}
             <motion.div variants={staggerItem} className="text-center">
-              <h3 className="text-lg font-bold mb-2">Approccio</h3>
-              <p className="text-light-50/70 text-sm">Serio ma agile</p>
+              <h3 className="text-lg font-bold text-white mb-1">Approccio</h3>
+              <p className="text-light-50/50 text-sm">Serio ma agile</p>
             </motion.div>
           </motion.div>
         </div>
@@ -155,47 +137,34 @@ export default function Home() {
             className="max-w-4xl mx-auto"
           >
             <h2 className="text-display font-display font-bold mb-6">
-              Start-up creativa, ma con mentalità da studio serio.
+              Mentalità da studio, agilità da startup.
             </h2>
             <p className="text-xl text-light-50/80 mb-12">
-              Ti porto ordine: direzione visiva, regole, consistenza. 
-              Così non sembri "uno che prova". Sembri un brand che sa dove sta andando.
+              Ti portiamo ordine: direzione visiva, regole, consistenza. 
+              Così non sembri "uno che ci prova", ma un brand che sa dove sta andando.
             </p>
 
-            <div className="space-y-6">
-              <h3 className="text-title font-display font-bold mb-6">Metodo AYROMEX</h3>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-dark-900 rounded-2xl p-8 border border-white/5">
+              <h3 className="text-title font-display font-bold mb-8 text-orange-500">Come lavoriamo</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {metodSteps.map((step, index) => (
-                  <motion.div
-                    key={index}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                    variants={fadeInUp}
-                    transition={{ delay: index * 0.1 }}
-                    className="flex items-start space-x-4"
-                  >
-                    <div className="w-10 h-10 bg-orange-500/10 rounded-full flex items-center justify-center flex-shrink-0">
-                      <span className="text-orange-500 font-bold">{index + 1}</span>
+                  <div key={index} className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-white/5 rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold">
+                      {index + 1}
                     </div>
                     <div>
-                      <h4 className="font-bold mb-2">{step.title}</h4>
-                      <p className="text-light-50/70 text-sm">{step.description}</p>
+                      <h4 className="font-bold text-white mb-1">{step.title}</h4>
+                      <p className="text-light-50/60 text-sm">{step.description}</p>
                     </div>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
             </div>
-
-            <p className="text-light-50/60 mt-12 text-center">
-              Obiettivo: farti sembrare più grande di quello che sei. In senso buono.
-            </p>
           </motion.div>
         </div>
       </section>
 
-      {/* SERVIZI SECTION */}
+      {/* SERVIZI SECTION - PULITA */}
       <section className="section-spacing bg-dark-900">
         <div className="section-container">
           <motion.div
@@ -205,14 +174,15 @@ export default function Home() {
             variants={fadeInUp}
             className="text-center mb-16"
           >
-            <span className="text-orange-500 text-sm font-semibold uppercase tracking-wider mb-4 block">
+            <span className="text-orange-500 text-sm font-bold uppercase tracking-widest mb-3 block">
               Servizi
             </span>
             <h2 className="text-display font-display font-bold mb-6">
               Cosa facciamo (bene)
             </h2>
-            <p className="text-xl text-light-50/70 max-w-3xl mx-auto">
-              Poche cose, fatte con criterio. Il resto è fuffa.
+            <p className="text-xl text-light-50/70 max-w-2xl mx-auto">
+              Poche cose, fatte con criterio. <br />
+              <span className="text-orange-500">Output garantito:</span> file ordinati, pronti per la stampa e riutilizzabili.
             </p>
           </motion.div>
 
@@ -227,22 +197,18 @@ export default function Home() {
               <motion.div
                 key={index}
                 variants={staggerItem}
-                className="card group"
+                className="card group hover:border-orange-500/30 transition-all duration-300"
               >
                 <div className="flex items-start justify-between mb-6">
-                  <div className="w-14 h-14 bg-orange-500/10 rounded-xl flex items-center justify-center group-hover:bg-orange-500/20 transition-colors">
+                  <div className="w-12 h-12 bg-orange-500/10 rounded-lg flex items-center justify-center text-orange-500">
                     {service.icon}
                   </div>
-                  <HiArrowRight className="w-6 h-6 text-orange-500 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
-                <h3 className="text-xl font-display font-bold mb-3">
+                <h3 className="text-xl font-display font-bold mb-3 group-hover:text-orange-500 transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-light-50/70 mb-4 text-sm leading-relaxed">
+                <p className="text-light-50/60 text-sm leading-relaxed">
                   {service.description}
-                </p>
-                <p className="text-xs text-orange-500 font-semibold">
-                  {service.output}
                 </p>
               </motion.div>
             ))}
@@ -255,9 +221,9 @@ export default function Home() {
             variants={fadeInUp}
             className="text-center mt-12"
           >
-            <Link href="/servizi" className="btn-secondary inline-flex items-center space-x-2">
-              <span>Apri tutti i servizi</span>
-              <HiArrowRight className="w-5 h-5" />
+            <Link href="/servizi" className="text-light-50 hover:text-orange-500 transition-colors inline-flex items-center space-x-2 font-medium">
+              <span>Esplora tutti i dettagli</span>
+              <HiArrowRight className="w-4 h-4" />
             </Link>
           </motion.div>
         </div>
@@ -273,14 +239,11 @@ export default function Home() {
             variants={fadeInUp}
             className="text-center mb-16"
           >
-            <span className="text-orange-500 text-sm font-semibold uppercase tracking-wider mb-4 block">
-              Portfolio
-            </span>
-            <h2 className="text-display font-display font-bold mb-6">
-              Case studies (selezionati)
+            <h2 className="text-display font-display font-bold mb-4">
+              Case Studies
             </h2>
-            <p className="text-xl text-light-50/70 max-w-3xl mx-auto">
-              Pochi progetti, chiari. "Prima / dopo", risultati, applicazioni reali.
+            <p className="text-light-50/70">
+              Progetti reali. Risultati tangibili.
             </p>
           </motion.div>
 
@@ -295,15 +258,14 @@ export default function Home() {
               <motion.div
                 key={index}
                 variants={staggerItem}
-                className="group relative aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer"
+                className="group relative aspect-[4/3] rounded-xl overflow-hidden cursor-pointer"
               >
-                <div className={`absolute inset-0 ${category.gradient}`} />
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors" />
+                <div className={`absolute inset-0 ${category.gradient} opacity-80 group-hover:opacity-100 transition-opacity`} />
                 <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                  <h3 className="text-2xl font-display font-bold text-white mb-2">
+                  <h3 className="text-2xl font-display font-bold text-white mb-1">
                     {category.title}
                   </h3>
-                  <p className="text-white/80 text-sm">
+                  <p className="text-white/70 text-sm">
                     {category.subtitle}
                   </p>
                 </div>
@@ -312,15 +274,14 @@ export default function Home() {
           </motion.div>
 
           <motion.div
-            initial="hidden"
+             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeInUp}
             className="text-center mt-12"
           >
-            <Link href="/portfolio" className="btn-primary inline-flex items-center space-x-2">
-              <span>Vedi portfolio</span>
-              <HiArrowRight className="w-5 h-5" />
+            <Link href="/portfolio" className="btn-secondary">
+              Vedi portfolio completo
             </Link>
           </motion.div>
         </div>
@@ -334,27 +295,20 @@ export default function Home() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={staggerContainer}
-            className="max-w-4xl mx-auto text-center"
+            className="max-w-3xl mx-auto text-center"
           >
-            <motion.span
-              variants={fadeInUp}
-              className="text-orange-500 text-sm font-semibold uppercase tracking-wider mb-4 block"
-            >
-              Pronti?
-            </motion.span>
-            
             <motion.h2
               variants={fadeInUp}
-              className="text-hero-lg font-display font-bold mb-6"
+              className="text-display font-display font-bold mb-6"
             >
               Facciamolo bene, una volta sola.
             </motion.h2>
 
             <motion.p
               variants={fadeInUp}
-              className="text-xl text-light-50/80 mb-12"
+              className="text-xl text-light-50/80 mb-10"
             >
-              Se vuoi un'identità visiva che non sembri improvvisata, parliamone.
+              Se vuoi un'identità visiva che non sembri improvvisata, siamo qui.
             </motion.p>
 
             <motion.div
@@ -362,14 +316,8 @@ export default function Home() {
               className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             >
               <Link href="/contatti" className="btn-primary w-full sm:w-auto">
-                Contattaci
+                Parliamone
               </Link>
-              <a
-                href="tel:+390808407861"
-                className="btn-secondary w-full sm:w-auto"
-              >
-                +39 080 840 7861
-              </a>
             </motion.div>
           </motion.div>
         </div>
@@ -384,75 +332,70 @@ export default function Home() {
 const metodSteps = [
   {
     title: 'Brief rapido',
-    description: 'e chiaro (niente romanzi).'
+    description: 'Capiamo cosa ti serve senza call infinite.'
   },
   {
-    title: 'Concept',
-    description: '+ direzione visiva (una sola lingua).'
+    title: 'Concept & Direzione',
+    description: 'Definiamo una lingua visiva unica.'
   },
   {
     title: 'Produzione',
-    description: '+ varianti (scelte, non caos).'
+    description: 'Creiamo gli asset (scelte precise, non caos).'
   },
   {
     title: 'Consegna ordinata',
-    description: '(stampa + digitale).'
+    description: 'Ricevi tutto pronto per stampa e web.'
   },
 ]
 
+// NOTA: Ho rimosso la riga "output" ripetitiva da qui
 const services = [
   {
-    icon: <HiPaintBrush className="w-7 h-7 text-orange-500" />,
+    icon: <HiPaintBrush className="w-6 h-6" />,
     title: 'Branding & Identità',
-    description: 'Logo, palette, font, linee guida e sistema completo.',
-    output: 'Output: file ordinati, pronti, riutilizzabili.'
+    description: 'Logo, palette, font, linee guida. Un sistema completo per essere riconosciuti.',
   },
   {
-    icon: <HiPhoto className="w-7 h-7 text-orange-500" />,
+    icon: <HiPhoto className="w-6 h-6" />,
     title: 'Social Design',
-    description: 'Post, caroselli, reel cover, template Canva riutilizzabili.',
-    output: 'Output: file ordinati, pronti, riutilizzabili.'
+    description: 'Post, caroselli, reel cover e template Canva per renderti autonomo.',
   },
   {
-    icon: <HiPrinter className="w-7 h-7 text-orange-500" />,
+    icon: <HiPrinter className="w-6 h-6" />,
     title: 'Stampa & Materiali',
-    description: 'Menu, insegne, packaging, promo: tutto print-ready.',
-    output: 'Output: file ordinati, pronti, riutilizzabili.'
+    description: 'Menu, insegne, packaging, biglietti da visita. Tutto print-ready.',
   },
   {
-    icon: <HiPresentationChartLine className="w-7 h-7 text-orange-500" />,
-    title: 'Pitch & Presentazioni',
-    description: 'Deck puliti, chiari, credibili. Zero cringe.',
-    output: 'Output: file ordinati, pronti, riutilizzabili.'
+    icon: <HiPresentationChartLine className="w-6 h-6" />,
+    title: 'Pitch & Slide',
+    description: 'Presentazioni aziendali che non addormentano i clienti.',
   },
   {
-    icon: <HiDocumentText className="w-7 h-7 text-orange-500" />,
+    icon: <HiDocumentText className="w-6 h-6" />,
     title: 'Visual Content',
-    description: 'Mockup, layout, immagini coerenti e premium.',
-    output: 'Output: file ordinati, pronti, riutilizzabili.'
+    description: 'Mockup e impaginazione per cataloghi e brochure.',
   },
   {
-    icon: <HiCog className="w-7 h-7 text-orange-500" />,
-    title: 'Automazioni (Coming soon)',
-    description: 'Lead, WhatsApp, CRM leggero: in arrivo.',
-    output: 'Output: flussi automatici e integrati.'
+    icon: <HiCog className="w-6 h-6" />,
+    title: 'Automazioni',
+    description: '(Coming Soon) Integrazioni per gestire i lead senza stress.',
   },
 ]
 
 const portfolioCategories = [
   {
     title: 'Brand Identity',
-    subtitle: 'Sistema completo • Logo • Guidelines',
+    subtitle: 'Loghi e Sistemi',
     gradient: 'bg-gradient-to-br from-orange-600 to-orange-800'
   },
   {
     title: 'Social Pack',
-    subtitle: 'Template + griglia • Reels cover • Ads',
+    subtitle: 'Template e Feed',
     gradient: 'bg-gradient-to-br from-blue-600 to-blue-800'
   },
   {
-    title: 'Print & Signage',
-    subtitle: 'Insegne • Menu • Packaging • Promo',
+    title: 'Print',
+    subtitle: 'Materiali stampati',
     gradient: 'bg-gradient-to-br from-purple-600 to-purple-800'
   },
 ]
