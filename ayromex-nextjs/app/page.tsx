@@ -19,7 +19,7 @@ export default function Home() {
       {/* 1. HERO SECTION: VIDEO BACKGROUND */}
       <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
         
-        {/* VIDEO BACKGROUND (Cerca un file 'hero-video.mp4' in public, altrimenti nero) */}
+        {/* VIDEO BACKGROUND */}
         <div className="absolute inset-0 z-0 bg-black">
            <video 
              autoPlay 
@@ -30,7 +30,6 @@ export default function Home() {
            >
              <source src="/hero-video.mp4" type="video/mp4" />
            </video>
-           {/* Overlay gradiente per leggere il testo */}
            <div className="absolute inset-0 bg-gradient-to-b from-dark-950/80 via-dark-950/50 to-dark-950"></div>
         </div>
         
@@ -41,20 +40,33 @@ export default function Home() {
             variants={staggerContainer}
             className="max-w-5xl mx-auto"
           >
-            {/* Logo Big Animato */}
-            <motion.div variants={fadeInUp} className="w-32 h-32 md:w-48 md:h-48 mx-auto mb-8 relative">
-               <Image src="/logo.png" alt="Ayromex" fill className="object-contain drop-shadow-[0_0_15px_rgba(249,115,22,0.5)]" />
+            {/* Logo Big Animato - FIXATO */}
+            <motion.div 
+              variants={fadeInUp} 
+              className="relative w-full max-w-[300px] md:max-w-[500px] h-auto mx-auto mb-10"
+            >
+               <Image 
+                  src="/logo.svg" 
+                  alt="Ayromex" 
+                  width={500} 
+                  height={300}
+                  className="w-full h-auto object-contain drop-shadow-[0_0_30px_rgba(249,115,22,0.6)]" 
+                  priority
+               />
             </motion.div>
 
+            {/* Headline */}
             <motion.h1 variants={fadeInUp} className="text-5xl md:text-8xl font-display font-bold text-white mb-6 tracking-tight leading-none">
               MAKE IT <span className="text-orange-500">REAL.</span>
             </motion.h1>
 
+            {/* Sottotitolo (Qui mancava il tag di apertura!) */}
             <motion.p variants={fadeInUp} className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto mb-12 leading-relaxed">
               Il tuo brand merita di più di una grafichetta fatta con Canva. 
               Costruiamo identità, siti web e strategie che portano fatturato.
             </motion.p>
 
+            {/* CTA */}
             <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link href="/contatti" className="btn-primary w-full sm:w-auto shadow-xl shadow-orange-500/20 px-8 py-4 text-lg">
                 Inizia il Progetto
@@ -73,7 +85,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* 3. CASE STUDIES (SOLO 3, PULITI) */}
+      {/* 3. CASE STUDIES */}
       <section className="py-24 bg-dark-900">
         <div className="section-container">
           <div className="flex justify-between items-end mb-12">
@@ -87,19 +99,16 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Project 1 */}
             <ProjectCard 
               category="Food & Beverage" 
               title="Rilancio Pizzeria" 
               desc="Rebranding completo e gestione social per locale storico."
             />
-            {/* Project 2 */}
             <ProjectCard 
               category="Corporate" 
               title="Studio Legale" 
               desc="Sito web istituzionale e immagine coordinata."
             />
-            {/* Project 3 */}
             <ProjectCard 
               category="Retail" 
               title="E-commerce Moda" 
@@ -130,10 +139,10 @@ export default function Home() {
 function ProjectCard({ category, title, desc }: any) {
   return (
     <div className="group cursor-pointer">
-      {/* Immagine Placeholder con Logo */}
       <div className="aspect-[4/3] bg-dark-800 rounded-2xl border border-white/5 relative overflow-hidden mb-6 flex items-center justify-center group-hover:border-orange-500/50 transition-colors">
          <div className="w-24 h-24 relative opacity-20 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500">
-            <Image src="/logo.png" alt="Project" fill className="object-contain" />
+            {/* Usa logo.svg anche qui per coerenza */}
+            <Image src="/logo.svg" alt="Project" fill className="object-contain" />
          </div>
          <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       </div>
