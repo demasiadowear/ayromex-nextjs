@@ -297,7 +297,7 @@ export default function ChiSiamo() {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
-                  variants={scaleIn}
+                  variants={fadeInUp}
                   transition={{ delay: index * 0.05 }}
                   className="bg-dark-800/30 border border-gray-700/20 rounded-lg p-4 text-center hover:border-orange-500/50 transition-colors"
                 >
