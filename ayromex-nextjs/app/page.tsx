@@ -1,137 +1,194 @@
 'use client'
 
-import { motion, useMotionValue, useMotionTemplate } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
 import Navbar from '@/components/Navbar'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import Footer from '@/components/Footer'
-import { fadeInUp, staggerContainer } from '@/lib/animations'
-import { FaUtensils, FaHotel, FaStore, FaUserTie } from 'react-icons/fa'
+import { HiArrowUpRight, HiSparkles } from 'react-icons/hi2'
+import { useRef } from 'react'
 
 export default function Home() {
-  // Effetto Mouse Spotlight
-  const mouseX = useMotionValue(0)
-  const mouseY = useMotionValue(0)
+  const containerRef = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"]
+  })
 
-  function handleMouseMove({ currentTarget, clientX, clientY }: any) {
-    let { left, top } = currentTarget.getBoundingClientRect()
-    mouseX.set(clientX - left)
-    mouseY.set(clientY - top)
-  }
+  // Parallax Effect per il testo
+  const yText = useTransform(scrollYProgress, [0, 1], [0, -100])
 
   return (
-    <main className="bg-[#030303]">
+    <main ref={containerRef} className="bg-[#030303] relative">
       <Navbar />
       <WhatsAppButton />
       
-      {/* 1. HERO SECTION CON SPOTLIGHT */}
-      <section 
-        className="relative min-h-screen flex items-center justify-center overflow-hidden group"
-        onMouseMove={handleMouseMove}
-      >
-        {/* Spotlight Effect (Luce che segue il mouse) */}
-        <motion.div
-          className="pointer-events-none absolute -inset-px opacity-0 transition duration-300 group-hover:opacity-100"
-          style={{
-            background: useMotionTemplate`
-              radial-gradient(
-                650px circle at ${mouseX}px ${mouseY}px,
-                rgba(249, 115, 22, 0.10),
-                transparent 80%
-              )
-            `,
-          }}
-        />
+      {/* 1. HERO: LESS IS MORE */}
+      <section className="h-screen flex flex-col justify-center items-center relative overflow-hidden px-4">
+         {/* Video Background Sfumato */}
+         <div className="absolute inset-0 z-0">
+            <video autoPlay loop muted playsInline className="w-full h-full object-cover opacity-20 scale-105">
+               <source src="/hero-video.mp4" type="video/mp4" />
+            </video>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-[#030303]/50 to-transparent" />
+         </div>
 
-        {/* Griglia di sfondo molto sottile */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-        
-        {/* Sfondo Video Opzionale */}
-        <div className="absolute inset-0 z-0 opacity-30 mix-blend-screen pointer-events-none">
-           <video autoPlay loop muted playsInline className="w-full h-full object-cover">
-             <source src="/hero-video.mp4" type="video/mp4" />
-           </video>
-           <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-[#030303]"></div>
-        </div>
-        
-        <div className="section-container relative z-10 text-center mt-20">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={staggerContainer}
-            className="max-w-6xl mx-auto"
-          >
-            {/* Logo Gigante SVG */}
-            <motion.div variants={fadeInUp} className="relative w-full max-w-[600px] mx-auto mb-12">
-               <Image 
-                  src="/logo.svg" 
-                  alt="Ayromex" 
-                  width={600} 
-                  height={300}
-                  className="w-full h-auto object-contain drop-shadow-[0_0_80px_rgba(249,115,22,0.4)]" 
-                  priority
-               />
-            </motion.div>
+         <motion.div 
+           initial={{ opacity: 0, y: 100 }}
+           animate={{ opacity: 1, y: 0 }}
+           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+           className="relative z-10 text-center"
+         >
+            {/* Logo SVG Pulito */}
+            <div className="mb-8 w-48 md:w-64 mx-auto">
+               <Image src="/logo.svg" alt="Ayromex" width={300} height={100} className="w-full h-auto drop-shadow-2xl" priority />
+            </div>
 
-            {/* Testo stile "Manifesto" */}
-            <motion.h1 variants={fadeInUp} className="text-5xl md:text-8xl font-display font-bold text-white mb-8 tracking-tighter leading-[0.9]">
-              MAKE IT <span className="text-orange-500 italic">REAL.</span>
-            </motion.h1>
+            <h1 className="text-[12vw] leading-[0.85] font-display font-bold tracking-tighter text-white mix-blend-difference">
+              MAKE IT <br /> <span className="text-orange-500">REAL.</span>
+            </h1>
+         </motion.div>
 
-            <motion.p variants={fadeInUp} className="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto mb-12 font-light leading-relaxed">
-              Il branding non è un gioco. Costruiamo identità digitali solide per chi vuole <span className="text-white font-medium">dominare il mercato locale</span>.
-            </motion.p>
-
-            <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <Link href="/contatti" className="group relative px-8 py-4 bg-white text-black font-bold text-lg rounded-full overflow-hidden hover:scale-105 transition-transform">
-                <span className="relative z-10">INIZIA ORA</span>
-                <div className="absolute inset-0 bg-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
-              </Link>
-            </motion.div>
-          </motion.div>
-        </div>
+         <motion.div 
+            initial={{ opacity: 0 }} 
+            animate={{ opacity: 1 }} 
+            transition={{ delay: 1, duration: 1 }}
+            className="absolute bottom-10 left-0 right-0 text-center"
+         >
+            <p className="text-xs font-mono uppercase tracking-[0.3em] text-gray-500 animate-pulse">Scroll to explore</p>
+         </motion.div>
       </section>
 
-      {/* 2. MARQUEE STILIZZATO */}
-      <div className="bg-white py-4 relative z-20 overflow-hidden -rotate-1 shadow-[0_0_50px_rgba(255,255,255,0.2)]">
-        <div className="flex whitespace-nowrap gap-12 text-black font-black text-3xl uppercase tracking-tighter animate-marquee">
-            {[...Array(8)].map((_, i) => (
-               <span key={i} className="flex items-center gap-4">
-                 AYROMEX <span className="text-orange-600">●</span> DIGITAL <span className="text-orange-600">●</span> CREATIONS <span className="text-orange-600">●</span>
-               </span>
-            ))}
-        </div>
-      </div>
+      {/* 2. MANIFESTO (Testo Gigante SEO friendly) */}
+      <section className="py-32 px-6 md:px-12 max-w-7xl mx-auto">
+        <motion.p 
+          style={{ y: yText }}
+          className="text-3xl md:text-6xl font-display font-medium leading-tight text-gray-300"
+        >
+          Non siamo la solita agenzia. <span className="text-white">Costruiamo ecosistemi digitali</span> per brand che non si accontentano. 
+          Dal branding strategico allo sviluppo web performante. 
+          <span className="text-orange-500 block mt-4">Niente fuffa, solo ROI.</span>
+        </motion.p>
+      </section>
 
-      {/* 3. TARGET MINIMAL (Chi serviamo) */}
-      <section className="py-32 bg-[#030303]">
-        <div className="section-container">
-           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-7xl mx-auto">
-              <TargetCard icon={<FaUtensils />} title="RISTORAZIONE" />
-              <TargetCard icon={<FaHotel />} title="HOSPITALITY" />
-              <TargetCard icon={<FaStore />} title="RETAIL" />
-              <TargetCard icon={<FaUserTie />} title="PERSONAL BRAND" />
+      {/* 3. BENTO GRID (I Servizi Visivi) */}
+      <section className="py-20 px-4 md:px-8">
+        <div className="max-w-[1400px] mx-auto">
+           <div className="flex justify-between items-end mb-12 px-2">
+              <h2 className="text-sm font-mono text-orange-500 uppercase tracking-widest">Selected Services</h2>
+              <Link href="/servizi" className="hidden md:flex items-center gap-2 text-white hover:text-orange-500 transition-colors text-sm uppercase font-bold tracking-wider">
+                 View All <HiArrowUpRight />
+              </Link>
+           </div>
+
+           {/* GRIGLIA BENTO */}
+           <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-4 h-auto md:h-[800px]">
+              
+              {/* Box 1: BRANDING (Grande Verticale) */}
+              <BentoCard 
+                className="md:col-span-1 md:row-span-2 bg-[#0a0a0a]"
+                title="BRAND IDENTITY"
+                subtitle="Il volto del tuo business"
+                tags={['Logo Design', 'Guidelines', 'Typography']}
+                image="/grid-brand.jpg" // Se non hai img, userà un gradiente
+                gradient="from-orange-500/20 to-transparent"
+              />
+
+              {/* Box 2: SOCIAL (Orizzontale) */}
+              <BentoCard 
+                className="md:col-span-2 md:row-span-1 bg-[#0f0f0f]"
+                title="SOCIAL STRATEGY"
+                subtitle="Contenuti che convertono"
+                tags={['Content Creation', 'Reels', 'Advertising']}
+                gradient="from-blue-500/20 to-transparent"
+              />
+
+              {/* Box 3: WEB (Piccolo) */}
+              <BentoCard 
+                className="md:col-span-1 md:row-span-1 bg-[#0a0a0a]"
+                title="WEB DEVELOPMENT"
+                subtitle="Next.js & Performance"
+                tags={['SEO', 'E-commerce', 'Speed']}
+                gradient="from-purple-500/20 to-transparent"
+              />
+
+              {/* Box 4: PRINT (Piccolo) */}
+              <BentoCard 
+                className="md:col-span-1 md:row-span-1 bg-[#0f0f0f]"
+                title="PRINT & PACKAGING"
+                subtitle="Esperienza tattile"
+                tags={['Menu', 'Brochure', 'Insegne']}
+                gradient="from-green-500/20 to-transparent"
+              />
+
            </div>
            
-           <div className="text-center mt-20">
-             <Link href="/servizi" className="text-gray-500 hover:text-white transition-colors underline decoration-orange-500 underline-offset-4">
-                Scopri cosa possiamo fare per te
-             </Link>
+           <div className="mt-8 text-center md:hidden">
+              <Link href="/servizi" className="inline-flex items-center gap-2 text-white border-b border-orange-500 pb-1">
+                 Tutti i servizi <HiArrowUpRight />
+              </Link>
            </div>
         </div>
       </section>
-      
+
+      {/* 4. MARQUEE INFINITO (Separatore) */}
+      <div className="py-20 overflow-hidden">
+        <motion.div 
+           animate={{ x: [0, -1000] }}
+           transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+           className="flex whitespace-nowrap text-[10vw] font-black uppercase text-[#1a1a1a] leading-none select-none"
+        >
+           Ayromex • Strategy • Design • Code • Ayromex • Strategy • Design • Code •
+        </motion.div>
+      </div>
+
+      {/* 5. CTA FINALE IMPATTANTE */}
+      <section className="h-[80vh] flex flex-col items-center justify-center bg-orange-600 text-black px-4 text-center relative overflow-hidden group">
+         <div className="absolute inset-0 bg-[url('/noise.png')] opacity-10 mix-blend-overlay" />
+         
+         <motion.h2 
+           initial={{ y: 50, opacity: 0 }}
+           whileInView={{ y: 0, opacity: 1 }}
+           className="text-6xl md:text-9xl font-display font-bold tracking-tighter mb-8 z-10"
+         >
+            LET'S TALK.
+         </motion.h2>
+         
+         <Link href="/contatti" className="z-10 bg-black text-white px-10 py-5 rounded-full text-xl font-bold hover:scale-110 transition-transform duration-300 flex items-center gap-3">
+            Inizia il progetto <HiSparkles className="text-orange-500" />
+         </Link>
+      </section>
+
       <Footer />
     </main>
   )
 }
 
-function TargetCard({ icon, title }: any) {
+// Componente Card "Bento" Riutilizzabile
+function BentoCard({ className, title, subtitle, tags, gradient }: any) {
   return (
-    <div className="aspect-square bg-[#0a0a0a] rounded-3xl border border-white/5 flex flex-col items-center justify-center hover:bg-orange-500 hover:text-white transition-all duration-500 group cursor-default">
-      <div className="text-4xl text-gray-500 mb-4 group-hover:text-white group-hover:scale-110 transition-transform">{icon}</div>
-      <h4 className="text-sm font-bold tracking-widest text-gray-500 group-hover:text-white">{title}</h4>
+    <div className={`${className} rounded-3xl p-8 relative overflow-hidden group border border-white/5 hover:border-white/20 transition-all duration-500 flex flex-col justify-between`}>
+       {/* Background Gradient on Hover */}
+       <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+       
+       <div className="relative z-10">
+          <div className="flex flex-wrap gap-2 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform -translate-y-2 group-hover:translate-y-0">
+             {tags.map((tag: string, i: number) => (
+                <span key={i} className="text-[10px] font-mono uppercase bg-white/10 px-2 py-1 rounded text-white/70">{tag}</span>
+             ))}
+          </div>
+       </div>
+
+       <div className="relative z-10">
+          <h3 className="text-3xl font-display font-bold text-white mb-1">{title}</h3>
+          <p className="text-gray-400 text-sm">{subtitle}</p>
+       </div>
+
+       {/* Icona Arrow che appare */}
+       <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-4 group-hover:translate-x-0">
+          <HiArrowUpRight className="text-2xl text-white" />
+       </div>
     </div>
   )
 }
