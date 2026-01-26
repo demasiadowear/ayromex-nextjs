@@ -98,21 +98,43 @@ function ContactCard({ icon, title, value, href, cta, highlight }: any) {
 function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle')
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setStatus('submitting')
-    // Simuliamo invio per ora
-    setTimeout(() => {
+
+    // 1. Estraiamo i dati dai campi del form
+    const formData = new FormData(e.currentTarget)
+    const leadData = {
+      nome: `${formData.get('nome')} ${formData.get('cognome')}`,
+      email: formData.get('email'),
+      azienda: "N/A", // Puoi aggiungere un campo Azienda se vuoi
+      servizio: "Richiesta da Sito", // O mappare un selettore
+      descrizione: formData.get('messaggio')
+    }
+
+    try {
+      // 2. Invio reale al tuo URL di Google Apps Script
+      await fetch("https://script.google.com/macros/s/AKfycbzZY0zx30qnS_4FD54F3HwjIhsHEF7WHPgjYHon3OL3M1f1rthx8i1tOhadWoUdpLnTSg/exec", {
+        method: "POST",
+        mode: "no-cors", // Evita errori di sicurezza cross-origin
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(leadData)
+      })
+      
       setStatus('success')
-    }, 1500)
+    } catch (error) {
+      console.error("Errore invio Autopilot:", error)
+      alert("Errore nell'invio. Riprova più tardi.")
+      setStatus('idle')
+    }
   }
 
   if (status === 'success') {
     return (
       <div className="text-center py-12">
         <HiCheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-        <h4 className="text-xl font-bold text-white">Messaggio Inviato!</h4>
-        <p className="text-gray-400 mt-2">Ti risponderemo il prima possibile.</p>
+        <h4 className="text-xl font-bold text-white">Richiesta Ricevuta!</h4>
+        <p className="text-gray-400 mt-2">Ayromex Autopilot ha preso in carico la tua richiesta. <br/> Controlla la tua email, ti risponderemo tra pochi minuti.</p>
         <button onClick={() => setStatus('idle')} className="mt-6 text-orange-500 underline text-sm">Invia un altro</button>
       </div>
     )
@@ -123,20 +145,20 @@ function ContactForm() {
       <div className="grid grid-cols-2 gap-4">
         <div>
           <label className="block text-xs font-bold text-gray-500 uppercase mb-2">Nome</label>
-          <input required type="text" className="w-full bg-dark-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-orange-500 outline-none transition-colors" placeholder="Mario" />
+          <input name="nome" required type="text" className="w-full bg-dark-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-orange-500 outline-none transition-colors" placeholder="Mario" />
         </div>
         <div>
           <label className="block text-xs font-bold text-gray-500 uppercase mb-2">Cognome</label>
-          <input required type="text" className="w-full bg-dark-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-orange-500 outline-none transition-colors" placeholder="Rossi" />
+          <input name="cognome" required type="text" className="w-full bg-dark-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-orange-500 outline-none transition-colors" placeholder="Rossi" />
         </div>
       </div>
       <div>
         <label className="block text-xs font-bold text-gray-500 uppercase mb-2">Email</label>
-        <input required type="email" className="w-full bg-dark-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-orange-500 outline-none transition-colors" placeholder="mario@azienda.com" />
+        <input name="email" required type="email" className="w-full bg-dark-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-orange-500 outline-none transition-colors" placeholder="mario@azienda.com" />
       </div>
       <div>
         <label className="block text-xs font-bold text-gray-500 uppercase mb-2">Messaggio</label>
-        <textarea required rows={4} className="w-full bg-dark-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-orange-500 outline-none transition-colors" placeholder="Vorrei informazioni su..."></textarea>
+        <textarea name="messaggio" required rows={4} className="w-full bg-dark-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-orange-500 outline-none transition-colors" placeholder="Vorrei informazioni su..."></textarea>
       </div>
       <button disabled={status === 'submitting'} type="submit" className="btn-primary w-full py-4 mt-2">
         {status === 'submitting' ? 'Invio in corso...' : 'Invia Messaggio'}
