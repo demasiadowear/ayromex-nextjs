@@ -1,132 +1,45 @@
+/* app/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* ========== AYROMEX DARK SYSTEM ========== */
-:root{
-  --bg: 10 10 12;        /* near-black */
-  --panel: 18 18 22;     /* panels */
-  --text: 242 242 245;   /* primary text */
-  --muted: 170 170 180;  /* secondary text */
-  --stroke: 255 255 255; /* borders (use low alpha) */
-  --brand: 255 107 53;   /* AYROMEX orange */
-  --brand2: 255 148 92;  /* warm accent */
-  --ok: 95 227 170;
-}
-
 html, body {
-  height: 100%;
+  /* Nasconde il cursore di sistema ovunque */
+  cursor: none !important;
+  background-color: #fbfbfb;
 }
 
-body{
-  background: rgb(var(--bg));
-  color: rgb(var(--text));
-  font-feature-settings: "ss01" 1, "ss02" 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Evita che il cursore ricompaia su link o bottoni */
+a, button, input, textarea {
+  cursor: none !important;
 }
 
-::selection{
-  background: rgba(var(--brand), .25);
-  color: rgb(var(--text));
+/* L'effetto Halftone globale */
+.halftone-bg {
+  background-image: radial-gradient(#FF4D00 0.5px, transparent 0.5px);
+  background-size: 15px 15px; /* Dimensione dei punti */
+  opacity: 0.15; /* Molto leggero per non disturbare la lettura */
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+/* Aggiungi in globals.css */
+.image-halftone-overlay {
+  position: relative;
 }
 
-a{
-  color: inherit;
-  text-decoration: none;
-}
-
-/* Subtle noise texture (cheap but effective) */
-.noise{
+.image-halftone-overlay::after {
+  content: "";
   position: absolute;
   inset: 0;
+  background-image: radial-gradient(rgba(255, 77, 0, 0.2) 1px, transparent 1px);
+  background-size: 4px 4px; /* Grana molto più fitta */
   pointer-events: none;
-  opacity: .09;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
-  mix-blend-mode: overlay;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
-/* Background glow blob */
-.bg-glow{
-  position: absolute;
-  width: 900px;
-  height: 900px;
-  border-radius: 9999px;
-  filter: blur(90px);
-  opacity: .22;
-  background: radial-gradient(circle at 30% 30%,
-    rgba(var(--brand), .55),
-    rgba(var(--brand2), .18),
-    transparent 60%);
+.image-halftone-overlay:hover::after {
+  opacity: 1;
 }
-
-/* Panels / glass */
-.glass{
-  background: rgba(var(--panel), .72);
-  border: 1px solid rgba(var(--stroke), .08);
-  backdrop-filter: blur(14px);
-}
-
-/* Borders */
-.soft-border{
-  border: 1px solid rgba(var(--stroke), .10);
-}
-
-/* Buttons */
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:.6rem;
-  padding:.9rem 1.1rem;
-  border-radius: 9999px;
-  font-weight: 600;
-  transition: transform .15s ease, box-shadow .15s ease, background .15s ease, border-color .15s ease;
-}
-
-.btn-primary{
-  background: rgba(var(--brand), .95);
-  color: rgb(10 10 12);
-  box-shadow: 0 18px 60px rgba(var(--brand), .22);
-}
-.btn-primary:hover{
-  transform: translateY(-1px);
-  box-shadow: 0 24px 80px rgba(var(--brand), .30);
-}
-
-.btn-ghost{
-  background: rgba(255,255,255,.03);
-  border: 1px solid rgba(var(--stroke), .10);
-}
-.btn-ghost:hover{
-  background: rgba(255,255,255,.06);
-  border-color: rgba(var(--stroke), .16);
-  transform: translateY(-1px);
-}
-
-/* Headline gradient */
-.text-gradient{
-  background: linear-gradient(90deg, rgba(var(--text), 1), rgba(var(--brand2), .95));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-/* Section spacing */
-.section{
-  padding: 96px 0;
-}
-.container{
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* Scrollbar */
-::-webkit-scrollbar{ width: 10px; }
-::-webkit-scrollbar-track{ background: rgb(var(--bg)); }
-::-webkit-scrollbar-thumb{
-  background: rgba(var(--stroke), .14);
-  border-radius: 999px;
-}
-::-webkit-scrollbar-thumb:hover{ background: rgba(var(--stroke), .22); }
