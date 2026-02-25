@@ -24,3 +24,22 @@ a, button, input, textarea {
   inset: 0;
   z-index: 0;
 }
+/* Aggiungi in globals.css */
+.image-halftone-overlay {
+  position: relative;
+}
+
+.image-halftone-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 77, 0, 0.2) 1px, transparent 1px);
+  background-size: 4px 4px; /* Grana molto più fitta */
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.image-halftone-overlay:hover::after {
+  opacity: 1;
+}
