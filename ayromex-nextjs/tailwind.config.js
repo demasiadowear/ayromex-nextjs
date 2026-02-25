@@ -1,66 +1,57 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
- content: [
-  "./app/**/*.{js,ts,jsx,tsx,mdx}",
-  "./components/**/*.{js,ts,jsx,tsx,mdx}",
-  "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-],
+  content: [
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
   theme: {
     extend: {
       colors: {
-        // AYROMEX Brand Colors
         orange: {
-          50: '#FFF4ED',
+          50:  '#FFF4ED',
           100: '#FFE4D1',
-          500: '#FF6B35',  // PRIMARY
+          300: '#FFB088',
+          400: '#FF8C5A',
+          500: '#FF6B35',
           600: '#E85A2B',
           700: '#C94721',
         },
         dark: {
-          950: '#0B0F14',  // Main BG
-          900: '#151A21',  // Elevated
-          800: '#1F2937',  // Cards
-          700: '#374151',  // Borders
-        },
-        light: {
-          50: '#F9FAFB',
-          100: '#F3F4F6',
+          950: '#07090d',
+          900: '#0e1014',
+          800: '#1a1d24',
+          700: '#2a2e38',
         },
       },
       fontFamily: {
-        display: ['Space Grotesk', 'system-ui', 'sans-serif'],
-        body: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['var(--font-display)', 'system-ui', 'sans-serif'],
+        body:    ['var(--font-body)',    'system-ui', 'sans-serif'],
       },
       fontSize: {
-        'hero-xl': ['clamp(3rem, 8vw, 6rem)', { lineHeight: '1.1', fontWeight: '700' }],
-        'hero-lg': ['clamp(2.5rem, 6vw, 4.5rem)', { lineHeight: '1.15', fontWeight: '700' }],
-        'display': ['clamp(2rem, 4vw, 3.5rem)', { lineHeight: '1.2', fontWeight: '600' }],
-        'title': ['clamp(1.5rem, 3vw, 2.5rem)', { lineHeight: '1.3', fontWeight: '600' }],
-        'body-lg': ['1.125rem', { lineHeight: '1.7' }],
+        'hero-xl': [
+          'clamp(3.5rem, 9vw, 7.5rem)',
+          { lineHeight: '0.95', fontWeight: '800', letterSpacing: '-0.03em' },
+        ],
+        'hero-lg': [
+          'clamp(2.5rem, 6vw, 5rem)',
+          { lineHeight: '1.05', fontWeight: '700', letterSpacing: '-0.025em' },
+        ],
+        display: [
+          'clamp(2rem, 4vw, 3.75rem)',
+          { lineHeight: '1.1', fontWeight: '700', letterSpacing: '-0.02em' },
+        ],
+        title: [
+          'clamp(1.5rem, 3vw, 2.5rem)',
+          { lineHeight: '1.2', fontWeight: '600', letterSpacing: '-0.015em' },
+        ],
       },
       maxWidth: {
-        'container': '1400px',
-        'content': '1200px',
-        'narrow': '800px',
-      },
-      backgroundImage: {
-        'gradient-hero': 'linear-gradient(135deg, #0B0F14 0%, #1F2937 50%, #0B0F14 100%)',
-        'gradient-card': 'linear-gradient(180deg, rgba(255,107,53,0.05) 0%, transparent 100%)',
-        'gradient-glow': 'radial-gradient(circle at center, rgba(255,107,53,0.15), transparent 70%)',
+        container: '1440px',
+        content:   '1200px',
+        narrow:    '800px',
       },
       animation: {
-        'glow-pulse': 'glowPulse 2s ease-in-out infinite',
-        'float': 'float 6s ease-in-out infinite',
-      },
-      keyframes: {
-        glowPulse: {
-          '0%, 100%': { boxShadow: '0 0 20px rgba(255,107,53,0.3)' },
-          '50%': { boxShadow: '0 0 40px rgba(255,107,53,0.5)' },
-        },
-        float: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-20px)' },
-        },
+        marquee: 'marquee 32s linear infinite',
       },
     },
   },
