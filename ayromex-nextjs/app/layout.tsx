@@ -1,48 +1,21 @@
 import './globals.css'
-import SmoothScroll from '@/components/SmoothScroll'
-import CustomCursor from '@/components/CustomCursor' // Importiamo il nuovo file
-import { Inter, Space_Grotesk } from 'next/font/google'
-import type { Metadata } from 'next'
+import Link from 'next/link'
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' })
-const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space', display: 'swap' })
-
-export const metadata: Metadata = {
-  title: {
-    default: 'AYROMEX | Creative Digital Studio',
-    template: '%s | AYROMEX'
-  },
-  description: 'Agenzia creativa specializzata in Branding, Siti Web e Social Media Marketing.',
-  keywords: ['Agenzia Creativa', 'Web Design Bari', 'Branding Studio'],
-  openGraph: {
-    type: 'website',
-    locale: 'it_IT',
-    url: 'https://ayromex.com',
-    siteName: 'AYROMEX',
-    title: 'AYROMEX | Make It Real.',
-    description: 'Design, Strategia, Codice.',
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
-  },
-}
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="it" className={`${inter.variable} ${spaceGrotesk.variable}`}>
-      <body className="bg-[#030303] text-white antialiased selection:bg-orange-500 selection:text-black overflow-x-hidden">
-        {/* Texture Sfondo */}
-        <div className="noise-overlay fixed inset-0 z-[9999] pointer-events-none opacity-[0.03]" />
-        
-        {/* Cursore Custom Globale */}
-        <CustomCursor />
-        
-        {/* Smooth Scroll */}
-        <SmoothScroll>
-          {children}
-        </SmoothScroll>
+    <html lang="it">
+      <body className="bg-ay-bg text-ay-black antialiased overflow-x-hidden">
+        <nav className="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-8 md:px-12 backdrop-blur-sm">
+          <Link href="/" className="text-2xl font-bold tracking-tighter hover:text-ay-orange transition-colors">
+            AYROMEX<span className="text-ay-orange">.</span>
+          </Link>
+          <div className="space-x-8 uppercase text-xs tracking-[0.2em] font-bold">
+            <Link href="/servizi" className="hover:text-ay-orange transition-colors">Servizi</Link>
+            <Link href="/about" className="hover:text-ay-orange transition-colors">About</Link>
+            <Link href="/contatti" className="bg-ay-black text-white px-5 py-2 hover:bg-ay-orange transition-all">Start</Link>
+          </div>
+        </nav>
+        {children}
       </body>
     </html>
   )
