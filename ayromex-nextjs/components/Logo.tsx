@@ -14,7 +14,8 @@ export default function Logo({ height = 28, className }: LogoProps) {
       width={width}
       height={height}
       priority
-      className={className}
+      // invert in light mode (white→dark), keep white in dark mode
+      className={`invert dark:invert-0 ${className ?? ''}`}
       style={{ objectFit: 'contain' }}
     />
   )

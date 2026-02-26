@@ -14,6 +14,7 @@ import {
 import { useState } from 'react'
 import { Link } from '@/i18n/navigation'
 import { useTranslations } from 'next-intl'
+import Image from 'next/image'
 
 /* ─── Case study colors (visual, not translatable) ─── */
 const caseColors = [
@@ -186,9 +187,19 @@ export default function Home() {
               custom={1}
               className="font-display font-extrabold tracking-[-0.035em] leading-[0.92] text-[clamp(3.8rem,11vw,9rem)]"
             >
-              <span className="block text-white/90">{t('hero.h1_1')}</span>
-              <span className="block text-white/90">{t('hero.h1_2')}</span>
-              <span className="block text-orange-500 dark:text-orange-400">AYROMEX.</span>
+              <span className="block text-slate-800 dark:text-white/90">{t('hero.h1_1')}</span>
+              <span className="block text-slate-800 dark:text-white/90">{t('hero.h1_2')}</span>
+              <span className="block mt-2">
+                <Image
+                  src="/logo.png"
+                  alt="AYROMEX"
+                  width={1735}
+                  height={755}
+                  priority
+                  className="invert dark:invert-0 h-[clamp(3.2rem,10vw,8rem)] w-auto"
+                  style={{ objectFit: 'contain', objectPosition: 'left' }}
+                />
+              </span>
             </motion.h1>
 
             <motion.p
