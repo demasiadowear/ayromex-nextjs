@@ -1,0 +1,26 @@
+{
+  "nav": {
+    "servizi": "Servizi",
+    "portfolio": "Portfolio",
+    "chiSiamo": "Chi Siamo",
+    "contatti": "Contatti",
+    "cta": "Preventivo gratuito",
+    "phone": "080 840 7861"
+  },
+  "footer": {
+    "cta_title": "Pronto a dare un volto al tuo brand?",
+    "cta_sub": "Raccontaci il tuo progetto. Risposta entro 24 ore.",
+    "cta_btn": "Richiedi preventivo",
+    "col_pages": "Pagine",
+    "col_contacts": "Contatti",
+    "col_social": "Social",
+    "phone_hours": "Lun-Ven, 9:00-18:00",
+    "city": "Bari, Italia",
+    "copyright": "AYROMEX Creative Studio",
+    "piva": "P.IVA: 00000000000",
+    "rea": "REA: BA-000000",
+    "vies": "Iscritta al VIES",
+    "privacy": "Privacy",
+    "cookie": "Cookie"
+  }
+}

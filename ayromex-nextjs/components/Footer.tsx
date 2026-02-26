@@ -1,11 +1,15 @@
-import Link from 'next/link'
+import { getTranslations } from 'next-intl/server'
+import { Link } from '@/i18n/navigation'
 import { FaFacebookF, FaInstagram, FaWhatsapp } from 'react-icons/fa'
 import { HiArrowRight } from 'react-icons/hi2'
 
 const PHONE = '+39 080 840 7861'
 const PHONE_E164 = '390808407861'
 
-export default function Footer() {
+export default async function Footer() {
+  const t = await getTranslations('footer')
+  const tNav = await getTranslations('nav')
+
   const waLink = `https://wa.me/${PHONE_E164}?text=${encodeURIComponent(
     'Ciao AYROMEX, vorrei un preventivo.'
   )}`
@@ -17,17 +21,15 @@ export default function Footer() {
         <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-8 md:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-14">
           <div>
             <h3 className="text-xl font-display font-semibold text-white">
-              Pronto a dare un volto al tuo brand?
+              {t('cta_title')}
             </h3>
-            <p className="mt-2 text-white/60 text-sm">
-              Raccontaci il tuo progetto. Risposta entro 24 ore.
-            </p>
+            <p className="mt-2 text-white/60 text-sm">{t('cta_sub')}</p>
           </div>
           <Link
             href="/contatti"
             className="inline-flex items-center gap-2 rounded-xl bg-orange-500 px-6 py-3 text-sm font-semibold text-black hover:bg-orange-400 transition shrink-0"
           >
-            Richiedi preventivo
+            {t('cta_btn')}
             <HiArrowRight className="w-4 h-4" />
           </Link>
         </div>
@@ -40,32 +42,32 @@ export default function Footer() {
             </div>
             <p className="text-sm text-white/60 leading-relaxed">
               Agenzia creativa specializzata in branding, grafica e social
-              design per attivita locali a Bari e in Puglia.
+              design per attività locali a Bari e in Puglia.
             </p>
           </div>
 
-          {/* Link */}
+          {/* Pagine */}
           <div>
-            <div className="font-semibold text-white mb-3 text-sm">Pagine</div>
+            <div className="font-semibold text-white mb-3 text-sm">{t('col_pages')}</div>
             <ul className="space-y-2 text-sm text-white/60">
               <li>
                 <Link className="hover:text-white transition" href="/servizi">
-                  Servizi
+                  {tNav('servizi')}
                 </Link>
               </li>
               <li>
                 <Link className="hover:text-white transition" href="/portfolio">
-                  Portfolio
+                  {tNav('portfolio')}
                 </Link>
               </li>
               <li>
                 <Link className="hover:text-white transition" href="/chi-siamo">
-                  Chi siamo
+                  {tNav('chiSiamo')}
                 </Link>
               </li>
               <li>
                 <Link className="hover:text-white transition" href="/contatti">
-                  Contatti
+                  {tNav('contatti')}
                 </Link>
               </li>
             </ul>
@@ -73,9 +75,7 @@ export default function Footer() {
 
           {/* Contatti */}
           <div>
-            <div className="font-semibold text-white mb-3 text-sm">
-              Contatti
-            </div>
+            <div className="font-semibold text-white mb-3 text-sm">{t('col_contacts')}</div>
             <ul className="space-y-2 text-sm text-white/60">
               <li>
                 <a className="hover:text-white transition" href={`tel:${PHONE}`}>
@@ -93,20 +93,17 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a
-                  className="hover:text-white transition"
-                  href="mailto:info@ayromex.com"
-                >
+                <a className="hover:text-white transition" href="mailto:info@ayromex.com">
                   info@ayromex.com
                 </a>
               </li>
-              <li className="text-white/40">Bari, Italia</li>
+              <li className="text-white/40">{t('city')}</li>
             </ul>
           </div>
 
           {/* Social */}
           <div>
-            <div className="font-semibold text-white mb-3 text-sm">Social</div>
+            <div className="font-semibold text-white mb-3 text-sm">{t('col_social')}</div>
             <div className="flex items-center gap-3">
               <a
                 href="https://facebook.com"
@@ -139,19 +136,26 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom */}
-        <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between gap-3 text-xs text-white/40">
-          <div>
-            &copy; {new Date().getFullYear()} AYROMEX Creative Studio — P.IVA:
-            00000000000
-          </div>
-          <div className="flex gap-4">
-            <Link className="hover:text-white transition" href="/privacy">
-              Privacy
-            </Link>
-            <Link className="hover:text-white transition" href="/cookie">
-              Cookie
-            </Link>
+        {/* Bottom — copyright + P.IVA + VIES + REA + privacy */}
+        <div className="mt-12 pt-6 border-t border-white/10 flex flex-col gap-2 text-xs text-white/40">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+              <span>&copy; {new Date().getFullYear()} {t('copyright')}</span>
+              <span className="text-white/20">·</span>
+              <span>{t('piva')}</span>
+              <span className="text-white/20">·</span>
+              <span>{t('rea')}</span>
+              <span className="text-white/20">·</span>
+              <span>{t('vies')}</span>
+            </div>
+            <div className="flex gap-4 shrink-0">
+              <Link className="hover:text-white transition" href="/privacy">
+                {t('privacy')}
+              </Link>
+              <Link className="hover:text-white transition" href="/cookie">
+                {t('cookie')}
+              </Link>
+            </div>
           </div>
         </div>
       </div>

@@ -65,7 +65,7 @@ function ContactForm() {
           defaultValue=""
         >
           <option value="" disabled>Di cosa hai bisogno?</option>
-          <option value="branding">Branding &amp; Identita visiva</option>
+          <option value="branding">Branding &amp; Identità visiva</option>
           <option value="social">Social Design &amp; Template</option>
           <option value="stampa">Stampa &amp; Materiali</option>
           <option value="presentazioni">Presentazioni &amp; Pitch</option>
@@ -129,12 +129,10 @@ export default function ContattiPage() {
       <section className="pb-20 md:pb-28">
         <div className="mx-auto max-w-6xl px-5">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
-            {/* Form */}
             <div className="lg:col-span-3 rounded-2xl border border-white/10 bg-white/[0.03] p-8">
               <ContactForm />
             </div>
 
-            {/* Sidebar */}
             <div className="lg:col-span-2 space-y-6">
               <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
                 <h3 className="font-semibold mb-4">Contatti diretti</h3>

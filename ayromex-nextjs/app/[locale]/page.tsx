@@ -12,7 +12,7 @@ import {
   HiOutlineChevronUp,
 } from 'react-icons/hi2'
 import { useState } from 'react'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 
 /* ─── Data ─────────────────────────────────────── */
 
@@ -102,12 +102,12 @@ const processSteps = [
   { step: '01', title: 'Briefing', desc: 'Capiamo il tuo business in 30 minuti: clienti, competitor, obiettivi.' },
   { step: '02', title: 'Concept', desc: 'Direzione visiva chiara con moodboard e bozze da approvare.' },
   { step: '03', title: 'Produzione', desc: 'Realizziamo tutti i materiali: digitali e stampabili.' },
-  { step: '04', title: 'Consegna', desc: 'File ordinati, pronti all\'uso, con linee guida. Tutto tuo, per sempre.' },
+  { step: '04', title: 'Consegna', desc: "File ordinati, pronti all'uso, con linee guida. Tutto tuo, per sempre." },
 ]
 
 const faqs = [
   {
-    q: 'Quanto costa un\'identità visiva completa?',
+    q: "Quanto costa un'identità visiva completa?",
     a: 'Un pacchetto base (logo + palette + guidelines) parte da circa 500 €. Contattaci per un preventivo personalizzato e gratuito.',
   },
   {
@@ -132,8 +132,9 @@ const faqs = [
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
-  show:   (i = 0) => ({
-    opacity: 1, y: 0,
+  show: (i = 0) => ({
+    opacity: 1,
+    y: 0,
     transition: { duration: 0.55, delay: 0.07 * i, ease: [0.22, 1, 0.36, 1] },
   }),
 }
@@ -149,9 +150,11 @@ function FaqItem({ q, a }: { q: string; a: string }) {
         <span className="font-display font-semibold text-lg text-white/90 group-hover:text-white transition pr-6">
           {q}
         </span>
-        {open
-          ? <HiOutlineChevronUp   className="w-5 h-5 text-orange-400 shrink-0" />
-          : <HiOutlineChevronDown className="w-5 h-5 text-white/30 shrink-0"  />}
+        {open ? (
+          <HiOutlineChevronUp className="w-5 h-5 text-orange-400 shrink-0" />
+        ) : (
+          <HiOutlineChevronDown className="w-5 h-5 text-white/30 shrink-0" />
+        )}
       </button>
       {open && (
         <p className="pb-6 text-base text-white/55 leading-relaxed">{a}</p>
@@ -172,15 +175,29 @@ function ContactForm() {
     )
   }
   return (
-    <form onSubmit={e => { e.preventDefault(); setSent(true) }} className="space-y-4">
+    <form onSubmit={(e) => { e.preventDefault(); setSent(true) }} className="space-y-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <input type="text"  name="name"    required placeholder="Il tuo nome"
-          className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 text-sm text-white placeholder:text-white/35 focus:outline-none focus:border-orange-500/60 transition" />
-        <input type="text"  name="contact" required placeholder="Telefono o email"
-          className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 text-sm text-white placeholder:text-white/35 focus:outline-none focus:border-orange-500/60 transition" />
+        <input
+          type="text"
+          name="name"
+          required
+          placeholder="Il tuo nome"
+          className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 text-sm text-white placeholder:text-white/35 focus:outline-none focus:border-orange-500/60 transition"
+        />
+        <input
+          type="text"
+          name="contact"
+          required
+          placeholder="Telefono o email"
+          className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 text-sm text-white placeholder:text-white/35 focus:outline-none focus:border-orange-500/60 transition"
+        />
       </div>
-      <select name="service" required defaultValue=""
-        className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 text-sm text-white/65 focus:outline-none focus:border-orange-500/60 transition appearance-none">
+      <select
+        name="service"
+        required
+        defaultValue=""
+        className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 text-sm text-white/65 focus:outline-none focus:border-orange-500/60 transition appearance-none"
+      >
         <option value="" disabled>Di cosa hai bisogno?</option>
         <option value="branding">Branding &amp; Identità visiva</option>
         <option value="social">Social Design &amp; Template</option>
@@ -188,10 +205,16 @@ function ContactForm() {
         <option value="pitch">Presentazioni &amp; Pitch</option>
         <option value="altro">Altro / Non sono sicuro</option>
       </select>
-      <textarea name="message" rows={3} placeholder="Raccontaci il progetto (opzionale)"
-        className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 text-sm text-white placeholder:text-white/35 focus:outline-none focus:border-orange-500/60 transition resize-none" />
-      <button type="submit"
-        className="inline-flex items-center gap-2 rounded-2xl bg-orange-500 px-8 py-4 text-sm font-semibold text-black hover:bg-orange-400 transition">
+      <textarea
+        name="message"
+        rows={3}
+        placeholder="Raccontaci il progetto (opzionale)"
+        className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 text-sm text-white placeholder:text-white/35 focus:outline-none focus:border-orange-500/60 transition resize-none"
+      />
+      <button
+        type="submit"
+        className="inline-flex items-center gap-2 rounded-2xl bg-orange-500 px-8 py-4 text-sm font-semibold text-black hover:bg-orange-400 transition"
+      >
         Invia richiesta <HiArrowRight className="w-4 h-4" />
       </button>
       <p className="text-xs text-white/30">Preventivo gratuito. Risposta entro 24h. Nessun impegno.</p>
@@ -208,11 +231,10 @@ export default function Home() {
       <WhatsAppButton />
 
       {/* ══════════════════════════════════════════
-          HERO — editorial, conversazionale
+          HERO
       ══════════════════════════════════════════ */}
       <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
 
-        {/* Grid sottile */}
         <div
           className="absolute inset-0 opacity-[0.06] pointer-events-none"
           style={{
@@ -223,36 +245,27 @@ export default function Home() {
           }}
         />
 
-        {/* Aloni luce */}
         <div className="absolute top-0 left-0 w-[640px] h-[640px] rounded-full bg-orange-500/10 blur-[140px] -translate-x-1/3 -translate-y-1/3 pointer-events-none" />
         <div className="absolute bottom-0 right-0 w-[480px] h-[480px] rounded-full bg-orange-500/8 blur-[120px] translate-x-1/4 translate-y-1/4 pointer-events-none" />
 
-        {/* ── HALFTONE corner bottom-right ── */}
-        <div
-          className="absolute bottom-0 right-0 w-[380px] h-[380px] halftone-br pointer-events-none"
-          aria-hidden
-        />
-        {/* ── HALFTONE corner top-left ── */}
-        <div
-          className="absolute top-0 left-0 w-[260px] h-[260px] halftone-tl pointer-events-none opacity-60"
-          aria-hidden
-        />
+        <div className="absolute bottom-0 right-0 w-[380px] h-[380px] halftone-br pointer-events-none" aria-hidden />
+        <div className="absolute top-0 left-0 w-[260px] h-[260px] halftone-tl pointer-events-none opacity-60" aria-hidden />
 
         <div className="relative mx-auto max-w-[1200px] px-6 md:px-10 pt-32 pb-20">
           <motion.div initial="hidden" animate="show">
 
-            {/* Pill badge */}
             <motion.div
-              variants={fadeUp} custom={0}
+              variants={fadeUp}
+              custom={0}
               className="inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-medium text-white/60 mb-8"
             >
               <span className="h-1.5 w-1.5 rounded-full bg-orange-400 shadow-[0_0_8px_rgba(251,146,60,0.7)]" />
               Agenzia creativa · Bari, Italia
             </motion.div>
 
-            {/* H1 — enorme, editoriale */}
             <motion.h1
-              variants={fadeUp} custom={1}
+              variants={fadeUp}
+              custom={1}
               className="font-display font-extrabold tracking-[-0.035em] leading-[0.92] text-[clamp(3.8rem,11vw,9rem)]"
             >
               <span className="block text-white/90">Ciao,</span>
@@ -260,9 +273,9 @@ export default function Home() {
               <span className="block text-orange-400">AYROMEX.</span>
             </motion.h1>
 
-            {/* Subhead */}
             <motion.p
-              variants={fadeUp} custom={2}
+              variants={fadeUp}
+              custom={2}
               className="mt-8 text-lg md:text-xl text-white/55 leading-relaxed max-w-xl"
             >
               Creiamo brand che fanno innamorare.
@@ -272,9 +285,9 @@ export default function Home() {
               Per ristoranti, hotel e attività locali.
             </motion.p>
 
-            {/* CTA row */}
             <motion.div
-              variants={fadeUp} custom={3}
+              variants={fadeUp}
+              custom={3}
               className="mt-10 flex flex-col sm:flex-row gap-4"
             >
               <Link
@@ -292,12 +305,12 @@ export default function Home() {
               </Link>
             </motion.div>
 
-            {/* Trust pills */}
             <motion.div
-              variants={fadeUp} custom={4}
+              variants={fadeUp}
+              custom={4}
               className="mt-10 flex flex-wrap gap-3"
             >
-              {['40+ brand creati', 'Bari & Puglia', 'Risposta in 24h', 'Preventivo gratuito'].map(t => (
+              {['40+ brand creati', 'Bari & Puglia', 'Risposta in 24h', 'Preventivo gratuito'].map((t) => (
                 <span key={t} className="text-xs text-white/40 border border-white/8 rounded-full px-3.5 py-1.5">
                   {t}
                 </span>
@@ -307,11 +320,7 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* Halftone fade bottom — transizione verso il ticker */}
-        <div
-          className="absolute bottom-0 left-0 right-0 h-32 halftone-fade-down pointer-events-none opacity-40"
-          aria-hidden
-        />
+        <div className="absolute bottom-0 left-0 right-0 h-32 halftone-fade-down pointer-events-none opacity-40" aria-hidden />
       </section>
 
       {/* ══════════════════════════════════════════
@@ -325,12 +334,11 @@ export default function Home() {
       </section>
 
       {/* ══════════════════════════════════════════
-          CASE STUDIES — layout asimmetrico
+          CASE STUDIES
       ══════════════════════════════════════════ */}
       <section className="py-24 md:py-32">
         <div className="mx-auto max-w-[1200px] px-6 md:px-10">
 
-          {/* Header sezione */}
           <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-14">
             <div>
               <div className="text-xs font-semibold text-orange-400 uppercase tracking-widest mb-3">
@@ -351,10 +359,8 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* Grid asimmetrica */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 
-            {/* Card grande */}
             {(() => {
               const p = caseStudies[0]
               return (
@@ -365,14 +371,10 @@ export default function Home() {
                   transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                   className="relative rounded-3xl border border-white/10 bg-white/[0.03] overflow-hidden group hover:border-orange-500/30 transition-colors"
                 >
-                  {/* Halftone corner su card */}
                   <div className="absolute top-0 right-0 w-[160px] h-[160px] halftone-br pointer-events-none opacity-70" aria-hidden />
-
                   <div className={`aspect-[16/10] bg-gradient-to-br ${p.color} flex items-end p-8`}>
                     <div className="space-y-1">
-                      <div className="text-xs font-semibold text-orange-400 uppercase tracking-wider">
-                        {p.category}
-                      </div>
+                      <div className="text-xs font-semibold text-orange-400 uppercase tracking-wider">{p.category}</div>
                       <div className="text-white/25 text-xs">{p.year}</div>
                     </div>
                   </div>
@@ -384,7 +386,6 @@ export default function Home() {
               )
             })()}
 
-            {/* Colonna destra: 2 card piccole */}
             <div className="flex flex-col gap-4">
               {caseStudies.slice(1).map((p, i) => (
                 <motion.div
@@ -398,9 +399,7 @@ export default function Home() {
                   <div className="absolute top-0 right-0 w-[100px] h-[100px] halftone-br pointer-events-none opacity-50" aria-hidden />
                   <div className={`aspect-[16/7] bg-gradient-to-br ${p.color}`} />
                   <div className="p-6">
-                    <div className="text-xs font-semibold text-orange-400 uppercase tracking-wider mb-1">
-                      {p.category}
-                    </div>
+                    <div className="text-xs font-semibold text-orange-400 uppercase tracking-wider mb-1">{p.category}</div>
                     <h3 className="font-display font-bold text-lg tracking-tight">{p.title}</h3>
                     <p className="mt-1 text-sm text-white/50 leading-relaxed">{p.desc}</p>
                   </div>
@@ -413,17 +412,14 @@ export default function Home() {
       </section>
 
       {/* ══════════════════════════════════════════
-          SERVIZI — lista numerata editoriale
+          SERVIZI
       ══════════════════════════════════════════ */}
       <section className="py-24 md:py-32 border-t border-white/8 relative overflow-hidden">
-
-        {/* Halftone BG texture nella sezione */}
         <div className="absolute inset-0 halftone-bg pointer-events-none opacity-30" aria-hidden />
 
         <div className="relative mx-auto max-w-[1200px] px-6 md:px-10">
           <div className="flex flex-col md:flex-row gap-16 md:gap-24">
 
-            {/* Sticky label */}
             <div className="md:w-64 shrink-0">
               <div className="md:sticky md:top-32">
                 <div className="text-xs font-semibold text-orange-400 uppercase tracking-widest mb-4">
@@ -448,7 +444,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Lista numerata */}
             <div className="flex-1 divide-y divide-white/8">
               {services.map((s, i) => (
                 <motion.div
@@ -459,11 +454,9 @@ export default function Home() {
                   transition={{ duration: 0.5, delay: 0.08 * i, ease: [0.22, 1, 0.36, 1] }}
                   className="group py-8 flex gap-8 items-start hover:pl-3 transition-all duration-300"
                 >
-                  {/* Numero grande */}
                   <div className="font-display font-extrabold text-4xl text-orange-500/20 w-14 shrink-0 leading-none pt-1">
                     {s.num}
                   </div>
-
                   <div className="flex-1">
                     <div className="flex items-center justify-between gap-4">
                       <h3 className="font-display font-bold text-xl md:text-2xl tracking-tight group-hover:text-orange-400 transition">
@@ -471,12 +464,8 @@ export default function Home() {
                       </h3>
                       <HiArrowRight className="w-5 h-5 text-white/20 group-hover:text-orange-400 group-hover:translate-x-1 transition-all shrink-0" />
                     </div>
-                    <p className="mt-2 text-sm text-white/55 leading-relaxed max-w-lg">
-                      {s.desc}
-                    </p>
-                    <div className="mt-3 text-xs text-white/30 font-medium">
-                      {s.deliverables}
-                    </div>
+                    <p className="mt-2 text-sm text-white/55 leading-relaxed max-w-lg">{s.desc}</p>
+                    <div className="mt-3 text-xs text-white/30 font-medium">{s.deliverables}</div>
                   </div>
                 </motion.div>
               ))}
@@ -487,7 +476,7 @@ export default function Home() {
       </section>
 
       {/* ══════════════════════════════════════════
-          STATS — numeri enormi
+          STATS
       ══════════════════════════════════════════ */}
       <section className="py-20 border-t border-white/8 bg-white/[0.015]">
         <div className="mx-auto max-w-[1200px] px-6 md:px-10">
@@ -536,11 +525,8 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: 0.1 * i }}
                 className="relative rounded-3xl border border-white/10 bg-white/[0.03] p-7 overflow-hidden"
               >
-                {/* Halftone mini corner */}
                 <div className="absolute top-0 right-0 w-[80px] h-[80px] halftone-br pointer-events-none opacity-50" aria-hidden />
-                <div className="font-display font-extrabold text-5xl text-orange-500/15 leading-none mb-4">
-                  {p.step}
-                </div>
+                <div className="font-display font-extrabold text-5xl text-orange-500/15 leading-none mb-4">{p.step}</div>
                 <h3 className="font-display font-bold text-lg">{p.title}</h3>
                 <p className="mt-2 text-sm text-white/50 leading-relaxed">{p.desc}</p>
               </motion.div>
@@ -550,7 +536,7 @@ export default function Home() {
       </section>
 
       {/* ══════════════════════════════════════════
-          TESTIMONIAL — quote singola grande
+          TESTIMONIAL
       ══════════════════════════════════════════ */}
       <section className="py-24 md:py-32 border-t border-white/8 bg-white/[0.015] relative overflow-hidden">
         <div className="absolute right-0 top-0 bottom-0 w-[300px] halftone-br pointer-events-none opacity-25" aria-hidden />
@@ -586,9 +572,7 @@ export default function Home() {
         <div className="mx-auto max-w-[1200px] px-6 md:px-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-start">
             <div className="md:sticky md:top-32">
-              <div className="text-xs font-semibold text-orange-400 uppercase tracking-widest mb-3">
-                FAQ
-              </div>
+              <div className="text-xs font-semibold text-orange-400 uppercase tracking-widest mb-3">FAQ</div>
               <h2 className="font-display font-extrabold tracking-[-0.03em] leading-[0.95] text-[clamp(2rem,4vw,3.5rem)]">
                 Domande<br />
                 <span className="text-white/35">frequenti.</span>
@@ -598,7 +582,8 @@ export default function Home() {
               </p>
               <a
                 href="https://wa.me/390808407861?text=Ciao%20AYROMEX%2C%20ho%20una%20domanda."
-                target="_blank" rel="noopener noreferrer"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-orange-400 hover:text-orange-300 transition"
               >
                 Scrivi su WhatsApp
@@ -606,30 +591,25 @@ export default function Home() {
               </a>
             </div>
             <div>
-              {faqs.map(f => <FaqItem key={f.q} q={f.q} a={f.a} />)}
+              {faqs.map((f) => <FaqItem key={f.q} q={f.q} a={f.a} />)}
             </div>
           </div>
         </div>
       </section>
 
       {/* ══════════════════════════════════════════
-          CTA FINALE — full-width, con form
+          CTA FINALE
       ══════════════════════════════════════════ */}
       <section className="py-24 md:py-32 border-t border-white/8 bg-white/[0.015] relative overflow-hidden">
-        {/* Halftone background texture */}
         <div className="absolute inset-0 halftone-bg pointer-events-none opacity-20" aria-hidden />
-        {/* Corner decorations */}
         <div className="absolute bottom-0 left-0 w-[300px] h-[300px] halftone-tl pointer-events-none opacity-50" aria-hidden />
         <div className="absolute top-0 right-0 w-[300px] h-[300px] halftone-br pointer-events-none opacity-50" aria-hidden />
 
         <div className="relative mx-auto max-w-[1200px] px-6 md:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
-            {/* Left — copy */}
             <div>
-              <div className="text-xs font-semibold text-orange-400 uppercase tracking-widest mb-4">
-                Iniziamo
-              </div>
+              <div className="text-xs font-semibold text-orange-400 uppercase tracking-widest mb-4">Iniziamo</div>
               <h2 className="font-display font-extrabold tracking-[-0.035em] leading-[0.92] text-[clamp(2.8rem,6vw,5rem)]">
                 Parliamo<br />
                 <span className="text-white/35">del tuo</span><br />
@@ -645,7 +625,7 @@ export default function Home() {
                   'Preventivo gratuito e senza impegno',
                   'Risposta entro 24 ore',
                   'Prezzo fisso, nessuna sorpresa',
-                ].map(item => (
+                ].map((item) => (
                   <div key={item} className="flex items-center gap-3 text-sm text-white/55">
                     <HiOutlineCheckCircle className="w-4 h-4 text-orange-400 shrink-0" />
                     {item}
@@ -656,7 +636,8 @@ export default function Home() {
               <div className="mt-8 flex gap-3">
                 <a
                   href="https://wa.me/390808407861?text=Ciao%20AYROMEX%2C%20vorrei%20un%20preventivo."
-                  target="_blank" rel="noopener noreferrer"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold hover:bg-white/10 transition"
                 >
                   WhatsApp
@@ -670,7 +651,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right — form */}
             <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 md:p-10">
               <ContactForm />
             </div>

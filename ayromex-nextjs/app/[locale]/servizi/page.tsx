@@ -1,7 +1,7 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import WhatsAppButton from '@/components/WhatsAppButton'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import {
   HiArrowRight,
   HiOutlineSwatch,
@@ -17,14 +17,26 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Servizi - AYROMEX | Branding, Social Design, Stampa',
   description:
-    'Scopri i servizi AYROMEX: branding e identita visiva, social design, materiali stampa, presentazioni. Per ristoranti, hotel e attivita locali a Bari.',
+    'Scopri i servizi AYROMEX: branding e identità visiva, social design, materiali stampa, presentazioni. Per ristoranti, hotel e attività locali a Bari.',
 }
 
-const services = [
+type Service = {
+  id: string
+  icon: React.ReactNode
+  title: string
+  subtitle: string
+  desc: string
+  deliverables: string[]
+  ideal: string
+  comingSoon?: boolean
+  productUrl?: string
+}
+
+const services: Service[] = [
   {
     id: 'branding',
     icon: <HiOutlineSwatch className="w-7 h-7" />,
-    title: 'Branding & Identita Visiva',
+    title: 'Branding & Identità Visiva',
     subtitle: 'Il fondamento di tutto',
     desc: 'Creiamo un sistema visivo completo che rende il tuo brand riconoscibile e professionale su ogni canale. Non solo un logo: un linguaggio visivo coerente.',
     deliverables: [
@@ -34,7 +46,7 @@ const services = [
       'Brand Guidelines PDF completo',
       'File sorgente editabili (AI/EPS/SVG/PNG)',
     ],
-    ideal: 'Attivita nuove, rebranding, chi vuole fare il salto di qualita.',
+    ideal: 'Attività nuove, rebranding, chi vuole fare il salto di qualità.',
   },
   {
     id: 'social',
@@ -47,7 +59,7 @@ const services = [
       'Template stories e reel cover',
       'Griglia feed coordinata',
       'Template Canva editabili',
-      'Guida all\'uso dei template',
+      "Guida all'uso dei template",
     ],
     ideal: 'Chi pubblica sui social ma vuole un look professionale senza grafico fisso.',
   },
@@ -56,7 +68,7 @@ const services = [
     icon: <HiOutlinePrinter className="w-7 h-7" />,
     title: 'Stampa & Materiali',
     subtitle: 'Dal digitale al fisico',
-    desc: 'Menu, biglietti da visita, insegne, packaging, materiale promozionale. Tutto progettato in coerenza con la tua identita visiva e pronto per la tipografia.',
+    desc: "Menu, biglietti da visita, insegne, packaging, materiale promozionale. Tutto progettato in coerenza con la tua identità visiva e pronto per la tipografia.",
     deliverables: [
       'Layout grafico professionale',
       'File print-ready (PDF/AI con abbondanze)',
@@ -94,22 +106,22 @@ const services = [
       'Immagini social coordinate',
       'File in tutti i formati necessari',
     ],
-    ideal: 'Chi vende online, e-commerce, attivita con forte presenza digitale.',
+    ideal: 'Chi vende online, e-commerce, attività con forte presenza digitale.',
   },
   {
     id: 'automazioni',
     icon: <HiOutlineBolt className="w-7 h-7" />,
-    title: 'Automazioni',
-    subtitle: 'Coming Soon',
-    desc: 'Stiamo sviluppando soluzioni per automatizzare prenotazioni, risposte WhatsApp, gestione contatti e CRM leggero per attivita locali.',
+    title: 'Automazioni AI',
+    subtitle: 'Powered by StudioPilot',
+    desc: 'Automatizziamo prenotazioni, risposte WhatsApp, gestione contatti e CRM leggero per attività locali — con StudioPilot, il nostro prodotto dedicato.',
     deliverables: [
       'Risposte automatiche WhatsApp',
       'Sistema prenotazioni semplice',
       'CRM leggero per gestire contatti',
       'Integrazione con social e sito',
     ],
-    ideal: 'Attivita locali che vogliono automatizzare senza complicarsi.',
-    comingSoon: true,
+    ideal: 'Attività locali che vogliono automatizzare senza complicarsi.',
+    productUrl: 'https://www.studiopilot.pro/',
   },
 ]
 
@@ -141,9 +153,7 @@ export default function ServiziPage() {
             <div
               key={s.id}
               id={s.id}
-              className={`rounded-2xl border border-white/10 bg-white/[0.03] p-8 md:p-10 scroll-mt-24 ${
-                s.comingSoon ? 'opacity-60' : ''
-              }`}
+              className="rounded-2xl border border-white/10 bg-white/[0.03] p-8 md:p-10 scroll-mt-24"
             >
               <div className="flex flex-col md:flex-row gap-8">
                 <div className="md:w-2/3">
@@ -152,22 +162,17 @@ export default function ServiziPage() {
                       {s.icon}
                     </div>
                     <div>
-                      <h2 className="text-xl font-display font-bold">
-                        {s.title}
-                      </h2>
+                      <h2 className="text-xl font-display font-bold">{s.title}</h2>
                       <div className="text-sm text-orange-400">{s.subtitle}</div>
                     </div>
                   </div>
                   <p className="text-white/60 leading-relaxed">{s.desc}</p>
                   <div className="mt-4 text-sm text-white/50">
-                    <strong className="text-white/70">Ideale per:</strong>{' '}
-                    {s.ideal}
+                    <strong className="text-white/70">Ideale per:</strong> {s.ideal}
                   </div>
                 </div>
                 <div className="md:w-1/3">
-                  <h3 className="text-sm font-semibold text-white/80 mb-3">
-                    Cosa ricevi:
-                  </h3>
+                  <h3 className="text-sm font-semibold text-white/80 mb-3">Cosa ricevi:</h3>
                   <ul className="space-y-2">
                     {s.deliverables.map((d) => (
                       <li key={d} className="flex items-start gap-2 text-sm text-white/60">
@@ -178,7 +183,32 @@ export default function ServiziPage() {
                   </ul>
                 </div>
               </div>
-              {!s.comingSoon && (
+
+              {/* CTA — StudioPilot featured card or standard quote button */}
+              {s.productUrl ? (
+                <div className="mt-6 pt-6 border-t border-white/5">
+                  <div className="rounded-xl border border-orange-500/20 bg-orange-500/5 p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <div>
+                      <div className="text-xs text-orange-400 font-semibold uppercase tracking-widest mb-1">
+                        Prodotto AYROMEX
+                      </div>
+                      <div className="font-display font-bold text-lg text-white">StudioPilot</div>
+                      <p className="text-sm text-white/50 mt-0.5">
+                        La piattaforma di automazione per attività locali.
+                      </p>
+                    </div>
+                    <a
+                      href={s.productUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="shrink-0 inline-flex items-center gap-2 rounded-xl bg-orange-500 px-5 py-2.5 text-sm font-semibold text-black hover:bg-orange-400 transition"
+                    >
+                      Scopri StudioPilot
+                      <HiArrowRight className="w-4 h-4" />
+                    </a>
+                  </div>
+                </div>
+              ) : (
                 <div className="mt-6 pt-6 border-t border-white/5">
                   <Link
                     href="/contatti"

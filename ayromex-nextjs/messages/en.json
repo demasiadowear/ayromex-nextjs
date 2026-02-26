@@ -1,0 +1,26 @@
+{
+  "nav": {
+    "servizi": "Services",
+    "portfolio": "Portfolio",
+    "chiSiamo": "About Us",
+    "contatti": "Contact",
+    "cta": "Free quote",
+    "phone": "080 840 7861"
+  },
+  "footer": {
+    "cta_title": "Ready to give your brand a face?",
+    "cta_sub": "Tell us about your project. Reply within 24 hours.",
+    "cta_btn": "Request a quote",
+    "col_pages": "Pages",
+    "col_contacts": "Contacts",
+    "col_social": "Social",
+    "phone_hours": "Mon-Fri, 9:00-18:00",
+    "city": "Bari, Italy",
+    "copyright": "AYROMEX Creative Studio",
+    "piva": "VAT: 00000000000",
+    "rea": "REA: BA-000000",
+    "vies": "VIES registered",
+    "privacy": "Privacy",
+    "cookie": "Cookie"
+  }
+}

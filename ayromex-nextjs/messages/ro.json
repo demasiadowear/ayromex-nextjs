@@ -1,0 +1,26 @@
+{
+  "nav": {
+    "servizi": "Servicii",
+    "portfolio": "Portofoliu",
+    "chiSiamo": "Despre noi",
+    "contatti": "Contact",
+    "cta": "Ofertă gratuită",
+    "phone": "080 840 7861"
+  },
+  "footer": {
+    "cta_title": "Gata să dai un chip brandului tău?",
+    "cta_sub": "Spune-ne despre proiectul tău. Răspuns în 24 de ore.",
+    "cta_btn": "Cere o ofertă",
+    "col_pages": "Pagini",
+    "col_contacts": "Contact",
+    "col_social": "Social",
+    "phone_hours": "Lun-Vin, 9:00-18:00",
+    "city": "Bari, Italia",
+    "copyright": "AYROMEX Creative Studio",
+    "piva": "CIF: 00000000000",
+    "rea": "REA: BA-000000",
+    "vies": "Înregistrat VIES",
+    "privacy": "Confidențialitate",
+    "cookie": "Cookie"
+  }
+}
