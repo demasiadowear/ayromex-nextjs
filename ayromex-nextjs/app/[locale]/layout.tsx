@@ -27,6 +27,14 @@ export const metadata: Metadata = {
   keywords:
     'branding bari, logo design bari, social media design, grafica ristoranti, design hotel, agenzia creativa puglia, identità visiva',
   authors: [{ name: 'AYROMEX' }],
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: '32x32', type: 'image/x-icon' },
+      { url: '/favicon-64.png', sizes: '64x64', type: 'image/png' },
+    ],
+    apple: { url: '/favicon-180.png', sizes: '180x180', type: 'image/png' },
+    shortcut: '/favicon-32.png',
+  },
   openGraph: {
     title: 'AYROMEX — Branding e Design Premium a Bari',
     description:
@@ -34,6 +42,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'it_IT',
     siteName: 'AYROMEX',
+    images: [{ url: '/favicon-512.png', width: 512, height: 512 }],
   },
   robots: { index: true, follow: true },
 }

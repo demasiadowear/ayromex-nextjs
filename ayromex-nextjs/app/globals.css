@@ -140,23 +140,26 @@ a, button, [role="button"] {
   position: fixed;
   top: 0;
   left: 0;
-  width: 10px;
-  height: 10px;
-  background: rgb(var(--brand));
-  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  background-image: url('/cursor.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   pointer-events: none;
   z-index: 9999;
   transform: translate(-50%, -50%);
   transition: width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
+  filter: drop-shadow(0 0 4px rgba(255, 107, 53, 0.4));
 }
 
 .cursor-ring {
   position: fixed;
   top: 0;
   left: 0;
-  width: 36px;
-  height: 36px;
-  border: 1.5px solid rgba(255, 107, 53, 0.6);
+  width: 48px;
+  height: 48px;
+  border: 1.5px solid rgba(255, 107, 53, 0.35);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9998;
@@ -166,15 +169,15 @@ a, button, [role="button"] {
 }
 
 .cursor-dot.is-hovering {
-  width: 6px;
-  height: 6px;
-  background: #fff;
+  width: 22px;
+  height: 22px;
+  filter: drop-shadow(0 0 8px rgba(255, 107, 53, 0.8));
 }
 
 .cursor-ring.is-hovering {
-  width: 52px;
-  height: 52px;
-  border-color: rgba(255, 107, 53, 0.9);
+  width: 60px;
+  height: 60px;
+  border-color: rgba(255, 107, 53, 0.7);
 }
 
 /* ── SCROLLBAR ───────────────────────────────────── */
