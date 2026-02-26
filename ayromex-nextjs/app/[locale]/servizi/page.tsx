@@ -12,6 +12,7 @@ import {
   HiOutlineBolt,
   HiOutlineCheckCircle,
 } from 'react-icons/hi2'
+import { getTranslations } from 'next-intl/server'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -20,112 +21,29 @@ export const metadata: Metadata = {
     'Scopri i servizi AYROMEX: branding e identità visiva, social design, materiali stampa, presentazioni. Per ristoranti, hotel e attività locali a Bari.',
 }
 
-type Service = {
+type ServiceItem = {
   id: string
-  icon: React.ReactNode
   title: string
   subtitle: string
   desc: string
   deliverables: string[]
   ideal: string
-  comingSoon?: boolean
   productUrl?: string
 }
 
-const services: Service[] = [
-  {
-    id: 'branding',
-    icon: <HiOutlineSwatch className="w-7 h-7" />,
-    title: 'Branding & Identità Visiva',
-    subtitle: 'Il fondamento di tutto',
-    desc: 'Creiamo un sistema visivo completo che rende il tuo brand riconoscibile e professionale su ogni canale. Non solo un logo: un linguaggio visivo coerente.',
-    deliverables: [
-      'Logo principale + varianti (monocromo, compatto, icona)',
-      'Palette colori primari e secondari',
-      'Tipografia e regole di utilizzo',
-      'Brand Guidelines PDF completo',
-      'File sorgente editabili (AI/EPS/SVG/PNG)',
-    ],
-    ideal: 'Attività nuove, rebranding, chi vuole fare il salto di qualità.',
-  },
-  {
-    id: 'social',
-    icon: <HiOutlineCamera className="w-7 h-7" />,
-    title: 'Social Design & Template',
-    subtitle: 'Contenuti che funzionano',
-    desc: 'Template riutilizzabili per Instagram, Facebook e LinkedIn. Li personalizzi tu con testo e foto: il risultato resta sempre professionale.',
-    deliverables: [
-      'Template post feed (6-12 varianti)',
-      'Template stories e reel cover',
-      'Griglia feed coordinata',
-      'Template Canva editabili',
-      "Guida all'uso dei template",
-    ],
-    ideal: 'Chi pubblica sui social ma vuole un look professionale senza grafico fisso.',
-  },
-  {
-    id: 'stampa',
-    icon: <HiOutlinePrinter className="w-7 h-7" />,
-    title: 'Stampa & Materiali',
-    subtitle: 'Dal digitale al fisico',
-    desc: "Menu, biglietti da visita, insegne, packaging, materiale promozionale. Tutto progettato in coerenza con la tua identità visiva e pronto per la tipografia.",
-    deliverables: [
-      'Layout grafico professionale',
-      'File print-ready (PDF/AI con abbondanze)',
-      'Mockup di anteprima realistici',
-      'Coordinamento con tipografia (se necessario)',
-      'Versione digitale per web/social',
-    ],
-    ideal: 'Ristoranti, bar, hotel, negozi, studi professionali.',
-  },
-  {
-    id: 'pitch',
-    icon: <HiOutlinePresentationChartBar className="w-7 h-7" />,
-    title: 'Presentazioni & Pitch Deck',
-    subtitle: 'Convincere con stile',
-    desc: 'Presentazioni professionali per banche, investitori, clienti, partner. Design pulito, struttura chiara, contenuti che comunicano.',
-    deliverables: [
-      'Deck PowerPoint o Keynote editabile',
-      'Versione PDF per invio',
-      'Grafici e infografiche personalizzate',
-      'Coerenza con brand identity',
-      'Fino a 20 slide incluse',
-    ],
-    ideal: 'Startup, professionisti, aziende che devono presentarsi.',
-  },
-  {
-    id: 'visual',
-    icon: <HiOutlineSparkles className="w-7 h-7" />,
-    title: 'Visual Content',
-    subtitle: 'Immagine coordinata ovunque',
-    desc: 'Grafiche per sito web, ads, mockup, foto prodotto stilizzate. Ogni asset visivo coerente con il tuo brand.',
-    deliverables: [
-      'Banner e grafiche web',
-      'Asset per campagne ads',
-      'Mockup prodotto/ambiente',
-      'Immagini social coordinate',
-      'File in tutti i formati necessari',
-    ],
-    ideal: 'Chi vende online, e-commerce, attività con forte presenza digitale.',
-  },
-  {
-    id: 'automazioni',
-    icon: <HiOutlineBolt className="w-7 h-7" />,
-    title: 'Automazioni AI',
-    subtitle: 'Powered by StudioPilot',
-    desc: 'Automatizziamo prenotazioni, risposte WhatsApp, gestione contatti e CRM leggero per attività locali — con StudioPilot, il nostro prodotto dedicato.',
-    deliverables: [
-      'Risposte automatiche WhatsApp',
-      'Sistema prenotazioni semplice',
-      'CRM leggero per gestire contatti',
-      'Integrazione con social e sito',
-    ],
-    ideal: 'Attività locali che vogliono automatizzare senza complicarsi.',
-    productUrl: 'https://www.studiopilot.pro/',
-  },
-]
+const iconMap: Record<string, React.ReactNode> = {
+  branding: <HiOutlineSwatch className="w-7 h-7" />,
+  social: <HiOutlineCamera className="w-7 h-7" />,
+  stampa: <HiOutlinePrinter className="w-7 h-7" />,
+  pitch: <HiOutlinePresentationChartBar className="w-7 h-7" />,
+  visual: <HiOutlineSparkles className="w-7 h-7" />,
+  automazioni: <HiOutlineBolt className="w-7 h-7" />,
+}
 
-export default function ServiziPage() {
+export default async function ServiziPage() {
+  const t = await getTranslations('servizi')
+  const items = t.raw('items') as unknown as ServiceItem[]
+
   return (
     <main className="min-h-screen bg-[#07090d] text-white">
       <Header />
@@ -134,14 +52,12 @@ export default function ServiziPage() {
       {/* Hero */}
       <section className="pt-28 md:pt-36 pb-16 md:pb-20">
         <div className="mx-auto max-w-6xl px-5">
-          <div className="text-sm text-orange-400 font-semibold">Servizi</div>
+          <div className="text-sm text-orange-400 font-semibold">{t('hero_label')}</div>
           <h1 className="mt-2 text-4xl md:text-5xl font-display font-bold tracking-tight">
-            Ogni servizio, un sistema completo.
+            {t('hero_h1')}
           </h1>
           <p className="mt-4 text-white/60 max-w-2xl text-lg">
-            Non vendiamo &ldquo;grafichette&rdquo;. Ogni progetto include file
-            pronti, linee guida e supporto. Scegli il servizio che ti serve o
-            contattaci per un pacchetto su misura.
+            {t('hero_sub')}
           </p>
         </div>
       </section>
@@ -149,7 +65,7 @@ export default function ServiziPage() {
       {/* Services detail */}
       <section className="pb-20 md:pb-28">
         <div className="mx-auto max-w-6xl px-5 space-y-8">
-          {services.map((s) => (
+          {items.map((s) => (
             <div
               key={s.id}
               id={s.id}
@@ -159,7 +75,7 @@ export default function ServiziPage() {
                 <div className="md:w-2/3">
                   <div className="flex items-center gap-4 mb-4">
                     <div className="h-12 w-12 rounded-xl bg-orange-500/15 text-orange-300 flex items-center justify-center">
-                      {s.icon}
+                      {iconMap[s.id]}
                     </div>
                     <div>
                       <h2 className="text-xl font-display font-bold">{s.title}</h2>
@@ -168,11 +84,11 @@ export default function ServiziPage() {
                   </div>
                   <p className="text-white/60 leading-relaxed">{s.desc}</p>
                   <div className="mt-4 text-sm text-white/50">
-                    <strong className="text-white/70">Ideale per:</strong> {s.ideal}
+                    <strong className="text-white/70">{t('ideal_label')}</strong> {s.ideal}
                   </div>
                 </div>
                 <div className="md:w-1/3">
-                  <h3 className="text-sm font-semibold text-white/80 mb-3">Cosa ricevi:</h3>
+                  <h3 className="text-sm font-semibold text-white/80 mb-3">{t('deliverables_title')}</h3>
                   <ul className="space-y-2">
                     {s.deliverables.map((d) => (
                       <li key={d} className="flex items-start gap-2 text-sm text-white/60">
@@ -184,17 +100,17 @@ export default function ServiziPage() {
                 </div>
               </div>
 
-              {/* CTA — StudioPilot featured card or standard quote button */}
+              {/* CTA */}
               {s.productUrl ? (
                 <div className="mt-6 pt-6 border-t border-white/5">
                   <div className="rounded-xl border border-orange-500/20 bg-orange-500/5 p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                     <div>
                       <div className="text-xs text-orange-400 font-semibold uppercase tracking-widest mb-1">
-                        Prodotto AYROMEX
+                        {t('product_badge')}
                       </div>
                       <div className="font-display font-bold text-lg text-white">StudioPilot</div>
                       <p className="text-sm text-white/50 mt-0.5">
-                        La piattaforma di automazione per attività locali.
+                        {t('product_tagline')}
                       </p>
                     </div>
                     <a
@@ -203,7 +119,7 @@ export default function ServiziPage() {
                       rel="noopener noreferrer"
                       className="shrink-0 inline-flex items-center gap-2 rounded-xl bg-orange-500 px-5 py-2.5 text-sm font-semibold text-black hover:bg-orange-400 transition"
                     >
-                      Scopri StudioPilot
+                      {t('product_cta')}
                       <HiArrowRight className="w-4 h-4" />
                     </a>
                   </div>
@@ -214,7 +130,7 @@ export default function ServiziPage() {
                     href="/contatti"
                     className="inline-flex items-center gap-2 rounded-xl bg-orange-500 px-5 py-2.5 text-sm font-semibold text-black hover:bg-orange-400 transition"
                   >
-                    Richiedi preventivo per {s.title.split(' &')[0]}
+                    {t('quote_cta')}
                     <HiArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
@@ -228,17 +144,16 @@ export default function ServiziPage() {
       <section className="py-16 border-t border-white/10 bg-white/[0.02]">
         <div className="mx-auto max-w-6xl px-5 text-center">
           <h2 className="text-2xl md:text-3xl font-display font-bold">
-            Non sai quale servizio ti serve?
+            {t('cta_h2')}
           </h2>
           <p className="mt-3 text-white/60 max-w-lg mx-auto">
-            Raccontaci il tuo progetto. Ti aiutiamo a capire cosa ti serve e ti
-            facciamo un preventivo su misura.
+            {t('cta_sub')}
           </p>
           <Link
             href="/contatti"
             className="mt-6 inline-flex items-center gap-2 rounded-xl bg-orange-500 px-7 py-3.5 text-sm font-semibold text-black hover:bg-orange-400 transition"
           >
-            Contattaci
+            {t('cta_btn')}
             <HiArrowRight className="w-4 h-4" />
           </Link>
         </div>

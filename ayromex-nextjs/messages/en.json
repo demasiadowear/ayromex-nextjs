@@ -2,25 +2,406 @@
   "nav": {
     "servizi": "Services",
     "portfolio": "Portfolio",
-    "chiSiamo": "About Us",
+    "chiSiamo": "About",
     "contatti": "Contact",
     "cta": "Free quote",
     "phone": "080 840 7861"
   },
   "footer": {
-    "cta_title": "Ready to give your brand a face?",
-    "cta_sub": "Tell us about your project. Reply within 24 hours.",
+    "cta_title": "Your brand deserves better.",
+    "cta_sub": "Tell us about your project. Free quote, reply within 24 hours.",
     "cta_btn": "Request a quote",
     "col_pages": "Pages",
-    "col_contacts": "Contacts",
+    "col_contacts": "Contact",
     "col_social": "Social",
-    "phone_hours": "Mon-Fri, 9:00-18:00",
-    "city": "Bari, Italy",
-    "copyright": "AYROMEX Creative Studio",
-    "piva": "VAT: 00000000000",
-    "rea": "REA: BA-000000",
-    "vies": "VIES registered",
+    "brand_desc": "Creative agency specialised in branding and visual identity for local businesses across Italy and Europe.",
+    "copyright": "AYROMEX S.R.L.",
+    "legal_vat": "VAT (EU): RO52014564",
+    "legal_reg": "Trade Reg.: J2025044424001",
     "privacy": "Privacy",
     "cookie": "Cookie"
+  },
+  "home": {
+    "hero": {
+      "badge": "Creative agency · Bari, Italy",
+      "h1_1": "Hi,",
+      "h1_2": "we are",
+      "sub_1": "We build brands that people remember — and choose.",
+      "sub_2": "Logo, social, print — all consistent, all delivered.",
+      "sub_3": "For restaurants, hotels and local businesses.",
+      "cta1": "See our work",
+      "cta2": "Let's talk about your project",
+      "trust": ["40+ brands created", "Bari & Puglia", "Reply within 24h", "Free quote"]
+    },
+    "ticker": ["Branding", "Visual Identity", "Social Design", "Print & Materials", "Pitch Deck", "Visual Content", "Logo Design", "Brand Strategy"],
+    "cases": {
+      "label": "Selected work",
+      "h2": "Brands we have",
+      "h2_muted": "transformed.",
+      "link": "View full portfolio",
+      "items": [
+        {
+          "title": "Brand Identity — Restaurant",
+          "category": "Full branding",
+          "year": "2024",
+          "desc": "Logo, menu, signage and social pack for a seafood restaurant in Bari. From brief to delivery in 3 weeks."
+        },
+        {
+          "title": "Social Pack — Hotel Adriatico",
+          "category": "Social Design",
+          "year": "2024",
+          "desc": "12 reusable Canva templates for feed and stories."
+        },
+        {
+          "title": "Rebrand — Law Firm",
+          "category": "Rebranding",
+          "year": "2023",
+          "desc": "Modern identity for a law firm: logo, business cards, client presentation."
+        }
+      ]
+    },
+    "services": {
+      "label": "What we do",
+      "h2": "Services",
+      "h2_muted": "tailored for you.",
+      "sub": "A few services, done right. Every project includes ready-to-use files and brand guidelines.",
+      "link": "Explore all services",
+      "items": [
+        {
+          "num": "01",
+          "title": "Branding & Identity",
+          "desc": "Logo, colours, typography and brand book. Everything you need to be recognised at first glance.",
+          "deliverables": "Logo + variants · Palette · Font · Brand guidelines PDF"
+        },
+        {
+          "num": "02",
+          "title": "Social Design",
+          "desc": "Instagram and Facebook templates you fill yourself — always professional, always consistent.",
+          "deliverables": "Posts · Stories · Reel covers · Feed grid"
+        },
+        {
+          "num": "03",
+          "title": "Print & Materials",
+          "desc": "Menus, business cards, signage, packaging. Print-ready files, no surprises at the printer.",
+          "deliverables": "PDF/AI print-ready · Mockups · Editable files"
+        },
+        {
+          "num": "04",
+          "title": "Pitch & Presentations",
+          "desc": "Presentations for banks, investors and partners. Clear, credible, memorable.",
+          "deliverables": "PowerPoint/Keynote · PDF · Infographics"
+        },
+        {
+          "num": "05",
+          "title": "Visual Content",
+          "desc": "Mockups, web graphics and ads, product images. Consistent image across every channel.",
+          "deliverables": "Mockups · Banners · Web graphics · Ad assets"
+        }
+      ]
+    },
+    "stats": {
+      "items": [
+        { "value": "40+", "label": "Brands created" },
+        { "value": "100%", "label": "Satisfaction rate" },
+        { "value": "2 wks", "label": "Average delivery time" }
+      ]
+    },
+    "process": {
+      "label": "How we work",
+      "h2": "Four steps.",
+      "h2_muted": "Zero chaos.",
+      "items": [
+        { "step": "01", "title": "Briefing", "desc": "We understand your business in 30 minutes: customers, competitors, goals." },
+        { "step": "02", "title": "Concept", "desc": "Clear visual direction with moodboard and drafts to approve." },
+        { "step": "03", "title": "Production", "desc": "We create all materials: digital and print-ready." },
+        { "step": "04", "title": "Delivery", "desc": "Organised files, ready to use, with guidelines. Yours forever." }
+      ]
+    },
+    "testimonial": {
+      "label": "What our clients say",
+      "quote": "AYROMEX transformed the image of our restaurant. Our customers finally recognise us on social media and the menu has become a design object.",
+      "author": "Marco R.",
+      "role": "Restaurant, Bari"
+    },
+    "faq": {
+      "label": "FAQ",
+      "h2": "Frequently asked",
+      "h2_muted": "questions.",
+      "sub": "Didn't find your answer?\nWrite to us on WhatsApp.",
+      "wa_cta": "Chat on WhatsApp",
+      "items": [
+        {
+          "q": "How much does a complete visual identity cost?",
+          "a": "A base package (logo + palette + guidelines) starts at around €500. Contact us for a free personalised quote."
+        },
+        {
+          "q": "How long does it take?",
+          "a": "Full branding: 2–3 weeks. Social templates and print materials: 1–2 weeks. We always provide a precise timeline."
+        },
+        {
+          "q": "What if I don't like the design?",
+          "a": "Every project includes revisions. We work on the concept together before production, so there are no surprises."
+        },
+        {
+          "q": "Do you work only in Bari?",
+          "a": "We are based in Bari but work with clients across Italy. Briefings and revisions via video call or WhatsApp."
+        },
+        {
+          "q": "What is included in the quote?",
+          "a": "List of deliverables, timeline, fixed price (no surprises), number of revisions included. Everything clear before we start."
+        }
+      ]
+    },
+    "cta": {
+      "label": "Let's start",
+      "h2_1": "Let's talk",
+      "h2_2": "about your",
+      "h2_3": "brand.",
+      "sub": "Fill in the form or contact us directly. Free quote, reply within 24 hours, no commitment.",
+      "bullets": [
+        "Free quote, no commitment",
+        "Reply within 24 hours",
+        "Fixed price, no surprises"
+      ],
+      "wa": "WhatsApp",
+      "tel": "+39 080 840 7861",
+      "form_name": "Your name",
+      "form_contact": "Phone or email",
+      "form_service": "What do you need?",
+      "form_opt_branding": "Branding & Visual identity",
+      "form_opt_social": "Social Design & Templates",
+      "form_opt_stampa": "Print & Materials",
+      "form_opt_pitch": "Presentations & Pitch",
+      "form_opt_altro": "Other / Not sure yet",
+      "form_message": "Tell us about your project (optional)",
+      "form_submit": "Send request",
+      "form_note": "Free quote. Reply within 24h. No commitment.",
+      "sent_title": "Request sent.",
+      "sent_sub": "We will reply within 24 hours."
+    }
+  },
+  "servizi": {
+    "hero_label": "Services",
+    "hero_h1": "Every service, a complete system.",
+    "hero_sub": "We don't sell cheap graphics. Every project includes ready-to-use files, guidelines and support. Pick what you need or contact us for a custom package.",
+    "deliverables_title": "What you get:",
+    "ideal_label": "Ideal for:",
+    "product_badge": "AYROMEX Product",
+    "product_tagline": "The automation platform for local businesses.",
+    "product_cta": "Discover StudioPilot",
+    "quote_cta": "Request a quote",
+    "cta_h2": "Not sure which service you need?",
+    "cta_sub": "Tell us about your project. We'll help you figure out what you need and give you a custom quote.",
+    "cta_btn": "Contact us",
+    "items": [
+      {
+        "id": "branding",
+        "title": "Branding & Visual Identity",
+        "subtitle": "The foundation of everything",
+        "desc": "We create a complete visual system that makes your brand recognisable and professional across every channel. Not just a logo: a coherent visual language.",
+        "deliverables": [
+          "Main logo + variants (monochrome, compact, icon)",
+          "Primary and secondary colour palette",
+          "Typography and usage rules",
+          "Complete Brand Guidelines PDF",
+          "Editable source files (AI/EPS/SVG/PNG)"
+        ],
+        "ideal": "New businesses, rebranding, anyone ready to level up."
+      },
+      {
+        "id": "social",
+        "title": "Social Design & Templates",
+        "subtitle": "Content that works",
+        "desc": "Reusable templates for Instagram, Facebook and LinkedIn. You customise with your text and photos — the result always looks professional.",
+        "deliverables": [
+          "Feed post templates (6-12 variants)",
+          "Stories and reel cover templates",
+          "Coordinated feed grid",
+          "Editable Canva templates",
+          "Template usage guide"
+        ],
+        "ideal": "Anyone posting on social who wants a professional look without a full-time designer."
+      },
+      {
+        "id": "stampa",
+        "title": "Print & Materials",
+        "subtitle": "From digital to physical",
+        "desc": "Menus, business cards, signage, packaging, promotional materials. All designed in line with your visual identity and print-ready.",
+        "deliverables": [
+          "Professional graphic layout",
+          "Print-ready files (PDF/AI with bleed)",
+          "Realistic preview mockups",
+          "Print coordination if needed",
+          "Digital version for web/social"
+        ],
+        "ideal": "Restaurants, bars, hotels, shops, professional studios."
+      },
+      {
+        "id": "pitch",
+        "title": "Presentations & Pitch Deck",
+        "subtitle": "Persuade with style",
+        "desc": "Professional presentations for banks, investors, clients, partners. Clean design, clear structure, content that communicates.",
+        "deliverables": [
+          "Editable PowerPoint or Keynote deck",
+          "PDF version for sharing",
+          "Custom charts and infographics",
+          "Consistent with brand identity",
+          "Up to 20 slides included"
+        ],
+        "ideal": "Startups, professionals, companies that need to present themselves."
+      },
+      {
+        "id": "visual",
+        "title": "Visual Content",
+        "subtitle": "Coordinated image everywhere",
+        "desc": "Web graphics, ads, mockups, styled product photos. Every visual asset consistent with your brand.",
+        "deliverables": [
+          "Web banners and graphics",
+          "Ad campaign assets",
+          "Product/environment mockups",
+          "Coordinated social images",
+          "Files in all required formats"
+        ],
+        "ideal": "Online sellers, e-commerce, businesses with a strong digital presence."
+      },
+      {
+        "id": "automazioni",
+        "title": "AI Automations",
+        "subtitle": "Powered by StudioPilot",
+        "desc": "We automate bookings, WhatsApp replies, contact management and lightweight CRM for local businesses — with StudioPilot, our dedicated product.",
+        "deliverables": [
+          "Automated WhatsApp replies",
+          "Simple booking system",
+          "Lightweight CRM for contacts",
+          "Integration with social and website"
+        ],
+        "ideal": "Local businesses that want to automate without the complexity.",
+        "productUrl": "https://www.studiopilot.pro/"
+      }
+    ]
+  },
+  "portfolio": {
+    "hero_label": "Portfolio",
+    "hero_h1": "Selected work.",
+    "hero_sub": "Every project tells a transformation story: from initial brief to final delivery. Here are some of the brands we have built.",
+    "results_label": "Results",
+    "placeholder": "Project image",
+    "cta_h2": "Your project could be next.",
+    "cta_sub": "Tell us what you have in mind. We'll give you a free quote within 24 hours.",
+    "cta_btn": "Request a quote",
+    "projects": [
+      {
+        "title": "Ristorante La Brace",
+        "category": "Brand Identity",
+        "tags": "Logo, menu, signage, social pack",
+        "desc": "Complete visual identity for a seafood restaurant in Bari. From logo to menu, from signage to social templates.",
+        "results": ["Recognisable brand across all channels", "Professional menu printed in 500 copies", "Reusable social templates every week"]
+      },
+      {
+        "title": "Hotel Adriatico",
+        "category": "Social Pack",
+        "tags": "Instagram templates, Stories, Ads",
+        "desc": "Complete social template pack for a hotel on the Adriatic coast. Coordinated feed, stories and ad graphics.",
+        "results": ["Consistent, professional Instagram feed", "12 reusable Canva templates", "Summer season ad graphics"]
+      },
+      {
+        "title": "Studio Legale Rossi",
+        "category": "Rebranding",
+        "tags": "Logo, business cards, presentation, letterhead",
+        "desc": "Complete rebranding for a law firm. Modern, authoritative image, consistent from business card to client presentation.",
+        "results": ["Professional and modern image", "Presentation deck for new clients", "Coordinated print + digital materials"]
+      },
+      {
+        "title": "Boutique Moda Donna",
+        "category": "Brand Identity + Social",
+        "tags": "Logo, packaging, social templates, ads",
+        "desc": "Visual identity and social design for a women's fashion boutique. Elegant, contemporary look reflecting the brand positioning.",
+        "results": ["Premium brand perceived by customers", "Packaging coordinated with logo", "Increased social engagement"]
+      },
+      {
+        "title": "Pizzeria Da Michele",
+        "category": "Print & Materials",
+        "tags": "Menu, placemats, signage, business cards",
+        "desc": "Complete print materials for a historic pizzeria. Design that respects tradition with a modern, clean touch.",
+        "results": ["Readable and attractive menu", "Branded placemats", "Coordinated exterior signage"]
+      },
+      {
+        "title": "Tech Startup InnovaHub",
+        "category": "Pitch Deck",
+        "tags": "Investor presentation, brand guidelines",
+        "desc": "Professional pitch deck for a tech startup in fundraising. 18 clear slides, data visualised effectively, credible design.",
+        "results": ["Presentation for seed round", "Clear data infographics", "Brand guidelines included"]
+      }
+    ]
+  },
+  "chiSiamo": {
+    "hero_label": "About us",
+    "hero_h1": "A creative team with a serious studio mindset.",
+    "hero_sub": "AYROMEX was born in Bari with a simple goal: give local businesses the same visual quality as large companies. No complications, no absurd costs, no endless timelines.",
+    "mission_h2": "Our mission",
+    "mission_p1": "Too many local businesses — restaurants, hotels, shops, professional studios — have an excellent product but an image that doesn't reflect it. We solve that problem.",
+    "mission_p2": "We create complete visual systems: from logo to social, from print to presentations. Every element is consistent, ready to use, and built to last.",
+    "perche_h2": "Why choose us",
+    "perche_items": [
+      "We specialise in local businesses: we understand your market.",
+      "We deliver ready-to-use files, not rough drafts to interpret.",
+      "Clear, fixed prices: you know what you're spending before we start.",
+      "We reply within 24h. Always."
+    ],
+    "stats": [
+      { "value": "40+", "label": "Brands created" },
+      { "value": "98%", "label": "Satisfied clients" },
+      { "value": "24h", "label": "Average reply time" },
+      { "value": "2-3", "label": "Weeks per project" }
+    ],
+    "values_label": "Our values",
+    "values_h2": "How we work, every day",
+    "values": [
+      { "title": "Clarity", "desc": "No runaround. We tell you what we do, what it costs and how long it takes. Always." },
+      { "title": "Consistency", "desc": "Every visual element we create speaks the same language. Your brand feels solid and recognisable." },
+      { "title": "Quality", "desc": "Few projects, done well. We'd rather say no than deliver something mediocre." },
+      { "title": "Practicality", "desc": "The files we deliver are ready to use. No strange formats, no surprises at the printer." }
+    ],
+    "cta_h2": "Want to work with us?",
+    "cta_sub": "Tell us about your project. The first call is free, no commitment.",
+    "cta_btn": "Contact us"
+  },
+  "contatti": {
+    "hero_label": "Contact",
+    "hero_h1": "Let's talk about your project.",
+    "hero_sub": "Fill in the form, write to us on WhatsApp or call us. We'll reply within 24 hours with a free quote.",
+    "form_name": "Your name",
+    "form_email": "Email",
+    "form_phone": "Phone (optional)",
+    "form_service": "What do you need?",
+    "form_opt_branding": "Branding & Visual identity",
+    "form_opt_social": "Social Design & Templates",
+    "form_opt_stampa": "Print & Materials",
+    "form_opt_pitch": "Presentations & Pitch",
+    "form_opt_altro": "Other / Not sure yet",
+    "form_budget": "Indicative budget (optional)",
+    "form_budget_500": "€500 - €1,000",
+    "form_budget_1000": "€1,000 - €2,500",
+    "form_budget_2500": "€2,500 - €5,000",
+    "form_budget_5000": "€5,000+",
+    "form_budget_no": "Not sure yet",
+    "form_message": "Tell us about your project: what you do, what you need, any deadlines...",
+    "form_submit": "Send request",
+    "form_note": "Free quote, no commitment. Reply within 24h.",
+    "sent_title": "Request sent",
+    "sent_sub": "We'll reply within 24 hours. Check WhatsApp too.",
+    "direct_h3": "Direct contact",
+    "phone_hours": "Mon-Fri, 9:00-18:00",
+    "wa_label": "WhatsApp",
+    "wa_sub": "Fast reply",
+    "city": "Bari, Italy",
+    "city_sub": "We also work remotely across Italy",
+    "next_h3": "What happens next?",
+    "next_steps": [
+      "We receive and review your request.",
+      "We reply within 24h with questions or a quote.",
+      "We schedule a free 30-min briefing call.",
+      "If we're a good fit, we get started."
+    ]
   }
 }

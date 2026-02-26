@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
+import Logo from '@/components/Logo'
 import { FaFacebookF, FaInstagram, FaWhatsapp } from 'react-icons/fa'
 import { HiArrowRight } from 'react-icons/hi2'
 
@@ -39,12 +40,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Brand */}
           <div>
-            <div className="font-display font-bold text-xl text-white mb-3">
-              <span className="text-orange-500">AYRO</span>MEX
-            </div>
+            <Logo className="text-xl mb-3" />
             <p className="text-sm text-white/60 leading-relaxed">
-              Agenzia creativa specializzata in branding, grafica e social
-              design per attività locali a Bari e in Puglia.
+              {t('brand_desc')}
             </p>
           </div>
 
@@ -99,7 +97,6 @@ export default function Footer() {
                   info@ayromex.com
                 </a>
               </li>
-              <li className="text-white/40">{t('city')}</li>
             </ul>
           </div>
 
@@ -138,17 +135,15 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom — copyright + P.IVA + VIES + REA + privacy */}
+        {/* Bottom — copyright + legal */}
         <div className="mt-12 pt-6 border-t border-white/10 flex flex-col gap-2 text-xs text-white/40">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
               <span>&copy; {new Date().getFullYear()} {t('copyright')}</span>
               <span className="text-white/20">·</span>
-              <span>{t('piva')}</span>
+              <span>{t('legal_vat')}</span>
               <span className="text-white/20">·</span>
-              <span>{t('rea')}</span>
-              <span className="text-white/20">·</span>
-              <span>{t('vies')}</span>
+              <span>{t('legal_reg')}</span>
             </div>
             <div className="flex gap-4 shrink-0">
               <Link className="hover:text-white transition" href="/privacy">

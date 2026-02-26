@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { HiBars3, HiXMark, HiArrowRight } from 'react-icons/hi2'
 import { useTranslations, useLocale } from 'next-intl'
 import { Link, usePathname } from '@/i18n/navigation'
+import Logo from '@/components/Logo'
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
@@ -39,9 +40,8 @@ export default function Header() {
         <div className="mx-auto max-w-[1200px] px-6 md:px-10 flex items-center justify-between h-[76px]">
 
           {/* Logo */}
-          <Link href="/" className="font-display font-extrabold text-xl tracking-[-0.02em]">
-            <span className="text-orange-400">AYRO</span>
-            <span className="text-white">MEX</span>
+          <Link href="/" aria-label="AYROMEX">
+            <Logo className="text-xl" />
           </Link>
 
           {/* Desktop Nav */}
@@ -110,10 +110,7 @@ export default function Header() {
         <div className="fixed inset-0 z-40 bg-[#07090d] flex flex-col lg:hidden">
           {/* Close bar */}
           <div className="flex justify-between items-center px-6 h-[76px] border-b border-white/8">
-            <span className="font-display font-extrabold text-xl">
-              <span className="text-orange-400">AYRO</span>
-              <span className="text-white">MEX</span>
-            </span>
+            <Logo className="text-xl" />
             <button onClick={() => setMobileOpen(false)} className="text-white p-2 -mr-2">
               <HiXMark className="w-6 h-6" />
             </button>

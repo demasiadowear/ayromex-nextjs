@@ -12,8 +12,10 @@ import {
 } from 'react-icons/hi2'
 import { FaWhatsapp } from 'react-icons/fa'
 import { useState } from 'react'
+import { useTranslations } from 'next-intl'
 
 function ContactForm() {
+  const t = useTranslations('contatti')
   const [sent, setSent] = useState(false)
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -25,10 +27,8 @@ function ContactForm() {
     return (
       <div className="rounded-2xl border border-green-500/20 bg-green-500/5 p-8 text-center">
         <HiOutlineCheckCircle className="w-12 h-12 text-green-400 mx-auto mb-3" />
-        <h4 className="text-lg font-semibold text-white">Richiesta inviata</h4>
-        <p className="mt-2 text-sm text-white/60">
-          Ti rispondiamo entro 24 ore. Controlla anche WhatsApp.
-        </p>
+        <h4 className="text-lg font-semibold text-white">{t('sent_title')}</h4>
+        <p className="mt-2 text-sm text-white/60">{t('sent_sub')}</p>
       </div>
     )
   }
@@ -40,14 +40,14 @@ function ContactForm() {
           type="text"
           name="name"
           required
-          placeholder="Il tuo nome"
+          placeholder={t('form_name')}
           className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-orange-500/50 transition"
         />
         <input
           type="email"
           name="email"
           required
-          placeholder="Email"
+          placeholder={t('form_email')}
           className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-orange-500/50 transition"
         />
       </div>
@@ -55,7 +55,7 @@ function ContactForm() {
         <input
           type="tel"
           name="phone"
-          placeholder="Telefono (opzionale)"
+          placeholder={t('form_phone')}
           className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-orange-500/50 transition"
         />
         <select
@@ -64,12 +64,12 @@ function ContactForm() {
           className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/70 focus:outline-none focus:border-orange-500/50 transition appearance-none"
           defaultValue=""
         >
-          <option value="" disabled>Di cosa hai bisogno?</option>
-          <option value="branding">Branding &amp; Identità visiva</option>
-          <option value="social">Social Design &amp; Template</option>
-          <option value="stampa">Stampa &amp; Materiali</option>
-          <option value="presentazioni">Presentazioni &amp; Pitch</option>
-          <option value="altro">Altro / Non sono sicuro</option>
+          <option value="" disabled>{t('form_service')}</option>
+          <option value="branding">{t('form_opt_branding')}</option>
+          <option value="social">{t('form_opt_social')}</option>
+          <option value="stampa">{t('form_opt_stampa')}</option>
+          <option value="pitch">{t('form_opt_pitch')}</option>
+          <option value="altro">{t('form_opt_altro')}</option>
         </select>
       </div>
       <select
@@ -77,35 +77,38 @@ function ContactForm() {
         className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/70 focus:outline-none focus:border-orange-500/50 transition appearance-none"
         defaultValue=""
       >
-        <option value="" disabled>Budget indicativo (opzionale)</option>
-        <option value="500-1000">500 - 1.000 EUR</option>
-        <option value="1000-2500">1.000 - 2.500 EUR</option>
-        <option value="2500-5000">2.500 - 5.000 EUR</option>
-        <option value="5000+">5.000+ EUR</option>
-        <option value="non-so">Non lo so ancora</option>
+        <option value="" disabled>{t('form_budget')}</option>
+        <option value="500-1000">{t('form_budget_500')}</option>
+        <option value="1000-2500">{t('form_budget_1000')}</option>
+        <option value="2500-5000">{t('form_budget_2500')}</option>
+        <option value="5000+">{t('form_budget_5000')}</option>
+        <option value="non-so">{t('form_budget_no')}</option>
       </select>
       <textarea
         name="message"
         rows={5}
         required
-        placeholder="Raccontaci il tuo progetto: cosa fai, cosa ti serve, eventuali tempistiche..."
+        placeholder={t('form_message')}
         className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-orange-500/50 transition resize-none"
       />
       <button
         type="submit"
         className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-orange-500 px-8 py-3.5 text-sm font-semibold text-black hover:bg-orange-400 transition"
       >
-        Invia richiesta
+        {t('form_submit')}
         <HiArrowRight className="w-4 h-4" />
       </button>
       <p className="text-xs text-white/40 text-center">
-        Preventivo gratuito e senza impegno. Risposta entro 24h.
+        {t('form_note')}
       </p>
     </form>
   )
 }
 
 export default function ContattiPage() {
+  const t = useTranslations('contatti')
+  const nextSteps = t.raw('next_steps') as string[]
+
   return (
     <main className="min-h-screen bg-[#07090d] text-white">
       <Header />
@@ -114,13 +117,12 @@ export default function ContattiPage() {
       {/* Hero */}
       <section className="pt-28 md:pt-36 pb-16 md:pb-20">
         <div className="mx-auto max-w-6xl px-5">
-          <div className="text-sm text-orange-400 font-semibold">Contatti</div>
+          <div className="text-sm text-orange-400 font-semibold">{t('hero_label')}</div>
           <h1 className="mt-2 text-4xl md:text-5xl font-display font-bold tracking-tight">
-            Parliamo del tuo progetto.
+            {t('hero_h1')}
           </h1>
           <p className="mt-4 text-white/60 max-w-xl text-lg">
-            Compila il form, scrivici su WhatsApp o chiamaci. Ti rispondiamo
-            entro 24 ore con un preventivo gratuito.
+            {t('hero_sub')}
           </p>
         </div>
       </section>
@@ -135,7 +137,7 @@ export default function ContattiPage() {
 
             <div className="lg:col-span-2 space-y-6">
               <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
-                <h3 className="font-semibold mb-4">Contatti diretti</h3>
+                <h3 className="font-semibold mb-4">{t('direct_h3')}</h3>
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
                     <HiOutlinePhone className="w-5 h-5 text-orange-400 mt-0.5 shrink-0" />
@@ -143,7 +145,7 @@ export default function ContattiPage() {
                       <a href="tel:+390808407861" className="hover:text-orange-400 transition font-medium">
                         +39 080 840 7861
                       </a>
-                      <div className="text-xs text-white/40 mt-1">Lun-Ven, 9:00-18:00</div>
+                      <div className="text-xs text-white/40 mt-1">{t('phone_hours')}</div>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
@@ -155,9 +157,9 @@ export default function ContattiPage() {
                         rel="noopener noreferrer"
                         className="hover:text-green-400 transition font-medium"
                       >
-                        WhatsApp
+                        {t('wa_label')}
                       </a>
-                      <div className="text-xs text-white/40 mt-1">Risposta rapida</div>
+                      <div className="text-xs text-white/40 mt-1">{t('wa_sub')}</div>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
@@ -171,32 +173,22 @@ export default function ContattiPage() {
                   <li className="flex items-start gap-3">
                     <HiOutlineMapPin className="w-5 h-5 text-orange-400 mt-0.5 shrink-0" />
                     <div>
-                      <span className="font-medium">Bari, Italia</span>
-                      <div className="text-xs text-white/40 mt-1">Operiamo anche da remoto in tutta Italia</div>
+                      <span className="font-medium">{t('city')}</span>
+                      <div className="text-xs text-white/40 mt-1">{t('city_sub')}</div>
                     </div>
                   </li>
                 </ul>
               </div>
 
               <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
-                <h3 className="font-semibold mb-3">Cosa succede dopo?</h3>
+                <h3 className="font-semibold mb-3">{t('next_h3')}</h3>
                 <ol className="space-y-3 text-sm text-white/60">
-                  <li className="flex gap-3">
-                    <span className="text-orange-400 font-bold shrink-0">1.</span>
-                    Riceviamo la tua richiesta e la analizziamo.
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="text-orange-400 font-bold shrink-0">2.</span>
-                    Ti rispondiamo entro 24h con domande o un preventivo.
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="text-orange-400 font-bold shrink-0">3.</span>
-                    Fissiamo una call gratuita di 30 min per il briefing.
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="text-orange-400 font-bold shrink-0">4.</span>
-                    Se ci piace lavorare insieme, si parte.
-                  </li>
+                  {nextSteps.map((step, i) => (
+                    <li key={i} className="flex gap-3">
+                      <span className="text-orange-400 font-bold shrink-0">{i + 1}.</span>
+                      {step}
+                    </li>
+                  ))}
                 </ol>
               </div>
             </div>

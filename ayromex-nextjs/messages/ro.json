@@ -8,19 +8,400 @@
     "phone": "080 840 7861"
   },
   "footer": {
-    "cta_title": "Gata să dai un chip brandului tău?",
-    "cta_sub": "Spune-ne despre proiectul tău. Răspuns în 24 de ore.",
+    "cta_title": "Brandul tău merită mai mult.",
+    "cta_sub": "Spune-ne despre proiectul tău. Ofertă gratuită, răspuns în 24 de ore.",
     "cta_btn": "Cere o ofertă",
     "col_pages": "Pagini",
     "col_contacts": "Contact",
     "col_social": "Social",
-    "phone_hours": "Lun-Vin, 9:00-18:00",
-    "city": "Bari, Italia",
-    "copyright": "AYROMEX Creative Studio",
-    "piva": "CIF: 00000000000",
-    "rea": "REA: BA-000000",
-    "vies": "Înregistrat VIES",
+    "brand_desc": "Agenție creativă specializată în branding și identitate vizuală pentru afaceri locale din Italia și Europa.",
+    "copyright": "AYROMEX S.R.L.",
+    "legal_vat": "CUI: RO52014564",
+    "legal_reg": "Nr. Reg. Com.: J2025044424001",
     "privacy": "Confidențialitate",
     "cookie": "Cookie"
+  },
+  "home": {
+    "hero": {
+      "badge": "Agenție creativă · Bari, Italia",
+      "h1_1": "Bună,",
+      "h1_2": "suntem",
+      "sub_1": "Construim branduri pe care oamenii le țin minte — și le aleg.",
+      "sub_2": "Logo, social, print — totul coerent, totul livrat.",
+      "sub_3": "Pentru restaurante, hoteluri și afaceri locale.",
+      "cta1": "Vezi proiectele",
+      "cta2": "Vorbim despre brandul tău",
+      "trust": ["40+ branduri create", "Bari & Puglia", "Răspuns în 24h", "Ofertă gratuită"]
+    },
+    "ticker": ["Branding", "Identitate Vizuală", "Social Design", "Print & Materiale", "Pitch Deck", "Visual Content", "Logo Design", "Brand Strategy"],
+    "cases": {
+      "label": "Proiecte selectate",
+      "h2": "Branduri pe care le-am",
+      "h2_muted": "transformat.",
+      "link": "Vezi tot portofoliul",
+      "items": [
+        {
+          "title": "Brand Identity — Restaurant",
+          "category": "Branding complet",
+          "year": "2024",
+          "desc": "Logo, meniu, signalizare și social pack pentru un restaurant de fructe de mare din Bari. De la brief la livrare în 3 săptămâni."
+        },
+        {
+          "title": "Social Pack — Hotel Adriatico",
+          "category": "Social Design",
+          "year": "2024",
+          "desc": "12 template-uri reutilizabile Canva pentru feed și stories."
+        },
+        {
+          "title": "Rebrand — Cabinet Juridic",
+          "category": "Rebranding",
+          "year": "2023",
+          "desc": "Identitate modernă pentru un cabinet juridic: logo, cărți de vizită, prezentare clienți."
+        }
+      ]
+    },
+    "services": {
+      "label": "Ce facem",
+      "h2": "Servicii",
+      "h2_muted": "personalizate.",
+      "sub": "Puține servicii, făcute bine. Fiecare proiect include fișiere gata de utilizat și ghiduri de brand.",
+      "link": "Toate serviciile",
+      "items": [
+        {
+          "num": "01",
+          "title": "Branding & Identitate",
+          "desc": "Logo, culori, tipografie și brand book. Tot ce ai nevoie pentru a fi recunoscut din prima privire.",
+          "deliverables": "Logo + variante · Paletă · Font · Brand guidelines PDF"
+        },
+        {
+          "num": "02",
+          "title": "Social Design",
+          "desc": "Template-uri Instagram și Facebook pe care le completezi tu — mereu profesionale, mereu coerente.",
+          "deliverables": "Postări · Stories · Reel covers · Grid feed"
+        },
+        {
+          "num": "03",
+          "title": "Print & Materiale",
+          "desc": "Meniuri, cărți de vizită, signalizare, ambalaje. Fișiere gata de tipărit, fără surprize.",
+          "deliverables": "PDF/AI print-ready · Mockup-uri · Fișiere editabile"
+        },
+        {
+          "num": "04",
+          "title": "Pitch & Prezentări",
+          "desc": "Prezentări pentru bănci, investitori și parteneri. Clare, credibile, memorabile.",
+          "deliverables": "PowerPoint/Keynote · PDF · Infografice"
+        },
+        {
+          "num": "05",
+          "title": "Visual Content",
+          "desc": "Mockup-uri, grafice web și ads, imagini de produs. Imagine coerentă pe fiecare canal.",
+          "deliverables": "Mockup-uri · Bannere · Grafice web · Asset-uri ads"
+        }
+      ]
+    },
+    "stats": {
+      "items": [
+        { "value": "40+", "label": "Branduri create" },
+        { "value": "100%", "label": "Satisfacție" },
+        { "value": "2 săpt.", "label": "Timp mediu livrare" }
+      ]
+    },
+    "process": {
+      "label": "Cum lucrăm",
+      "h2": "Patru pași.",
+      "h2_muted": "Zero haos.",
+      "items": [
+        { "step": "01", "title": "Briefing", "desc": "Înțelegem afacerea ta în 30 de minute: clienți, concurență, obiective." },
+        { "step": "02", "title": "Concept", "desc": "Direcție vizuală clară cu moodboard și schițe de aprobat." },
+        { "step": "03", "title": "Producție", "desc": "Creăm toate materialele: digitale și gata de tipărit." },
+        { "step": "04", "title": "Livrare", "desc": "Fișiere organizate, gata de utilizat, cu ghiduri. Ale tale pentru totdeauna." }
+      ]
+    },
+    "testimonial": {
+      "label": "Ce spun clienții noștri",
+      "quote": "AYROMEX a transformat imaginea restaurantului nostru. Clienții ne recunosc acum pe social media și meniul a devenit un obiect de design.",
+      "author": "Marco R.",
+      "role": "Restaurant, Bari"
+    },
+    "faq": {
+      "label": "FAQ",
+      "h2": "Întrebări",
+      "h2_muted": "frecvente.",
+      "sub": "Nu ai găsit răspunsul?\nScrie-ne pe WhatsApp.",
+      "wa_cta": "Scrie pe WhatsApp",
+      "items": [
+        {
+          "q": "Cât costă o identitate vizuală completă?",
+          "a": "Un pachet de bază (logo + paletă + guidelines) pornește de la aproximativ 500 €. Contactează-ne pentru o ofertă personalizată și gratuită."
+        },
+        {
+          "q": "Cât timp durează?",
+          "a": "Branding complet: 2–3 săptămâni. Template-uri social și materiale print: 1–2 săptămâni. Oferim întotdeauna un calendar precis."
+        },
+        {
+          "q": "Ce se întâmplă dacă nu îmi place designul?",
+          "a": "Fiecare proiect include revizii. Lucrăm împreună la concept înainte de producție, fără surprize."
+        },
+        {
+          "q": "Lucrați numai în Bari?",
+          "a": "Suntem bazați în Bari, dar lucrăm cu clienți din toată Italia. Briefing-uri și revizii prin video call sau WhatsApp."
+        },
+        {
+          "q": "Ce este inclus în ofertă?",
+          "a": "Lista livrabilelor, calendar, preț fix (fără surprize), număr de revizii incluse. Totul clar înainte de start."
+        }
+      ]
+    },
+    "cta": {
+      "label": "Să începem",
+      "h2_1": "Vorbim",
+      "h2_2": "despre",
+      "h2_3": "brandul tău.",
+      "sub": "Completează formularul sau contactează-ne direct. Ofertă gratuită, răspuns în 24 de ore, fără obligații.",
+      "bullets": [
+        "Ofertă gratuită, fără obligații",
+        "Răspuns în 24 de ore",
+        "Preț fix, fără surprize"
+      ],
+      "wa": "WhatsApp",
+      "tel": "+39 080 840 7861",
+      "form_name": "Numele tău",
+      "form_contact": "Telefon sau email",
+      "form_service": "De ce ai nevoie?",
+      "form_opt_branding": "Branding & Identitate vizuală",
+      "form_opt_social": "Social Design & Template-uri",
+      "form_opt_stampa": "Print & Materiale",
+      "form_opt_pitch": "Prezentări & Pitch",
+      "form_opt_altro": "Altceva / Nu știu sigur",
+      "form_message": "Spune-ne despre proiect (opțional)",
+      "form_submit": "Trimite cererea",
+      "form_note": "Ofertă gratuită. Răspuns în 24h. Fără obligații.",
+      "sent_title": "Cerere trimisă.",
+      "sent_sub": "Îți răspundem în 24 de ore."
+    }
+  },
+  "servizi": {
+    "hero_label": "Servicii",
+    "hero_h1": "Fiecare serviciu, un sistem complet.",
+    "hero_sub": "Nu vindem grafică ieftină. Fiecare proiect include fișiere gata de utilizat, ghiduri și suport. Alege ce ai nevoie sau contactează-ne pentru un pachet personalizat.",
+    "deliverables_title": "Ce primești:",
+    "ideal_label": "Ideal pentru:",
+    "product_badge": "Produs AYROMEX",
+    "product_tagline": "Platforma de automatizare pentru afaceri locale.",
+    "product_cta": "Descoperă StudioPilot",
+    "quote_cta": "Cere ofertă",
+    "cta_h2": "Nu știi ce serviciu ai nevoie?",
+    "cta_sub": "Spune-ne despre proiect. Te ajutăm să înțelegi ce-ți trebuie și îți facem o ofertă personalizată.",
+    "cta_btn": "Contactează-ne",
+    "items": [
+      {
+        "id": "branding",
+        "title": "Branding & Identitate Vizuală",
+        "subtitle": "Fundația a tot",
+        "desc": "Creăm un sistem vizual complet care face brandul tău recognoscibil și profesional pe orice canal. Nu doar un logo: un limbaj vizual coerent.",
+        "deliverables": [
+          "Logo principal + variante (monocrom, compact, icon)",
+          "Paletă culori primare și secundare",
+          "Tipografie și reguli de utilizare",
+          "Brand Guidelines PDF complet",
+          "Fișiere sursă editabile (AI/EPS/SVG/PNG)"
+        ],
+        "ideal": "Afaceri noi, rebranding, cei care vor să facă saltul calitativ."
+      },
+      {
+        "id": "social",
+        "title": "Social Design & Template-uri",
+        "subtitle": "Conținut care funcționează",
+        "desc": "Template-uri reutilizabile pentru Instagram, Facebook și LinkedIn. Le personalizezi cu textul și pozele tale — rezultatul arată mereu profesional.",
+        "deliverables": [
+          "Template-uri post feed (6-12 variante)",
+          "Template-uri stories și reel cover",
+          "Grid feed coordonat",
+          "Template-uri Canva editabile",
+          "Ghid de utilizare template-uri"
+        ],
+        "ideal": "Cei care postează pe social dar vor un look profesional fără designer permanent."
+      },
+      {
+        "id": "stampa",
+        "title": "Print & Materiale",
+        "subtitle": "De la digital la fizic",
+        "desc": "Meniuri, cărți de vizită, signalizare, ambalaje, materiale promoționale. Totul proiectat în concordanță cu identitatea ta vizuală și gata de tipărit.",
+        "deliverables": [
+          "Layout grafic profesional",
+          "Fișiere print-ready (PDF/AI cu bleed)",
+          "Mockup-uri previzualizare realiste",
+          "Coordonare cu tipografia (dacă e necesar)",
+          "Versiune digitală pentru web/social"
+        ],
+        "ideal": "Restaurante, baruri, hoteluri, magazine, studiouri profesionale."
+      },
+      {
+        "id": "pitch",
+        "title": "Prezentări & Pitch Deck",
+        "subtitle": "Convinge cu stil",
+        "desc": "Prezentări profesionale pentru bănci, investitori, clienți, parteneri. Design curat, structură clară, conținut care comunică.",
+        "deliverables": [
+          "Deck PowerPoint sau Keynote editabil",
+          "Versiune PDF pentru trimitere",
+          "Grafice și infografice personalizate",
+          "Coerență cu brand identity",
+          "Până la 20 slide-uri incluse"
+        ],
+        "ideal": "Startup-uri, profesioniști, companii care trebuie să se prezinte."
+      },
+      {
+        "id": "visual",
+        "title": "Visual Content",
+        "subtitle": "Imagine coordonată oriunde",
+        "desc": "Grafice pentru site web, ads, mockup-uri, foto produs stilizate. Fiecare asset vizual coerent cu brandul tău.",
+        "deliverables": [
+          "Bannere și grafice web",
+          "Asset-uri pentru campanii ads",
+          "Mockup-uri produs/ambient",
+          "Imagini social coordonate",
+          "Fișiere în toate formatele necesare"
+        ],
+        "ideal": "Cei care vând online, e-commerce, afaceri cu prezență digitală puternică."
+      },
+      {
+        "id": "automazioni",
+        "title": "Automatizări AI",
+        "subtitle": "Powered by StudioPilot",
+        "desc": "Automatizăm rezervări, răspunsuri WhatsApp, gestionare contacte și CRM ușor pentru afaceri locale — cu StudioPilot, produsul nostru dedicat.",
+        "deliverables": [
+          "Răspunsuri automate WhatsApp",
+          "Sistem rezervări simplu",
+          "CRM ușor pentru gestionare contacte",
+          "Integrare cu social și site"
+        ],
+        "ideal": "Afaceri locale care vor să automatizeze fără complicații.",
+        "productUrl": "https://www.studiopilot.pro/"
+      }
+    ]
+  },
+  "portfolio": {
+    "hero_label": "Portofoliu",
+    "hero_h1": "Proiecte selectate.",
+    "hero_sub": "Fiecare proiect spune o poveste de transformare: de la brief-ul inițial la livrarea finală. Iată câteva din brandurile pe care le-am construit.",
+    "results_label": "Rezultate",
+    "placeholder": "Imagine proiect",
+    "cta_h2": "Proiectul tău ar putea fi următorul.",
+    "cta_sub": "Spune-ne ce ai în minte. Îți facem o ofertă gratuită în 24 de ore.",
+    "cta_btn": "Cere o ofertă",
+    "projects": [
+      {
+        "title": "Ristorante La Brace",
+        "category": "Brand Identity",
+        "tags": "Logo, meniu, signalizare, social pack",
+        "desc": "Identitate vizuală completă pentru un restaurant de fructe de mare din Bari. De la logo la meniu, de la signalizare la template-uri social.",
+        "results": ["Brand recognoscibil pe toate canalele", "Meniu profesional tipărit în 500 exemplare", "Template-uri social reutilizabile săptămânal"]
+      },
+      {
+        "title": "Hotel Adriatico",
+        "category": "Social Pack",
+        "tags": "Template-uri Instagram, Stories, Ads",
+        "desc": "Pachet complet de template-uri social pentru un hotel pe coasta adriatică. Feed coordonat, stories și grafice pentru campanii ads.",
+        "results": ["Feed Instagram coerent și profesional", "12 template-uri reutilizabile pe Canva", "Grafice ads pentru sezonul de vară"]
+      },
+      {
+        "title": "Studio Legale Rossi",
+        "category": "Rebranding",
+        "tags": "Logo, cărți de vizită, prezentare, antet",
+        "desc": "Rebranding complet pentru un cabinet juridic. Imagine modernă, autoritară, coerentă de la cartea de vizită la prezentarea pentru clienți.",
+        "results": ["Imagine profesională și modernă", "Deck prezentare pentru clienți noi", "Materiali coordonate print + digital"]
+      },
+      {
+        "title": "Boutique Moda Donna",
+        "category": "Brand Identity + Social",
+        "tags": "Logo, ambalaje, template-uri social, ads",
+        "desc": "Identitate vizuală și social design pentru un boutique de modă feminină. Look elegant, contemporan, care reflectă poziționarea brandului.",
+        "results": ["Brand premium perceput de clienți", "Ambalaje coordonate cu logo", "Engagement social crescut"]
+      },
+      {
+        "title": "Pizzeria Da Michele",
+        "category": "Print & Materiale",
+        "tags": "Meniu, șervețele, signalizare, cărți de vizită",
+        "desc": "Materiale tipărite complete pentru o pizzerie istorică. Design care respectă tradiția cu o notă modernă și curată.",
+        "results": ["Meniu lizibil și atractiv", "Șervețele branduite", "Signalizare exterioară coordonată"]
+      },
+      {
+        "title": "Tech Startup InnovaHub",
+        "category": "Pitch Deck",
+        "tags": "Prezentare investitori, brand guidelines",
+        "desc": "Pitch deck profesional pentru un startup tech în faza de fundraising. 18 slide-uri clare, date vizualizate eficient, design credibil.",
+        "results": ["Prezentare pentru runda seed", "Infografice de date clare", "Brand guidelines incluse"]
+      }
+    ]
+  },
+  "chiSiamo": {
+    "hero_label": "Despre noi",
+    "hero_h1": "O echipă creativă cu mentalitate de studio serios.",
+    "hero_sub": "AYROMEX s-a născut în Bari cu un obiectiv simplu: să ofere afacerilor locale aceeași calitate vizuală ca marile companii. Fără complicații, fără costuri absurde, fără termene infinite.",
+    "mission_h2": "Misiunea noastră",
+    "mission_p1": "Prea multe afaceri locale — restaurante, hoteluri, magazine, studiouri profesionale — au un produs excelent, dar o imagine care nu îl reflectă. Noi rezolvăm această problemă.",
+    "mission_p2": "Creăm sisteme vizuale complete: de la logo la social, de la print la prezentări. Fiecare element este coerent, gata de utilizat și construit să dureze.",
+    "perche_h2": "De ce să ne alegi",
+    "perche_items": [
+      "Suntem specializați în afaceri locale: înțelegem piața ta.",
+      "Livrăm fișiere gata de utilizat, nu schițe de interpretat.",
+      "Prețuri clare și fixe: știi cât cheltuiești înainte de a începe.",
+      "Răspundem în 24h. Mereu."
+    ],
+    "stats": [
+      { "value": "40+", "label": "Branduri create" },
+      { "value": "98%", "label": "Clienți mulțumiți" },
+      { "value": "24h", "label": "Timp mediu de răspuns" },
+      { "value": "2-3", "label": "Săptămâni pe proiect" }
+    ],
+    "values_label": "Valorile noastre",
+    "values_h2": "Cum lucrăm, în fiecare zi",
+    "values": [
+      { "title": "Claritate", "desc": "Fără ocolișuri. Îți spunem ce facem, cât costă și cât durează. Mereu." },
+      { "title": "Coerență", "desc": "Fiecare element vizual pe care îl creăm vorbește aceeași limbă. Brandul tău pare solid și recognoscibil." },
+      { "title": "Calitate", "desc": "Puține proiecte, făcute bine. Preferăm să spunem nu decât să livrăm ceva mediocru." },
+      { "title": "Practicalitate", "desc": "Fișierele pe care le livrăm sunt gata de utilizat. Fără formate ciudate, fără surprize la tipar." }
+    ],
+    "cta_h2": "Vrei să lucrezi cu noi?",
+    "cta_sub": "Spune-ne despre proiectul tău. Prima discuție este gratuită și fără obligații.",
+    "cta_btn": "Contactează-ne"
+  },
+  "contatti": {
+    "hero_label": "Contact",
+    "hero_h1": "Vorbim despre proiectul tău.",
+    "hero_sub": "Completează formularul, scrie-ne pe WhatsApp sau sună-ne. Îți răspundem în 24 de ore cu o ofertă gratuită.",
+    "form_name": "Numele tău",
+    "form_email": "Email",
+    "form_phone": "Telefon (opțional)",
+    "form_service": "De ce ai nevoie?",
+    "form_opt_branding": "Branding & Identitate vizuală",
+    "form_opt_social": "Social Design & Template-uri",
+    "form_opt_stampa": "Print & Materiale",
+    "form_opt_pitch": "Prezentări & Pitch",
+    "form_opt_altro": "Altceva / Nu știu sigur",
+    "form_budget": "Buget orientativ (opțional)",
+    "form_budget_500": "500 - 1.000 EUR",
+    "form_budget_1000": "1.000 - 2.500 EUR",
+    "form_budget_2500": "2.500 - 5.000 EUR",
+    "form_budget_5000": "5.000+ EUR",
+    "form_budget_no": "Nu știu încă",
+    "form_message": "Spune-ne despre proiect: ce faci, ce ai nevoie, eventuale termene...",
+    "form_submit": "Trimite cererea",
+    "form_note": "Ofertă gratuită și fără obligații. Răspuns în 24h.",
+    "sent_title": "Cerere trimisă",
+    "sent_sub": "Îți răspundem în 24 de ore. Verifică și WhatsApp.",
+    "direct_h3": "Contact direct",
+    "phone_hours": "Lun-Vin, 9:00-18:00",
+    "wa_label": "WhatsApp",
+    "wa_sub": "Răspuns rapid",
+    "city": "Bari, Italia",
+    "city_sub": "Lucrăm și remote în toată Italia",
+    "next_h3": "Ce se întâmplă după?",
+    "next_steps": [
+      "Primim cererea ta și o analizăm.",
+      "Îți răspundem în 24h cu întrebări sau o ofertă.",
+      "Stabilim un apel gratuit de 30 min pentru briefing.",
+      "Dacă ne potrivim, pornim la drum."
+    ]
   }
 }

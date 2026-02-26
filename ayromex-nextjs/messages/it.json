@@ -8,19 +8,400 @@
     "phone": "080 840 7861"
   },
   "footer": {
-    "cta_title": "Pronto a dare un volto al tuo brand?",
-    "cta_sub": "Raccontaci il tuo progetto. Risposta entro 24 ore.",
+    "cta_title": "Il tuo brand merita di più.",
+    "cta_sub": "Raccontaci il progetto. Preventivo gratuito, risposta in 24 ore.",
     "cta_btn": "Richiedi preventivo",
     "col_pages": "Pagine",
     "col_contacts": "Contatti",
     "col_social": "Social",
-    "phone_hours": "Lun-Ven, 9:00-18:00",
-    "city": "Bari, Italia",
-    "copyright": "AYROMEX Creative Studio",
-    "piva": "P.IVA: 00000000000",
-    "rea": "REA: BA-000000",
-    "vies": "Iscritta al VIES",
+    "brand_desc": "Agenzia creativa specializzata in branding e identità visiva per attività locali in Italia e in Europa.",
+    "copyright": "AYROMEX S.R.L.",
+    "legal_vat": "P.IVA EU: RO52014564",
+    "legal_reg": "Nr. Reg.: J2025044424001",
     "privacy": "Privacy",
     "cookie": "Cookie"
+  },
+  "home": {
+    "hero": {
+      "badge": "Agenzia creativa · Bari, Italia",
+      "h1_1": "Ciao,",
+      "h1_2": "siamo",
+      "sub_1": "Creiamo brand che fanno innamorare.",
+      "sub_2": "Logo, social, stampa — tutto coerente, tutto pronto.",
+      "sub_3": "Per ristoranti, hotel e attività locali.",
+      "cta1": "Vedi i lavori",
+      "cta2": "Parliamo del tuo progetto",
+      "trust": ["40+ brand creati", "Bari & Puglia", "Risposta in 24h", "Preventivo gratuito"]
+    },
+    "ticker": ["Branding", "Identità Visiva", "Social Design", "Stampa & Materiali", "Pitch Deck", "Visual Content", "Logo Design", "Brand Strategy"],
+    "cases": {
+      "label": "Lavori selezionati",
+      "h2": "Brand che abbiamo",
+      "h2_muted": "trasformato.",
+      "link": "Guarda tutto il portfolio",
+      "items": [
+        {
+          "title": "Brand Identity — Ristorante",
+          "category": "Branding completo",
+          "year": "2024",
+          "desc": "Logo, menu, insegna e social pack per un ristorante di pesce a Bari. Dal brief alla consegna in 3 settimane."
+        },
+        {
+          "title": "Social Pack — Hotel Adriatico",
+          "category": "Social Design",
+          "year": "2024",
+          "desc": "12 template riutilizzabili su Canva per il feed e le stories."
+        },
+        {
+          "title": "Rebranding — Studio Legale",
+          "category": "Rebranding",
+          "year": "2023",
+          "desc": "Nuova identità moderna per uno studio legale: logo, biglietti, presentazione clienti."
+        }
+      ]
+    },
+    "services": {
+      "label": "Cosa facciamo",
+      "h2": "Servizi",
+      "h2_muted": "su misura.",
+      "sub": "Pochi servizi, fatti bene. Ogni progetto include file pronti e linee guida.",
+      "link": "Scopri tutti i servizi",
+      "items": [
+        {
+          "num": "01",
+          "title": "Branding & Identità",
+          "desc": "Logo, colori, tipografia e brand book. Tutto quello che serve per essere riconosciuti al primo sguardo.",
+          "deliverables": "Logo + varianti · Palette · Font · Brand guidelines PDF"
+        },
+        {
+          "num": "02",
+          "title": "Social Design",
+          "desc": "Template Instagram e Facebook che puoi riempire da solo: restano sempre professionali, sempre coerenti.",
+          "deliverables": "Post · Stories · Reel cover · Griglia feed"
+        },
+        {
+          "num": "03",
+          "title": "Stampa & Materiali",
+          "desc": "Menu, biglietti, insegne, packaging. File pronti per la tipografia, nessuna sorpresa in fase di stampa.",
+          "deliverables": "PDF/AI print-ready · Mockup · File editabili"
+        },
+        {
+          "num": "04",
+          "title": "Pitch & Presentazioni",
+          "desc": "Presentazioni per banche, investitori e partner. Chiare, credibili, memorabili.",
+          "deliverables": "PowerPoint/Keynote · PDF · Infografiche"
+        },
+        {
+          "num": "05",
+          "title": "Visual Content",
+          "desc": "Mockup, grafiche per sito e ads, immagini di prodotto. Immagine coordinata su ogni canale.",
+          "deliverables": "Mockup · Banner · Grafiche web · Asset ads"
+        }
+      ]
+    },
+    "stats": {
+      "items": [
+        { "value": "40+", "label": "Brand creati" },
+        { "value": "100%", "label": "Soddisfazione" },
+        { "value": "2 sett.", "label": "Tempo medio consegna" }
+      ]
+    },
+    "process": {
+      "label": "Come lavoriamo",
+      "h2": "Quattro step.",
+      "h2_muted": "Zero caos.",
+      "items": [
+        { "step": "01", "title": "Briefing", "desc": "Capiamo il tuo business in 30 minuti: clienti, competitor, obiettivi." },
+        { "step": "02", "title": "Concept", "desc": "Direzione visiva chiara con moodboard e bozze da approvare." },
+        { "step": "03", "title": "Produzione", "desc": "Realizziamo tutti i materiali: digitali e stampabili." },
+        { "step": "04", "title": "Consegna", "desc": "File ordinati, pronti all'uso, con linee guida. Tutto tuo, per sempre." }
+      ]
+    },
+    "testimonial": {
+      "label": "Cosa dicono di noi",
+      "quote": "AYROMEX ha trasformato l'immagine del nostro ristorante. Finalmente i clienti ci riconoscono sui social e il menu è diventato un oggetto di design.",
+      "author": "Marco R.",
+      "role": "Ristorante, Bari"
+    },
+    "faq": {
+      "label": "FAQ",
+      "h2": "Domande",
+      "h2_muted": "frequenti.",
+      "sub": "Non hai trovato risposta?\nScrivici su WhatsApp.",
+      "wa_cta": "Scrivi su WhatsApp",
+      "items": [
+        {
+          "q": "Quanto costa un'identità visiva completa?",
+          "a": "Un pacchetto base (logo + palette + guidelines) parte da circa 500 €. Contattaci per un preventivo personalizzato e gratuito."
+        },
+        {
+          "q": "Quanto tempo ci vuole?",
+          "a": "Branding completo: 2–3 settimane. Template social e materiali stampa: 1–2 settimane. Diamo sempre una timeline precisa."
+        },
+        {
+          "q": "Cosa succede se il design non mi piace?",
+          "a": "Ogni progetto include revisioni. Lavoriamo sul concept insieme prima di produrre, così non ci sono sorprese."
+        },
+        {
+          "q": "Lavorate solo a Bari?",
+          "a": "Siamo basati a Bari ma lavoriamo con clienti in tutta Italia. Briefing e revisioni in videocall o su WhatsApp."
+        },
+        {
+          "q": "Cosa è incluso nel preventivo?",
+          "a": "Lista dei deliverables, timeline, prezzo fisso (no sorprese), numero di revisioni incluse. Tutto chiaro prima di iniziare."
+        }
+      ]
+    },
+    "cta": {
+      "label": "Iniziamo",
+      "h2_1": "Parliamo",
+      "h2_2": "del tuo",
+      "h2_3": "brand.",
+      "sub": "Compila il form o contattaci direttamente. Preventivo gratuito, risposta in 24 ore, nessun impegno.",
+      "bullets": [
+        "Preventivo gratuito e senza impegno",
+        "Risposta entro 24 ore",
+        "Prezzo fisso, nessuna sorpresa"
+      ],
+      "wa": "WhatsApp",
+      "tel": "+39 080 840 7861",
+      "form_name": "Il tuo nome",
+      "form_contact": "Telefono o email",
+      "form_service": "Di cosa hai bisogno?",
+      "form_opt_branding": "Branding & Identità visiva",
+      "form_opt_social": "Social Design & Template",
+      "form_opt_stampa": "Stampa & Materiali",
+      "form_opt_pitch": "Presentazioni & Pitch",
+      "form_opt_altro": "Altro / Non sono sicuro",
+      "form_message": "Raccontaci il progetto (opzionale)",
+      "form_submit": "Invia richiesta",
+      "form_note": "Preventivo gratuito. Risposta entro 24h. Nessun impegno.",
+      "sent_title": "Richiesta inviata.",
+      "sent_sub": "Ti rispondiamo entro 24 ore."
+    }
+  },
+  "servizi": {
+    "hero_label": "Servizi",
+    "hero_h1": "Ogni servizio, un sistema completo.",
+    "hero_sub": "Non vendiamo grafichette. Ogni progetto include file pronti, linee guida e supporto. Scegli il servizio che ti serve o contattaci per un pacchetto su misura.",
+    "deliverables_title": "Cosa ricevi:",
+    "ideal_label": "Ideale per:",
+    "product_badge": "Prodotto AYROMEX",
+    "product_tagline": "La piattaforma di automazione per attività locali.",
+    "product_cta": "Scopri StudioPilot",
+    "quote_cta": "Richiedi preventivo",
+    "cta_h2": "Non sai quale servizio ti serve?",
+    "cta_sub": "Raccontaci il tuo progetto. Ti aiutiamo a capire cosa ti serve e ti facciamo un preventivo su misura.",
+    "cta_btn": "Contattaci",
+    "items": [
+      {
+        "id": "branding",
+        "title": "Branding & Identità Visiva",
+        "subtitle": "Il fondamento di tutto",
+        "desc": "Creiamo un sistema visivo completo che rende il tuo brand riconoscibile e professionale su ogni canale. Non solo un logo: un linguaggio visivo coerente.",
+        "deliverables": [
+          "Logo principale + varianti (monocromo, compatto, icona)",
+          "Palette colori primari e secondari",
+          "Tipografia e regole di utilizzo",
+          "Brand Guidelines PDF completo",
+          "File sorgente editabili (AI/EPS/SVG/PNG)"
+        ],
+        "ideal": "Attività nuove, rebranding, chi vuole fare il salto di qualità."
+      },
+      {
+        "id": "social",
+        "title": "Social Design & Template",
+        "subtitle": "Contenuti che funzionano",
+        "desc": "Template riutilizzabili per Instagram, Facebook e LinkedIn. Li personalizzi tu con testo e foto: il risultato resta sempre professionale.",
+        "deliverables": [
+          "Template post feed (6-12 varianti)",
+          "Template stories e reel cover",
+          "Griglia feed coordinata",
+          "Template Canva editabili",
+          "Guida all'uso dei template"
+        ],
+        "ideal": "Chi pubblica sui social ma vuole un look professionale senza grafico fisso."
+      },
+      {
+        "id": "stampa",
+        "title": "Stampa & Materiali",
+        "subtitle": "Dal digitale al fisico",
+        "desc": "Menu, biglietti da visita, insegne, packaging, materiale promozionale. Tutto progettato in coerenza con la tua identità visiva e pronto per la tipografia.",
+        "deliverables": [
+          "Layout grafico professionale",
+          "File print-ready (PDF/AI con abbondanze)",
+          "Mockup di anteprima realistici",
+          "Coordinamento con tipografia (se necessario)",
+          "Versione digitale per web/social"
+        ],
+        "ideal": "Ristoranti, bar, hotel, negozi, studi professionali."
+      },
+      {
+        "id": "pitch",
+        "title": "Presentazioni & Pitch Deck",
+        "subtitle": "Convincere con stile",
+        "desc": "Presentazioni professionali per banche, investitori, clienti, partner. Design pulito, struttura chiara, contenuti che comunicano.",
+        "deliverables": [
+          "Deck PowerPoint o Keynote editabile",
+          "Versione PDF per invio",
+          "Grafici e infografiche personalizzate",
+          "Coerenza con brand identity",
+          "Fino a 20 slide incluse"
+        ],
+        "ideal": "Startup, professionisti, aziende che devono presentarsi."
+      },
+      {
+        "id": "visual",
+        "title": "Visual Content",
+        "subtitle": "Immagine coordinata ovunque",
+        "desc": "Grafiche per sito web, ads, mockup, foto prodotto stilizzate. Ogni asset visivo coerente con il tuo brand.",
+        "deliverables": [
+          "Banner e grafiche web",
+          "Asset per campagne ads",
+          "Mockup prodotto/ambiente",
+          "Immagini social coordinate",
+          "File in tutti i formati necessari"
+        ],
+        "ideal": "Chi vende online, e-commerce, attività con forte presenza digitale."
+      },
+      {
+        "id": "automazioni",
+        "title": "Automazioni AI",
+        "subtitle": "Powered by StudioPilot",
+        "desc": "Automatizziamo prenotazioni, risposte WhatsApp, gestione contatti e CRM leggero per attività locali — con StudioPilot, il nostro prodotto dedicato.",
+        "deliverables": [
+          "Risposte automatiche WhatsApp",
+          "Sistema prenotazioni semplice",
+          "CRM leggero per gestire contatti",
+          "Integrazione con social e sito"
+        ],
+        "ideal": "Attività locali che vogliono automatizzare senza complicarsi.",
+        "productUrl": "https://www.studiopilot.pro/"
+      }
+    ]
+  },
+  "portfolio": {
+    "hero_label": "Portfolio",
+    "hero_h1": "Lavori selezionati.",
+    "hero_sub": "Ogni progetto racconta una trasformazione: dal brief iniziale alla consegna finale. Ecco alcuni dei brand che abbiamo creato.",
+    "results_label": "Risultati",
+    "placeholder": "Immagine progetto",
+    "cta_h2": "Il tuo progetto potrebbe essere il prossimo.",
+    "cta_sub": "Raccontaci cosa hai in mente. Ti facciamo un preventivo gratuito entro 24 ore.",
+    "cta_btn": "Richiedi preventivo",
+    "projects": [
+      {
+        "title": "Ristorante La Brace",
+        "category": "Brand Identity",
+        "tags": "Logo, menu, insegna, social pack",
+        "desc": "Identità visiva completa per un ristorante di pesce a Bari. Dal logo al menu, dalle insegne ai template social.",
+        "results": ["Brand riconoscibile su tutti i canali", "Menu professionale stampato in 500 copie", "Template social riutilizzabili ogni settimana"]
+      },
+      {
+        "title": "Hotel Adriatico",
+        "category": "Social Pack",
+        "tags": "Template Instagram, Stories, Ads",
+        "desc": "Pack completo di template social per un hotel sulla costa adriatica. Feed coordinato, stories e grafiche per le campagne ads.",
+        "results": ["Feed Instagram coerente e professionale", "12 template riutilizzabili su Canva", "Grafiche ads per stagione estiva"]
+      },
+      {
+        "title": "Studio Legale Rossi",
+        "category": "Rebranding",
+        "tags": "Logo, biglietti, presentazione, carta intestata",
+        "desc": "Rebranding completo per uno studio legale. Immagine moderna e autorevole, coerente dal biglietto da visita alla presentazione per i clienti.",
+        "results": ["Immagine professionale e moderna", "Deck presentazione per nuovi clienti", "Materiali coordinati stampa + digitale"]
+      },
+      {
+        "title": "Boutique Moda Donna",
+        "category": "Brand Identity + Social",
+        "tags": "Logo, packaging, template social, ads",
+        "desc": "Identità visiva e social design per una boutique di moda femminile. Look elegante e contemporaneo che rispecchia il posizionamento del brand.",
+        "results": ["Brand premium percepito dai clienti", "Packaging coordinato con logo", "Engagement social aumentato"]
+      },
+      {
+        "title": "Pizzeria Da Michele",
+        "category": "Stampa & Materiali",
+        "tags": "Menu, tovagliette, insegna, biglietti",
+        "desc": "Materiali stampati completi per una pizzeria storica. Design che rispetta la tradizione ma con un tocco moderno e pulito.",
+        "results": ["Menu leggibile e attraente", "Tovagliette brandizzate", "Insegna esterna coordinata"]
+      },
+      {
+        "title": "Tech Startup InnovaHub",
+        "category": "Pitch Deck",
+        "tags": "Presentazione investitori, brand guidelines",
+        "desc": "Pitch deck professionale per una startup tech in fase di fundraising. 18 slide chiare, dati visualizzati in modo efficace, design credibile.",
+        "results": ["Presentazione per round seed", "Infografiche dati chiare", "Brand guidelines incluse"]
+      }
+    ]
+  },
+  "chiSiamo": {
+    "hero_label": "Chi siamo",
+    "hero_h1": "Un team creativo con mentalità da studio serio.",
+    "hero_sub": "AYROMEX nasce a Bari con un obiettivo semplice: dare alle attività locali la stessa qualità visiva delle grandi aziende. Senza complicazioni, senza costi assurdi, senza tempi infiniti.",
+    "mission_h2": "La nostra missione",
+    "mission_p1": "Troppe attività locali — ristoranti, hotel, negozi, studi professionali — hanno un prodotto eccellente ma un'immagine che non lo rappresenta. Noi risolviamo questo problema.",
+    "mission_p2": "Creiamo sistemi visivi completi: dal logo ai social, dalla stampa alle presentazioni. Ogni elemento è coerente, pronto all'uso, e fatto per durare.",
+    "perche_h2": "Perché sceglierci",
+    "perche_items": [
+      "Siamo specializzati in attività locali: capiamo il tuo mercato.",
+      "Consegniamo file pronti all'uso, non bozze da interpretare.",
+      "Prezzi chiari e fissi: sai quanto spendi prima di iniziare.",
+      "Rispondiamo in 24h. Sempre."
+    ],
+    "stats": [
+      { "value": "40+", "label": "Brand creati" },
+      { "value": "98%", "label": "Clienti soddisfatti" },
+      { "value": "24h", "label": "Tempo medio di risposta" },
+      { "value": "2-3", "label": "Settimane per progetto" }
+    ],
+    "values_label": "I nostri valori",
+    "values_h2": "Come lavoriamo, ogni giorno",
+    "values": [
+      { "title": "Chiarezza", "desc": "Niente giri di parole. Ti diciamo cosa facciamo, quanto costa e quanto ci vuole. Sempre." },
+      { "title": "Coerenza", "desc": "Ogni elemento visivo che creiamo parla la stessa lingua. Il tuo brand risulta solido e riconoscibile." },
+      { "title": "Qualità", "desc": "Pochi progetti, fatti bene. Preferiamo dire di no piuttosto che consegnare qualcosa di mediocre." },
+      { "title": "Praticità", "desc": "I file che ti consegniamo sono pronti all'uso. Niente formati strani, niente sorprese in tipografia." }
+    ],
+    "cta_h2": "Vuoi lavorare con noi?",
+    "cta_sub": "Raccontaci il tuo progetto. La prima call è gratuita e senza impegno.",
+    "cta_btn": "Contattaci"
+  },
+  "contatti": {
+    "hero_label": "Contatti",
+    "hero_h1": "Parliamo del tuo progetto.",
+    "hero_sub": "Compila il form, scrivici su WhatsApp o chiamaci. Ti rispondiamo entro 24 ore con un preventivo gratuito.",
+    "form_name": "Il tuo nome",
+    "form_email": "Email",
+    "form_phone": "Telefono (opzionale)",
+    "form_service": "Di cosa hai bisogno?",
+    "form_opt_branding": "Branding & Identità visiva",
+    "form_opt_social": "Social Design & Template",
+    "form_opt_stampa": "Stampa & Materiali",
+    "form_opt_pitch": "Presentazioni & Pitch",
+    "form_opt_altro": "Altro / Non sono sicuro",
+    "form_budget": "Budget indicativo (opzionale)",
+    "form_budget_500": "500 - 1.000 EUR",
+    "form_budget_1000": "1.000 - 2.500 EUR",
+    "form_budget_2500": "2.500 - 5.000 EUR",
+    "form_budget_5000": "5.000+ EUR",
+    "form_budget_no": "Non lo so ancora",
+    "form_message": "Raccontaci il tuo progetto: cosa fai, cosa ti serve, eventuali tempistiche...",
+    "form_submit": "Invia richiesta",
+    "form_note": "Preventivo gratuito e senza impegno. Risposta entro 24h.",
+    "sent_title": "Richiesta inviata",
+    "sent_sub": "Ti rispondiamo entro 24 ore. Controlla anche WhatsApp.",
+    "direct_h3": "Contatti diretti",
+    "phone_hours": "Lun-Ven, 9:00-18:00",
+    "wa_label": "WhatsApp",
+    "wa_sub": "Risposta rapida",
+    "city": "Bari, Italia",
+    "city_sub": "Operiamo anche da remoto in tutta Italia",
+    "next_h3": "Cosa succede dopo?",
+    "next_steps": [
+      "Riceviamo la tua richiesta e la analizziamo.",
+      "Ti rispondiamo entro 24h con domande o un preventivo.",
+      "Fissiamo una call gratuita di 30 min per il briefing.",
+      "Se ci piace lavorare insieme, si parte."
+    ]
   }
 }
