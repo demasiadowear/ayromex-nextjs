@@ -1,10 +1,21 @@
-export default function Logo({ className }: { className?: string }) {
+import Image from 'next/image'
+
+type LogoProps = {
+  height?: number
+  className?: string
+}
+
+export default function Logo({ height = 28, className }: LogoProps) {
+  const width = Math.round(height * (1735 / 755))
   return (
-    <span
-      className={`inline-flex items-center font-display font-extrabold tracking-[-0.02em] ${className ?? ''}`}
-    >
-      <span className="text-orange-400">AYRO</span>
-      <span className="text-white">MEX</span>
-    </span>
+    <Image
+      src="/logo.png"
+      alt="AYROMEX"
+      width={width}
+      height={height}
+      priority
+      className={className}
+      style={{ objectFit: 'contain' }}
+    />
   )
 }

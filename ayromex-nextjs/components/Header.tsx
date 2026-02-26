@@ -41,7 +41,7 @@ export default function Header() {
 
           {/* Logo */}
           <Link href="/" aria-label="AYROMEX">
-            <Logo className="text-xl" />
+            <Logo height={26} />
           </Link>
 
           {/* Desktop Nav */}
@@ -110,7 +110,7 @@ export default function Header() {
         <div className="fixed inset-0 z-40 bg-[#07090d] flex flex-col lg:hidden">
           {/* Close bar */}
           <div className="flex justify-between items-center px-6 h-[76px] border-b border-white/8">
-            <Logo className="text-xl" />
+            <Logo height={26} />
             <button onClick={() => setMobileOpen(false)} className="text-white p-2 -mr-2">
               <HiXMark className="w-6 h-6" />
             </button>
