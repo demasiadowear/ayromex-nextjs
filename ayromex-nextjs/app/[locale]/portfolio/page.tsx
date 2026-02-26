@@ -34,18 +34,18 @@ export default async function PortfolioPage() {
   const projects = t.raw('projects') as unknown as Project[]
 
   return (
-    <main className="min-h-screen bg-[#07090d] text-white">
+    <main className="min-h-screen bg-slate-50 dark:bg-[#07090d] text-slate-900 dark:text-white">
       <Header />
       <WhatsAppButton />
 
       {/* Hero */}
       <section className="pt-28 md:pt-36 pb-16 md:pb-20">
         <div className="mx-auto max-w-6xl px-5">
-          <div className="text-sm text-orange-400 font-semibold">{t('hero_label')}</div>
+          <div className="text-sm text-orange-500 dark:text-orange-400 font-semibold">{t('hero_label')}</div>
           <h1 className="mt-2 text-4xl md:text-5xl font-display font-bold tracking-tight">
             {t('hero_h1')}
           </h1>
-          <p className="mt-4 text-white/60 max-w-2xl text-lg">
+          <p className="mt-4 text-slate-600 dark:text-white/60 max-w-2xl text-lg">
             {t('hero_sub')}
           </p>
         </div>
@@ -55,26 +55,26 @@ export default async function PortfolioPage() {
       <section className="pb-20 md:pb-28">
         <div className="mx-auto max-w-6xl px-5 space-y-6">
           {projects.map((p, i) => (
-            <div key={p.title} className="rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden">
+            <div key={p.title} className="rounded-2xl border border-slate-200 dark:border-white/10 bg-slate-100/60 dark:bg-white/[0.03] overflow-hidden">
               <div className="grid grid-cols-1 md:grid-cols-5 gap-0">
                 <div className={`md:col-span-2 aspect-[4/3] md:aspect-auto bg-gradient-to-br ${projectColors[i] ?? projectColors[0]} flex items-center justify-center min-h-[240px]`}>
-                  <span className="text-white/20 text-sm font-display">{t('placeholder')}</span>
+                  <span className="text-slate-300 dark:text-white/20 text-sm font-display">{t('placeholder')}</span>
                 </div>
                 <div className="md:col-span-3 p-6 md:p-8">
                   <div className="flex items-center gap-3 mb-2">
-                    <span className="text-xs px-2.5 py-1 rounded-full bg-orange-500/15 text-orange-300 font-medium">
+                    <span className="text-xs px-2.5 py-1 rounded-full bg-orange-100 dark:bg-orange-500/15 text-orange-600 dark:text-orange-300 font-medium">
                       {p.category}
                     </span>
                   </div>
                   <h2 className="text-xl font-display font-bold">{p.title}</h2>
-                  <p className="mt-2 text-sm text-white/50">{p.tags}</p>
-                  <p className="mt-3 text-sm text-white/60 leading-relaxed">{p.desc}</p>
-                  <div className="mt-4 pt-4 border-t border-white/5">
-                    <h3 className="text-xs font-semibold text-white/50 uppercase tracking-wider mb-2">{t('results_label')}</h3>
+                  <p className="mt-2 text-sm text-slate-500 dark:text-white/50">{p.tags}</p>
+                  <p className="mt-3 text-sm text-slate-600 dark:text-white/60 leading-relaxed">{p.desc}</p>
+                  <div className="mt-4 pt-4 border-t border-slate-100 dark:border-white/5">
+                    <h3 className="text-xs font-semibold text-slate-500 dark:text-white/50 uppercase tracking-wider mb-2">{t('results_label')}</h3>
                     <ul className="space-y-1">
                       {p.results.map((r) => (
-                        <li key={r} className="text-xs text-white/50 flex gap-2">
-                          <span className="text-orange-400">→</span> {r}
+                        <li key={r} className="text-xs text-slate-500 dark:text-white/50 flex gap-2">
+                          <span className="text-orange-500 dark:text-orange-400">→</span> {r}
                         </li>
                       ))}
                     </ul>
@@ -87,12 +87,12 @@ export default async function PortfolioPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 border-t border-white/10 bg-white/[0.02]">
+      <section className="py-16 border-t border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/[0.02]">
         <div className="mx-auto max-w-6xl px-5 text-center">
           <h2 className="text-2xl md:text-3xl font-display font-bold">
             {t('cta_h2')}
           </h2>
-          <p className="mt-3 text-white/60 max-w-lg mx-auto">
+          <p className="mt-3 text-slate-600 dark:text-white/60 max-w-lg mx-auto">
             {t('cta_sub')}
           </p>
           <Link

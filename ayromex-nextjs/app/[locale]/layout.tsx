@@ -6,6 +6,7 @@ import { getMessages } from 'next-intl/server'
 import { routing } from '@/i18n/routing'
 import { notFound } from 'next/navigation'
 import CustomCursor from '@/components/CustomCursor'
+import ThemeProvider from '@/components/ThemeProvider'
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -100,10 +101,12 @@ export default async function LocaleLayout({
         />
       </head>
       <body className="font-body antialiased">
-        <NextIntlClientProvider messages={messages}>
-          <CustomCursor />
-          {children}
-        </NextIntlClientProvider>
+        <ThemeProvider>
+          <NextIntlClientProvider messages={messages}>
+            <CustomCursor />
+            {children}
+          </NextIntlClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   )

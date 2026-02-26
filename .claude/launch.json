@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "AYROMEX Next.js Dev",
+      "runtimeExecutable": "C:\\Program Files\\Git\\usr\\bin\\bash.exe",
+      "runtimeArgs": ["-c", "cd ayromex-nextjs && npm run dev"],
+      "port": 3000
+    }
+  ]
+}

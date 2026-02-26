@@ -14,6 +14,15 @@
   --brand2: 255 148 92;
 }
 
+/* Light theme overrides */
+html.light {
+  --bg: 249 249 251;
+  --panel: 255 255 255;
+  --text: 15 15 20;
+  --muted: 100 105 120;
+  --stroke: 0 0 0;
+}
+
 html,
 body {
   height: 100%;
@@ -25,6 +34,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   cursor: none; /* custom cursor attivo */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* mostra cursore di sistema su mobile / touch */

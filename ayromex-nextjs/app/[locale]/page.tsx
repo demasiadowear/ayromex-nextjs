@@ -47,22 +47,22 @@ const fadeUp = {
 function FaqItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false)
   return (
-    <div className="border-b border-white/8">
+    <div className="border-b border-slate-200 dark:border-white/8">
       <button
         onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between py-6 text-left group"
       >
-        <span className="font-display font-semibold text-lg text-white/90 group-hover:text-white transition pr-6">
+        <span className="font-display font-semibold text-lg text-white/90 group-hover:text-slate-900 dark:hover:text-white transition pr-6">
           {q}
         </span>
         {open ? (
-          <HiOutlineChevronUp className="w-5 h-5 text-orange-400 shrink-0" />
+          <HiOutlineChevronUp className="w-5 h-5 text-orange-500 dark:text-orange-400 shrink-0" />
         ) : (
-          <HiOutlineChevronDown className="w-5 h-5 text-white/30 shrink-0" />
+          <HiOutlineChevronDown className="w-5 h-5 text-slate-400 dark:text-white/30 shrink-0" />
         )}
       </button>
       {open && (
-        <p className="pb-6 text-base text-white/55 leading-relaxed">{a}</p>
+        <p className="pb-6 text-base text-slate-600 dark:text-white/55 leading-relaxed">{a}</p>
       )}
     </div>
   )
@@ -76,8 +76,8 @@ function ContactForm() {
     return (
       <div className="rounded-2xl border border-green-500/20 bg-green-500/5 p-10 text-center">
         <HiOutlineCheckCircle className="w-12 h-12 text-green-400 mx-auto mb-3" />
-        <h4 className="text-xl font-display font-semibold text-white">{t('cta.sent_title')}</h4>
-        <p className="mt-2 text-white/55">{t('cta.sent_sub')}</p>
+        <h4 className="text-xl font-display font-semibold text-slate-900 dark:text-white">{t('cta.sent_title')}</h4>
+        <p className="mt-2 text-slate-600 dark:text-white/55">{t('cta.sent_sub')}</p>
       </div>
     )
   }
@@ -89,21 +89,21 @@ function ContactForm() {
           name="name"
           required
           placeholder={t('cta.form_name')}
-          className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 text-sm text-white placeholder:text-white/35 focus:outline-none focus:border-orange-500/60 transition"
+          className="w-full rounded-2xl border border-slate-200 dark:border-white/10 bg-white/[0.04] px-5 py-4 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:text-white/35 focus:outline-none focus:border-orange-500/60 transition"
         />
         <input
           type="text"
           name="contact"
           required
           placeholder={t('cta.form_contact')}
-          className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 text-sm text-white placeholder:text-white/35 focus:outline-none focus:border-orange-500/60 transition"
+          className="w-full rounded-2xl border border-slate-200 dark:border-white/10 bg-white/[0.04] px-5 py-4 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:text-white/35 focus:outline-none focus:border-orange-500/60 transition"
         />
       </div>
       <select
         name="service"
         required
         defaultValue=""
-        className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 text-sm text-white/65 focus:outline-none focus:border-orange-500/60 transition appearance-none"
+        className="w-full rounded-2xl border border-slate-200 dark:border-white/10 bg-white/[0.04] px-5 py-4 text-sm text-white/65 focus:outline-none focus:border-orange-500/60 transition appearance-none"
       >
         <option value="" disabled>{t('cta.form_service')}</option>
         <option value="branding">{t('cta.form_opt_branding')}</option>
@@ -116,7 +116,7 @@ function ContactForm() {
         name="message"
         rows={3}
         placeholder={t('cta.form_message')}
-        className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 text-sm text-white placeholder:text-white/35 focus:outline-none focus:border-orange-500/60 transition resize-none"
+        className="w-full rounded-2xl border border-slate-200 dark:border-white/10 bg-white/[0.04] px-5 py-4 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:text-white/35 focus:outline-none focus:border-orange-500/60 transition resize-none"
       />
       <button
         type="submit"
@@ -124,7 +124,7 @@ function ContactForm() {
       >
         {t('cta.form_submit')} <HiArrowRight className="w-4 h-4" />
       </button>
-      <p className="text-xs text-white/30">{t('cta.form_note')}</p>
+      <p className="text-xs text-slate-400 dark:text-white/30">{t('cta.form_note')}</p>
     </form>
   )
 }
@@ -144,7 +144,7 @@ export default function Home() {
   const trust = t.raw('hero.trust') as string[]
 
   return (
-    <main className="min-h-screen bg-[#07090d] text-white overflow-x-hidden">
+    <main className="min-h-screen bg-slate-50 dark:bg-[#07090d] text-slate-900 dark:text-white overflow-x-hidden">
       <Header />
       <WhatsAppButton />
 
@@ -175,7 +175,7 @@ export default function Home() {
             <motion.div
               variants={fadeUp}
               custom={0}
-              className="inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-medium text-white/60 mb-8"
+              className="inline-flex items-center gap-2.5 rounded-full border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 px-4 py-2 text-xs font-medium text-slate-600 dark:text-white/60 mb-8"
             >
               <span className="h-1.5 w-1.5 rounded-full bg-orange-400 shadow-[0_0_8px_rgba(251,146,60,0.7)]" />
               {t('hero.badge')}
@@ -188,13 +188,13 @@ export default function Home() {
             >
               <span className="block text-white/90">{t('hero.h1_1')}</span>
               <span className="block text-white/90">{t('hero.h1_2')}</span>
-              <span className="block text-orange-400">AYROMEX.</span>
+              <span className="block text-orange-500 dark:text-orange-400">AYROMEX.</span>
             </motion.h1>
 
             <motion.p
               variants={fadeUp}
               custom={2}
-              className="mt-8 text-lg md:text-xl text-white/55 leading-relaxed max-w-xl"
+              className="mt-8 text-lg md:text-xl text-slate-600 dark:text-white/55 leading-relaxed max-w-xl"
             >
               {t('hero.sub_1')}
               <br />
@@ -229,7 +229,7 @@ export default function Home() {
               className="mt-10 flex flex-wrap gap-3"
             >
               {trust.map((item) => (
-                <span key={item} className="text-xs text-white/40 border border-white/8 rounded-full px-3.5 py-1.5">
+                <span key={item} className="text-xs text-slate-400 dark:text-white/40 border border-slate-200 dark:border-white/8 rounded-full px-3.5 py-1.5">
                   {item}
                 </span>
               ))}
@@ -244,7 +244,7 @@ export default function Home() {
       {/* ══════════════════════════════════════════
           MARQUEE TICKER
       ══════════════════════════════════════════ */}
-      <section className="border-y border-white/8 bg-white/[0.02] py-5">
+      <section className="border-y border-slate-200 dark:border-white/8 bg-slate-50 dark:bg-white/[0.02] py-5">
         <MarqueeTicker
           items={ticker}
           className="text-sm font-display font-semibold text-white/45 uppercase tracking-[0.12em]"
@@ -259,18 +259,18 @@ export default function Home() {
 
           <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-14">
             <div>
-              <div className="text-xs font-semibold text-orange-400 uppercase tracking-widest mb-3">
+              <div className="text-xs font-semibold text-orange-500 dark:text-orange-400 uppercase tracking-widest mb-3">
                 {t('cases.label')}
               </div>
               <h2 className="font-display font-extrabold tracking-[-0.03em] leading-[0.95] text-[clamp(2.4rem,5vw,4.5rem)]">
                 {t('cases.h2')}
                 <br />
-                <span className="text-white/40">{t('cases.h2_muted')}</span>
+                <span className="text-slate-400 dark:text-white/40">{t('cases.h2_muted')}</span>
               </h2>
             </div>
             <Link
               href="/portfolio"
-              className="group inline-flex items-center gap-2 text-sm font-semibold text-white/60 hover:text-white transition shrink-0"
+              className="group inline-flex items-center gap-2 text-sm font-semibold text-slate-600 dark:text-white/60 hover:text-slate-900 dark:hover:text-white transition shrink-0"
             >
               {t('cases.link')}
               <HiArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -287,18 +287,18 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                  className="relative rounded-3xl border border-white/10 bg-white/[0.03] overflow-hidden group hover:border-orange-500/30 transition-colors"
+                  className="relative rounded-3xl border border-slate-200 dark:border-white/10 bg-slate-100/60 dark:bg-white/[0.03] overflow-hidden group hover:border-orange-500/30 transition-colors"
                 >
                   <div className="absolute top-0 right-0 w-[160px] h-[160px] halftone-br pointer-events-none opacity-70" aria-hidden />
                   <div className={`aspect-[16/10] bg-gradient-to-br ${caseColors[0]} flex items-end p-8`}>
                     <div className="space-y-1">
-                      <div className="text-xs font-semibold text-orange-400 uppercase tracking-wider">{p.category}</div>
+                      <div className="text-xs font-semibold text-orange-500 dark:text-orange-400 uppercase tracking-wider">{p.category}</div>
                       <div className="text-white/25 text-xs">{p.year}</div>
                     </div>
                   </div>
                   <div className="p-8">
                     <h3 className="font-display font-bold text-2xl tracking-tight">{p.title}</h3>
-                    <p className="mt-2 text-sm text-white/55 leading-relaxed">{p.desc}</p>
+                    <p className="mt-2 text-sm text-slate-600 dark:text-white/55 leading-relaxed">{p.desc}</p>
                   </div>
                 </motion.div>
               )
@@ -312,14 +312,14 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.1 * (i + 1), ease: [0.22, 1, 0.36, 1] }}
-                  className="relative rounded-3xl border border-white/10 bg-white/[0.03] overflow-hidden group hover:border-orange-500/30 transition-colors flex-1"
+                  className="relative rounded-3xl border border-slate-200 dark:border-white/10 bg-slate-100/60 dark:bg-white/[0.03] overflow-hidden group hover:border-orange-500/30 transition-colors flex-1"
                 >
                   <div className="absolute top-0 right-0 w-[100px] h-[100px] halftone-br pointer-events-none opacity-50" aria-hidden />
                   <div className={`aspect-[16/7] bg-gradient-to-br ${caseColors[i + 1]}`} />
                   <div className="p-6">
-                    <div className="text-xs font-semibold text-orange-400 uppercase tracking-wider mb-1">{p.category}</div>
+                    <div className="text-xs font-semibold text-orange-500 dark:text-orange-400 uppercase tracking-wider mb-1">{p.category}</div>
                     <h3 className="font-display font-bold text-lg tracking-tight">{p.title}</h3>
-                    <p className="mt-1 text-sm text-white/50 leading-relaxed">{p.desc}</p>
+                    <p className="mt-1 text-sm text-slate-500 dark:text-white/50 leading-relaxed">{p.desc}</p>
                   </div>
                 </motion.div>
               ))}
@@ -332,7 +332,7 @@ export default function Home() {
       {/* ══════════════════════════════════════════
           SERVIZI
       ══════════════════════════════════════════ */}
-      <section className="py-24 md:py-32 border-t border-white/8 relative overflow-hidden">
+      <section className="py-24 md:py-32 border-t border-slate-200 dark:border-white/8 relative overflow-hidden">
         <div className="absolute inset-0 halftone-bg pointer-events-none opacity-30" aria-hidden />
 
         <div className="relative mx-auto max-w-[1200px] px-6 md:px-10">
@@ -340,19 +340,19 @@ export default function Home() {
 
             <div className="md:w-64 shrink-0">
               <div className="md:sticky md:top-32">
-                <div className="text-xs font-semibold text-orange-400 uppercase tracking-widest mb-4">
+                <div className="text-xs font-semibold text-orange-500 dark:text-orange-400 uppercase tracking-widest mb-4">
                   {t('services.label')}
                 </div>
                 <h2 className="font-display font-extrabold tracking-[-0.03em] leading-[0.95] text-[clamp(2rem,4vw,3.5rem)]">
                   {t('services.h2')}<br />
-                  <span className="text-white/35">{t('services.h2_muted')}</span>
+                  <span className="text-slate-400 dark:text-white/35">{t('services.h2_muted')}</span>
                 </h2>
-                <p className="mt-5 text-sm text-white/50 leading-relaxed">
+                <p className="mt-5 text-sm text-slate-500 dark:text-white/50 leading-relaxed">
                   {t('services.sub')}
                 </p>
                 <Link
                   href="/servizi"
-                  className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-orange-400 hover:text-orange-300 transition"
+                  className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-orange-500 dark:text-orange-400 hover:text-orange-600 dark:text-orange-300 transition"
                 >
                   {t('services.link')}
                   <HiArrowRight className="w-4 h-4" />
@@ -375,15 +375,15 @@ export default function Home() {
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center justify-between gap-4">
-                      <h3 className="font-display font-bold text-xl md:text-2xl tracking-tight group-hover:text-orange-400 transition">
+                      <h3 className="font-display font-bold text-xl md:text-2xl tracking-tight group-hover:text-orange-500 dark:text-orange-400 transition">
                         {s.title}
                       </h3>
                       <Link href={serviceHrefs[i] as '/servizi'}>
-                        <HiArrowRight className="w-5 h-5 text-white/20 group-hover:text-orange-400 group-hover:translate-x-1 transition-all shrink-0" />
+                        <HiArrowRight className="w-5 h-5 text-slate-300 dark:text-white/20 group-hover:text-orange-500 dark:text-orange-400 group-hover:translate-x-1 transition-all shrink-0" />
                       </Link>
                     </div>
-                    <p className="mt-2 text-sm text-white/55 leading-relaxed max-w-lg">{s.desc}</p>
-                    <div className="mt-3 text-xs text-white/30 font-medium">{s.deliverables}</div>
+                    <p className="mt-2 text-sm text-slate-600 dark:text-white/55 leading-relaxed max-w-lg">{s.desc}</p>
+                    <div className="mt-3 text-xs text-slate-400 dark:text-white/30 font-medium">{s.deliverables}</div>
                   </div>
                 </motion.div>
               ))}
@@ -396,7 +396,7 @@ export default function Home() {
       {/* ══════════════════════════════════════════
           STATS
       ══════════════════════════════════════════ */}
-      <section className="py-20 border-t border-white/8 bg-white/[0.015]">
+      <section className="py-20 border-t border-slate-200 dark:border-white/8 bg-white/[0.015]">
         <div className="mx-auto max-w-[1200px] px-6 md:px-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-0 divide-y md:divide-y-0 md:divide-x divide-white/8">
             {stats.map((s, i) => (
@@ -408,7 +408,7 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: 0.1 * i }}
                 className="px-0 md:px-12 py-12 first:pl-0 last:pr-0 text-center md:text-left"
               >
-                <div className="font-display font-extrabold text-[clamp(3.5rem,7vw,5.5rem)] text-orange-400 tracking-[-0.04em] leading-none">
+                <div className="font-display font-extrabold text-[clamp(3.5rem,7vw,5.5rem)] text-orange-500 dark:text-orange-400 tracking-[-0.04em] leading-none">
                   {s.value}
                 </div>
                 <div className="mt-2 text-sm text-white/45 font-medium">{s.label}</div>
@@ -421,15 +421,15 @@ export default function Home() {
       {/* ══════════════════════════════════════════
           PROCESSO
       ══════════════════════════════════════════ */}
-      <section className="py-24 md:py-32 border-t border-white/8">
+      <section className="py-24 md:py-32 border-t border-slate-200 dark:border-white/8">
         <div className="mx-auto max-w-[1200px] px-6 md:px-10">
           <div className="text-center mb-16">
-            <div className="text-xs font-semibold text-orange-400 uppercase tracking-widest mb-3">
+            <div className="text-xs font-semibold text-orange-500 dark:text-orange-400 uppercase tracking-widest mb-3">
               {t('process.label')}
             </div>
             <h2 className="font-display font-extrabold tracking-[-0.03em] leading-tight text-[clamp(2rem,4.5vw,4rem)]">
               {t('process.h2')}<br />
-              <span className="text-white/35">{t('process.h2_muted')}</span>
+              <span className="text-slate-400 dark:text-white/35">{t('process.h2_muted')}</span>
             </h2>
           </div>
 
@@ -441,12 +441,12 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 * i }}
-                className="relative rounded-3xl border border-white/10 bg-white/[0.03] p-7 overflow-hidden"
+                className="relative rounded-3xl border border-slate-200 dark:border-white/10 bg-slate-100/60 dark:bg-white/[0.03] p-7 overflow-hidden"
               >
                 <div className="absolute top-0 right-0 w-[80px] h-[80px] halftone-br pointer-events-none opacity-50" aria-hidden />
                 <div className="font-display font-extrabold text-5xl text-orange-500/15 leading-none mb-4">{p.step}</div>
                 <h3 className="font-display font-bold text-lg">{p.title}</h3>
-                <p className="mt-2 text-sm text-white/50 leading-relaxed">{p.desc}</p>
+                <p className="mt-2 text-sm text-slate-500 dark:text-white/50 leading-relaxed">{p.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -456,11 +456,11 @@ export default function Home() {
       {/* ══════════════════════════════════════════
           TESTIMONIAL
       ══════════════════════════════════════════ */}
-      <section className="py-24 md:py-32 border-t border-white/8 bg-white/[0.015] relative overflow-hidden">
+      <section className="py-24 md:py-32 border-t border-slate-200 dark:border-white/8 bg-white/[0.015] relative overflow-hidden">
         <div className="absolute right-0 top-0 bottom-0 w-[300px] halftone-br pointer-events-none opacity-25" aria-hidden />
         <div className="mx-auto max-w-[1200px] px-6 md:px-10">
           <div className="max-w-3xl">
-            <div className="text-xs font-semibold text-orange-400 uppercase tracking-widest mb-10">
+            <div className="text-xs font-semibold text-orange-500 dark:text-orange-400 uppercase tracking-widest mb-10">
               {t('testimonial.label')}
             </div>
             <blockquote>
@@ -468,12 +468,12 @@ export default function Home() {
                 &ldquo;{t('testimonial.quote')}&rdquo;
               </p>
               <footer className="mt-8 flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-orange-500/20 border border-orange-500/30 flex items-center justify-center text-orange-400 font-display font-bold text-sm">
+                <div className="w-10 h-10 rounded-full bg-orange-500/20 border border-orange-500/30 flex items-center justify-center text-orange-500 dark:text-orange-400 font-display font-bold text-sm">
                   {t('testimonial.author').charAt(0)}
                 </div>
                 <div>
                   <div className="font-semibold text-sm">{t('testimonial.author')}</div>
-                  <div className="text-xs text-white/40">{t('testimonial.role')}</div>
+                  <div className="text-xs text-slate-400 dark:text-white/40">{t('testimonial.role')}</div>
                 </div>
               </footer>
             </blockquote>
@@ -484,23 +484,23 @@ export default function Home() {
       {/* ══════════════════════════════════════════
           FAQ
       ══════════════════════════════════════════ */}
-      <section className="py-24 md:py-32 border-t border-white/8">
+      <section className="py-24 md:py-32 border-t border-slate-200 dark:border-white/8">
         <div className="mx-auto max-w-[1200px] px-6 md:px-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-start">
             <div className="md:sticky md:top-32">
-              <div className="text-xs font-semibold text-orange-400 uppercase tracking-widest mb-3">{t('faq.label')}</div>
+              <div className="text-xs font-semibold text-orange-500 dark:text-orange-400 uppercase tracking-widest mb-3">{t('faq.label')}</div>
               <h2 className="font-display font-extrabold tracking-[-0.03em] leading-[0.95] text-[clamp(2rem,4vw,3.5rem)]">
                 {t('faq.h2')}<br />
-                <span className="text-white/35">{t('faq.h2_muted')}</span>
+                <span className="text-slate-400 dark:text-white/35">{t('faq.h2_muted')}</span>
               </h2>
-              <p className="mt-5 text-sm text-white/50 leading-relaxed whitespace-pre-line">
+              <p className="mt-5 text-sm text-slate-500 dark:text-white/50 leading-relaxed whitespace-pre-line">
                 {t('faq.sub')}
               </p>
               <a
                 href="https://wa.me/390808407861?text=Ciao%20AYROMEX%2C%20ho%20una%20domanda."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-orange-400 hover:text-orange-300 transition"
+                className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-orange-500 dark:text-orange-400 hover:text-orange-600 dark:text-orange-300 transition"
               >
                 {t('faq.wa_cta')}
                 <HiArrowRight className="w-4 h-4" />
@@ -516,7 +516,7 @@ export default function Home() {
       {/* ══════════════════════════════════════════
           CTA FINALE
       ══════════════════════════════════════════ */}
-      <section className="py-24 md:py-32 border-t border-white/8 bg-white/[0.015] relative overflow-hidden">
+      <section className="py-24 md:py-32 border-t border-slate-200 dark:border-white/8 bg-white/[0.015] relative overflow-hidden">
         <div className="absolute inset-0 halftone-bg pointer-events-none opacity-20" aria-hidden />
         <div className="absolute bottom-0 left-0 w-[300px] h-[300px] halftone-tl pointer-events-none opacity-50" aria-hidden />
         <div className="absolute top-0 right-0 w-[300px] h-[300px] halftone-br pointer-events-none opacity-50" aria-hidden />
@@ -525,20 +525,20 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
             <div>
-              <div className="text-xs font-semibold text-orange-400 uppercase tracking-widest mb-4">{t('cta.label')}</div>
+              <div className="text-xs font-semibold text-orange-500 dark:text-orange-400 uppercase tracking-widest mb-4">{t('cta.label')}</div>
               <h2 className="font-display font-extrabold tracking-[-0.035em] leading-[0.92] text-[clamp(2.8rem,6vw,5rem)]">
                 {t('cta.h2_1')}<br />
-                <span className="text-white/35">{t('cta.h2_2')}</span><br />
+                <span className="text-slate-400 dark:text-white/35">{t('cta.h2_2')}</span><br />
                 {t('cta.h2_3')}
               </h2>
-              <p className="mt-6 text-base text-white/55 leading-relaxed max-w-md">
+              <p className="mt-6 text-base text-slate-600 dark:text-white/55 leading-relaxed max-w-md">
                 {t('cta.sub')}
               </p>
 
               <div className="mt-8 space-y-3.5">
                 {bullets.map((item) => (
-                  <div key={item} className="flex items-center gap-3 text-sm text-white/55">
-                    <HiOutlineCheckCircle className="w-4 h-4 text-orange-400 shrink-0" />
+                  <div key={item} className="flex items-center gap-3 text-sm text-slate-600 dark:text-white/55">
+                    <HiOutlineCheckCircle className="w-4 h-4 text-orange-500 dark:text-orange-400 shrink-0" />
                     {item}
                   </div>
                 ))}
@@ -549,20 +549,20 @@ export default function Home() {
                   href="https://wa.me/390808407861?text=Ciao%20AYROMEX%2C%20vorrei%20un%20preventivo."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold hover:bg-white/10 transition"
+                  className="inline-flex items-center gap-2 rounded-2xl border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 px-5 py-3 text-sm font-semibold hover:bg-slate-200 dark:bg-white/10 transition"
                 >
                   {t('cta.wa')}
                 </a>
                 <a
                   href="tel:+390808407861"
-                  className="inline-flex items-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold hover:bg-white/10 transition"
+                  className="inline-flex items-center gap-2 rounded-2xl border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 px-5 py-3 text-sm font-semibold hover:bg-slate-200 dark:bg-white/10 transition"
                 >
                   {t('cta.tel')}
                 </a>
               </div>
             </div>
 
-            <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 md:p-10">
+            <div className="rounded-3xl border border-slate-200 dark:border-white/10 bg-slate-100/60 dark:bg-white/[0.03] p-8 md:p-10">
               <ContactForm />
             </div>
 

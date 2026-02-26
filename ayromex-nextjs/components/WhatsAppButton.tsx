@@ -18,7 +18,7 @@ export default function WhatsAppButton() {
       aria-label="Scrivi su WhatsApp"
       style={{ background: '#25D366' }}
     >
-      <FaWhatsapp className="w-7 h-7 text-white" />
+      <FaWhatsapp className="w-7 h-7 text-slate-900 dark:text-white" />
     </a>
   )
 }
