@@ -8,6 +8,8 @@ import { HiArrowRight } from 'react-icons/hi2'
 
 const PHONE = '+39 080 840 7861'
 const PHONE_E164 = '390808407861'
+const FACEBOOK = 'https://www.facebook.com/profile.php?id=61586097166352'
+const INSTAGRAM = 'https://www.instagram.com/ayromex_srl/'
 
 export default function Footer() {
   const t = useTranslations('footer')
@@ -105,7 +107,7 @@ export default function Footer() {
             <div className="font-semibold text-white mb-3 text-sm">{t('col_social')}</div>
             <div className="flex items-center gap-3">
               <a
-                href="https://facebook.com"
+                href={FACEBOOK}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-xl border border-white/10 bg-white/5 flex items-center justify-center hover:bg-white/10 hover:border-white/20 transition"
@@ -114,7 +116,7 @@ export default function Footer() {
                 <FaFacebookF className="w-4 h-4 text-white/70" />
               </a>
               <a
-                href="https://instagram.com"
+                href={INSTAGRAM}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-xl border border-white/10 bg-white/5 flex items-center justify-center hover:bg-white/10 hover:border-white/20 transition"
