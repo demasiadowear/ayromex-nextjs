@@ -1,4 +1,6 @@
-import { getTranslations } from 'next-intl/server'
+'use client'
+
+import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 import { FaFacebookF, FaInstagram, FaWhatsapp } from 'react-icons/fa'
 import { HiArrowRight } from 'react-icons/hi2'
@@ -6,9 +8,9 @@ import { HiArrowRight } from 'react-icons/hi2'
 const PHONE = '+39 080 840 7861'
 const PHONE_E164 = '390808407861'
 
-export default async function Footer() {
-  const t = await getTranslations('footer')
-  const tNav = await getTranslations('nav')
+export default function Footer() {
+  const t = useTranslations('footer')
+  const tNav = useTranslations('nav')
 
   const waLink = `https://wa.me/${PHONE_E164}?text=${encodeURIComponent(
     'Ciao AYROMEX, vorrei un preventivo.'
