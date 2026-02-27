@@ -46,7 +46,7 @@ export async function POST(req: Request) {
     `
 
     await resend.emails.send({
-      from: 'AYROMEX Sito <onboarding@resend.dev>',
+      from: 'AYROMEX Sito <noreply@ayromex.com>',
       to: ['info@ayromex.com'],
       replyTo: replyEmail,
       subject: `Preventivo ${service ? `— ${service}` : ''} da ${name || 'utente'}`,
