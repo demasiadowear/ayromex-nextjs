@@ -38,7 +38,7 @@ export default function Header() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-400 ${
           scrolled
-            ? 'bg-slate-50 dark:bg-[#07090d]/92 backdrop-blur-2xl border-b border-slate-200 dark:border-white/8'
+            ? 'bg-white/95 dark:bg-[#07090d]/98 backdrop-blur-2xl border-b border-slate-200 dark:border-white/8'
             : 'bg-transparent'
         }`}
       >
@@ -46,7 +46,7 @@ export default function Header() {
 
           {/* Logo */}
           <Link href="/" aria-label="AYROMEX">
-            <Logo height={26} />
+            <Logo height={36} />
           </Link>
 
           {/* Desktop Nav */}
@@ -126,7 +126,7 @@ export default function Header() {
         <div className="fixed inset-0 z-40 bg-slate-50 dark:bg-[#07090d] flex flex-col lg:hidden">
           {/* Close bar */}
           <div className="flex justify-between items-center px-6 h-[76px] border-b border-slate-200 dark:border-white/8">
-            <Logo height={26} />
+            <Logo height={36} />
             <button onClick={() => setMobileOpen(false)} className="text-slate-900 dark:text-white p-2 -mr-2">
               <HiXMark className="w-6 h-6" />
             </button>
