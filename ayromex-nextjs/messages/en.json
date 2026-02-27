@@ -403,5 +403,76 @@
       "We schedule a free 30-min briefing call.",
       "If we're a good fit, we get started."
     ]
+  },
+  "cookie_banner": {
+    "text": "We use technical cookies necessary for the site to function and functional cookies to remember your preferences (language and theme). We do not use profiling or marketing cookies.",
+    "accept": "Accept",
+    "reject": "Necessary only",
+    "learn_more": "Privacy & Cookie Policy"
+  },
+  "privacy": {
+    "title": "Privacy & Cookie Policy",
+    "intro": "Information on the processing of personal data and cookies, pursuant to EU Regulation 2016/679 (GDPR).",
+    "updated": "Last updated: 27 February 2026",
+    "s1_title": "1. Data Controller",
+    "s1_body": "AYROMEX S.R.L., registered in Romania (Trade Reg.: J2025044424001 – VAT EU: RO52014564), operational in Bari, Italy. For any queries regarding the processing of your personal data, contact us at: privacy@ayromex.com",
+    "s2_title": "2. Types of Data Collected",
+    "s2_items": [
+      "Navigation data: IP addresses, browser type, pages visited, date and time of access (automatically recorded by hosting servers).",
+      "Voluntarily provided data: name, email address, phone number, service requested and message, when you fill in the contact form.",
+      "Technical preferences: selected language and light/dark theme preference, stored locally in the browser."
+    ],
+    "s3_title": "3. Purposes and Legal Bases",
+    "s3_items": [
+      { "title": "Handling contact requests", "body": "Form data is processed to respond to your enquiry. Legal basis: performance of pre-contractual measures (Art. 6(1)(b) GDPR)." },
+      { "title": "Website operation", "body": "Technical logs and necessary cookies ensure the site functions correctly. Legal basis: legitimate interest (Art. 6(1)(f) GDPR)." },
+      { "title": "Legal obligations", "body": "Retention of mandatory accounting and tax records. Legal basis: legal obligation (Art. 6(1)(c) GDPR)." }
+    ],
+    "s4_title": "4. Retention Periods",
+    "s4_body": "Contact form data is retained for the time needed to handle your request and for a maximum of 24 months. Navigation logs are kept for 90 days. Data related to contractual relationships is retained for 10 years in compliance with tax obligations.",
+    "s5_title": "5. Recipients and Extra-EU Transfers",
+    "s5_intro": "Your data is not sold to third parties for commercial purposes. It may be processed by the following technical service providers acting as data processors:",
+    "s5_items": [
+      { "name": "Vercel Inc.", "country": "USA", "role": "Website hosting and infrastructure", "guarantee": "Standard Contractual Clauses (SCCs) approved by the European Commission." },
+      { "name": "Resend Inc.", "country": "USA", "role": "Delivery of contact form emails", "guarantee": "Standard Contractual Clauses (SCCs) approved by the European Commission." }
+    ],
+    "s6_title": "6. Your Rights",
+    "s6_intro": "Under Arts. 15–22 of the GDPR, you have the right to:",
+    "s6_items": [
+      "Access your personal data (Art. 15)",
+      "Rectify inaccurate or incomplete data (Art. 16)",
+      "Request erasure of data in applicable cases (Art. 17)",
+      "Restrict processing in certain circumstances (Art. 18)",
+      "Receive your data in a portable format (Art. 20)",
+      "Object to processing based on legitimate interest (Art. 21)",
+      "Lodge a complaint with the competent supervisory authority"
+    ],
+    "s6_footer": "To exercise your rights write to privacy@ayromex.com. We will respond within 30 days.",
+    "s7_title": "7. Cookie Policy",
+    "s7_anchor": "cookie-policy",
+    "s7_intro": "This site uses only technical and functional cookies. We do not use profiling, tracking or marketing cookies.",
+    "s7_table_title": "List of Cookies Used",
+    "s7_th_name": "Name",
+    "s7_th_provider": "Provider",
+    "s7_th_purpose": "Purpose",
+    "s7_th_duration": "Duration",
+    "s7_th_type": "Type",
+    "s7_cookies": [
+      { "name": "NEXT_LOCALE", "provider": "AYROMEX (first party)", "purpose": "Remembers the user's selected language", "duration": "1 year", "type": "Functional" },
+      { "name": "ayromex_cookie_consent", "provider": "AYROMEX (first party)", "purpose": "Remembers the user's cookie banner choice", "duration": "1 year", "type": "Technical" }
+    ],
+    "s7_local_title": "localStorage Data",
+    "s7_local_body": "The light/dark theme preference is saved in the browser's localStorage. This data remains local and is never transmitted to any server.",
+    "s8_title": "8. Managing Cookie Preferences",
+    "s8_body": "You can modify or withdraw your cookie preferences at any time via your browser settings or by contacting us at privacy@ayromex.com.",
+    "s8_browser_title": "How to manage cookies in your browser:",
+    "s8_browsers": [
+      { "name": "Chrome", "url": "https://support.google.com/chrome/answer/95647" },
+      { "name": "Firefox", "url": "https://support.mozilla.org/kb/cookies-information-websites-store-on-your-computer" },
+      { "name": "Safari", "url": "https://support.apple.com/guide/safari/manage-cookies-sfri11471/mac" },
+      { "name": "Edge", "url": "https://support.microsoft.com/windows/delete-and-manage-cookies-168dab11-0753-043d-7c16-ede5947fc64d" }
+    ],
+    "s9_title": "9. Changes to This Policy",
+    "s9_body": "We reserve the right to update this policy to reflect regulatory or technical changes. The date of the last update is shown at the top of the page."
   }
 }

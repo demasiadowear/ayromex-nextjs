@@ -7,6 +7,7 @@ import { routing } from '@/i18n/routing'
 import { notFound } from 'next/navigation'
 import CustomCursor from '@/components/CustomCursor'
 import ThemeProvider from '@/components/ThemeProvider'
+import CookieBanner from '@/components/CookieBanner'
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -106,6 +107,7 @@ export default async function LocaleLayout({
           <NextIntlClientProvider messages={messages}>
             <CustomCursor />
             {children}
+            <CookieBanner />
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>

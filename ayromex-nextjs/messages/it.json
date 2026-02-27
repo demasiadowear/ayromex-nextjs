@@ -403,5 +403,76 @@
       "Fissiamo una call gratuita di 30 min per il briefing.",
       "Se ci piace lavorare insieme, si parte."
     ]
+  },
+  "cookie_banner": {
+    "text": "Utilizziamo cookie tecnici necessari al funzionamento del sito e cookie funzionali per ricordare le tue preferenze (lingua e tema). Non utilizziamo cookie di profilazione o marketing.",
+    "accept": "Accetta",
+    "reject": "Solo necessari",
+    "learn_more": "Privacy & Cookie Policy"
+  },
+  "privacy": {
+    "title": "Privacy & Cookie Policy",
+    "intro": "Informativa sul trattamento dei dati personali e sui cookie, ai sensi del Regolamento (UE) 2016/679 (GDPR) e del D.Lgs. 196/2003 come modificato dal D.Lgs. 101/2018.",
+    "updated": "Ultimo aggiornamento: 27 febbraio 2026",
+    "s1_title": "1. Titolare del Trattamento",
+    "s1_body": "AYROMEX S.R.L., con sede legale in Romania (Nr. Reg. Com.: J2025044424001 – CUI: RO52014564), operativa a Bari, Italia. Per qualsiasi questione relativa al trattamento dei tuoi dati personali, contattaci a: privacy@ayromex.com",
+    "s2_title": "2. Tipologie di Dati Trattati",
+    "s2_items": [
+      "Dati di navigazione: indirizzi IP, tipo di browser, pagine visitate, data e ora dell'accesso (registrati automaticamente dai server di hosting).",
+      "Dati forniti volontariamente: nome, indirizzo email, numero di telefono, servizio richiesto e messaggio, quando compili il form di contatto.",
+      "Preferenze tecniche: lingua selezionata e preferenza tema chiaro/scuro, salvate localmente nel browser."
+    ],
+    "s3_title": "3. Finalità e Basi Giuridiche",
+    "s3_items": [
+      { "title": "Gestione richieste di contatto", "body": "I dati del form vengono trattati per rispondere alla tua richiesta. Base giuridica: esecuzione di misure precontrattuali (art. 6, par. 1, lett. b, GDPR)." },
+      { "title": "Funzionamento del sito", "body": "I log tecnici e i cookie necessari garantiscono il corretto funzionamento del sito. Base giuridica: legittimo interesse (art. 6, par. 1, lett. f, GDPR)." },
+      { "title": "Obblighi di legge", "body": "Conservazione dei dati contabili e fiscali obbligatori. Base giuridica: obbligo legale (art. 6, par. 1, lett. c, GDPR)." }
+    ],
+    "s4_title": "4. Modalità e Tempi di Conservazione",
+    "s4_body": "I dati del form di contatto sono conservati per il tempo necessario a gestire la richiesta e fino a un massimo di 24 mesi. I log di navigazione sono conservati per 90 giorni. I dati relativi a rapporti contrattuali sono conservati per 10 anni in adempimento degli obblighi fiscali.",
+    "s5_title": "5. Destinatari e Trasferimenti Extra UE",
+    "s5_intro": "I tuoi dati non sono ceduti a terzi per finalità commerciali. Potrebbero essere trattati dai seguenti fornitori tecnici, che operano in qualità di responsabili del trattamento:",
+    "s5_items": [
+      { "name": "Vercel Inc.", "country": "USA", "role": "Hosting e infrastruttura del sito web", "guarantee": "Clausole contrattuali standard (SCC) approvate dalla Commissione Europea." },
+      { "name": "Resend Inc.", "country": "USA", "role": "Recapito delle email di richiesta preventivo", "guarantee": "Clausole contrattuali standard (SCC) approvate dalla Commissione Europea." }
+    ],
+    "s6_title": "6. Diritti dell'Interessato",
+    "s6_intro": "Ai sensi degli artt. 15–22 del GDPR, hai il diritto di:",
+    "s6_items": [
+      "Accedere ai tuoi dati personali (art. 15)",
+      "Rettificare dati inesatti o incompleti (art. 16)",
+      "Ottenere la cancellazione dei dati nei casi previsti (art. 17)",
+      "Limitare il trattamento in determinate circostanze (art. 18)",
+      "Ricevere i tuoi dati in formato portabile (art. 20)",
+      "Opporti al trattamento basato su legittimo interesse (art. 21)",
+      "Proporre reclamo al Garante per la Protezione dei Dati Personali (garanteprivacy.it)"
+    ],
+    "s6_footer": "Per esercitare i tuoi diritti scrivi a privacy@ayromex.com. Risponderemo entro 30 giorni.",
+    "s7_title": "7. Cookie Policy",
+    "s7_anchor": "cookie-policy",
+    "s7_intro": "Questo sito utilizza esclusivamente cookie tecnici e funzionali. Non utilizziamo cookie di profilazione, tracciamento o marketing.",
+    "s7_table_title": "Elenco dei Cookie Utilizzati",
+    "s7_th_name": "Nome",
+    "s7_th_provider": "Provider",
+    "s7_th_purpose": "Finalità",
+    "s7_th_duration": "Durata",
+    "s7_th_type": "Tipo",
+    "s7_cookies": [
+      { "name": "NEXT_LOCALE", "provider": "AYROMEX (prima parte)", "purpose": "Ricorda la lingua selezionata dall'utente", "duration": "1 anno", "type": "Funzionale" },
+      { "name": "ayromex_cookie_consent", "provider": "AYROMEX (prima parte)", "purpose": "Ricorda la scelta dell'utente sul banner cookie", "duration": "1 anno", "type": "Tecnico" }
+    ],
+    "s7_local_title": "Dati in localStorage",
+    "s7_local_body": "La preferenza di tema (chiaro/scuro) è salvata nel localStorage del browser. Questi dati rimangono localmente e non vengono trasmessi a nessun server.",
+    "s8_title": "8. Gestione dei Consensi Cookie",
+    "s8_body": "Puoi modificare o revocare le tue preferenze cookie in qualsiasi momento tramite le impostazioni del tuo browser o contattandoci a privacy@ayromex.com.",
+    "s8_browser_title": "Come gestire i cookie dal browser:",
+    "s8_browsers": [
+      { "name": "Chrome", "url": "https://support.google.com/chrome/answer/95647" },
+      { "name": "Firefox", "url": "https://support.mozilla.org/kb/cookies-information-websites-store-on-your-computer" },
+      { "name": "Safari", "url": "https://support.apple.com/guide/safari/manage-cookies-sfri11471/mac" },
+      { "name": "Edge", "url": "https://support.microsoft.com/windows/delete-and-manage-cookies-168dab11-0753-043d-7c16-ede5947fc64d" }
+    ],
+    "s9_title": "9. Modifiche all'Informativa",
+    "s9_body": "Ci riserviamo il diritto di aggiornare questa informativa per adeguarla a modifiche normative o tecniche. La data di ultimo aggiornamento è indicata in cima alla pagina."
   }
 }

@@ -161,7 +161,7 @@ export default function Footer() {
               <Link className="hover:text-slate-900 dark:hover:text-white transition" href="/privacy">
                 {t('privacy')}
               </Link>
-              <Link className="hover:text-slate-900 dark:hover:text-white transition" href="/cookie">
+              <Link className="hover:text-slate-900 dark:hover:text-white transition" href="/privacy#cookie-policy">
                 {t('cookie')}
               </Link>
             </div>

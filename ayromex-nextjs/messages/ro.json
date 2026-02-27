@@ -403,5 +403,76 @@
       "Stabilim un apel gratuit de 30 min pentru briefing.",
       "Dacă ne potrivim, pornim la drum."
     ]
+  },
+  "cookie_banner": {
+    "text": "Utilizăm cookie-uri tehnice necesare funcționării site-ului și cookie-uri funcționale pentru a reține preferințele tale (limbă și temă). Nu utilizăm cookie-uri de profilare sau marketing.",
+    "accept": "Acceptă",
+    "reject": "Doar necesare",
+    "learn_more": "Politica de confidențialitate"
+  },
+  "privacy": {
+    "title": "Politica de confidențialitate și cookie-uri",
+    "intro": "Informații privind prelucrarea datelor cu caracter personal și a cookie-urilor, conform Regulamentului (UE) 2016/679 (GDPR).",
+    "updated": "Ultima actualizare: 27 februarie 2026",
+    "s1_title": "1. Operatorul de date",
+    "s1_body": "AYROMEX S.R.L., înregistrată în România (Nr. Reg. Com.: J2025044424001 – CUI: RO52014564), cu activitate operațională în Bari, Italia. Pentru orice întrebare privind prelucrarea datelor tale, contactează-ne la: privacy@ayromex.com",
+    "s2_title": "2. Tipuri de date prelucrate",
+    "s2_items": [
+      "Date de navigare: adrese IP, tip de browser, pagini vizitate, dată și oră de acces (înregistrate automat de serverele de hosting).",
+      "Date furnizate voluntar: nume, adresă email, număr de telefon, serviciu solicitat și mesaj, atunci când completezi formularul de contact.",
+      "Preferințe tehnice: limba selectată și preferința temă deschis/închis, salvate local în browser."
+    ],
+    "s3_title": "3. Scopuri și temeiuri juridice",
+    "s3_items": [
+      { "title": "Gestionarea cererilor de contact", "body": "Datele din formular sunt prelucrate pentru a răspunde solicitării tale. Temei juridic: executarea de măsuri precontractuale (art. 6 alin. 1 lit. b GDPR)." },
+      { "title": "Funcționarea site-ului", "body": "Jurnalele tehnice și cookie-urile necesare asigură funcționarea corectă a site-ului. Temei juridic: interes legitim (art. 6 alin. 1 lit. f GDPR)." },
+      { "title": "Obligații legale", "body": "Păstrarea înregistrărilor contabile și fiscale obligatorii. Temei juridic: obligație legală (art. 6 alin. 1 lit. c GDPR)." }
+    ],
+    "s4_title": "4. Durata stocării datelor",
+    "s4_body": "Datele din formularul de contact sunt păstrate pe durata necesară gestionării solicitării și maximum 24 de luni. Jurnalele de navigare se păstrează 90 de zile. Datele privind relațiile contractuale se păstrează 10 ani conform obligațiilor fiscale.",
+    "s5_title": "5. Destinatari și transferuri în afara UE",
+    "s5_intro": "Datele tale nu sunt vândute terților în scop comercial. Pot fi prelucrate de următorii furnizori de servicii tehnice, în calitate de operatori asociați:",
+    "s5_items": [
+      { "name": "Vercel Inc.", "country": "SUA", "role": "Hosting și infrastructura site-ului web", "guarantee": "Clauze contractuale standard (SCC) aprobate de Comisia Europeană." },
+      { "name": "Resend Inc.", "country": "SUA", "role": "Livrarea emailurilor din formularul de contact", "guarantee": "Clauze contractuale standard (SCC) aprobate de Comisia Europeană." }
+    ],
+    "s6_title": "6. Drepturile tale",
+    "s6_intro": "Conform art. 15–22 din GDPR, ai dreptul de a:",
+    "s6_items": [
+      "Accesa datele tale cu caracter personal (art. 15)",
+      "Rectifica datele inexacte sau incomplete (art. 16)",
+      "Solicita ștergerea datelor în cazurile prevăzute (art. 17)",
+      "Restricționa prelucrarea în anumite circumstanțe (art. 18)",
+      "Primi datele tale într-un format portabil (art. 20)",
+      "Te opune prelucrării bazate pe interes legitim (art. 21)",
+      "Depune o plângere la autoritatea de supraveghere competentă (ANSPDCP)"
+    ],
+    "s6_footer": "Pentru a-ți exercita drepturile, scrie la privacy@ayromex.com. Vom răspunde în termen de 30 de zile.",
+    "s7_title": "7. Politica de cookie-uri",
+    "s7_anchor": "cookie-policy",
+    "s7_intro": "Acest site utilizează exclusiv cookie-uri tehnice și funcționale. Nu utilizăm cookie-uri de profilare, urmărire sau marketing.",
+    "s7_table_title": "Lista cookie-urilor utilizate",
+    "s7_th_name": "Denumire",
+    "s7_th_provider": "Furnizor",
+    "s7_th_purpose": "Scop",
+    "s7_th_duration": "Durată",
+    "s7_th_type": "Tip",
+    "s7_cookies": [
+      { "name": "NEXT_LOCALE", "provider": "AYROMEX (parte proprie)", "purpose": "Reține limba selectată de utilizator", "duration": "1 an", "type": "Funcțional" },
+      { "name": "ayromex_cookie_consent", "provider": "AYROMEX (parte proprie)", "purpose": "Reține alegerea utilizatorului privind banner-ul de cookie-uri", "duration": "1 an", "type": "Tehnic" }
+    ],
+    "s7_local_title": "Date în localStorage",
+    "s7_local_body": "Preferința de temă (deschis/închis) este salvată în localStorage-ul browserului. Aceste date rămân local și nu sunt transmise niciunui server.",
+    "s8_title": "8. Gestionarea preferințelor cookie",
+    "s8_body": "Îți poți modifica sau retrage preferințele privind cookie-urile în orice moment prin setările browserului sau contactându-ne la privacy@ayromex.com.",
+    "s8_browser_title": "Cum să gestionezi cookie-urile din browser:",
+    "s8_browsers": [
+      { "name": "Chrome", "url": "https://support.google.com/chrome/answer/95647" },
+      { "name": "Firefox", "url": "https://support.mozilla.org/kb/cookies-information-websites-store-on-your-computer" },
+      { "name": "Safari", "url": "https://support.apple.com/guide/safari/manage-cookies-sfri11471/mac" },
+      { "name": "Edge", "url": "https://support.microsoft.com/windows/delete-and-manage-cookies-168dab11-0753-043d-7c16-ede5947fc64d" }
+    ],
+    "s9_title": "9. Modificări ale politicii",
+    "s9_body": "Ne rezervăm dreptul de a actualiza această politică pentru a reflecta modificări de reglementare sau tehnice. Data ultimei actualizări este indicată în partea de sus a paginii."
   }
 }
