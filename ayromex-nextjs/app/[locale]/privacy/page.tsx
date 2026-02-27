@@ -135,7 +135,15 @@ export default async function PrivacyPage() {
           <div id={t('s7_anchor')}>
             <div className="text-xs text-orange-500 font-semibold uppercase tracking-widest mb-1">Cookie Policy</div>
             <h2 className="text-xl font-display font-bold mb-3">{t('s7_title')}</h2>
-            <p className="text-slate-600 dark:text-white/60 leading-relaxed mb-6">{t('s7_intro')}</p>
+            <p className="text-slate-600 dark:text-white/60 leading-relaxed mb-4">{t('s7_intro')}</p>
+
+            {/* Zero tracking callout */}
+            <div className="mb-6 rounded-xl border border-green-200 dark:border-green-900/40 bg-green-50 dark:bg-green-900/10 p-4">
+              <div className="font-semibold text-green-800 dark:text-green-400 text-sm mb-1">
+                ✓ {t('s7_no_tracking_title')}
+              </div>
+              <p className="text-sm text-green-700 dark:text-green-300/80">{t('s7_no_tracking_body')}</p>
+            </div>
 
             {/* Cookie table */}
             <h3 className="font-semibold text-slate-800 dark:text-white/90 mb-3">{t('s7_table_title')}</h3>

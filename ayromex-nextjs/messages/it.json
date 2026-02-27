@@ -445,12 +445,14 @@
       "Limitare il trattamento in determinate circostanze (art. 18)",
       "Ricevere i tuoi dati in formato portabile (art. 20)",
       "Opporti al trattamento basato su legittimo interesse (art. 21)",
-      "Proporre reclamo al Garante per la Protezione dei Dati Personali (garanteprivacy.it)"
+      "Proporre reclamo all'autorità di controllo competente: ANSPDCP – Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal (Romania, anspdcp.ro), quale autorità di controllo principale della società, o al Garante per la Protezione dei Dati Personali (Italia, garanteprivacy.it) quale autorità dello Stato membro in cui risiedi."
     ],
     "s6_footer": "Per esercitare i tuoi diritti scrivi a privacy@ayromex.com. Risponderemo entro 30 giorni.",
     "s7_title": "7. Cookie Policy",
     "s7_anchor": "cookie-policy",
-    "s7_intro": "Questo sito utilizza esclusivamente cookie tecnici e funzionali. Non utilizziamo cookie di profilazione, tracciamento o marketing.",
+    "s7_intro": "Questo sito utilizza esclusivamente cookie tecnici e funzionali, strettamente necessari al suo funzionamento. Non installiamo alcun cookie di terze parti.",
+    "s7_no_tracking_title": "Strumenti di tracciamento assenti",
+    "s7_no_tracking_body": "Questo sito non utilizza Google Analytics, Google Tag Manager, Meta Pixel, Google Ads, né alcun altro strumento di tracciamento comportamentale o cookie di marketing/profilazione di terze parti. Zero cookie di terze parti.",
     "s7_table_title": "Elenco dei Cookie Utilizzati",
     "s7_th_name": "Nome",
     "s7_th_provider": "Provider",

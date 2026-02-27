@@ -445,12 +445,14 @@
       "Restricționa prelucrarea în anumite circumstanțe (art. 18)",
       "Primi datele tale într-un format portabil (art. 20)",
       "Te opune prelucrării bazate pe interes legitim (art. 21)",
-      "Depune o plângere la autoritatea de supraveghere competentă (ANSPDCP)"
+      "Depune o plângere la ANSPDCP – Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal (anspdcp.ro), autoritatea de supraveghere principală a societății, sau la autoritatea de supraveghere din statul membru în care îți ai reședința."
     ],
     "s6_footer": "Pentru a-ți exercita drepturile, scrie la privacy@ayromex.com. Vom răspunde în termen de 30 de zile.",
     "s7_title": "7. Politica de cookie-uri",
     "s7_anchor": "cookie-policy",
-    "s7_intro": "Acest site utilizează exclusiv cookie-uri tehnice și funcționale. Nu utilizăm cookie-uri de profilare, urmărire sau marketing.",
+    "s7_intro": "Acest site utilizează exclusiv cookie-uri tehnice și funcționale, strict necesare funcționării sale. Nu instalăm cookie-uri de la terți.",
+    "s7_no_tracking_title": "Niciun instrument de urmărire",
+    "s7_no_tracking_body": "Acest site nu utilizează Google Analytics, Google Tag Manager, Meta Pixel, Google Ads sau orice alt instrument de urmărire comportamentală ori cookie-uri de marketing/profilare de la terți. Zero cookie-uri de la terți.",
     "s7_table_title": "Lista cookie-urilor utilizate",
     "s7_th_name": "Denumire",
     "s7_th_provider": "Furnizor",

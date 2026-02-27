@@ -445,12 +445,14 @@
       "Restrict processing in certain circumstances (Art. 18)",
       "Receive your data in a portable format (Art. 20)",
       "Object to processing based on legitimate interest (Art. 21)",
-      "Lodge a complaint with the competent supervisory authority"
+      "Lodge a complaint with the competent supervisory authority: ANSPDCP (Romania, anspdcp.ro) as the lead supervisory authority, or with the supervisory authority of your country of residence."
     ],
     "s6_footer": "To exercise your rights write to privacy@ayromex.com. We will respond within 30 days.",
     "s7_title": "7. Cookie Policy",
     "s7_anchor": "cookie-policy",
-    "s7_intro": "This site uses only technical and functional cookies. We do not use profiling, tracking or marketing cookies.",
+    "s7_intro": "This site uses only technical and functional cookies strictly necessary for its operation. We do not install any third-party cookies.",
+    "s7_no_tracking_title": "No tracking tools",
+    "s7_no_tracking_body": "This site does not use Google Analytics, Google Tag Manager, Meta Pixel, Google Ads, or any other behavioural tracking tool or third-party marketing/profiling cookies. Zero third-party cookies.",
     "s7_table_title": "List of Cookies Used",
     "s7_th_name": "Name",
     "s7_th_provider": "Provider",
