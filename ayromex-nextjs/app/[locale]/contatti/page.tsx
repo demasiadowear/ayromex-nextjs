@@ -17,10 +17,27 @@ import { useTranslations } from 'next-intl'
 function ContactForm() {
   const t = useTranslations('contatti')
   const [sent, setSent] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    setSent(true)
+    setLoading(true)
+    setError(false)
+    const data = Object.fromEntries(new FormData(e.currentTarget).entries())
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      })
+      if (res.ok) setSent(true)
+      else setError(true)
+    } catch {
+      setError(true)
+    } finally {
+      setLoading(false)
+    }
   }
 
   if (sent) {
@@ -91,12 +108,16 @@ function ContactForm() {
         placeholder={t('form_message')}
         className="w-full rounded-xl border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 px-4 py-3 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:text-white/40 focus:outline-none focus:border-orange-500/50 transition resize-none"
       />
+      {error && (
+        <p className="text-sm text-red-400 text-center">Errore nell&apos;invio. Riprova o scrivici su WhatsApp.</p>
+      )}
       <button
         type="submit"
-        className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-orange-500 px-8 py-3.5 text-sm font-semibold text-black hover:bg-orange-400 transition"
+        disabled={loading}
+        className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-orange-500 px-8 py-3.5 text-sm font-semibold text-black hover:bg-orange-400 disabled:opacity-60 disabled:cursor-not-allowed transition"
       >
-        {t('form_submit')}
-        <HiArrowRight className="w-4 h-4" />
+        {loading ? 'Invio in corso…' : t('form_submit')}
+        {!loading && <HiArrowRight className="w-4 h-4" />}
       </button>
       <p className="text-xs text-slate-400 dark:text-white/40 text-center">
         {t('form_note')}

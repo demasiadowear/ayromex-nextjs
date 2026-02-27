@@ -72,6 +72,28 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 function ContactForm() {
   const t = useTranslations('home')
   const [sent, setSent] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(false)
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setLoading(true)
+    setError(false)
+    const data = Object.fromEntries(new FormData(e.currentTarget).entries())
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      })
+      if (res.ok) setSent(true)
+      else setError(true)
+    } catch {
+      setError(true)
+    } finally {
+      setLoading(false)
+    }
+  }
 
   if (sent) {
     return (
@@ -83,7 +105,7 @@ function ContactForm() {
     )
   }
   return (
-    <form onSubmit={(e) => { e.preventDefault(); setSent(true) }} className="space-y-4">
+    <form onSubmit={handleSubmit} className="space-y-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <input
           type="text"
@@ -119,11 +141,16 @@ function ContactForm() {
         placeholder={t('cta.form_message')}
         className="w-full rounded-2xl border border-slate-200 dark:border-white/10 bg-white/[0.04] px-5 py-4 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:text-white/35 focus:outline-none focus:border-orange-500/60 transition resize-none"
       />
+      {error && (
+        <p className="text-sm text-red-400">Errore nell&apos;invio. Riprova o scrivici su WhatsApp.</p>
+      )}
       <button
         type="submit"
-        className="inline-flex items-center gap-2 rounded-2xl bg-orange-500 px-8 py-4 text-sm font-semibold text-black hover:bg-orange-400 transition"
+        disabled={loading}
+        className="inline-flex items-center gap-2 rounded-2xl bg-orange-500 px-8 py-4 text-sm font-semibold text-black hover:bg-orange-400 disabled:opacity-60 disabled:cursor-not-allowed transition"
       >
-        {t('cta.form_submit')} <HiArrowRight className="w-4 h-4" />
+        {loading ? 'Invio in corso…' : t('cta.form_submit')}
+        {!loading && <HiArrowRight className="w-4 h-4" />}
       </button>
       <p className="text-xs text-slate-400 dark:text-white/30">{t('cta.form_note')}</p>
     </form>
