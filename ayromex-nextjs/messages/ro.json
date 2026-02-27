@@ -405,9 +405,17 @@
     ]
   },
   "cookie_banner": {
-    "text": "Utilizăm cookie-uri tehnice necesare funcționării site-ului și cookie-uri funcționale pentru a reține preferințele tale (limbă și temă). Nu utilizăm cookie-uri de profilare sau marketing.",
-    "accept": "Acceptă",
-    "reject": "Doar necesare",
+    "title": "Preferințe cookie",
+    "text": "Utilizăm cookie-uri tehnice și, cu acordul tău, cookie-uri statistice (Google Analytics) și de marketing (Meta Pixel, Google Ads) pentru a măsura vizitele și a susține campaniile noastre.",
+    "necessary_label": "Necesare",
+    "necessary_desc": "Întotdeauna active — indispensabile pentru funcționarea site-ului.",
+    "analytics_label": "Statistice",
+    "analytics_desc": "Google Analytics — măsoară vizitele și comportamentul utilizatorilor pe site.",
+    "marketing_label": "Marketing",
+    "marketing_desc": "Meta Pixel · Google Ads — publicitate personalizată și remarketing.",
+    "accept_all": "Acceptă toate",
+    "reject_all": "Refuză toate",
+    "save": "Salvează preferințele",
     "learn_more": "Politica de confidențialitate"
   },
   "privacy": {
@@ -450,9 +458,13 @@
     "s6_footer": "Pentru a-ți exercita drepturile, scrie la privacy@ayromex.com. Vom răspunde în termen de 30 de zile.",
     "s7_title": "7. Politica de cookie-uri",
     "s7_anchor": "cookie-policy",
-    "s7_intro": "Acest site utilizează exclusiv cookie-uri tehnice și funcționale, strict necesare funcționării sale. Nu instalăm cookie-uri de la terți.",
-    "s7_no_tracking_title": "Niciun instrument de urmărire",
-    "s7_no_tracking_body": "Acest site nu utilizează Google Analytics, Google Tag Manager, Meta Pixel, Google Ads sau orice alt instrument de urmărire comportamentală ori cookie-uri de marketing/profilare de la terți. Zero cookie-uri de la terți.",
+    "s7_intro": "Acest site utilizează cookie-uri în trei categorii. Cookie-urile statistice și de marketing sunt instalate doar cu acordul tău prin banner.",
+    "s7_cat_necessary_title": "🔒 Necesare — întotdeauna active",
+    "s7_cat_necessary_body": "Esențiale pentru funcționarea site-ului. Nu necesită consimțământ.",
+    "s7_cat_analytics_title": "📊 Statistice — cu consimțământ",
+    "s7_cat_analytics_body": "Google Analytics măsoară vizitele și comportamentul utilizatorilor în mod anonim pentru a îmbunătăți site-ul.",
+    "s7_cat_marketing_title": "📢 Marketing — cu consimțământ",
+    "s7_cat_marketing_body": "Meta Pixel și Google Ads permit urmărirea conversiilor și publicitatea personalizată pe platformele Meta și Google.",
     "s7_table_title": "Lista cookie-urilor utilizate",
     "s7_th_name": "Denumire",
     "s7_th_provider": "Furnizor",
@@ -460,8 +472,11 @@
     "s7_th_duration": "Durată",
     "s7_th_type": "Tip",
     "s7_cookies": [
-      { "name": "NEXT_LOCALE", "provider": "AYROMEX (parte proprie)", "purpose": "Reține limba selectată de utilizator", "duration": "1 an", "type": "Funcțional" },
-      { "name": "ayromex_cookie_consent", "provider": "AYROMEX (parte proprie)", "purpose": "Reține alegerea utilizatorului privind banner-ul de cookie-uri", "duration": "1 an", "type": "Tehnic" }
+      { "name": "NEXT_LOCALE", "provider": "AYROMEX", "purpose": "Reține limba selectată de utilizator", "duration": "1 an", "type": "Necesar" },
+      { "name": "ayromex_cookie_consent", "provider": "AYROMEX", "purpose": "Reține preferințele cookie ale utilizatorului", "duration": "1 an", "type": "Necesar" },
+      { "name": "_ga, _ga_*", "provider": "Google LLC", "purpose": "Măsoară vizitele (Google Analytics 4) — doar cu consimțământ statistice", "duration": "2 ani", "type": "Statistic" },
+      { "name": "_fbp", "provider": "Meta Platforms", "purpose": "Identifică browserele pentru urmărirea conversiilor Meta — doar cu consimțământ marketing", "duration": "3 luni", "type": "Marketing" },
+      { "name": "_gcl_au", "provider": "Google LLC", "purpose": "Conversii Google Ads — doar cu consimțământ marketing", "duration": "3 luni", "type": "Marketing" }
     ],
     "s7_local_title": "Date în localStorage",
     "s7_local_body": "Preferința de temă (deschis/închis) este salvată în localStorage-ul browserului. Aceste date rămân local și nu sunt transmise niciunui server.",

@@ -405,10 +405,18 @@
     ]
   },
   "cookie_banner": {
-    "text": "Utilizziamo cookie tecnici necessari al funzionamento del sito e cookie funzionali per ricordare le tue preferenze (lingua e tema). Non utilizziamo cookie di profilazione o marketing.",
-    "accept": "Accetta",
-    "reject": "Solo necessari",
-    "learn_more": "Privacy & Cookie Policy"
+    "title": "Gestione cookie",
+    "text": "Utilizziamo cookie tecnici e, previo tuo consenso, cookie statistici (Google Analytics) e di marketing (Meta Pixel, Google Ads) per misurare le visite e supportare le nostre campagne.",
+    "necessary_label": "Necessari",
+    "necessary_desc": "Sempre attivi — indispensabili per il funzionamento del sito.",
+    "analytics_label": "Statistici",
+    "analytics_desc": "Google Analytics — misura le visite e il comportamento sul sito.",
+    "marketing_label": "Marketing",
+    "marketing_desc": "Meta Pixel · Google Ads — pubblicità personalizzata e remarketing.",
+    "accept_all": "Accetta tutti",
+    "reject_all": "Rifiuta tutti",
+    "save": "Salva preferenze",
+    "learn_more": "Privacy Policy"
   },
   "privacy": {
     "title": "Privacy & Cookie Policy",
@@ -420,21 +428,27 @@
     "s2_items": [
       "Dati di navigazione: indirizzi IP, tipo di browser, pagine visitate, data e ora dell'accesso (registrati automaticamente dai server di hosting).",
       "Dati forniti volontariamente: nome, indirizzo email, numero di telefono, servizio richiesto e messaggio, quando compili il form di contatto.",
+      "Dati di utilizzo aggregati: comportamento di navigazione e conversioni, raccolti tramite Google Analytics (previo consenso).",
+      "Dati di interazione con le inserzioni: conversioni e interazioni con campagne Meta e Google Ads (previo consenso).",
       "Preferenze tecniche: lingua selezionata e preferenza tema chiaro/scuro, salvate localmente nel browser."
     ],
     "s3_title": "3. Finalità e Basi Giuridiche",
     "s3_items": [
       { "title": "Gestione richieste di contatto", "body": "I dati del form vengono trattati per rispondere alla tua richiesta. Base giuridica: esecuzione di misure precontrattuali (art. 6, par. 1, lett. b, GDPR)." },
       { "title": "Funzionamento del sito", "body": "I log tecnici e i cookie necessari garantiscono il corretto funzionamento del sito. Base giuridica: legittimo interesse (art. 6, par. 1, lett. f, GDPR)." },
+      { "title": "Analisi statistica (Analytics)", "body": "Google Analytics misura le visite, le pagine più visualizzate e il comportamento degli utenti per migliorare il sito. Base giuridica: consenso (art. 6, par. 1, lett. a, GDPR). Attivo solo se presti il consenso." },
+      { "title": "Marketing e remarketing", "body": "Meta Pixel e Google Ads tracciano le conversioni dalle campagne pubblicitarie e consentono di mostrare annunci personalizzati. Base giuridica: consenso (art. 6, par. 1, lett. a, GDPR). Attivo solo se presti il consenso." },
       { "title": "Obblighi di legge", "body": "Conservazione dei dati contabili e fiscali obbligatori. Base giuridica: obbligo legale (art. 6, par. 1, lett. c, GDPR)." }
     ],
     "s4_title": "4. Modalità e Tempi di Conservazione",
-    "s4_body": "I dati del form di contatto sono conservati per il tempo necessario a gestire la richiesta e fino a un massimo di 24 mesi. I log di navigazione sono conservati per 90 giorni. I dati relativi a rapporti contrattuali sono conservati per 10 anni in adempimento degli obblighi fiscali.",
+    "s4_body": "I dati del form di contatto sono conservati per il tempo necessario a gestire la richiesta e fino a un massimo di 24 mesi. I log di navigazione sono conservati per 90 giorni. I dati relativi a rapporti contrattuali sono conservati per 10 anni in adempimento degli obblighi fiscali. I dati raccolti tramite Google Analytics e Meta Pixel sono soggetti ai rispettivi termini di conservazione dei fornitori.",
     "s5_title": "5. Destinatari e Trasferimenti Extra UE",
-    "s5_intro": "I tuoi dati non sono ceduti a terzi per finalità commerciali. Potrebbero essere trattati dai seguenti fornitori tecnici, che operano in qualità di responsabili del trattamento:",
+    "s5_intro": "I tuoi dati personali potrebbero essere trattati dai seguenti fornitori, che operano in qualità di responsabili del trattamento:",
     "s5_items": [
       { "name": "Vercel Inc.", "country": "USA", "role": "Hosting e infrastruttura del sito web", "guarantee": "Clausole contrattuali standard (SCC) approvate dalla Commissione Europea." },
-      { "name": "Resend Inc.", "country": "USA", "role": "Recapito delle email di richiesta preventivo", "guarantee": "Clausole contrattuali standard (SCC) approvate dalla Commissione Europea." }
+      { "name": "Resend Inc.", "country": "USA", "role": "Recapito delle email di richiesta preventivo", "guarantee": "Clausole contrattuali standard (SCC) approvate dalla Commissione Europea." },
+      { "name": "Google LLC", "country": "USA", "role": "Google Analytics (statistiche) + Google Ads (pubblicità) — solo previo consenso", "guarantee": "Clausole contrattuali standard (SCC). Google Analytics attivato con anonimizzazione IP." },
+      { "name": "Meta Platforms Ireland Ltd.", "country": "IE/USA", "role": "Meta Pixel per tracciamento conversioni campagne Facebook/Instagram — solo previo consenso", "guarantee": "Clausole contrattuali standard (SCC) approvate dalla Commissione Europea." }
     ],
     "s6_title": "6. Diritti dell'Interessato",
     "s6_intro": "Ai sensi degli artt. 15–22 del GDPR, hai il diritto di:",
@@ -450,9 +464,13 @@
     "s6_footer": "Per esercitare i tuoi diritti scrivi a privacy@ayromex.com. Risponderemo entro 30 giorni.",
     "s7_title": "7. Cookie Policy",
     "s7_anchor": "cookie-policy",
-    "s7_intro": "Questo sito utilizza esclusivamente cookie tecnici e funzionali, strettamente necessari al suo funzionamento. Non installiamo alcun cookie di terze parti.",
-    "s7_no_tracking_title": "Strumenti di tracciamento assenti",
-    "s7_no_tracking_body": "Questo sito non utilizza Google Analytics, Google Tag Manager, Meta Pixel, Google Ads, né alcun altro strumento di tracciamento comportamentale o cookie di marketing/profilazione di terze parti. Zero cookie di terze parti.",
+    "s7_intro": "Questo sito utilizza cookie in tre categorie. I cookie statistici e di marketing vengono installati solo se presti il tuo consenso tramite il banner.",
+    "s7_cat_necessary_title": "🔒 Cookie Necessari — sempre attivi",
+    "s7_cat_necessary_body": "Indispensabili per il funzionamento del sito. Non richiedono consenso.",
+    "s7_cat_analytics_title": "📊 Cookie Statistici — previo consenso",
+    "s7_cat_analytics_body": "Google Analytics misura le visite e il comportamento degli utenti in forma anonima per migliorare il sito.",
+    "s7_cat_marketing_title": "📢 Cookie Marketing — previo consenso",
+    "s7_cat_marketing_body": "Meta Pixel e Google Ads consentono il tracciamento delle conversioni e la pubblicità personalizzata sulle piattaforme Meta e Google.",
     "s7_table_title": "Elenco dei Cookie Utilizzati",
     "s7_th_name": "Nome",
     "s7_th_provider": "Provider",
@@ -460,8 +478,11 @@
     "s7_th_duration": "Durata",
     "s7_th_type": "Tipo",
     "s7_cookies": [
-      { "name": "NEXT_LOCALE", "provider": "AYROMEX (prima parte)", "purpose": "Ricorda la lingua selezionata dall'utente", "duration": "1 anno", "type": "Funzionale" },
-      { "name": "ayromex_cookie_consent", "provider": "AYROMEX (prima parte)", "purpose": "Ricorda la scelta dell'utente sul banner cookie", "duration": "1 anno", "type": "Tecnico" }
+      { "name": "NEXT_LOCALE", "provider": "AYROMEX", "purpose": "Ricorda la lingua selezionata dall'utente", "duration": "1 anno", "type": "Necessario" },
+      { "name": "ayromex_cookie_consent", "provider": "AYROMEX", "purpose": "Ricorda le preferenze cookie dell'utente", "duration": "1 anno", "type": "Necessario" },
+      { "name": "_ga, _ga_*", "provider": "Google LLC", "purpose": "Misura le visite (Google Analytics 4) — solo con consenso statistici", "duration": "2 anni", "type": "Statistico" },
+      { "name": "_fbp", "provider": "Meta Platforms", "purpose": "Identifica i browser per il tracciamento delle conversioni Meta — solo con consenso marketing", "duration": "3 mesi", "type": "Marketing" },
+      { "name": "_gcl_au", "provider": "Google LLC", "purpose": "Conversioni Google Ads — solo con consenso marketing", "duration": "3 mesi", "type": "Marketing" }
     ],
     "s7_local_title": "Dati in localStorage",
     "s7_local_body": "La preferenza di tema (chiaro/scuro) è salvata nel localStorage del browser. Questi dati rimangono localmente e non vengono trasmessi a nessun server.",

@@ -405,10 +405,18 @@
     ]
   },
   "cookie_banner": {
-    "text": "We use technical cookies necessary for the site to function and functional cookies to remember your preferences (language and theme). We do not use profiling or marketing cookies.",
-    "accept": "Accept",
-    "reject": "Necessary only",
-    "learn_more": "Privacy & Cookie Policy"
+    "title": "Cookie preferences",
+    "text": "We use technical cookies and, with your consent, analytics cookies (Google Analytics) and marketing cookies (Meta Pixel, Google Ads) to measure visits and support our campaigns.",
+    "necessary_label": "Necessary",
+    "necessary_desc": "Always active — essential for the site to work.",
+    "analytics_label": "Analytics",
+    "analytics_desc": "Google Analytics — measures visits and user behaviour on the site.",
+    "marketing_label": "Marketing",
+    "marketing_desc": "Meta Pixel · Google Ads — personalised advertising and remarketing.",
+    "accept_all": "Accept all",
+    "reject_all": "Reject all",
+    "save": "Save preferences",
+    "learn_more": "Privacy Policy"
   },
   "privacy": {
     "title": "Privacy & Cookie Policy",
@@ -420,21 +428,27 @@
     "s2_items": [
       "Navigation data: IP addresses, browser type, pages visited, date and time of access (automatically recorded by hosting servers).",
       "Voluntarily provided data: name, email address, phone number, service requested and message, when you fill in the contact form.",
+      "Aggregated usage data: browsing behaviour and conversions, collected via Google Analytics (with consent).",
+      "Ad interaction data: conversions and interactions with Meta and Google Ads campaigns (with consent).",
       "Technical preferences: selected language and light/dark theme preference, stored locally in the browser."
     ],
     "s3_title": "3. Purposes and Legal Bases",
     "s3_items": [
       { "title": "Handling contact requests", "body": "Form data is processed to respond to your enquiry. Legal basis: performance of pre-contractual measures (Art. 6(1)(b) GDPR)." },
       { "title": "Website operation", "body": "Technical logs and necessary cookies ensure the site functions correctly. Legal basis: legitimate interest (Art. 6(1)(f) GDPR)." },
+      { "title": "Analytics", "body": "Google Analytics measures visits and user behaviour to improve the site. Legal basis: consent (Art. 6(1)(a) GDPR). Only active if you give consent." },
+      { "title": "Marketing and remarketing", "body": "Meta Pixel and Google Ads track conversions and enable personalised advertising. Legal basis: consent (Art. 6(1)(a) GDPR). Only active if you give consent." },
       { "title": "Legal obligations", "body": "Retention of mandatory accounting and tax records. Legal basis: legal obligation (Art. 6(1)(c) GDPR)." }
     ],
     "s4_title": "4. Retention Periods",
-    "s4_body": "Contact form data is retained for the time needed to handle your request and for a maximum of 24 months. Navigation logs are kept for 90 days. Data related to contractual relationships is retained for 10 years in compliance with tax obligations.",
+    "s4_body": "Contact form data is retained for the time needed to handle your request and for a maximum of 24 months. Navigation logs are kept for 90 days. Data related to contractual relationships is retained for 10 years in compliance with tax obligations. Data collected via Google Analytics and Meta Pixel is subject to each provider's retention terms.",
     "s5_title": "5. Recipients and Extra-EU Transfers",
-    "s5_intro": "Your data is not sold to third parties for commercial purposes. It may be processed by the following technical service providers acting as data processors:",
+    "s5_intro": "Your personal data may be processed by the following providers acting as data processors:",
     "s5_items": [
       { "name": "Vercel Inc.", "country": "USA", "role": "Website hosting and infrastructure", "guarantee": "Standard Contractual Clauses (SCCs) approved by the European Commission." },
-      { "name": "Resend Inc.", "country": "USA", "role": "Delivery of contact form emails", "guarantee": "Standard Contractual Clauses (SCCs) approved by the European Commission." }
+      { "name": "Resend Inc.", "country": "USA", "role": "Delivery of contact form emails", "guarantee": "Standard Contractual Clauses (SCCs) approved by the European Commission." },
+      { "name": "Google LLC", "country": "USA", "role": "Google Analytics (statistics) + Google Ads (advertising) — with consent only", "guarantee": "Standard Contractual Clauses (SCCs). Google Analytics activated with IP anonymisation." },
+      { "name": "Meta Platforms Ireland Ltd.", "country": "IE/USA", "role": "Meta Pixel for conversion tracking from Facebook/Instagram campaigns — with consent only", "guarantee": "Standard Contractual Clauses (SCCs) approved by the European Commission." }
     ],
     "s6_title": "6. Your Rights",
     "s6_intro": "Under Arts. 15–22 of the GDPR, you have the right to:",
@@ -450,9 +464,13 @@
     "s6_footer": "To exercise your rights write to privacy@ayromex.com. We will respond within 30 days.",
     "s7_title": "7. Cookie Policy",
     "s7_anchor": "cookie-policy",
-    "s7_intro": "This site uses only technical and functional cookies strictly necessary for its operation. We do not install any third-party cookies.",
-    "s7_no_tracking_title": "No tracking tools",
-    "s7_no_tracking_body": "This site does not use Google Analytics, Google Tag Manager, Meta Pixel, Google Ads, or any other behavioural tracking tool or third-party marketing/profiling cookies. Zero third-party cookies.",
+    "s7_intro": "This site uses cookies in three categories. Analytics and marketing cookies are only set if you give your consent via the banner.",
+    "s7_cat_necessary_title": "🔒 Necessary — always active",
+    "s7_cat_necessary_body": "Essential for the site to function. No consent required.",
+    "s7_cat_analytics_title": "📊 Analytics — with consent",
+    "s7_cat_analytics_body": "Google Analytics measures visits and user behaviour anonymously to improve the site.",
+    "s7_cat_marketing_title": "📢 Marketing — with consent",
+    "s7_cat_marketing_body": "Meta Pixel and Google Ads enable conversion tracking and personalised advertising on Meta and Google platforms.",
     "s7_table_title": "List of Cookies Used",
     "s7_th_name": "Name",
     "s7_th_provider": "Provider",
@@ -460,8 +478,11 @@
     "s7_th_duration": "Duration",
     "s7_th_type": "Type",
     "s7_cookies": [
-      { "name": "NEXT_LOCALE", "provider": "AYROMEX (first party)", "purpose": "Remembers the user's selected language", "duration": "1 year", "type": "Functional" },
-      { "name": "ayromex_cookie_consent", "provider": "AYROMEX (first party)", "purpose": "Remembers the user's cookie banner choice", "duration": "1 year", "type": "Technical" }
+      { "name": "NEXT_LOCALE", "provider": "AYROMEX", "purpose": "Remembers the user's selected language", "duration": "1 year", "type": "Necessary" },
+      { "name": "ayromex_cookie_consent", "provider": "AYROMEX", "purpose": "Remembers the user's cookie preferences", "duration": "1 year", "type": "Necessary" },
+      { "name": "_ga, _ga_*", "provider": "Google LLC", "purpose": "Measures visits (Google Analytics 4) — analytics consent only", "duration": "2 years", "type": "Analytics" },
+      { "name": "_fbp", "provider": "Meta Platforms", "purpose": "Identifies browsers for Meta conversion tracking — marketing consent only", "duration": "3 months", "type": "Marketing" },
+      { "name": "_gcl_au", "provider": "Google LLC", "purpose": "Google Ads conversions — marketing consent only", "duration": "3 months", "type": "Marketing" }
     ],
     "s7_local_title": "localStorage Data",
     "s7_local_body": "The light/dark theme preference is saved in the browser's localStorage. This data remains local and is never transmitted to any server.",

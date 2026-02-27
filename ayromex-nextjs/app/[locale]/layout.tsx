@@ -8,6 +8,7 @@ import { notFound } from 'next/navigation'
 import CustomCursor from '@/components/CustomCursor'
 import ThemeProvider from '@/components/ThemeProvider'
 import CookieBanner from '@/components/CookieBanner'
+import ConsentScripts from '@/components/ConsentScripts'
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -108,6 +109,7 @@ export default async function LocaleLayout({
             <CustomCursor />
             {children}
             <CookieBanner />
+            <ConsentScripts />
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>

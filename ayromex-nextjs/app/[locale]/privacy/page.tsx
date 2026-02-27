@@ -137,12 +137,20 @@ export default async function PrivacyPage() {
             <h2 className="text-xl font-display font-bold mb-3">{t('s7_title')}</h2>
             <p className="text-slate-600 dark:text-white/60 leading-relaxed mb-4">{t('s7_intro')}</p>
 
-            {/* Zero tracking callout */}
-            <div className="mb-6 rounded-xl border border-green-200 dark:border-green-900/40 bg-green-50 dark:bg-green-900/10 p-4">
-              <div className="font-semibold text-green-800 dark:text-green-400 text-sm mb-1">
-                ✓ {t('s7_no_tracking_title')}
+            {/* Cookie categories */}
+            <div className="mb-6 space-y-3">
+              <div className="rounded-xl border border-slate-200 dark:border-white/10 bg-slate-100/60 dark:bg-white/[0.03] p-4">
+                <div className="font-semibold text-slate-800 dark:text-white/90 text-sm mb-1">{t('s7_cat_necessary_title')}</div>
+                <p className="text-sm text-slate-600 dark:text-white/60">{t('s7_cat_necessary_body')}</p>
               </div>
-              <p className="text-sm text-green-700 dark:text-green-300/80">{t('s7_no_tracking_body')}</p>
+              <div className="rounded-xl border border-blue-200 dark:border-blue-900/40 bg-blue-50 dark:bg-blue-900/10 p-4">
+                <div className="font-semibold text-blue-800 dark:text-blue-400 text-sm mb-1">{t('s7_cat_analytics_title')}</div>
+                <p className="text-sm text-blue-700 dark:text-blue-300/80">{t('s7_cat_analytics_body')}</p>
+              </div>
+              <div className="rounded-xl border border-orange-200 dark:border-orange-900/40 bg-orange-50 dark:bg-orange-900/10 p-4">
+                <div className="font-semibold text-orange-800 dark:text-orange-400 text-sm mb-1">{t('s7_cat_marketing_title')}</div>
+                <p className="text-sm text-orange-700 dark:text-orange-300/80">{t('s7_cat_marketing_body')}</p>
+              </div>
             </div>
 
             {/* Cookie table */}
