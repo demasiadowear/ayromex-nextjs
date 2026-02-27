@@ -3,13 +3,14 @@
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 import Logo from '@/components/Logo'
-import { FaFacebookF, FaInstagram, FaWhatsapp } from 'react-icons/fa'
+import { FaFacebookF, FaInstagram, FaWhatsapp, FaGoogle } from 'react-icons/fa'
 import { HiArrowRight } from 'react-icons/hi2'
 
 const PHONE = '+39 080 840 7861'
 const PHONE_E164 = '390808407861'
 const FACEBOOK = 'https://www.facebook.com/profile.php?id=61586097166352'
 const INSTAGRAM = 'https://www.instagram.com/ayromex_srl/'
+const GOOGLE = 'https://g.page/r/CWWDew7_lO77EBM'
 
 export default function Footer() {
   const t = useTranslations('footer')
@@ -110,7 +111,7 @@ export default function Footer() {
                 href={FACEBOOK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 flex items-center justify-center hover:bg-slate-200 dark:bg-white/10 hover:border-white/20 transition"
+                className="w-10 h-10 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 flex items-center justify-center hover:bg-slate-200 dark:bg-white/10 hover:border-slate-300 dark:border-white/20 transition"
                 aria-label="Facebook"
               >
                 <FaFacebookF className="w-4 h-4 text-slate-700 dark:text-white/70" />
@@ -119,7 +120,7 @@ export default function Footer() {
                 href={INSTAGRAM}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 flex items-center justify-center hover:bg-slate-200 dark:bg-white/10 hover:border-white/20 transition"
+                className="w-10 h-10 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 flex items-center justify-center hover:bg-slate-200 dark:bg-white/10 hover:border-slate-300 dark:border-white/20 transition"
                 aria-label="Instagram"
               >
                 <FaInstagram className="w-4 h-4 text-slate-700 dark:text-white/70" />
@@ -128,10 +129,19 @@ export default function Footer() {
                 href={waLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 flex items-center justify-center hover:bg-slate-200 dark:bg-white/10 hover:border-white/20 transition"
+                className="w-10 h-10 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 flex items-center justify-center hover:bg-slate-200 dark:bg-white/10 hover:border-slate-300 dark:border-white/20 transition"
                 aria-label="WhatsApp"
               >
                 <FaWhatsapp className="w-4 h-4 text-slate-700 dark:text-white/70" />
+              </a>
+              <a
+                href={GOOGLE}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 flex items-center justify-center hover:bg-slate-200 dark:bg-white/10 hover:border-slate-300 dark:border-white/20 transition"
+                aria-label="Google Business Profile"
+              >
+                <FaGoogle className="w-4 h-4 text-slate-700 dark:text-white/70" />
               </a>
             </div>
           </div>

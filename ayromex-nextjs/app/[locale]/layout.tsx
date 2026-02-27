@@ -93,6 +93,7 @@ export default async function LocaleLayout({
     <html
       lang={locale}
       className={`scroll-smooth ${spaceGrotesk.variable} ${inter.variable}`}
+      suppressHydrationWarning
     >
       <head>
         <script

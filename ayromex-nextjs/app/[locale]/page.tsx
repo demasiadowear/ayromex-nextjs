@@ -53,7 +53,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
         onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between py-6 text-left group"
       >
-        <span className="font-display font-semibold text-lg text-white/90 group-hover:text-slate-900 dark:hover:text-white transition pr-6">
+        <span className="font-display font-semibold text-lg text-slate-800 dark:text-white/90 group-hover:text-slate-900 dark:hover:text-white transition pr-6">
           {q}
         </span>
         {open ? (
@@ -104,7 +104,7 @@ function ContactForm() {
         name="service"
         required
         defaultValue=""
-        className="w-full rounded-2xl border border-slate-200 dark:border-white/10 bg-white/[0.04] px-5 py-4 text-sm text-white/65 focus:outline-none focus:border-orange-500/60 transition appearance-none"
+        className="w-full rounded-2xl border border-slate-200 dark:border-white/10 bg-white/[0.04] px-5 py-4 text-sm text-slate-600 dark:text-white/65 focus:outline-none focus:border-orange-500/60 transition appearance-none"
       >
         <option value="" disabled>{t('cta.form_service')}</option>
         <option value="branding">{t('cta.form_opt_branding')}</option>
@@ -196,7 +196,7 @@ export default function Home() {
                   width={1735}
                   height={755}
                   priority
-                  className="invert dark:invert-0 h-[clamp(3.8rem,11vw,9rem)] w-auto"
+                  className="invert dark:invert-0 h-[clamp(7rem,20vw,16rem)] w-auto"
                   style={{ objectFit: 'contain', objectPosition: 'left' }}
                 />
               </span>
@@ -258,7 +258,7 @@ export default function Home() {
       <section className="border-y border-slate-200 dark:border-white/8 bg-slate-50 dark:bg-white/[0.02] py-5">
         <MarqueeTicker
           items={ticker}
-          className="text-sm font-display font-semibold text-white/45 uppercase tracking-[0.12em]"
+          className="text-sm font-display font-semibold text-slate-500 dark:text-white/45 uppercase tracking-[0.12em]"
         />
       </section>
 
@@ -304,7 +304,7 @@ export default function Home() {
                   <div className={`aspect-[16/10] bg-gradient-to-br ${caseColors[0]} flex items-end p-8`}>
                     <div className="space-y-1">
                       <div className="text-xs font-semibold text-orange-500 dark:text-orange-400 uppercase tracking-wider">{p.category}</div>
-                      <div className="text-white/25 text-xs">{p.year}</div>
+                      <div className="text-slate-400 dark:text-white/25 text-xs">{p.year}</div>
                     </div>
                   </div>
                   <div className="p-8">
@@ -422,7 +422,7 @@ export default function Home() {
                 <div className="font-display font-extrabold text-[clamp(3.5rem,7vw,5.5rem)] text-orange-500 dark:text-orange-400 tracking-[-0.04em] leading-none">
                   {s.value}
                 </div>
-                <div className="mt-2 text-sm text-white/45 font-medium">{s.label}</div>
+                <div className="mt-2 text-sm text-slate-500 dark:text-white/45 font-medium">{s.label}</div>
               </motion.div>
             ))}
           </div>
@@ -475,7 +475,7 @@ export default function Home() {
               {t('testimonial.label')}
             </div>
             <blockquote>
-              <p className="font-display font-bold text-[clamp(1.6rem,3.5vw,2.8rem)] tracking-[-0.02em] leading-[1.15] text-white/90">
+              <p className="font-display font-bold text-[clamp(1.6rem,3.5vw,2.8rem)] tracking-[-0.02em] leading-[1.15] text-slate-800 dark:text-white/90">
                 &ldquo;{t('testimonial.quote')}&rdquo;
               </p>
               <footer className="mt-8 flex items-center gap-4">

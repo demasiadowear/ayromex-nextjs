@@ -268,14 +268,14 @@
         "id": "automazioni",
         "title": "Automazioni AI",
         "subtitle": "Powered by StudioPilot",
-        "desc": "Automatizziamo prenotazioni, risposte WhatsApp, gestione contatti e CRM leggero per attività locali — con StudioPilot, il nostro prodotto dedicato.",
+        "desc": "Automatizziamo prenotazioni, risposte WhatsApp, gestione contatti e CRM leggero per studi professionali — con StudioPilot, il nostro prodotto dedicato.",
         "deliverables": [
           "Risposte automatiche WhatsApp",
           "Sistema prenotazioni semplice",
           "CRM leggero per gestire contatti",
           "Integrazione con social e sito"
         ],
-        "ideal": "Attività locali che vogliono automatizzare senza complicarsi.",
+        "ideal": "Professionisti che vogliono automatizzare senza complicarsi.",
         "productUrl": "https://www.studiopilot.pro/"
       }
     ]
