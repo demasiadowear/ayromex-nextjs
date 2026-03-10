@@ -291,46 +291,46 @@
     "cta_btn": "Request a quote",
     "projects": [
       {
-        "title": "Ristorante La Brace",
+        "title": "CIKO – Pizzeria Take Away",
+        "category": "Full Brand Identity",
+        "tags": "Logo, brand identity, social pack, menu, interior graphics, uniforms",
+        "desc": "Complete project for a take away pizzeria. From logo to visual identity across every touchpoint: printed menus, interior graphics, coordinated social pack and branded staff uniforms.",
+        "results": ["Logo and brand identity built from scratch", "Menu designed and print-ready", "Complete reusable social pack", "Staff uniforms aligned to the brand"]
+      },
+      {
+        "title": "Apex Card Room",
         "category": "Brand Identity",
-        "tags": "Logo, menu, signage, social pack",
-        "desc": "Complete visual identity for a seafood restaurant in Bari. From logo to menu, from signage to social templates.",
-        "results": ["Recognisable brand across all channels", "Professional menu printed in 500 copies", "Reusable social templates every week"]
+        "tags": "Logo, brand identity, social pack, interior graphics, uniforms",
+        "desc": "Premium visual identity for a poker room. An exclusive, recognisable brand designed to attract players and communicate professionalism in the card gaming world.",
+        "results": ["Logo and visual identity from scratch", "Coordinated social pack", "Interior graphics and signage", "Branded staff uniforms"]
       },
       {
-        "title": "Hotel Adriatico",
+        "title": "B&B Le Dimore di Garibaldi",
         "category": "Social Pack",
-        "tags": "Instagram templates, Stories, Ads",
-        "desc": "Complete social template pack for a hotel on the Adriatic coast. Coordinated feed, stories and ad graphics.",
-        "results": ["Consistent, professional Instagram feed", "12 reusable Canva templates", "Summer season ad graphics"]
+        "tags": "Instagram templates, Stories, suite promotion",
+        "desc": "Social pack for promoting the suites of a historic B&B. Coordinated templates for feed and Stories, designed to showcase the spaces and increase direct bookings.",
+        "results": ["Full Instagram and Stories template pack", "Professional and visually cohesive feed", "Seasonal suite promotion graphics"]
       },
       {
-        "title": "Studio Legale Rossi",
-        "category": "Rebranding",
-        "tags": "Logo, business cards, presentation, letterhead",
-        "desc": "Complete rebranding for a law firm. Modern, authoritative image, consistent from business card to client presentation.",
-        "results": ["Professional and modern image", "Presentation deck for new clients", "Coordinated print + digital materials"]
+        "title": "Bonega Poker Room",
+        "category": "Social & Graphics",
+        "tags": "Social management, event posters, promotional graphics",
+        "desc": "Social media management and graphics production for posters and events. Consistent, professional content to keep the community engaged and promote tournaments and evenings.",
+        "results": ["Ongoing social media management", "Event posters produced on demand", "Promotional graphics for tournaments and evenings"]
       },
       {
-        "title": "Boutique Moda Donna",
-        "category": "Brand Identity + Social",
-        "tags": "Logo, packaging, social templates, ads",
-        "desc": "Visual identity and social design for a women's fashion boutique. Elegant, contemporary look reflecting the brand positioning.",
-        "results": ["Premium brand perceived by customers", "Packaging coordinated with logo", "Increased social engagement"]
+        "title": "Halvion Hotel",
+        "category": "Brand from Scratch",
+        "tags": "Naming, logo, tone of voice, market research",
+        "desc": "Complete branding for a hotel opening in 2026. From naming to logo, market positioning research to tone of voice: an identity built to compete.",
+        "results": ["Naming and logo created from scratch", "Market research and hotel positioning", "Tone of voice and brand guidelines defined", "Identity ready for 2026 launch"]
       },
       {
-        "title": "Pizzeria Da Michele",
-        "category": "Print & Materials",
-        "tags": "Menu, placemats, signage, business cards",
-        "desc": "Complete print materials for a historic pizzeria. Design that respects tradition with a modern, clean touch.",
-        "results": ["Readable and attractive menu", "Branded placemats", "Coordinated exterior signage"]
-      },
-      {
-        "title": "Tech Startup InnovaHub",
-        "category": "Pitch Deck",
-        "tags": "Investor presentation, brand guidelines",
-        "desc": "Professional pitch deck for a tech startup in fundraising. 18 clear slides, data visualised effectively, credible design.",
-        "results": ["Presentation for seed round", "Clear data infographics", "Brand guidelines included"]
+        "title": "NIMAR S.R.L.",
+        "category": "Corporate Branding",
+        "tags": "Logo, branding, business cards",
+        "desc": "Professional branding for an investment and business management company. A formal, authoritative image — from logo to business cards — conveying reliability and solidity.",
+        "results": ["Professional and modern logo", "Coordinated business cards", "Consistent corporate image across all materials"]
       }
     ]
   },

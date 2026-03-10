@@ -291,46 +291,46 @@
     "cta_btn": "Cere o ofertă",
     "projects": [
       {
-        "title": "Ristorante La Brace",
+        "title": "CIKO – Pizzeria Take Away",
+        "category": "Brand Identity Complet",
+        "tags": "Logo, brand identity, social pack, meniu, grafică interioară, uniforme",
+        "desc": "Proiect complet pentru o pizzerie take away. De la logo la identitatea vizuală pe fiecare punct de contact: meniuri tipărite, grafică interioară, social pack coordonat și uniforme branduite pentru personal.",
+        "results": ["Logo și brand identity construite de la zero", "Meniu proiectat și gata de tipar", "Social pack complet și reutilizabil", "Uniforme pentru personal aliniate brandului"]
+      },
+      {
+        "title": "Apex Card Room",
         "category": "Brand Identity",
-        "tags": "Logo, meniu, signalizare, social pack",
-        "desc": "Identitate vizuală completă pentru un restaurant de fructe de mare din Bari. De la logo la meniu, de la signalizare la template-uri social.",
-        "results": ["Brand recognoscibil pe toate canalele", "Meniu profesional tipărit în 500 exemplare", "Template-uri social reutilizabile săptămânal"]
+        "tags": "Logo, brand identity, social pack, grafică interioară, uniforme",
+        "desc": "Identitate vizuală premium pentru o sală de poker. Brand exclusivist și recognoscibil, conceput pentru a atrage jucători și a comunica profesionalism în lumea card gaming-ului.",
+        "results": ["Logo și identitate vizuală de la zero", "Social pack coordonat", "Grafică interioară și semnalistică", "Uniforme branduite pentru personal"]
       },
       {
-        "title": "Hotel Adriatico",
+        "title": "B&B Le Dimore di Garibaldi",
         "category": "Social Pack",
-        "tags": "Template-uri Instagram, Stories, Ads",
-        "desc": "Pachet complet de template-uri social pentru un hotel pe coasta adriatică. Feed coordonat, stories și grafice pentru campanii ads.",
-        "results": ["Feed Instagram coerent și profesional", "12 template-uri reutilizabile pe Canva", "Grafice ads pentru sezonul de vară"]
+        "tags": "Template-uri Instagram, Stories, promovare suite",
+        "desc": "Social pack pentru promovarea suitelor unui B&B istoric. Template-uri coordonate pentru feed și Stories, concepute pentru a valorifica spațiile și a crește rezervările directe.",
+        "results": ["Pachet complet template-uri Instagram și Stories", "Feed profesional și coerent vizual", "Grafică pentru promovarea sezonieră a suitelor"]
       },
       {
-        "title": "Studio Legale Rossi",
-        "category": "Rebranding",
-        "tags": "Logo, cărți de vizită, prezentare, antet",
-        "desc": "Rebranding complet pentru un cabinet juridic. Imagine modernă, autoritară, coerentă de la cartea de vizită la prezentarea pentru clienți.",
-        "results": ["Imagine profesională și modernă", "Deck prezentare pentru clienți noi", "Materiali coordonate print + digital"]
+        "title": "Bonega Poker Room",
+        "category": "Social & Grafică",
+        "tags": "Gestionare social, afișe evenimente, grafică promoțională",
+        "desc": "Gestionarea canalelor social și producție de grafică pentru afișe și evenimente. Conținut constant și profesionist pentru a menține comunitatea activă și a promova turnee și seri speciale.",
+        "results": ["Gestionare social media continuă", "Afișe pentru evenimente realizate la cerere", "Grafică promoțională pentru turnee și seri speciale"]
       },
       {
-        "title": "Boutique Moda Donna",
-        "category": "Brand Identity + Social",
-        "tags": "Logo, ambalaje, template-uri social, ads",
-        "desc": "Identitate vizuală și social design pentru un boutique de modă feminină. Look elegant, contemporan, care reflectă poziționarea brandului.",
-        "results": ["Brand premium perceput de clienți", "Ambalaje coordonate cu logo", "Engagement social crescut"]
+        "title": "Halvion Hotel",
+        "category": "Branding de la Zero",
+        "tags": "Naming, logo, ton al vocii, cercetare de piață",
+        "desc": "Branding complet pentru un hotel cu deschidere în 2026. De la naming la logo, de la cercetarea poziționării pe piață la definirea tonului vocii: o identitate construită pentru a concura.",
+        "results": ["Naming și logo create de la zero", "Cercetare de piață și poziționare hotel", "Ton al vocii și brand guidelines definite", "Identitate pregătită pentru lansarea din 2026"]
       },
       {
-        "title": "Pizzeria Da Michele",
-        "category": "Print & Materiale",
-        "tags": "Meniu, șervețele, signalizare, cărți de vizită",
-        "desc": "Materiale tipărite complete pentru o pizzerie istorică. Design care respectă tradiția cu o notă modernă și curată.",
-        "results": ["Meniu lizibil și atractiv", "Șervețele branduite", "Signalizare exterioară coordonată"]
-      },
-      {
-        "title": "Tech Startup InnovaHub",
-        "category": "Pitch Deck",
-        "tags": "Prezentare investitori, brand guidelines",
-        "desc": "Pitch deck profesional pentru un startup tech în faza de fundraising. 18 slide-uri clare, date vizualizate eficient, design credibil.",
-        "results": ["Prezentare pentru runda seed", "Infografice de date clare", "Brand guidelines incluse"]
+        "title": "NIMAR S.R.L.",
+        "category": "Branding Corporate",
+        "tags": "Logo, branding, cărți de vizită",
+        "desc": "Branding profesionist pentru o societate de investiții și gestionare activități. Imagine formală și autoritară — de la logo la cărțile de vizită — pentru a transmite soliditate și credibilitate.",
+        "results": ["Logo profesionist și modern", "Cărți de vizită coordonate", "Imagine corporativă coerentă pe toate materialele"]
       }
     ]
   },
