@@ -1,86 +1,91 @@
 'use client'
 
-import Link from 'next/link'
-import { FaFacebook, FaInstagram, FaWhatsapp, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa'
+import { useTranslations, useLocale } from 'next-intl'
+import { FaFacebook, FaInstagram, FaWhatsapp, FaLinkedin, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa'
+import { AyromexLogo } from './AyromexLogo'
 
 export default function Footer() {
+  const t = useTranslations('footer')
+  const locale = useLocale()
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-dark-950 border-t border-gray-800 pt-16 pb-8 text-sm">
+    <footer className="bg-[#0a0a0a] dark:bg-[#050505] border-t border-white/10 pt-16 pb-8 text-sm">
       <div className="section-container">
-        
-        {/* GRIGLIA PRINCIPALE */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-          
-          {/* 1. BRAND & MISSION */}
+
+          {/* Brand */}
           <div>
-            <div className="text-2xl font-bold mb-6 tracking-tight">
-              <span className="text-orange-500">AYRO</span>
-              <span className="text-light-50">MEX</span>
+            <div className="mb-6">
+              <AyromexLogo />
             </div>
-            <p className="text-light-50/70 mb-6 leading-relaxed">
-              Agenzia creativa e digitale. Uniamo design, social media e strategie concrete per far crescere PMI, attività locali e brand che vogliono fare sul serio.
+            <p className="text-white/60 mb-6 leading-relaxed text-sm">
+              {t('description')}
             </p>
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center gap-3">
               <SocialIcon href="https://www.facebook.com/profile.php?id=61586097166352" icon={<FaFacebook />} />
               <SocialIcon href="https://www.instagram.com/ayromex_srl/" icon={<FaInstagram />} />
+              <SocialIcon href="https://www.linkedin.com/company/ayromex" icon={<FaLinkedin />} />
               <SocialIcon href="https://wa.me/390808407861" icon={<FaWhatsapp />} />
             </div>
           </div>
 
-          {/* 2. SERVIZI RAPIDI */}
+          {/* Services */}
           <div>
-            <h4 className="font-bold text-white mb-6 uppercase tracking-wider text-xs">Cosa Facciamo</h4>
-            <ul className="space-y-3 text-light-50/70">
-              <li><Link href="/servizi" className="hover:text-orange-500 transition-colors">Identità Visiva & Logo</Link></li>
-              <li><Link href="/servizi" className="hover:text-orange-500 transition-colors">Gestione Social Media</Link></li>
-              <li><Link href="/servizi" className="hover:text-orange-500 transition-colors">Siti Web & E-commerce</Link></li>
-              <li><Link href="/servizi" className="hover:text-orange-500 transition-colors">Materiale Stampa & Menu</Link></li>
-              <li><Link href="/servizi" className="hover:text-orange-500 transition-colors">Marketing Locale</Link></li>
+            <h4 className="font-bold text-white mb-5 uppercase tracking-widest text-xs">{t('servicesTitle')}</h4>
+            <ul className="space-y-3 text-white/60 text-sm">
+              {(['service1','service2','service3','service4','service5'] as const).map((k) => (
+                <li key={k}>
+                  <a href={`/${locale}/servizi`} className="hover:text-[#FF4D00] transition-colors">{t(k)}</a>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* 3. DATI AZIENDALI (Legale) */}
-          <div className="lg:col-span-2 bg-dark-900/50 p-6 rounded-xl border border-gray-800">
-            <h4 className="font-bold text-white mb-4 uppercase tracking-wider text-xs flex items-center">
-              <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
-              Dati Societari & Legali
+          {/* Pages */}
+          <div>
+            <h4 className="font-bold text-white mb-5 uppercase tracking-widest text-xs">{t('pagesTitle')}</h4>
+            <ul className="space-y-3 text-white/60 text-sm">
+              <li><a href={`/${locale}`} className="hover:text-[#FF4D00] transition-colors">Home</a></li>
+              <li><a href={`/${locale}/chi-siamo`} className="hover:text-[#FF4D00] transition-colors">{t('chiSiamo')}</a></li>
+              <li><a href={`/${locale}/servizi`} className="hover:text-[#FF4D00] transition-colors">{t('servicesTitle')}</a></li>
+              <li><a href={`/${locale}/journal`} className="hover:text-[#FF4D00] transition-colors">{t('journal')}</a></li>
+            </ul>
+          </div>
+
+          {/* Legal */}
+          <div className="bg-white/5 p-6 rounded-2xl border border-white/10">
+            <h4 className="font-bold text-white mb-4 uppercase tracking-widest text-xs flex items-center gap-2">
+              <span className="w-2 h-2 bg-green-500 rounded-full" />
+              {t('legalTitle')}
             </h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs text-light-50/60 leading-relaxed font-mono">
+            <div className="space-y-3 text-xs text-white/50 font-mono leading-relaxed">
               <div>
-                <strong className="text-light-50 block mb-1">AYROMEX S.R.L.</strong>
+                <strong className="text-white/80 block mb-1">AYROMEX S.R.L.</strong>
                 <p>CUI: 52014564</p>
                 <p>Reg. Com: J2025044424001</p>
                 <p>EUID: ROONRC.J2025044424001</p>
-                <p className="mt-2 text-green-500/80">Società abilitata VIES</p>
+                <p className="mt-1 text-green-400/70">Societate VIES</p>
               </div>
               <div>
-                <strong className="text-light-50 block mb-1">Sede Legale</strong>
-                <p>București Sectorul 4, Aleea Izvorul Oltului, Nr. 6</p>
-                <p>Bl. 29, Sc. B, Et. 2, Ap. 24</p>
-                <p>Romania</p>
+                <strong className="text-white/80 block mb-1">{t('legalAddress')}</strong>
+                <p>București Sectorul 4</p>
+                <p>Aleea Izvorul Oltului, Nr. 6</p>
+                <p>Bl. 29, Sc. B, Et. 2, Ap. 24 — Romania</p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* BOTTOM BAR: CONTATTI & COPYRIGHT */}
-        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-light-50/50">
-          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
-            <span className="flex items-center gap-2">
-              <FaPhoneAlt /> +39 080 840 7861
-            </span>
-            <span className="flex items-center gap-2">
-              <FaEnvelope /> info@ayromex.com
-            </span>
-            <span className="flex items-center gap-2">
-              <FaMapMarkerAlt /> Bari (IT) / Bucharest (RO)
-            </span>
+        {/* Bottom bar */}
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/40">
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 md:gap-8">
+            <span className="flex items-center gap-2 min-h-[44px]"><FaPhoneAlt /> +39 080 840 7861</span>
+            <span className="flex items-center gap-2 min-h-[44px]"><FaEnvelope /> info@ayromex.com</span>
+            <span className="flex items-center gap-2 min-h-[44px]"><FaMapMarkerAlt /> Bari (IT) / Bucharest (RO)</span>
           </div>
-          
           <div className="text-center md:text-right">
-             © {currentYear} Ayromex Digital Creations. All rights reserved.
+            © {currentYear} {t('copyright')}
           </div>
         </div>
       </div>
@@ -88,13 +93,13 @@ export default function Footer() {
   )
 }
 
-function SocialIcon({ href, icon }: { href: string, icon: React.ReactNode }) {
+function SocialIcon({ href, icon }: { href: string; icon: React.ReactNode }) {
   return (
-    <a 
-      href={href} 
-      target="_blank" 
+    <a
+      href={href}
+      target="_blank"
       rel="noopener noreferrer"
-      className="w-10 h-10 bg-white/5 hover:bg-orange-500 hover:text-white rounded-full flex items-center justify-center transition-all duration-300 text-light-50/70"
+      className="w-10 h-10 bg-white/5 hover:bg-[#FF4D00] hover:text-white rounded-full flex items-center justify-center transition-all duration-200 text-white/60 min-h-[44px] min-w-[44px]"
     >
       {icon}
     </a>

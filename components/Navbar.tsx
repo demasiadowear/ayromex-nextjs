@@ -1,19 +1,34 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { HiBars3BottomRight, HiXMark, HiChevronDown } from 'react-icons/hi2'
-import GoogleTranslate from './GoogleTranslate'
-// Importiamo le bandiere dalla libreria appena installata
-import { IT, GB, RO, ES, PT, DE, FR } from 'country-flag-icons/react/3x2'
+import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa'
+import { FaMoon, FaSun } from 'react-icons/fa'
+import { useTranslations, useLocale } from 'next-intl'
+import { useRouter, usePathname } from '@/i18n/navigation'
+import { IT, GB, RO } from 'country-flag-icons/react/3x2'
+import { AyromexLogo } from './AyromexLogo'
+import { useTheme } from './ThemeProvider'
+
+const languages = [
+  { code: 'it', label: 'Italiano', FlagComponent: IT },
+  { code: 'en', label: 'English', FlagComponent: GB },
+  { code: 'ro', label: 'Română', FlagComponent: RO },
+] as const
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
   const [isLangOpen, setIsLangOpen] = useState(false)
-  const [currentLang, setCurrentLang] = useState(languages[0])
+
+  const t = useTranslations('nav')
+  const locale = useLocale()
+  const router = useRouter()
+  const pathname = usePathname()
+  const { theme, toggle } = useTheme()
+
+  const currentLang = languages.find((l) => l.code === locale) ?? languages[0]
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20)
@@ -21,82 +36,109 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Close menus on route change
+  useEffect(() => { setIsOpen(false); setIsLangOpen(false) }, [pathname])
+
   const handleLanguageChange = (langCode: string) => {
-    document.cookie = `googtrans=/it/${langCode.toLowerCase()}; path=/; domain=${window.location.hostname}`;
-    document.cookie = `googtrans=/it/${langCode.toLowerCase()}; path=/;`;
-    window.location.reload();
+    router.replace(pathname, { locale: langCode })
+    setIsLangOpen(false)
+    setIsOpen(false)
   }
 
-  return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled || isOpen ? 'bg-dark-950/90 backdrop-blur-md border-b border-white/5 py-4' : 'bg-transparent py-6'
-    }`}>
-      <GoogleTranslate />
+  // Anchor links go in-page if on home, else navigate home + anchor
+  const anchorHref = (hash: string) => pathname === '/' ? hash : `/${locale}${hash}`
 
+  const navLinks = [
+    { label: t('home'), href: `/${locale}`, isAnchor: false },
+    { label: t('services'), href: `/${locale}/servizi`, isAnchor: false },
+    { label: t('products'), href: anchorHref('#prodotti'), isAnchor: true },
+    { label: t('clients'), href: anchorHref('#clienti'), isAnchor: true },
+    { label: t('contact'), href: anchorHref('#contatti'), isAnchor: true },
+  ]
+
+  const navBg = isScrolled || isOpen
+    ? 'bg-white/90 dark:bg-[#070707]/90 backdrop-blur-md border-b border-black/10 dark:border-white/5 py-3'
+    : 'bg-transparent py-5'
+
+  return (
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navBg}`}>
       <div className="section-container flex items-center justify-between">
-        
+
         {/* LOGO */}
-        <Link href="/" className="relative z-50">
-          <div className="flex items-center gap-3">
-            <div className="relative w-12 h-12 md:w-40 md:h-12"> 
-              <Image 
-                src="/logo.svg" 
-                alt="AYROMEX Logo" 
-                width={160}
-                height={50}
-                className="object-contain object-left"
-              />
-            </div>
-          </div>
-        </Link>
+        <a href={`/${locale}`} className="relative z-50">
+          <AyromexLogo />
+        </a>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center space-x-6">
+        <div className="hidden md:flex items-center gap-5">
           {navLinks.map((link) => (
-            <Link 
-              key={link.href} 
+            <a
+              key={link.href}
               href={link.href}
-              className="text-sm font-medium text-light-50/80 hover:text-orange-500 transition-colors uppercase tracking-wider"
+              className="text-xs font-semibold uppercase tracking-widest text-[#0a0a0a]/70 dark:text-white/70 hover:text-[#FF4D00] dark:hover:text-[#FF4D00] transition-colors"
             >
               {link.label}
-            </Link>
+            </a>
           ))}
-          
-          <div className="h-4 w-px bg-white/20 mx-2"></div>
 
-          {/* LANGUAGE SWITCHER */}
+          {/* Social icons */}
+          <div className="flex items-center gap-3 pl-2 border-l border-black/10 dark:border-white/10">
+            <a href="https://www.instagram.com/ayromex_srl/" target="_blank" rel="noopener noreferrer"
+              className="text-[#0a0a0a]/50 dark:text-white/50 hover:text-[#FF4D00] dark:hover:text-[#FF4D00] transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">
+              <FaInstagram className="w-4 h-4" />
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61586097166352" target="_blank" rel="noopener noreferrer"
+              className="text-[#0a0a0a]/50 dark:text-white/50 hover:text-[#FF4D00] dark:hover:text-[#FF4D00] transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">
+              <FaFacebook className="w-4 h-4" />
+            </a>
+            <a href="https://www.linkedin.com/company/ayromex" target="_blank" rel="noopener noreferrer"
+              className="text-[#0a0a0a]/50 dark:text-white/50 hover:text-[#FF4D00] dark:hover:text-[#FF4D00] transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">
+              <FaLinkedin className="w-4 h-4" />
+            </a>
+          </div>
+
+          <div className="h-4 w-px bg-black/10 dark:bg-white/10" />
+
+          {/* Dark mode toggle */}
+          <button
+            onClick={toggle}
+            className="min-h-[44px] min-w-[44px] flex items-center justify-center text-[#0a0a0a]/60 dark:text-white/60 hover:text-[#FF4D00] dark:hover:text-[#FF4D00] transition-colors"
+            aria-label="Toggle dark/light mode"
+          >
+            {theme === 'dark' ? <FaSun className="w-4 h-4" /> : <FaMoon className="w-4 h-4" />}
+          </button>
+
+          {/* Language switcher */}
           <div className="relative">
-            <button 
+            <button
               onClick={() => setIsLangOpen(!isLangOpen)}
-              className="flex items-center gap-2 text-sm font-medium text-white hover:text-orange-500 transition-colors uppercase tracking-wider px-3 py-2 rounded-lg hover:bg-white/5"
+              className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-[#0a0a0a]/70 dark:text-white/70 hover:text-[#FF4D00] dark:hover:text-[#FF4D00] transition-colors px-3 py-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 min-h-[44px]"
             >
-              <div className="w-5 h-5 overflow-hidden rounded-sm">
+              <div className="w-5 h-3.5 overflow-hidden rounded-sm shadow-sm">
                 <currentLang.FlagComponent />
               </div>
-              <span>{currentLang.code}</span>
+              <span>{currentLang.code.toUpperCase()}</span>
               <HiChevronDown className={`w-3 h-3 transition-transform ${isLangOpen ? 'rotate-180' : ''}`} />
             </button>
 
             <AnimatePresence>
               {isLangOpen && (
                 <motion.div
-                  initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                  initial={{ opacity: 0, y: 8, scale: 0.96 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                  className="absolute top-full right-0 mt-2 w-48 bg-[#0a0a0a] border border-white/10 rounded-xl shadow-2xl overflow-hidden py-2"
+                  exit={{ opacity: 0, y: 8, scale: 0.96 }}
+                  className="absolute top-full right-0 mt-2 w-44 bg-white dark:bg-[#111] border border-black/10 dark:border-white/10 rounded-xl shadow-2xl overflow-hidden py-2"
                 >
-                  <div className="px-4 py-2 text-xs text-gray-500 font-bold uppercase tracking-widest border-b border-white/5 mb-2">
-                    Translate to
+                  <div className="px-4 py-2 text-[10px] text-black/40 dark:text-white/40 font-bold uppercase tracking-widest border-b border-black/5 dark:border-white/5 mb-1">
+                    {t('translateTo')}
                   </div>
                   {languages.map((lang) => (
                     <button
                       key={lang.code}
                       onClick={() => handleLanguageChange(lang.code)}
-                      className={`w-full text-left px-4 py-3 flex items-center gap-3 text-sm hover:bg-white/5 transition-colors ${
-                        currentLang.code === lang.code ? 'text-orange-500 bg-orange-500/5' : 'text-gray-300'
-                      }`}
+                      className={`w-full text-left px-4 py-3 flex items-center gap-3 text-sm hover:bg-black/5 dark:hover:bg-white/5 transition-colors ${locale === lang.code ? 'text-[#FF4D00] bg-orange-50 dark:bg-orange-500/5' : 'text-[#0a0a0a]/80 dark:text-gray-300'}`}
                     >
-                      <div className="w-5 h-5 overflow-hidden rounded-sm shadow-sm">
+                      <div className="w-5 h-3.5 overflow-hidden rounded-sm shadow-sm">
                         <lang.FlagComponent />
                       </div>
                       <span>{lang.label}</span>
@@ -107,57 +149,107 @@ export default function Navbar() {
             </AnimatePresence>
           </div>
 
-          <Link href="/contatti" className="btn-primary text-xs px-6 py-2.5 ml-4">
-            Lavora con noi
-          </Link>
+          {/* CTA */}
+          <a href={anchorHref('#contatti')} className="btn-primary px-5 py-2.5 ml-1 min-h-[44px]">
+            {t('cta')}
+          </a>
         </div>
 
-        {/* Mobile Toggle */}
-        <div className="flex items-center gap-4 md:hidden">
-            <button onClick={() => setIsLangOpen(!isLangOpen)} className="p-2 text-white/80">
-                 <div className="w-6 h-6 overflow-hidden rounded-sm">
-                    <currentLang.FlagComponent />
-                 </div>
-            </button>
-            <button onClick={() => setIsOpen(!isOpen)} className="relative z-50 p-2 text-white">
-                {isOpen ? <HiXMark className="w-8 h-8" /> : <HiBars3BottomRight className="w-8 h-8" />}
-            </button>
+        {/* Mobile: theme toggle + lang flag + hamburger */}
+        <div className="flex items-center gap-2 md:hidden">
+          <button
+            onClick={toggle}
+            className="min-h-[44px] min-w-[44px] flex items-center justify-center text-[#0a0a0a]/60 dark:text-white/60"
+            aria-label="Toggle theme"
+          >
+            {theme === 'dark' ? <FaSun className="w-4 h-4" /> : <FaMoon className="w-4 h-4" />}
+          </button>
+          <button onClick={() => setIsLangOpen(!isLangOpen)} className="min-h-[44px] min-w-[44px] flex items-center justify-center">
+            <div className="w-6 h-4 overflow-hidden rounded-sm shadow-sm">
+              <currentLang.FlagComponent />
+            </div>
+          </button>
+          <button onClick={() => setIsOpen(!isOpen)} className="relative z-50 min-h-[44px] min-w-[44px] flex items-center justify-center text-[#0a0a0a] dark:text-white">
+            {isOpen ? <HiXMark className="w-7 h-7" /> : <HiBars3BottomRight className="w-7 h-7" />}
+          </button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile fullscreen menu */}
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              initial={{ opacity: 0, y: -20 }}
+              initial={{ opacity: 0, y: -16 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              className="absolute inset-0 h-screen bg-dark-950 flex flex-col items-center justify-center space-y-8 md:hidden z-40"
+              exit={{ opacity: 0, y: -16 }}
+              className="absolute inset-0 h-screen bg-white dark:bg-[#070707] flex flex-col items-center justify-center gap-8 md:hidden z-40"
             >
               {navLinks.map((link) => (
-                <Link 
-                  key={link.href} 
+                <a
+                  key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-2xl font-display font-bold text-white hover:text-orange-500"
+                  className="text-2xl font-black uppercase tracking-tight text-[#0a0a0a] dark:text-white hover:text-[#FF4D00] transition-colors min-h-[44px] flex items-center"
                 >
                   {link.label}
-                </Link>
+                </a>
               ))}
-              
-              <div className="grid grid-cols-4 gap-4 mt-8 pt-8 border-t border-white/10">
-                 {languages.map((lang) => (
-                    <button
-                      key={lang.code}
-                      onClick={() => handleLanguageChange(lang.code)}
-                      className={`flex flex-col items-center gap-2 p-2 rounded-lg text-gray-400`}
-                    >
-                        <div className="w-8 h-8 overflow-hidden rounded shadow-md">
-                            <lang.FlagComponent />
-                        </div>
-                        <span className="text-[10px] font-bold uppercase">{lang.code}</span>
-                    </button>
-                 ))}
+
+              {/* Mobile social icons */}
+              <div className="flex gap-6 mt-4">
+                <a href="https://www.instagram.com/ayromex_srl/" target="_blank" rel="noopener noreferrer"
+                  className="text-[#0a0a0a]/60 dark:text-white/60 hover:text-[#FF4D00] transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">
+                  <FaInstagram className="w-6 h-6" />
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61586097166352" target="_blank" rel="noopener noreferrer"
+                  className="text-[#0a0a0a]/60 dark:text-white/60 hover:text-[#FF4D00] transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">
+                  <FaFacebook className="w-6 h-6" />
+                </a>
+                <a href="https://www.linkedin.com/company/ayromex" target="_blank" rel="noopener noreferrer"
+                  className="text-[#0a0a0a]/60 dark:text-white/60 hover:text-[#FF4D00] transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">
+                  <FaLinkedin className="w-6 h-6" />
+                </a>
               </div>
+
+              {/* Mobile language switcher */}
+              <div className="flex gap-4 pt-6 border-t border-black/10 dark:border-white/10 w-full justify-center">
+                {languages.map((lang) => (
+                  <button
+                    key={lang.code}
+                    onClick={() => handleLanguageChange(lang.code)}
+                    className={`flex flex-col items-center gap-2 p-2 rounded-lg min-h-[44px] min-w-[44px] ${locale === lang.code ? 'text-[#FF4D00]' : 'text-[#0a0a0a]/50 dark:text-white/50'}`}
+                  >
+                    <div className="w-8 h-5 overflow-hidden rounded shadow-md">
+                      <lang.FlagComponent />
+                    </div>
+                    <span className="text-[10px] font-bold uppercase">{lang.code}</span>
+                  </button>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Mobile lang dropdown (outside hamburger menu) */}
+        <AnimatePresence>
+          {isLangOpen && !isOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              className="absolute top-full right-4 mt-2 w-44 bg-white dark:bg-[#111] border border-black/10 dark:border-white/10 rounded-xl shadow-2xl overflow-hidden py-2 md:hidden z-50"
+            >
+              {languages.map((lang) => (
+                <button
+                  key={lang.code}
+                  onClick={() => handleLanguageChange(lang.code)}
+                  className={`w-full text-left px-4 py-3 flex items-center gap-3 text-sm hover:bg-black/5 dark:hover:bg-white/5 min-h-[44px] ${locale === lang.code ? 'text-[#FF4D00]' : 'text-[#0a0a0a]/80 dark:text-gray-300'}`}
+                >
+                  <div className="w-5 h-3.5 overflow-hidden rounded-sm">
+                    <lang.FlagComponent />
+                  </div>
+                  <span>{lang.label}</span>
+                </button>
+              ))}
             </motion.div>
           )}
         </AnimatePresence>
@@ -165,21 +257,3 @@ export default function Navbar() {
     </nav>
   )
 }
-
-const navLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'Chi Siamo', href: '/chi-siamo' },
-  { label: 'Servizi', href: '/servizi' },
-  { label: 'Journal', href: '/blog' },
-]
-
-// Array Lingue con Componenti Grafici
-const languages = [
-  { code: 'IT', label: 'Italiano', FlagComponent: IT },
-  { code: 'EN', label: 'English', FlagComponent: GB },
-  { code: 'RO', label: 'Română', FlagComponent: RO },
-  { code: 'ES', label: 'Español', FlagComponent: ES },
-  { code: 'PT', label: 'Português', FlagComponent: PT },
-  { code: 'DE', label: 'Deutsch', FlagComponent: DE },
-  { code: 'FR', label: 'Français', FlagComponent: FR },
-]

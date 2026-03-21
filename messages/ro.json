@@ -1,0 +1,69 @@
+{
+  "nav": {
+    "home": "Acasă",
+    "services": "Servicii",
+    "products": "Produse",
+    "clients": "Clienți",
+    "contact": "Contact",
+    "cta": "Vorbim",
+    "translateTo": "Schimbă limba"
+  },
+  "hero": {
+    "badge": "AI Automation Agency",
+    "title1": "Construim sisteme AI",
+    "title2": "care lucrează pentru tine",
+    "word0": "Agenți AI",
+    "word1": "Automatizări",
+    "word2": "SaaS Vertical",
+    "word3": "Revenue",
+    "subtitle": "Automatizări reale. Produse vandabile. Zero muncă manuală.",
+    "cta": "Vorbim despre proiectul tău",
+    "ctaSecondary": "Descoperă serviciile"
+  },
+  "servicesSection": {
+    "label": "Ce construim",
+    "title1": "De la idee la un sistem",
+    "title2": "care generează venituri"
+  },
+  "productsSection": {
+    "label": "Produsele noastre",
+    "title1": "Sisteme gata",
+    "title2": "de deploy",
+    "cta": "Solicită demo"
+  },
+  "clientsSection": {
+    "label": "Cine ne-a ales",
+    "title1": "Rezultate reale,",
+    "title2": "clienți mulțumiți"
+  },
+  "why": {
+    "label": "De ce noi",
+    "title1": "Afacerea ta",
+    "title2": "automatizată la 90%",
+    "desc": "Nu vindem consultanță. Construim sisteme care lucrează cât tu dormi.",
+    "cta": "Cum lucrăm"
+  },
+  "contactSection": {
+    "label": "Începe acum",
+    "title1": "Vorbim despre",
+    "title2": "proiectul tău",
+    "desc": "Analizăm afacerea ta gratuit și îți spunem ce putem automatiza în 72 de ore.",
+    "ctaWa": "Scrie pe WhatsApp",
+    "ctaEmail": "Trimite un email"
+  },
+  "footer": {
+    "description": "AI Automation Agency. Construim sisteme automatizate pentru IMM-uri, hospitality și gaming.",
+    "servicesTitle": "Servicii",
+    "pagesTitle": "Pagini",
+    "chiSiamo": "Despre Noi",
+    "journal": "Journal",
+    "service1": "Agenți AI",
+    "service2": "Automatizări n8n",
+    "service3": "AI Secretary",
+    "service4": "SaaS Vertical",
+    "service5": "Web & Digital",
+    "legalTitle": "Date Societare",
+    "legalAddress": "Sediu Social",
+    "copyright": "AYROMEX S.R.L. Toate drepturile rezervate."
+  }
+}

@@ -1,40 +1,98 @@
-/* app/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-html, body {
-  /* Nasconde il cursore di sistema ovunque */
-  cursor: none !important;
-  background-color: #fbfbfb;
+/* =====================
+   BASE
+   ===================== */
+
+html {
+  scroll-behavior: smooth;
 }
 
-/* Evita che il cursore ricompaia su link o bottoni */
-a, button, input, textarea {
+/* Remove system cursor everywhere */
+html, body, a, button, input, textarea, select {
   cursor: none !important;
 }
 
-/* L'effetto Halftone globale */
+/* Background defaults */
+body {
+  background-color: #f8f6f2;
+  color: #0a0a0a;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html.dark body {
+  background-color: #070707;
+  color: #f0ece4;
+}
+
+/* =====================
+   CUSTOM COMPONENTS
+   ===================== */
+
+@layer components {
+  .section-container {
+    @apply max-w-7xl mx-auto w-full px-6 md:px-12;
+  }
+
+  .btn-primary {
+    @apply bg-[#FF4D00] text-white font-semibold uppercase tracking-widest text-xs rounded-full
+           transition-all duration-200 hover:bg-[#e64400]
+           hover:shadow-[0_4px_24px_rgba(255,77,0,0.35)]
+           active:scale-95 inline-flex items-center justify-center;
+  }
+
+  .btn-ghost {
+    @apply border border-current rounded-full font-semibold uppercase tracking-widest text-xs
+           transition-all duration-200 hover:border-[#FF4D00] hover:text-[#FF4D00]
+           active:scale-95 inline-flex items-center justify-center;
+  }
+
+  .card-dark {
+    @apply bg-white/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-2xl;
+  }
+}
+
+/* Smooth transition on common elements */
+nav, header, footer, section, main, article,
+h1, h2, h3, h4, p, span, a, li, div {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Don't transition canvas or animated elements */
+canvas, svg, .ay-orb, .ay-orb-sm {
+  transition: none !important;
+}
+
+/* =====================
+   HALFTONE BACKGROUND
+   ===================== */
+
 .halftone-bg {
   background-image: radial-gradient(#FF4D00 0.5px, transparent 0.5px);
-  background-size: 15px 15px; /* Dimensione dei punti */
-  opacity: 0.15; /* Molto leggero per non disturbare la lettura */
+  background-size: 15px 15px;
+  opacity: 0.12;
   pointer-events: none;
   position: fixed;
   inset: 0;
   z-index: 0;
 }
-/* Aggiungi in globals.css */
+
+html:not(.dark) .halftone-bg {
+  opacity: 0.06;
+}
+
 .image-halftone-overlay {
   position: relative;
 }
 
 .image-halftone-overlay::after {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   background-image: radial-gradient(rgba(255, 77, 0, 0.2) 1px, transparent 1px);
-  background-size: 4px 4px; /* Grana molto più fitta */
+  background-size: 4px 4px;
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.5s ease;
@@ -42,4 +100,82 @@ a, button, input, textarea {
 
 .image-halftone-overlay:hover::after {
   opacity: 1;
+}
+
+/* =====================
+   ANIMATED ORB SYSTEM
+   ===================== */
+
+.ay-orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.18;
+  pointer-events: none;
+  z-index: 0;
+  will-change: transform;
+  transition: none !important;
+}
+
+html:not(.dark) .ay-orb {
+  opacity: 0.07;
+}
+
+.ay-orb-1 { width: 560px; height: 560px; background: radial-gradient(circle, #FF4D00 0%, transparent 70%); top: -180px; left: -120px; animation: orbFloat1 14s ease-in-out infinite; }
+.ay-orb-2 { width: 480px; height: 480px; background: radial-gradient(circle, #ff7a00 0%, transparent 70%); top: 30%; right: -160px; animation: orbFloat2 18s ease-in-out infinite; }
+.ay-orb-3 { width: 500px; height: 500px; background: radial-gradient(circle, #FF4D00 0%, transparent 70%); bottom: -100px; left: 30%; animation: orbFloat3 16s ease-in-out infinite; }
+.ay-orb-4 { width: 420px; height: 420px; background: radial-gradient(circle, #cc3d00 0%, transparent 70%); top: 60%; left: 10%; animation: orbFloat4 20s ease-in-out infinite; }
+.ay-orb-5 { width: 390px; height: 390px; background: radial-gradient(circle, #ff6600 0%, transparent 70%); top: 15%; left: 55%; animation: orbFloat5 12s ease-in-out infinite; }
+.ay-orb-6 { width: 440px; height: 440px; background: radial-gradient(circle, #FF4D00 0%, transparent 70%); bottom: 20%; right: 5%; animation: orbFloat6 22s ease-in-out infinite; }
+
+.ay-orb-sm {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(45px);
+  opacity: 0.14;
+  pointer-events: none;
+  z-index: 0;
+  will-change: transform;
+  transition: none !important;
+}
+
+html:not(.dark) .ay-orb-sm {
+  opacity: 0.04;
+}
+
+.ay-orb-sm-1 { width: 200px; height: 200px; background: radial-gradient(circle, #FF4D00 0%, transparent 70%); top: 10%; left: 20%; animation: orbFloat2 7s ease-in-out infinite; }
+.ay-orb-sm-2 { width: 160px; height: 160px; background: radial-gradient(circle, #ff7a00 0%, transparent 70%); top: 40%; left: 70%; animation: orbFloat4 6s ease-in-out infinite; }
+.ay-orb-sm-3 { width: 180px; height: 180px; background: radial-gradient(circle, #FF4D00 0%, transparent 70%); top: 70%; left: 45%; animation: orbFloat1 8s ease-in-out infinite; }
+.ay-orb-sm-4 { width: 140px; height: 140px; background: radial-gradient(circle, #cc3d00 0%, transparent 70%); top: 5%; right: 25%; animation: orbFloat3 5s ease-in-out infinite; }
+.ay-orb-sm-5 { width: 190px; height: 190px; background: radial-gradient(circle, #ff6600 0%, transparent 70%); bottom: 10%; left: 15%; animation: orbFloat5 9s ease-in-out infinite; }
+.ay-orb-sm-6 { width: 150px; height: 150px; background: radial-gradient(circle, #FF4D00 0%, transparent 70%); bottom: 35%; right: 20%; animation: orbFloat6 6.5s ease-in-out infinite; }
+
+@keyframes orbFloat1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(70px, 90px) scale(1.12); }
+  66%       { transform: translate(-40px, 45px) scale(0.93); }
+}
+@keyframes orbFloat2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  40%       { transform: translate(-80px, 60px) scale(1.08); }
+  70%       { transform: translate(50px, -70px) scale(0.96); }
+}
+@keyframes orbFloat3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25%       { transform: translate(60px, -80px) scale(1.1); }
+  75%       { transform: translate(-55px, 65px) scale(0.9); }
+}
+@keyframes orbFloat4 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%       { transform: translate(90px, -50px) scale(1.15); }
+}
+@keyframes orbFloat5 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  30%       { transform: translate(-70px, 80px) scale(1.05); }
+  60%       { transform: translate(40px, -60px) scale(0.95); }
+}
+@keyframes orbFloat6 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  45%       { transform: translate(-60px, -90px) scale(1.08); }
+  80%       { transform: translate(75px, 50px) scale(0.92); }
 }

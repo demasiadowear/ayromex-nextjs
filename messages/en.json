@@ -1,0 +1,69 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "products": "Products",
+    "clients": "Clients",
+    "contact": "Contact",
+    "cta": "Let's talk",
+    "translateTo": "Change language"
+  },
+  "hero": {
+    "badge": "AI Automation Agency",
+    "title1": "We build AI systems",
+    "title2": "that work for you",
+    "word0": "AI Agents",
+    "word1": "Automations",
+    "word2": "Vertical SaaS",
+    "word3": "Revenue",
+    "subtitle": "Real automations. Sellable products. Zero manual work.",
+    "cta": "Talk about your project",
+    "ctaSecondary": "Explore services"
+  },
+  "servicesSection": {
+    "label": "What we build",
+    "title1": "From idea to a system",
+    "title2": "that generates revenue"
+  },
+  "productsSection": {
+    "label": "Our products",
+    "title1": "Systems ready",
+    "title2": "to deploy",
+    "cta": "Request demo"
+  },
+  "clientsSection": {
+    "label": "Who chose us",
+    "title1": "Real results,",
+    "title2": "satisfied clients"
+  },
+  "why": {
+    "label": "Why us",
+    "title1": "Your business",
+    "title2": "automated at 90%",
+    "desc": "We don't sell consulting. We build systems that work while you sleep.",
+    "cta": "See how we work"
+  },
+  "contactSection": {
+    "label": "Start now",
+    "title1": "Let's talk about",
+    "title2": "your project",
+    "desc": "We analyze your business for free and tell you what we can automate within 72 hours.",
+    "ctaWa": "Write on WhatsApp",
+    "ctaEmail": "Send an email"
+  },
+  "footer": {
+    "description": "AI Automation Agency. We build automated systems for SMEs, hospitality and gaming.",
+    "servicesTitle": "Services",
+    "pagesTitle": "Pages",
+    "chiSiamo": "About Us",
+    "journal": "Journal",
+    "service1": "AI Agents",
+    "service2": "n8n Automations",
+    "service3": "AI Secretary",
+    "service4": "Vertical SaaS",
+    "service5": "Web & Digital",
+    "legalTitle": "Company Data",
+    "legalAddress": "Registered Office",
+    "copyright": "AYROMEX S.R.L. All rights reserved."
+  }
+}

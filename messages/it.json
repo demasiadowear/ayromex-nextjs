@@ -1,0 +1,69 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Servizi",
+    "products": "Prodotti",
+    "clients": "Clienti",
+    "contact": "Contatti",
+    "cta": "Parliamo",
+    "translateTo": "Cambia lingua"
+  },
+  "hero": {
+    "badge": "AI Automation Agency",
+    "title1": "Costruiamo sistemi AI",
+    "title2": "che lavorano per te",
+    "word0": "Agenti AI",
+    "word1": "Automazioni",
+    "word2": "SaaS Verticali",
+    "word3": "Revenue",
+    "subtitle": "Automazioni reali. Prodotti vendibili. Zero lavoro manuale.",
+    "cta": "Parliamo del tuo progetto",
+    "ctaSecondary": "Scopri i servizi"
+  },
+  "servicesSection": {
+    "label": "Cosa costruiamo",
+    "title1": "Da un'idea a un sistema",
+    "title2": "che genera fatturato"
+  },
+  "productsSection": {
+    "label": "I nostri prodotti",
+    "title1": "Sistemi pronti",
+    "title2": "al deploy",
+    "cta": "Richiedi demo"
+  },
+  "clientsSection": {
+    "label": "Chi ci ha scelto",
+    "title1": "Risultati reali,",
+    "title2": "clienti soddisfatti"
+  },
+  "why": {
+    "label": "Perché noi",
+    "title1": "Il tuo business",
+    "title2": "automatizzato al 90%",
+    "desc": "Non vendiamo consulenze. Costruiamo sistemi che lavorano mentre dormi.",
+    "cta": "Scopri come lavoriamo"
+  },
+  "contactSection": {
+    "label": "Inizia ora",
+    "title1": "Parliamo del tuo",
+    "title2": "progetto",
+    "desc": "Analizziamo il tuo business gratuitamente e ti diciamo cosa possiamo automatizzare in 72 ore.",
+    "ctaWa": "Scrivi su WhatsApp",
+    "ctaEmail": "Manda un'email"
+  },
+  "footer": {
+    "description": "AI Automation Agency. Costruiamo sistemi automatizzati per PMI, hospitality e gaming.",
+    "servicesTitle": "Servizi",
+    "pagesTitle": "Pagine",
+    "chiSiamo": "Chi Siamo",
+    "journal": "Journal",
+    "service1": "AI Agents",
+    "service2": "Automazioni n8n",
+    "service3": "AI Secretary",
+    "service4": "SaaS Verticali",
+    "service5": "Web & Digital",
+    "legalTitle": "Dati Societari",
+    "legalAddress": "Sede Legale",
+    "copyright": "AYROMEX S.R.L. Tutti i diritti riservati."
+  }
+}
