@@ -5,62 +5,6 @@ import { motion } from 'framer-motion'
 import { RotatingText } from '@/components/RotatingText'
 import { FaRobot, FaCogs, FaWhatsapp, FaLayerGroup, FaGlobe, FaPaintBrush, FaArrowRight, FaCheck } from 'react-icons/fa'
 
-const SERVICES = [
-  {
-    icon: FaRobot,
-    title: 'AI Agents',
-    desc: 'Agenti autonomi attivi H24 che gestiscono clienti, prenotazioni e vendite senza intervento umano.',
-    color: '#FF4D00',
-  },
-  {
-    icon: FaCogs,
-    title: 'Automazioni n8n',
-    desc: 'Workflow completi dal primo contatto alla fattura. Zero click manuali, zero errori umani.',
-    color: '#FF4D00',
-  },
-  {
-    icon: FaWhatsapp,
-    title: 'AI Secretary',
-    desc: 'Il tuo cliente scrive o chiama — risponde la tua AI in italiano perfetto, 24 ore su 24.',
-    color: '#25D366',
-  },
-  {
-    icon: FaLayerGroup,
-    title: 'SaaS Verticali',
-    desc: 'Prodotti digitali costruiti per gaming ADM, hospitality e PMI. Pronti al deploy, scalabili.',
-    color: '#FF4D00',
-  },
-  {
-    icon: FaGlobe,
-    title: 'Web & Digital',
-    desc: 'Siti e app che convertono. Non vetrine statiche — macchine di acquisizione clienti.',
-    color: '#FF4D00',
-  },
-  {
-    icon: FaPaintBrush,
-    title: 'Branding',
-    desc: 'Identità visiva che posiziona il tuo brand come leader nel suo mercato.',
-    color: '#FF4D00',
-  },
-]
-
-const PRODUCTS = [
-  {
-    name: 'AyroDesk24',
-    badge: 'Per PMI italiane',
-    tagline: 'La tua segretaria AI, sempre disponibile',
-    desc: 'Risponde ai clienti su WhatsApp e voce H24, gestisce appuntamenti, qualifica lead e invia promemoria automatici. Per parrucchieri, studi medici, attività locali.',
-    features: ['Risposta H24 su WhatsApp e voce', 'Gestione appuntamenti automatica', 'Qualificazione lead in tempo reale', 'Promemoria e follow-up auto'],
-  },
-  {
-    name: 'AyroHub',
-    badge: 'Per gaming ADM',
-    tagline: "L'OS per concessionari ADM",
-    desc: 'Sistema completo voice + WhatsApp AI per gaming e betting. Riattiva clienti dormienti, gestisce promozioni e monitora KPI in tempo reale.',
-    features: ['Riattivazione clienti dormienti', 'Promozioni personalizzate auto', 'Voice AI in italiano nativo', 'Dashboard KPI real-time'],
-  },
-]
-
 const CLIENTS = [
   { name: 'Halvion Hotel', sector: 'Hospitality' },
   { name: 'Le Dimore del Garibaldi', sector: 'Hospitality' },
@@ -81,6 +25,32 @@ export default function HomePage() {
   const locale = useLocale()
 
   const words = [t('hero.word0'), t('hero.word1'), t('hero.word2'), t('hero.word3')]
+
+  const SERVICES = [
+    { icon: FaRobot, title: t('services.s1title'), desc: t('services.s1desc') },
+    { icon: FaCogs, title: t('services.s2title'), desc: t('services.s2desc') },
+    { icon: FaWhatsapp, title: t('services.s3title'), desc: t('services.s3desc') },
+    { icon: FaLayerGroup, title: t('services.s4title'), desc: t('services.s4desc') },
+    { icon: FaGlobe, title: t('services.s5title'), desc: t('services.s5desc') },
+    { icon: FaPaintBrush, title: t('services.s6title'), desc: t('services.s6desc') },
+  ]
+
+  const PRODUCTS = [
+    {
+      name: 'AyroDesk24',
+      badge: t('products.p1badge'),
+      tagline: t('products.p1tagline'),
+      desc: t('products.p1desc'),
+      features: [t('products.p1f1'), t('products.p1f2'), t('products.p1f3'), t('products.p1f4')],
+    },
+    {
+      name: 'AyroHub',
+      badge: t('products.p2badge'),
+      tagline: t('products.p2tagline'),
+      desc: t('products.p2desc'),
+      features: [t('products.p2f1'), t('products.p2f2'), t('products.p2f3'), t('products.p2f4')],
+    },
+  ]
 
   return (
     <main className="overflow-x-hidden">
@@ -168,11 +138,11 @@ export default function HomePage() {
       </section>
 
       {/* ===================== PRODUCTS ===================== */}
-      <section id="prodotti" className="py-24 md:py-32 px-6 md:px-12">
+      <section id="prodotti" className="py-24 md:py-32 px-6 md:px-12 bg-[#070707] dark:bg-[#050505]">
         <div className="max-w-7xl mx-auto">
           <motion.div {...fadeUp} className="mb-16">
             <span className="text-[#FF4D00] text-xs font-bold uppercase tracking-widest">{t('productsSection.label')}</span>
-            <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-[#0a0a0a] dark:text-white mt-3">
+            <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-white mt-3">
               {t('productsSection.title1')}<br />
               <span className="text-[#FF4D00]">{t('productsSection.title2')}</span>
             </h2>
@@ -186,21 +156,21 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="p-8 rounded-2xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 hover:border-[#FF4D00]/30 transition-all"
+                className="p-8 rounded-2xl border border-[#1e1e1e] bg-[#111111] hover:border-[#FF4D00]/30 transition-all"
               >
                 <div className="flex items-start justify-between gap-4 mb-5">
                   <div>
                     <span className="inline-block px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-[#FF4D00]/10 text-[#FF4D00] mb-3">
                       {p.badge}
                     </span>
-                    <h3 className="text-2xl font-black text-[#0a0a0a] dark:text-white">{p.name}</h3>
+                    <h3 className="text-2xl font-black text-white">{p.name}</h3>
                     <p className="text-[#FF4D00] text-sm font-medium mt-1">{p.tagline}</p>
                   </div>
                 </div>
-                <p className="text-[#0a0a0a]/60 dark:text-white/60 text-sm leading-relaxed mb-6">{p.desc}</p>
+                <p className="text-white/60 text-sm leading-relaxed mb-6">{p.desc}</p>
                 <ul className="space-y-2 mb-7">
                   {p.features.map((f) => (
-                    <li key={f} className="flex items-center gap-3 text-sm text-[#0a0a0a]/70 dark:text-white/70">
+                    <li key={f} className="flex items-center gap-3 text-sm text-white/70">
                       <FaCheck className="w-3 h-3 text-[#FF4D00] flex-shrink-0" />
                       {f}
                     </li>
@@ -234,12 +204,7 @@ export default function HomePage() {
                 {t('why.desc')}
               </p>
               <ul className="space-y-3 text-white/60 text-sm">
-                {[
-                  'Sistemi attivi 24/7, anche di notte e nei weekend',
-                  'Riduzione del 70-90% del lavoro operativo ripetitivo',
-                  'ROI misurabile entro i primi 30 giorni',
-                  'Nessuna competenza tecnica richiesta al tuo team',
-                ].map((item) => (
+                {[t('why.item1'), t('why.item2'), t('why.item3'), t('why.item4')].map((item) => (
                   <li key={item} className="flex items-center gap-3">
                     <FaCheck className="w-3 h-3 text-[#FF4D00] flex-shrink-0" />
                     {item}
