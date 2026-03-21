@@ -2,6 +2,7 @@
 
 import { useTranslations, useLocale } from 'next-intl'
 import { FaFacebook, FaInstagram, FaWhatsapp, FaGoogle, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa'
+import { MdRateReview } from 'react-icons/md'
 import { AyromexLogo } from './AyromexLogo'
 
 export default function Footer() {
@@ -27,6 +28,7 @@ export default function Footer() {
               <SocialIcon href="https://www.instagram.com/ayromex_srl/" icon={<FaInstagram />} />
               <SocialIcon href="https://share.google/Ed5CLO4Nn3BgQZHW4" icon={<FaGoogle />} />
               <SocialIcon href="https://wa.me/390808407861" icon={<FaWhatsapp />} />
+              <SocialIcon href="https://g.page/r/CWWDew7_lO77EBM/review" icon={<MdRateReview />} title="Lasciaci una recensione" />
             </div>
           </div>
 
@@ -93,12 +95,13 @@ export default function Footer() {
   )
 }
 
-function SocialIcon({ href, icon }: { href: string; icon: React.ReactNode }) {
+function SocialIcon({ href, icon, title }: { href: string; icon: React.ReactNode; title?: string }) {
   return (
     <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
+      title={title}
       className="w-10 h-10 bg-white/5 hover:bg-[#FF4D00] hover:text-white rounded-full flex items-center justify-center transition-all duration-200 text-white/60 min-h-[44px] min-w-[44px]"
     >
       {icon}
