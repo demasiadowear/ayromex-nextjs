@@ -6,6 +6,10 @@ import { ThemeProvider } from '@/components/ThemeProvider'
 export const metadata = {
   title: 'AYROMEX — AI Automation Agency',
   description: 'Costruiamo sistemi AI che lavorano per te. Automazioni reali. Prodotti vendibili. Zero lavoro manuale.',
+  icons: {
+    icon: '/brand/logos/symbol/ayromex-symbol.svg',
+    apple: '/brand/logos/symbol/ayromex-symbol-1024.png',
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

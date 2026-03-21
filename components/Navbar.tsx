@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { HiBars3BottomRight, HiXMark, HiChevronDown } from 'react-icons/hi2'
-import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa'
+import { FaFacebook, FaInstagram, FaGoogle } from 'react-icons/fa'
 import { FaMoon, FaSun } from 'react-icons/fa'
 import { useTranslations, useLocale } from 'next-intl'
 import { useRouter, usePathname } from '@/i18n/navigation'
@@ -91,9 +91,9 @@ export default function Navbar() {
               className="text-[#0a0a0a]/50 dark:text-white/50 hover:text-[#FF4D00] dark:hover:text-[#FF4D00] transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">
               <FaFacebook className="w-4 h-4" />
             </a>
-            <a href="https://www.linkedin.com/company/ayromex" target="_blank" rel="noopener noreferrer"
+            <a href="https://share.google/Ed5CLO4Nn3BgQZHW4" target="_blank" rel="noopener noreferrer"
               className="text-[#0a0a0a]/50 dark:text-white/50 hover:text-[#FF4D00] dark:hover:text-[#FF4D00] transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">
-              <FaLinkedin className="w-4 h-4" />
+              <FaGoogle className="w-4 h-4" />
             </a>
           </div>
 
@@ -204,9 +204,9 @@ export default function Navbar() {
                   className="text-[#0a0a0a]/60 dark:text-white/60 hover:text-[#FF4D00] transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">
                   <FaFacebook className="w-6 h-6" />
                 </a>
-                <a href="https://www.linkedin.com/company/ayromex" target="_blank" rel="noopener noreferrer"
+                <a href="https://share.google/Ed5CLO4Nn3BgQZHW4" target="_blank" rel="noopener noreferrer"
                   className="text-[#0a0a0a]/60 dark:text-white/60 hover:text-[#FF4D00] transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">
-                  <FaLinkedin className="w-6 h-6" />
+                  <FaGoogle className="w-6 h-6" />
                 </a>
               </div>
 

@@ -1,7 +1,7 @@
 'use client'
 
 import { useTranslations, useLocale } from 'next-intl'
-import { FaFacebook, FaInstagram, FaWhatsapp, FaLinkedin, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa'
+import { FaFacebook, FaInstagram, FaWhatsapp, FaGoogle, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa'
 import { AyromexLogo } from './AyromexLogo'
 
 export default function Footer() {
@@ -25,7 +25,7 @@ export default function Footer() {
             <div className="flex items-center gap-3">
               <SocialIcon href="https://www.facebook.com/profile.php?id=61586097166352" icon={<FaFacebook />} />
               <SocialIcon href="https://www.instagram.com/ayromex_srl/" icon={<FaInstagram />} />
-              <SocialIcon href="https://www.linkedin.com/company/ayromex" icon={<FaLinkedin />} />
+              <SocialIcon href="https://share.google/Ed5CLO4Nn3BgQZHW4" icon={<FaGoogle />} />
               <SocialIcon href="https://wa.me/390808407861" icon={<FaWhatsapp />} />
             </div>
           </div>
