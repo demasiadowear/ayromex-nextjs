@@ -85,6 +85,23 @@
     "ctaWa": "Scrie pe WhatsApp",
     "ctaEmail": "Trimite un email"
   },
+  "serviziPage": {
+    "label": "Serviciile noastre",
+    "title1": "Tot ce",
+    "title2": "construim pentru tine",
+    "desc": "Fiecare serviciu este conceput pentru un rezultat măsurabil. Fără teorie, fără consultanță goală.",
+    "cta": "Discutăm despre acest serviciu",
+    "ctaFinal": "Consultanță gratuită →",
+    "ctaTitle1": "Nu știi care serviciu",
+    "ctaTitle2": "este pentru tine?",
+    "ctaDesc": "Analizăm afacerea ta gratuit și îți spunem exact ce să automatizezi mai întâi.",
+    "s1title": "Agenți AI", "s1tagline": "Afacerea ta răspunde, vinde și gestionează clienți non-stop", "s1benefit": "Fără angajați suplimentari. Fără ore suplimentare. Fără erori.", "s1d1": "Calificarea automată a lead-urilor în timp real", "s1d2": "Gestionarea obiecțiilor și FAQ fără intervenție umană", "s1d3": "Escaladare inteligentă către operatorii tăi când e necesar", "s1d4": "Raportare automată pentru fiecare interacțiune", "s1result": "Clienții noștri reduc în medie cu 70% solicitările negestionate.",
+    "s2title": "Automatizări n8n", "s2tagline": "De la primul contact la factură, totul automat", "s2benefit": "Fiecare proces repetitiv din compania ta poate fi automatizat.", "s2d1": "Fluxuri complete de onboarding clienți", "s2d2": "Sincronizare CRM, email, WhatsApp într-un singur sistem", "s2d3": "Notificări și alerte inteligente pentru echipa ta", "s2d4": "Rapoarte și dashboard-uri actualizate în timp real", "s2result": "Medie de 15 ore de muncă manuală economisite pe săptămână.",
+    "s3title": "AI Secretary", "s3tagline": "Clientul tău scrie sau sună — AI-ul tău răspunde", "s3benefit": "Perfect, 24 de ore pe zi, inclusiv sâmbăta și duminica.", "s3d1": "Rezervări și programări gestionate automat", "s3d2": "Răspuns instantaneu pe WhatsApp Business", "s3d3": "Voice AI pentru apeluri primite", "s3d4": "Memento-uri și follow-up-uri automate pentru clienți", "s3result": "Zero clienți pierduți din cauza răspunsurilor lipsă. Niciodată.",
+    "s4title": "SaaS Vertical", "s4tagline": "Produse digitale construite pentru sectorul tău specific", "s4benefit": "Nu soluții generice — sisteme concepute pentru piața ta.", "s4d1": "AyroDesk24 pentru IMM-uri și profesioniști italieni", "s4d2": "AyroHub pentru concesionari gaming și ADM", "s4d3": "Personalizare completă pe fiecare vertical", "s4d4": "Deploy în producție în maxim 2 săptămâni", "s4result": "Produse utilizabile din prima zi, fără pregătire tehnică.",
+    "s5title": "Web & Digital", "s5tagline": "Prezențe online care convertesc", "s5benefit": "Nu site-uri vitrină — mașini de achiziție clienți.", "s5d1": "Landing page-uri optimizate pentru conversie", "s5d2": "Integrare cu sisteme AI și automatizări", "s5d3": "SEO și performanță optimizate", "s5d4": "Analytics și tracking configurat", "s5result": "Site-uri care aduc solicitări, nu doar vizite.",
+    "s6title": "Branding", "s6tagline": "Identitate care poziționează", "s6benefit": "Design care comunică autoritate înainte ca clientul să citească un cuvânt.", "s6d1": "Logo și identitate vizuală completă", "s6d2": "Brand guidelines și manuale de utilizare", "s6d3": "Materiale print și digitale coordonate", "s6d4": "Poziționare strategică pe piața ta", "s6result": "Branduri care se rețin și se aleg."
+  },
   "footer": {
     "description": "AI Automation Agency. Construim sisteme automatizate pentru IMM-uri, hospitality și gaming.",
     "servicesTitle": "Servicii",

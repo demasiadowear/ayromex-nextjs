@@ -85,6 +85,23 @@
     "ctaWa": "Write on WhatsApp",
     "ctaEmail": "Send an email"
   },
+  "serviziPage": {
+    "label": "Our services",
+    "title1": "Everything we",
+    "title2": "build for you",
+    "desc": "Every service is designed for a measurable result. No theory, no empty consulting.",
+    "cta": "Let's talk about this service",
+    "ctaFinal": "Free consultation →",
+    "ctaTitle1": "Not sure which service",
+    "ctaTitle2": "is right for you?",
+    "ctaDesc": "We analyze your business for free and tell you exactly what to automate first.",
+    "s1title": "AI Agents", "s1tagline": "Your business responds, sells and manages clients 24/7", "s1benefit": "Without hiring extra staff. Without overtime. Without errors.", "s1d1": "Automatic real-time lead qualification", "s1d2": "Objection handling and FAQs without human intervention", "s1d3": "Intelligent escalation to your operators when needed", "s1d4": "Automatic reporting on every interaction", "s1result": "Our clients reduce unmanaged requests by 70% on average.",
+    "s2title": "n8n Automations", "s2tagline": "From first contact to invoice, fully automatic", "s2benefit": "Every repetitive process in your company can be automated.", "s2d1": "Fully automatic client onboarding flows", "s2d2": "CRM, email, WhatsApp synchronization in one system", "s2d3": "Intelligent notifications and alerts for your team", "s2d4": "Reports and dashboards updated in real time", "s2result": "Average 15 hours of manual work saved per week per client.",
+    "s3title": "AI Secretary", "s3tagline": "Your client writes or calls — your AI responds", "s3benefit": "In perfect English, 24 hours a day, even on weekends.", "s3d1": "Bookings and appointments managed automatically", "s3d2": "Instant response on WhatsApp Business", "s3d3": "Voice AI for incoming calls", "s3d4": "Automatic reminders and follow-ups to clients", "s3result": "Zero clients lost due to missed responses. Ever.",
+    "s4title": "Vertical SaaS", "s4tagline": "Digital products built for your specific sector", "s4benefit": "Not generic solutions — systems designed for your market.", "s4d1": "AyroDesk24 for Italian SMEs and professionals", "s4d2": "AyroHub for gaming and ADM dealers", "s4d3": "Full customization on every vertical", "s4d4": "Production deployment within 2 weeks", "s4result": "Products usable from day one, no technical training needed.",
+    "s5title": "Web & Digital", "s5tagline": "Online presences that convert", "s5benefit": "Not showcase sites — client acquisition machines.", "s5d1": "Landing pages optimized for conversion", "s5d2": "Integration with AI systems and automations", "s5d3": "SEO and performance optimized", "s5d4": "Analytics and tracking configured", "s5result": "Sites that bring inquiries, not just visits.",
+    "s6title": "Branding", "s6tagline": "Identity that positions", "s6benefit": "Design that communicates authority before the client reads a single word.", "s6d1": "Logo and complete visual identity", "s6d2": "Brand guidelines and usage manuals", "s6d3": "Coordinated print and digital materials", "s6d4": "Strategic positioning in your market", "s6result": "Brands that are remembered and chosen."
+  },
   "footer": {
     "description": "AI Automation Agency. We build automated systems for SMEs, hospitality and gaming.",
     "servicesTitle": "Services",
