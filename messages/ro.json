@@ -106,6 +106,8 @@
     "s5title": "Web & Digital", "s5tagline": "Prezențe online care convertesc", "s5benefit": "Nu site-uri vitrină — mașini de achiziție clienți.", "s5d1": "Landing page-uri optimizate pentru conversie", "s5d2": "Integrare cu sisteme AI și automatizări", "s5d3": "SEO și performanță optimizate", "s5d4": "Analytics și tracking configurat", "s5result": "Site-uri care aduc solicitări, nu doar vizite.",
     "s6title": "Branding", "s6tagline": "Identitate care poziționează", "s6benefit": "Design care comunică autoritate înainte ca clientul să citească un cuvânt.", "s6d1": "Logo și identitate vizuală completă", "s6d2": "Brand guidelines și manuale de utilizare", "s6d3": "Materiale print și digitale coordonate", "s6d4": "Poziționare strategică pe piața ta", "s6result": "Branduri care se rețin și se aleg."
   },
+  "privacy": { "title": "Politică de Confidențialitate" },
+  "terms": { "title": "Termeni și Condiții" },
   "footer": {
     "description": "Construim produse AI care generează venituri. SaaS vertical pentru piața europeană.",
     "servicesTitle": "Servicii",

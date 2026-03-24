@@ -106,6 +106,8 @@
     "s5title": "Web & Digital", "s5tagline": "Online presences that convert", "s5benefit": "Not showcase sites — client acquisition machines.", "s5d1": "Landing pages optimized for conversion", "s5d2": "Integration with AI systems and automations", "s5d3": "SEO and performance optimized", "s5d4": "Analytics and tracking configured", "s5result": "Sites that bring inquiries, not just visits.",
     "s6title": "Branding", "s6tagline": "Identity that positions", "s6benefit": "Design that communicates authority before the client reads a single word.", "s6d1": "Logo and complete visual identity", "s6d2": "Brand guidelines and usage manuals", "s6d3": "Coordinated print and digital materials", "s6d4": "Strategic positioning in your market", "s6result": "Brands that are remembered and chosen."
   },
+  "privacy": { "title": "Privacy Policy" },
+  "terms": { "title": "Terms & Conditions" },
   "footer": {
     "description": "We build AI products that generate revenue. Vertical SaaS for the European market.",
     "servicesTitle": "Services",
