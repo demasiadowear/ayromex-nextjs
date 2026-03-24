@@ -49,6 +49,7 @@ export default function HomePage() {
       tagline: t('products.p2tagline'),
       desc: t('products.p2desc'),
       features: [t('products.p2f1'), t('products.p2f2'), t('products.p2f3'), t('products.p2f4')],
+      accessHref: 'https://app.ayromex.com',
     },
   ]
 
@@ -176,9 +177,21 @@ export default function HomePage() {
                     </li>
                   ))}
                 </ul>
-                <a href="#contatti" className="btn-primary px-6 py-3 text-xs min-h-[44px]">
-                  {t('productsSection.cta')}
-                </a>
+                <div className="flex items-center gap-3 flex-wrap">
+                  <a href="#contatti" className="btn-primary px-6 py-3 text-xs min-h-[44px]">
+                    {t('productsSection.cta')}
+                  </a>
+                  {'accessHref' in p && (
+                    <a
+                      href={(p as typeof p & { accessHref: string }).accessHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-5 py-3 rounded-xl text-xs font-bold min-h-[44px] border border-[#FF4D00]/40 text-[#FF4D00] hover:bg-[#FF4D00]/10 transition-all"
+                    >
+                      Accedi ad AyroHub →
+                    </a>
+                  )}
+                </div>
               </motion.div>
             ))}
           </div>
