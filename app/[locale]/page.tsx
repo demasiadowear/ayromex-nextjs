@@ -66,6 +66,21 @@ export default function HomePage() {
           transition={{ duration: 0.8 }}
           className="max-w-5xl"
         >
+          {/* Hero Logo */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mb-10"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/brand/logos/symbol/AYROLOGO.svg"
+              alt="AYROMEX"
+              className="w-40 h-40 md:w-56 md:h-56"
+            />
+          </motion.div>
+
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#FF4D00]/30 bg-[#FF4D00]/5 text-[#FF4D00] text-xs font-bold uppercase tracking-widest mb-8">
             <span className="w-1.5 h-1.5 bg-[#FF4D00] rounded-full animate-pulse" />
