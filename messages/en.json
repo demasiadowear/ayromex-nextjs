@@ -6,19 +6,20 @@
     "clients": "Clients",
     "contact": "Contact",
     "cta": "Let's talk",
+    "ayrohubCta": "Access AyroHub",
     "translateTo": "Change language"
   },
   "hero": {
-    "badge": "AI Automation Agency",
-    "title1": "We build AI systems",
-    "title2": "that work for you",
+    "badge": "AI Products & Automation",
+    "title1": "We build AI products",
+    "title2": "that generate revenue",
     "word0": "AI Agents",
     "word1": "Automations",
     "word2": "Vertical SaaS",
     "word3": "Revenue",
-    "subtitle": "Real automations. Sellable products. Zero manual work.",
-    "cta": "Talk about your project",
-    "ctaSecondary": "Explore services"
+    "subtitle": "AI agents, automations and vertical SaaS for the European market. Real systems. Zero manual work.",
+    "cta": "Discover AyroHub →",
+    "ctaSecondary": "Talk to us"
   },
   "servicesSection": {
     "label": "What we build",
@@ -31,7 +32,7 @@
     "s2title": "n8n Automations",
     "s2desc": "Complete workflows from first contact to invoice. Zero manual clicks, zero human errors.",
     "s3title": "AI Secretary",
-    "s3desc": "Your client writes or calls — your AI responds in perfect English, 24 hours a day.",
+    "s3desc": "Your client writes or calls — your AI responds in perfect language, 24 hours a day.",
     "s4title": "Vertical SaaS",
     "s4desc": "Digital products built for gaming ADM, hospitality and SMEs. Ready to deploy, scalable.",
     "s5title": "Web & Digital",
@@ -43,23 +44,26 @@
     "label": "Our products",
     "title1": "Systems ready",
     "title2": "to deploy",
-    "cta": "Request demo"
+    "cta": "Request demo",
+    "trialBadge": "7 days free",
+    "accessAyrohub": "Access AyroHub →",
+    "discoverAyrodesk": "Discover AyroDesk24 →"
   },
   "products": {
-    "p1badge": "For Italian SMEs",
-    "p1tagline": "Your AI secretary, always available",
-    "p1desc": "Responds to clients on WhatsApp and voice 24/7, manages appointments, qualifies leads and sends automatic reminders. For hairdressers, medical practices, local businesses.",
-    "p1f1": "24/7 response on WhatsApp and voice",
-    "p1f2": "Automatic appointment management",
-    "p1f3": "Real-time lead qualification",
-    "p1f4": "Automatic reminders and follow-ups",
-    "p2badge": "For gaming ADM",
-    "p2tagline": "The OS for ADM dealers",
-    "p2desc": "Complete voice + WhatsApp AI system for gaming and betting. Reactivates dormant clients, manages promotions and monitors KPIs in real time.",
-    "p2f1": "Dormant client reactivation",
-    "p2f2": "Automatic personalized promotions",
-    "p2f3": "Native language Voice AI",
-    "p2f4": "Real-time KPI dashboard"
+    "p1badge": "SaaS Enterprise",
+    "p1tagline": "OS for ADM Dealers",
+    "p1desc": "AI operating system for ADM gaming dealers. Outbound Voice AI, 24/7 customer service, automatic compliance monitoring, Master/PVR network management.",
+    "p1f1": "Outbound Voice AI 24/7",
+    "p1f2": "Automatic WhatsApp customer service",
+    "p1f3": "ADM compliance monitoring",
+    "p1f4": "Master/PVR network management",
+    "p2badge": "SaaS SME",
+    "p2tagline": "AI Receptionist for SMEs",
+    "p2desc": "AI secretary for WhatsApp, appointments and lead qualification. For salons, studios, shops and small businesses.",
+    "p2f1": "24/7 automatic WhatsApp response",
+    "p2f2": "Appointment management",
+    "p2f3": "Lead qualification",
+    "p2f4": "Multi-operator dashboard"
   },
   "clientsSection": {
     "label": "Who chose us",
@@ -97,17 +101,20 @@
     "ctaDesc": "We analyze your business for free and tell you exactly what to automate first.",
     "s1title": "AI Agents", "s1tagline": "Your business responds, sells and manages clients 24/7", "s1benefit": "Without hiring extra staff. Without overtime. Without errors.", "s1d1": "Automatic real-time lead qualification", "s1d2": "Objection handling and FAQs without human intervention", "s1d3": "Intelligent escalation to your operators when needed", "s1d4": "Automatic reporting on every interaction", "s1result": "Our clients reduce unmanaged requests by 70% on average.",
     "s2title": "n8n Automations", "s2tagline": "From first contact to invoice, fully automatic", "s2benefit": "Every repetitive process in your company can be automated.", "s2d1": "Fully automatic client onboarding flows", "s2d2": "CRM, email, WhatsApp synchronization in one system", "s2d3": "Intelligent notifications and alerts for your team", "s2d4": "Reports and dashboards updated in real time", "s2result": "Average 15 hours of manual work saved per week per client.",
-    "s3title": "AI Secretary", "s3tagline": "Your client writes or calls — your AI responds", "s3benefit": "In perfect English, 24 hours a day, even on weekends.", "s3d1": "Bookings and appointments managed automatically", "s3d2": "Instant response on WhatsApp Business", "s3d3": "Voice AI for incoming calls", "s3d4": "Automatic reminders and follow-ups to clients", "s3result": "Zero clients lost due to missed responses. Ever.",
-    "s4title": "Vertical SaaS", "s4tagline": "Digital products built for your specific sector", "s4benefit": "Not generic solutions — systems designed for your market.", "s4d1": "AyroDesk24 for Italian SMEs and professionals", "s4d2": "AyroHub for gaming and ADM dealers", "s4d3": "Full customization on every vertical", "s4d4": "Production deployment within 2 weeks", "s4result": "Products usable from day one, no technical training needed.",
+    "s3title": "AI Secretary", "s3tagline": "Your client writes or calls — your AI responds", "s3benefit": "In perfect language, 24 hours a day, even on weekends.", "s3d1": "Bookings and appointments managed automatically", "s3d2": "Instant response on WhatsApp Business", "s3d3": "Voice AI for incoming calls", "s3d4": "Automatic reminders and follow-ups to clients", "s3result": "Zero clients lost due to missed responses. Ever.",
+    "s4title": "Vertical SaaS", "s4tagline": "Digital products built for your specific sector", "s4benefit": "Not generic solutions — systems designed for your market.", "s4d1": "AyroDesk24 for SMEs and professionals", "s4d2": "AyroHub for gaming and ADM dealers", "s4d3": "Full customization on every vertical", "s4d4": "Production deployment within 2 weeks", "s4result": "Products usable from day one, no technical training needed.",
     "s5title": "Web & Digital", "s5tagline": "Online presences that convert", "s5benefit": "Not showcase sites — client acquisition machines.", "s5d1": "Landing pages optimized for conversion", "s5d2": "Integration with AI systems and automations", "s5d3": "SEO and performance optimized", "s5d4": "Analytics and tracking configured", "s5result": "Sites that bring inquiries, not just visits.",
     "s6title": "Branding", "s6tagline": "Identity that positions", "s6benefit": "Design that communicates authority before the client reads a single word.", "s6d1": "Logo and complete visual identity", "s6d2": "Brand guidelines and usage manuals", "s6d3": "Coordinated print and digital materials", "s6d4": "Strategic positioning in your market", "s6result": "Brands that are remembered and chosen."
   },
   "footer": {
-    "description": "AI Automation Agency. We build automated systems for SMEs, hospitality and gaming.",
+    "description": "We build AI products that generate revenue. Vertical SaaS for the European market.",
     "servicesTitle": "Services",
+    "productsTitle": "Products",
     "pagesTitle": "Pages",
     "chiSiamo": "About Us",
     "journal": "Journal",
+    "privacyPolicy": "Privacy Policy",
+    "terms": "Terms & Conditions",
     "service1": "AI Agents",
     "service2": "n8n Automations",
     "service3": "AI Secretary",
@@ -115,6 +122,7 @@
     "service5": "Web & Digital",
     "legalTitle": "Company Data",
     "legalAddress": "Registered Office",
-    "copyright": "AYROMEX S.R.L. All rights reserved."
+    "reverseCharge": "European company — B2B invoicing with Reverse Charge (Art. 196 Dir. 2006/112/EC)",
+    "copyright": "AYROMEX S.R.L. — RO52014564. All rights reserved."
   }
 }

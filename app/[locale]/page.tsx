@@ -37,19 +37,21 @@ export default function HomePage() {
 
   const PRODUCTS = [
     {
-      name: 'AyroDesk24',
+      name: 'AyroHub',
       badge: t('products.p1badge'),
       tagline: t('products.p1tagline'),
       desc: t('products.p1desc'),
       features: [t('products.p1f1'), t('products.p1f2'), t('products.p1f3'), t('products.p1f4')],
+      accessHref: 'https://app.ayromex.com',
+      trialBadge: t('productsSection.trialBadge'),
     },
     {
-      name: 'AyroHub',
+      name: 'AyroDesk24',
       badge: t('products.p2badge'),
       tagline: t('products.p2tagline'),
       desc: t('products.p2desc'),
       features: [t('products.p2f1'), t('products.p2f2'), t('products.p2f3'), t('products.p2f4')],
-      accessHref: 'https://app.ayromex.com',
+      demoHref: 'https://ayrodesk24.com',
     },
   ]
 
@@ -161,9 +163,16 @@ export default function HomePage() {
               >
                 <div className="flex items-start justify-between gap-4 mb-5">
                   <div>
-                    <span className="inline-block px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-[#FF4D00]/10 text-[#FF4D00] mb-3">
-                      {p.badge}
-                    </span>
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="inline-block px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-[#FF4D00]/10 text-[#FF4D00]">
+                        {p.badge}
+                      </span>
+                      {'trialBadge' in p && (
+                        <span className="inline-block px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-green-500/10 text-green-400">
+                          {(p as typeof p & { trialBadge: string }).trialBadge}
+                        </span>
+                      )}
+                    </div>
                     <h3 className="text-2xl font-black text-white">{p.name}</h3>
                     <p className="text-[#FF4D00] text-sm font-medium mt-1">{p.tagline}</p>
                   </div>
@@ -178,17 +187,28 @@ export default function HomePage() {
                   ))}
                 </ul>
                 <div className="flex items-center gap-3 flex-wrap">
-                  <a href="#contatti" className="btn-primary px-6 py-3 text-xs min-h-[44px]">
-                    {t('productsSection.cta')}
-                  </a>
-                  {'accessHref' in p && (
+                  {'accessHref' in p ? (
                     <a
                       href={(p as typeof p & { accessHref: string }).accessHref}
                       target="_blank"
                       rel="noopener noreferrer"
+                      className="btn-primary px-6 py-3 text-xs min-h-[44px]"
+                    >
+                      {t('productsSection.accessAyrohub')}
+                    </a>
+                  ) : (
+                    <a href="#contatti" className="btn-primary px-6 py-3 text-xs min-h-[44px]">
+                      {t('productsSection.cta')}
+                    </a>
+                  )}
+                  {'demoHref' in p && (
+                    <a
+                      href={(p as typeof p & { demoHref: string }).demoHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 px-5 py-3 rounded-xl text-xs font-bold min-h-[44px] border border-[#FF4D00]/40 text-[#FF4D00] hover:bg-[#FF4D00]/10 transition-all"
                     >
-                      Accedi ad AyroHub →
+                      {t('productsSection.discoverAyrodesk')}
                     </a>
                   )}
                 </div>

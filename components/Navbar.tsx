@@ -149,6 +149,16 @@ export default function Navbar() {
             </AnimatePresence>
           </div>
 
+          {/* AyroHub CTA */}
+          <a
+            href="https://app.ayromex.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl text-xs font-bold min-h-[44px] border border-[#FF4D00]/50 text-[#FF4D00] hover:bg-[#FF4D00] hover:text-white transition-all duration-200"
+          >
+            {t('ayrohubCta')}
+          </a>
+
           {/* CTA */}
           <a href={anchorHref('#contatti')} className="btn-primary px-5 py-2.5 ml-1 min-h-[44px]">
             {t('cta')}

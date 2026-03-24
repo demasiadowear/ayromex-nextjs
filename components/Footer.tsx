@@ -13,10 +13,10 @@ export default function Footer() {
   return (
     <footer className="bg-[#0a0a0a] dark:bg-[#050505] border-t border-white/10 pt-16 pb-8 text-sm">
       <div className="section-container">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-16">
 
           {/* Brand */}
-          <div>
+          <div className="lg:col-span-1">
             <div className="mb-6">
               <AyromexLogo />
             </div>
@@ -44,6 +44,19 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* Products */}
+          <div>
+            <h4 className="font-bold text-white mb-5 uppercase tracking-widest text-xs">{t('productsTitle')}</h4>
+            <ul className="space-y-3 text-white/60 text-sm">
+              <li>
+                <a href="https://app.ayromex.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#FF4D00] transition-colors">AyroHub</a>
+              </li>
+              <li>
+                <a href="https://ayrodesk24.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#FF4D00] transition-colors">AyroDesk24</a>
+              </li>
+            </ul>
+          </div>
+
           {/* Pages */}
           <div>
             <h4 className="font-bold text-white mb-5 uppercase tracking-widest text-xs">{t('pagesTitle')}</h4>
@@ -52,6 +65,8 @@ export default function Footer() {
               <li><a href={`/${locale}/chi-siamo`} className="hover:text-[#FF4D00] transition-colors">{t('chiSiamo')}</a></li>
               <li><a href={`/${locale}/servizi`} className="hover:text-[#FF4D00] transition-colors">{t('servicesTitle')}</a></li>
               <li><a href={`/${locale}/journal`} className="hover:text-[#FF4D00] transition-colors">{t('journal')}</a></li>
+              <li><a href={`/${locale}/privacy`} className="hover:text-[#FF4D00] transition-colors">{t('privacyPolicy')}</a></li>
+              <li><a href={`/${locale}/terms`} className="hover:text-[#FF4D00] transition-colors">{t('terms')}</a></li>
             </ul>
           </div>
 
@@ -64,7 +79,7 @@ export default function Footer() {
             <div className="space-y-3 text-xs text-white/50 font-mono leading-relaxed">
               <div>
                 <strong className="text-white/80 block mb-1">AYROMEX S.R.L.</strong>
-                <p>CUI: 52014564</p>
+                <p>CUI: RO52014564</p>
                 <p>Reg. Com: J2025044424001</p>
                 <p>EUID: ROONRC.J2025044424001</p>
                 <p className="mt-1 text-green-400/70">Societate VIES</p>
@@ -74,6 +89,13 @@ export default function Footer() {
                 <p>București Sectorul 4</p>
                 <p>Aleea Izvorul Oltului, Nr. 6</p>
                 <p>Bl. 29, Sc. B, Et. 2, Ap. 24 — Romania</p>
+              </div>
+              <div className="pt-2 border-t border-white/10">
+                <p className="text-[#FF4D00]/70 leading-snug">{t('reverseCharge')}</p>
+              </div>
+              <div className="space-y-1">
+                <p><a href="mailto:account@ayromex.com" className="hover:text-white/80 transition-colors">account@ayromex.com</a></p>
+                <p><a href="mailto:info@ayromex.com" className="hover:text-white/80 transition-colors">info@ayromex.com</a></p>
               </div>
             </div>
           </div>
