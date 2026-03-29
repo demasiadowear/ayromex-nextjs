@@ -1,231 +1,272 @@
-'use client'
+'use client';
 
-import { useTranslations, useLocale } from 'next-intl'
-import { motion } from 'framer-motion'
-import { RotatingText } from '@/components/RotatingText'
-import { FaRobot, FaCogs, FaWhatsapp, FaLayerGroup, FaGlobe, FaPaintBrush, FaArrowRight, FaCheck } from 'react-icons/fa'
+import { useTranslations } from 'next-intl';
+import { motion } from 'framer-motion';
+import { FiArrowRight, FiCheck, FiMail } from 'react-icons/fi';
+import { FaWhatsapp } from 'react-icons/fa';
+
+/* ─── Animation Variants ─────────────────────────────────────── */
+const fadeUp = {
+  initial:    { opacity: 0, y: 36 },
+  whileInView:{ opacity: 1, y: 0 },
+  viewport:   { once: true, margin: '-60px' },
+  transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] },
+};
+const stagger = (i: number) => ({
+  initial:    { opacity: 0, y: 32 },
+  whileInView:{ opacity: 1, y: 0 },
+  viewport:   { once: true },
+  transition: { duration: 0.55, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] },
+});
+
+/* ─── Static Data ────────────────────────────────────────────── */
+const MARQUEE_ITEMS = [
+  'Voice AI', '★ AyroDesk24', 'WhatsApp AI', '★ AyroHub',
+  'Lead Generation', '★ AYROMEX', 'AI Agents', 'ADM Compliance',
+  'Voice AI', '★ AyroDesk24', 'WhatsApp AI', '★ AyroHub',
+  'Lead Generation', '★ AYROMEX', 'AI Agents', 'ADM Compliance',
+];
+
+const AGENTS = [
+  { name: 'Scout',   role: 'Lead Intelligence',    desc: 'Trova, qualifica e segmenta lead in tempo reale. Non dorme, non sbaglia.',        icon: '🔍' },
+  { name: 'Closer',  role: 'Sales Automation',     desc: 'Gestisce obiezioni, manda follow-up e chiude trattative in autonomia.',             icon: '🎯' },
+  { name: 'Builder', role: 'Delivery Engine',      desc: 'Onboarding clienti, setup sistemi, documentazione. Zero intervento umano.',         icon: '⚙️' },
+  { name: 'Media',   role: 'Content Factory',      desc: 'Post, email, copy brandizzati su ogni canale. Sempre attivo, sempre consistente.',   icon: '📡' },
+  { name: 'Analyst', role: 'Revenue Intelligence', desc: 'Dashboard live, alert anomalie e report settimanali consegnati automaticamente.',    icon: '📊' },
+];
+
+const WHY_ITEMS = [
+  { stat: 'H24',   label: 'Senza pause',      desc: 'I tuoi sistemi non dormono, non si ammalano, non vanno in ferie. Sempre operativi.' },
+  { stat: '30gg',  label: 'ROI garantito',    desc: 'I clienti vedono il ritorno entro 30 giorni. Non è una promessa — è il modello.' },
+  { stat: 'Zero',  label: 'Tecnica richiesta', desc: 'Plug-and-play. Il tuo team usa lo strumento, non lo gestisce.' },
+];
 
 const CLIENTS = [
-  { name: 'Halvion Hotel', sector: 'Hospitality' },
-  { name: 'Le Dimore del Garibaldi', sector: 'Hospitality' },
-  { name: 'CIKO Pizzeria', sector: 'F&B' },
-  { name: 'APEX Card Room', sector: 'Gaming' },
-  { name: 'Bonega Poker Room', sector: 'Gaming' },
-]
+  { name: 'Bonega Poker Room',       sector: 'Gaming ADM',  initial: 'B' },
+  { name: 'Le Dimore del Garibaldi', sector: 'Hospitality', initial: 'L' },
+  { name: 'AUREA Hotel',             sector: 'Hospitality', initial: 'A' },
+  { name: 'CIKO Pizzeria',           sector: 'F&B',         initial: 'C' },
+  { name: 'Jevi Tatuaggi',           sector: 'Beauty & Art', initial: 'J' },
+  { name: 'APEX Card Room',          sector: 'Gaming ADM',  initial: 'A' },
+];
 
-const fadeUp = {
-  initial: { opacity: 0, y: 32 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
-  transition: { duration: 0.6 },
-}
+const PRODUCTS = [
+  {
+    badge:    'SaaS Enterprise',
+    tagline:  'OS per Concessionari ADM',
+    name:     'AyroHub',
+    desc:     'Sistema operativo AI per concessionari gaming ADM. Voice AI outbound H24, customer service WhatsApp, compliance automatica, rete Master/PVR.',
+    features: ['Voice AI outbound non-stop', 'WhatsApp AI customer service', 'Compliance ADM monitorata', 'Rete Master/PVR gestita'],
+    price:    'da €2.950/mese',
+    cta:      'Prenota una demo →',
+    featured: true,
+  },
+  {
+    badge:    'SaaS PMI',
+    tagline:  'Receptionist AI per PMI',
+    name:     'AyroDesk24',
+    desc:     'Segreteria AI su WhatsApp per saloni, studi, ristoranti e PMI. Appuntamenti, lead qualification e risposte H24 senza personale aggiuntivo.',
+    features: ['Risposta WhatsApp H24', 'Gestione appuntamenti', 'Lead qualification automatica', 'Dashboard multi-operatore'],
+    price:    'da €199/mese',
+    cta:      'Scopri AyroDesk24 →',
+    featured: false,
+  },
+];
 
+/* ─── Component ──────────────────────────────────────────────── */
 export default function HomePage() {
-  const t = useTranslations()
-  const locale = useLocale()
-
-  const words = [t('hero.word0'), t('hero.word1'), t('hero.word2'), t('hero.word3')]
-
-  const SERVICES = [
-    { icon: FaRobot, title: t('services.s1title'), desc: t('services.s1desc') },
-    { icon: FaCogs, title: t('services.s2title'), desc: t('services.s2desc') },
-    { icon: FaWhatsapp, title: t('services.s3title'), desc: t('services.s3desc') },
-    { icon: FaLayerGroup, title: t('services.s4title'), desc: t('services.s4desc') },
-    { icon: FaGlobe, title: t('services.s5title'), desc: t('services.s5desc') },
-    { icon: FaPaintBrush, title: t('services.s6title'), desc: t('services.s6desc') },
-  ]
-
-  const PRODUCTS = [
-    {
-      name: 'AyroHub',
-      badge: t('products.p1badge'),
-      tagline: t('products.p1tagline'),
-      desc: t('products.p1desc'),
-      features: [t('products.p1f1'), t('products.p1f2'), t('products.p1f3'), t('products.p1f4')],
-      accessHref: 'https://app.ayromex.com',
-      trialBadge: t('productsSection.trialBadge'),
-    },
-    {
-      name: 'AyroDesk24',
-      badge: t('products.p2badge'),
-      tagline: t('products.p2tagline'),
-      desc: t('products.p2desc'),
-      features: [t('products.p2f1'), t('products.p2f2'), t('products.p2f3'), t('products.p2f4')],
-      demoHref: 'https://ayrodesk24.com',
-    },
-  ]
+  const t = useTranslations();
 
   return (
-    <main className="overflow-x-hidden">
+    <main className="relative overflow-x-hidden bg-[#080808] text-white">
 
-      {/* ===================== HERO ===================== */}
-      <section className="min-h-screen flex flex-col justify-center px-6 md:px-12 pt-24 pb-16">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-5xl"
-        >
-          {/* Hero Logo */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="mb-10"
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/brand/logos/symbol/AYROLOGO.svg"
-              alt="AYROMEX"
-              className="w-40 h-40 md:w-56 md:h-56"
-            />
-          </motion.div>
+      {/* ══════════════════════════════════════════
+          HERO
+          ══════════════════════════════════════════ */}
+      <section className="relative min-h-screen flex flex-col items-center justify-center pt-28 pb-20 overflow-hidden">
+
+        {/* Grid background */}
+        <div className="grid-bg" />
+
+        {/* Radial glow */}
+        <div className="radial-glow" />
+
+        {/* Content */}
+        <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-5xl mx-auto">
 
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#FF4D00]/30 bg-[#FF4D00]/5 text-[#FF4D00] text-xs font-bold uppercase tracking-widest mb-8">
-            <span className="w-1.5 h-1.5 bg-[#FF4D00] rounded-full animate-pulse" />
-            {t('hero.badge')}
-          </div>
-
-          {/* Title */}
-          <h1 className="text-[10vw] md:text-[7vw] font-black leading-[0.9] tracking-[-0.04em] uppercase mb-4">
-            {t('hero.title1')} <br />
-            <span className="text-[#FF4D00]">{t('hero.title2')}</span>
-          </h1>
-
-          {/* Rotating words */}
-          <div className="flex items-center gap-3 mb-10 text-xl md:text-2xl font-medium text-[#0a0a0a]/50 dark:text-white/50">
-            <span>→</span>
-            <RotatingText words={words} />
-          </div>
-
-          {/* Subtitle + CTAs */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
-            <p className="max-w-lg text-lg md:text-xl text-[#0a0a0a]/60 dark:text-white/60 leading-relaxed">
-              {t('hero.subtitle')}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
-              <a
-                href={`#contatti`}
-                className="btn-primary px-7 py-3.5 text-sm min-h-[44px]"
-              >
-                {t('hero.cta')}
-              </a>
-              <a
-                href={`/${locale}/servizi`}
-                className="btn-ghost px-7 py-3.5 text-sm min-h-[44px] text-[#0a0a0a] dark:text-white"
-              >
-                {t('hero.ctaSecondary')}
-                <FaArrowRight className="ml-2 w-3 h-3" />
-              </a>
-            </div>
-          </div>
-        </motion.div>
-      </section>
-
-      {/* ===================== SERVICES ===================== */}
-      <section id="servizi" className="py-24 md:py-32 px-6 md:px-12 bg-[#070707] dark:bg-[#050505]">
-        <div className="max-w-7xl mx-auto">
-          <motion.div {...fadeUp} className="mb-16">
-            <span className="text-[#FF4D00] text-xs font-bold uppercase tracking-widest">{t('servicesSection.label')}</span>
-            <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-white mt-3">
-              {t('servicesSection.title1')}<br />
-              <span className="text-[#FF4D00]">{t('servicesSection.title2')}</span>
-            </h2>
+          <motion.div {...stagger(0)}>
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest border border-[rgba(255,106,0,0.3)] text-[#FF6A00] bg-[rgba(255,106,0,0.06)] mb-8">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#FF6A00] animate-pulse" />
+              AI Company · Puglia · Europa
+            </span>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {SERVICES.map((s, i) => (
-              <motion.div
-                key={s.title}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="p-6 rounded-2xl border border-white/10 bg-white/5 hover:border-[#FF4D00]/40 hover:bg-[#FF4D00]/5 transition-all duration-300 group"
-              >
-                <div className="w-12 h-12 rounded-xl bg-[#FF4D00]/10 flex items-center justify-center mb-5 group-hover:bg-[#FF4D00]/20 transition-colors">
-                  <s.icon className="w-5 h-5 text-[#FF4D00]" />
+          {/* Headline */}
+          <motion.h1
+            className="text-[clamp(48px,8vw,88px)] font-extrabold leading-[1.05] tracking-tight mb-6"
+            {...stagger(1)}
+          >
+            Sistemi AI che{' '}
+            <span
+              className="relative inline-block text-[#FF6A00]"
+              style={{ WebkitTextFillColor: '#FF6A00' }}
+            >
+              lavorano
+              <span
+                className="absolute left-0 -bottom-1 w-full h-[3px] rounded-full"
+                style={{ background: 'linear-gradient(90deg, #FF6A00, #FF8533, transparent)' }}
+              />
+            </span>
+            {' '}mentre dormi
+          </motion.h1>
+
+          {/* Subtitle */}
+          <motion.p
+            className="text-lg md:text-xl text-white/55 max-w-2xl leading-relaxed mb-10"
+            {...stagger(2)}
+          >
+            Non vendiamo software. Costruiamo il{' '}
+            <span className="text-white/80">layer operativo AI</span>{' '}
+            della tua azienda.
+          </motion.p>
+
+          {/* CTA Buttons */}
+          <motion.div className="flex flex-wrap gap-4 justify-center mb-16" {...stagger(3)}>
+            <a
+              href="https://wa.me/393926936833"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary px-8 py-4 text-sm gap-2"
+            >
+              Prenota una demo <FiArrowRight />
+            </a>
+            <a href="#prodotti" className="btn-ghost px-8 py-4 text-sm">
+              Scopri i prodotti
+            </a>
+          </motion.div>
+
+          {/* Stats bar */}
+          <motion.div
+            className="flex flex-wrap gap-8 md:gap-16 justify-center"
+            {...stagger(4)}
+          >
+            {[
+              { value: '90%',  label: 'Ops automatizzate' },
+              { value: 'H24',  label: 'Sempre attivi' },
+              { value: '7gg',  label: 'Tempo di setup' },
+              { value: '30gg', label: 'ROI medio' },
+            ].map(({ value, label }) => (
+              <div key={label} className="text-center">
+                <div className="text-3xl md:text-4xl font-extrabold text-[#FF6A00] leading-none">
+                  {value}
                 </div>
-                <h3 className="text-white font-bold text-lg mb-2">{s.title}</h3>
-                <p className="text-white/60 text-sm leading-relaxed">{s.desc}</p>
-              </motion.div>
+                <div className="text-xs text-white/40 mt-1 uppercase tracking-widest">
+                  {label}
+                </div>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* Bottom fade */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#080808] to-transparent pointer-events-none" />
+      </section>
+
+      {/* ══════════════════════════════════════════
+          MARQUEE
+          ══════════════════════════════════════════ */}
+      <section className="py-6 bg-[#050505] border-y border-white/5 overflow-hidden">
+        <div className="relative flex">
+          <div className="marquee-track">
+            {MARQUEE_ITEMS.map((item, i) => (
+              <span
+                key={i}
+                className={`px-8 text-sm font-semibold uppercase tracking-widest whitespace-nowrap ${
+                  item.startsWith('★')
+                    ? 'text-[#FF6A00]'
+                    : 'text-white/30'
+                }`}
+              >
+                {item}
+              </span>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ===================== PRODUCTS ===================== */}
-      <section id="prodotti" className="py-24 md:py-32 px-6 md:px-12 bg-[#070707] dark:bg-[#050505]">
+      {/* ══════════════════════════════════════════
+          PRODOTTI
+          ══════════════════════════════════════════ */}
+      <section id="prodotti" className="py-28 px-6">
         <div className="max-w-7xl mx-auto">
-          <motion.div {...fadeUp} className="mb-16">
-            <span className="text-[#FF4D00] text-xs font-bold uppercase tracking-widest">{t('productsSection.label')}</span>
-            <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-white mt-3">
-              {t('productsSection.title1')}<br />
-              <span className="text-[#FF4D00]">{t('productsSection.title2')}</span>
+
+          {/* Header */}
+          <motion.div className="text-center mb-16" {...fadeUp}>
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#FF6A00] mb-3 block">
+              I nostri prodotti
+            </span>
+            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
+              Sistemi pronti al deploy
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Cards */}
+          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             {PRODUCTS.map((p, i) => (
               <motion.div
                 key={p.name}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="p-8 rounded-2xl border border-[#1e1e1e] bg-[#111111] hover:border-[#FF4D00]/30 transition-all"
+                {...stagger(i)}
+                className="product-card card-dark rounded-2xl p-8 flex flex-col gap-6"
+                style={{ border: '1px solid rgba(255,255,255,0.08)' }}
               >
-                <div className="flex items-start justify-between gap-4 mb-5">
+                {/* Badge + tagline */}
+                <div className="flex items-start justify-between gap-4">
                   <div>
-                    <div className="flex items-center gap-2 mb-3">
-                      <span className="inline-block px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-[#FF4D00]/10 text-[#FF4D00]">
-                        {p.badge}
-                      </span>
-                      {'trialBadge' in p && (
-                        <span className="inline-block px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-green-500/10 text-green-400">
-                          {(p as typeof p & { trialBadge: string }).trialBadge}
-                        </span>
-                      )}
-                    </div>
-                    <h3 className="text-2xl font-black text-white">{p.name}</h3>
-                    <p className="text-[#FF4D00] text-sm font-medium mt-1">{p.tagline}</p>
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#FF6A00] bg-[rgba(255,106,0,0.1)] border border-[rgba(255,106,0,0.2)] px-2.5 py-1 rounded-full">
+                      {p.badge}
+                    </span>
+                    <p className="text-white/40 text-xs mt-2 font-medium">{p.tagline}</p>
                   </div>
+                  {p.featured && (
+                    <span className="text-[10px] font-bold uppercase tracking-widest bg-[#FF6A00] text-black px-2.5 py-1 rounded-full shrink-0">
+                      Flagship
+                    </span>
+                  )}
                 </div>
-                <p className="text-white/60 text-sm leading-relaxed mb-6">{p.desc}</p>
-                <ul className="space-y-2 mb-7">
+
+                {/* Icon + Name */}
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-[rgba(255,106,0,0.1)] border border-[rgba(255,106,0,0.2)] flex items-center justify-center text-xl font-black text-[#FF6A00]">
+                    {p.name[0]}
+                  </div>
+                  <h3 className="text-2xl font-extrabold">{p.name}</h3>
+                </div>
+
+                {/* Description */}
+                <p className="text-white/55 text-sm leading-relaxed">{p.desc}</p>
+
+                {/* Features */}
+                <ul className="flex flex-col gap-2">
                   {p.features.map((f) => (
                     <li key={f} className="flex items-center gap-3 text-sm text-white/70">
-                      <FaCheck className="w-3 h-3 text-[#FF4D00] flex-shrink-0" />
+                      <FiCheck className="text-[#FF6A00] shrink-0" />
                       {f}
                     </li>
                   ))}
                 </ul>
-                <div className="flex items-center gap-3 flex-wrap">
-                  {'accessHref' in p ? (
-                    <a
-                      href={(p as typeof p & { accessHref: string }).accessHref}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-primary px-6 py-3 text-xs min-h-[44px]"
-                    >
-                      {t('productsSection.accessAyrohub')}
-                    </a>
-                  ) : (
-                    <a href="#contatti" className="btn-primary px-6 py-3 text-xs min-h-[44px]">
-                      {t('productsSection.cta')}
-                    </a>
-                  )}
-                  {'demoHref' in p && (
-                    <a
-                      href={(p as typeof p & { demoHref: string }).demoHref}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-5 py-3 rounded-xl text-xs font-bold min-h-[44px] border border-[#FF4D00]/40 text-[#FF4D00] hover:bg-[#FF4D00]/10 transition-all"
-                    >
-                      {t('productsSection.discoverAyrodesk')}
-                    </a>
-                  )}
+
+                {/* Price + CTA */}
+                <div className="flex items-center justify-between mt-auto pt-4 border-t border-white/8">
+                  <span className="text-[#FF6A00] font-bold text-sm">{p.price}</span>
+                  <a
+                    href="https://wa.me/393926936833"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary px-5 py-2.5 text-xs gap-1.5"
+                  >
+                    {p.cta}
+                  </a>
                 </div>
               </motion.div>
             ))}
@@ -233,99 +274,178 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===================== WHY ===================== */}
-      <section className="py-24 md:py-32 px-6 md:px-12 bg-[#070707] dark:bg-[#050505]">
+      {/* ══════════════════════════════════════════
+          AGENTI AI
+          ══════════════════════════════════════════ */}
+      <section className="py-28 px-6 bg-[#050505] border-y border-white/5">
         <div className="max-w-7xl mx-auto">
-          <motion.div
-            {...fadeUp}
-            className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
-          >
-            <div>
-              <span className="text-[#FF4D00] text-xs font-bold uppercase tracking-widest">{t('why.label')}</span>
-              <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tight text-white mt-3 leading-tight">
-                {t('why.title1')}<br />
-                <span className="text-[#FF4D00]">{t('why.title2')}</span>
-              </h2>
-            </div>
-            <div className="space-y-6">
-              <p className="text-white/70 text-xl md:text-2xl font-light leading-relaxed">
-                {t('why.desc')}
-              </p>
-              <ul className="space-y-3 text-white/60 text-sm">
-                {[t('why.item1'), t('why.item2'), t('why.item3'), t('why.item4')].map((item) => (
-                  <li key={item} className="flex items-center gap-3">
-                    <FaCheck className="w-3 h-3 text-[#FF4D00] flex-shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <a href="#contatti" className="btn-primary px-6 py-3 text-xs inline-flex min-h-[44px]">
-                {t('why.cta')}
-              </a>
-            </div>
+
+          <motion.div className="text-center mb-16" {...fadeUp}>
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#FF6A00] mb-3 block">
+              AI Agents
+            </span>
+            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
+              Il tuo team AI è già al lavoro
+            </h2>
+            <p className="text-white/45 mt-4 max-w-xl mx-auto text-base">
+              Cinque agenti specializzati. Ogni giorno, tutto il giorno.
+            </p>
           </motion.div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            {AGENTS.map((agent, i) => (
+              <motion.div
+                key={agent.name}
+                {...stagger(i)}
+                className="agent-card card-dark rounded-2xl p-6 flex flex-col gap-4"
+                style={{ border: '1px solid rgba(255,255,255,0.07)' }}
+              >
+                {/* Status */}
+                <div className="flex items-center gap-2">
+                  <span className="status-dot" />
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-[#FF6A00]">
+                    Attivo
+                  </span>
+                </div>
+
+                {/* Icon */}
+                <div className="text-3xl">{agent.icon}</div>
+
+                {/* Name + Role */}
+                <div>
+                  <h3 className="text-lg font-extrabold">{agent.name}</h3>
+                  <p className="text-[11px] text-white/40 font-semibold uppercase tracking-wider mt-0.5">
+                    {agent.role}
+                  </p>
+                </div>
+
+                {/* Desc */}
+                <p className="text-white/50 text-xs leading-relaxed flex-1">
+                  {agent.desc}
+                </p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* ===================== CLIENTS ===================== */}
-      <section id="clienti" className="py-20 md:py-24 px-6 md:px-12">
+      {/* ══════════════════════════════════════════
+          PERCHÉ AYROMEX
+          ══════════════════════════════════════════ */}
+      <section className="py-28 px-6">
         <div className="max-w-7xl mx-auto">
-          <motion.div {...fadeUp} className="mb-12 text-center">
-            <span className="text-[#FF4D00] text-xs font-bold uppercase tracking-widest">{t('clientsSection.label')}</span>
-            <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight text-[#0a0a0a] dark:text-white mt-3">
-              {t('clientsSection.title1')}{' '}
-              <span className="text-[#FF4D00]">{t('clientsSection.title2')}</span>
+
+          <motion.div className="text-center mb-16" {...fadeUp}>
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#FF6A00] mb-3 block">
+              Perché noi
+            </span>
+            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
+              La tua azienda al 90%<br />
+              <span className="text-[#FF6A00]">automatizzata</span>
+            </h2>
+            <p className="text-white/45 mt-4 max-w-xl mx-auto">
+              Non vendiamo consulenza. Costruiamo sistemi che lavorano mentre dormi.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {WHY_ITEMS.map((item, i) => (
+              <motion.div
+                key={item.stat}
+                {...stagger(i)}
+                className="card-dark rounded-2xl p-8 text-center"
+                style={{ border: '1px solid rgba(255,255,255,0.08)' }}
+              >
+                <div className="text-5xl font-extrabold text-[#FF6A00] mb-2">
+                  {item.stat}
+                </div>
+                <div className="text-base font-bold mb-3">{item.label}</div>
+                <p className="text-white/50 text-sm leading-relaxed">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════
+          CLIENTI
+          ══════════════════════════════════════════ */}
+      <section className="py-28 px-6 bg-[#050505] border-y border-white/5">
+        <div className="max-w-7xl mx-auto">
+
+          <motion.div className="text-center mb-16" {...fadeUp}>
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#FF6A00] mb-3 block">
+              Chi ci ha scelto
+            </span>
+            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
+              Risultati reali.<br />Clienti soddisfatti.
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
             {CLIENTS.map((c, i) => (
               <motion.div
                 key={c.name}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.07 }}
-                className="p-5 rounded-xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 hover:border-[#FF4D00]/30 transition-all text-center"
+                {...stagger(i)}
+                className="agent-card card-dark rounded-2xl p-6 flex items-center gap-4"
+                style={{ border: '1px solid rgba(255,255,255,0.07)' }}
               >
-                <div className="w-10 h-10 rounded-full bg-[#FF4D00]/10 flex items-center justify-center mx-auto mb-3">
-                  <span className="text-[#FF4D00] font-black text-sm">{c.name[0]}</span>
+                {/* Avatar */}
+                <div className="w-11 h-11 rounded-xl bg-[rgba(255,106,0,0.1)] border border-[rgba(255,106,0,0.2)] flex items-center justify-center text-[#FF6A00] font-black text-base shrink-0">
+                  {c.initial}
                 </div>
-                <p className="text-[#0a0a0a] dark:text-white font-semibold text-xs leading-tight">{c.name}</p>
-                <p className="text-[#0a0a0a]/40 dark:text-white/40 text-[10px] mt-1 uppercase tracking-widest">{c.sector}</p>
+                <div>
+                  <p className="font-bold text-sm leading-tight">{c.name}</p>
+                  <p className="text-[11px] text-white/40 mt-0.5 uppercase tracking-wider font-medium">
+                    {c.sector}
+                  </p>
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ===================== CONTACT ===================== */}
-      <section id="contatti" className="py-24 md:py-32 px-6 md:px-12 bg-[#070707] dark:bg-[#050505]">
-        <div className="max-w-3xl mx-auto text-center">
+      {/* ══════════════════════════════════════════
+          CTA FINALE
+          ══════════════════════════════════════════ */}
+      <section className="py-32 px-6 relative overflow-hidden">
+
+        {/* Glow centrale */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse at 50% 50%, rgba(255,106,0,0.1) 0%, transparent 60%)' }}
+        />
+
+        <div className="max-w-3xl mx-auto text-center relative z-10">
           <motion.div {...fadeUp}>
-            <span className="text-[#FF4D00] text-xs font-bold uppercase tracking-widest">{t('contactSection.label')}</span>
-            <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tight text-white mt-3 mb-4">
-              {t('contactSection.title1')}<br />
-              <span className="text-[#FF4D00]">{t('contactSection.title2')}</span>
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#FF6A00] mb-4 block">
+              Inizia ora
+            </span>
+            <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6">
+              Parliamo del<br />
+              <span className="text-[#FF6A00]">tuo progetto</span>
             </h2>
-            <p className="text-white/60 text-lg mb-10 max-w-xl mx-auto">
-              {t('contactSection.desc')}
+            <p className="text-white/50 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
+              Analizziamo la tua azienda gratuitamente e ti diciamo cosa automatizzare in 72 ore.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+            <div className="flex flex-wrap gap-4 justify-center">
               <a
-                href="https://wa.me/390808407861?text=Ciao%20AYROMEX%2C%20vorrei%20informazioni%20sui%20vostri%20sistemi%20AI%20e%20automazioni."
+                href="https://wa.me/393926936833"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary px-8 py-4 text-sm min-h-[44px] gap-2"
+                className="btn-primary px-8 py-4 text-sm gap-2"
               >
-                <FaWhatsapp className="w-4 h-4" />
-                {t('contactSection.ctaWa')}
+                <FaWhatsapp size={16} />
+                Scrivici su WhatsApp
               </a>
               <a
-                href="mailto:info@ayromex.com?subject=Richiesta%20informazioni%20AI"
-                className="btn-ghost px-8 py-4 text-sm min-h-[44px] text-white border-white/30 hover:border-[#FF4D00]"
+                href="mailto:tools@ayromex.com"
+                className="btn-ghost px-8 py-4 text-sm gap-2"
               >
-                {t('contactSection.ctaEmail')}
+                <FiMail size={15} />
+                tools@ayromex.com
               </a>
             </div>
           </motion.div>
@@ -333,5 +453,5 @@ export default function HomePage() {
       </section>
 
     </main>
-  )
+  );
 }
