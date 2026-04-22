@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import SmoothScroll from '@/components/SmoothScroll';
 import WhatsAppButton from '@/components/WhatsAppButton';
 
 type Props = {
@@ -22,10 +23,12 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <NextIntlClientProvider messages={messages}>
-      <Navbar />
-      {children}
-      <Footer />
-      <WhatsAppButton />
+      <SmoothScroll>
+        <Navbar />
+        {children}
+        <Footer />
+        <WhatsAppButton />
+      </SmoothScroll>
     </NextIntlClientProvider>
   );
 }
