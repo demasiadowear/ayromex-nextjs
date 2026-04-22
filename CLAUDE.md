@@ -290,15 +290,15 @@ that could identify a client.
 
 ---
 
-## 11. Live Agent Backend (Marco) - MVP Architecture
+## 11. Live Agent Backend (Ayro) - MVP Architecture
 
-### 11.1 What Marco is
+### 11.1 What Ayro is
 
-Marco is the conversational AI agent embedded in the hero section of ayromex.com. He is the site's primary interactive demo and lead capture surface.
+Ayro is the conversational AI agent embedded in the hero section of ayromex.com. He is the site's primary interactive demo and lead capture surface.
 
-Marco lives behind a Next.js API route at /app/api/chat/route.ts, is invoked from a React chat UI in the hero, and runs on Google Gemini 2.0 Flash. He is stateless per request - conversation history is passed in by the client. No separate service, no external orchestrator, no queue. All server-side logic runs inside the Next.js app on Vercel.
+Ayro lives behind a Next.js API route at /app/api/chat/route.ts, is invoked from a React chat UI in the hero, and runs on Google Gemini 2.0 Flash. He is stateless per request - conversation history is passed in by the client. No separate service, no external orchestrator, no queue. All server-side logic runs inside the Next.js app on Vercel.
 
-Marco is the thesis of the site: AYROMEX builds thinking systems, not toys. Visiting the homepage and talking to Marco is the proof.
+Ayro is the thesis of the site: AYROMEX builds thinking systems, not toys. Visiting the homepage and talking to Ayro is the proof.
 
 ### 11.2 MVP scope
 
@@ -306,16 +306,16 @@ MVP ships ONE agent. No multi-agent orchestration at launch. The architecture is
 
 ### 11.3 Identity
 
-- Name: Marco
+- Name: Ayro
 - Role: Sales and Discovery Specialist at AYROMEX
 - Primary language: Italian
 - Secondary: English, Romanian (switches automatically if user switches)
 - Personality: expert, direct, cordial, non-pushy
-- Reference tone: founder Christian (persona details captured in lib/marco/tone.md in STEP 4)
+- Reference tone: founder Christian (persona details captured in lib/ayro/tone.md in STEP 4)
 
 ### 11.4 Responsibilities
 
-Marco has five responsibilities in order of conversational priority:
+Ayro has five responsibilities in order of conversational priority:
 
 - Qualify: identifies industry vertical, role, pain point, scale or volume of the visitor's business
 - Route: directs the conversation to the correct product (AyroHub for ADM/gaming operators, AyroDesk24 for WhatsApp receptionist on SMBs) or to a CUSTOM build request if the need is outside the standard catalog
@@ -336,7 +336,7 @@ Rate limits: 8 messages per IP per hour, 200 messages per IP per day.
 
 ### 11.6 Knowledge base
 
-Local JSON and Markdown files read at runtime. No vector DB in MVP - all content fits in the Gemini context window. Location: lib/marco/
+Local JSON and Markdown files read at runtime. No vector DB in MVP - all content fits in the Gemini context window. Location: lib/ayro/
 
 - system-prompt.md: personality, mission, guardrails
 - products.json: AyroHub and AyroDesk24 full specs
@@ -357,7 +357,7 @@ Pattern matching on user input triggers backend actions in parallel with the str
 - Requirements outside the standard catalog: tag the lead CUSTOM and Slack alert to #leads-ayromex
 - Conversation end (timeout or explicit goodbye): email summary to info@demasiadowear.com
 
-### 11.8 Boundaries Marco must enforce
+### 11.8 Boundaries Ayro must enforce
 
 - NEVER mention real client names (inherits from section 10 rule)
 - NEVER promise features not declared in products.json (products.json is the absolute source of truth)
@@ -368,11 +368,11 @@ Pattern matching on user input triggers backend actions in parallel with the str
 
 ### 11.9 Rate limit UX
 
-When a user hits the rate limit, Marco shows (in Italian by default, localized per active locale):
+When a user hits the rate limit, Ayro shows (in Italian by default, localized per active locale):
 
 "Ti ho dato un buon assaggio di come lavoriamo. Ora e il momento di parlare seriamente. Christian ti risponde entro 24h se gli scrivi qui: [WhatsApp link]"
 
-Technical error screens are never surfaced to the user. If the Gemini API fails, Marco shows a graceful fallback with the WhatsApp link.
+Technical error screens are never surfaced to the user. If the Gemini API fails, Ayro shows a graceful fallback with the WhatsApp link.
 
 ### 11.10 Future evolution (post-launch only)
 
