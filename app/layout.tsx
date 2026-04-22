@@ -2,7 +2,6 @@ import { Gugi, Syne, DM_Sans, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 import CustomCursor from '@/components/CustomCursor'
 import AnimatedBackground from '@/components/AnimatedBackground'
-import { ThemeProvider } from '@/components/ThemeProvider'
 
 const gugi = Gugi({
   subsets: ['latin'],
@@ -53,22 +52,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="it"
       className={`dark ${gugi.variable} ${syne.variable} ${dmSans.variable} ${jetbrainsMono.variable}`}
     >
-      <body className="relative min-h-screen bg-[#f8f6f2] dark:bg-[#070707] text-[#0a0a0a] dark:text-[#f0ece4] font-body antialiased">
-        <ThemeProvider>
-          {/* Halftone layer */}
-          <div className="halftone-bg" />
+      <body className="relative min-h-screen bg-ay-bg text-ay-text font-body antialiased">
+        {/* Halftone layer */}
+        <div className="halftone-bg" />
 
-          {/* Animated background */}
-          <AnimatedBackground />
+        {/* Animated background */}
+        <AnimatedBackground />
 
-          {/* Custom cursor */}
-          <CustomCursor />
+        {/* Custom cursor */}
+        <CustomCursor />
 
-          {/* Content */}
-          <div className="relative z-10">
-            {children}
-          </div>
-        </ThemeProvider>
+        {/* Content */}
+        <div className="relative z-10">
+          {children}
+        </div>
       </body>
     </html>
   )

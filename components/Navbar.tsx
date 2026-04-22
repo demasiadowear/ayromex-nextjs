@@ -4,12 +4,10 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { HiBars3BottomRight, HiXMark, HiChevronDown } from 'react-icons/hi2'
 import { FaFacebook, FaInstagram, FaGoogle } from 'react-icons/fa'
-import { FaMoon, FaSun } from 'react-icons/fa'
 import { useTranslations, useLocale } from 'next-intl'
 import { useRouter, usePathname } from '@/i18n/navigation'
 import { IT, GB, RO } from 'country-flag-icons/react/3x2'
 import { AyromexLogo } from './AyromexLogo'
-import { useTheme } from './ThemeProvider'
 
 const languages = [
   { code: 'it', label: 'Italiano', FlagComponent: IT },
@@ -26,7 +24,6 @@ export default function Navbar() {
   const locale = useLocale()
   const router = useRouter()
   const pathname = usePathname()
-  const { theme, toggle } = useTheme()
 
   const currentLang = languages.find((l) => l.code === locale) ?? languages[0]
 
@@ -97,17 +94,6 @@ export default function Navbar() {
             </a>
           </div>
 
-          <div className="h-4 w-px bg-black/10 dark:bg-white/10" />
-
-          {/* Dark mode toggle */}
-          <button
-            onClick={toggle}
-            className="min-h-[44px] min-w-[44px] flex items-center justify-center text-[#0a0a0a]/60 dark:text-white/60 hover:text-[#FF4D00] dark:hover:text-[#FF4D00] transition-colors"
-            aria-label="Toggle dark/light mode"
-          >
-            {theme === 'dark' ? <FaSun className="w-4 h-4" /> : <FaMoon className="w-4 h-4" />}
-          </button>
-
           {/* Language switcher */}
           <div className="relative">
             <button
@@ -165,15 +151,8 @@ export default function Navbar() {
           </a>
         </div>
 
-        {/* Mobile: theme toggle + lang flag + hamburger */}
+        {/* Mobile: lang flag + hamburger */}
         <div className="flex items-center gap-2 md:hidden">
-          <button
-            onClick={toggle}
-            className="min-h-[44px] min-w-[44px] flex items-center justify-center text-[#0a0a0a]/60 dark:text-white/60"
-            aria-label="Toggle theme"
-          >
-            {theme === 'dark' ? <FaSun className="w-4 h-4" /> : <FaMoon className="w-4 h-4" />}
-          </button>
           <button onClick={() => setIsLangOpen(!isLangOpen)} className="min-h-[44px] min-w-[44px] flex items-center justify-center">
             <div className="w-6 h-4 overflow-hidden rounded-sm shadow-sm">
               <currentLang.FlagComponent />
