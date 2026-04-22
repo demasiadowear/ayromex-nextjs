@@ -85,12 +85,17 @@ The ONLY orange is `#FF6B00`. `#FF4D00`, `#FF6A00`, `#FF8533`,
 
 Loaded once in `app/layout.tsx` via `next/font/google`.
 
-| Family | Weights | Tailwind class | Usage |
+| Family | Weights | CSS variable | Tailwind class |
 |---|---|---|---|
-| Gugi | 400 | `font-brand` | brand/logo lockups ONLY |
-| Syne | 800 | `font-display` | editorial headlines (h1/h2/h3) |
-| DM Sans | 400 / 500 / 600 | `font-body` (= default `sans`) | body, UI, caption, nav |
-| JetBrains Mono | 400 / 500 | `font-mono` | code, legal IDs, terminals |
+| Gugi | 400 | `--font-gugi` | `font-brand` |
+| Syne | 800 | `--font-syne` | `font-display` |
+| DM Sans | 400 / 500 / 600 | `--font-dm-sans` | `font-body` (+ `sans` default) |
+| JetBrains Mono | 400 / 500 | `--font-jetbrains-mono` | `font-mono` |
+
+Usage: `font-brand` for brand/logo lockups ONLY. `font-display` for
+editorial headlines (h1/h2/h3). `font-body` for body, UI, caption,
+nav (it is also the default `sans`). `font-mono` for code, legal IDs,
+and terminal/tool-name elements.
 
 Never use Gugi outside the logo lockup. Never mix Syne with
 DM Sans in the same line.
@@ -275,3 +280,108 @@ that could identify a client.
 - No cookie-banner framework — current policy is technical cookies only.
 - No additional animation library. If framer-motion + GSAP can't
   do it, reconsider the feature.
+- No light mode. AYROMEX is dark-only (brand decision dated
+  2026-04-22). Reference aesthetic: Anthropic Labs / Linear /
+  Vercel. ThemeProvider component and light/dark toggle in
+  Navbar will be REMOVED in STEP 3 alongside page refactor —
+  not in STEP 2 to avoid visual regressions on the live site.
+  Users who need light contrast will rely on OS-level reader
+  modes or browser accessibility settings.
+
+---
+
+## 11. Live Agent Backend (Marco) - MVP Architecture
+
+### 11.1 What Marco is
+
+Marco is the conversational AI agent embedded in the hero section of ayromex.com. He is the site's primary interactive demo and lead capture surface.
+
+Marco lives behind a Next.js API route at /app/api/chat/route.ts, is invoked from a React chat UI in the hero, and runs on Google Gemini 2.0 Flash. He is stateless per request - conversation history is passed in by the client. No separate service, no external orchestrator, no queue. All server-side logic runs inside the Next.js app on Vercel.
+
+Marco is the thesis of the site: AYROMEX builds thinking systems, not toys. Visiting the homepage and talking to Marco is the proof.
+
+### 11.2 MVP scope
+
+MVP ships ONE agent. No multi-agent orchestration at launch. The architecture is designed to scale into a multi-agent system post-launch, but only after real conversation data justifies the added complexity.
+
+### 11.3 Identity
+
+- Name: Marco
+- Role: Sales and Discovery Specialist at AYROMEX
+- Primary language: Italian
+- Secondary: English, Romanian (switches automatically if user switches)
+- Personality: expert, direct, cordial, non-pushy
+- Reference tone: founder Christian (persona details captured in lib/marco/tone.md in STEP 4)
+
+### 11.4 Responsibilities
+
+Marco has five responsibilities in order of conversational priority:
+
+- Qualify: identifies industry vertical, role, pain point, scale or volume of the visitor's business
+- Route: directs the conversation to the correct product (AyroHub for ADM/gaming operators, AyroDesk24 for WhatsApp receptionist on SMBs) or to a CUSTOM build request if the need is outside the standard catalog
+- Inform: answers technical and commercial questions using the knowledge base (products, pricing, use cases, FAQ, limits)
+- Capture: collects email and context when the lead is warm; records the conversation in Supabase
+- Trigger: fires downstream actions (Cal.com booking embed, Slack alert to #leads-ayromex, email summary to info@demasiadowear.com)
+
+### 11.5 Technical stack
+
+- LLM: Google Gemini 2.0 Flash (free tier primary; paid fallback same model)
+- SDK: @google/generative-ai (installed in STEP 4)
+- API route: /app/api/chat/route.ts with streaming SSE response
+- Client state: React useState (active conversation in browser, not persisted client-side)
+- Persistence: Supabase free tier (leads table; fallback Vercel KV if Supabase unavailable)
+- Rate limiting: Upstash Redis (fallback: in-memory)
+
+Rate limits: 8 messages per IP per hour, 200 messages per IP per day.
+
+### 11.6 Knowledge base
+
+Local JSON and Markdown files read at runtime. No vector DB in MVP - all content fits in the Gemini context window. Location: lib/marco/
+
+- system-prompt.md: personality, mission, guardrails
+- products.json: AyroHub and AyroDesk24 full specs
+- pricing.json: tiers, setup fees, extras
+- use-cases.json: verticals served (estetica, hotel, ADM, retail)
+- faq.json: frequently asked questions and curated answers
+- limits.json: explicit boundaries (what we do NOT do)
+- qualifiers.json: lead quality criteria
+
+These files are authored in STEP 4. Updating any of them takes effect on the next request, no retraining and no redeploy required.
+
+### 11.7 Outcome detection
+
+Pattern matching on user input triggers backend actions in parallel with the streamed response:
+
+- Email regex match: save lead record in Supabase
+- Keywords "prenotare", "call", "meeting", "incontro": inject Cal.com inline embed into the chat UI
+- Requirements outside the standard catalog: tag the lead CUSTOM and Slack alert to #leads-ayromex
+- Conversation end (timeout or explicit goodbye): email summary to info@demasiadowear.com
+
+### 11.8 Boundaries Marco must enforce
+
+- NEVER mention real client names (inherits from section 10 rule)
+- NEVER promise features not declared in products.json (products.json is the absolute source of truth)
+- NEVER give fixed prices before minimum qualification
+- NEVER claim to be human if asked directly - honest disclosure with elegance
+- ALWAYS say "I don't know" before inventing
+- ALWAYS propose a discovery call for custom requests above 5000 euro
+
+### 11.9 Rate limit UX
+
+When a user hits the rate limit, Marco shows (in Italian by default, localized per active locale):
+
+"Ti ho dato un buon assaggio di come lavoriamo. Ora e il momento di parlare seriamente. Christian ti risponde entro 24h se gli scrivi qui: [WhatsApp link]"
+
+Technical error screens are never surfaced to the user. If the Gemini API fails, Marco shows a graceful fallback with the WhatsApp link.
+
+### 11.10 Future evolution (post-launch only)
+
+Once MVP is live and producing real conversations, the architecture scales to multi-agent. Planned agents:
+
+- Orchestrator: routes incoming messages to specialist agents
+- Scout: deep qualification (industry, budget, urgency)
+- Product Expert: catalog deep knowledge, likely with RAG over a vector DB
+- Builder: custom requirements gathering and rough estimation
+- Closer: call booking, CRM handoff, contract initiation
+
+Migration trigger: more than 50 qualified conversations per week OR a clear pattern of user questions that exceed a single-agent context window.
