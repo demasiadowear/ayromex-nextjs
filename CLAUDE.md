@@ -248,6 +248,27 @@ npm install <pkg> --legacy-peer-deps
 
 ## 10. Out of scope (what NOT to do)
 
+### Client confidentiality — ironclad rule
+
+Never mention real client names anywhere on the public site. Use
+generic verticals ('Concessionario ADM', 'Studio professionale',
+'Boutique hotel') instead. This includes code comments, i18n strings,
+page content, and metadata. If a feature seems to require a client
+name, ask before proceeding.
+
+Safe generic verticals:
+- Concessionario ADM / Operatore gaming
+- Studio professionale / Studio estetico / Salone
+- Boutique hotel / Struttura ricettiva
+- PMI italiana / Azienda di servizi
+- Retail multi-sede
+
+For social proof, use aggregate anonymous metrics (e.g. "200+ hours
+saved per month", "15+ verticals covered"), never specific numbers
+that could identify a client.
+
+### Scope boundaries
+
 - No CMS. Content lives in `messages/` and page files.
 - No blog engine. Journal is static, hand-curated.
 - No analytics without explicit approval.
