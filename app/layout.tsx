@@ -2,6 +2,7 @@ import { Gugi, Syne, DM_Sans, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 import CustomCursor from '@/components/CustomCursor'
 import AnimatedBackground from '@/components/AnimatedBackground'
+import GrainOverlay from '@/components/GrainOverlay'
 
 const gugi = Gugi({
   subsets: ['latin'],
@@ -58,6 +59,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         {/* Animated background */}
         <AnimatedBackground />
+
+        {/* Film grain overlay */}
+        <GrainOverlay />
 
         {/* Custom cursor */}
         <CustomCursor />

@@ -38,6 +38,7 @@ module.exports = {
         'marquee2':     'marquee2 28s linear infinite',
         'pulse-glow':   'pulseGlow 4s ease-in-out infinite',
         'dot-pulse':    'dotPulse 2s ease-in-out infinite',
+        'grain':        'grain 8s steps(10) infinite',
       },
       keyframes: {
         fadeUp: {
@@ -67,6 +68,18 @@ module.exports = {
         dotPulse: {
           '0%, 100%': { opacity: '1', transform: 'scale(1)' },
           '50%':      { opacity: '0.4', transform: 'scale(0.7)' },
+        },
+        grain: {
+          '0%, 100%': { transform: 'translate3d(0, 0, 0)' },
+          '10%':      { transform: 'translate3d(-2%, -1%, 0)' },
+          '20%':      { transform: 'translate3d(1%, -2%, 0)' },
+          '30%':      { transform: 'translate3d(-1%, 2%, 0)' },
+          '40%':      { transform: 'translate3d(2%, 1%, 0)' },
+          '50%':      { transform: 'translate3d(-2%, 2%, 0)' },
+          '60%':      { transform: 'translate3d(1%, -1%, 0)' },
+          '70%':      { transform: 'translate3d(-1%, -2%, 0)' },
+          '80%':      { transform: 'translate3d(2%, -1%, 0)' },
+          '90%':      { transform: 'translate3d(-1%, 1%, 0)' },
         },
       },
     },
