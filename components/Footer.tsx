@@ -38,7 +38,7 @@ export default function Footer() {
             <ul className="space-y-3 text-white/60 text-sm">
               {(['service1','service2','service3','service4','service5'] as const).map((k) => (
                 <li key={k}>
-                  <a href={`/${locale}/servizi`} className="hover:text-[#FF4D00] transition-colors">{t(k)}</a>
+                  <a href={`/${locale}/servizi`} className="hover:text-[#FF6B00] transition-colors">{t(k)}</a>
                 </li>
               ))}
             </ul>
@@ -49,10 +49,10 @@ export default function Footer() {
             <h4 className="font-bold text-white mb-5 uppercase tracking-widest text-xs">{t('productsTitle')}</h4>
             <ul className="space-y-3 text-white/60 text-sm">
               <li>
-                <a href="https://app.ayromex.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#FF4D00] transition-colors">AyroHub</a>
+                <a href="https://app.ayromex.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#FF6B00] transition-colors">AyroHub</a>
               </li>
               <li>
-                <a href="https://ayrodesk24.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#FF4D00] transition-colors">AyroDesk24</a>
+                <a href="https://ayrodesk24.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#FF6B00] transition-colors">AyroDesk24</a>
               </li>
             </ul>
           </div>
@@ -61,12 +61,12 @@ export default function Footer() {
           <div>
             <h4 className="font-bold text-white mb-5 uppercase tracking-widest text-xs">{t('pagesTitle')}</h4>
             <ul className="space-y-3 text-white/60 text-sm">
-              <li><a href={`/${locale}`} className="hover:text-[#FF4D00] transition-colors">Home</a></li>
-              <li><a href={`/${locale}/chi-siamo`} className="hover:text-[#FF4D00] transition-colors">{t('chiSiamo')}</a></li>
-              <li><a href={`/${locale}/servizi`} className="hover:text-[#FF4D00] transition-colors">{t('servicesTitle')}</a></li>
-              <li><a href={`/${locale}/journal`} className="hover:text-[#FF4D00] transition-colors">{t('journal')}</a></li>
-              <li><a href={`/${locale}/privacy`} className="hover:text-[#FF4D00] transition-colors">{t('privacyPolicy')}</a></li>
-              <li><a href={`/${locale}/terms`} className="hover:text-[#FF4D00] transition-colors">{t('terms')}</a></li>
+              <li><a href={`/${locale}`} className="hover:text-[#FF6B00] transition-colors">Home</a></li>
+              <li><a href={`/${locale}/chi-siamo`} className="hover:text-[#FF6B00] transition-colors">{t('chiSiamo')}</a></li>
+              <li><a href={`/${locale}/servizi`} className="hover:text-[#FF6B00] transition-colors">{t('servicesTitle')}</a></li>
+              <li><a href={`/${locale}/journal`} className="hover:text-[#FF6B00] transition-colors">{t('journal')}</a></li>
+              <li><a href={`/${locale}/privacy`} className="hover:text-[#FF6B00] transition-colors">{t('privacyPolicy')}</a></li>
+              <li><a href={`/${locale}/terms`} className="hover:text-[#FF6B00] transition-colors">{t('terms')}</a></li>
             </ul>
           </div>
 
@@ -91,7 +91,7 @@ export default function Footer() {
                 <p>Bl. 29, Sc. B, Et. 2, Ap. 24 — Romania</p>
               </div>
               <div className="pt-2 border-t border-white/10">
-                <p className="text-[#FF4D00]/70 leading-snug">{t('reverseCharge')}</p>
+                <p className="text-[#FF6B00]/70 leading-snug">{t('reverseCharge')}</p>
               </div>
               <div className="space-y-1">
                 <p><a href="mailto:account@ayromex.com" className="hover:text-white/80 transition-colors">account@ayromex.com</a></p>
@@ -124,7 +124,7 @@ function SocialIcon({ href, icon, title }: { href: string; icon: React.ReactNode
       target="_blank"
       rel="noopener noreferrer"
       title={title}
-      className="w-10 h-10 bg-white/5 hover:bg-[#FF4D00] hover:text-white rounded-full flex items-center justify-center transition-all duration-200 text-white/60 min-h-[44px] min-w-[44px]"
+      className="w-10 h-10 bg-white/5 hover:bg-[#FF6B00] hover:text-white rounded-full flex items-center justify-center transition-all duration-200 text-white/60 min-h-[44px] min-w-[44px]"
     >
       {icon}
     </a>

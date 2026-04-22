@@ -31,10 +31,10 @@ export default function ChiSiamoPage() {
       {/* HERO */}
       <section className="py-24 md:py-32 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
-          <span className="text-[#FF4D00] text-xs font-bold uppercase tracking-widest">Chi siamo</span>
+          <span className="text-[#FF6B00] text-xs font-bold uppercase tracking-widest">Chi siamo</span>
           <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tight text-[#0a0a0a] dark:text-white mt-4 mb-8 max-w-4xl leading-tight">
             L&apos;agenzia che costruisce<br />
-            <span className="text-[#FF4D00]">sistemi AI vendibili</span>
+            <span className="text-[#FF6B00]">sistemi AI vendibili</span>
           </h1>
           <p className="text-xl text-[#0a0a0a]/60 dark:text-white/60 max-w-2xl leading-relaxed mb-8">
             AYROMEX S.R.L. è un&apos;AI Automation Agency europea con base in Puglia e sede legale a Bucarest.
@@ -52,10 +52,10 @@ export default function ChiSiamoPage() {
       <section className="py-20 px-6 md:px-12 bg-[#070707] dark:bg-[#050505]">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div>
-            <span className="text-[#FF4D00] text-xs font-bold uppercase tracking-widest">La nostra missione</span>
+            <span className="text-[#FF6B00] text-xs font-bold uppercase tracking-widest">La nostra missione</span>
             <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-white mt-4 mb-6">
               Ogni PMI italiana<br />
-              <span className="text-[#FF4D00]">merita un sistema AI</span>
+              <span className="text-[#FF6B00]">merita un sistema AI</span>
             </h2>
             <p className="text-white/70 text-lg leading-relaxed">
               Troppe piccole e medie imprese italiane perdono clienti, fatturato e tempo
@@ -71,7 +71,7 @@ export default function ChiSiamoPage() {
               { n: '5+', label: 'clienti attivi' },
             ].map((s) => (
               <div key={s.n} className="p-6 rounded-xl border border-white/10 bg-white/5 text-center">
-                <p className="text-4xl font-black text-[#FF4D00] mb-1">{s.n}</p>
+                <p className="text-4xl font-black text-[#FF6B00] mb-1">{s.n}</p>
                 <p className="text-white/50 text-xs uppercase tracking-widest">{s.label}</p>
               </div>
             ))}
@@ -82,15 +82,15 @@ export default function ChiSiamoPage() {
       {/* HOW WE WORK */}
       <section className="py-24 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
-          <span className="text-[#FF4D00] text-xs font-bold uppercase tracking-widest">Come lavoriamo</span>
+          <span className="text-[#FF6B00] text-xs font-bold uppercase tracking-widest">Come lavoriamo</span>
           <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-[#0a0a0a] dark:text-white mt-4 mb-16 max-w-xl">
             Dal primo contatto<br />al sistema live
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {STEPS.map((s) => (
-              <div key={s.n} className="p-6 rounded-2xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 hover:border-[#FF4D00]/30 transition-all">
-                <span className="text-[#FF4D00] font-black text-3xl block mb-3">{s.n}</span>
+              <div key={s.n} className="p-6 rounded-2xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 hover:border-[#FF6B00]/30 transition-all">
+                <span className="text-[#FF6B00] font-black text-3xl block mb-3">{s.n}</span>
                 <h3 className="text-[#0a0a0a] dark:text-white font-bold text-lg mb-2">{s.title}</h3>
                 <p className="text-[#0a0a0a]/60 dark:text-white/60 text-sm leading-relaxed">{s.desc}</p>
               </div>
@@ -102,13 +102,13 @@ export default function ChiSiamoPage() {
       {/* SECTORS */}
       <section className="py-20 px-6 md:px-12 bg-[#070707] dark:bg-[#050505]">
         <div className="max-w-7xl mx-auto">
-          <span className="text-[#FF4D00] text-xs font-bold uppercase tracking-widest">Settori che serviamo</span>
+          <span className="text-[#FF6B00] text-xs font-bold uppercase tracking-widest">Settori che serviamo</span>
           <h2 className="text-4xl font-black uppercase tracking-tight text-white mt-4 mb-12">
-            Verticali in cui<br /><span className="text-[#FF4D00]">siamo specializzati</span>
+            Verticali in cui<br /><span className="text-[#FF6B00]">siamo specializzati</span>
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
             {SECTORS.map((s) => (
-              <div key={s.name} className="p-5 rounded-xl border border-white/10 bg-white/5 hover:border-[#FF4D00]/30 transition-all">
+              <div key={s.name} className="p-5 rounded-xl border border-white/10 bg-white/5 hover:border-[#FF6B00]/30 transition-all">
                 <h3 className="text-white font-bold mb-1">{s.name}</h3>
                 <p className="text-white/50 text-sm">{s.desc}</p>
               </div>
@@ -120,15 +120,15 @@ export default function ChiSiamoPage() {
       {/* VALUES */}
       <section className="py-24 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
-          <span className="text-[#FF4D00] text-xs font-bold uppercase tracking-widest">I nostri valori</span>
+          <span className="text-[#FF6B00] text-xs font-bold uppercase tracking-widest">I nostri valori</span>
           <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-[#0a0a0a] dark:text-white mt-4 mb-12">
-            Quello in cui<br /><span className="text-[#FF4D00]">crediamo davvero</span>
+            Quello in cui<br /><span className="text-[#FF6B00]">crediamo davvero</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {VALUES.map((v) => (
               <div key={v.title} className="p-6 rounded-2xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 flex gap-4">
-                <div className="w-8 h-8 rounded-full bg-[#FF4D00]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <FaCheck className="w-3 h-3 text-[#FF4D00]" />
+                <div className="w-8 h-8 rounded-full bg-[#FF6B00]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <FaCheck className="w-3 h-3 text-[#FF6B00]" />
                 </div>
                 <div>
                   <h3 className="text-[#0a0a0a] dark:text-white font-bold mb-1">{v.title}</h3>
@@ -144,7 +144,7 @@ export default function ChiSiamoPage() {
       <section id="contatti" className="py-24 px-6 md:px-12 bg-[#070707] dark:bg-[#050505] text-center">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-white mb-4">
-            Lavoriamo<br /><span className="text-[#FF4D00]">insieme</span>
+            Lavoriamo<br /><span className="text-[#FF6B00]">insieme</span>
           </h2>
           <p className="text-white/60 text-lg mb-8">
             Raccontaci il tuo business. In 72 ore ti diciamo cosa possiamo automatizzare.

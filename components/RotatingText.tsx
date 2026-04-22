@@ -21,7 +21,7 @@ export function RotatingText({ words, className = '' }: Props) {
   }, [words.length])
 
   if (!mounted) {
-    return <span className={`text-[#FF4D00] ${className}`}>{words[0]}</span>
+    return <span className={`text-[#FF6B00] ${className}`}>{words[0]}</span>
   }
 
   return (
@@ -33,7 +33,7 @@ export function RotatingText({ words, className = '' }: Props) {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -16, opacity: 0 }}
           transition={{ duration: 0.28, ease: 'easeOut' }}
-          className="absolute left-0 top-0 text-[#FF4D00] whitespace-nowrap"
+          className="absolute left-0 top-0 text-[#FF6B00] whitespace-nowrap"
         >
           {words[index]}
         </motion.span>

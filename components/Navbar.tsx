@@ -72,7 +72,7 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-xs font-semibold uppercase tracking-widest text-[#0a0a0a]/70 dark:text-white/70 hover:text-[#FF4D00] dark:hover:text-[#FF4D00] transition-colors"
+              className="text-xs font-semibold uppercase tracking-widest text-[#0a0a0a]/70 dark:text-white/70 hover:text-[#FF6B00] dark:hover:text-[#FF6B00] transition-colors"
             >
               {link.label}
             </a>
@@ -81,15 +81,15 @@ export default function Navbar() {
           {/* Social icons */}
           <div className="flex items-center gap-3 pl-2 border-l border-black/10 dark:border-white/10">
             <a href="https://www.instagram.com/ayromex_srl/" target="_blank" rel="noopener noreferrer"
-              className="text-[#0a0a0a]/50 dark:text-white/50 hover:text-[#FF4D00] dark:hover:text-[#FF4D00] transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">
+              className="text-[#0a0a0a]/50 dark:text-white/50 hover:text-[#FF6B00] dark:hover:text-[#FF6B00] transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">
               <FaInstagram className="w-4 h-4" />
             </a>
             <a href="https://www.facebook.com/profile.php?id=61586097166352" target="_blank" rel="noopener noreferrer"
-              className="text-[#0a0a0a]/50 dark:text-white/50 hover:text-[#FF4D00] dark:hover:text-[#FF4D00] transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">
+              className="text-[#0a0a0a]/50 dark:text-white/50 hover:text-[#FF6B00] dark:hover:text-[#FF6B00] transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">
               <FaFacebook className="w-4 h-4" />
             </a>
             <a href="https://share.google/Ed5CLO4Nn3BgQZHW4" target="_blank" rel="noopener noreferrer"
-              className="text-[#0a0a0a]/50 dark:text-white/50 hover:text-[#FF4D00] dark:hover:text-[#FF4D00] transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">
+              className="text-[#0a0a0a]/50 dark:text-white/50 hover:text-[#FF6B00] dark:hover:text-[#FF6B00] transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">
               <FaGoogle className="w-4 h-4" />
             </a>
           </div>
@@ -98,7 +98,7 @@ export default function Navbar() {
           <div className="relative">
             <button
               onClick={() => setIsLangOpen(!isLangOpen)}
-              className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-[#0a0a0a]/70 dark:text-white/70 hover:text-[#FF4D00] dark:hover:text-[#FF4D00] transition-colors px-3 py-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 min-h-[44px]"
+              className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-[#0a0a0a]/70 dark:text-white/70 hover:text-[#FF6B00] dark:hover:text-[#FF6B00] transition-colors px-3 py-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 min-h-[44px]"
             >
               <div className="w-5 h-3.5 overflow-hidden rounded-sm shadow-sm">
                 <currentLang.FlagComponent />
@@ -122,7 +122,7 @@ export default function Navbar() {
                     <button
                       key={lang.code}
                       onClick={() => handleLanguageChange(lang.code)}
-                      className={`w-full text-left px-4 py-3 flex items-center gap-3 text-sm hover:bg-black/5 dark:hover:bg-white/5 transition-colors ${locale === lang.code ? 'text-[#FF4D00] bg-orange-50 dark:bg-orange-500/5' : 'text-[#0a0a0a]/80 dark:text-gray-300'}`}
+                      className={`w-full text-left px-4 py-3 flex items-center gap-3 text-sm hover:bg-black/5 dark:hover:bg-white/5 transition-colors ${locale === lang.code ? 'text-[#FF6B00] bg-orange-50 dark:bg-orange-500/5' : 'text-[#0a0a0a]/80 dark:text-gray-300'}`}
                     >
                       <div className="w-5 h-3.5 overflow-hidden rounded-sm shadow-sm">
                         <lang.FlagComponent />
@@ -140,7 +140,7 @@ export default function Navbar() {
             href="https://app.ayromex.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl text-xs font-bold min-h-[44px] border border-[#FF4D00]/50 text-[#FF4D00] hover:bg-[#FF4D00] hover:text-white transition-all duration-200"
+            className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl text-xs font-bold min-h-[44px] border border-[#FF6B00]/50 text-[#FF6B00] hover:bg-[#FF6B00] hover:text-white transition-all duration-200"
           >
             {t('ayrohubCta')}
           </a>
@@ -177,7 +177,7 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-2xl font-black uppercase tracking-tight text-[#0a0a0a] dark:text-white hover:text-[#FF4D00] transition-colors min-h-[44px] flex items-center"
+                  className="text-2xl font-black uppercase tracking-tight text-[#0a0a0a] dark:text-white hover:text-[#FF6B00] transition-colors min-h-[44px] flex items-center"
                 >
                   {link.label}
                 </a>
@@ -186,15 +186,15 @@ export default function Navbar() {
               {/* Mobile social icons */}
               <div className="flex gap-6 mt-4">
                 <a href="https://www.instagram.com/ayromex_srl/" target="_blank" rel="noopener noreferrer"
-                  className="text-[#0a0a0a]/60 dark:text-white/60 hover:text-[#FF4D00] transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">
+                  className="text-[#0a0a0a]/60 dark:text-white/60 hover:text-[#FF6B00] transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">
                   <FaInstagram className="w-6 h-6" />
                 </a>
                 <a href="https://www.facebook.com/profile.php?id=61586097166352" target="_blank" rel="noopener noreferrer"
-                  className="text-[#0a0a0a]/60 dark:text-white/60 hover:text-[#FF4D00] transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">
+                  className="text-[#0a0a0a]/60 dark:text-white/60 hover:text-[#FF6B00] transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">
                   <FaFacebook className="w-6 h-6" />
                 </a>
                 <a href="https://share.google/Ed5CLO4Nn3BgQZHW4" target="_blank" rel="noopener noreferrer"
-                  className="text-[#0a0a0a]/60 dark:text-white/60 hover:text-[#FF4D00] transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">
+                  className="text-[#0a0a0a]/60 dark:text-white/60 hover:text-[#FF6B00] transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">
                   <FaGoogle className="w-6 h-6" />
                 </a>
               </div>
@@ -205,7 +205,7 @@ export default function Navbar() {
                   <button
                     key={lang.code}
                     onClick={() => handleLanguageChange(lang.code)}
-                    className={`flex flex-col items-center gap-2 p-2 rounded-lg min-h-[44px] min-w-[44px] ${locale === lang.code ? 'text-[#FF4D00]' : 'text-[#0a0a0a]/50 dark:text-white/50'}`}
+                    className={`flex flex-col items-center gap-2 p-2 rounded-lg min-h-[44px] min-w-[44px] ${locale === lang.code ? 'text-[#FF6B00]' : 'text-[#0a0a0a]/50 dark:text-white/50'}`}
                   >
                     <div className="w-8 h-5 overflow-hidden rounded shadow-md">
                       <lang.FlagComponent />
@@ -231,7 +231,7 @@ export default function Navbar() {
                 <button
                   key={lang.code}
                   onClick={() => handleLanguageChange(lang.code)}
-                  className={`w-full text-left px-4 py-3 flex items-center gap-3 text-sm hover:bg-black/5 dark:hover:bg-white/5 min-h-[44px] ${locale === lang.code ? 'text-[#FF4D00]' : 'text-[#0a0a0a]/80 dark:text-gray-300'}`}
+                  className={`w-full text-left px-4 py-3 flex items-center gap-3 text-sm hover:bg-black/5 dark:hover:bg-white/5 min-h-[44px] ${locale === lang.code ? 'text-[#FF6B00]' : 'text-[#0a0a0a]/80 dark:text-gray-300'}`}
                 >
                   <div className="w-5 h-3.5 overflow-hidden rounded-sm">
                     <lang.FlagComponent />
