@@ -1,7 +1,7 @@
-import type { Transition, Variants } from 'framer-motion'
+import type { Variants } from 'framer-motion'
 
 // Shared easing for the site. Expo-out: snappy out, soft end.
-export const EASE_OUT: Transition['ease'] = [0.22, 1, 0.36, 1]
+export const EASE_OUT = [0.22, 1, 0.36, 1] as const
 
 // Default viewport configuration for whileInView reveals.
 // `once: true` keeps animations from replaying on scroll-back.
