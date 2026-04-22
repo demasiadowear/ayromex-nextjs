@@ -1,12 +1,12 @@
 import { getTranslations } from 'next-intl/server'
-import { FaRobot, FaCogs, FaWhatsapp, FaLayerGroup, FaGlobe, FaPaintBrush } from 'react-icons/fa'
+import { FaRobot, FaCogs, FaWhatsapp, FaLayerGroup, FaGlobe } from 'react-icons/fa'
 
-const ICONS = [FaRobot, FaCogs, FaWhatsapp, FaLayerGroup, FaGlobe, FaPaintBrush]
+const ICONS = [FaRobot, FaCogs, FaWhatsapp, FaLayerGroup, FaGlobe]
 
 export default async function ServiziPage() {
   const t = await getTranslations('serviziPage')
 
-  const SERVICES = [1, 2, 3, 4, 5, 6].map((n, i) => ({
+  const SERVICES = [1, 2, 3, 4, 5].map((n, i) => ({
     icon: ICONS[i],
     title: t(`s${n}title`),
     tagline: t(`s${n}tagline`),
