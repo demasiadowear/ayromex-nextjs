@@ -22,7 +22,7 @@ export default function CustomCursor() {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 w-6 h-6 bg-ay-orange rounded-full pointer-events-none z-[9999] mix-blend-difference"
+      className="fixed top-0 left-0 w-6 h-6 bg-ay-accent rounded-full pointer-events-none z-[9999] mix-blend-difference"
       style={{
         x: sx,
         y: sy,

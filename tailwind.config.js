@@ -6,26 +6,22 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    screens: {
+      sm: '375px',
+      md: '768px',
+      lg: '1440px',
+    },
     extend: {
       colors: {
-        // AYROMEX Brand Palette 2025
-        'ay-orange':       '#FF6A00',
-        'ay-orange-hover': '#E65C00',
-        'ay-orange-light': '#FFF1E6',
-        'ay-orange-dark':  '#CC5500',
-        'ay-black':        '#080808',
-        'ay-surface':      'rgba(255,255,255,0.03)',
-        // Legacy
-        'ay-bg':           '#f8f6f2',
-        'ay-bg-dark':      '#080808',
-        'ay-text':         '#f0ece4',
-        dark: {
-          900: '#111111',
-          950: '#080808',
-        },
-        light: {
-          50: '#f9f9f9',
-        },
+        // AYROMEX Design Tokens 2026
+        'ay-accent':       '#FF6B00',
+        'ay-accent-hover': '#E65C00',
+        'ay-accent-tint':  '#FFF1E6',
+        'ay-bg':           '#0A0A0A',
+        'ay-surface':      '#141414',
+        'ay-text':         '#FAFAFA',
+        'ay-text-muted':   '#A1A1AA',
+        'ay-border':       '#27272A',
       },
       fontFamily: {
         sans:    ['var(--font-dm-sans)', 'system-ui', 'sans-serif'],
