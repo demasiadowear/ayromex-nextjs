@@ -3,7 +3,6 @@
     "home": "Acasă",
     "services": "Servicii",
     "products": "Produse",
-    "clients": "Clienți",
     "contact": "Contact",
     "cta": "Rezervă demo",
     "ayrohubCta": "Accesează AyroHub",
@@ -67,11 +66,6 @@
     "item3stat": "Zero",
     "item3label": "Tehnică necesară",
     "item3desc": "Plug-and-play. Echipa ta folosește unealta, nu o gestionează."
-  },
-  "clientsSection": {
-    "label": "Cine ne-a ales",
-    "title1": "Rezultate reale.",
-    "title2": "Clienți mulțumiți."
   },
   "contactSection": {
     "label": "Începe acum",

@@ -3,7 +3,6 @@
     "home": "Home",
     "services": "Servizi",
     "products": "Prodotti",
-    "clients": "Clienti",
     "contact": "Contatto",
     "cta": "Prenota una demo",
     "ayrohubCta": "Accedi ad AyroHub",
@@ -67,11 +66,6 @@
     "item3stat": "Zero",
     "item3label": "Tecnica richiesta",
     "item3desc": "Plug-and-play. Il tuo team usa lo strumento, non lo gestisce."
-  },
-  "clientsSection": {
-    "label": "Chi ci ha scelto",
-    "title1": "Risultati reali.",
-    "title2": "Clienti soddisfatti."
   },
   "contactSection": {
     "label": "Inizia ora",

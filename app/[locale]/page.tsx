@@ -41,15 +41,6 @@ const WHY_ITEMS = [
   { stat: 'Zero',  label: 'Tecnica richiesta', desc: 'Plug-and-play. Il tuo team usa lo strumento, non lo gestisce.' },
 ];
 
-const CLIENTS = [
-  { name: 'Bonega Poker Room',       sector: 'Gaming ADM',  initial: 'B' },
-  { name: 'Le Dimore del Garibaldi', sector: 'Hospitality', initial: 'L' },
-  { name: 'AUREA Hotel',             sector: 'Hospitality', initial: 'A' },
-  { name: 'CIKO Pizzeria',           sector: 'F&B',         initial: 'C' },
-  { name: 'Jevi Tatuaggi',           sector: 'Beauty & Art', initial: 'J' },
-  { name: 'APEX Card Room',          sector: 'Gaming ADM',  initial: 'A' },
-];
-
 const PRODUCTS = [
   {
     badge:    'SaaS Enterprise',
@@ -361,45 +352,6 @@ export default function HomePage() {
                 </div>
                 <div className="text-base font-bold mb-3">{item.label}</div>
                 <p className="text-white/50 text-sm leading-relaxed">{item.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════
-          CLIENTI
-          ══════════════════════════════════════════ */}
-      <section className="py-28 px-6 bg-[#050505] border-y border-white/5">
-        <div className="max-w-7xl mx-auto">
-
-          <motion.div className="text-center mb-16" {...fadeUp}>
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#FF6A00] mb-3 block">
-              Chi ci ha scelto
-            </span>
-            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
-              Risultati reali.<br />Clienti soddisfatti.
-            </h2>
-          </motion.div>
-
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
-            {CLIENTS.map((c, i) => (
-              <motion.div
-                key={c.name}
-                {...stagger(i)}
-                className="agent-card card-dark rounded-2xl p-6 flex items-center gap-4"
-                style={{ border: '1px solid rgba(255,255,255,0.07)' }}
-              >
-                {/* Avatar */}
-                <div className="w-11 h-11 rounded-xl bg-[rgba(255,106,0,0.1)] border border-[rgba(255,106,0,0.2)] flex items-center justify-center text-[#FF6A00] font-black text-base shrink-0">
-                  {c.initial}
-                </div>
-                <div>
-                  <p className="font-bold text-sm leading-tight">{c.name}</p>
-                  <p className="text-[11px] text-white/40 mt-0.5 uppercase tracking-wider font-medium">
-                    {c.sector}
-                  </p>
-                </div>
               </motion.div>
             ))}
           </div>

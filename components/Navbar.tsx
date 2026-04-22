@@ -49,7 +49,6 @@ export default function Navbar() {
     { label: t('home'), href: `/${locale}`, isAnchor: false },
     { label: t('services'), href: `/${locale}/servizi`, isAnchor: false },
     { label: t('products'), href: anchorHref('#prodotti'), isAnchor: true },
-    { label: t('clients'), href: anchorHref('#clienti'), isAnchor: true },
     { label: t('contact'), href: anchorHref('#contatti'), isAnchor: true },
   ]
 
