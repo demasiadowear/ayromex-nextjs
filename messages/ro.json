@@ -125,13 +125,15 @@
     "item3label": "Tehnică necesară",
     "item3desc": "Plug-and-play. Echipa ta folosește unealta, nu o gestionează."
   },
-  "contactSection": {
-    "label": "Începe acum",
-    "title1": "Vorbim despre",
-    "title2": "proiectul tău",
-    "desc": "Analizăm afacerea ta gratuit și îți spunem ce să automatizezi în 72 de ore.",
-    "ctaWa": "Scrie pe WhatsApp",
-    "ctaEmail": "tools@ayromex.com"
+  "ctaSection": {
+    "number": "03",
+    "headlineLine1": "Ai o idee pe care vrei",
+    "headlineLine2": "s-o transformi în sistem?",
+    "subtitle": "Hai să vorbim. Zero slide-uri, doar întrebări și răspunsuri.",
+    "emailPlaceholder": "tu@email.ro",
+    "submitLabel": "Rezervă un call →",
+    "submittedMessage": "Te contactăm în scurt timp. Mulțumesc.",
+    "whatsappLabel": "...sau scrie-ne pe WhatsApp"
   },
   "servicesSection": {
     "label": "Ce construim",

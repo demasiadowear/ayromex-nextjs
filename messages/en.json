@@ -125,13 +125,15 @@
     "item3label": "Tech required",
     "item3desc": "Plug-and-play. Your team uses the tool, doesn't manage it."
   },
-  "contactSection": {
-    "label": "Start now",
-    "title1": "Let's talk about",
-    "title2": "your project",
-    "desc": "We analyze your business for free and tell you what to automate within 72 hours.",
-    "ctaWa": "Write on WhatsApp",
-    "ctaEmail": "tools@ayromex.com"
+  "ctaSection": {
+    "number": "03",
+    "headlineLine1": "Got an idea you want",
+    "headlineLine2": "turned into a system?",
+    "subtitle": "Let's talk. No slides, just questions and answers.",
+    "emailPlaceholder": "your@email.com",
+    "submitLabel": "Book a call →",
+    "submittedMessage": "We'll be in touch shortly. Thanks.",
+    "whatsappLabel": "...or write to us on WhatsApp"
   },
   "servicesSection": {
     "label": "What we build",

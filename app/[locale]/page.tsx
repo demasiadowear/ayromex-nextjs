@@ -8,6 +8,7 @@ import { FiArrowRight, FiCheck, FiMail } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
 import AyroGuide from '@/components/hero/AyroGuide';
 import TaskTicker from '@/components/hero/TaskTicker';
+import CtaSection from '@/components/sections/CtaSection';
 import ProcessSection from '@/components/sections/ProcessSection';
 import ProductsSection from '@/components/sections/ProductsSection';
 import { RotatingText } from '@/components/RotatingText';
@@ -297,50 +298,9 @@ export default function HomePage() {
       <ProcessSection />
 
       {/* ══════════════════════════════════════════
-          CTA FINALE (legacy — replaced in chunk B block 5)
+          03 — CTA
           ══════════════════════════════════════════ */}
-      <section className="py-32 px-6 relative overflow-hidden">
-
-        {/* Glow centrale */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{ background: 'radial-gradient(ellipse at 50% 50%, rgba(255,106,0,0.1) 0%, transparent 60%)' }}
-        />
-
-        <div className="max-w-3xl mx-auto text-center relative z-10">
-          <motion.div {...fadeUp}>
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#FF6A00] mb-4 block">
-              Inizia ora
-            </span>
-            <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6">
-              Parliamo del<br />
-              <span className="text-[#FF6A00]">tuo progetto</span>
-            </h2>
-            <p className="text-white/50 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
-              Analizziamo la tua azienda gratuitamente e ti diciamo cosa automatizzare in 72 ore.
-            </p>
-
-            <div className="flex flex-wrap gap-4 justify-center">
-              <a
-                href="https://wa.me/393926936833"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary px-8 py-4 text-sm gap-2"
-              >
-                <FaWhatsapp size={16} />
-                Scrivici su WhatsApp
-              </a>
-              <a
-                href="mailto:tools@ayromex.com"
-                className="btn-ghost px-8 py-4 text-sm gap-2"
-              >
-                <FiMail size={15} />
-                tools@ayromex.com
-              </a>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <CtaSection />
 
     </main>
   );
