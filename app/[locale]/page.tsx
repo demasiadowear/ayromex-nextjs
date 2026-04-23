@@ -4,6 +4,11 @@ import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { FiArrowRight } from 'react-icons/fi';
+import VideoBackground from '@/components/cinema/VideoBackground';
+import {
+  VideoBackgroundProvider,
+} from '@/components/cinema/VideoBackgroundProvider';
+import VideoSectionSensor from '@/components/cinema/VideoSectionSensor';
 import AyroGuide from '@/components/hero/AyroGuide';
 import TaskTicker from '@/components/hero/TaskTicker';
 import CtaSection from '@/components/sections/CtaSection';
@@ -11,6 +16,13 @@ import ProcessSection from '@/components/sections/ProcessSection';
 import ProductsSection from '@/components/sections/ProductsSection';
 import { RotatingText } from '@/components/RotatingText';
 import { EASE_OUT } from '@/lib/motion';
+
+const VIDEO_SOURCES = [
+  { id: 'hero', src: '/videos/hero2.mp4' },
+  { id: 'products', src: '/videos/hero.mp4' },
+  { id: 'process', src: '/videos/processo.mp4' },
+  { id: 'cta', src: '/videos/cta.mp4' },
+] as const
 
 /* ─── Animation Variants ─────────────────────────────────────── */
 const fadeUp = {
@@ -79,22 +91,29 @@ export default function HomePage() {
       };
 
   return (
-    <main className="relative overflow-x-hidden text-ay-text">
+    <VideoBackgroundProvider defaultId="hero">
+      <main className="relative overflow-x-hidden text-ay-text">
+
+      {/* Crossfading fullscreen video layer */}
+      <VideoBackground videos={[...VIDEO_SOURCES]} />
 
       {/* Narrative follower — appears when scrolling past the hero */}
       <AyroGuide />
 
+      {/* Live system log, pinned across the scroll */}
+      <TaskTicker />
+
       {/* ══════════════════════════════════════════
-          HERO
+          HERO (video: hero2.mp4)
           ══════════════════════════════════════════ */}
-      <section className="relative min-h-screen flex flex-col items-center justify-start pt-32 pb-20 px-6 overflow-hidden">
+      <VideoSectionSensor
+        id="hero"
+        className="relative min-h-screen flex flex-col items-center justify-center pt-28 pb-24 px-6 overflow-hidden"
+      >
 
-        {/* Live system log */}
-        <TaskTicker />
+        <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-center">
 
-        <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col">
-
-          {/* Top: copy stack centered over the grid */}
+          {/* Top: copy stack centered */}
           <div className="flex flex-col items-center text-center max-w-5xl mx-auto">
 
             {/* Eyebrow */}
@@ -105,11 +124,11 @@ export default function HomePage() {
               {tHero('eyebrow')}
             </motion.span>
 
-            {/* Headline */}
+            {/* Headline — cinema size */}
             <motion.h1
               {...heroAnim(1.3, 1.0)}
               className="font-display font-extrabold text-ay-text leading-[0.95] tracking-[-0.02em] mb-8"
-              style={{ fontSize: 'clamp(64px, 11vw, 160px)' }}
+              style={{ fontSize: 'clamp(80px, 12vw, 180px)' }}
             >
               {tHero('headlineStart')}
               <span className="relative inline-block text-ay-accent">
@@ -119,10 +138,10 @@ export default function HomePage() {
                   initial={reduceMotion ? { scaleX: 1 } : { scaleX: 0 }}
                   animate={{ scaleX: 1 }}
                   transition={{ duration: 1.0, ease: EASE_OUT, delay: reduceMotion ? 0 : 2.5 }}
-                  className="absolute left-0 right-0 bottom-0 h-[5px] bg-ay-accent origin-left"
+                  className="absolute left-0 right-0 bottom-0 h-[6px] bg-ay-accent origin-left"
                 />
               </span>
-              <span className="opacity-55">{tHero('headlineRest')}</span>
+              <span className="opacity-75">{tHero('headlineRest')}</span>
             </motion.h1>
 
             {/* Rotating text */}
@@ -260,23 +279,39 @@ export default function HomePage() {
             </motion.div>
           )}
         </AnimatePresence>
-      </section>
+      </VideoSectionSensor>
 
       {/* ══════════════════════════════════════════
-          01 — PRODOTTI
+          01 — PRODOTTI (video: hero.mp4 / neural network)
           ══════════════════════════════════════════ */}
-      <ProductsSection />
+      <VideoSectionSensor id="products">
+        <ProductsSection />
+      </VideoSectionSensor>
 
       {/* ══════════════════════════════════════════
-          02 — PROCESSO
+          02 — PROCESSO (video: processo.mp4)
           ══════════════════════════════════════════ */}
-      <ProcessSection />
+      <VideoSectionSensor id="process">
+        <ProcessSection />
+      </VideoSectionSensor>
 
       {/* ══════════════════════════════════════════
-          03 — CTA
+          03 — CTA (video: cta.mp4)
           ══════════════════════════════════════════ */}
-      <CtaSection />
+      <VideoSectionSensor id="cta">
+        <CtaSection />
+      </VideoSectionSensor>
 
-    </main>
+      {/* Footer landing — video fades to black */}
+      <VideoSectionSensor
+        id="empty"
+        threshold={0.25}
+        className="h-px w-full"
+      >
+        <div aria-hidden="true" />
+      </VideoSectionSensor>
+
+      </main>
+    </VideoBackgroundProvider>
   );
 }
