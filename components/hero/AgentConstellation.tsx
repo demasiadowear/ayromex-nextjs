@@ -1,6 +1,7 @@
 'use client'
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import AgentLabel from './AgentLabel'
 import AgentNode, { type NodeState } from './AgentNode'
 import ConnectionLine from './ConnectionLine'
 import DataPulse from './DataPulse'
@@ -18,6 +19,22 @@ const NODE_POSITIONS: Vec3[] = [
   [0, -2, -2],     // 7 bottom-center
   [2.5, -1.5, -1], // 8 bottom-right
 ]
+
+const NODE_LABELS = [
+  'SCOUT',      // 0
+  'MEMORY',     // 1
+  'COMPLIANCE', // 2
+  'BUILDER',    // 3
+  'AYRO',       // 4 master
+  'CLOSER',     // 5
+  'ANALYST',    // 6
+  'MEDIA',      // 7
+  'ROUTER',     // 8
+] as const
+
+// Per-node Y offset for the floating label so it sits above the
+// node without colliding with neighbours.
+const LABEL_Y_OFFSETS = [0.55, 0.55, 0.55, 0.55, 0.7, 0.55, -0.55, -0.55, -0.55]
 
 const MASTER = 4
 
@@ -236,6 +253,26 @@ export default function AgentConstellation({ reduceMotion = false }: Props) {
             state={nodeStates[idx]}
             delay={delay}
             master={idx === MASTER}
+            reduceMotion={reduceMotion}
+          />
+        )
+      })}
+
+      {NODE_POSITIONS.map((position, idx) => {
+        const order = ENTRY_ORDER.indexOf(idx)
+        const delay = reduceMotion ? 0 : order * NODE_ENTRY_STEP
+        const labelPosition: Vec3 = [
+          position[0],
+          position[1] + LABEL_Y_OFFSETS[idx],
+          position[2],
+        ]
+        return (
+          <AgentLabel
+            key={`label-${idx}`}
+            text={NODE_LABELS[idx]}
+            position={labelPosition}
+            isMaster={idx === MASTER}
+            delay={delay}
             reduceMotion={reduceMotion}
           />
         )
