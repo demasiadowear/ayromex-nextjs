@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C C:/Users/ilpuc/Desktop/ayromex-nextjs config user.email \"info@demasiadowear.com\")",
+      "Bash(git -C C:/Users/ilpuc/Desktop/ayromex-nextjs config user.name \"Christian\")",
+      "Bash(git -C C:/Users/ilpuc/Desktop/ayromex-nextjs config --get user.email)",
+      "Bash(git -C C:/Users/ilpuc/Desktop/ayromex-nextjs config --get user.name)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git --no-pager log --oneline -3)"
+    ]
+  }
+}

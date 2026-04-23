@@ -1,6 +1,5 @@
 import { Gugi, Syne, DM_Sans, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
-import BackgroundSceneMount from '@/components/hero/BackgroundSceneMount'
 import CustomCursor from '@/components/CustomCursor'
 import GrainOverlay from '@/components/GrainOverlay'
 import ScrollProgressIndicator from '@/components/ScrollProgressIndicator'
@@ -56,9 +55,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`dark ${gugi.variable} ${syne.variable} ${dmSans.variable} ${jetbrainsMono.variable}`}
     >
       <body className="relative min-h-screen bg-ay-bg text-ay-text font-body antialiased">
-        {/* Persistent ambient 3D background (crossfades in past hero) */}
-        <BackgroundSceneMount />
-
         {/* Film grain overlay */}
         <GrainOverlay />
 

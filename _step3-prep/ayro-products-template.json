@@ -1,0 +1,189 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "last_updated": "2026-04-22",
+    "note": "Knowledge base prodotti AYROMEX. Ayro legge questo file per rispondere. NON inventare features non presenti qui. Christian compila i campi TODO con info reali."
+  },
+
+  "products": {
+    "ayrohub": {
+      "name": "AyroHub",
+      "tagline": "AI Operating System per concessionari ADM gaming",
+      "target_audience": "Concessionari ADM italiani, operatori gaming, network PVR, sale scommesse",
+      "short_description": "AyroHub e l'OS completo per gestire un concessionario ADM: compliance automatica, retention clienti, voice AI outbound, insight strategici in tempo reale.",
+
+      "modules": {
+        "support": "TODO - descrivi modulo Support inbound con scraping e WebRTC",
+        "reactivator": "TODO - descrivi Reactivator OS per outbound voice massivo + XLS upload",
+        "compliance_watchdog": "TODO - descrivi Compliance ADM + monitoring ludopatia",
+        "network_management": "TODO - descrivi gestione Master/PVR multi-sede",
+        "insights": "TODO - descrivi modulo Insight Strategici AI con Gemini"
+      },
+
+      "tech_stack": ["Next.js", "Turso DB", "Gemini 2.5 Flash", "ElevenLabs", "Twilio", "Pipecat", "Deepgram", "Vercel"],
+
+      "integrations": {
+        "confirmed": ["WhatsApp Business API", "Twilio Voice", "ElevenLabs Conversational AI", "Google Calendar", "Turso LibSQL"],
+        "planned": ["Telnyx SIP", "Infobip SMS", "SIP wholesale Messagenet/Irideos"],
+        "note": "TODO - lista integrazioni verticali specifiche ADM (gestionali concessionari, PVR software)"
+      },
+
+      "differentiators": [
+        "TODO - perche AyroHub vs competitor generici?",
+        "TODO - cosa fa che altri non fanno?",
+        "TODO - ROI tipico cliente"
+      ],
+
+      "typical_customer_profile": {
+        "company_size": "TODO - piccolo/medio/grande?",
+        "monthly_volume": "TODO - numero chiamate/transazioni/clienti gestiti",
+        "geography": "Italia",
+        "pain_points_solved": ["TODO - top 3 pain risolti"]
+      }
+    },
+
+    "ayrodesk24": {
+      "name": "AyroDesk24",
+      "tagline": "AI receptionist WhatsApp per SMB italiane",
+      "target_audience": "Studi estetici, saloni, studi professionali, hotel boutique, strutture ricettive piccole, retail multi-sede con prenotazioni",
+      "short_description": "AyroDesk24 e la tua receptionist AI su WhatsApp: prende prenotazioni, gestisce promemoria, sincronizza il calendar, parla italiano naturale 24/7. Sara (il suo nome) lavora al posto di una persona, costa meno e non sbaglia.",
+
+      "personality_ai": {
+        "name": "Sara",
+        "tone": "empatica, simpatica, accomodante, un filo psicologa",
+        "age_persona": "25-30 anni, receptionist italiana",
+        "never_says": ["Certamente", "Gentile cliente", "formule formali"]
+      },
+
+      "features_core": [
+        "Prenotazioni 24/7 via WhatsApp",
+        "Multi-operatore con calendari separati",
+        "Google Calendar sync bidirezionale",
+        "Reminder automatici 24h prima appuntamento",
+        "Gestione reschedule e cancellazioni",
+        "Screenshot storage via Vercel Blob",
+        "Multi-tenant, conversazione scoped per tenant",
+        "TODO - aggiungi altre features"
+      ],
+
+      "tech_stack": ["Next.js", "Turso LibSQL", "Gemini 2.0 Flash", "Meta Cloud API", "Google Calendar API per-operatore"],
+
+      "integrations": {
+        "confirmed": ["WhatsApp Business API", "Google Calendar", "Turso"],
+        "planned": ["Stripe auto-billing", "OAuth Google Calendar auto", "Wix integration", "mobile app operatori"]
+      },
+
+      "differentiators": [
+        "TODO - perche AyroDesk24 vs competitor?",
+        "Sara parla italiano naturale, non da bot",
+        "Installazione fatta da AYROMEX, niente smanettamento cliente"
+      ]
+    }
+  },
+
+  "pricing": {
+    "ayrohub": {
+      "base": { "price_eur_month": 1500, "includes": "TODO - cosa include il base" },
+      "marketing_addon": { "price_eur_month": 1200, "includes": "TODO" },
+      "network_addon": { "price_eur_month": 1500, "includes": "TODO" },
+      "enterprise": { "price": "custom", "note": "TODO - quando proporre enterprise" },
+      "soft_plan_indicative": "3000-3500 euro/mese per cliente tipo Betwin360-size",
+      "hard_floor": "2800 euro/mese",
+      "extras": { "voice_minute": "0.05 eur", "sms": "0.08 eur", "whatsapp_utility": "0.05 eur" }
+    },
+    "ayrodesk24": {
+      "solo": { "price_eur_month": 199, "target": "studio piccolo, 1 operatore", "includes": "TODO" },
+      "studio": { "price_eur_month": 349, "target": "studio medio, multi-operatore", "includes": "TODO" },
+      "business": { "price_eur_month": 599, "target": "business multi-sede", "includes": "TODO - include 50 euro credits WhatsApp?" },
+      "setup_fee": 199,
+      "setup_note": "Setup fee one-time. Include SIM WhatsApp, config iniziale, training AI su dati cliente"
+    },
+    "custom_projects": {
+      "discovery_call": "gratis 30 min",
+      "setup_range_eur": "3500-8000",
+      "monthly_management_range_eur": "299-899",
+      "minimum_commitment": "6 mesi",
+      "note": "Per qualsiasi richiesta fuori catalogo, sempre proporre discovery call con Christian"
+    }
+  },
+
+  "use_cases_by_vertical": {
+    "estetica_saloni": {
+      "recommended_product": "ayrodesk24",
+      "tier_suggested": "studio",
+      "example_pain": "TODO - esempio realistico pain di un centro estetico",
+      "example_solution": "TODO - come AyroDesk24 lo risolve"
+    },
+    "studi_professionali": {
+      "recommended_product": "ayrodesk24",
+      "tier_suggested": "studio o business",
+      "example_pain": "TODO",
+      "example_solution": "TODO"
+    },
+    "hospitality_boutique": {
+      "recommended_product": "ayrodesk24 + custom",
+      "tier_suggested": "business",
+      "example_pain": "TODO",
+      "example_solution": "TODO"
+    },
+    "concessionari_adm": {
+      "recommended_product": "ayrohub",
+      "tier_suggested": "base + network",
+      "example_pain": "TODO",
+      "example_solution": "TODO"
+    },
+    "retail_multi_sede": {
+      "recommended_product": "custom build",
+      "tier_suggested": "custom",
+      "example_pain": "TODO",
+      "example_solution": "TODO"
+    }
+  },
+
+  "limits_and_boundaries": {
+    "what_we_do_not_do": [
+      "Non costruiamo siti web da zero",
+      "Non gestiamo e-commerce (Shopify, WooCommerce, Magento)",
+      "Non facciamo consulenza fiscale o legale",
+      "Non facciamo marketing generico (social media management, SEO, ADS)",
+      "Non vendiamo software off-the-shelf senza personalizzazione"
+    ],
+    "minimum_project_size_eur": 199,
+    "typical_timeline_weeks": "2-4 settimane per AyroDesk24, 4-8 settimane per AyroHub custom",
+    "rushed_timeline_note": "Sotto 2 settimane non garantiamo qualita. Progetti urgenti: versione 1 rapida + espansione dopo"
+  },
+
+  "faq_core": [
+    {
+      "q": "Quanto tempo serve per partire?",
+      "a": "AyroDesk24: 2-4 settimane dall'ordine. AyroHub: 4-8 settimane in base alla complessita. Progetti custom: discovery call per tempistiche precise."
+    },
+    {
+      "q": "Serve che io abbia competenze tecniche?",
+      "a": "No. Installiamo, configuriamo e facciamo il training del team AYROMEX. Tu usi l'interfaccia."
+    },
+    {
+      "q": "Chi possiede i dati?",
+      "a": "I dati sono sempre tuoi. Usiamo DB isolati per tenant (Turso). Puoi esportarli quando vuoi."
+    },
+    {
+      "q": "Se rompo il contratto cosa succede?",
+      "a": "AyroDesk24: no vincolo, cancel anytime con preavviso 30 giorni. AyroHub base: no vincolo. Piani custom annuali: condizioni specifiche in contratto."
+    },
+    {
+      "q": "Parlate inglese?",
+      "a": "Si, ma il focus AYROMEX e mercato italiano. Sara di AyroDesk24 e nativa italiana."
+    },
+    {
+      "q": "TODO aggiungi altra FAQ che emerge spesso",
+      "a": "TODO"
+    }
+  ],
+
+  "qualifying_questions_by_intent": {
+    "generic_info": ["Che settore?", "Cosa vorresti automatizzare?"],
+    "pricing_inquiry": ["Che volume gestisci mese?", "Quante persone lavorano al processo oggi?"],
+    "custom_build": ["Raccontami di piu il processo che vuoi automatizzare", "Hai gia provato soluzioni esistenti? Cosa non ha funzionato?"],
+    "urgency_check": ["Hai una scadenza precisa?", "Quanto ti sta costando ogni settimana NON averlo?"]
+  }
+}

@@ -1,30 +1,16 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import dynamic from 'next/dynamic';
 import { useTranslations } from 'next-intl';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
-import { FiArrowRight, FiCheck, FiMail } from 'react-icons/fi';
-import { FaWhatsapp } from 'react-icons/fa';
+import { FiArrowRight } from 'react-icons/fi';
 import AyroGuide from '@/components/hero/AyroGuide';
-import SceneDirector from '@/components/hero/SceneDirector';
 import TaskTicker from '@/components/hero/TaskTicker';
 import CtaSection from '@/components/sections/CtaSection';
 import ProcessSection from '@/components/sections/ProcessSection';
 import ProductsSection from '@/components/sections/ProductsSection';
 import { RotatingText } from '@/components/RotatingText';
 import { EASE_OUT } from '@/lib/motion';
-
-// HeroScene carries the entire R3F + three.js tree (Canvas, drei
-// text, custom shaders). Keep it out of the SSR bundle so Next
-// never tries to render <canvas> server-side and so troika-text's
-// SDF worker never boots during hydration. The loading fallback
-// is null — the body bg-ay-bg shows through and the rest of the
-// hero layout renders over it without a reserved placeholder.
-const HeroScene = dynamic(() => import('@/components/hero/HeroScene'), {
-  ssr: false,
-  loading: () => null,
-});
 
 /* ─── Animation Variants ─────────────────────────────────────── */
 const fadeUp = {
@@ -95,9 +81,6 @@ export default function HomePage() {
   return (
     <main className="relative overflow-x-hidden text-ay-text">
 
-      {/* Drives the global sceneProgress singleton from scroll */}
-      <SceneDirector />
-
       {/* Narrative follower — appears when scrolling past the hero */}
       <AyroGuide />
 
@@ -160,24 +143,12 @@ export default function HomePage() {
             </motion.p>
           </div>
 
-          {/* Split grid: constellation (60%) + chat (40%) */}
-          <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-8 lg:gap-12 w-full">
-
-            {/* Left: constellation stage */}
-            <div className="relative h-[300px] lg:h-[520px] rounded-2xl overflow-hidden">
-              <motion.div
-                {...sceneAnim}
-                className="absolute inset-0 pointer-events-none"
-              >
-                <HeroScene reduceMotion={!!reduceMotion} />
-              </motion.div>
-            </div>
-
-            {/* Right: Ayro chat placeholder + tooltip */}
-            <div className="flex flex-col">
+          {/* Ayro chat card — video-cinema rework pending in block 3 */}
+          <div className="flex justify-center w-full">
+            <div className="w-full max-w-[620px] flex flex-col">
               <motion.div
                 {...chatAnim}
-                className="w-full h-[320px] lg:h-[520px] rounded-2xl border border-ay-border bg-ay-surface flex flex-col overflow-hidden text-left"
+                className="w-full h-[360px] lg:h-[400px] rounded-2xl border border-ay-border bg-ay-surface flex flex-col overflow-hidden text-left"
               >
                 {/* Card header */}
                 <div className="flex items-center gap-3 px-5 py-4 border-b border-ay-border">

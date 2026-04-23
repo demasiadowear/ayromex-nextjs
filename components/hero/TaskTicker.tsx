@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
-import { heroPulseBus } from '@/lib/heroPulseBus'
 
 const LOG_ENTRIES = [
   'SCOUT identifying prospect — hospitality Puglia',
@@ -30,9 +29,9 @@ const LOG_ENTRIES = [
 
 const MAX_VISIBLE = 5
 const FILL_INTERVAL_MS = 800
-const AUTO_ROTATE_MIN_MS = 3000
-const AUTO_ROTATE_RANGE_MS = 1000
-const REDUCED_ROTATE_MS = 6000
+const AUTO_ROTATE_MIN_MS = 5000
+const AUTO_ROTATE_RANGE_MS = 3000
+const REDUCED_ROTATE_MS = 8000
 const VISIBLE_DELAY_MS = 3200
 
 interface LogEntry {
@@ -42,15 +41,6 @@ interface LogEntry {
 
 function pickRandomEntry(): string {
   return LOG_ENTRIES[Math.floor(Math.random() * LOG_ENTRIES.length)]
-}
-
-// Pick a log entry that starts with the given agent name, falling
-// back to a random pool entry when nothing matches. Keeps the log
-// row visually correlated with the pulse the visitor just saw.
-function pickEntryForAgent(agent: string): string {
-  const matches = LOG_ENTRIES.filter((entry) => entry.startsWith(`${agent} `))
-  if (matches.length === 0) return pickRandomEntry()
-  return matches[Math.floor(Math.random() * matches.length)]
 }
 
 function renderEntry(text: string) {
@@ -107,38 +97,28 @@ export default function TaskTicker() {
     return () => window.clearTimeout(fillTimer)
   }, [visible])
 
-  // Hot path: when the constellation emits a pulse, queue a log row
-  // ~400ms later so the row appears just after the visitor notices
-  // the spark leaving the source node.
+  // Auto-rotation: spin a fresh entry in every 5-8s (8s under
+  // reduced motion). Formerly driven by the constellation pulse
+  // bus; now that the site is video-cinema the bus is gone so the
+  // ticker owns its own cadence.
   useEffect(() => {
     if (!visible) return
-    const pendingTimers = new Set<number>()
-
-    const unsubscribe = heroPulseBus.subscribe((event) => {
-      const t = window.setTimeout(() => {
-        addEntry(pickEntryForAgent(event.from))
-        pendingTimers.delete(t)
-      }, 400)
-      pendingTimers.add(t)
-    })
-
-    return () => {
-      unsubscribe()
-      pendingTimers.forEach((t) => window.clearTimeout(t))
-    }
-  }, [visible])
-
-  // Reduced motion: no constellation pulses fire, so keep the panel
-  // alive with a slow auto-rotation pulled from the random pool.
-  useEffect(() => {
-    if (!visible || !reduceMotion) return
 
     let timer: number = 0
+
     const tick = () => {
       addEntry(pickRandomEntry())
-      timer = window.setTimeout(tick, REDUCED_ROTATE_MS)
+      const wait = reduceMotion
+        ? REDUCED_ROTATE_MS
+        : AUTO_ROTATE_MIN_MS + Math.random() * AUTO_ROTATE_RANGE_MS
+      timer = window.setTimeout(tick, wait)
     }
-    timer = window.setTimeout(tick, REDUCED_ROTATE_MS)
+
+    const initialWait = reduceMotion
+      ? REDUCED_ROTATE_MS
+      : AUTO_ROTATE_MIN_MS + Math.random() * AUTO_ROTATE_RANGE_MS
+    timer = window.setTimeout(tick, initialWait + MAX_VISIBLE * FILL_INTERVAL_MS)
+
     return () => window.clearTimeout(timer)
   }, [visible, reduceMotion])
 
@@ -147,9 +127,9 @@ export default function TaskTicker() {
   return (
     <div
       aria-hidden="true"
-      className="hidden md:block absolute left-10 bottom-[120px] z-20 pointer-events-none w-[380px]"
+      className="hidden md:block fixed left-10 bottom-10 z-20 pointer-events-none w-[380px]"
     >
-      <div className="bg-ay-surface/60 backdrop-blur-md border border-ay-border rounded-lg px-[18px] py-4">
+      <div className="bg-ay-surface/90 backdrop-blur-md border border-ay-accent/20 rounded-lg px-[18px] py-4">
         {/* Header */}
         <div className="flex items-center justify-between mb-2.5">
           <span className="font-body text-[9px] font-semibold uppercase tracking-[0.15em] text-ay-accent">
