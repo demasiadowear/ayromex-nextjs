@@ -118,6 +118,7 @@ export default function AyroGuide() {
     <AnimatePresence>
       {visible && (
         <motion.div
+          key="ayro-guide-desktop"
           initial={{ opacity: 0, y: reduceMotion ? 0 : -12, scale: reduceMotion ? 1 : 0.92 }}
           animate={{ opacity: 1, y: 0, scale }}
           exit={{ opacity: 0, y: reduceMotion ? 0 : -12, scale: 0.92 }}
@@ -172,6 +173,7 @@ export default function AyroGuide() {
       {/* Mobile follower: smaller, docked bottom-right with bubble above */}
       {visible && (
         <motion.div
+          key="ayro-guide-mobile"
           initial={{ opacity: 0, scale: 0.85 }}
           animate={{ opacity: 1, scale }}
           exit={{ opacity: 0, scale: 0.85 }}
