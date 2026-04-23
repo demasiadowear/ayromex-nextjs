@@ -7,6 +7,8 @@ import { FaWhatsapp } from 'react-icons/fa'
 import SectionTransition from './SectionTransition'
 import type { AyroGuideHover } from '@/components/hero/AyroGuide'
 
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i
+
 function emitHover(value: AyroGuideHover) {
   if (typeof window === 'undefined') return
   window.dispatchEvent(
@@ -14,36 +16,57 @@ function emitHover(value: AyroGuideHover) {
   )
 }
 
+type Toast =
+  | { kind: 'success'; message: string }
+  | { kind: 'error'; message: string }
+  | null
+
 export default function CtaSection() {
   const t = useTranslations('ctaSection')
+
   const [email, setEmail] = useState('')
-  const [submitted, setSubmitted] = useState(false)
-  const [submitting, setSubmitting] = useState(false)
+  const [invalid, setInvalid] = useState(false)
+  const [shaking, setShaking] = useState(false)
+  const [toast, setToast] = useState<Toast>(null)
+  const [disabled, setDisabled] = useState(false)
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    if (!email || submitting) return
+    if (disabled) return
 
-    setSubmitting(true)
+    if (!EMAIL_RE.test(email.trim())) {
+      setInvalid(true)
+      setShaking(true)
+      setToast({ kind: 'error', message: t('toastError') })
+      window.setTimeout(() => setShaking(false), 220)
+      window.setTimeout(() => setToast(null), 2800)
+      return
+    }
+
     // Mock: log the lead; real wiring (Supabase + Slack) lands in STEP 6.
     // eslint-disable-next-line no-console
-    console.log('[AYROMEX CTA stub] lead email:', email)
+    console.log('[AYROMEX CTA] lead email:', email.trim())
+
+    setInvalid(false)
+    setDisabled(true)
+    setToast({ kind: 'success', message: t('toastSuccess') })
+
+    // Tell the AyroGuide that we received a submission.
+    emitHover('cta-submitted')
+    window.setTimeout(() => emitHover(null), 4000)
 
     window.setTimeout(() => {
-      setSubmitted(true)
-      setSubmitting(false)
-      window.setTimeout(() => {
-        setSubmitted(false)
-        setEmail('')
-      }, 3500)
-    }, 300)
+      setToast(null)
+      setDisabled(false)
+      setEmail('')
+    }, 3500)
   }
 
   return (
     <SectionTransition
       id="contatti"
       variant="number-reveal"
-      className="relative min-h-[85vh] px-6 py-32 overflow-hidden"
+      className="relative min-h-[85vh] px-6 py-32 overflow-hidden flex items-center justify-center"
     >
       <span
         data-section-number
@@ -68,11 +91,18 @@ export default function CtaSection() {
           {t('subtitle')}
         </p>
 
-        <form
+        <motion.form
           onSubmit={handleSubmit}
-          className="mt-12 w-full max-w-[480px] flex flex-col sm:flex-row gap-3"
           onFocus={() => emitHover('cta-form')}
-          onBlur={() => emitHover(null)}
+          onBlur={(e) => {
+            // Only clear hover when focus fully leaves the form.
+            if (!e.currentTarget.contains(e.relatedTarget as Node)) {
+              emitHover(null)
+            }
+          }}
+          animate={shaking ? { x: [-6, 6, -4, 4, 0] } : { x: 0 }}
+          transition={{ duration: 0.22, ease: 'easeInOut' }}
+          className="mt-12 w-full max-w-[640px] flex flex-col sm:flex-row gap-3"
         >
           <label htmlFor="cta-email" className="sr-only">
             {t('emailPlaceholder')}
@@ -82,33 +112,27 @@ export default function CtaSection() {
             type="email"
             required
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => {
+              setEmail(e.target.value)
+              if (invalid) setInvalid(false)
+            }}
             placeholder={t('emailPlaceholder')}
-            disabled={submitting || submitted}
-            className="flex-1 rounded-full bg-ay-surface border border-ay-border px-6 py-4 font-body text-[15px] text-ay-text placeholder:text-ay-text-muted outline-none focus:border-ay-accent transition-colors duration-200 disabled:opacity-60"
+            disabled={disabled}
+            aria-invalid={invalid}
+            className={`flex-1 rounded-full bg-ay-surface/60 backdrop-blur-sm px-7 py-4 font-body text-[16px] text-ay-text placeholder:text-ay-text-muted outline-none transition-colors duration-200 disabled:opacity-60 border ${
+              invalid
+                ? 'border-[#FF4D4D] focus:border-[#FF4D4D]'
+                : 'border-ay-border focus:border-ay-accent'
+            }`}
           />
           <button
             type="submit"
-            disabled={submitting || submitted}
+            disabled={disabled}
             className="shrink-0 rounded-full bg-ay-accent text-ay-bg px-7 py-4 font-display font-bold uppercase tracking-widest text-[13px] hover:bg-ay-accent-hover hover:scale-[1.02] transition-all duration-200 disabled:opacity-60 disabled:hover:scale-100"
           >
-            {t('submitLabel')}
+            {t('submitButton')}
           </button>
-        </form>
-
-        <AnimatePresence>
-          {submitted && (
-            <motion.p
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 8 }}
-              transition={{ duration: 0.3 }}
-              className="mt-4 font-body text-[14px] text-ay-accent"
-            >
-              {t('submittedMessage')}
-            </motion.p>
-          )}
-        </AnimatePresence>
+        </motion.form>
 
         <a
           href="https://wa.me/390808407861"
@@ -117,9 +141,37 @@ export default function CtaSection() {
           className="mt-8 inline-flex items-center gap-2 font-body text-[14px] text-ay-text-muted hover:text-ay-accent transition-colors duration-200"
         >
           <FaWhatsapp className="w-4 h-4" />
-          {t('whatsappLabel')}
+          {t('whatsappLink')}
         </a>
       </div>
+
+      {/* Toast, fixed top-right of the viewport */}
+      <AnimatePresence>
+        {toast && (
+          <motion.div
+            role="status"
+            aria-live="polite"
+            initial={{ opacity: 0, x: 16 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 16 }}
+            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            className="fixed top-24 right-8 z-[60] max-w-[320px] rounded-xl bg-ay-surface/95 backdrop-blur-md px-5 py-4 font-body text-[14px] text-ay-text shadow-[0_16px_40px_rgba(0,0,0,0.55)]"
+            style={{
+              border: `1px solid ${toast.kind === 'success' ? '#FF6B00' : '#FF4D4D'}`,
+            }}
+          >
+            <span className="flex items-center gap-3">
+              <span
+                className="inline-block w-2 h-2 rounded-full"
+                style={{
+                  background: toast.kind === 'success' ? '#FF6B00' : '#FF4D4D',
+                }}
+              />
+              {toast.message}
+            </span>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </SectionTransition>
   )
 }

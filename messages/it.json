@@ -130,10 +130,11 @@
     "headlineLine1": "Hai un'idea che vuoi",
     "headlineLine2": "trasformare in sistema?",
     "subtitle": "Parliamone. Niente slide, solo domande e risposte.",
-    "emailPlaceholder": "tuo@email.it",
-    "submitLabel": "Prenota call →",
-    "submittedMessage": "Ti contattiamo a breve. Grazie.",
-    "whatsappLabel": "...o scrivici su WhatsApp"
+    "emailPlaceholder": "La tua email…",
+    "submitButton": "Prenota call →",
+    "toastSuccess": "Ti contattiamo entro 24h",
+    "toastError": "Email non valida",
+    "whatsappLink": "…o scrivici su WhatsApp"
   },
   "servicesSection": {
     "label": "Cosa costruiamo",

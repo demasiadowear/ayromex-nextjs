@@ -130,10 +130,11 @@
     "headlineLine1": "Ai o idee pe care vrei",
     "headlineLine2": "s-o transformi în sistem?",
     "subtitle": "Hai să vorbim. Zero slide-uri, doar întrebări și răspunsuri.",
-    "emailPlaceholder": "tu@email.ro",
-    "submitLabel": "Rezervă un call →",
-    "submittedMessage": "Te contactăm în scurt timp. Mulțumesc.",
-    "whatsappLabel": "...sau scrie-ne pe WhatsApp"
+    "emailPlaceholder": "Emailul tău…",
+    "submitButton": "Rezervă un call →",
+    "toastSuccess": "Te contactăm în 24h",
+    "toastError": "Email invalid",
+    "whatsappLink": "…sau scrie-ne pe WhatsApp"
   },
   "servicesSection": {
     "label": "Ce construim",

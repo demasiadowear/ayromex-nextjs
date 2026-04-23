@@ -130,10 +130,11 @@
     "headlineLine1": "Got an idea you want",
     "headlineLine2": "turned into a system?",
     "subtitle": "Let's talk. No slides, just questions and answers.",
-    "emailPlaceholder": "your@email.com",
-    "submitLabel": "Book a call →",
-    "submittedMessage": "We'll be in touch shortly. Thanks.",
-    "whatsappLabel": "...or write to us on WhatsApp"
+    "emailPlaceholder": "Your email…",
+    "submitButton": "Book a call →",
+    "toastSuccess": "We'll be in touch within 24h",
+    "toastError": "Invalid email",
+    "whatsappLink": "…or write to us on WhatsApp"
   },
   "servicesSection": {
     "label": "What we build",
