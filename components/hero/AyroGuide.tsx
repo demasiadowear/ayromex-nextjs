@@ -29,6 +29,7 @@ export type AyroGuideHover =
   | 'process-03'
   | 'process-04'
   | 'cta-form'
+  | 'cta-submitted'
 
 interface InternalState {
   phase: AyroGuideState
@@ -209,6 +210,7 @@ function resolveBubble(
   if (hover === 'process-03') return t('process03')
   if (hover === 'process-04') return t('process04')
   if (hover === 'cta-form') return t('ctaForm')
+  if (hover === 'cta-submitted') return t('ctaSubmitted')
 
   switch (phase) {
     case 'transition':

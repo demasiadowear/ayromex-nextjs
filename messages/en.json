@@ -37,7 +37,8 @@
     "process03": "Then we enter Build.",
     "process04": "Then we scale.",
     "ctaIntro": "Ready to actually talk to me?",
-    "ctaForm": "Write to me here. I reply within 24h."
+    "ctaForm": "Write to me here. I reply within 24h.",
+    "ctaSubmitted": "Great — I'll get back within 24h."
   },
   "productsSection": {
     "number": "01",
