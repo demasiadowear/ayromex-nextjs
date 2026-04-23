@@ -2,6 +2,8 @@
 
 import { useEffect } from 'react'
 import Lenis from 'lenis'
+import { registerLenisScrollTrigger } from '@/lib/scroll'
+import { initParallaxUtilities } from '@/lib/scroll'
 
 interface Props {
   children: React.ReactNode
@@ -25,15 +27,18 @@ export default function SmoothScroll({ children }: Props) {
       lerp: 0.08,
     })
 
-    let rafId = 0
-    const raf = (time: number) => {
-      lenis.raf(time)
-      rafId = requestAnimationFrame(raf)
-    }
-    rafId = requestAnimationFrame(raf)
+    // Bridge lenis to GSAP ScrollTrigger: lenis.raf is driven from
+    // gsap.ticker so both systems share a single frame loop and
+    // ScrollTrigger.update fires on every lenis scroll event.
+    const detachScrollTrigger = registerLenisScrollTrigger(lenis)
+
+    // Pick up any markup tagged with parallax utility classes that
+    // was rendered by server components before this effect ran.
+    const detachParallax = initParallaxUtilities()
 
     return () => {
-      cancelAnimationFrame(rafId)
+      detachScrollTrigger()
+      detachParallax()
       lenis.destroy()
     }
   }, [])
