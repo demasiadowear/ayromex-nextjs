@@ -34,13 +34,21 @@ function Step({ index, id }: StepProps) {
             emitHover(id)
           } else {
             delete el.dataset.visible
+            // Clear the guide hover so the next section's phase
+            // (verticals / CTA) can take over cleanly. If a sibling
+            // step enters right after, its own emitHover(id) will
+            // win in the same batch.
+            emitHover(null)
           }
         })
       },
       { threshold: 0.55 },
     )
     observer.observe(el)
-    return () => observer.disconnect()
+    return () => {
+      observer.disconnect()
+      emitHover(null)
+    }
   }, [id])
 
   return (
