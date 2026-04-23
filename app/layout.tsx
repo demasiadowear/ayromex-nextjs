@@ -3,6 +3,7 @@ import './globals.css'
 import BackgroundSceneMount from '@/components/hero/BackgroundSceneMount'
 import CustomCursor from '@/components/CustomCursor'
 import GrainOverlay from '@/components/GrainOverlay'
+import ScrollProgressIndicator from '@/components/ScrollProgressIndicator'
 
 const gugi = Gugi({
   subsets: ['latin'],
@@ -59,6 +60,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         {/* Film grain overlay */}
         <GrainOverlay />
+
+        {/* Scroll progress bar */}
+        <ScrollProgressIndicator />
 
         {/* Custom cursor */}
         <CustomCursor />
