@@ -38,6 +38,9 @@ const PULSE_DURATION_S = 1.6
 const MAX_PULSES = 2
 const PULSE_WAIT_MIN_MS = 5000
 const PULSE_WAIT_RANGE_MS = 3000
+const INTENSIFIED_WAIT_MIN_MS = 1800
+const INTENSIFIED_WAIT_RANGE_MS = 1500
+const INTENSIFIED_MAX_PULSES = 3
 const ENTRY_BUFFER_MS = 1500
 
 interface PulseInstance {
@@ -53,9 +56,15 @@ function pickRandom<T>(arr: T[]): T {
 interface Props {
   reduceMotion?: boolean
   lightweight?: boolean
+  /** When true, pulse rate doubles and the cap raises to 3. */
+  intensified?: boolean
 }
 
-export default function AmbientConstellation({ reduceMotion = false, lightweight = false }: Props) {
+export default function AmbientConstellation({
+  reduceMotion = false,
+  lightweight = false,
+  intensified = false,
+}: Props) {
   const NODE_POSITIONS = lightweight ? LIGHT_POSITIONS : FULL_POSITIONS
   const MASTER = lightweight ? LIGHT_MASTER : FULL_MASTER
   const NON_MASTER = NODE_POSITIONS.map((_, i) => i).filter((i) => i !== MASTER)
@@ -73,7 +82,8 @@ export default function AmbientConstellation({ reduceMotion = false, lightweight
   const pulseCountRef = useRef(0)
 
   const spawnPulse = useCallback((from: number, to: number) => {
-    if (pulseCountRef.current >= MAX_PULSES) return
+    const cap = intensified ? INTENSIFIED_MAX_PULSES : MAX_PULSES
+    if (pulseCountRef.current >= cap) return
     pulseCountRef.current += 1
     const id = pulseIdRef.current++
 
@@ -113,7 +123,11 @@ export default function AmbientConstellation({ reduceMotion = false, lightweight
 
     let timer: number = 0
     const schedule = () => {
-      const wait = PULSE_WAIT_MIN_MS + Math.random() * PULSE_WAIT_RANGE_MS
+      const waitMin = intensified ? INTENSIFIED_WAIT_MIN_MS : PULSE_WAIT_MIN_MS
+      const waitRange = intensified
+        ? INTENSIFIED_WAIT_RANGE_MS
+        : PULSE_WAIT_RANGE_MS
+      const wait = waitMin + Math.random() * waitRange
       timer = window.setTimeout(() => {
         spawnPulse(pickRandom(NON_MASTER), MASTER)
         schedule()
@@ -127,7 +141,7 @@ export default function AmbientConstellation({ reduceMotion = false, lightweight
     }
     // NON_MASTER/MASTER recomputed per render but stable for a given lightweight value
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [reduceMotion, lightweight, spawnPulse])
+  }, [reduceMotion, lightweight, intensified, spawnPulse])
 
   return (
     <group>

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, type FormEvent } from 'react'
+import { useEffect, useRef, useState, type FormEvent } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import { FaWhatsapp } from 'react-icons/fa'
@@ -8,6 +8,13 @@ import SectionTransition from './SectionTransition'
 import type { AyroGuideHover } from '@/components/hero/AyroGuide'
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i
+
+function emitSceneIntensity(on: boolean) {
+  if (typeof window === 'undefined') return
+  window.dispatchEvent(
+    new CustomEvent<boolean>('ayro-scene:intensity', { detail: on }),
+  )
+}
 
 function emitHover(value: AyroGuideHover) {
   if (typeof window === 'undefined') return
@@ -29,6 +36,26 @@ export default function CtaSection() {
   const [shaking, setShaking] = useState(false)
   const [toast, setToast] = useState<Toast>(null)
   const [disabled, setDisabled] = useState(false)
+
+  // When the section enters the viewport, tell the BackgroundScene
+  // to intensify the ambient constellation traffic for a dramatic
+  // closing feel. Fires once on enter and again on exit.
+  const sectionRef = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    const node = sectionRef.current
+    if (!node) return
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => emitSceneIntensity(entry.isIntersecting))
+      },
+      { threshold: 0.35 },
+    )
+    observer.observe(node)
+    return () => {
+      observer.disconnect()
+      emitSceneIntensity(false)
+    }
+  }, [])
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -68,6 +95,8 @@ export default function CtaSection() {
       variant="number-reveal"
       className="relative min-h-[85vh] px-6 py-32 overflow-hidden flex items-center justify-center"
     >
+      <div ref={sectionRef} className="absolute inset-0 pointer-events-none" aria-hidden="true" />
+
       <span
         data-section-number
         aria-hidden="true"

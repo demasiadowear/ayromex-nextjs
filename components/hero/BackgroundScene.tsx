@@ -1,6 +1,6 @@
 'use client'
 
-import { Suspense } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import AmbientConstellation from './AmbientConstellation'
@@ -44,6 +44,18 @@ export default function BackgroundScene({ reduceMotion = false, lightweight = fa
   const { scrollY } = useScroll()
   const opacity = useTransform(scrollY, [0, 800], [0, 1])
 
+  // Listen for the CTA section reporting its visibility so the
+  // ambient constellation can briefly intensify its traffic.
+  const [intensified, setIntensified] = useState(false)
+  useEffect(() => {
+    const handler = (event: Event) => {
+      const detail = (event as CustomEvent<boolean>).detail
+      setIntensified(Boolean(detail))
+    }
+    window.addEventListener('ayro-scene:intensity', handler)
+    return () => window.removeEventListener('ayro-scene:intensity', handler)
+  }, [])
+
   return (
     <motion.div
       aria-hidden="true"
@@ -63,7 +75,11 @@ export default function BackgroundScene({ reduceMotion = false, lightweight = fa
         >
           <fog attach="fog" args={['#0A0A0A', 5, 20]} />
           <BackgroundCamera reduceMotion={reduceMotion} />
-          <AmbientConstellation reduceMotion={reduceMotion} lightweight={lightweight} />
+          <AmbientConstellation
+            reduceMotion={reduceMotion}
+            lightweight={lightweight}
+            intensified={intensified}
+          />
           <ParticleField reduceMotion={reduceMotion} lightweight={lightweight} />
         </Canvas>
       </Suspense>
