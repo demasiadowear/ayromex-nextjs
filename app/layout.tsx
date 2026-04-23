@@ -52,6 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="it"
+      data-scroll-behavior="smooth"
       className={`dark ${gugi.variable} ${syne.variable} ${dmSans.variable} ${jetbrainsMono.variable}`}
     >
       <body className="relative min-h-screen bg-ay-bg text-ay-text font-body antialiased">
