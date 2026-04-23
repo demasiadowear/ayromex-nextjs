@@ -7,6 +7,7 @@ import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { FiArrowRight, FiCheck, FiMail } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
 import AyroGuide from '@/components/hero/AyroGuide';
+import SceneDirector from '@/components/hero/SceneDirector';
 import TaskTicker from '@/components/hero/TaskTicker';
 import CtaSection from '@/components/sections/CtaSection';
 import ProcessSection from '@/components/sections/ProcessSection';
@@ -93,6 +94,9 @@ export default function HomePage() {
 
   return (
     <main className="relative overflow-x-hidden text-ay-text">
+
+      {/* Drives the global sceneProgress singleton from scroll */}
+      <SceneDirector />
 
       {/* Narrative follower — appears when scrolling past the hero */}
       <AyroGuide />
