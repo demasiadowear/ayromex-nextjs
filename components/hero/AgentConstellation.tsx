@@ -214,6 +214,9 @@ function pickRandom<T>(arr: T[]): T {
 // preset every frame. The inner AgentNode is rendered with a
 // local (0,0,0) position so the outer group is the single source
 // of truth for where the node lives in world space.
+// Temporary debug counter (sub-chunk 1 diagnosis)
+let __debugFrameCount = 0
+
 function SceneDrivenNode({ idx, children }: { idx: number; children: React.ReactNode }) {
   const ref = useRef<Group>(null)
 
@@ -222,6 +225,23 @@ function SceneDrivenNode({ idx, children }: { idx: number; children: React.React
     const preset = getScenePreset(idx, sceneProgress.current)
     ref.current.position.set(preset.position[0], preset.position[1], preset.position[2])
     ref.current.scale.setScalar(preset.scale)
+
+    // Log the master node position once every ~120 frames so we can
+    // verify that the scene-driven wrapper is actually running.
+    if (idx === MASTER) {
+      __debugFrameCount += 1
+      if (__debugFrameCount % 120 === 0) {
+        // eslint-disable-next-line no-console
+        console.log(
+          '[AgentConstellation/hero] progress=',
+          sceneProgress.current.toFixed(2),
+          'AYRO pos=',
+          preset.position.map((v) => v.toFixed(2)).join(','),
+          'scale=',
+          preset.scale.toFixed(2),
+        )
+      }
+    }
   })
 
   return <group ref={ref}>{children}</group>

@@ -30,6 +30,11 @@ export default function SceneDirector() {
       return
     }
 
+    // eslint-disable-next-line no-console
+    console.log('[SceneDirector] mounted, ScrollTrigger armed')
+
+    let lastLogged = -1
+
     const tween = gsap.to(sceneProgress, {
       current: 1,
       ease: 'none',
@@ -38,6 +43,14 @@ export default function SceneDirector() {
         start: 'top top',
         end: 'bottom bottom',
         scrub: true,
+        onUpdate: (self) => {
+          const p = Math.round(self.progress * 100) / 100
+          if (p !== lastLogged) {
+            lastLogged = p
+            // eslint-disable-next-line no-console
+            console.log('[SceneDirector] sceneProgress =', p.toFixed(2))
+          }
+        },
       },
     })
 

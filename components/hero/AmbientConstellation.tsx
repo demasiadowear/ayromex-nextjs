@@ -65,6 +65,15 @@ export default function AmbientConstellation({
   lightweight = false,
   intensified = false,
 }: Props) {
+  useEffect(() => {
+    // eslint-disable-next-line no-console
+    console.log('[AmbientConstellation] mounted — NOT yet scene-aware')
+    return () => {
+      // eslint-disable-next-line no-console
+      console.log('[AmbientConstellation] unmounted')
+    }
+  }, [])
+
   const NODE_POSITIONS = lightweight ? LIGHT_POSITIONS : FULL_POSITIONS
   const MASTER = lightweight ? LIGHT_MASTER : FULL_MASTER
   const NON_MASTER = NODE_POSITIONS.map((_, i) => i).filter((i) => i !== MASTER)
