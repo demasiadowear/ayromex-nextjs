@@ -81,19 +81,22 @@ export default function AmbientConstellation({
   const pulseIdRef = useRef(0)
   const pulseCountRef = useRef(0)
 
-  const spawnPulse = useCallback((from: number, to: number) => {
-    const cap = intensified ? INTENSIFIED_MAX_PULSES : MAX_PULSES
-    if (pulseCountRef.current >= cap) return
-    pulseCountRef.current += 1
-    const id = pulseIdRef.current++
+  const spawnPulse = useCallback(
+    (from: number, to: number) => {
+      const cap = intensified ? INTENSIFIED_MAX_PULSES : MAX_PULSES
+      if (pulseCountRef.current >= cap) return
+      pulseCountRef.current += 1
+      const id = pulseIdRef.current++
 
-    setPulses((prev) => [...prev, { id, from, to }])
-    setActiveLines((prev) => {
-      const next = new Set(prev)
-      next.add(lineKey(from, to))
-      return next
-    })
-  }, [])
+      setPulses((prev) => [...prev, { id, from, to }])
+      setActiveLines((prev) => {
+        const next = new Set(prev)
+        next.add(lineKey(from, to))
+        return next
+      })
+    },
+    [intensified],
+  )
 
   const handlePulseComplete = useCallback(
     (id: number, from: number, to: number) => {
@@ -115,7 +118,7 @@ export default function AmbientConstellation({
         )
       }, 300)
     },
-    [],
+    [MASTER],
   )
 
   useEffect(() => {
