@@ -11,13 +11,15 @@ import AyroBubble from './AyroBubble'
 const TH_APPEAR = 0.7 // hero still visible but scrolling past
 const TH_PRODUCTS = 1.3
 const TH_PROCESS = 2.3
-const TH_CTA = 3.3
+const TH_VERTICALS = 3.1
+const TH_CTA = 3.9
 
 export type AyroGuideState =
   | 'hidden'
   | 'transition'
   | 'products'
   | 'process'
+  | 'verticals'
   | 'cta'
 
 export type AyroGuideHover =
@@ -61,6 +63,7 @@ export default function AyroGuide() {
 
       let nextPhase: AyroGuideState = 'hidden'
       if (progress >= TH_CTA) nextPhase = 'cta'
+      else if (progress >= TH_VERTICALS) nextPhase = 'verticals'
       else if (progress >= TH_PROCESS) nextPhase = 'process'
       else if (progress >= TH_PRODUCTS) nextPhase = 'products'
       else if (progress >= TH_APPEAR) nextPhase = 'transition'
@@ -221,6 +224,8 @@ function resolveBubble(
       return t('productsIntro')
     case 'process':
       return t('processIntro')
+    case 'verticals':
+      return t('verticalsIntro')
     case 'cta':
       return t('ctaIntro')
     default:
