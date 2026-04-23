@@ -136,6 +136,19 @@ body {
 }
 
 /* =====================
+   PARALLAX UTILITY MARKERS
+   ===================== */
+
+/* Elements tagged with these classes are picked up at mount by
+   initParallaxUtilities() in lib/scroll.ts and wired to a
+   scrub-linked yPercent tween. The CSS here only adds a GPU
+   hint so the first paint doesn't jank when the tween starts. */
+.parallax-slow,
+.parallax-fast {
+  will-change: transform;
+}
+
+/* =====================
    PRODUCT CARD HOVER GLOW
    ===================== */
 
