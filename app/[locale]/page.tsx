@@ -128,7 +128,7 @@ export default function HomePage() {
             <motion.h1
               {...heroAnim(1.3, 1.0)}
               className="font-display font-extrabold text-ay-text leading-[0.95] tracking-[-0.02em] mb-8"
-              style={{ fontSize: 'clamp(80px, 12vw, 180px)' }}
+              style={{ fontSize: 'clamp(64px, 10vw, 140px)' }}
             >
               {tHero('headlineStart')}
               <span className="relative inline-block text-ay-accent">
