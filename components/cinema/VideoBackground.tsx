@@ -37,20 +37,34 @@ export default function VideoBackground({ videos, fadeSeconds = 1 }: Props) {
   // Ensure the active video is playing and inactive ones pause to
   // save decode cycles. Browsers may also throttle hidden videos;
   // this still helps with multiple large sources mounted at once.
+  // We call .play() explicitly on every active-id change AND on
+  // initial mount so Chrome/Safari autoplay policy has a clear
+  // deterministic trigger beyond the autoPlay attribute alone.
   useEffect(() => {
-    Object.entries(videoRefs.current).forEach(([id, video]) => {
-      if (!video) return
-      if (id === activeId) {
-        const playPromise = video.play()
-        if (playPromise && typeof playPromise.catch === 'function') {
-          // Swallow the "play() interrupted" promise rejections that
-          // happen on rapid autoplay + pause cycles.
-          playPromise.catch(() => undefined)
+    const tryPlay = () => {
+      Object.entries(videoRefs.current).forEach(([id, video]) => {
+        if (!video) return
+        if (id === activeId) {
+          const playPromise = video.play()
+          if (playPromise && typeof playPromise.catch === 'function') {
+            playPromise.catch(() => undefined)
+          }
+        } else {
+          video.pause()
         }
-      } else {
-        video.pause()
-      }
+      })
+    }
+    tryPlay()
+    // Some browsers postpone the first play() until the video has
+    // at least metadata; retry once on 'canplay' for each ref.
+    const retries: Array<() => void> = []
+    Object.entries(videoRefs.current).forEach(([id, video]) => {
+      if (!video || id !== activeId) return
+      const handler = () => tryPlay()
+      video.addEventListener('canplay', handler, { once: true })
+      retries.push(() => video.removeEventListener('canplay', handler))
     })
+    return () => retries.forEach((fn) => fn())
   }, [activeId])
 
   // When activeId === 'empty' we hide every video, letting the
@@ -81,7 +95,7 @@ export default function VideoBackground({ videos, fadeSeconds = 1 }: Props) {
             }}
             src={video.src}
             poster={video.poster}
-            autoPlay={!reduceMotion}
+            autoPlay
             muted
             loop
             playsInline
