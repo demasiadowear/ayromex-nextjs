@@ -1,8 +1,6 @@
 export function AyromexLogo({ className = '' }: { className?: string }) {
   return (
-    <div
-      className={`inline-flex items-center justify-center rounded-lg bg-ay-bg/60 backdrop-blur-sm px-3 py-2 ${className}`}
-    >
+    <div className={`inline-flex items-center ${className}`}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src="/brand/logos/symbol/AYROLOGO.svg"
