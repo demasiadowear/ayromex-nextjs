@@ -15,7 +15,7 @@ export default function WhatsAppButton() {
       href={waLink}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-30 flex items-center justify-center w-14 h-14 rounded-full shadow-lg"
+      className="fixed bottom-8 right-8 z-40 flex items-center justify-center w-14 h-14 rounded-full shadow-lg"
       aria-label="Scrivi su WhatsApp"
       whileHover={{ scale: 1.08 }}
       whileTap={{ scale: 0.95 }}
