@@ -117,6 +117,15 @@ export default function HomePage() {
           {/* Top: copy stack centered */}
           <div className="flex flex-col items-center text-center max-w-5xl mx-auto">
 
+            {/* Hero logo lockup — centered above eyebrow */}
+            <motion.img
+              {...heroAnim(0.5)}
+              src="/brand/logos/symbol/AYROLOGO.svg"
+              alt="AYROMEX"
+              className="h-[260px] w-[260px] md:h-[360px] md:w-[360px] lg:h-[440px] lg:w-[440px] mb-4"
+              style={{ filter: 'drop-shadow(0 4px 20px rgba(0,0,0,0.85))' }}
+            />
+
             {/* Eyebrow */}
             <motion.span
               {...heroAnim(1.0)}
