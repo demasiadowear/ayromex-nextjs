@@ -147,8 +147,8 @@ export default function AgentConstellation({ reduceMotion = false }: Props) {
   useEffect(() => {
     if (reduceMotion) return
 
-    let timer: ReturnType<typeof setTimeout>
-    let thinkingTimer: ReturnType<typeof setTimeout>
+    let timer: number = 0
+    let thinkingTimer: number = 0
 
     const scheduleNext = () => {
       const wait = 2000 + Math.random() * 2000
@@ -183,7 +183,7 @@ export default function AgentConstellation({ reduceMotion = false }: Props) {
   useEffect(() => {
     if (reduceMotion) return
 
-    let timer: ReturnType<typeof setTimeout>
+    let timer: number = 0
 
     const scheduleNext = () => {
       const wait = 5000 + Math.random() * 2000

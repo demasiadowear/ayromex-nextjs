@@ -2,6 +2,7 @@
 
 import { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
+import AgentConstellation from './AgentConstellation'
 import CameraRig from './CameraRig'
 import ParticleField from './ParticleField'
 
@@ -23,10 +24,10 @@ export default function HeroScene({ reduceMotion = false }: Props) {
           }}
           onCreated={({ camera }) => camera.lookAt(0, 0.5, 0)}
         >
-          <fog attach="fog" args={['#0A0A0A', 15, 40]} />
+          <fog attach="fog" args={['#0A0A0A', 8, 30]} />
           <CameraRig reduceMotion={reduceMotion} />
+          <AgentConstellation reduceMotion={reduceMotion} />
           <ParticleField reduceMotion={reduceMotion} />
-          {/* AgentConstellation is wired in commit 7 */}
         </Canvas>
       </Suspense>
     </div>
