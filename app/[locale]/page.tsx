@@ -85,21 +85,30 @@ export default function HomePage() {
 
   const showTooltip = () => setTooltipVisible(true);
 
-  const heroAnim = (delay: number) =>
+  // Cinematic hero pacing: total entrance ~3.8s.
+  const heroAnim = (delay: number, duration = 0.8) =>
     reduceMotion
       ? {}
       : {
           initial: { opacity: 0, y: 32 },
           animate: { opacity: 1, y: 0 },
-          transition: { duration: 0.6, ease: EASE_OUT, delay },
+          transition: { duration, ease: EASE_OUT, delay },
         };
 
   const chatAnim = reduceMotion
     ? {}
     : {
-        initial: { opacity: 0, y: 32, scale: 0.98 },
+        initial: { opacity: 0, y: 32, scale: 0.95 },
         animate: { opacity: 1, y: 0, scale: 1 },
-        transition: { duration: 0.6, ease: EASE_OUT, delay: 0.6 },
+        transition: { duration: 1.0, ease: EASE_OUT, delay: 2.6 },
+      };
+
+  const sceneAnim = reduceMotion
+    ? {}
+    : {
+        initial: { opacity: 0 },
+        animate: { opacity: 1 },
+        transition: { duration: 1.5, ease: EASE_OUT },
       };
 
   return (
@@ -111,13 +120,18 @@ export default function HomePage() {
       <section className="relative min-h-screen flex flex-col items-center justify-start pt-32 pb-20 px-6 overflow-hidden">
 
         {/* Cinematic 3D backdrop */}
-        <HeroScene reduceMotion={!!reduceMotion} />
+        <motion.div
+          {...sceneAnim}
+          className="absolute inset-0 z-0 pointer-events-none"
+        >
+          <HeroScene reduceMotion={!!reduceMotion} />
+        </motion.div>
 
         <div className="relative z-10 flex flex-col items-center text-center max-w-5xl mx-auto w-full">
 
           {/* Eyebrow */}
           <motion.span
-            {...heroAnim(0.1)}
+            {...heroAnim(1.0)}
             className="block font-body text-[12px] font-medium uppercase tracking-[0.08em] text-ay-text-muted mb-8"
           >
             {tHero('eyebrow')}
@@ -125,7 +139,7 @@ export default function HomePage() {
 
           {/* Headline */}
           <motion.h1
-            {...heroAnim(0.2)}
+            {...heroAnim(1.3, 1.0)}
             className="font-display font-extrabold text-ay-text leading-[0.95] tracking-[-0.02em] mb-10"
             style={{ fontSize: 'clamp(64px, 11vw, 160px)' }}
           >
@@ -136,7 +150,7 @@ export default function HomePage() {
                 aria-hidden="true"
                 initial={reduceMotion ? { scaleX: 1 } : { scaleX: 0 }}
                 animate={{ scaleX: 1 }}
-                transition={{ duration: 0.8, ease: EASE_OUT, delay: reduceMotion ? 0 : 1 }}
+                transition={{ duration: 1.0, ease: EASE_OUT, delay: reduceMotion ? 0 : 2.5 }}
                 className="absolute left-0 right-0 bottom-0 h-[6px] bg-ay-accent origin-left"
               />
             </span>
@@ -145,7 +159,7 @@ export default function HomePage() {
 
           {/* Rotating text */}
           <motion.p
-            {...heroAnim(0.4)}
+            {...heroAnim(2.0)}
             className="font-body text-[22px] md:text-[26px] text-ay-text mb-6"
           >
             {tHero('rotatingPrefix')}
@@ -154,7 +168,7 @@ export default function HomePage() {
 
           {/* Supporting paragraph */}
           <motion.p
-            {...heroAnim(0.5)}
+            {...heroAnim(2.3)}
             className="font-body text-base md:text-[17px] text-ay-text-muted max-w-[640px] leading-relaxed mb-12"
           >
             {tHero('paragraph')}
@@ -236,7 +250,7 @@ export default function HomePage() {
 
           {/* CTAs */}
           <motion.div
-            {...heroAnim(0.7)}
+            {...heroAnim(3.0)}
             className="flex flex-wrap gap-4 justify-center mt-10"
           >
             <a
