@@ -73,7 +73,15 @@ export default function VerticalsSection() {
               className="group relative z-10 rounded-2xl border border-ay-border bg-ay-surface/80 backdrop-blur-lg p-8 flex flex-col gap-4 text-left transition-all duration-200 hover:border-ay-accent hover:scale-[1.02]"
             >
               <Icon className="w-10 h-10 text-ay-accent" />
-              <h3 className="font-display font-extrabold uppercase tracking-wide text-ay-text text-[20px]">
+              <h3
+                className="font-display font-extrabold uppercase text-ay-text leading-tight"
+                style={{
+                  fontSize: 'clamp(14px, 1.2vw, 18px)',
+                  letterSpacing: 'normal',
+                  wordBreak: 'break-word',
+                  overflowWrap: 'anywhere',
+                }}
+              >
                 {tCards(`${key}.title`)}
               </h3>
               <p
