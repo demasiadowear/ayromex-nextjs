@@ -9,20 +9,19 @@
     "translateTo": "Change language"
   },
   "hero": {
-    "badge": "AI Company · Puglia · Europe",
-    "headline": "AI systems that work while you sleep",
-    "headlineHighlight": "work",
-    "subtitle": "We don't sell software. We build the AI operational layer of your company.",
-    "cta": "Book a demo →",
-    "ctaSecondary": "Explore products",
-    "stat1value": "90%",
-    "stat1label": "Ops automated",
-    "stat2value": "24/7",
-    "stat2label": "Always active",
-    "stat3value": "7d",
-    "stat3label": "Setup time",
-    "stat4value": "30d",
-    "stat4label": "Average ROI"
+    "eyebrow": "AI DIGITAL AGENCY · BARI, IT",
+    "headlineStart": "AI that ",
+    "headlineAccent": "works",
+    "headlineRest": ". Doesn't talk.",
+    "rotatingPrefix": "We build ",
+    "rotatingWords": ["AI Agents", "Automations", "Digital Products", "Real Systems"],
+    "paragraph": "Agents, automations and digital products for Italian SMEs and ADM operators. We ship systems to production, not slides.",
+    "chatRole": "AI Agent at AYROMEX",
+    "chatGreeting": "Hi, I'm Ayro. What do you want to automate in your business?",
+    "chatInputPlaceholder": "Type here...",
+    "tooltipMessage": "Just putting the finishing touches. Message me on WhatsApp meanwhile: ",
+    "ctaPrimary": "Explore products",
+    "ctaGhost": "Let's talk"
   },
   "productsSection": {
     "label": "Our products",

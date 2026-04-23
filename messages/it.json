@@ -9,20 +9,19 @@
     "translateTo": "Cambia lingua"
   },
   "hero": {
-    "badge": "AI Company · Puglia · Europa",
-    "headline": "Sistemi AI che lavorano mentre dormi",
-    "headlineHighlight": "lavorano",
-    "subtitle": "Non vendiamo software. Costruiamo il layer operativo AI della tua azienda.",
-    "cta": "Prenota una demo →",
-    "ctaSecondary": "Scopri i prodotti",
-    "stat1value": "90%",
-    "stat1label": "Ops automatizzate",
-    "stat2value": "H24",
-    "stat2label": "Sempre attivi",
-    "stat3value": "7gg",
-    "stat3label": "Tempo di setup",
-    "stat4value": "30gg",
-    "stat4label": "ROI medio"
+    "eyebrow": "AI DIGITAL AGENCY · BARI, IT",
+    "headlineStart": "AI che ",
+    "headlineAccent": "lavora",
+    "headlineRest": ". Non chiacchiera.",
+    "rotatingPrefix": "Costruiamo ",
+    "rotatingWords": ["Agenti AI", "Automazioni", "Prodotti Digitali", "Sistemi Reali"],
+    "paragraph": "Agenti, automazioni e prodotti digitali per PMI italiane e operatori ADM. Spediamo sistemi in produzione, non slide.",
+    "chatRole": "Agente AI di AYROMEX",
+    "chatGreeting": "Ciao, sono Ayro. Cosa vuoi automatizzare nel tuo business?",
+    "chatInputPlaceholder": "Scrivi qui...",
+    "tooltipMessage": "Sto mettendo gli ultimi ritocchi. Scrivimi su WhatsApp intanto: ",
+    "ctaPrimary": "Esplora i prodotti",
+    "ctaGhost": "Parliamone"
   },
   "productsSection": {
     "label": "I nostri prodotti",

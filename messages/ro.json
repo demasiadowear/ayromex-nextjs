@@ -9,20 +9,19 @@
     "translateTo": "Schimbă limba"
   },
   "hero": {
-    "badge": "AI Company · Puglia · Europa",
-    "headline": "Sisteme AI care lucrează cât tu dormi",
-    "headlineHighlight": "lucrează",
-    "subtitle": "Nu vindem software. Construim stratul operațional AI al companiei tale.",
-    "cta": "Rezervă un demo →",
-    "ctaSecondary": "Descoperă produsele",
-    "stat1value": "90%",
-    "stat1label": "Ops automatizate",
-    "stat2value": "Non-stop",
-    "stat2label": "Mereu active",
-    "stat3value": "7zile",
-    "stat3label": "Timp de setup",
-    "stat4value": "30zile",
-    "stat4label": "ROI mediu"
+    "eyebrow": "AI DIGITAL AGENCY · BARI, IT",
+    "headlineStart": "AI care ",
+    "headlineAccent": "lucrează",
+    "headlineRest": ". Nu vorbește.",
+    "rotatingPrefix": "Construim ",
+    "rotatingWords": ["Agenți AI", "Automatizări", "Produse Digitale", "Sisteme Reale"],
+    "paragraph": "Agenți, automatizări și produse digitale pentru IMM-uri italiene și operatori ADM. Livrăm sisteme în producție, nu slide-uri.",
+    "chatRole": "Agent AI AYROMEX",
+    "chatGreeting": "Bună, sunt Ayro. Ce vrei să automatizezi în afacerea ta?",
+    "chatInputPlaceholder": "Scrie aici...",
+    "tooltipMessage": "Fac ultimele retușuri. Scrie-mi pe WhatsApp între timp: ",
+    "ctaPrimary": "Explorează produsele",
+    "ctaGhost": "Să vorbim"
   },
   "productsSection": {
     "label": "Produsele noastre",

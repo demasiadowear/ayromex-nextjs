@@ -1,9 +1,12 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { FiArrowRight, FiCheck, FiMail } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
+import { RotatingText } from '@/components/RotatingText';
+import { EASE_OUT } from '@/lib/motion';
 
 /* ─── Animation Variants ─────────────────────────────────────── */
 const fadeUp = {
@@ -67,101 +70,184 @@ const PRODUCTS = [
 /* ─── Component ──────────────────────────────────────────────── */
 export default function HomePage() {
   const t = useTranslations();
+  const tHero = useTranslations('hero');
+  const reduceMotion = useReducedMotion();
+  const rotatingWords = tHero.raw('rotatingWords') as string[];
+
+  const [tooltipVisible, setTooltipVisible] = useState(false);
+
+  useEffect(() => {
+    if (!tooltipVisible) return;
+    const timer = setTimeout(() => setTooltipVisible(false), 4000);
+    return () => clearTimeout(timer);
+  }, [tooltipVisible]);
+
+  const showTooltip = () => setTooltipVisible(true);
+
+  const heroAnim = (delay: number) =>
+    reduceMotion
+      ? {}
+      : {
+          initial: { opacity: 0, y: 32 },
+          animate: { opacity: 1, y: 0 },
+          transition: { duration: 0.6, ease: EASE_OUT, delay },
+        };
+
+  const chatAnim = reduceMotion
+    ? {}
+    : {
+        initial: { opacity: 0, y: 32, scale: 0.98 },
+        animate: { opacity: 1, y: 0, scale: 1 },
+        transition: { duration: 0.6, ease: EASE_OUT, delay: 0.6 },
+      };
 
   return (
-    <main className="relative overflow-x-hidden bg-[#080808] text-white">
+    <main className="relative overflow-x-hidden bg-ay-bg text-ay-text">
 
       {/* ══════════════════════════════════════════
           HERO
           ══════════════════════════════════════════ */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center pt-28 pb-20 overflow-hidden">
+      <section className="relative min-h-screen flex flex-col items-center justify-start pt-32 pb-20 px-6 overflow-hidden">
+        <div className="relative z-10 flex flex-col items-center text-center max-w-5xl mx-auto w-full">
 
-        {/* Grid background */}
-        <div className="grid-bg" />
-
-        {/* Radial glow */}
-        <div className="radial-glow" />
-
-        {/* Content */}
-        <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-5xl mx-auto">
-
-          {/* Badge */}
-          <motion.div {...stagger(0)}>
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest border border-[rgba(255,106,0,0.3)] text-[#FF6A00] bg-[rgba(255,106,0,0.06)] mb-8">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#FF6A00] animate-pulse" />
-              AI Company · Puglia · Europa
-            </span>
-          </motion.div>
+          {/* Eyebrow */}
+          <motion.span
+            {...heroAnim(0.1)}
+            className="block font-body text-[12px] font-medium uppercase tracking-[0.08em] text-ay-text-muted mb-8"
+          >
+            {tHero('eyebrow')}
+          </motion.span>
 
           {/* Headline */}
           <motion.h1
-            className="text-[clamp(48px,8vw,88px)] font-extrabold leading-[1.05] tracking-tight mb-6"
-            {...stagger(1)}
+            {...heroAnim(0.2)}
+            className="font-display font-extrabold text-ay-text leading-[0.95] tracking-[-0.02em] mb-10"
+            style={{ fontSize: 'clamp(64px, 11vw, 160px)' }}
           >
-            Sistemi AI che{' '}
-            <span
-              className="relative inline-block text-[#FF6A00]"
-              style={{ WebkitTextFillColor: '#FF6A00' }}
-            >
-              lavorano
-              <span
-                className="absolute left-0 -bottom-1 w-full h-[3px] rounded-full"
-                style={{ background: 'linear-gradient(90deg, #FF6A00, #FF8533, transparent)' }}
+            {tHero('headlineStart')}
+            <span className="relative inline-block text-ay-accent">
+              {tHero('headlineAccent')}
+              <motion.span
+                aria-hidden="true"
+                initial={reduceMotion ? { scaleX: 1 } : { scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 0.8, ease: EASE_OUT, delay: reduceMotion ? 0 : 1 }}
+                className="absolute left-0 right-0 bottom-0 h-[6px] bg-ay-accent origin-left"
               />
             </span>
-            {' '}mentre dormi
+            <span className="opacity-55">{tHero('headlineRest')}</span>
           </motion.h1>
 
-          {/* Subtitle */}
+          {/* Rotating text */}
           <motion.p
-            className="text-lg md:text-xl text-white/55 max-w-2xl leading-relaxed mb-10"
-            {...stagger(2)}
+            {...heroAnim(0.4)}
+            className="font-body text-[22px] md:text-[26px] text-ay-text mb-6"
           >
-            Non vendiamo software. Costruiamo il{' '}
-            <span className="text-white/80">layer operativo AI</span>{' '}
-            della tua azienda.
+            {tHero('rotatingPrefix')}
+            <RotatingText words={rotatingWords} showUnderline />
           </motion.p>
 
-          {/* CTA Buttons */}
-          <motion.div className="flex flex-wrap gap-4 justify-center mb-16" {...stagger(3)}>
-            <a
-              href="https://wa.me/393926936833"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary px-8 py-4 text-sm gap-2"
-            >
-              Prenota una demo <FiArrowRight />
-            </a>
-            <a href="#prodotti" className="btn-ghost px-8 py-4 text-sm">
-              Scopri i prodotti
-            </a>
+          {/* Supporting paragraph */}
+          <motion.p
+            {...heroAnim(0.5)}
+            className="font-body text-base md:text-[17px] text-ay-text-muted max-w-[640px] leading-relaxed mb-12"
+          >
+            {tHero('paragraph')}
+          </motion.p>
+
+          {/* Ayro chat placeholder card */}
+          <motion.div
+            {...chatAnim}
+            className="w-full max-w-[620px] h-[320px] md:h-[400px] rounded-2xl border border-ay-border bg-ay-surface flex flex-col overflow-hidden text-left"
+          >
+            {/* Card header */}
+            <div className="flex items-center gap-3 px-5 py-4 border-b border-ay-border">
+              <div className="flex items-center justify-center w-8 h-8 rounded-full bg-ay-accent text-ay-bg font-brand text-sm leading-none">
+                A
+              </div>
+              <div className="flex-1">
+                <p className="font-brand text-sm text-ay-text leading-none">Ayro</p>
+                <p className="font-body text-[11px] text-ay-text-muted leading-none mt-1">
+                  {tHero('chatRole')}
+                </p>
+              </div>
+              <span
+                className="inline-block w-2 h-2 rounded-full bg-green-500 animate-pulse"
+                title="online"
+                aria-label="online"
+              />
+            </div>
+
+            {/* Card body */}
+            <div className="flex-1 px-5 py-5 overflow-hidden">
+              <div className="max-w-[85%] bg-ay-bg/60 border border-ay-border rounded-2xl rounded-tl-sm px-4 py-3">
+                <p className="font-body text-[15px] text-ay-text leading-relaxed">
+                  {tHero('chatGreeting')}
+                </p>
+              </div>
+            </div>
+
+            {/* Card footer */}
+            <div className="flex items-center gap-2 border-t border-ay-border px-3 py-2">
+              <input
+                type="text"
+                placeholder={tHero('chatInputPlaceholder')}
+                onFocus={showTooltip}
+                className="flex-1 bg-transparent outline-none font-body text-[14px] text-ay-text placeholder:text-ay-text-muted px-2 py-2"
+              />
+              <button
+                type="button"
+                onClick={showTooltip}
+                className="shrink-0 w-8 h-8 rounded-full bg-ay-accent hover:bg-ay-accent-hover transition-transform duration-200 hover:scale-105 flex items-center justify-center text-ay-bg"
+                aria-label="send"
+              >
+                <FiArrowRight className="w-4 h-4" />
+              </button>
+            </div>
           </motion.div>
 
-          {/* Stats bar */}
+          {/* Tooltip (shown on input focus / send click) */}
+          <AnimatePresence>
+            {tooltipVisible && (
+              <motion.div
+                initial={{ opacity: 0, y: -4 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -4 }}
+                transition={{ duration: 0.2 }}
+                className="mt-3 w-full max-w-[620px] bg-ay-surface border border-ay-border rounded-lg px-3 py-2 font-body text-[13px] text-ay-text-muted text-center"
+              >
+                {tHero('tooltipMessage')}
+                <a
+                  href="https://wa.me/390808407861"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-ay-accent hover:underline"
+                >
+                  wa.me/390808407861
+                </a>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          {/* CTAs */}
           <motion.div
-            className="flex flex-wrap gap-8 md:gap-16 justify-center"
-            {...stagger(4)}
+            {...heroAnim(0.7)}
+            className="flex flex-wrap gap-4 justify-center mt-10"
           >
-            {[
-              { value: '90%',  label: 'Ops automatizzate' },
-              { value: 'H24',  label: 'Sempre attivi' },
-              { value: '7gg',  label: 'Tempo di setup' },
-              { value: '30gg', label: 'ROI medio' },
-            ].map(({ value, label }) => (
-              <div key={label} className="text-center">
-                <div className="text-3xl md:text-4xl font-extrabold text-[#FF6A00] leading-none">
-                  {value}
-                </div>
-                <div className="text-xs text-white/40 mt-1 uppercase tracking-widest">
-                  {label}
-                </div>
-              </div>
-            ))}
+            <a
+              href="#prodotti"
+              className="inline-flex items-center justify-center font-display font-bold uppercase tracking-widest text-sm rounded-full bg-ay-accent text-ay-bg px-7 py-[14px] hover:bg-ay-accent-hover hover:scale-[1.02] transition-all duration-200"
+            >
+              {tHero('ctaPrimary')}
+            </a>
+            <a
+              href="#contatti"
+              className="inline-flex items-center justify-center font-display font-bold uppercase tracking-widest text-sm rounded-full border border-ay-border text-ay-text px-7 py-[14px] hover:border-ay-accent hover:text-ay-accent transition-all duration-200"
+            >
+              {tHero('ctaGhost')}
+            </a>
           </motion.div>
         </div>
-
-        {/* Bottom fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#080808] to-transparent pointer-events-none" />
       </section>
 
       {/* ══════════════════════════════════════════
