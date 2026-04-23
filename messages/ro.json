@@ -65,6 +65,28 @@
       "cta": "Descoperă AyroDesk24 →"
     }
   },
+  "processSection": {
+    "number": "02",
+    "headlineLine1": "Patru pași.",
+    "headlineLine2": "Zero slide-uri.",
+    "subtitle": "De la descoperire la deploy, un drum transparent. Știi mereu unde suntem.",
+    "step1number": "01",
+    "step1title": "Descoperire",
+    "step1duration": "1–2 săptămâni",
+    "step1desc": "Analizez businessul, procesele actuale și obiectivele. Gratuit, fără angajament.",
+    "step2number": "02",
+    "step2title": "Prototip",
+    "step2duration": "2–3 săptămâni",
+    "step2desc": "Construiesc un prototip navigabil. Îl atingi cu mâna înainte să semnezi.",
+    "step3number": "03",
+    "step3title": "Build",
+    "step3duration": "4–8 săptămâni",
+    "step3desc": "Dezvoltare, testare, integrări. Transparență totală, nicio cutie neagră.",
+    "step4number": "04",
+    "step4title": "Scale",
+    "step4duration": "continuu",
+    "step4desc": "Sistem în producție, monitorizare, evoluție alături de businessul tău."
+  },
   "agentsSection": {
     "label": "AI Agents",
     "title": "Echipa ta AI este deja la treabă",

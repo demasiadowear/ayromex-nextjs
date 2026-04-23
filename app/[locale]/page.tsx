@@ -8,6 +8,7 @@ import { FiArrowRight, FiCheck, FiMail } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
 import AyroGuide from '@/components/hero/AyroGuide';
 import TaskTicker from '@/components/hero/TaskTicker';
+import ProcessSection from '@/components/sections/ProcessSection';
 import ProductsSection from '@/components/sections/ProductsSection';
 import { RotatingText } from '@/components/RotatingText';
 import { EASE_OUT } from '@/lib/motion';
@@ -289,6 +290,11 @@ export default function HomePage() {
           01 — PRODOTTI
           ══════════════════════════════════════════ */}
       <ProductsSection />
+
+      {/* ══════════════════════════════════════════
+          02 — PROCESSO
+          ══════════════════════════════════════════ */}
+      <ProcessSection />
 
       {/* ══════════════════════════════════════════
           CTA FINALE (legacy — replaced in chunk B block 5)

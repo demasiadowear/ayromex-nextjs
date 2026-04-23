@@ -65,6 +65,28 @@
       "cta": "Scopri AyroDesk24 →"
     }
   },
+  "processSection": {
+    "number": "02",
+    "headlineLine1": "Quattro passi.",
+    "headlineLine2": "Zero slide.",
+    "subtitle": "Dalla scoperta al deploy, un percorso trasparente. Sai sempre a che punto siamo.",
+    "step1number": "01",
+    "step1title": "Scoperta",
+    "step1duration": "1–2 settimane",
+    "step1desc": "Analizzo il tuo business, i processi attuali e gli obiettivi. Gratis, senza impegno.",
+    "step2number": "02",
+    "step2title": "Prototipo",
+    "step2duration": "2–3 settimane",
+    "step2desc": "Costruisco un prototipo navigabile. Lo tocchi con mano prima di firmare.",
+    "step3number": "03",
+    "step3title": "Build",
+    "step3duration": "4–8 settimane",
+    "step3desc": "Sviluppo, test, integrazioni. Trasparenza totale, nessuna scatola nera.",
+    "step4number": "04",
+    "step4title": "Scale",
+    "step4duration": "continuo",
+    "step4desc": "Sistema in produzione, monitoraggio, evoluzione con il tuo business."
+  },
   "agentsSection": {
     "label": "AI Agents",
     "title": "Il tuo team AI è già al lavoro",
