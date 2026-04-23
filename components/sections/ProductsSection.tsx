@@ -24,7 +24,7 @@ function ProductCard({ id, keyPrefix }: ProductCardProps) {
       data-product={id}
       onMouseEnter={() => emitHover(id)}
       onMouseLeave={() => emitHover(null)}
-      className="group relative rounded-3xl border border-ay-border bg-ay-surface/80 backdrop-blur-md p-10 flex flex-col gap-6 transition-all duration-300 hover:border-ay-accent/60 hover:bg-ay-surface/90"
+      className="group relative z-10 rounded-3xl border border-ay-border bg-ay-surface/95 backdrop-blur-xl p-10 flex flex-col gap-6 transition-all duration-300 hover:border-ay-accent hover:scale-[1.02]"
     >
       {/* Hover glow */}
       <div
