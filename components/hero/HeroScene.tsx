@@ -12,7 +12,7 @@ interface Props {
 
 export default function HeroScene({ reduceMotion = false }: Props) {
   return (
-    <div className="absolute inset-0 z-0 pointer-events-none" aria-hidden="true">
+    <div className="w-full h-full pointer-events-none" aria-hidden="true">
       <Suspense fallback={null}>
         <Canvas
           dpr={[1, 2]}

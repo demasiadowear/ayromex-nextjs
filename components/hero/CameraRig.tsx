@@ -5,11 +5,11 @@ import { Vector3 } from 'three'
 
 const LOOK_TARGET = new Vector3(0, 0.5, 0)
 const BASE = { x: 0, y: 1.5, z: 5 } as const
-const AMPLITUDE_X = 3.5
-const AMPLITUDE_Y = 1.4
+const AMPLITUDE_X = 5
+const AMPLITUDE_Y = 1.8
 const LERP = 0.04
 const ORBIT_SPEED = 0.02 // radians per second
-const ORBIT_RADIUS = 0.3 // units
+const ORBIT_RADIUS = 0.5 // units
 
 interface Props {
   reduceMotion?: boolean
