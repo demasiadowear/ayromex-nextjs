@@ -22,7 +22,9 @@
     "tooltipMessage": "Fac ultimele retușuri. Scrie-mi pe WhatsApp între timp: ",
     "ctaPrimary": "Explorează produsele",
     "ctaGhost": "Să vorbim",
-    "scrollHint": "Derulează"
+    "scrollHint": "Derulează",
+    "systemLogTitle": "SYSTEM LOG",
+    "liveStatus": "live"
   },
   "productsSection": {
     "label": "Produsele noastre",

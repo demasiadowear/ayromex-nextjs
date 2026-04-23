@@ -22,7 +22,9 @@
     "tooltipMessage": "Sto mettendo gli ultimi ritocchi. Scrivimi su WhatsApp intanto: ",
     "ctaPrimary": "Esplora i prodotti",
     "ctaGhost": "Parliamone",
-    "scrollHint": "Esplora"
+    "scrollHint": "Esplora",
+    "systemLogTitle": "SYSTEM LOG",
+    "liveStatus": "live"
   },
   "productsSection": {
     "label": "I nostri prodotti",

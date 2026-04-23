@@ -22,7 +22,9 @@
     "tooltipMessage": "Just putting the finishing touches. Message me on WhatsApp meanwhile: ",
     "ctaPrimary": "Explore products",
     "ctaGhost": "Let's talk",
-    "scrollHint": "Scroll"
+    "scrollHint": "Scroll",
+    "systemLogTitle": "SYSTEM LOG",
+    "liveStatus": "live"
   },
   "productsSection": {
     "label": "Our products",
