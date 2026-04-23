@@ -26,6 +26,19 @@
     "systemLogTitle": "SYSTEM LOG",
     "liveStatus": "live"
   },
+  "ayroGuide": {
+    "transition": "Ti mostro cosa costruisco.",
+    "productsIntro": "Due prodotti. Due mondi.",
+    "productAyroHub": "AyroHub — il mio sistema per i concessionari ADM.",
+    "productAyroDesk24": "AyroDesk24 — mi mette al telefono per le PMI.",
+    "processIntro": "Quattro passi. Zero slide.",
+    "process01": "Partiamo dalla Scoperta.",
+    "process02": "Poi costruisco il Prototipo.",
+    "process03": "Quindi entriamo in Build.",
+    "process04": "E scaliamo.",
+    "ctaIntro": "Sei pronto a parlare con me davvero?",
+    "ctaForm": "Scrivimi qui. Ti rispondo entro 24h."
+  },
   "productsSection": {
     "label": "I nostri prodotti",
     "title": "Sistemi pronti al deploy",

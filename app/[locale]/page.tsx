@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { FiArrowRight, FiCheck, FiMail } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
+import AyroGuide from '@/components/hero/AyroGuide';
 import TaskTicker from '@/components/hero/TaskTicker';
 import { RotatingText } from '@/components/RotatingText';
 import { EASE_OUT } from '@/lib/motion';
@@ -112,6 +113,9 @@ export default function HomePage() {
 
   return (
     <main className="relative overflow-x-hidden text-ay-text">
+
+      {/* Narrative follower — appears when scrolling past the hero */}
+      <AyroGuide />
 
       {/* ══════════════════════════════════════════
           HERO

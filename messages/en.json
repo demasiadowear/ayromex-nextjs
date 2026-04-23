@@ -26,6 +26,19 @@
     "systemLogTitle": "SYSTEM LOG",
     "liveStatus": "live"
   },
+  "ayroGuide": {
+    "transition": "Let me show you what I build.",
+    "productsIntro": "Two products. Two worlds.",
+    "productAyroHub": "AyroHub — my system for ADM gaming operators.",
+    "productAyroDesk24": "AyroDesk24 — I pick up the phone for SMBs.",
+    "processIntro": "Four steps. Zero slides.",
+    "process01": "We start with Discovery.",
+    "process02": "Then I build the Prototype.",
+    "process03": "Then we enter Build.",
+    "process04": "Then we scale.",
+    "ctaIntro": "Ready to actually talk to me?",
+    "ctaForm": "Write to me here. I reply within 24h."
+  },
   "productsSection": {
     "label": "Our products",
     "title": "Systems ready to deploy",

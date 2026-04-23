@@ -26,6 +26,19 @@
     "systemLogTitle": "SYSTEM LOG",
     "liveStatus": "live"
   },
+  "ayroGuide": {
+    "transition": "Îți arăt ce construiesc.",
+    "productsIntro": "Două produse. Două lumi.",
+    "productAyroHub": "AyroHub — sistemul meu pentru operatorii ADM.",
+    "productAyroDesk24": "AyroDesk24 — răspund la telefon pentru IMM-uri.",
+    "processIntro": "Patru pași. Zero slide-uri.",
+    "process01": "Începem cu Descoperirea.",
+    "process02": "Apoi construiesc Prototipul.",
+    "process03": "Apoi intrăm în Build.",
+    "process04": "Apoi scalăm.",
+    "ctaIntro": "Gata să vorbim cu adevărat?",
+    "ctaForm": "Scrie-mi aici. Răspund în 24h."
+  },
   "productsSection": {
     "label": "Produsele noastre",
     "title": "Sisteme gata de deploy",
