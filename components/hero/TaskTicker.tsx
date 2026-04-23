@@ -147,7 +147,7 @@ export default function TaskTicker() {
   return (
     <div
       aria-hidden="true"
-      className="hidden md:block absolute right-10 bottom-[120px] z-20 pointer-events-none w-[380px]"
+      className="hidden md:block absolute left-10 bottom-[120px] z-20 pointer-events-none w-[380px]"
     >
       <div className="bg-ay-surface/60 backdrop-blur-md border border-ay-border rounded-lg px-[18px] py-4">
         {/* Header */}
