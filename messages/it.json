@@ -38,7 +38,39 @@
     "process04": "E scaliamo all'infinito.",
     "ctaIntro": "Sei pronto a vedere AYROMEX lavorare per te?",
     "ctaForm": "Scrivi qui. Ti rispondo entro 24h.",
-    "ctaSubmitted": "Ti ho sentito. Parliamone presto."
+    "ctaSubmitted": "Ti ho sentito. Parliamone presto.",
+    "verticalsIntro": "Non siamo per tutti. Siamo per chi opera in questi 4 mondi."
+  },
+  "verticalsSection": {
+    "eyebrow": "CHI SCEGLIE AYROMEX",
+    "headline": "4 verticali. Zero compromessi.",
+    "subtitle": "Dal gaming ADM all'estetica, costruisco sistemi che funzionano nel contesto italiano.",
+    "cards": {
+      "adm": {
+        "title": "Concessionari ADM",
+        "description": "Gestione network, compliance automatizzata, retention clienti su WhatsApp."
+      },
+      "professional": {
+        "title": "Studi Professionali",
+        "description": "Receptionist AI su WhatsApp, prenotazioni 24/7, sync calendar multi-operatore."
+      },
+      "hospitality": {
+        "title": "Hospitality",
+        "description": "Booking conversazionale, gestione recensioni, comunicazione multi-lingua."
+      },
+      "retail": {
+        "title": "Retail Multi-Sede",
+        "description": "Automazioni custom, integrazione POS, dashboard cross-sede."
+      }
+    },
+    "stats": {
+      "verticalsValue": "15+",
+      "verticalsLabel": "verticali serviti",
+      "hoursValue": "200+",
+      "hoursLabel": "ore risparmiate cliente/mese",
+      "roiValue": "30",
+      "roiLabel": "giorni ROI medio"
+    }
   },
   "productsSection": {
     "number": "01",

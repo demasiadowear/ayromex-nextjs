@@ -14,6 +14,7 @@ import TaskTicker from '@/components/hero/TaskTicker';
 import CtaSection from '@/components/sections/CtaSection';
 import ProcessSection from '@/components/sections/ProcessSection';
 import ProductsSection from '@/components/sections/ProductsSection';
+import VerticalsSection from '@/components/sections/VerticalsSection';
 import { RotatingText } from '@/components/RotatingText';
 import { EASE_OUT } from '@/lib/motion';
 
@@ -294,6 +295,12 @@ export default function HomePage() {
       <VideoSectionSensor id="process">
         <ProcessSection />
       </VideoSectionSensor>
+
+      {/* ══════════════════════════════════════════
+          SOCIAL PROOF — VERTICALI
+          (keeps the Process video underneath; no new source)
+          ══════════════════════════════════════════ */}
+      <VerticalsSection />
 
       {/* ══════════════════════════════════════════
           03 — CTA (video: cta.mp4)

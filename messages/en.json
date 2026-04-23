@@ -38,7 +38,39 @@
     "process04": "And we scale without limits.",
     "ctaIntro": "Ready to see AYROMEX work for you?",
     "ctaForm": "Write here. I reply within 24h.",
-    "ctaSubmitted": "I heard you. Let's talk soon."
+    "ctaSubmitted": "I heard you. Let's talk soon.",
+    "verticalsIntro": "We're not for everyone. We're for these four worlds."
+  },
+  "verticalsSection": {
+    "eyebrow": "WHO PICKS AYROMEX",
+    "headline": "4 verticals. Zero compromises.",
+    "subtitle": "From ADM gaming to beauty studios, I build systems that work inside the Italian market.",
+    "cards": {
+      "adm": {
+        "title": "ADM Operators",
+        "description": "Network management, automated compliance, client retention on WhatsApp."
+      },
+      "professional": {
+        "title": "Professional Studios",
+        "description": "AI WhatsApp receptionist, 24/7 bookings, multi-operator calendar sync."
+      },
+      "hospitality": {
+        "title": "Hospitality",
+        "description": "Conversational booking, review handling, multi-language guest comms."
+      },
+      "retail": {
+        "title": "Multi-Site Retail",
+        "description": "Custom automations, POS integration, cross-site dashboards."
+      }
+    },
+    "stats": {
+      "verticalsValue": "15+",
+      "verticalsLabel": "verticals served",
+      "hoursValue": "200+",
+      "hoursLabel": "hours saved / client / month",
+      "roiValue": "30",
+      "roiLabel": "days avg ROI"
+    }
   },
   "productsSection": {
     "number": "01",

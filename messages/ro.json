@@ -38,7 +38,39 @@
     "process04": "Și scalăm la infinit.",
     "ctaIntro": "Gata să vezi AYROMEX lucrând pentru tine?",
     "ctaForm": "Scrie-mi aici. Răspund în 24h.",
-    "ctaSubmitted": "Te-am auzit. Vorbim curând."
+    "ctaSubmitted": "Te-am auzit. Vorbim curând.",
+    "verticalsIntro": "Nu suntem pentru toată lumea. Suntem pentru aceste 4 lumi."
+  },
+  "verticalsSection": {
+    "eyebrow": "CINE ALEGE AYROMEX",
+    "headline": "4 verticale. Zero compromisuri.",
+    "subtitle": "De la gaming ADM la saloane de înfrumusețare, construiesc sisteme care funcționează în piața italiană.",
+    "cards": {
+      "adm": {
+        "title": "Operatori ADM",
+        "description": "Gestionarea rețelei, compliance automat, retenție clienți pe WhatsApp."
+      },
+      "professional": {
+        "title": "Studiouri Profesionale",
+        "description": "Receptionist AI pe WhatsApp, rezervări 24/7, sincronizare calendar multi-operator."
+      },
+      "hospitality": {
+        "title": "Hospitality",
+        "description": "Booking conversațional, gestionare recenzii, comunicare multi-lingvă."
+      },
+      "retail": {
+        "title": "Retail Multi-Sediu",
+        "description": "Automatizări custom, integrare POS, dashboard cross-sediu."
+      }
+    },
+    "stats": {
+      "verticalsValue": "15+",
+      "verticalsLabel": "verticale servite",
+      "hoursValue": "200+",
+      "hoursLabel": "ore economisite client/lună",
+      "roiValue": "30",
+      "roiLabel": "zile ROI mediu"
+    }
   },
   "productsSection": {
     "number": "01",
