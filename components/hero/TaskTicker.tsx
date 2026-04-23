@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
+import { heroPulseBus } from '@/lib/heroPulseBus'
 
 const LOG_ENTRIES = [
   'SCOUT identifying prospect — hospitality Puglia',
@@ -43,6 +44,15 @@ function pickRandomEntry(): string {
   return LOG_ENTRIES[Math.floor(Math.random() * LOG_ENTRIES.length)]
 }
 
+// Pick a log entry that starts with the given agent name, falling
+// back to a random pool entry when nothing matches. Keeps the log
+// row visually correlated with the pulse the visitor just saw.
+function pickEntryForAgent(agent: string): string {
+  const matches = LOG_ENTRIES.filter((entry) => entry.startsWith(`${agent} `))
+  if (matches.length === 0) return pickRandomEntry()
+  return matches[Math.floor(Math.random() * matches.length)]
+}
+
 function renderEntry(text: string) {
   // The first whitespace-separated all-caps token is the agent name.
   const match = text.match(/^([A-Z]+)\s+(.*)$/)
@@ -78,38 +88,58 @@ export default function TaskTicker() {
     return () => window.clearTimeout(t)
   }, [])
 
-  // Initial fill + ongoing rotation
+  // Initial fill: stack a few rows so the panel doesn't open empty.
   useEffect(() => {
     if (!visible) return
 
-    let rotateTimer: number = 0
     let fillCount = 0
+    let fillTimer: number = 0
 
     const fillTick = () => {
       addEntry(pickRandomEntry())
       fillCount += 1
       if (fillCount < MAX_VISIBLE) {
         fillTimer = window.setTimeout(fillTick, FILL_INTERVAL_MS)
-      } else {
-        const scheduleRotation = () => {
-          const delay = reduceMotion
-            ? REDUCED_ROTATE_MS
-            : AUTO_ROTATE_MIN_MS + Math.random() * AUTO_ROTATE_RANGE_MS
-          rotateTimer = window.setTimeout(() => {
-            addEntry(pickRandomEntry())
-            scheduleRotation()
-          }, delay)
-        }
-        scheduleRotation()
       }
     }
 
-    let fillTimer: number = window.setTimeout(fillTick, 0)
+    fillTimer = window.setTimeout(fillTick, 0)
+    return () => window.clearTimeout(fillTimer)
+  }, [visible])
+
+  // Hot path: when the constellation emits a pulse, queue a log row
+  // ~400ms later so the row appears just after the visitor notices
+  // the spark leaving the source node.
+  useEffect(() => {
+    if (!visible) return
+    const pendingTimers = new Set<number>()
+
+    const unsubscribe = heroPulseBus.subscribe((event) => {
+      const t = window.setTimeout(() => {
+        addEntry(pickEntryForAgent(event.from))
+        pendingTimers.delete(t)
+      }, 400)
+      pendingTimers.add(t)
+    })
 
     return () => {
-      window.clearTimeout(fillTimer)
-      window.clearTimeout(rotateTimer)
+      unsubscribe()
+      pendingTimers.forEach((t) => window.clearTimeout(t))
     }
+  }, [visible])
+
+  // Reduced motion: no constellation pulses fire, so keep the panel
+  // alive with a slow auto-rotation pulled from the random pool.
+  useEffect(() => {
+    if (!visible || !reduceMotion) return
+
+    let timer: number = 0
+    const tick = () => {
+      addEntry(pickRandomEntry())
+      timer = window.setTimeout(tick, REDUCED_ROTATE_MS)
+    }
+    timer = window.setTimeout(tick, REDUCED_ROTATE_MS)
+    return () => window.clearTimeout(timer)
   }, [visible, reduceMotion])
 
   if (!visible) return null

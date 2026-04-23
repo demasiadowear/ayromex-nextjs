@@ -1,6 +1,7 @@
 'use client'
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { heroPulseBus } from '@/lib/heroPulseBus'
 import AgentLabel from './AgentLabel'
 import AgentNode, { type NodeState } from './AgentNode'
 import ConnectionLine from './ConnectionLine'
@@ -123,6 +124,9 @@ export default function AgentConstellation({ reduceMotion = false }: Props) {
       next.add(lineKey(from, to))
       return next
     })
+
+    // Notify the DOM TaskTicker so it can spin up a related log row.
+    heroPulseBus.emit({ from: NODE_LABELS[from], to: NODE_LABELS[to] })
   }, [])
 
   const handlePulseComplete = useCallback(
