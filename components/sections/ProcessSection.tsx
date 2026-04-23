@@ -69,13 +69,25 @@ function Step({ index, id }: StepProps) {
       />
 
       <div className="relative z-10 pl-6 pt-12 flex flex-col gap-3">
-        <h3 className="font-display font-extrabold text-ay-text text-[22px] lg:text-[26px] leading-tight">
+        <h3
+          className="font-display font-extrabold text-ay-text text-[22px] lg:text-[26px] leading-tight"
+          style={{ textShadow: '0 2px 8px rgba(0,0,0,0.85)' }}
+        >
           {t(`step${index}title`)}
         </h3>
-        <span className="font-mono text-[13px] text-ay-accent uppercase tracking-wider">
+        <span
+          className="font-mono text-[13px] text-ay-accent uppercase tracking-wider"
+          style={{ textShadow: '0 1px 4px rgba(0,0,0,0.7)' }}
+        >
           {t(`step${index}duration`)}
         </span>
-        <p className="font-body text-[14px] text-ay-text-muted leading-relaxed max-w-[260px]">
+        <p
+          className="font-body text-[14px] leading-relaxed max-w-[260px]"
+          style={{
+            color: '#E5E5E5',
+            textShadow: '0 1px 4px rgba(0,0,0,0.75)',
+          }}
+        >
           {t(`step${index}desc`)}
         </p>
       </div>
