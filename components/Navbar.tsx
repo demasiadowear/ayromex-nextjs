@@ -132,6 +132,16 @@ export default function Navbar() {
             </AnimatePresence>
           </div>
 
+          {/* AyroDesk24 CTA */}
+          <a
+            href="https://ayrodesk24.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl text-xs font-bold min-h-[44px] border border-[#FF6B00]/50 text-[#FF6B00] hover:bg-[#FF6B00] hover:text-white transition-all duration-200"
+          >
+            {t('accessAyroDesk24')}
+          </a>
+
           {/* AyroHub CTA */}
           <a
             href="https://app.ayromex.com"
@@ -139,10 +149,10 @@ export default function Navbar() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl text-xs font-bold min-h-[44px] border border-[#FF6B00]/50 text-[#FF6B00] hover:bg-[#FF6B00] hover:text-white transition-all duration-200"
           >
-            {t('ayrohubCta')}
+            {t('accessAyroHub')}
           </a>
 
-          {/* CTA */}
+          {/* Prenota demo — primary CTA */}
           <a href={anchorHref('#contatti')} className="btn-primary px-5 py-2.5 ml-1 min-h-[44px]">
             {t('cta')}
           </a>
@@ -179,6 +189,35 @@ export default function Navbar() {
                   {link.label}
                 </a>
               ))}
+
+              {/* Mobile access CTAs */}
+              <div className="flex flex-col items-center gap-3 mt-4 w-full px-12">
+                <a
+                  href="https://ayrodesk24.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsOpen(false)}
+                  className="w-full text-center rounded-xl border border-[#FF6B00]/50 text-[#FF6B00] px-5 py-3 text-sm font-bold uppercase tracking-widest hover:bg-[#FF6B00] hover:text-white transition-colors"
+                >
+                  {t('accessAyroDesk24')}
+                </a>
+                <a
+                  href="https://app.ayromex.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsOpen(false)}
+                  className="w-full text-center rounded-xl border border-[#FF6B00]/50 text-[#FF6B00] px-5 py-3 text-sm font-bold uppercase tracking-widest hover:bg-[#FF6B00] hover:text-white transition-colors"
+                >
+                  {t('accessAyroHub')}
+                </a>
+                <a
+                  href={anchorHref('#contatti')}
+                  onClick={() => setIsOpen(false)}
+                  className="w-full text-center btn-primary py-3 text-sm"
+                >
+                  {t('cta')}
+                </a>
+              </div>
 
               {/* Mobile social icons */}
               <div className="flex gap-6 mt-4">

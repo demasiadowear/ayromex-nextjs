@@ -5,7 +5,8 @@
     "products": "Products",
     "contact": "Contact",
     "cta": "Book a demo",
-    "ayrohubCta": "Access AyroHub",
+    "accessAyroHub": "Access AyroHub",
+    "accessAyroDesk24": "Access AyroDesk24",
     "translateTo": "Change language"
   },
   "hero": {
