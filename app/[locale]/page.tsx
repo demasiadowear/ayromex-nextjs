@@ -1,14 +1,25 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import dynamic from 'next/dynamic';
 import { useTranslations } from 'next-intl';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { FiArrowRight, FiCheck, FiMail } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
-import HeroScene from '@/components/hero/HeroScene';
 import TaskTicker from '@/components/hero/TaskTicker';
 import { RotatingText } from '@/components/RotatingText';
 import { EASE_OUT } from '@/lib/motion';
+
+// HeroScene carries the entire R3F + three.js tree (Canvas, drei
+// text, custom shaders). Keep it out of the SSR bundle so Next
+// never tries to render <canvas> server-side and so troika-text's
+// SDF worker never boots during hydration. The loading fallback
+// is null — the body bg-ay-bg shows through and the rest of the
+// hero layout renders over it without a reserved placeholder.
+const HeroScene = dynamic(() => import('@/components/hero/HeroScene'), {
+  ssr: false,
+  loading: () => null,
+});
 
 /* ─── Animation Variants ─────────────────────────────────────── */
 const fadeUp = {
