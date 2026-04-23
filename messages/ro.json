@@ -21,7 +21,8 @@
     "chatInputPlaceholder": "Scrie aici...",
     "tooltipMessage": "Fac ultimele retușuri. Scrie-mi pe WhatsApp între timp: ",
     "ctaPrimary": "Explorează produsele",
-    "ctaGhost": "Să vorbim"
+    "ctaGhost": "Să vorbim",
+    "scrollHint": "Derulează"
   },
   "productsSection": {
     "label": "Produsele noastre",

@@ -39,6 +39,7 @@ module.exports = {
         'pulse-glow':   'pulseGlow 4s ease-in-out infinite',
         'dot-pulse':    'dotPulse 2s ease-in-out infinite',
         'grain':        'grain 8s steps(10) infinite',
+        'scroll-pulse': 'scrollPulse 2s ease-in-out infinite',
       },
       keyframes: {
         fadeUp: {
@@ -80,6 +81,12 @@ module.exports = {
           '70%':      { transform: 'translate3d(-1%, -2%, 0)' },
           '80%':      { transform: 'translate3d(2%, -1%, 0)' },
           '90%':      { transform: 'translate3d(-1%, 1%, 0)' },
+        },
+        scrollPulse: {
+          '0%':   { transform: 'translateY(-100%)', opacity: '0' },
+          '20%':  { opacity: '1' },
+          '80%':  { opacity: '1' },
+          '100%': { transform: 'translateY(400%)', opacity: '0' },
         },
       },
     },

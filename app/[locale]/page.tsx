@@ -76,12 +76,20 @@ export default function HomePage() {
   const rotatingWords = tHero.raw('rotatingWords') as string[];
 
   const [tooltipVisible, setTooltipVisible] = useState(false);
+  const [showScrollHint, setShowScrollHint] = useState(true);
 
   useEffect(() => {
     if (!tooltipVisible) return;
     const timer = setTimeout(() => setTooltipVisible(false), 4000);
     return () => clearTimeout(timer);
   }, [tooltipVisible]);
+
+  useEffect(() => {
+    const onScroll = () => setShowScrollHint(window.scrollY < 100);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   const showTooltip = () => setTooltipVisible(true);
 
@@ -251,7 +259,7 @@ export default function HomePage() {
           {/* CTAs */}
           <motion.div
             {...heroAnim(3.0)}
-            className="flex flex-wrap gap-4 justify-center mt-10"
+            className="flex flex-wrap gap-4 justify-center mt-10 mb-20"
           >
             <a
               href="#prodotti"
@@ -267,6 +275,26 @@ export default function HomePage() {
             </a>
           </motion.div>
         </div>
+
+        {/* Scroll indicator */}
+        <AnimatePresence>
+          {showScrollHint && (
+            <motion.div
+              initial={reduceMotion ? false : { opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.6, ease: EASE_OUT, delay: reduceMotion ? 0 : 3.5 }}
+              className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 pointer-events-none z-10"
+            >
+              <span className="font-body text-[11px] uppercase tracking-[0.15em] text-ay-text-muted">
+                {tHero('scrollHint')}
+              </span>
+              <div className="relative w-px h-10 bg-ay-border overflow-hidden">
+                <span className="absolute inset-x-0 top-0 h-3 bg-ay-accent motion-safe:animate-scroll-pulse" />
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </section>
 
       {/* ══════════════════════════════════════════

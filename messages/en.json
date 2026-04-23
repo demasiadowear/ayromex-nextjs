@@ -21,7 +21,8 @@
     "chatInputPlaceholder": "Type here...",
     "tooltipMessage": "Just putting the finishing touches. Message me on WhatsApp meanwhile: ",
     "ctaPrimary": "Explore products",
-    "ctaGhost": "Let's talk"
+    "ctaGhost": "Let's talk",
+    "scrollHint": "Scroll"
   },
   "productsSection": {
     "label": "Our products",

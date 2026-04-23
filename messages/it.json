@@ -21,7 +21,8 @@
     "chatInputPlaceholder": "Scrivi qui...",
     "tooltipMessage": "Sto mettendo gli ultimi ritocchi. Scrivimi su WhatsApp intanto: ",
     "ctaPrimary": "Esplora i prodotti",
-    "ctaGhost": "Parliamone"
+    "ctaGhost": "Parliamone",
+    "scrollHint": "Esplora"
   },
   "productsSection": {
     "label": "I nostri prodotti",
