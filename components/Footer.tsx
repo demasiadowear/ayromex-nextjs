@@ -1,132 +1,194 @@
 'use client'
 
 import { useTranslations, useLocale } from 'next-intl'
-import { FaFacebook, FaInstagram, FaWhatsapp, FaGoogle, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa'
-import { MdRateReview } from 'react-icons/md'
+import { FaFacebook, FaInstagram, FaGoogle } from 'react-icons/fa'
+import { IT, GB, RO } from 'country-flag-icons/react/3x2'
+import { useRouter, usePathname } from '@/i18n/navigation'
 import { AyromexLogo } from './AyromexLogo'
+
+const LANGUAGES = [
+  { code: 'it', label: 'Italiano', Flag: IT },
+  { code: 'en', label: 'English', Flag: GB },
+  { code: 'ro', label: 'Română', Flag: RO },
+] as const
+
+const SOCIAL_LINKS = [
+  { href: 'https://www.instagram.com/ayromex_srl/', Icon: FaInstagram, label: 'Instagram' },
+  { href: 'https://www.facebook.com/profile.php?id=61586097166352', Icon: FaFacebook, label: 'Facebook' },
+  { href: 'https://share.google/Ed5CLO4Nn3BgQZHW4', Icon: FaGoogle, label: 'Google' },
+]
 
 export default function Footer() {
   const t = useTranslations('footer')
   const locale = useLocale()
-  const currentYear = new Date().getFullYear()
+  const router = useRouter()
+  const pathname = usePathname()
+
+  const onLangChange = (code: string) => {
+    router.replace(pathname, { locale: code })
+  }
 
   return (
-    <footer className="bg-[#0a0a0a] dark:bg-[#050505] border-t border-white/10 pt-16 pb-8 text-sm">
-      <div className="section-container">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-16">
-
+    <footer
+      className="relative mt-24 pt-20 pb-10 px-6"
+      style={{
+        background:
+          'linear-gradient(180deg, transparent 0%, rgba(10,10,10,0.6) 20%, rgba(10,10,10,0.92) 100%)',
+      }}
+    >
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-12">
           {/* Brand */}
-          <div className="lg:col-span-1">
-            <div className="mb-6">
-              <AyromexLogo />
-            </div>
-            <p className="text-white/60 mb-6 leading-relaxed text-sm">
-              {t('description')}
+          <div className="col-span-2 md:col-span-1 flex flex-col gap-4">
+            <AyromexLogo />
+            <p className="font-body text-[14px] text-ay-text-muted leading-relaxed max-w-[260px]">
+              {t('brandTagline')}
             </p>
-            <div className="flex items-center gap-3">
-              <SocialIcon href="https://www.facebook.com/profile.php?id=61586097166352" icon={<FaFacebook />} />
-              <SocialIcon href="https://www.instagram.com/ayromex_srl/" icon={<FaInstagram />} />
-              <SocialIcon href="https://share.google/Ed5CLO4Nn3BgQZHW4" icon={<FaGoogle />} />
-              <SocialIcon href="https://wa.me/390808407861" icon={<FaWhatsapp />} />
-              <SocialIcon href="https://g.page/r/CWWDew7_lO77EBM/review" icon={<MdRateReview />} title="Lasciaci una recensione" />
-            </div>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h4 className="font-bold text-white mb-5 uppercase tracking-widest text-xs">{t('servicesTitle')}</h4>
-            <ul className="space-y-3 text-white/60 text-sm">
-              {(['service1','service2','service3','service4','service5'] as const).map((k) => (
-                <li key={k}>
-                  <a href={`/${locale}/servizi`} className="hover:text-[#FF6B00] transition-colors">{t(k)}</a>
-                </li>
+            <div className="flex items-center gap-3 mt-2">
+              {SOCIAL_LINKS.map(({ href, Icon, label }) => (
+                <a
+                  key={href}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="w-9 h-9 flex items-center justify-center rounded-full border border-ay-border text-ay-text-muted hover:border-ay-accent hover:text-ay-accent transition-colors duration-200"
+                >
+                  <Icon className="w-3.5 h-3.5" />
+                </a>
               ))}
-            </ul>
+            </div>
           </div>
 
           {/* Products */}
-          <div>
-            <h4 className="font-bold text-white mb-5 uppercase tracking-widest text-xs">{t('productsTitle')}</h4>
-            <ul className="space-y-3 text-white/60 text-sm">
+          <div className="flex flex-col gap-4">
+            <h4 className="font-mono text-[11px] uppercase tracking-[0.15em] text-ay-accent">
+              {t('productsTitle')}
+            </h4>
+            <ul className="flex flex-col gap-2 font-body text-[14px]">
               <li>
-                <a href="https://app.ayromex.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#FF6B00] transition-colors">AyroHub</a>
+                <a
+                  href="https://app.ayromex.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-ay-text-muted hover:text-ay-accent transition-colors"
+                >
+                  AyroHub
+                </a>
               </li>
               <li>
-                <a href="https://ayrodesk24.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#FF6B00] transition-colors">AyroDesk24</a>
+                <a
+                  href="https://ayrodesk24.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-ay-text-muted hover:text-ay-accent transition-colors"
+                >
+                  AyroDesk24
+                </a>
               </li>
             </ul>
           </div>
 
-          {/* Pages */}
-          <div>
-            <h4 className="font-bold text-white mb-5 uppercase tracking-widest text-xs">{t('pagesTitle')}</h4>
-            <ul className="space-y-3 text-white/60 text-sm">
-              <li><a href={`/${locale}`} className="hover:text-[#FF6B00] transition-colors">Home</a></li>
-              <li><a href={`/${locale}/chi-siamo`} className="hover:text-[#FF6B00] transition-colors">{t('chiSiamo')}</a></li>
-              <li><a href={`/${locale}/servizi`} className="hover:text-[#FF6B00] transition-colors">{t('servicesTitle')}</a></li>
-              <li><a href={`/${locale}/journal`} className="hover:text-[#FF6B00] transition-colors">{t('journal')}</a></li>
-              <li><a href={`/${locale}/privacy`} className="hover:text-[#FF6B00] transition-colors">{t('privacyPolicy')}</a></li>
-              <li><a href={`/${locale}/terms`} className="hover:text-[#FF6B00] transition-colors">{t('terms')}</a></li>
+          {/* Company */}
+          <div className="flex flex-col gap-4">
+            <h4 className="font-mono text-[11px] uppercase tracking-[0.15em] text-ay-accent">
+              {t('companyTitle')}
+            </h4>
+            <ul className="flex flex-col gap-2 font-body text-[14px]">
+              <li>
+                <a
+                  href={`/${locale}/chi-siamo`}
+                  className="text-ay-text-muted hover:text-ay-accent transition-colors"
+                >
+                  {t('companyAbout')}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`/${locale}/servizi`}
+                  className="text-ay-text-muted hover:text-ay-accent transition-colors"
+                >
+                  {t('companyServices')}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`/${locale}/journal`}
+                  className="text-ay-text-muted hover:text-ay-accent transition-colors"
+                >
+                  {t('companyJournal')}
+                </a>
+              </li>
             </ul>
           </div>
 
           {/* Legal */}
-          <div className="bg-white/5 p-6 rounded-2xl border border-white/10">
-            <h4 className="font-bold text-white mb-4 uppercase tracking-widest text-xs flex items-center gap-2">
-              <span className="w-2 h-2 bg-green-500 rounded-full" />
+          <div className="flex flex-col gap-4">
+            <h4 className="font-mono text-[11px] uppercase tracking-[0.15em] text-ay-accent">
               {t('legalTitle')}
             </h4>
-            <div className="space-y-3 text-xs text-white/50 font-mono leading-relaxed">
-              <div>
-                <strong className="text-white/80 block mb-1">AYROMEX S.R.L.</strong>
-                <p>CUI: RO52014564</p>
-                <p>Reg. Com: J2025044424001</p>
-                <p>EUID: ROONRC.J2025044424001</p>
-                <p className="mt-1 text-green-400/70">Societate VIES</p>
-              </div>
-              <div>
-                <strong className="text-white/80 block mb-1">{t('legalAddress')}</strong>
-                <p>București Sectorul 4</p>
-                <p>Aleea Izvorul Oltului, Nr. 6</p>
-                <p>Bl. 29, Sc. B, Et. 2, Ap. 24 — Romania</p>
-              </div>
-              <div className="pt-2 border-t border-white/10">
-                <p className="text-[#FF6B00]/70 leading-snug">{t('reverseCharge')}</p>
-              </div>
-              <div className="space-y-1">
-                <p><a href="mailto:account@ayromex.com" className="hover:text-white/80 transition-colors">account@ayromex.com</a></p>
-                <p><a href="mailto:info@ayromex.com" className="hover:text-white/80 transition-colors">info@ayromex.com</a></p>
-              </div>
-            </div>
+            <ul className="flex flex-col gap-2 font-body text-[14px]">
+              <li>
+                <a
+                  href={`/${locale}/privacy`}
+                  className="text-ay-text-muted hover:text-ay-accent transition-colors"
+                >
+                  {t('legalPrivacy')}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`/${locale}/privacy`}
+                  className="text-ay-text-muted hover:text-ay-accent transition-colors"
+                >
+                  {t('legalCookie')}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`/${locale}/terms`}
+                  className="text-ay-text-muted hover:text-ay-accent transition-colors"
+                >
+                  {t('legalTerms')}
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/40">
-          <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 md:gap-8">
-            <span className="flex items-center gap-2 min-h-[44px]"><FaPhoneAlt /> +39 080 840 7861</span>
-            <span className="flex items-center gap-2 min-h-[44px]"><FaEnvelope /> info@ayromex.com</span>
-            <span className="flex items-center gap-2 min-h-[44px]"><FaMapMarkerAlt /> Bari (IT) / Bucharest (RO)</span>
-          </div>
-          <div className="text-center md:text-right">
-            © {currentYear} {t('copyright')}
+        {/* Bottom strip */}
+        <div className="mt-16 pt-8 border-t border-ay-border flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <span className="font-mono text-[12px] text-ay-text-muted">
+            {t('copyright')}
+          </span>
+
+          <div className="flex items-center gap-4">
+            <span className="font-mono text-[11px] uppercase tracking-[0.15em] text-ay-text-muted">
+              {t('languageLabel')}
+            </span>
+            <div className="flex items-center gap-2">
+              {LANGUAGES.map(({ code, label, Flag }) => (
+                <button
+                  key={code}
+                  type="button"
+                  onClick={() => onLangChange(code)}
+                  aria-label={label}
+                  className={`flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-[12px] font-body transition-all duration-200 ${
+                    locale === code
+                      ? 'border-ay-accent text-ay-accent'
+                      : 'border-ay-border text-ay-text-muted hover:border-ay-accent/50 hover:text-ay-text'
+                  }`}
+                >
+                  <span className="block w-4 h-3 overflow-hidden rounded-sm">
+                    <Flag />
+                  </span>
+                  <span className="uppercase">{code}</span>
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </div>
     </footer>
-  )
-}
-
-function SocialIcon({ href, icon, title }: { href: string; icon: React.ReactNode; title?: string }) {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      title={title}
-      className="w-10 h-10 bg-white/5 hover:bg-[#FF6B00] hover:text-white rounded-full flex items-center justify-center transition-all duration-200 text-white/60 min-h-[44px] min-w-[44px]"
-    >
-      {icon}
-    </a>
   )
 }

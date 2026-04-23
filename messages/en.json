@@ -171,22 +171,17 @@
   "privacy": { "title": "Privacy Policy" },
   "terms": { "title": "Terms & Conditions" },
   "footer": {
-    "description": "We build AI systems that work while you sleep. Vertical SaaS for the European market.",
-    "servicesTitle": "Services",
+    "brandTagline": "AI Digital Agency. Bari, Puglia, Italy.",
     "productsTitle": "Products",
-    "pagesTitle": "Pages",
-    "chiSiamo": "About Us",
-    "journal": "Journal",
-    "privacyPolicy": "Privacy Policy",
-    "terms": "Terms & Conditions",
-    "service1": "AI Agents",
-    "service2": "AI Secretary",
-    "service3": "Vertical SaaS",
-    "service4": "Web & Digital",
-    "service5": "Branding",
-    "legalTitle": "Company Data",
-    "legalAddress": "Registered Office",
-    "reverseCharge": "European company — B2B invoicing with Reverse Charge (Art. 196 Dir. 2006/112/EC)",
-    "copyright": "AYROMEX S.R.L. — RO52014564. All rights reserved."
+    "companyTitle": "Company",
+    "companyAbout": "About",
+    "companyServices": "Services",
+    "companyJournal": "Journal",
+    "legalTitle": "Legal",
+    "legalPrivacy": "Privacy",
+    "legalCookie": "Cookie",
+    "legalTerms": "Terms",
+    "copyright": "© 2026 AYROMEX S.R.L. · VAT RO52014564",
+    "languageLabel": "Language"
   }
 }

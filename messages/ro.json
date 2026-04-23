@@ -171,22 +171,17 @@
   "privacy": { "title": "Politică de Confidențialitate" },
   "terms": { "title": "Termeni și Condiții" },
   "footer": {
-    "description": "Construim sisteme AI care lucrează cât tu dormi. SaaS vertical pentru piața europeană.",
-    "servicesTitle": "Servicii",
+    "brandTagline": "AI Digital Agency. Bari, Puglia, Italia.",
     "productsTitle": "Produse",
-    "pagesTitle": "Pagini",
-    "chiSiamo": "Despre Noi",
-    "journal": "Journal",
-    "privacyPolicy": "Politică de Confidențialitate",
-    "terms": "Termeni și Condiții",
-    "service1": "Agenți AI",
-    "service2": "AI Secretary",
-    "service3": "SaaS Vertical",
-    "service4": "Web & Digital",
-    "service5": "Branding",
-    "legalTitle": "Date Societare",
-    "legalAddress": "Sediu Social",
-    "reverseCharge": "Societate europeană — Facturare B2B cu Taxare Inversă (Art. 196 Dir. 2006/112/CE)",
-    "copyright": "AYROMEX S.R.L. — RO52014564. Toate drepturile rezervate."
+    "companyTitle": "Companie",
+    "companyAbout": "Despre noi",
+    "companyServices": "Servicii",
+    "companyJournal": "Journal",
+    "legalTitle": "Legal",
+    "legalPrivacy": "Confidențialitate",
+    "legalCookie": "Cookie",
+    "legalTerms": "Termeni",
+    "copyright": "© 2026 AYROMEX S.R.L. · CUI RO52014564",
+    "languageLabel": "Limbă"
   }
 }
