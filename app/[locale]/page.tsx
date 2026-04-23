@@ -111,7 +111,7 @@ export default function HomePage() {
       };
 
   return (
-    <main className="relative overflow-x-hidden bg-ay-bg text-ay-text">
+    <main className="relative overflow-x-hidden text-ay-text">
 
       {/* ══════════════════════════════════════════
           HERO
