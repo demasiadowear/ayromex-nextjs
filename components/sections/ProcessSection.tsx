@@ -97,7 +97,7 @@ export default function ProcessSection() {
         data-section-number
         aria-hidden="true"
         className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 font-display font-extrabold text-ay-accent pointer-events-none select-none leading-none"
-        style={{ fontSize: 'clamp(200px, 30vw, 400px)', opacity: 0 }}
+        style={{ fontSize: 'clamp(240px, 40vw, 520px)', opacity: 0 }}
       >
         {t('number')}
       </span>
@@ -106,7 +106,7 @@ export default function ProcessSection() {
         {/* Headline */}
         <h2
           className="font-display font-extrabold text-ay-text leading-[0.95] tracking-[-0.02em]"
-          style={{ fontSize: 'clamp(48px, 8vw, 120px)' }}
+          style={{ fontSize: 'clamp(64px, 9vw, 140px)' }}
         >
           {t('headlineLine1')}
           <br />

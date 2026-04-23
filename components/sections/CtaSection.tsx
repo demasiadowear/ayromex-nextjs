@@ -101,7 +101,7 @@ export default function CtaSection() {
         data-section-number
         aria-hidden="true"
         className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 font-display font-extrabold text-ay-accent pointer-events-none select-none leading-none"
-        style={{ fontSize: 'clamp(200px, 30vw, 400px)', opacity: 0 }}
+        style={{ fontSize: 'clamp(240px, 40vw, 520px)', opacity: 0 }}
       >
         {t('number')}
       </span>
@@ -148,7 +148,7 @@ export default function CtaSection() {
             placeholder={t('emailPlaceholder')}
             disabled={disabled}
             aria-invalid={invalid}
-            className={`flex-1 rounded-full bg-ay-surface/60 backdrop-blur-sm px-7 py-4 font-body text-[16px] text-ay-text placeholder:text-ay-text-muted outline-none transition-colors duration-200 disabled:opacity-60 border ${
+            className={`flex-1 rounded-full bg-ay-surface/85 backdrop-blur-md px-7 py-4 font-body text-[16px] text-ay-text placeholder:text-ay-text-muted outline-none transition-colors duration-200 disabled:opacity-60 border ${
               invalid
                 ? 'border-[#FF4D4D] focus:border-[#FF4D4D]'
                 : 'border-ay-border focus:border-ay-accent'

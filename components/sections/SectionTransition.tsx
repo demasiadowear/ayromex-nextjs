@@ -100,7 +100,7 @@ export default function SectionTransition({
             numberEl,
             { opacity: 0 },
             {
-              opacity: 0.08,
+              opacity: 0.15,
               duration: 1.5,
               delay: delay + 0.3,
               ease: 'power2.out',
