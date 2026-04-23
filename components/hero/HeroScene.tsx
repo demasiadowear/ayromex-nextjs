@@ -2,6 +2,10 @@
 
 import { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
+import CameraRig from './CameraRig'
+import FloatingGeometry from './FloatingGeometry'
+import GridFloor from './GridFloor'
+import ParticleField from './ParticleField'
 
 interface Props {
   reduceMotion?: boolean
@@ -22,11 +26,10 @@ export default function HeroScene({ reduceMotion = false }: Props) {
           onCreated={({ camera }) => camera.lookAt(0, 0.5, 0)}
         >
           <fog attach="fog" args={['#0A0A0A', 15, 40]} />
-          {/* Layers are added in subsequent commits:
-              - GridFloor
-              - ParticleField
-              - FloatingGeometry
-              - CameraRig (mouse parallax) */}
+          <CameraRig reduceMotion={reduceMotion} />
+          <GridFloor reduceMotion={reduceMotion} />
+          <ParticleField reduceMotion={reduceMotion} />
+          <FloatingGeometry reduceMotion={reduceMotion} />
         </Canvas>
       </Suspense>
     </div>
