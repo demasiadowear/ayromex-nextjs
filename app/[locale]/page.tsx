@@ -8,6 +8,7 @@ import { FiArrowRight, FiCheck, FiMail } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
 import AyroGuide from '@/components/hero/AyroGuide';
 import TaskTicker from '@/components/hero/TaskTicker';
+import ProductsSection from '@/components/sections/ProductsSection';
 import { RotatingText } from '@/components/RotatingText';
 import { EASE_OUT } from '@/lib/motion';
 
@@ -37,29 +38,6 @@ const stagger = (i: number) => ({
 });
 
 /* ─── Static Data ────────────────────────────────────────────── */
-const PRODUCTS = [
-  {
-    badge:    'SaaS Enterprise',
-    tagline:  'OS per Concessionari ADM',
-    name:     'AyroHub',
-    desc:     'Sistema operativo AI per concessionari gaming ADM. Voice AI outbound H24, customer service WhatsApp, compliance automatica, rete Master/PVR.',
-    features: ['Voice AI outbound non-stop', 'WhatsApp AI customer service', 'Compliance ADM monitorata', 'Rete Master/PVR gestita'],
-    price:    'da €2.950/mese',
-    cta:      'Prenota una demo →',
-    featured: true,
-  },
-  {
-    badge:    'SaaS PMI',
-    tagline:  'Receptionist AI per PMI',
-    name:     'AyroDesk24',
-    desc:     'Segreteria AI su WhatsApp per saloni, studi, ristoranti e PMI. Appuntamenti, lead qualification e risposte H24 senza personale aggiuntivo.',
-    features: ['Risposta WhatsApp H24', 'Gestione appuntamenti', 'Lead qualification automatica', 'Dashboard multi-operatore'],
-    price:    'da €199/mese',
-    cta:      'Scopri AyroDesk24 →',
-    featured: false,
-  },
-];
-
 /* ─── Component ──────────────────────────────────────────────── */
 export default function HomePage() {
   const t = useTranslations();
@@ -308,83 +286,9 @@ export default function HomePage() {
       </section>
 
       {/* ══════════════════════════════════════════
-          PRODOTTI (legacy — replaced in chunk B block 3)
+          01 — PRODOTTI
           ══════════════════════════════════════════ */}
-      <section id="prodotti" className="py-28 px-6">
-        <div className="max-w-7xl mx-auto">
-
-          {/* Header */}
-          <motion.div className="text-center mb-16" {...fadeUp}>
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#FF6A00] mb-3 block">
-              I nostri prodotti
-            </span>
-            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
-              Sistemi pronti al deploy
-            </h2>
-          </motion.div>
-
-          {/* Cards */}
-          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            {PRODUCTS.map((p, i) => (
-              <motion.div
-                key={p.name}
-                {...stagger(i)}
-                className="product-card card-dark rounded-2xl p-8 flex flex-col gap-6"
-                style={{ border: '1px solid rgba(255,255,255,0.08)' }}
-              >
-                {/* Badge + tagline */}
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#FF6A00] bg-[rgba(255,106,0,0.1)] border border-[rgba(255,106,0,0.2)] px-2.5 py-1 rounded-full">
-                      {p.badge}
-                    </span>
-                    <p className="text-white/40 text-xs mt-2 font-medium">{p.tagline}</p>
-                  </div>
-                  {p.featured && (
-                    <span className="text-[10px] font-bold uppercase tracking-widest bg-[#FF6A00] text-black px-2.5 py-1 rounded-full shrink-0">
-                      Flagship
-                    </span>
-                  )}
-                </div>
-
-                {/* Icon + Name */}
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-[rgba(255,106,0,0.1)] border border-[rgba(255,106,0,0.2)] flex items-center justify-center text-xl font-black text-[#FF6A00]">
-                    {p.name[0]}
-                  </div>
-                  <h3 className="text-2xl font-extrabold">{p.name}</h3>
-                </div>
-
-                {/* Description */}
-                <p className="text-white/55 text-sm leading-relaxed">{p.desc}</p>
-
-                {/* Features */}
-                <ul className="flex flex-col gap-2">
-                  {p.features.map((f) => (
-                    <li key={f} className="flex items-center gap-3 text-sm text-white/70">
-                      <FiCheck className="text-[#FF6A00] shrink-0" />
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-
-                {/* Price + CTA */}
-                <div className="flex items-center justify-between mt-auto pt-4 border-t border-white/8">
-                  <span className="text-[#FF6A00] font-bold text-sm">{p.price}</span>
-                  <a
-                    href="https://wa.me/393926936833"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-primary px-5 py-2.5 text-xs gap-1.5"
-                  >
-                    {p.cta}
-                  </a>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ProductsSection />
 
       {/* ══════════════════════════════════════════
           CTA FINALE (legacy — replaced in chunk B block 5)

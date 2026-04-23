@@ -1,0 +1,131 @@
+'use client'
+
+import { useTranslations } from 'next-intl'
+import SectionTransition from './SectionTransition'
+import type { AyroGuideHover } from '@/components/hero/AyroGuide'
+
+function emitHover(value: AyroGuideHover) {
+  if (typeof window === 'undefined') return
+  window.dispatchEvent(
+    new CustomEvent<AyroGuideHover>('ayro-guide:hover', { detail: value }),
+  )
+}
+
+interface ProductCardProps {
+  id: 'ayrohub' | 'ayrodesk24'
+  keyPrefix: 'ayrohub' | 'ayrodesk24'
+}
+
+function ProductCard({ id, keyPrefix }: ProductCardProps) {
+  const t = useTranslations(`productsSection.${keyPrefix}`)
+
+  return (
+    <div
+      data-product={id}
+      onMouseEnter={() => emitHover(id)}
+      onMouseLeave={() => emitHover(null)}
+      className="group relative rounded-3xl border border-ay-border bg-ay-surface/40 backdrop-blur-sm p-10 flex flex-col gap-6 transition-all duration-300 hover:border-ay-accent/60 hover:bg-ay-surface/60"
+    >
+      {/* Hover glow */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+        style={{
+          background:
+            'radial-gradient(ellipse at 50% 0%, rgba(255,107,0,0.15) 0%, transparent 70%)',
+        }}
+      />
+
+      <div className="relative z-10 flex flex-col gap-6 h-full">
+        {/* Badge */}
+        <div className="flex items-center gap-2">
+          <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+          <span className="font-body text-[10px] font-bold uppercase tracking-[0.2em] text-ay-accent">
+            {t('badge')}
+          </span>
+        </div>
+
+        {/* Product lockup */}
+        <div>
+          <h3 className="font-display text-[40px] leading-none font-extrabold text-ay-text">
+            {t('name')}
+          </h3>
+          <p className="mt-3 font-body text-[16px] text-ay-text-muted">
+            {t('tagline')}
+          </p>
+        </div>
+
+        {/* Bullets */}
+        <ul className="flex flex-col gap-3 mt-2">
+          {(['bullet1', 'bullet2', 'bullet3'] as const).map((k) => (
+            <li
+              key={k}
+              className="flex items-start gap-3 font-body text-[14px] text-ay-text/85"
+            >
+              <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-ay-accent" />
+              {t(k)}
+            </li>
+          ))}
+        </ul>
+
+        {/* Footer row: price + CTA */}
+        <div className="mt-auto flex items-end justify-between pt-8 border-t border-ay-border">
+          <span className="font-mono text-[13px] text-ay-text-muted">
+            {t('pricing')}
+          </span>
+          <a
+            href="#contatti"
+            className="font-body text-[14px] font-semibold text-ay-accent hover:underline underline-offset-4"
+          >
+            {t('cta')}
+          </a>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default function ProductsSection() {
+  const t = useTranslations('productsSection')
+
+  return (
+    <SectionTransition
+      id="prodotti"
+      variant="number-reveal"
+      className="relative min-h-screen px-6 py-32 overflow-hidden"
+    >
+      {/* Giant background number */}
+      <span
+        data-section-number
+        aria-hidden="true"
+        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 font-display font-extrabold text-ay-accent pointer-events-none select-none leading-none"
+        style={{ fontSize: 'clamp(200px, 30vw, 400px)', opacity: 0 }}
+      >
+        {t('number')}
+      </span>
+
+      <div className="relative z-10 max-w-7xl mx-auto flex flex-col items-center text-center">
+        {/* Headline */}
+        <h2
+          className="font-display font-extrabold text-ay-text leading-[0.95] tracking-[-0.02em]"
+          style={{ fontSize: 'clamp(48px, 8vw, 120px)' }}
+        >
+          {t('headlineLine1')}
+          <br />
+          <span className="text-ay-accent">{t('headlineLine2')}</span>
+        </h2>
+
+        {/* Subtitle */}
+        <p className="mt-8 max-w-[640px] font-body text-[18px] text-ay-text-muted leading-relaxed">
+          {t('subtitle')}
+        </p>
+
+        {/* Cards grid */}
+        <div className="mt-16 w-full grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          <ProductCard id="ayrohub" keyPrefix="ayrohub" />
+          <ProductCard id="ayrodesk24" keyPrefix="ayrodesk24" />
+        </div>
+      </div>
+    </SectionTransition>
+  )
+}

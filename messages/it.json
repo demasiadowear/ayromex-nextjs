@@ -40,9 +40,30 @@
     "ctaForm": "Scrivimi qui. Ti rispondo entro 24h."
   },
   "productsSection": {
-    "label": "I nostri prodotti",
-    "title": "Sistemi pronti al deploy",
-    "cta": "Richiedi demo"
+    "number": "01",
+    "headlineLine1": "Due prodotti.",
+    "headlineLine2": "Due mondi.",
+    "subtitle": "Due sistemi in produzione, per due mercati italiani diversi. Scelgo a seconda del tuo volume, non a seconda del mio pricing.",
+    "ayrohub": {
+      "badge": "LIVE",
+      "name": "AyroHub",
+      "tagline": "AI OS per concessionari ADM gaming",
+      "bullet1": "Compliance ADM automatizzata",
+      "bullet2": "Reactivator outbound voice",
+      "bullet3": "Insight strategici AI",
+      "pricing": "da 1.500 €/mese",
+      "cta": "Scopri AyroHub →"
+    },
+    "ayrodesk24": {
+      "badge": "LIVE",
+      "name": "AyroDesk24",
+      "tagline": "AI receptionist WhatsApp per SMB",
+      "bullet1": "Prenotazioni 24/7",
+      "bullet2": "Multi-operatore",
+      "bullet3": "Google Calendar sync",
+      "pricing": "da 199 €/mese",
+      "cta": "Scopri AyroDesk24 →"
+    }
   },
   "agentsSection": {
     "label": "AI Agents",

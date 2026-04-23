@@ -40,9 +40,30 @@
     "ctaForm": "Scrie-mi aici. Răspund în 24h."
   },
   "productsSection": {
-    "label": "Produsele noastre",
-    "title": "Sisteme gata de deploy",
-    "cta": "Solicită demo"
+    "number": "01",
+    "headlineLine1": "Două produse.",
+    "headlineLine2": "Două lumi.",
+    "subtitle": "Două sisteme în producție pentru două piețe italiene diferite. Aleg în funcție de volum, nu de preț.",
+    "ayrohub": {
+      "badge": "LIVE",
+      "name": "AyroHub",
+      "tagline": "AI OS pentru operatorii ADM",
+      "bullet1": "Compliance ADM automatizat",
+      "bullet2": "Reactivator outbound voice",
+      "bullet3": "Insight-uri strategice AI",
+      "pricing": "de la 1.500 €/lună",
+      "cta": "Descoperă AyroHub →"
+    },
+    "ayrodesk24": {
+      "badge": "LIVE",
+      "name": "AyroDesk24",
+      "tagline": "Receptionist AI WhatsApp pentru IMM-uri",
+      "bullet1": "Rezervări 24/7",
+      "bullet2": "Multi-operator",
+      "bullet3": "Sincronizare Google Calendar",
+      "pricing": "de la 199 €/lună",
+      "cta": "Descoperă AyroDesk24 →"
+    }
   },
   "agentsSection": {
     "label": "AI Agents",
