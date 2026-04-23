@@ -158,6 +158,8 @@ export default function AgentConstellation({ reduceMotion = false }: Props) {
       }, ARRIVAL_LIFETIME_MS)
 
       // Flash the destination, then return to its baseline state.
+      // 400ms gives the brighter "active" emissive + halo enough time
+      // to register before the lerp pulls it back to idle/thinking.
       setNodeStates((prev) => prev.map((s, i) => (i === to ? 'active' : s)))
       window.setTimeout(() => {
         setNodeStates((prev) =>
@@ -165,7 +167,7 @@ export default function AgentConstellation({ reduceMotion = false }: Props) {
             i === to ? (i === MASTER ? 'thinking' : 'idle') : s,
           ),
         )
-      }, 200)
+      }, 400)
     },
     [],
   )

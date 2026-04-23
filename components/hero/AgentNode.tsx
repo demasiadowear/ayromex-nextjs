@@ -47,6 +47,7 @@ export default function AgentNode({
       ring: master ? 0.35 : 0.25,
       halo: master ? 0.45 : 0.4,
       haloOpacity: master ? 0.25 : 0.15,
+      activeHaloOpacity: master ? 0.6 : 0.4,
       restScale: master ? 1.3 : 1.0,
     }),
     [master],
@@ -76,18 +77,20 @@ export default function AgentNode({
     // State-based scale modifiers
     let stateScale = 1
     if (state === 'active') {
-      stateScale = 1.15
+      stateScale = 1.3
     } else if (state === 'thinking' && !reduceMotion) {
       stateScale = 1 + Math.sin(rendererState.clock.elapsedTime * 4) * 0.05
     }
 
     groupRef.current.scale.setScalar(baseScale * stateScale)
 
-    // Core emissive intensity
+    // Core emissive intensity. Active uses a faster lerp so the
+    // flash punches in before the dampening pulls it back.
     if (coreRef.current) {
       const mat = coreRef.current.material as MeshStandardMaterial
-      const target = state === 'active' ? 2.5 : state === 'dormant' ? 0.4 : 1.2
-      mat.emissiveIntensity = mat.emissiveIntensity + (target - mat.emissiveIntensity) * delta * 6
+      const target = state === 'active' ? 3.5 : state === 'dormant' ? 0.4 : 1.2
+      const speed = state === 'active' ? 12 : 6
+      mat.emissiveIntensity = mat.emissiveIntensity + (target - mat.emissiveIntensity) * delta * speed
     }
 
     // Halo opacity transitions toward target based on state
@@ -97,9 +100,10 @@ export default function AgentNode({
         state === 'dormant'
           ? 0.05
           : state === 'active'
-            ? sizes.haloOpacity * 1.4
+            ? sizes.activeHaloOpacity
             : sizes.haloOpacity
-      mat.opacity = mat.opacity + (target - mat.opacity) * delta * 4
+      const speed = state === 'active' ? 8 : 4
+      mat.opacity = mat.opacity + (target - mat.opacity) * delta * speed
     }
 
     // Ring rotation speed varies by state
