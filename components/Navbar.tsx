@@ -53,8 +53,8 @@ export default function Navbar() {
   ]
 
   const navBg = isScrolled || isOpen
-    ? 'bg-white/90 dark:bg-[#070707]/90 backdrop-blur-md border-b border-black/10 dark:border-white/5 py-3'
-    : 'bg-transparent py-5'
+    ? 'bg-white/90 dark:bg-[#070707]/90 backdrop-blur-md border-b border-black/10 dark:border-white/5 py-4'
+    : 'bg-transparent py-6'
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navBg}`}>
