@@ -27,7 +27,7 @@ export default function AyroBubble({ text, side = 'left' }: Props) {
             animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
             exit={{ opacity: 0, scale: 0.96, y: side === 'top' ? 4 : 0, x: side === 'left' ? 4 : 0 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="relative max-w-[280px] w-max rounded-xl border border-ay-border bg-ay-surface/90 backdrop-blur-md px-4 py-3 font-body text-[14px] leading-snug text-ay-text shadow-[0_12px_32px_rgba(0,0,0,0.45)]"
+            className="relative max-w-[280px] w-max rounded-xl border border-ay-accent/30 bg-ay-surface/90 backdrop-blur-md px-4 py-3 font-body text-[14px] leading-snug text-ay-text shadow-[0_12px_32px_rgba(0,0,0,0.55)]"
           >
             {text}
             {/* Tail triangle */}
@@ -40,7 +40,7 @@ export default function AyroBubble({ text, side = 'left' }: Props) {
                   height: 0,
                   borderTop: '8px solid transparent',
                   borderBottom: '8px solid transparent',
-                  borderLeft: '8px solid #27272A',
+                  borderLeft: '8px solid rgba(255, 107, 0, 0.3)',
                 }}
               />
             ) : (
@@ -52,7 +52,7 @@ export default function AyroBubble({ text, side = 'left' }: Props) {
                   height: 0,
                   borderLeft: '8px solid transparent',
                   borderRight: '8px solid transparent',
-                  borderTop: '8px solid #27272A',
+                  borderTop: '8px solid rgba(255, 107, 0, 0.3)',
                 }}
               />
             )}

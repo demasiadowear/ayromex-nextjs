@@ -216,7 +216,7 @@ function resolveBubble(
 
   switch (phase) {
     case 'transition':
-      return t('transition')
+      return t('hero')
     case 'products':
       return t('productsIntro')
     case 'process':

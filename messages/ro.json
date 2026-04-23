@@ -27,18 +27,18 @@
     "liveStatus": "live"
   },
   "ayroGuide": {
-    "transition": "Îți arăt ce construiesc.",
-    "productsIntro": "Două produse. Două lumi.",
-    "productAyroHub": "AyroHub — sistemul meu pentru operatorii ADM.",
-    "productAyroDesk24": "AyroDesk24 — răspund la telefon pentru IMM-uri.",
-    "processIntro": "Patru pași. Zero slide-uri.",
-    "process01": "Începem cu Descoperirea.",
-    "process02": "Apoi construiesc Prototipul.",
-    "process03": "Apoi intrăm în Build.",
-    "process04": "Apoi scalăm.",
-    "ctaIntro": "Gata să vorbim cu adevărat?",
+    "hero": "Salut. Sunt Ayro. Bine ai venit în AYROMEX.",
+    "productsIntro": "Două produse. Două lumi care lucrează pentru tine.",
+    "productAyroHub": "AyroHub orchestrează rețeaua ta ADM.",
+    "productAyroDesk24": "AyroDesk24 răspunde pentru tine 24/7 pe WhatsApp.",
+    "processIntro": "Așa transformăm ideile în sisteme.",
+    "process01": "Întâi găsim împreună problema reală.",
+    "process02": "Apoi construiesc un prototip.",
+    "process03": "Apoi trecem la versiunea production.",
+    "process04": "Și scalăm la infinit.",
+    "ctaIntro": "Gata să vezi AYROMEX lucrând pentru tine?",
     "ctaForm": "Scrie-mi aici. Răspund în 24h.",
-    "ctaSubmitted": "Super, îți răspund în 24h."
+    "ctaSubmitted": "Te-am auzit. Vorbim curând."
   },
   "productsSection": {
     "number": "01",

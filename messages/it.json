@@ -27,18 +27,18 @@
     "liveStatus": "live"
   },
   "ayroGuide": {
-    "transition": "Ti mostro cosa costruisco.",
-    "productsIntro": "Due prodotti. Due mondi.",
-    "productAyroHub": "AyroHub — il mio sistema per i concessionari ADM.",
-    "productAyroDesk24": "AyroDesk24 — mi mette al telefono per le PMI.",
-    "processIntro": "Quattro passi. Zero slide.",
-    "process01": "Partiamo dalla Scoperta.",
-    "process02": "Poi costruisco il Prototipo.",
-    "process03": "Quindi entriamo in Build.",
-    "process04": "E scaliamo.",
-    "ctaIntro": "Sei pronto a parlare con me davvero?",
-    "ctaForm": "Scrivimi qui. Ti rispondo entro 24h.",
-    "ctaSubmitted": "Ottimo, ti rispondo entro 24h."
+    "hero": "Ciao. Sono Ayro. Entri nel mondo AYROMEX.",
+    "productsIntro": "Due prodotti. Due mondi che lavorano per te.",
+    "productAyroHub": "AyroHub orchestra il tuo network ADM.",
+    "productAyroDesk24": "AyroDesk24 risponde per te h24 su WhatsApp.",
+    "processIntro": "Ecco come trasformiamo le idee in sistemi.",
+    "process01": "Prima scoviamo il problema insieme.",
+    "process02": "Poi costruisco un prototipo.",
+    "process03": "Quindi passiamo alla versione production.",
+    "process04": "E scaliamo all'infinito.",
+    "ctaIntro": "Sei pronto a vedere AYROMEX lavorare per te?",
+    "ctaForm": "Scrivi qui. Ti rispondo entro 24h.",
+    "ctaSubmitted": "Ti ho sentito. Parliamone presto."
   },
   "productsSection": {
     "number": "01",
