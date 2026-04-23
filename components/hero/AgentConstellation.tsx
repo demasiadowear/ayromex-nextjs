@@ -1,7 +1,10 @@
 'use client'
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useFrame } from '@react-three/fiber'
+import type { Group } from 'three'
 import { heroPulseBus } from '@/lib/heroPulseBus'
+import { sceneProgress } from '@/lib/sceneProgress'
 import AgentLabel from './AgentLabel'
 import AgentNode, { type NodeState } from './AgentNode'
 import ConnectionLine from './ConnectionLine'
@@ -207,6 +210,56 @@ function pickRandom<T>(arr: T[]): T {
   return arr[Math.floor(Math.random() * arr.length)]
 }
 
+// Per-node wrapper that pulls its transform from the active scene
+// preset every frame. The inner AgentNode is rendered with a
+// local (0,0,0) position so the outer group is the single source
+// of truth for where the node lives in world space.
+function SceneDrivenNode({ idx, children }: { idx: number; children: React.ReactNode }) {
+  const ref = useRef<Group>(null)
+
+  useFrame(() => {
+    if (!ref.current) return
+    const preset = getScenePreset(idx, sceneProgress.current)
+    ref.current.position.set(preset.position[0], preset.position[1], preset.position[2])
+    ref.current.scale.setScalar(preset.scale)
+  })
+
+  return <group ref={ref}>{children}</group>
+}
+
+// Connection lines fade out as soon as the scene starts to
+// transition away from the initial CONSTELLATION, because their
+// endpoints stop matching the node positions. Re-animating line
+// geometry in sync with the node lerp is deferred to a later
+// sub-chunk; for now the lines simply get out of the way.
+function SceneAwareLines({ activeLines }: { activeLines: Set<string> }) {
+  const groupRef = useRef<Group>(null)
+
+  useFrame(() => {
+    if (!groupRef.current) return
+    const p = sceneProgress.current
+    // Full visibility under 5% progress; fully hidden past 15%.
+    const visible = Math.max(0, 1 - Math.max(0, (p - 0.05) / 0.1))
+    groupRef.current.visible = visible > 0.01
+  })
+
+  return (
+    <group ref={groupRef}>
+      {CONNECTIONS.map(([a, b]) => {
+        const key = lineKey(a, b)
+        return (
+          <ConnectionLine
+            key={key}
+            start={NODE_POSITIONS[a]}
+            end={NODE_POSITIONS[b]}
+            isActive={activeLines.has(key)}
+          />
+        )
+      })}
+    </group>
+  )
+}
+
 export default function AgentConstellation({ reduceMotion = false }: Props) {
   const [nodeStates, setNodeStates] = useState<NodeState[]>(() =>
     NODE_POSITIONS.map((_, i) => (i === MASTER ? 'thinking' : 'idle')),
@@ -353,48 +406,37 @@ export default function AgentConstellation({ reduceMotion = false }: Props) {
 
   return (
     <group>
-      {showConnections &&
-        connectionViews.map(({ a, b, key, start, end }) => (
-          <ConnectionLine
-            key={key}
-            start={start}
-            end={end}
-            isActive={activeLines.has(lineKey(a, b))}
-          />
-        ))}
+      {showConnections && <SceneAwareLines activeLines={activeLines} />}
 
-      {NODE_POSITIONS.map((position, idx) => {
+      {NODE_POSITIONS.map((_, idx) => {
         const order = ENTRY_ORDER.indexOf(idx)
         const delay = reduceMotion ? 0 : order * NODE_ENTRY_STEP
         return (
-          <AgentNode
-            key={idx}
-            position={position}
-            state={nodeStates[idx]}
-            delay={delay}
-            master={idx === MASTER}
-            reduceMotion={reduceMotion}
-          />
+          <SceneDrivenNode key={idx} idx={idx}>
+            <AgentNode
+              position={[0, 0, 0]}
+              state={nodeStates[idx]}
+              delay={delay}
+              master={idx === MASTER}
+              reduceMotion={reduceMotion}
+            />
+          </SceneDrivenNode>
         )
       })}
 
-      {NODE_POSITIONS.map((position, idx) => {
+      {NODE_POSITIONS.map((_, idx) => {
         const order = ENTRY_ORDER.indexOf(idx)
         const delay = reduceMotion ? 0 : order * NODE_ENTRY_STEP
-        const labelPosition: Vec3 = [
-          position[0],
-          position[1] + LABEL_Y_OFFSETS[idx],
-          position[2],
-        ]
         return (
-          <AgentLabel
-            key={`label-${idx}`}
-            text={NODE_LABELS[idx]}
-            position={labelPosition}
-            isMaster={idx === MASTER}
-            delay={delay}
-            reduceMotion={reduceMotion}
-          />
+          <SceneDrivenNode key={`label-${idx}`} idx={idx}>
+            <AgentLabel
+              text={NODE_LABELS[idx]}
+              position={[0, LABEL_Y_OFFSETS[idx], 0]}
+              isMaster={idx === MASTER}
+              delay={delay}
+              reduceMotion={reduceMotion}
+            />
+          </SceneDrivenNode>
         )
       })}
 
