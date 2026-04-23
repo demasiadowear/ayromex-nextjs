@@ -32,10 +32,14 @@ export default function ParticleField({ reduceMotion = false }: Props) {
     const velocities = new Float32Array(PARTICLE_COUNT * 3)
     const seeds = new Float32Array(PARTICLE_COUNT)
 
+    // Spawn inside 90% of the box so particles never materialise on
+    // the exact fog boundary. Avoids the occasional "orphan" point
+    // floating alone at the edge of the viewport.
+    const SPAWN_INSET = 0.9
     for (let i = 0; i < PARTICLE_COUNT; i++) {
-      positions[i * 3] = (Math.random() - 0.5) * BOX.x
-      positions[i * 3 + 1] = (Math.random() - 0.5) * BOX.y
-      positions[i * 3 + 2] = (Math.random() - 0.5) * BOX.z
+      positions[i * 3] = (Math.random() - 0.5) * BOX.x * SPAWN_INSET
+      positions[i * 3 + 1] = (Math.random() - 0.5) * BOX.y * SPAWN_INSET
+      positions[i * 3 + 2] = (Math.random() - 0.5) * BOX.z * SPAWN_INSET
 
       const color = Math.random() < ACCENT_RATIO ? ACCENT : TEXT
       colors[i * 3] = color.r
