@@ -36,27 +36,6 @@ const stagger = (i: number) => ({
 });
 
 /* ─── Static Data ────────────────────────────────────────────── */
-const MARQUEE_ITEMS = [
-  'Voice AI', '★ AyroDesk24', 'WhatsApp AI', '★ AyroHub',
-  'Lead Generation', '★ AYROMEX', 'AI Agents', 'ADM Compliance',
-  'Voice AI', '★ AyroDesk24', 'WhatsApp AI', '★ AyroHub',
-  'Lead Generation', '★ AYROMEX', 'AI Agents', 'ADM Compliance',
-];
-
-const AGENTS = [
-  { name: 'Scout',   role: 'Lead Intelligence',    desc: 'Trova, qualifica e segmenta lead in tempo reale. Non dorme, non sbaglia.',        icon: '🔍' },
-  { name: 'Closer',  role: 'Sales Automation',     desc: 'Gestisce obiezioni, manda follow-up e chiude trattative in autonomia.',             icon: '🎯' },
-  { name: 'Builder', role: 'Delivery Engine',      desc: 'Onboarding clienti, setup sistemi, documentazione. Zero intervento umano.',         icon: '⚙️' },
-  { name: 'Media',   role: 'Content Factory',      desc: 'Post, email, copy brandizzati su ogni canale. Sempre attivo, sempre consistente.',   icon: '📡' },
-  { name: 'Analyst', role: 'Revenue Intelligence', desc: 'Dashboard live, alert anomalie e report settimanali consegnati automaticamente.',    icon: '📊' },
-];
-
-const WHY_ITEMS = [
-  { stat: 'H24',   label: 'Senza pause',      desc: 'I tuoi sistemi non dormono, non si ammalano, non vanno in ferie. Sempre operativi.' },
-  { stat: '30gg',  label: 'ROI garantito',    desc: 'I clienti vedono il ritorno entro 30 giorni. Non è una promessa — è il modello.' },
-  { stat: 'Zero',  label: 'Tecnica richiesta', desc: 'Plug-and-play. Il tuo team usa lo strumento, non lo gestisce.' },
-];
-
 const PRODUCTS = [
   {
     badge:    'SaaS Enterprise',
@@ -325,29 +304,7 @@ export default function HomePage() {
       </section>
 
       {/* ══════════════════════════════════════════
-          MARQUEE
-          ══════════════════════════════════════════ */}
-      <section className="py-6 bg-[#050505] border-y border-white/5 overflow-hidden">
-        <div className="relative flex">
-          <div className="marquee-track">
-            {MARQUEE_ITEMS.map((item, i) => (
-              <span
-                key={i}
-                className={`px-8 text-sm font-semibold uppercase tracking-widest whitespace-nowrap ${
-                  item.startsWith('★')
-                    ? 'text-[#FF6A00]'
-                    : 'text-white/30'
-                }`}
-              >
-                {item}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════
-          PRODOTTI
+          PRODOTTI (legacy — replaced in chunk B block 3)
           ══════════════════════════════════════════ */}
       <section id="prodotti" className="py-28 px-6">
         <div className="max-w-7xl mx-auto">
@@ -426,100 +383,7 @@ export default function HomePage() {
       </section>
 
       {/* ══════════════════════════════════════════
-          AGENTI AI
-          ══════════════════════════════════════════ */}
-      <section className="py-28 px-6 bg-[#050505] border-y border-white/5">
-        <div className="max-w-7xl mx-auto">
-
-          <motion.div className="text-center mb-16" {...fadeUp}>
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#FF6A00] mb-3 block">
-              AI Agents
-            </span>
-            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
-              Il tuo team AI è già al lavoro
-            </h2>
-            <p className="text-white/45 mt-4 max-w-xl mx-auto text-base">
-              Cinque agenti specializzati. Ogni giorno, tutto il giorno.
-            </p>
-          </motion.div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
-            {AGENTS.map((agent, i) => (
-              <motion.div
-                key={agent.name}
-                {...stagger(i)}
-                className="agent-card card-dark rounded-2xl p-6 flex flex-col gap-4"
-                style={{ border: '1px solid rgba(255,255,255,0.07)' }}
-              >
-                {/* Status */}
-                <div className="flex items-center gap-2">
-                  <span className="status-dot" />
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-[#FF6A00]">
-                    Attivo
-                  </span>
-                </div>
-
-                {/* Icon */}
-                <div className="text-3xl">{agent.icon}</div>
-
-                {/* Name + Role */}
-                <div>
-                  <h3 className="text-lg font-extrabold">{agent.name}</h3>
-                  <p className="text-[11px] text-white/40 font-semibold uppercase tracking-wider mt-0.5">
-                    {agent.role}
-                  </p>
-                </div>
-
-                {/* Desc */}
-                <p className="text-white/50 text-xs leading-relaxed flex-1">
-                  {agent.desc}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════
-          PERCHÉ AYROMEX
-          ══════════════════════════════════════════ */}
-      <section className="py-28 px-6">
-        <div className="max-w-7xl mx-auto">
-
-          <motion.div className="text-center mb-16" {...fadeUp}>
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#FF6A00] mb-3 block">
-              Perché noi
-            </span>
-            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
-              La tua azienda al 90%<br />
-              <span className="text-[#FF6A00]">automatizzata</span>
-            </h2>
-            <p className="text-white/45 mt-4 max-w-xl mx-auto">
-              Non vendiamo consulenza. Costruiamo sistemi che lavorano mentre dormi.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {WHY_ITEMS.map((item, i) => (
-              <motion.div
-                key={item.stat}
-                {...stagger(i)}
-                className="card-dark rounded-2xl p-8 text-center"
-                style={{ border: '1px solid rgba(255,255,255,0.08)' }}
-              >
-                <div className="text-5xl font-extrabold text-[#FF6A00] mb-2">
-                  {item.stat}
-                </div>
-                <div className="text-base font-bold mb-3">{item.label}</div>
-                <p className="text-white/50 text-sm leading-relaxed">{item.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════
-          CTA FINALE
+          CTA FINALE (legacy — replaced in chunk B block 5)
           ══════════════════════════════════════════ */}
       <section className="py-32 px-6 relative overflow-hidden">
 
