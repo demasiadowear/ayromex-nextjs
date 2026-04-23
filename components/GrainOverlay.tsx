@@ -2,7 +2,7 @@ export default function GrainOverlay() {
   return (
     <div
       aria-hidden="true"
-      className="pointer-events-none fixed inset-0 z-[60] overflow-hidden opacity-[0.035] mix-blend-overlay"
+      className="pointer-events-none fixed inset-0 z-[60] overflow-hidden opacity-[0.02] mix-blend-overlay"
     >
       <svg
         className="absolute -top-[20%] -left-[20%] h-[140%] w-[140%] motion-safe:animate-grain"

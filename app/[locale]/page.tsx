@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { FiArrowRight, FiCheck, FiMail } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
+import HeroScene from '@/components/hero/HeroScene';
 import { RotatingText } from '@/components/RotatingText';
 import { EASE_OUT } from '@/lib/motion';
 
@@ -108,6 +109,10 @@ export default function HomePage() {
           HERO
           ══════════════════════════════════════════ */}
       <section className="relative min-h-screen flex flex-col items-center justify-start pt-32 pb-20 px-6 overflow-hidden">
+
+        {/* Cinematic 3D backdrop */}
+        <HeroScene reduceMotion={!!reduceMotion} />
+
         <div className="relative z-10 flex flex-col items-center text-center max-w-5xl mx-auto w-full">
 
           {/* Eyebrow */}

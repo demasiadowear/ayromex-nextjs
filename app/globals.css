@@ -136,70 +136,6 @@ body {
 }
 
 /* =====================
-   AMBIENT ORBS (3 only, slow, ~7% opacity)
-   ===================== */
-
-.ay-orb {
-  position: fixed;
-  border-radius: 50%;
-  filter: blur(120px);
-  pointer-events: none;
-  z-index: 0;
-  will-change: transform;
-  background: var(--ay-accent);
-}
-
-.ay-orb-a {
-  width: 560px;
-  height: 560px;
-  top: -120px;
-  left: -80px;
-  opacity: 0.07;
-  animation: orbDriftA 20s ease-in-out infinite;
-}
-
-.ay-orb-b {
-  width: 480px;
-  height: 480px;
-  top: 40%;
-  right: -120px;
-  opacity: 0.06;
-  animation: orbDriftB 22s ease-in-out infinite;
-}
-
-.ay-orb-c {
-  width: 500px;
-  height: 500px;
-  bottom: -80px;
-  left: 30%;
-  opacity: 0.07;
-  animation: orbDriftC 18s ease-in-out infinite;
-}
-
-@keyframes orbDriftA {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50%       { transform: translate(80px, 60px) scale(1.05); }
-}
-
-@keyframes orbDriftB {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50%       { transform: translate(-60px, -40px) scale(0.95); }
-}
-
-@keyframes orbDriftC {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50%       { transform: translate(40px, -70px) scale(1.05); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .ay-orb-a,
-  .ay-orb-b,
-  .ay-orb-c {
-    animation: none;
-  }
-}
-
-/* =====================
    PRODUCT CARD HOVER GLOW
    ===================== */
 
@@ -226,6 +162,6 @@ body {
 }
 
 /* No system cursor — custom cursor handles it */
-svg, .ay-orb {
+svg {
   transition: none !important;
 }
