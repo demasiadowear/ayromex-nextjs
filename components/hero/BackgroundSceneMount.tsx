@@ -11,17 +11,31 @@ const BackgroundScene = dynamic(() => import('./BackgroundScene'), {
   loading: () => null,
 })
 
+const MOBILE_BREAKPOINT = '(max-width: 767px)'
+
 export default function BackgroundSceneMount() {
   const [reduceMotion, setReduceMotion] = useState(false)
+  const [lightweight, setLightweight] = useState(false)
 
   useEffect(() => {
     if (typeof window === 'undefined') return
-    const media = window.matchMedia('(prefers-reduced-motion: reduce)')
-    const handler = () => setReduceMotion(media.matches)
-    handler()
-    media.addEventListener('change', handler)
-    return () => media.removeEventListener('change', handler)
+
+    const motionMedia = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const sizeMedia = window.matchMedia(MOBILE_BREAKPOINT)
+
+    const onMotion = () => setReduceMotion(motionMedia.matches)
+    const onSize = () => setLightweight(sizeMedia.matches)
+
+    onMotion()
+    onSize()
+    motionMedia.addEventListener('change', onMotion)
+    sizeMedia.addEventListener('change', onSize)
+
+    return () => {
+      motionMedia.removeEventListener('change', onMotion)
+      sizeMedia.removeEventListener('change', onSize)
+    }
   }, [])
 
-  return <BackgroundScene reduceMotion={reduceMotion} />
+  return <BackgroundScene reduceMotion={reduceMotion} lightweight={lightweight} />
 }

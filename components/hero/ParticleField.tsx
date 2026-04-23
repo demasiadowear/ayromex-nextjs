@@ -10,7 +10,8 @@ import {
   type Points,
 } from 'three'
 
-const PARTICLE_COUNT = 60
+const DEFAULT_PARTICLE_COUNT = 60
+const LIGHTWEIGHT_PARTICLE_COUNT = 28
 
 const BOX = { x: 30, y: 15, z: 30 } as const
 const HALF = { x: BOX.x / 2, y: BOX.y / 2, z: BOX.z / 2 } as const
@@ -21,10 +22,12 @@ const ACCENT_RATIO = 0.5
 
 interface Props {
   reduceMotion?: boolean
+  lightweight?: boolean
 }
 
-export default function ParticleField({ reduceMotion = false }: Props) {
+export default function ParticleField({ reduceMotion = false, lightweight = false }: Props) {
   const pointsRef = useRef<Points>(null)
+  const PARTICLE_COUNT = lightweight ? LIGHTWEIGHT_PARTICLE_COUNT : DEFAULT_PARTICLE_COUNT
 
   const { geometry, velocities, seeds } = useMemo(() => {
     const positions = new Float32Array(PARTICLE_COUNT * 3)
@@ -58,7 +61,7 @@ export default function ParticleField({ reduceMotion = false }: Props) {
     geometry.setAttribute('color', new BufferAttribute(colors, 3))
 
     return { geometry, velocities, seeds }
-  }, [])
+  }, [PARTICLE_COUNT])
 
   useFrame((state, delta) => {
     if (reduceMotion || !pointsRef.current) return

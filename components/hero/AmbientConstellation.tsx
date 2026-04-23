@@ -11,7 +11,7 @@ type Vec3 = [number, number, number]
 // Master at centre + four outer spokes. No labels, no bus emit,
 // slower pulse cadence so the background never competes with the
 // foreground hero scene.
-const NODE_POSITIONS: Vec3[] = [
+const FULL_POSITIONS: Vec3[] = [
   [-3.5, 1, 0],    // 0 top-left
   [3.5, 1, 0],     // 1 top-right
   [0, 0, 0],       // 2 master
@@ -19,15 +19,18 @@ const NODE_POSITIONS: Vec3[] = [
   [2.5, -1.5, 0],  // 4 bottom-right
 ]
 
-const MASTER = 2
-const NON_MASTER = [0, 1, 3, 4]
+const FULL_MASTER = 2
 
-const CONNECTIONS: Array<[number, number]> = [
-  [MASTER, 0],
-  [MASTER, 1],
-  [MASTER, 3],
-  [MASTER, 4],
+// Lightweight variant (mobile fallback): just 3 nodes + 2 lines,
+// no scheduled pulses. Keeps the ambient presence alive while
+// trimming GPU load on phones.
+const LIGHT_POSITIONS: Vec3[] = [
+  [-2.5, 0.5, 0],
+  [0, 0, 0],
+  [2.5, -0.5, 0],
 ]
+
+const LIGHT_MASTER = 1
 
 const lineKey = (a: number, b: number) => `${Math.min(a, b)}-${Math.max(a, b)}`
 
@@ -49,9 +52,17 @@ function pickRandom<T>(arr: T[]): T {
 
 interface Props {
   reduceMotion?: boolean
+  lightweight?: boolean
 }
 
-export default function AmbientConstellation({ reduceMotion = false }: Props) {
+export default function AmbientConstellation({ reduceMotion = false, lightweight = false }: Props) {
+  const NODE_POSITIONS = lightweight ? LIGHT_POSITIONS : FULL_POSITIONS
+  const MASTER = lightweight ? LIGHT_MASTER : FULL_MASTER
+  const NON_MASTER = NODE_POSITIONS.map((_, i) => i).filter((i) => i !== MASTER)
+  const CONNECTIONS: Array<[number, number]> = NON_MASTER.map(
+    (i) => [MASTER, i] as [number, number],
+  )
+
   const [nodeStates, setNodeStates] = useState<NodeState[]>(() =>
     NODE_POSITIONS.map((_, i) => (i === MASTER ? 'thinking' : 'idle')),
   )
@@ -98,7 +109,7 @@ export default function AmbientConstellation({ reduceMotion = false }: Props) {
   )
 
   useEffect(() => {
-    if (reduceMotion) return
+    if (reduceMotion || lightweight) return
 
     let timer: number = 0
     const schedule = () => {
@@ -114,7 +125,9 @@ export default function AmbientConstellation({ reduceMotion = false }: Props) {
       window.clearTimeout(initial)
       window.clearTimeout(timer)
     }
-  }, [reduceMotion, spawnPulse])
+    // NON_MASTER/MASTER recomputed per render but stable for a given lightweight value
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [reduceMotion, lightweight, spawnPulse])
 
   return (
     <group>

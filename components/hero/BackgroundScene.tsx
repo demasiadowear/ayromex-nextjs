@@ -8,6 +8,7 @@ import ParticleField from './ParticleField'
 
 interface Props {
   reduceMotion?: boolean
+  lightweight?: boolean
 }
 
 const LOOK_TARGET: [number, number, number] = [0, 0, 0]
@@ -37,7 +38,7 @@ function BackgroundCamera({ reduceMotion = false }: Props) {
   return null
 }
 
-export default function BackgroundScene({ reduceMotion = false }: Props) {
+export default function BackgroundScene({ reduceMotion = false, lightweight = false }: Props) {
   // Crossfade in as the visitor scrolls past the hero. The hero
   // section is ~100vh so mapping 0-800 covers the handoff zone.
   const { scrollY } = useScroll()
@@ -51,19 +52,19 @@ export default function BackgroundScene({ reduceMotion = false }: Props) {
     >
       <Suspense fallback={null}>
         <Canvas
-          dpr={[1, 2]}
+          dpr={lightweight ? [1, 1.5] : [1, 2]}
           camera={{ fov: 60, position: BASE_POSITION }}
           gl={{
-            antialias: true,
+            antialias: !lightweight,
             alpha: true,
-            powerPreference: 'high-performance',
+            powerPreference: lightweight ? 'low-power' : 'high-performance',
           }}
           onCreated={({ camera }) => camera.lookAt(...LOOK_TARGET)}
         >
           <fog attach="fog" args={['#0A0A0A', 5, 20]} />
           <BackgroundCamera reduceMotion={reduceMotion} />
-          <AmbientConstellation reduceMotion={reduceMotion} />
-          <ParticleField reduceMotion={reduceMotion} />
+          <AmbientConstellation reduceMotion={reduceMotion} lightweight={lightweight} />
+          <ParticleField reduceMotion={reduceMotion} lightweight={lightweight} />
         </Canvas>
       </Suspense>
     </motion.div>
