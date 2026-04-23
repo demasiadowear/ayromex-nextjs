@@ -53,11 +53,13 @@ function Step({ index, id }: StepProps) {
 
   return (
     <div ref={ref} data-step={id} className="relative flex-1 flex flex-col">
-      {/* Giant background number */}
+      {/* Small ghosted step number — keeps the visual cadence
+          without stacking four giant glyphs behind the titles
+          (which used to overflow horizontally on tight columns). */}
       <span
         aria-hidden="true"
-        className="absolute -top-10 left-0 font-display font-extrabold text-ay-accent/20 leading-none select-none pointer-events-none"
-        style={{ fontSize: 'clamp(120px, 12vw, 180px)' }}
+        className="absolute -top-6 left-0 font-display font-extrabold text-ay-accent/10 leading-none select-none pointer-events-none"
+        style={{ fontSize: 'clamp(60px, 5vw, 88px)' }}
       >
         {t(`step${index}number`)}
       </span>
@@ -110,7 +112,7 @@ export default function ProcessSection() {
     <SectionTransition
       id="processo"
       variant="number-reveal"
-      className="relative min-h-screen px-6 py-32 overflow-hidden"
+      className="relative min-h-screen px-6 py-32 overflow-x-hidden overflow-y-visible"
     >
       {/* Giant background number */}
       <span
