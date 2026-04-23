@@ -6,6 +6,7 @@ import AgentLabel from './AgentLabel'
 import AgentNode, { type NodeState } from './AgentNode'
 import ConnectionLine from './ConnectionLine'
 import DataPulse from './DataPulse'
+import PulseArrival from './PulseArrival'
 
 type Vec3 = [number, number, number]
 
@@ -88,6 +89,13 @@ interface PulseInstance {
   to: number
 }
 
+interface ArrivalInstance {
+  id: number
+  position: Vec3
+}
+
+const ARRIVAL_LIFETIME_MS = 600
+
 interface Props {
   reduceMotion?: boolean
 }
@@ -109,9 +117,11 @@ export default function AgentConstellation({ reduceMotion = false }: Props) {
   const [pulses, setPulses] = useState<PulseInstance[]>([])
   const [activeLines, setActiveLines] = useState<Set<string>>(new Set())
   const [showConnections, setShowConnections] = useState(reduceMotion)
+  const [arrivals, setArrivals] = useState<ArrivalInstance[]>([])
 
   const pulseIdRef = useRef(0)
   const pulseCountRef = useRef(0)
+  const arrivalIdRef = useRef(0)
 
   const spawnPulse = useCallback((from: number, to: number) => {
     if (pulseCountRef.current >= MAX_SIMULTANEOUS_PULSES) return
@@ -139,6 +149,13 @@ export default function AgentConstellation({ reduceMotion = false }: Props) {
         next.delete(lineKey(from, to))
         return next
       })
+
+      // Spawn a short-lived arrival burst at the destination.
+      const arrivalId = arrivalIdRef.current++
+      setArrivals((prev) => [...prev, { id: arrivalId, position: NODE_POSITIONS[to] }])
+      window.setTimeout(() => {
+        setArrivals((prev) => prev.filter((a) => a.id !== arrivalId))
+      }, ARRIVAL_LIFETIME_MS)
 
       // Flash the destination, then return to its baseline state.
       setNodeStates((prev) => prev.map((s, i) => (i === to ? 'active' : s)))
@@ -292,6 +309,9 @@ export default function AgentConstellation({ reduceMotion = false }: Props) {
           onComplete={() => handlePulseComplete(p.id, p.from, p.to)}
         />
       ))}
+
+      {!reduceMotion &&
+        arrivals.map((a) => <PulseArrival key={a.id} position={a.position} />)}
     </group>
   )
 }
