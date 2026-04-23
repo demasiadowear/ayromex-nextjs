@@ -10,14 +10,14 @@ import {
   type Points,
 } from 'three'
 
-const PARTICLE_COUNT = 180
+const PARTICLE_COUNT = 60
 
-const BOX = { x: 40, y: 20, z: 40 } as const
+const BOX = { x: 30, y: 15, z: 30 } as const
 const HALF = { x: BOX.x / 2, y: BOX.y / 2, z: BOX.z / 2 } as const
 
 const ACCENT = new Color('#FF6B00')
 const TEXT = new Color('#FAFAFA')
-const ACCENT_RATIO = 0.7
+const ACCENT_RATIO = 0.5
 
 interface Props {
   reduceMotion?: boolean
@@ -89,13 +89,13 @@ export default function ParticleField({ reduceMotion = false }: Props) {
   return (
     <points ref={pointsRef} geometry={geometry}>
       <pointsMaterial
-        size={0.08}
+        size={0.05}
         sizeAttenuation
         vertexColors
         transparent
         depthWrite={false}
         blending={AdditiveBlending}
-        opacity={0.9}
+        opacity={0.85}
       />
     </points>
   )
