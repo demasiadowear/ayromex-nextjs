@@ -40,6 +40,103 @@ const LABEL_Y_OFFSETS = [0.55, 0.55, 0.55, 0.55, 0.7, 0.55, -0.55, -0.55, -0.55]
 
 const MASTER = 4
 
+// -----------------------------------------------------------------
+// SCENE PRESETS
+// -----------------------------------------------------------------
+// Four layouts of the 9 nodes driven by the global sceneProgress
+// (0..1). Indices map 1:1 to NODE_POSITIONS above. Each preset
+// carries { position, scale }; opacity is handled separately.
+//
+// Progress thresholds:
+//   0.00 - 0.33  CONSTELLATION  (hero layout, unchanged)
+//   0.33 - 0.66  TWO_WORLDS     (AYRO + CLOSER as big "planets")
+//   0.66 - 1.00  TIMELINE       (4 nodes on a line + AYRO above)
+//   1.00         CONVERGENCE    (all collapse toward master)
+//
+// Consumers interpolate linearly between adjacent presets using
+// the fractional part of progress * 3.
+// -----------------------------------------------------------------
+
+interface ScenePreset {
+  position: Vec3
+  scale: number
+}
+
+const SCENE_CONSTELLATION: ScenePreset[] = NODE_POSITIONS.map((pos) => ({
+  position: pos,
+  scale: 1,
+}))
+
+// AYRO (4) pulled left, CLOSER (5) pulled right, rest faded small in the
+// background so the composition reads as "two planets".
+const SCENE_TWO_WORLDS: ScenePreset[] = [
+  { position: [-5, 3, -4], scale: 0.5 },     // 0 SCOUT
+  { position: [0, 4, -5], scale: 0.5 },      // 1 MEMORY
+  { position: [5, 3, -4], scale: 0.5 },      // 2 COMPLIANCE
+  { position: [-6, 1, -3], scale: 0.5 },     // 3 BUILDER
+  { position: [-2.8, 0, 1], scale: 1.8 },    // 4 AYRO left planet
+  { position: [2.8, 0, 1], scale: 1.8 },     // 5 CLOSER right planet
+  { position: [-5, -2, -3], scale: 0.5 },    // 6 ANALYST
+  { position: [0, -3, -4], scale: 0.5 },     // 7 MEDIA
+  { position: [5, -2, -3], scale: 0.5 },     // 8 ROUTER
+]
+
+// Four nodes laid out horizontally as a timeline (SCOUT, BUILDER,
+// COMPLIANCE, CLOSER) with AYRO above the line acting as the
+// supervisor. The other four nodes recede far into the background.
+const SCENE_TIMELINE: ScenePreset[] = [
+  { position: [-4, 0, 0], scale: 1.2 },      // 0 SCOUT (step 01)
+  { position: [-8, 3, -6], scale: 0.3 },     // 1 MEMORY hidden
+  { position: [1.5, 0, 0], scale: 1.2 },     // 2 COMPLIANCE (step 03)
+  { position: [-1.5, 0, 0], scale: 1.2 },    // 3 BUILDER (step 02)
+  { position: [0, 2.5, 0], scale: 1.3 },     // 4 AYRO above the line
+  { position: [4, 0, 0], scale: 1.2 },       // 5 CLOSER (step 04)
+  { position: [-8, -3, -6], scale: 0.3 },    // 6 ANALYST hidden
+  { position: [0, -3, -6], scale: 0.3 },     // 7 MEDIA hidden
+  { position: [8, -3, -6], scale: 0.3 },     // 8 ROUTER hidden
+]
+
+// Everything collapses toward the master. AYRO balloons to scale
+// 2.5 while the others shrink into close-orbit satellites.
+const SCENE_CONVERGENCE: ScenePreset[] = [
+  { position: [-1.5, 1, 0], scale: 0.3 },    // 0
+  { position: [0, 1.5, 0], scale: 0.3 },     // 1
+  { position: [1.5, 1, 0], scale: 0.3 },     // 2
+  { position: [-1.5, 0, 0], scale: 0.3 },    // 3
+  { position: [0, 0, 0.5], scale: 2.5 },     // 4 AYRO huge
+  { position: [1.5, 0, 0], scale: 0.3 },     // 5
+  { position: [-1, -1.5, 0], scale: 0.3 },   // 6
+  { position: [0, -1.5, 0], scale: 0.3 },    // 7
+  { position: [1, -1.5, 0], scale: 0.3 },    // 8
+]
+
+const SCENES: ScenePreset[][] = [
+  SCENE_CONSTELLATION,
+  SCENE_TWO_WORLDS,
+  SCENE_TIMELINE,
+  SCENE_CONVERGENCE,
+]
+
+// Linear interpolation of two ScenePresets at fractional t 0..1.
+function lerpPreset(a: ScenePreset, b: ScenePreset, t: number): ScenePreset {
+  return {
+    position: [
+      a.position[0] + (b.position[0] - a.position[0]) * t,
+      a.position[1] + (b.position[1] - a.position[1]) * t,
+      a.position[2] + (b.position[2] - a.position[2]) * t,
+    ],
+    scale: a.scale + (b.scale - a.scale) * t,
+  }
+}
+
+export function getScenePreset(idx: number, progress: number): ScenePreset {
+  const scaled = Math.max(0, Math.min(progress, 1)) * (SCENES.length - 1)
+  const low = Math.floor(scaled)
+  const high = Math.min(low + 1, SCENES.length - 1)
+  const t = scaled - low
+  return lerpPreset(SCENES[low][idx], SCENES[high][idx], t)
+}
+
 // Entry order: master first, then clockwise from top-center.
 const ENTRY_ORDER = [4, 1, 2, 5, 8, 7, 6, 3, 0]
 
