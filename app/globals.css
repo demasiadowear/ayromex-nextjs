@@ -7,14 +7,17 @@
    ===================== */
 
 :root {
-  --ay-accent:       #FF6B00;
+  --ay-accent:       #FF6A00;
   --ay-accent-hover: #E65C00;
   --ay-accent-tint:  #FFF1E6;
-  --ay-bg:           #0A0A0A;
+  --ay-bg:           #0D0D0D;
   --ay-surface:      #141414;
   --ay-text:         #FAFAFA;
   --ay-text-muted:   #A1A1AA;
   --ay-border:       #27272A;
+  --ay-cream:        #FFF4EC;
+  --ay-blue:         #00A6F4;
+  --ay-lime:         #A8FF3E;
 }
 
 html {
@@ -42,7 +45,7 @@ body {
   .btn-primary {
     @apply bg-ay-accent text-ay-bg font-bold uppercase tracking-widest text-xs rounded-full
            transition-all duration-200 hover:bg-ay-accent-hover
-           hover:shadow-[0_4px_32px_rgba(255,107,0,0.45)]
+           hover:shadow-[0_4px_32px_rgba(255,106,0,0.45)]
            active:scale-95 inline-flex items-center justify-center;
   }
 
@@ -65,8 +68,8 @@ body {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255, 107, 0, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 107, 0, 0.06) 1px, transparent 1px);
+    linear-gradient(rgba(255, 106, 0, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 106, 0, 0.06) 1px, transparent 1px);
   background-size: 60px 60px;
   animation: gridScroll 20s linear infinite;
   pointer-events: none;
@@ -88,7 +91,7 @@ body {
   transform: translate(-50%, -50%);
   width: 800px;
   height: 800px;
-  background: radial-gradient(circle, rgba(255,107,0,0.12) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(255,106,0,0.12) 0%, transparent 65%);
   pointer-events: none;
   animation: pulseGlow 4s ease-in-out infinite;
 }
@@ -124,15 +127,15 @@ body {
 .status-dot {
   width: 8px;
   height: 8px;
-  background: #FF6B00;
+  background: #FF6A00;
   border-radius: 50%;
   animation: dotPulse 2s ease-in-out infinite;
   flex-shrink: 0;
 }
 
 @keyframes dotPulse {
-  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(255,107,0,0.4); }
-  50%       { opacity: 0.6; box-shadow: 0 0 0 6px rgba(255,107,0,0); }
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(255,106,0,0.4); }
+  50%       { opacity: 0.6; box-shadow: 0 0 0 6px rgba(255,106,0,0); }
 }
 
 /* =====================

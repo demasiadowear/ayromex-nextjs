@@ -191,7 +191,7 @@ export default function HomePage() {
                     </p>
                   </div>
                   <span
-                    className="inline-block w-2 h-2 rounded-full bg-green-500 animate-pulse"
+                    className="inline-block w-2 h-2 rounded-full bg-ay-lime animate-pulse"
                     title="online"
                     aria-label="online"
                   />

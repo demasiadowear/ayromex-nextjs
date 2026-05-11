@@ -16,8 +16,17 @@ interface ProductCardProps {
   keyPrefix: 'ayrohub' | 'ayrodesk24'
 }
 
+// Direct CTAs to live product subdomains. AyroHub points to the login app
+// (already on app.ayromex.com), AyroDesk24 points to the canonical
+// subdomain ayrodesk24.ayromex.com.
+const PRODUCT_CTA_HREF: Record<'ayrohub' | 'ayrodesk24', string> = {
+  ayrohub: 'https://app.ayromex.com',
+  ayrodesk24: 'https://ayrodesk24.ayromex.com',
+}
+
 function ProductCard({ id, keyPrefix }: ProductCardProps) {
   const t = useTranslations(`productsSection.${keyPrefix}`)
+  const ctaHref = PRODUCT_CTA_HREF[id]
 
   return (
     <div
@@ -32,14 +41,14 @@ function ProductCard({ id, keyPrefix }: ProductCardProps) {
         className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse at 50% 0%, rgba(255,107,0,0.15) 0%, transparent 70%)',
+            'radial-gradient(ellipse at 50% 0%, rgba(255,106,0,0.15) 0%, transparent 70%)',
         }}
       />
 
       <div className="relative z-10 flex flex-col gap-6 h-full">
         {/* Badge */}
         <div className="flex items-center gap-2">
-          <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+          <span className="w-1.5 h-1.5 rounded-full bg-ay-lime animate-pulse" />
           <span className="font-body text-[10px] font-bold uppercase tracking-[0.2em] text-ay-accent">
             {t('badge')}
           </span>
@@ -74,7 +83,9 @@ function ProductCard({ id, keyPrefix }: ProductCardProps) {
             {t('pricing')}
           </span>
           <a
-            href="#contatti"
+            href={ctaHref}
+            target="_blank"
+            rel="noopener noreferrer"
             className="font-body text-[14px] font-semibold text-ay-accent hover:underline underline-offset-4"
           >
             {t('cta')}

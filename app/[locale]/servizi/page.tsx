@@ -21,12 +21,12 @@ export default async function ServiziPage() {
       {/* HERO */}
       <section className="py-24 md:py-32 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
-          <span className="text-[#FF6B00] text-xs font-bold uppercase tracking-widest">{t('label')}</span>
-          <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tight text-[#0a0a0a] dark:text-white mt-4 mb-6 max-w-3xl leading-tight">
+          <span className="text-ay-accent text-xs font-bold uppercase tracking-widest">{t('label')}</span>
+          <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tight text-white mt-4 mb-6 max-w-3xl leading-tight">
             {t('title1')}<br />
-            <span className="text-[#FF6B00]">{t('title2')}</span>
+            <span className="text-ay-accent">{t('title2')}</span>
           </h1>
-          <p className="text-xl text-[#0a0a0a]/60 dark:text-white/60 max-w-xl">
+          <p className="text-xl text-white/60 max-w-xl">
             {t('desc')}
           </p>
         </div>
@@ -38,27 +38,27 @@ export default async function ServiziPage() {
           {SERVICES.map((s, i) => (
             <div
               key={s.title}
-              className={`p-8 md:p-10 rounded-2xl border border-black/10 dark:border-white/10 hover:border-[#FF6B00]/30 transition-all ${i % 2 === 0 ? 'bg-black/5 dark:bg-white/5' : 'bg-[#070707] dark:bg-[#050505]'}`}
+              className={`p-8 md:p-10 rounded-2xl border border-white/10 hover:border-ay-accent/30 transition-all ${i % 2 === 0 ? 'bg-white/5' : 'bg-ay-surface'}`}
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
                 <div>
                   <div className="flex items-center gap-3 mb-5">
-                    <div className="w-10 h-10 rounded-xl bg-[#FF6B00]/10 flex items-center justify-center">
-                      <s.icon className="w-5 h-5 text-[#FF6B00]" />
+                    <div className="w-10 h-10 rounded-xl bg-ay-accent/10 flex items-center justify-center">
+                      <s.icon className="w-5 h-5 text-ay-accent" />
                     </div>
-                    <h2 className={`text-2xl font-black ${i % 2 === 0 ? 'text-[#0a0a0a] dark:text-white' : 'text-white'}`}>{s.title}</h2>
+                    <h2 className={`text-2xl font-black ${i % 2 === 0 ? 'text-white' : 'text-white'}`}>{s.title}</h2>
                   </div>
-                  <p className="text-[#FF6B00] font-semibold text-lg mb-3">{s.tagline}</p>
-                  <p className={`text-base leading-relaxed mb-4 ${i % 2 === 0 ? 'text-[#0a0a0a]/60 dark:text-white/60' : 'text-white/60'}`}>{s.benefit}</p>
-                  <div className="text-sm font-semibold px-4 py-3 rounded-xl border border-[#FF6B00]/20 bg-[#FF6B00]/5 text-[#FF6B00]">
+                  <p className="text-ay-accent font-semibold text-lg mb-3">{s.tagline}</p>
+                  <p className={`text-base leading-relaxed mb-4 ${i % 2 === 0 ? 'text-white/60' : 'text-white/60'}`}>{s.benefit}</p>
+                  <div className="text-sm font-semibold px-4 py-3 rounded-xl border border-ay-accent/20 bg-ay-accent/5 text-ay-accent">
                     → {s.result}
                   </div>
                 </div>
                 <div>
                   <ul className="space-y-3 mb-7">
                     {s.details.map((d) => (
-                      <li key={d} className={`flex items-start gap-3 text-sm ${i % 2 === 0 ? 'text-[#0a0a0a]/70 dark:text-white/70' : 'text-white/70'}`}>
-                        <span className="text-[#FF6B00] mt-0.5 flex-shrink-0">✓</span>
+                      <li key={d} className={`flex items-start gap-3 text-sm ${i % 2 === 0 ? 'text-white/70' : 'text-white/70'}`}>
+                        <span className="text-ay-accent mt-0.5 flex-shrink-0">✓</span>
                         {d}
                       </li>
                     ))}
@@ -79,10 +79,10 @@ export default async function ServiziPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-6 md:px-12 bg-[#070707] dark:bg-[#050505] text-center">
+      <section className="py-20 px-6 md:px-12 bg-ay-surface text-center">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight text-white mb-4">
-            {t('ctaTitle1')}<br /><span className="text-[#FF6B00]">{t('ctaTitle2')}</span>
+            {t('ctaTitle1')}<br /><span className="text-ay-accent">{t('ctaTitle2')}</span>
           </h2>
           <p className="text-white/60 mb-8">{t('ctaDesc')}</p>
           <a

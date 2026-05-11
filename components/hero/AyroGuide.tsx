@@ -162,8 +162,8 @@ export default function AyroGuide() {
               className="absolute left-1/2 top-1/2 w-8 h-8 -translate-x-1/2 -translate-y-1/2 rounded-full bg-ay-accent"
               style={{
                 boxShadow: intensified
-                  ? '0 0 24px rgba(255,107,0,0.85), 0 0 48px rgba(255,107,0,0.45)'
-                  : '0 0 16px rgba(255,107,0,0.55), 0 0 32px rgba(255,107,0,0.25)',
+                  ? '0 0 24px rgba(255,106,0,0.85), 0 0 48px rgba(255,106,0,0.45)'
+                  : '0 0 16px rgba(255,106,0,0.55), 0 0 32px rgba(255,106,0,0.25)',
               }}
             />
 
@@ -192,7 +192,7 @@ export default function AyroGuide() {
             <div
               className="absolute left-1/2 top-1/2 w-6 h-6 -translate-x-1/2 -translate-y-1/2 rounded-full bg-ay-accent"
               style={{
-                boxShadow: '0 0 16px rgba(255,107,0,0.65)',
+                boxShadow: '0 0 16px rgba(255,106,0,0.65)',
               }}
             />
             <AyroBubble text={bubbleText} side="top" />

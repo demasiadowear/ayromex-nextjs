@@ -13,15 +13,18 @@ module.exports = {
     },
     extend: {
       colors: {
-        // AYROMEX Design Tokens 2026
-        'ay-accent':       '#FF6B00',
+        // AYROMEX Design Tokens 2026 — canonical palette
+        'ay-accent':       '#FF6A00', // Brand Orange
         'ay-accent-hover': '#E65C00',
         'ay-accent-tint':  '#FFF1E6',
-        'ay-bg':           '#0A0A0A',
+        'ay-bg':           '#0D0D0D', // Ink — base background
         'ay-surface':      '#141414',
         'ay-text':         '#FAFAFA',
         'ay-text-muted':   '#A1A1AA',
         'ay-border':       '#27272A',
+        'ay-cream':        '#FFF4EC', // warm surface tint
+        'ay-blue':         '#00A6F4', // Electric Blue — tech accent
+        'ay-lime':         '#A8FF3E', // success / live status
       },
       fontFamily: {
         sans:    ['var(--font-dm-sans)', 'system-ui', 'sans-serif'],

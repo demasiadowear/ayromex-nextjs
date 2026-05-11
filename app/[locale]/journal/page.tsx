@@ -76,12 +76,12 @@ export default function JournalPage() {
       {/* HERO */}
       <section className="py-24 md:py-28 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
-          <span className="text-[#FF6B00] text-xs font-bold uppercase tracking-widest">Journal</span>
-          <h1 className="text-5xl md:text-6xl font-black uppercase tracking-tight text-[#0a0a0a] dark:text-white mt-4 mb-6 max-w-3xl leading-tight">
+          <span className="text-ay-accent text-xs font-bold uppercase tracking-widest">Journal</span>
+          <h1 className="text-5xl md:text-6xl font-black uppercase tracking-tight text-white mt-4 mb-6 max-w-3xl leading-tight">
             Storie reali,<br />
-            <span className="text-[#FF6B00]">risultati concreti</span>
+            <span className="text-ay-accent">risultati concreti</span>
           </h1>
-          <p className="text-lg text-[#0a0a0a]/60 dark:text-white/60 max-w-xl">
+          <p className="text-lg text-white/60 max-w-xl">
             Case study, analisi di mercato e riflessioni su AI e automazione per le PMI italiane.
             Niente tecnicismi, solo quello che ti serve sapere.
           </p>
@@ -94,22 +94,22 @@ export default function JournalPage() {
           {ARTICLES.map((a) => (
             <article
               key={a.id}
-              className="border-t border-black/10 dark:border-white/10 pt-12"
+              className="border-t border-white/10 pt-12"
             >
-              <span className="inline-block px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-[#FF6B00]/10 text-[#FF6B00] mb-4">
+              <span className="inline-block px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-ay-accent/10 text-ay-accent mb-4">
                 {a.tag}
               </span>
-              <h2 className="text-3xl md:text-4xl font-black tracking-tight text-[#0a0a0a] dark:text-white mb-6 leading-tight">
+              <h2 className="text-3xl md:text-4xl font-black tracking-tight text-white mb-6 leading-tight">
                 {a.title}
               </h2>
-              <p className="text-xl text-[#0a0a0a]/70 dark:text-white/70 font-medium leading-relaxed mb-8 italic">
+              <p className="text-xl text-white/70 font-medium leading-relaxed mb-8 italic">
                 &ldquo;{a.hook}&rdquo;
               </p>
-              <div className="text-[#0a0a0a]/65 dark:text-white/65 leading-relaxed space-y-4 mb-8 whitespace-pre-line">
+              <div className="text-white/65 leading-relaxed space-y-4 mb-8 whitespace-pre-line">
                 {a.story}
               </div>
-              <div className="p-5 rounded-xl border border-[#FF6B00]/20 bg-[#FF6B00]/5 mb-8">
-                <p className="text-[#FF6B00] font-semibold text-sm leading-relaxed">
+              <div className="p-5 rounded-xl border border-ay-accent/20 bg-ay-accent/5 mb-8">
+                <p className="text-ay-accent font-semibold text-sm leading-relaxed">
                   → <strong>Risultato:</strong> {a.result}
                 </p>
               </div>
@@ -127,10 +127,10 @@ export default function JournalPage() {
       </section>
 
       {/* NEWSLETTER CTA */}
-      <section className="py-20 px-6 md:px-12 bg-[#070707] dark:bg-[#050505] text-center">
+      <section className="py-20 px-6 md:px-12 bg-ay-surface text-center">
         <div className="max-w-xl mx-auto">
           <h2 className="text-3xl font-black uppercase tracking-tight text-white mb-4">
-            Vuoi altri contenuti<br /><span className="text-[#FF6B00]">come questi?</span>
+            Vuoi altri contenuti<br /><span className="text-ay-accent">come questi?</span>
           </h2>
           <p className="text-white/60 mb-8">
             Seguici su Instagram per aggiornamenti settimanali su AI e automazione per PMI italiane.

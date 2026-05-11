@@ -52,7 +52,7 @@ export default function Navbar() {
   ]
 
   const navBg = isScrolled || isOpen
-    ? 'bg-white/90 dark:bg-[#070707]/90 backdrop-blur-md border-b border-black/10 dark:border-white/5 py-4'
+    ? 'bg-ay-bg/90 backdrop-blur-md border-b border-ay-border py-4'
     : 'bg-transparent py-6'
 
   return (
@@ -65,7 +65,7 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-xs font-semibold uppercase tracking-widest text-[#0a0a0a]/70 dark:text-white/70 hover:text-[#FF6B00] dark:hover:text-[#FF6B00] transition-colors"
+              className="text-xs font-semibold uppercase tracking-widest text-ay-text/70 hover:text-ay-accent transition-colors"
             >
               {link.label}
             </a>
@@ -78,15 +78,15 @@ export default function Navbar() {
           {/* Social icons */}
           <div className="flex items-center gap-3">
             <a href="https://www.instagram.com/ayromex_srl/" target="_blank" rel="noopener noreferrer"
-              className="text-[#0a0a0a]/50 dark:text-white/50 hover:text-[#FF6B00] dark:hover:text-[#FF6B00] transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">
+              className="text-ay-text-muted hover:text-ay-accent transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">
               <FaInstagram className="w-4 h-4" />
             </a>
             <a href="https://www.facebook.com/profile.php?id=61586097166352" target="_blank" rel="noopener noreferrer"
-              className="text-[#0a0a0a]/50 dark:text-white/50 hover:text-[#FF6B00] dark:hover:text-[#FF6B00] transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">
+              className="text-ay-text-muted hover:text-ay-accent transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">
               <FaFacebook className="w-4 h-4" />
             </a>
             <a href="https://share.google/Ed5CLO4Nn3BgQZHW4" target="_blank" rel="noopener noreferrer"
-              className="text-[#0a0a0a]/50 dark:text-white/50 hover:text-[#FF6B00] dark:hover:text-[#FF6B00] transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">
+              className="text-ay-text-muted hover:text-ay-accent transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">
               <FaGoogle className="w-4 h-4" />
             </a>
           </div>
@@ -95,7 +95,7 @@ export default function Navbar() {
           <div className="relative">
             <button
               onClick={() => setIsLangOpen(!isLangOpen)}
-              className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-[#0a0a0a]/70 dark:text-white/70 hover:text-[#FF6B00] dark:hover:text-[#FF6B00] transition-colors px-3 py-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 min-h-[44px]"
+              className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-ay-text/70 hover:text-ay-accent transition-colors px-3 py-2 rounded-lg hover:bg-white/5 min-h-[44px]"
             >
               <div className="w-5 h-3.5 overflow-hidden rounded-sm shadow-sm">
                 <currentLang.FlagComponent />
@@ -110,16 +110,16 @@ export default function Navbar() {
                   initial={{ opacity: 0, y: 8, scale: 0.96 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 8, scale: 0.96 }}
-                  className="absolute top-full right-0 mt-2 w-44 bg-white dark:bg-[#111] border border-black/10 dark:border-white/10 rounded-xl shadow-2xl overflow-hidden py-2"
+                  className="absolute top-full right-0 mt-2 w-44 bg-ay-surface border border-ay-border rounded-xl shadow-2xl overflow-hidden py-2"
                 >
-                  <div className="px-4 py-2 text-[10px] text-black/40 dark:text-white/40 font-bold uppercase tracking-widest border-b border-black/5 dark:border-white/5 mb-1">
+                  <div className="px-4 py-2 text-[10px] text-ay-text-muted font-bold uppercase tracking-widest border-b border-ay-border mb-1">
                     {t('translateTo')}
                   </div>
                   {languages.map((lang) => (
                     <button
                       key={lang.code}
                       onClick={() => handleLanguageChange(lang.code)}
-                      className={`w-full text-left px-4 py-3 flex items-center gap-3 text-sm hover:bg-black/5 dark:hover:bg-white/5 transition-colors ${locale === lang.code ? 'text-[#FF6B00] bg-orange-50 dark:bg-orange-500/5' : 'text-[#0a0a0a]/80 dark:text-gray-300'}`}
+                      className={`w-full text-left px-4 py-3 flex items-center gap-3 text-sm hover:bg-white/5 transition-colors ${locale === lang.code ? 'text-ay-accent bg-ay-accent/10' : 'text-ay-text/80'}`}
                     >
                       <div className="w-5 h-3.5 overflow-hidden rounded-sm shadow-sm">
                         <lang.FlagComponent />
@@ -134,10 +134,10 @@ export default function Navbar() {
 
           {/* AyroDesk24 CTA */}
           <a
-            href="https://ayrodesk24.com"
+            href="https://ayrodesk24.ayromex.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl text-xs font-bold min-h-[44px] border border-[#FF6B00]/50 text-[#FF6B00] hover:bg-[#FF6B00] hover:text-white transition-all duration-200"
+            className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl text-xs font-bold min-h-[44px] border border-ay-accent/50 text-ay-accent hover:bg-ay-accent hover:text-ay-bg transition-all duration-200"
           >
             {t('accessAyroDesk24')}
           </a>
@@ -147,7 +147,7 @@ export default function Navbar() {
             href="https://app.ayromex.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl text-xs font-bold min-h-[44px] border border-[#FF6B00]/50 text-[#FF6B00] hover:bg-[#FF6B00] hover:text-white transition-all duration-200"
+            className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl text-xs font-bold min-h-[44px] border border-ay-accent/50 text-ay-accent hover:bg-ay-accent hover:text-ay-bg transition-all duration-200"
           >
             {t('accessAyroHub')}
           </a>
@@ -165,7 +165,7 @@ export default function Navbar() {
               <currentLang.FlagComponent />
             </div>
           </button>
-          <button onClick={() => setIsOpen(!isOpen)} className="relative z-50 min-h-[44px] min-w-[44px] flex items-center justify-center text-[#0a0a0a] dark:text-white">
+          <button onClick={() => setIsOpen(!isOpen)} className="relative z-50 min-h-[44px] min-w-[44px] flex items-center justify-center text-ay-text">
             {isOpen ? <HiXMark className="w-7 h-7" /> : <HiBars3BottomRight className="w-7 h-7" />}
           </button>
         </div>
@@ -177,14 +177,14 @@ export default function Navbar() {
               initial={{ opacity: 0, y: -16 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -16 }}
-              className="absolute inset-0 h-screen bg-white dark:bg-[#070707] flex flex-col items-center justify-center gap-8 md:hidden z-40"
+              className="absolute inset-0 h-screen bg-ay-bg flex flex-col items-center justify-center gap-8 md:hidden z-40"
             >
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-2xl font-black uppercase tracking-tight text-[#0a0a0a] dark:text-white hover:text-[#FF6B00] transition-colors min-h-[44px] flex items-center"
+                  className="text-2xl font-black uppercase tracking-tight text-ay-text hover:text-ay-accent transition-colors min-h-[44px] flex items-center"
                 >
                   {link.label}
                 </a>
@@ -193,11 +193,11 @@ export default function Navbar() {
               {/* Mobile access CTAs */}
               <div className="flex flex-col items-center gap-3 mt-4 w-full px-12">
                 <a
-                  href="https://ayrodesk24.com"
+                  href="https://ayrodesk24.ayromex.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setIsOpen(false)}
-                  className="w-full text-center rounded-xl border border-[#FF6B00]/50 text-[#FF6B00] px-5 py-3 text-sm font-bold uppercase tracking-widest hover:bg-[#FF6B00] hover:text-white transition-colors"
+                  className="w-full text-center rounded-xl border border-ay-accent/50 text-ay-accent px-5 py-3 text-sm font-bold uppercase tracking-widest hover:bg-ay-accent hover:text-ay-bg transition-colors"
                 >
                   {t('accessAyroDesk24')}
                 </a>
@@ -206,7 +206,7 @@ export default function Navbar() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setIsOpen(false)}
-                  className="w-full text-center rounded-xl border border-[#FF6B00]/50 text-[#FF6B00] px-5 py-3 text-sm font-bold uppercase tracking-widest hover:bg-[#FF6B00] hover:text-white transition-colors"
+                  className="w-full text-center rounded-xl border border-ay-accent/50 text-ay-accent px-5 py-3 text-sm font-bold uppercase tracking-widest hover:bg-ay-accent hover:text-ay-bg transition-colors"
                 >
                   {t('accessAyroHub')}
                 </a>
@@ -222,26 +222,26 @@ export default function Navbar() {
               {/* Mobile social icons */}
               <div className="flex gap-6 mt-4">
                 <a href="https://www.instagram.com/ayromex_srl/" target="_blank" rel="noopener noreferrer"
-                  className="text-[#0a0a0a]/60 dark:text-white/60 hover:text-[#FF6B00] transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">
+                  className="text-ay-text/60 hover:text-ay-accent transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">
                   <FaInstagram className="w-6 h-6" />
                 </a>
                 <a href="https://www.facebook.com/profile.php?id=61586097166352" target="_blank" rel="noopener noreferrer"
-                  className="text-[#0a0a0a]/60 dark:text-white/60 hover:text-[#FF6B00] transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">
+                  className="text-ay-text/60 hover:text-ay-accent transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">
                   <FaFacebook className="w-6 h-6" />
                 </a>
                 <a href="https://share.google/Ed5CLO4Nn3BgQZHW4" target="_blank" rel="noopener noreferrer"
-                  className="text-[#0a0a0a]/60 dark:text-white/60 hover:text-[#FF6B00] transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">
+                  className="text-ay-text/60 hover:text-ay-accent transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">
                   <FaGoogle className="w-6 h-6" />
                 </a>
               </div>
 
               {/* Mobile language switcher */}
-              <div className="flex gap-4 pt-6 border-t border-black/10 dark:border-white/10 w-full justify-center">
+              <div className="flex gap-4 pt-6 border-t border-ay-border w-full justify-center">
                 {languages.map((lang) => (
                   <button
                     key={lang.code}
                     onClick={() => handleLanguageChange(lang.code)}
-                    className={`flex flex-col items-center gap-2 p-2 rounded-lg min-h-[44px] min-w-[44px] ${locale === lang.code ? 'text-[#FF6B00]' : 'text-[#0a0a0a]/50 dark:text-white/50'}`}
+                    className={`flex flex-col items-center gap-2 p-2 rounded-lg min-h-[44px] min-w-[44px] ${locale === lang.code ? 'text-ay-accent' : 'text-ay-text-muted'}`}
                   >
                     <div className="w-8 h-5 overflow-hidden rounded shadow-md">
                       <lang.FlagComponent />
@@ -261,13 +261,13 @@ export default function Navbar() {
               initial={{ opacity: 0, y: -8 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
-              className="absolute top-full right-4 mt-2 w-44 bg-white dark:bg-[#111] border border-black/10 dark:border-white/10 rounded-xl shadow-2xl overflow-hidden py-2 md:hidden z-50"
+              className="absolute top-full right-4 mt-2 w-44 bg-ay-surface border border-ay-border rounded-xl shadow-2xl overflow-hidden py-2 md:hidden z-50"
             >
               {languages.map((lang) => (
                 <button
                   key={lang.code}
                   onClick={() => handleLanguageChange(lang.code)}
-                  className={`w-full text-left px-4 py-3 flex items-center gap-3 text-sm hover:bg-black/5 dark:hover:bg-white/5 min-h-[44px] ${locale === lang.code ? 'text-[#FF6B00]' : 'text-[#0a0a0a]/80 dark:text-gray-300'}`}
+                  className={`w-full text-left px-4 py-3 flex items-center gap-3 text-sm hover:bg-white/5 min-h-[44px] ${locale === lang.code ? 'text-ay-accent' : 'text-ay-text/80'}`}
                 >
                   <div className="w-5 h-3.5 overflow-hidden rounded-sm">
                     <lang.FlagComponent />

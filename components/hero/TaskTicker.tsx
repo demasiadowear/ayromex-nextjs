@@ -136,7 +136,7 @@ export default function TaskTicker() {
             {t('systemLogTitle')}
           </span>
           <div className="flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+            <span className="w-1.5 h-1.5 rounded-full bg-ay-lime animate-pulse" />
             <span className="font-body text-[9px] uppercase tracking-wider text-ay-text-muted">
               {t('liveStatus')}
             </span>

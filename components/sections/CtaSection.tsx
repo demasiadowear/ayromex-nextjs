@@ -186,14 +186,14 @@ export default function CtaSection() {
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className="fixed top-24 right-8 z-[60] max-w-[320px] rounded-xl bg-ay-surface/95 backdrop-blur-md px-5 py-4 font-body text-[14px] text-ay-text shadow-[0_16px_40px_rgba(0,0,0,0.55)]"
             style={{
-              border: `1px solid ${toast.kind === 'success' ? '#FF6B00' : '#FF4D4D'}`,
+              border: `1px solid ${toast.kind === 'success' ? '#FF6A00' : '#FF4D4D'}`,
             }}
           >
             <span className="flex items-center gap-3">
               <span
                 className="inline-block w-2 h-2 rounded-full"
                 style={{
-                  background: toast.kind === 'success' ? '#FF6B00' : '#FF4D4D',
+                  background: toast.kind === 'success' ? '#FF6A00' : '#FF4D4D',
                 }}
               />
               {toast.message}

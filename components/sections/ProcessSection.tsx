@@ -96,9 +96,9 @@ function Step({ index, id }: StepProps) {
 
       <style jsx>{`
         div[data-visible='true'] .step-dot {
-          border-color: #ff6b00;
-          background-color: #ff6b00;
-          box-shadow: 0 0 16px rgba(255, 107, 0, 0.6);
+          border-color: #ff6a00;
+          background-color: #ff6a00;
+          box-shadow: 0 0 16px rgba(255, 106, 0, 0.6);
         }
       `}</style>
     </div>

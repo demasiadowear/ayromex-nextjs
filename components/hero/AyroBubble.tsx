@@ -40,7 +40,7 @@ export default function AyroBubble({ text, side = 'left' }: Props) {
                   height: 0,
                   borderTop: '8px solid transparent',
                   borderBottom: '8px solid transparent',
-                  borderLeft: '8px solid rgba(255, 107, 0, 0.3)',
+                  borderLeft: '8px solid rgba(255, 106, 0, 0.3)',
                 }}
               />
             ) : (
@@ -52,7 +52,7 @@ export default function AyroBubble({ text, side = 'left' }: Props) {
                   height: 0,
                   borderLeft: '8px solid transparent',
                   borderRight: '8px solid transparent',
-                  borderTop: '8px solid rgba(255, 107, 0, 0.3)',
+                  borderTop: '8px solid rgba(255, 106, 0, 0.3)',
                 }}
               />
             )}

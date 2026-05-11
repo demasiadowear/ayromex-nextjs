@@ -15,7 +15,7 @@ export function RotatingText({
   words,
   className = '',
   showUnderline = false,
-  underlineColor = '#FF6B00',
+  underlineColor = '#FF6A00',
   rotationSpeed = 3000,
 }: Props) {
   const [index, setIndex] = useState(0)
@@ -30,7 +30,7 @@ export function RotatingText({
   }, [words.length, rotationSpeed])
 
   if (!mounted) {
-    return <span className={`text-[#FF6B00] ${className}`}>{words[0]}</span>
+    return <span className={`text-[#FF6A00] ${className}`}>{words[0]}</span>
   }
 
   return (
@@ -42,7 +42,7 @@ export function RotatingText({
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -16, opacity: 0 }}
           transition={{ duration: 0.28, ease: 'easeOut' }}
-          className="absolute left-0 top-0 text-[#FF6B00] whitespace-nowrap"
+          className="absolute left-0 top-0 text-[#FF6A00] whitespace-nowrap"
         >
           {words[index]}
           {showUnderline && (

@@ -69,17 +69,22 @@ Don't keep dead code "for later".
 
 | Token | Hex | Usage |
 |---|---|---|
-| `ay-accent` | `#FF6B00` | primary accent, CTAs, highlights |
+| `ay-accent` | `#FF6A00` | Brand Orange — primary accent, CTAs, highlights |
 | `ay-accent-hover` | `#E65C00` | hover state on accent |
 | `ay-accent-tint` | `#FFF1E6` | very light accent fills |
-| `ay-bg` | `#0A0A0A` | page background |
+| `ay-bg` | `#0D0D0D` | Ink — page background |
 | `ay-surface` | `#141414` | elevated cards / sections |
 | `ay-text` | `#FAFAFA` | primary text |
 | `ay-text-muted` | `#A1A1AA` | secondary text |
 | `ay-border` | `#27272A` | borders / dividers |
+| `ay-cream` | `#FFF4EC` | Cream — warm surface tint (use sparingly for contrast bands) |
+| `ay-blue` | `#00A6F4` | Electric Blue — tech / data accent only |
+| `ay-lime` | `#A8FF3E` | success / live status indicators only |
 
-The ONLY orange is `#FF6B00`. `#FF4D00`, `#FF6A00`, `#FF8533`,
+The ONLY orange is `#FF6A00`. `#FF6B00`, `#FF4D00`, `#FF8533`,
 `#CC5500` are forbidden — always use `ay-accent` and derivatives.
+The ONLY base background is `#0D0D0D` via `ay-bg`. `#0A0A0A`,
+`#070707`, `#050505` are forbidden as base backgrounds.
 
 ### 4.2 Typography
 
@@ -203,7 +208,7 @@ in the same commit. Never ship a locale missing a key.
 3. **`prefers-reduced-motion` is not optional.** Every non-trivial
    animation (orbs, cursor, lenis, char reveals, grain) must degrade
    gracefully.
-4. **Accent color is `#FF6B00`** — enforced via `ay-accent` token.
+4. **Accent color is `#FF6A00`** — enforced via `ay-accent` token.
 5. **Never redesign the logo.** Use SVGs in `public/brand/logos/`.
 6. **No emojis** in UI copy, commits, or comments unless explicitly
    requested.
