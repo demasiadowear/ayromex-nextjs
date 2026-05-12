@@ -238,6 +238,108 @@
     "ctaAyrostay": "Lancia AyroStay",
     "ctaTalk": "Parla con AYROMEX"
   },
+  "ayrodesk24DeepDive": {
+    "eyebrow": "APPROFONDIMENTO PRODOTTO",
+    "tagline": "Il receptionist AI sempre operativo.",
+    "focus": "Per le attività locali che perdono tempo rispondendo a messaggi ripetitivi, AyroDesk24 automatizza conversazioni WhatsApp, prenotazioni, promemoria e follow-up clienti.",
+    "features": {
+      "conversations": {
+        "title": "Conversazioni WhatsApp AI",
+        "description": "Risponde a domande, prezzi, orari e richieste di prenotazione in italiano naturale, 24/7."
+      },
+      "bookings": {
+        "title": "Prenotazioni e sync calendario",
+        "description": "Crea, modifica e cancella appuntamenti sincronizzati con Google Calendar per ogni operatore."
+      },
+      "memory": {
+        "title": "Memoria cliente",
+        "description": "Ricorda preferenze, storico e tono di voce. Ogni cliente di ritorno è riconosciuto."
+      },
+      "escalation": {
+        "title": "Escalation operatore",
+        "description": "Passa la conversazione all'operatore umano quando serve, senza perdere il contesto."
+      },
+      "reminders": {
+        "title": "Promemoria automatici",
+        "description": "Notifica cliente e operatore prima dell'appuntamento. Meno no-show e disdette dell'ultimo momento."
+      },
+      "crm": {
+        "title": "Timeline CRM",
+        "description": "Tutte le interazioni in un'unica vista, ricercabile ed esportabile."
+      }
+    },
+    "result": "Meno clienti persi. Prenotazioni più veloci. Meno interruzioni. Esperienza cliente migliore.",
+    "ctaPrimary": "Apri AyroDesk24",
+    "ctaSecondary": "Prenota una demo"
+  },
+  "ayrohubDeepDive": {
+    "eyebrow": "APPROFONDIMENTO PRODOTTO",
+    "tagline": "Infrastruttura AI per operazioni complesse.",
+    "focus": "AyroHub centralizza voice agents, automazione WhatsApp, dashboard, flussi CRM e logica di business in un unico centro di comando per network strutturati e operazioni ad alto volume.",
+    "features": {
+      "voice": {
+        "title": "Voice AI agents",
+        "description": "Chiamate inbound e outbound su numeri fissi e mobili, voce naturale, escalation a operatori reali."
+      },
+      "whatsapp": {
+        "title": "Automazione WhatsApp",
+        "description": "Template approvati, broadcast segmentati e conversazioni inbound coordinati da policy centralizzate."
+      },
+      "reactivation": {
+        "title": "Riattivazione clienti",
+        "description": "Identifica clienti dormienti e attiva sequenze voice + WhatsApp con messaggi personalizzati."
+      },
+      "network": {
+        "title": "Network management",
+        "description": "Gestione multi-tenant per master, sub-licenziatari e punti vendita, con permessi granulari."
+      },
+      "crm": {
+        "title": "Sync CRM e dashboard",
+        "description": "Lead, ticket e metriche live in un unico modello dati. Webhook verso i sistemi esistenti."
+      },
+      "workflow": {
+        "title": "Automazione workflow",
+        "description": "Regole, escalation e SLA configurabili. Audit trail e logica di business centralizzata."
+      }
+    },
+    "result": "Più controllo. Riattivazione più rapida. Visibilità migliore. Operazioni scalabili.",
+    "ctaPrimary": "Richiedi demo AyroHub",
+    "ctaSecondary": "Esplora il sistema"
+  },
+  "ayrostayDeepDive": {
+    "eyebrow": "APPROFONDIMENTO PRODOTTO",
+    "tagline": "Automazione hospitality senza stress operativo.",
+    "focus": "AyroStay aiuta B&B, appartamenti, piccoli hotel e property manager ad automatizzare la comunicazione con gli ospiti prima, durante e dopo il soggiorno.",
+    "features": {
+      "messaging": {
+        "title": "Messaggistica ospiti",
+        "description": "Risponde a domande, conferme e richieste di servizio su WhatsApp e canali OTA, prima, durante e dopo il soggiorno."
+      },
+      "checkin": {
+        "title": "Supporto al check-in",
+        "description": "Raccolta documenti, dati alloggiati e QR di accesso senza intervento dell'host."
+      },
+      "multilingual": {
+        "title": "Risposte multilingua",
+        "description": "Italiano, inglese, francese, tedesco, spagnolo e altre lingue, con tono coerente per ogni struttura."
+      },
+      "cleaning": {
+        "title": "Coordinamento pulizie",
+        "description": "Notifica al team al check-out, conferma stato camera, gestione anomalie."
+      },
+      "reviews": {
+        "title": "Richiesta recensioni",
+        "description": "Invia il messaggio giusto al momento giusto sul canale giusto, per massimizzare il rating."
+      },
+      "upsell": {
+        "title": "Upsell automatizzato",
+        "description": "Propone late check-out, breakfast, trasferimenti e servizi locali nella lingua dell'ospite."
+      }
+    },
+    "result": "Risposte più rapide. Check-in fluidi. Meno lavoro per l'host. Esperienza ospite migliore.",
+    "ctaPrimary": "Lancia AyroStay",
+    "ctaSecondary": "Prenota una demo"
+  },
   "servicesSection": {
     "label": "Cosa costruiamo",
     "title1": "Da un'idea a un sistema",

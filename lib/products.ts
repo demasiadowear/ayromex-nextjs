@@ -19,6 +19,8 @@ export interface Product {
   id: ProductId
   /** Key prefix under `productsSection.*` in messages/*.json. */
   i18nKey: ProductId
+  /** Non-localized brand display name (e.g. "AyroDesk24"). */
+  displayName: string
   /** Canonical product subdomain (or current working URL). */
   portalUrl: string
   /**
@@ -35,6 +37,7 @@ export const PRODUCTS: readonly Product[] = [
   {
     id: 'ayrodesk24',
     i18nKey: 'ayrodesk24',
+    displayName: 'AyroDesk24',
     // Canonical and live.
     portalUrl: 'https://ayrodesk24.ayromex.com',
     accent: 'orange',
@@ -42,6 +45,7 @@ export const PRODUCTS: readonly Product[] = [
   {
     id: 'ayrohub',
     i18nKey: 'ayrohub',
+    displayName: 'AyroHub',
     // Working production URL is app.ayromex.com. The canonical
     // subdomain ayrohub.ayromex.com is not yet wired to the live
     // app — switch this string once DNS + Vercel project are set.
@@ -51,6 +55,7 @@ export const PRODUCTS: readonly Product[] = [
   {
     id: 'ayrostay',
     i18nKey: 'ayrostay',
+    displayName: 'AyroStay',
     // Canonical subdomain. The Vercel preview lives at
     // ayrostay.vercel.app; DNS cutover to ayrostay.ayromex.com
     // is in progress — keep this URL once the subdomain is active.

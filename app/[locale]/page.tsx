@@ -11,6 +11,9 @@ import {
 import VideoSectionSensor from '@/components/cinema/VideoSectionSensor';
 import AyroGuide from '@/components/hero/AyroGuide';
 import TaskTicker from '@/components/hero/TaskTicker';
+import AyroDesk24DeepDiveSection from '@/components/sections/AyroDesk24DeepDiveSection';
+import AyroHubDeepDiveSection from '@/components/sections/AyroHubDeepDiveSection';
+import AyroStayDeepDiveSection from '@/components/sections/AyroStayDeepDiveSection';
 import FinalCtaSection from '@/components/sections/FinalCtaSection';
 import OutcomesSection from '@/components/sections/OutcomesSection';
 import PortalsSection from '@/components/sections/PortalsSection';
@@ -305,6 +308,14 @@ export default function HomePage() {
           (no dedicated video; rides the Products backdrop)
           ══════════════════════════════════════════ */}
       <OutcomesSection />
+
+      {/* ══════════════════════════════════════════
+          PRODUCT DEEP DIVES — one slab per product
+          (no dedicated video; rides the Products backdrop)
+          ══════════════════════════════════════════ */}
+      <AyroDesk24DeepDiveSection />
+      <AyroHubDeepDiveSection />
+      <AyroStayDeepDiveSection />
 
       {/* ══════════════════════════════════════════
           02 — PROCESSO (video: processo.mp4)

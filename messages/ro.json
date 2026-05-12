@@ -238,6 +238,108 @@
     "ctaAyrostay": "Lansează AyroStay",
     "ctaTalk": "Vorbește cu AYROMEX"
   },
+  "ayrodesk24DeepDive": {
+    "eyebrow": "PREZENTARE PRODUS",
+    "tagline": "Recepționerul AI mereu activ.",
+    "focus": "Pentru afaceri locale care pierd timp răspunzând la mesaje repetitive, AyroDesk24 automatizează conversațiile WhatsApp, rezervările, remindere-le și follow-up-ul clienților.",
+    "features": {
+      "conversations": {
+        "title": "Conversații WhatsApp AI",
+        "description": "Răspunde la întrebări, prețuri, program și rezervări în limbaj natural, 24/7."
+      },
+      "bookings": {
+        "title": "Rezervări și sincronizare calendar",
+        "description": "Creează, modifică și anulează programări sincronizate cu Google Calendar per operator."
+      },
+      "memory": {
+        "title": "Memoria clientului",
+        "description": "Reține preferințe, istoric și ton. Fiecare client revenit e recunoscut."
+      },
+      "escalation": {
+        "title": "Escaladare către operator",
+        "description": "Predă conversația unui operator uman când e necesar, fără a pierde contextul."
+      },
+      "reminders": {
+        "title": "Remindere automate",
+        "description": "Notifică clientul și operatorul înainte de programare. Mai puține no-show-uri și anulări de ultim moment."
+      },
+      "crm": {
+        "title": "Timeline CRM",
+        "description": "Toate interacțiunile într-o vedere unică, exportabilă și căutabilă."
+      }
+    },
+    "result": "Mai puțini clienți pierduți. Rezervări mai rapide. Mai puține întreruperi. Experiență mai bună pentru client.",
+    "ctaPrimary": "Deschide AyroDesk24",
+    "ctaSecondary": "Programează o demo"
+  },
+  "ayrohubDeepDive": {
+    "eyebrow": "PREZENTARE PRODUS",
+    "tagline": "Infrastructură AI pentru operațiuni complexe.",
+    "focus": "AyroHub centralizează voice agents, automatizare WhatsApp, dashboard-uri, fluxuri CRM și logica de business într-un singur centru de comandă pentru rețele structurate și operațiuni la volum mare.",
+    "features": {
+      "voice": {
+        "title": "Voice AI agents",
+        "description": "Apeluri inbound și outbound pe numere fixe și mobile, voce naturală, escaladare către operatori reali."
+      },
+      "whatsapp": {
+        "title": "Automatizare WhatsApp",
+        "description": "Template-uri aprobate, broadcast-uri segmentate și conversații inbound coordonate de politici centralizate."
+      },
+      "reactivation": {
+        "title": "Reactivare clienți",
+        "description": "Identifică clienții inactivi și rulează secvențe voice + WhatsApp cu mesaje personalizate."
+      },
+      "network": {
+        "title": "Management rețea",
+        "description": "Control multi-tenant pentru master, sub-licențiați și puncte de vânzare, cu permisiuni granulare."
+      },
+      "crm": {
+        "title": "Sync CRM și dashboard",
+        "description": "Lead-uri, tichete și metrici live într-un singur model de date. Webhook-uri către sistemele existente."
+      },
+      "workflow": {
+        "title": "Automatizare workflow",
+        "description": "Reguli configurabile, escaladare și SLA-uri. Audit trail și logică de business centralizate."
+      }
+    },
+    "result": "Mai mult control. Reactivare mai rapidă. Vizibilitate mai bună. Operațiuni scalabile.",
+    "ctaPrimary": "Solicită demo AyroHub",
+    "ctaSecondary": "Explorează sistemul"
+  },
+  "ayrostayDeepDive": {
+    "eyebrow": "PREZENTARE PRODUS",
+    "tagline": "Automatizare hospitality fără stres operațional.",
+    "focus": "AyroStay ajută B&B-uri, apartamente, hoteluri mici și property manageri să automatizeze comunicarea cu oaspeții înainte, în timpul și după sejur.",
+    "features": {
+      "messaging": {
+        "title": "Mesagerie pentru oaspeți",
+        "description": "Răspunde la întrebări, confirmări și cereri de servicii pe WhatsApp și canale OTA, înainte, în timpul și după sejur."
+      },
+      "checkin": {
+        "title": "Suport pentru check-in",
+        "description": "Colectare documente, raportare oaspeți și QR de acces — fără intervenția gazdei."
+      },
+      "multilingual": {
+        "title": "Răspunsuri multilingve",
+        "description": "Italiană, engleză, franceză, germană, spaniolă și altele, cu un ton consecvent pentru fiecare proprietate."
+      },
+      "cleaning": {
+        "title": "Coordonare curățenie",
+        "description": "Notifică echipa la check-out, confirmă starea camerei, gestionează anomaliile."
+      },
+      "reviews": {
+        "title": "Cereri de recenzii",
+        "description": "Trimite mesajul potrivit la momentul potrivit pe canalul potrivit pentru a maximiza rating-ul."
+      },
+      "upsell": {
+        "title": "Upsell automatizat",
+        "description": "Propune late check-out, mic dejun, transferuri și servicii locale în limba oaspetelui."
+      }
+    },
+    "result": "Răspunsuri mai rapide. Check-in-uri mai fluide. Mai puțină muncă pentru gazdă. Experiență mai bună pentru oaspete.",
+    "ctaPrimary": "Lansează AyroStay",
+    "ctaSecondary": "Programează o demo"
+  },
   "servicesSection": {
     "label": "Ce construim",
     "title1": "De la idee la un sistem",
