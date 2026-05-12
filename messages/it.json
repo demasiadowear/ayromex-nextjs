@@ -5,8 +5,11 @@
     "products": "Prodotti",
     "contact": "Contatto",
     "cta": "Prenota una demo",
+    "access": "Accedi",
+    "accessHint": "Apri il portale del prodotto attivo per la tua azienda.",
     "accessAyroHub": "Accedi ad AyroHub",
     "accessAyroDesk24": "Accedi ad AyroDesk24",
+    "accessAyroStay": "Accedi ad AyroStay",
     "translateTo": "Cambia lingua"
   },
   "hero": {
@@ -183,6 +186,57 @@
     "toastSuccess": "Ti contattiamo entro 24h",
     "toastError": "Email non valida",
     "whatsappLink": "…o scrivici su WhatsApp"
+  },
+  "outcomesSection": {
+    "eyebrow": "RISULTATI OPERATIVI",
+    "headline": "Risultati operativi, non esperimenti AI.",
+    "subtitle": "I prodotti AYROMEX sono progettati per ridurre il lavoro manuale, accelerare i tempi di risposta e dare alle aziende più controllo sulle operazioni quotidiane.",
+    "cards": {
+      "leadLoss": {
+        "title": "Meno lead persi",
+        "description": "Nessun cliente resta senza risposta. Ogni richiesta entra nel sistema, anche fuori orario."
+      },
+      "response": {
+        "title": "Risposte più rapide",
+        "description": "L'AI risponde in secondi su WhatsApp, voce e canali integrati."
+      },
+      "manual": {
+        "title": "Meno lavoro manuale",
+        "description": "Promemoria, prenotazioni, follow-up e recensioni gestiti end-to-end."
+      },
+      "control": {
+        "title": "Controllo operativo centralizzato",
+        "description": "Un solo posto da cui vedere conversazioni, agenda, ticket e network."
+      },
+      "scale": {
+        "title": "Flussi scalabili",
+        "description": "Architettura multi-tenant pronta a crescere con il volume, senza riscrivere i processi."
+      },
+      "visibility": {
+        "title": "Visibilità trasversale",
+        "description": "Dashboard, audit log e metriche live su ogni sistema connesso."
+      }
+    }
+  },
+  "portalsSection": {
+    "eyebrow": "ACCESSO ECOSISTEMA",
+    "headline": "Apri il tuo portale AYROMEX.",
+    "subtitle": "Entra direttamente nel prodotto attivo per la tua azienda. Ogni portale gira sull'infrastruttura AYROMEX, con dashboard, multi-tenancy e audit log integrati.",
+    "openPortal": "Apri portale",
+    "demoLabel": {
+      "ayrodesk24": "Prenota demo",
+      "ayrohub": "Richiedi demo",
+      "ayrostay": "Avvia demo"
+    }
+  },
+  "finalCtaSection": {
+    "eyebrow": "ATTIVA IL SISTEMA",
+    "headline": "Scegli il sistema AI che serve alla tua azienda.",
+    "subtitle": "Dall'automazione delle attività locali ai sistemi operativi complessi, AYROMEX rilascia prodotti AI costruiti per ridurre il lavoro manuale e aumentare il controllo operativo.",
+    "ctaAyrodesk24": "Avvia AyroDesk24",
+    "ctaAyrohub": "Richiedi demo AyroHub",
+    "ctaAyrostay": "Lancia AyroStay",
+    "ctaTalk": "Parla con AYROMEX"
   },
   "servicesSection": {
     "label": "Cosa costruiamo",

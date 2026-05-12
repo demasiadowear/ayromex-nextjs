@@ -7,6 +7,7 @@ import { FaFacebook, FaInstagram, FaGoogle } from 'react-icons/fa'
 import { useTranslations, useLocale } from 'next-intl'
 import { useRouter, usePathname } from '@/i18n/navigation'
 import { IT, GB, RO } from 'country-flag-icons/react/3x2'
+import { PRODUCTS, type ProductId } from '@/lib/products'
 
 const languages = [
   { code: 'it', label: 'Italiano', FlagComponent: IT },
@@ -14,10 +15,18 @@ const languages = [
   { code: 'ro', label: 'Română', FlagComponent: RO },
 ] as const
 
+// Stable, non-localized brand display names.
+const PRODUCT_LABEL: Record<ProductId, string> = {
+  ayrodesk24: 'AyroDesk24',
+  ayrohub: 'AyroHub',
+  ayrostay: 'AyroStay',
+}
+
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
   const [isLangOpen, setIsLangOpen] = useState(false)
+  const [isAccessOpen, setIsAccessOpen] = useState(false)
 
   const t = useTranslations('nav')
   const locale = useLocale()
@@ -33,7 +42,11 @@ export default function Navbar() {
   }, [])
 
   // Close menus on route change
-  useEffect(() => { setIsOpen(false); setIsLangOpen(false) }, [pathname])
+  useEffect(() => {
+    setIsOpen(false)
+    setIsLangOpen(false)
+    setIsAccessOpen(false)
+  }, [pathname])
 
   const handleLanguageChange = (langCode: string) => {
     router.replace(pathname, { locale: langCode })
@@ -132,25 +145,53 @@ export default function Navbar() {
             </AnimatePresence>
           </div>
 
-          {/* AyroDesk24 CTA */}
-          <a
-            href="https://ayrodesk24.ayromex.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl text-xs font-bold min-h-[44px] border border-ay-accent/50 text-ay-accent hover:bg-ay-accent hover:text-ay-bg transition-all duration-200"
-          >
-            {t('accessAyroDesk24')}
-          </a>
+          {/* Access dropdown — single entry point for all product portals.
+              Replaces the prior hardcoded per-product buttons; product
+              URLs come from lib/products.ts. */}
+          <div className="relative">
+            <button
+              onClick={() => setIsAccessOpen(!isAccessOpen)}
+              className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl text-xs font-bold min-h-[44px] border border-ay-accent/50 text-ay-accent hover:bg-ay-accent hover:text-ay-bg transition-all duration-200"
+            >
+              {t('access')}
+              <HiChevronDown
+                className={`w-3 h-3 transition-transform ${isAccessOpen ? 'rotate-180' : ''}`}
+              />
+            </button>
 
-          {/* AyroHub CTA */}
-          <a
-            href="https://app.ayromex.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl text-xs font-bold min-h-[44px] border border-ay-accent/50 text-ay-accent hover:bg-ay-accent hover:text-ay-bg transition-all duration-200"
-          >
-            {t('accessAyroHub')}
-          </a>
+            <AnimatePresence>
+              {isAccessOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 8, scale: 0.96 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: 8, scale: 0.96 }}
+                  className="absolute top-full right-0 mt-2 w-64 bg-ay-surface border border-ay-border rounded-xl shadow-2xl overflow-hidden py-2"
+                >
+                  <div className="px-4 py-2 text-[10px] text-ay-text-muted font-bold uppercase tracking-widest border-b border-ay-border mb-1">
+                    {t('access')}
+                  </div>
+                  {PRODUCTS.map((p) => (
+                    <a
+                      key={p.id}
+                      href={p.portalUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setIsAccessOpen(false)}
+                      className="w-full text-left px-4 py-3 flex items-center justify-between gap-3 text-sm hover:bg-white/5 transition-colors text-ay-text/80 hover:text-ay-accent"
+                    >
+                      <span className="font-display font-bold">
+                        {PRODUCT_LABEL[p.id]}
+                      </span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-ay-lime" aria-hidden="true" />
+                    </a>
+                  ))}
+                  <div className="px-4 pt-2 pb-1 text-[10px] text-ay-text-muted leading-relaxed border-t border-ay-border mt-1">
+                    {t('accessHint')}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
 
           {/* Prenota demo — primary CTA */}
           <a href={anchorHref('#contatti')} className="btn-primary px-5 py-2.5 ml-1 min-h-[44px]">
@@ -190,26 +231,20 @@ export default function Navbar() {
                 </a>
               ))}
 
-              {/* Mobile access CTAs */}
+              {/* Mobile access CTAs — driven by lib/products.ts */}
               <div className="flex flex-col items-center gap-3 mt-4 w-full px-12">
-                <a
-                  href="https://ayrodesk24.ayromex.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setIsOpen(false)}
-                  className="w-full text-center rounded-xl border border-ay-accent/50 text-ay-accent px-5 py-3 text-sm font-bold uppercase tracking-widest hover:bg-ay-accent hover:text-ay-bg transition-colors"
-                >
-                  {t('accessAyroDesk24')}
-                </a>
-                <a
-                  href="https://app.ayromex.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setIsOpen(false)}
-                  className="w-full text-center rounded-xl border border-ay-accent/50 text-ay-accent px-5 py-3 text-sm font-bold uppercase tracking-widest hover:bg-ay-accent hover:text-ay-bg transition-colors"
-                >
-                  {t('accessAyroHub')}
-                </a>
+                {PRODUCTS.map((p) => (
+                  <a
+                    key={p.id}
+                    href={p.portalUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsOpen(false)}
+                    className="w-full text-center rounded-xl border border-ay-accent/50 text-ay-accent px-5 py-3 text-sm font-bold uppercase tracking-widest hover:bg-ay-accent hover:text-ay-bg transition-colors"
+                  >
+                    {t(`accessAyro${p.id === 'ayrodesk24' ? 'Desk24' : p.id === 'ayrohub' ? 'Hub' : 'Stay'}`)}
+                  </a>
+                ))}
                 <a
                   href={anchorHref('#contatti')}
                   onClick={() => setIsOpen(false)}

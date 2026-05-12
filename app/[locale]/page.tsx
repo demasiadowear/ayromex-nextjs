@@ -11,7 +11,9 @@ import {
 import VideoSectionSensor from '@/components/cinema/VideoSectionSensor';
 import AyroGuide from '@/components/hero/AyroGuide';
 import TaskTicker from '@/components/hero/TaskTicker';
-import CtaSection from '@/components/sections/CtaSection';
+import FinalCtaSection from '@/components/sections/FinalCtaSection';
+import OutcomesSection from '@/components/sections/OutcomesSection';
+import PortalsSection from '@/components/sections/PortalsSection';
 import ProcessSection from '@/components/sections/ProcessSection';
 import ProductsSection from '@/components/sections/ProductsSection';
 import VerticalsSection from '@/components/sections/VerticalsSection';
@@ -299,6 +301,12 @@ export default function HomePage() {
       </VideoSectionSensor>
 
       {/* ══════════════════════════════════════════
+          OUTCOMES — operational results
+          (no dedicated video; rides the Products backdrop)
+          ══════════════════════════════════════════ */}
+      <OutcomesSection />
+
+      {/* ══════════════════════════════════════════
           02 — PROCESSO (video: processo.mp4)
           ══════════════════════════════════════════ */}
       <VideoSectionSensor id="process">
@@ -312,10 +320,18 @@ export default function HomePage() {
       <VerticalsSection />
 
       {/* ══════════════════════════════════════════
-          03 — CTA (video: cta.mp4)
+          PORTALS — ecosystem access grid
+          (no dedicated video; rides the Process backdrop)
+          ══════════════════════════════════════════ */}
+      <PortalsSection />
+
+      {/* ══════════════════════════════════════════
+          03 — FINAL CTA (video: cta.mp4)
+          Replaces the legacy CtaSection on the homepage.
+          CtaSection.tsx is preserved as a file but unused.
           ══════════════════════════════════════════ */}
       <VideoSectionSensor id="cta">
-        <CtaSection />
+        <FinalCtaSection />
       </VideoSectionSensor>
 
       {/* Footer landing — video fades to black */}

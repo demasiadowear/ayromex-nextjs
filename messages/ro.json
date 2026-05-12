@@ -5,8 +5,11 @@
     "products": "Produse",
     "contact": "Contact",
     "cta": "Rezervă demo",
+    "access": "Acces",
+    "accessHint": "Deschide portalul produsului activ pentru afacerea ta.",
     "accessAyroHub": "Accesează AyroHub",
     "accessAyroDesk24": "Accesează AyroDesk24",
+    "accessAyroStay": "Accesează AyroStay",
     "translateTo": "Schimbă limba"
   },
   "hero": {
@@ -183,6 +186,57 @@
     "toastSuccess": "Te contactăm în 24h",
     "toastError": "Email invalid",
     "whatsappLink": "…sau scrie-ne pe WhatsApp"
+  },
+  "outcomesSection": {
+    "eyebrow": "REZULTATE OPERAȚIONALE",
+    "headline": "Rezultate operaționale, nu experimente AI.",
+    "subtitle": "Produsele AYROMEX sunt concepute pentru a reduce munca manuală, a accelera timpii de răspuns și a oferi companiilor mai mult control asupra operațiunilor zilnice.",
+    "cards": {
+      "leadLoss": {
+        "title": "Mai puține lead-uri pierdute",
+        "description": "Niciun client lăsat fără răspuns. Fiecare cerere intră în sistem, chiar și în afara programului."
+      },
+      "response": {
+        "title": "Răspunsuri mai rapide",
+        "description": "AI răspunde în secunde pe WhatsApp, voce și canalele conectate."
+      },
+      "manual": {
+        "title": "Mai puțină muncă manuală",
+        "description": "Remindere, rezervări, follow-up-uri și recenzii gestionate end-to-end."
+      },
+      "control": {
+        "title": "Control operațional centralizat",
+        "description": "Un singur loc pentru conversații, agendă, tichete și rețea."
+      },
+      "scale": {
+        "title": "Fluxuri scalabile",
+        "description": "Arhitectură multi-tenant pregătită să crească cu volumul, fără a rescrie procese."
+      },
+      "visibility": {
+        "title": "Vizibilitate transversală",
+        "description": "Dashboard-uri, audit log-uri și metrici live pe fiecare sistem conectat."
+      }
+    }
+  },
+  "portalsSection": {
+    "eyebrow": "ACCES ECOSISTEM",
+    "headline": "Deschide portalul tău AYROMEX.",
+    "subtitle": "Intră direct în produsul activ pentru afacerea ta. Fiecare portal rulează pe infrastructura AYROMEX, cu dashboard-uri, multi-tenancy și audit log integrate.",
+    "openPortal": "Deschide portal",
+    "demoLabel": {
+      "ayrodesk24": "Programează demo",
+      "ayrohub": "Solicită demo",
+      "ayrostay": "Pornește demo"
+    }
+  },
+  "finalCtaSection": {
+    "eyebrow": "ACTIVEAZĂ SISTEMUL",
+    "headline": "Alege sistemul AI de care are nevoie afacerea ta.",
+    "subtitle": "De la automatizarea afacerilor locale la sisteme operaționale complexe, AYROMEX livrează produse AI construite pentru a reduce munca manuală și a crește controlul operațional.",
+    "ctaAyrodesk24": "Activează AyroDesk24",
+    "ctaAyrohub": "Solicită demo AyroHub",
+    "ctaAyrostay": "Lansează AyroStay",
+    "ctaTalk": "Vorbește cu AYROMEX"
   },
   "servicesSection": {
     "label": "Ce construim",

@@ -5,8 +5,11 @@
     "products": "Products",
     "contact": "Contact",
     "cta": "Book a demo",
+    "access": "Access",
+    "accessHint": "Open the portal of the product running for your business.",
     "accessAyroHub": "Access AyroHub",
     "accessAyroDesk24": "Access AyroDesk24",
+    "accessAyroStay": "Access AyroStay",
     "translateTo": "Change language"
   },
   "hero": {
@@ -183,6 +186,57 @@
     "toastSuccess": "We'll be in touch within 24h",
     "toastError": "Invalid email",
     "whatsappLink": "…or write to us on WhatsApp"
+  },
+  "outcomesSection": {
+    "eyebrow": "OPERATIONAL OUTCOMES",
+    "headline": "Operational outcomes, not AI experiments.",
+    "subtitle": "AYROMEX products are designed to reduce manual work, speed up response times and give businesses more control over daily operations.",
+    "cards": {
+      "leadLoss": {
+        "title": "Fewer missed leads",
+        "description": "No customer left without an answer. Every inquiry enters the system, even outside business hours."
+      },
+      "response": {
+        "title": "Faster customer response",
+        "description": "AI replies in seconds across WhatsApp, voice and connected channels."
+      },
+      "manual": {
+        "title": "Less manual work",
+        "description": "Reminders, bookings, follow-ups and review requests handled end-to-end."
+      },
+      "control": {
+        "title": "Centralized operational control",
+        "description": "One place to see conversations, calendars, tickets and networks."
+      },
+      "scale": {
+        "title": "Scalable workflows",
+        "description": "Multi-tenant architecture built to grow with volume, without rewriting processes."
+      },
+      "visibility": {
+        "title": "Better visibility across systems",
+        "description": "Dashboards, audit logs and live metrics on every connected system."
+      }
+    }
+  },
+  "portalsSection": {
+    "eyebrow": "ECOSYSTEM ACCESS",
+    "headline": "Open your AYROMEX portal.",
+    "subtitle": "Jump straight into the product running for your business. Every portal runs on AYROMEX infrastructure, with built-in dashboards, multi-tenancy and audit logs.",
+    "openPortal": "Open Portal",
+    "demoLabel": {
+      "ayrodesk24": "Book Demo",
+      "ayrohub": "Request Demo",
+      "ayrostay": "Launch Demo"
+    }
+  },
+  "finalCtaSection": {
+    "eyebrow": "DEPLOY THE SYSTEM",
+    "headline": "Choose the AI system your business needs.",
+    "subtitle": "From local business automation to complex operating systems, AYROMEX deploys AI products built to reduce manual work and increase operational control.",
+    "ctaAyrodesk24": "Deploy AyroDesk24",
+    "ctaAyrohub": "Request AyroHub Demo",
+    "ctaAyrostay": "Launch AyroStay",
+    "ctaTalk": "Talk to AYROMEX"
   },
   "servicesSection": {
     "label": "What we build",
