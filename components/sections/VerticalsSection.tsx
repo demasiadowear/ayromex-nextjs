@@ -33,6 +33,7 @@ export default function VerticalsSection() {
       id="verticali"
       variant="fade-up"
       className="relative min-h-[80vh] px-6 py-32 overflow-hidden flex items-center"
+      ariaLabelledBy="verticals-heading"
     >
       <div className="relative z-10 max-w-7xl mx-auto w-full flex flex-col items-center text-center">
         {/* Eyebrow */}
@@ -45,6 +46,7 @@ export default function VerticalsSection() {
 
         {/* Headline */}
         <h2
+          id="verticals-heading"
           className="font-display font-extrabold text-ay-text leading-[0.95] tracking-[-0.02em]"
           style={{
             fontSize: 'clamp(48px, 7vw, 110px)',

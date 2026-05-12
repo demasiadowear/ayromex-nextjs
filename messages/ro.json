@@ -388,5 +388,15 @@
     "legalTerms": "Termeni",
     "copyright": "© 2026 AYROMEX S.R.L. · CUI RO52014564",
     "languageLabel": "Limbă"
+  },
+  "a11y": {
+    "skipToContent": "Sari la conținut",
+    "openMenu": "Deschide meniul",
+    "closeMenu": "Închide meniul",
+    "openLanguageMenu": "Deschide selectorul de limbă",
+    "openAccessMenu": "Deschide portalele de produs",
+    "socialInstagram": "AYROMEX pe Instagram",
+    "socialFacebook": "AYROMEX pe Facebook",
+    "socialGoogle": "AYROMEX pe Google"
   }
 }

@@ -113,6 +113,7 @@ export default function ProcessSection() {
       id="processo"
       variant="number-reveal"
       className="relative min-h-screen px-6 py-32 overflow-x-hidden overflow-y-visible"
+      ariaLabelledBy="process-heading"
     >
       {/* Giant background number */}
       <span
@@ -127,6 +128,7 @@ export default function ProcessSection() {
       <div className="relative z-10 max-w-7xl mx-auto flex flex-col items-center text-center">
         {/* Headline */}
         <h2
+          id="process-heading"
           className="font-display font-extrabold text-ay-text leading-[0.95] tracking-[-0.02em]"
           style={{ fontSize: 'clamp(64px, 9vw, 140px)' }}
         >

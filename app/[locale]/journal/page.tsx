@@ -84,7 +84,7 @@ Il personale non sparisce — sale di livello. E l'azienda cresce senza dover as
 
 export default function JournalPage() {
   return (
-    <main className="overflow-x-hidden pt-20">
+    <main id="main" className="overflow-x-hidden pt-20">
 
       {/* HERO */}
       <section className="py-24 md:py-28 px-6 md:px-12">

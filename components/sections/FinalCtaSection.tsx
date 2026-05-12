@@ -53,6 +53,7 @@ export default function FinalCtaSection() {
       id="contatti"
       variant="number-reveal"
       className="relative min-h-[90vh] px-6 py-32 overflow-hidden flex items-center justify-center"
+      ariaLabelledBy="final-cta-heading"
     >
       <div
         ref={sectionRef}
@@ -81,6 +82,7 @@ export default function FinalCtaSection() {
 
         {/* Headline */}
         <h2
+          id="final-cta-heading"
           className="font-display font-extrabold text-ay-text leading-[0.95] tracking-[-0.02em] max-w-[18ch]"
           style={{
             fontSize: 'clamp(48px, 7vw, 104px)',

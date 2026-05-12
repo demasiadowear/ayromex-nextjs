@@ -99,7 +99,7 @@ export default function HomePage() {
 
   return (
     <VideoBackgroundProvider defaultId="hero">
-      <main className="relative overflow-x-hidden text-ay-text">
+      <main id="main" className="relative overflow-x-hidden text-ay-text">
 
       {/* Crossfading fullscreen video layer */}
       <VideoBackground videos={[...VIDEO_SOURCES]} />

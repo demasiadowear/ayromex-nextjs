@@ -32,6 +32,7 @@ export default function Navbar() {
   const [isAccessOpen, setIsAccessOpen] = useState(false)
 
   const t = useTranslations('nav')
+  const ta = useTranslations('a11y')
   const locale = useLocale()
   const router = useRouter()
   const pathname = usePathname()
@@ -94,16 +95,19 @@ export default function Navbar() {
           {/* Social icons */}
           <div className="flex items-center gap-3">
             <a href="https://www.instagram.com/ayromex_srl/" target="_blank" rel="noopener noreferrer"
+              aria-label={ta('socialInstagram')}
               className="text-ay-text-muted hover:text-ay-accent transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">
-              <FaInstagram className="w-4 h-4" />
+              <FaInstagram className="w-4 h-4" aria-hidden="true" />
             </a>
             <a href="https://www.facebook.com/profile.php?id=61586097166352" target="_blank" rel="noopener noreferrer"
+              aria-label={ta('socialFacebook')}
               className="text-ay-text-muted hover:text-ay-accent transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">
-              <FaFacebook className="w-4 h-4" />
+              <FaFacebook className="w-4 h-4" aria-hidden="true" />
             </a>
             <a href="https://share.google/Ed5CLO4Nn3BgQZHW4" target="_blank" rel="noopener noreferrer"
+              aria-label={ta('socialGoogle')}
               className="text-ay-text-muted hover:text-ay-accent transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">
-              <FaGoogle className="w-4 h-4" />
+              <FaGoogle className="w-4 h-4" aria-hidden="true" />
             </a>
           </div>
 
@@ -111,13 +115,16 @@ export default function Navbar() {
           <div className="relative">
             <button
               onClick={() => setIsLangOpen(!isLangOpen)}
+              aria-label={ta('openLanguageMenu')}
+              aria-expanded={isLangOpen}
+              aria-haspopup="menu"
               className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-ay-text/70 hover:text-ay-accent transition-colors px-3 py-2 rounded-lg hover:bg-white/5 min-h-[44px]"
             >
-              <div className="w-5 h-3.5 overflow-hidden rounded-sm shadow-sm">
+              <div className="w-5 h-3.5 overflow-hidden rounded-sm shadow-sm" aria-hidden="true">
                 <currentLang.FlagComponent />
               </div>
               <span>{currentLang.code.toUpperCase()}</span>
-              <HiChevronDown className={`w-3 h-3 transition-transform ${isLangOpen ? 'rotate-180' : ''}`} />
+              <HiChevronDown className={`w-3 h-3 transition-transform ${isLangOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
             </button>
 
             <AnimatePresence>
@@ -154,11 +161,15 @@ export default function Navbar() {
           <div className="relative">
             <button
               onClick={() => setIsAccessOpen(!isAccessOpen)}
+              aria-label={ta('openAccessMenu')}
+              aria-expanded={isAccessOpen}
+              aria-haspopup="menu"
               className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl text-xs font-bold min-h-[44px] border border-ay-accent/50 text-ay-accent hover:bg-ay-accent hover:text-ay-bg transition-all duration-200"
             >
               {t('access')}
               <HiChevronDown
                 className={`w-3 h-3 transition-transform ${isAccessOpen ? 'rotate-180' : ''}`}
+                aria-hidden="true"
               />
             </button>
 
@@ -204,13 +215,25 @@ export default function Navbar() {
 
         {/* Mobile: lang flag + hamburger */}
         <div className="flex items-center gap-2 md:hidden">
-          <button onClick={() => setIsLangOpen(!isLangOpen)} className="min-h-[44px] min-w-[44px] flex items-center justify-center">
-            <div className="w-6 h-4 overflow-hidden rounded-sm shadow-sm">
+          <button
+            onClick={() => setIsLangOpen(!isLangOpen)}
+            aria-label={ta('openLanguageMenu')}
+            aria-expanded={isLangOpen}
+            aria-haspopup="menu"
+            className="min-h-[44px] min-w-[44px] flex items-center justify-center"
+          >
+            <div className="w-6 h-4 overflow-hidden rounded-sm shadow-sm" aria-hidden="true">
               <currentLang.FlagComponent />
             </div>
           </button>
-          <button onClick={() => setIsOpen(!isOpen)} className="relative z-50 min-h-[44px] min-w-[44px] flex items-center justify-center text-ay-text">
-            {isOpen ? <HiXMark className="w-7 h-7" /> : <HiBars3BottomRight className="w-7 h-7" />}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? ta('closeMenu') : ta('openMenu')}
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
+            className="relative z-50 min-h-[44px] min-w-[44px] flex items-center justify-center text-ay-text"
+          >
+            {isOpen ? <HiXMark className="w-7 h-7" aria-hidden="true" /> : <HiBars3BottomRight className="w-7 h-7" aria-hidden="true" />}
           </button>
         </div>
 
@@ -221,6 +244,10 @@ export default function Navbar() {
               initial={{ opacity: 0, y: -16 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -16 }}
+              id="mobile-menu"
+              role="dialog"
+              aria-modal="true"
+              aria-label={ta('openMenu')}
               className="absolute inset-0 h-screen bg-ay-bg flex flex-col items-center justify-center gap-8 md:hidden z-40"
             >
               {navLinks.map((link) => (
@@ -260,16 +287,19 @@ export default function Navbar() {
               {/* Mobile social icons */}
               <div className="flex gap-6 mt-4">
                 <a href="https://www.instagram.com/ayromex_srl/" target="_blank" rel="noopener noreferrer"
+                  aria-label={ta('socialInstagram')}
                   className="text-ay-text/60 hover:text-ay-accent transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">
-                  <FaInstagram className="w-6 h-6" />
+                  <FaInstagram className="w-6 h-6" aria-hidden="true" />
                 </a>
                 <a href="https://www.facebook.com/profile.php?id=61586097166352" target="_blank" rel="noopener noreferrer"
+                  aria-label={ta('socialFacebook')}
                   className="text-ay-text/60 hover:text-ay-accent transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">
-                  <FaFacebook className="w-6 h-6" />
+                  <FaFacebook className="w-6 h-6" aria-hidden="true" />
                 </a>
                 <a href="https://share.google/Ed5CLO4Nn3BgQZHW4" target="_blank" rel="noopener noreferrer"
+                  aria-label={ta('socialGoogle')}
                   className="text-ay-text/60 hover:text-ay-accent transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">
-                  <FaGoogle className="w-6 h-6" />
+                  <FaGoogle className="w-6 h-6" aria-hidden="true" />
                 </a>
               </div>
 

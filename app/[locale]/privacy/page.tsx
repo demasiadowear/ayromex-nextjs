@@ -23,7 +23,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 
 export default function PrivacyPage() {
   return (
-    <main className="overflow-x-hidden pt-28 pb-24 px-6 md:px-12">
+    <main id="main" className="overflow-x-hidden pt-28 pb-24 px-6 md:px-12">
       <div className="max-w-3xl mx-auto">
 
         {/* Header */}

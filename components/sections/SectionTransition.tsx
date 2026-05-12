@@ -12,6 +12,8 @@ interface Props {
   variant?: Variant
   delay?: number
   className?: string
+  /** id of the heading that labels this section (WCAG region) */
+  ariaLabelledBy?: string
 }
 
 // Shared wrapper for every page-level section after the hero. On
@@ -32,6 +34,7 @@ export default function SectionTransition({
   variant = 'fade-up',
   delay = 0,
   className = '',
+  ariaLabelledBy,
 }: Props) {
   const sectionRef = useRef<HTMLElement>(null)
 
@@ -123,7 +126,12 @@ export default function SectionTransition({
   }, [variant, delay])
 
   return (
-    <section id={id} ref={sectionRef} className={className}>
+    <section
+      id={id}
+      ref={sectionRef}
+      className={className}
+      aria-labelledby={ariaLabelledBy}
+    >
       {children}
     </section>
   )

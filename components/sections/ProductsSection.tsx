@@ -94,6 +94,7 @@ export default function ProductsSection() {
       id="prodotti"
       variant="number-reveal"
       className="relative min-h-screen px-6 py-32 overflow-hidden"
+      ariaLabelledBy="products-heading"
     >
       {/* Giant background number */}
       <span
@@ -108,6 +109,7 @@ export default function ProductsSection() {
       <div className="relative z-10 max-w-7xl mx-auto flex flex-col items-center text-center">
         {/* Headline */}
         <h2
+          id="products-heading"
           className="font-display font-extrabold text-ay-text leading-[0.95] tracking-[-0.02em]"
           style={{ fontSize: 'clamp(64px, 9vw, 140px)' }}
         >

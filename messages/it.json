@@ -388,5 +388,15 @@
     "legalTerms": "Termini",
     "copyright": "© 2026 AYROMEX S.R.L. · CUI RO52014564",
     "languageLabel": "Lingua"
+  },
+  "a11y": {
+    "skipToContent": "Vai al contenuto",
+    "openMenu": "Apri menu",
+    "closeMenu": "Chiudi menu",
+    "openLanguageMenu": "Apri selettore lingua",
+    "openAccessMenu": "Apri portali prodotto",
+    "socialInstagram": "AYROMEX su Instagram",
+    "socialFacebook": "AYROMEX su Facebook",
+    "socialGoogle": "AYROMEX su Google"
   }
 }

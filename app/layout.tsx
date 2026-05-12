@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Gugi, Syne, DM_Sans, JetBrains_Mono } from 'next/font/google'
-import { getLocale } from 'next-intl/server'
+import { getLocale, getTranslations } from 'next-intl/server'
 import './globals.css'
 import CustomCursor from '@/components/CustomCursor'
 import GrainOverlay from '@/components/GrainOverlay'
@@ -106,6 +106,7 @@ export default async function RootLayout({
   // by the next-intl middleware. This makes <html lang> match the
   // route (it/en/ro) instead of being hardcoded.
   const locale = await getLocale()
+  const t = await getTranslations('a11y')
 
   return (
     <html
@@ -114,6 +115,15 @@ export default async function RootLayout({
       className={`dark ${gugi.variable} ${syne.variable} ${dmSans.variable} ${jetbrainsMono.variable}`}
     >
       <body className="relative min-h-screen bg-ay-bg text-ay-text font-body antialiased">
+        {/* Skip-to-content link — visually hidden until focused.
+            First focusable element on every page (WCAG 2.4.1). */}
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-lg focus:bg-ay-accent focus:px-5 focus:py-3 focus:font-display focus:font-bold focus:uppercase focus:tracking-widest focus:text-sm focus:text-ay-bg focus:shadow-2xl focus:outline-none focus:ring-2 focus:ring-ay-accent focus:ring-offset-2 focus:ring-offset-ay-bg"
+        >
+          {t('skipToContent')}
+        </a>
+
         {/* Film grain overlay */}
         <GrainOverlay />
 

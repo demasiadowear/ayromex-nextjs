@@ -50,6 +50,7 @@ export default function ProductDeepDiveSection({
       id={`${productId}-deep`}
       variant="fade-up"
       className="relative px-6 py-28 overflow-hidden"
+      ariaLabelledBy={`${productId}-deep-heading`}
     >
       <div className="relative z-10 max-w-7xl mx-auto w-full">
         {/* Header row */}
@@ -62,6 +63,7 @@ export default function ProductDeepDiveSection({
           </span>
 
           <h2
+            id={`${productId}-deep-heading`}
             className="font-display font-extrabold text-ay-text leading-[0.98] tracking-[-0.02em]"
             style={{
               fontSize: 'clamp(36px, 5.4vw, 72px)',

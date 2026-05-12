@@ -44,6 +44,7 @@ export default function OutcomesSection() {
       id="risultati"
       variant="fade-up"
       className="relative min-h-[80vh] px-6 py-32 overflow-hidden flex items-center"
+      ariaLabelledBy="outcomes-heading"
     >
       <div className="relative z-10 max-w-7xl mx-auto w-full flex flex-col items-center text-center">
         {/* Eyebrow */}
@@ -56,6 +57,7 @@ export default function OutcomesSection() {
 
         {/* Headline */}
         <h2
+          id="outcomes-heading"
           className="font-display font-extrabold text-ay-text leading-[0.95] tracking-[-0.02em] max-w-[18ch]"
           style={{
             fontSize: 'clamp(40px, 6vw, 84px)',

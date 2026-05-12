@@ -100,6 +100,7 @@ export default function PortalsSection() {
       id="portali"
       variant="fade-up"
       className="relative min-h-[85vh] px-6 py-32 overflow-hidden flex items-center"
+      ariaLabelledBy="portals-heading"
     >
       <div className="relative z-10 max-w-7xl mx-auto w-full flex flex-col items-center text-center">
         {/* Eyebrow */}
@@ -112,6 +113,7 @@ export default function PortalsSection() {
 
         {/* Headline */}
         <h2
+          id="portals-heading"
           className="font-display font-extrabold text-ay-text leading-[0.95] tracking-[-0.02em] max-w-[20ch]"
           style={{
             fontSize: 'clamp(40px, 6vw, 84px)',

@@ -388,5 +388,15 @@
     "legalTerms": "Terms",
     "copyright": "© 2026 AYROMEX S.R.L. · VAT RO52014564",
     "languageLabel": "Language"
+  },
+  "a11y": {
+    "skipToContent": "Skip to content",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "openLanguageMenu": "Open language switcher",
+    "openAccessMenu": "Open product portals",
+    "socialInstagram": "AYROMEX on Instagram",
+    "socialFacebook": "AYROMEX on Facebook",
+    "socialGoogle": "AYROMEX on Google"
   }
 }

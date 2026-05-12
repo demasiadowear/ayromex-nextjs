@@ -28,7 +28,7 @@ export default async function ServiziPage() {
   }))
 
   return (
-    <main className="overflow-x-hidden pt-20">
+    <main id="main" className="overflow-x-hidden pt-20">
 
       {/* HERO */}
       <section className="py-24 md:py-32 px-6 md:px-12">
