@@ -5,6 +5,15 @@ import { FaFacebook, FaInstagram, FaGoogle } from 'react-icons/fa'
 import { IT, GB, RO } from 'country-flag-icons/react/3x2'
 import { useRouter, usePathname } from '@/i18n/navigation'
 import { AyromexLogo } from './AyromexLogo'
+import { PRODUCTS } from '@/lib/products'
+
+// Surface a stable display name from product id.
+// Product display names are not localized (they're brand names).
+const PRODUCT_LABEL: Record<(typeof PRODUCTS)[number]['id'], string> = {
+  ayrodesk24: 'AyroDesk24',
+  ayrohub: 'AyroHub',
+  ayrostay: 'AyroStay',
+}
 
 const LANGUAGES = [
   { code: 'it', label: 'Italiano', Flag: IT },
@@ -66,26 +75,18 @@ export default function Footer() {
               {t('productsTitle')}
             </h4>
             <ul className="flex flex-col gap-2 font-body text-[14px]">
-              <li>
-                <a
-                  href="https://app.ayromex.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-ay-text-muted hover:text-ay-accent transition-colors"
-                >
-                  AyroHub
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://ayrodesk24.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-ay-text-muted hover:text-ay-accent transition-colors"
-                >
-                  AyroDesk24
-                </a>
-              </li>
+              {PRODUCTS.map((p) => (
+                <li key={p.id}>
+                  <a
+                    href={p.portalUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-ay-text-muted hover:text-ay-accent transition-colors"
+                  >
+                    {PRODUCT_LABEL[p.id]}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 

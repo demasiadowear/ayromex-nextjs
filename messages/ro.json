@@ -29,9 +29,10 @@
   },
   "ayroGuide": {
     "hero": "Salut. Sunt Ayro. Bine ai venit în AYROMEX.",
-    "productsIntro": "Două produse. Două lumi care lucrează pentru tine.",
-    "productAyroHub": "AyroHub orchestrează rețeaua ta ADM.",
+    "productsIntro": "Trei produse. Un ecosistem care lucrează pentru tine.",
+    "productAyroHub": "AyroHub orchestrează operațiunile tale complexe.",
     "productAyroDesk24": "AyroDesk24 răspunde pentru tine 24/7 pe WhatsApp.",
+    "productAyroStay": "AyroStay îți gestionează oaspeții, în orice limbă.",
     "processIntro": "Așa transformăm ideile în sisteme.",
     "process01": "Întâi găsim împreună problema reală.",
     "process02": "Apoi construiesc un prototip.",
@@ -75,28 +76,41 @@
   },
   "productsSection": {
     "number": "01",
-    "headlineLine1": "Două produse.",
-    "headlineLine2": "Două lumi.",
-    "subtitle": "Două sisteme în producție pentru două piețe italiene diferite. Aleg în funcție de volum, nu de preț.",
-    "ayrohub": {
-      "badge": "LIVE",
-      "name": "AyroHub",
-      "tagline": "AI OS pentru operatorii ADM",
-      "bullet1": "Compliance ADM automatizat",
-      "bullet2": "Reactivator outbound voice",
-      "bullet3": "Insight-uri strategice AI",
-      "pricing": "de la 1.500 €/lună",
-      "cta": "Descoperă AyroHub →"
-    },
+    "headlineLine1": "Trei produse.",
+    "headlineLine2": "Un ecosistem.",
+    "subtitle": "Trei sisteme AI verticale, fiecare construit pentru o industrie specifică și toate conectate la aceeași infrastructură AYROMEX.",
     "ayrodesk24": {
       "badge": "LIVE",
       "name": "AyroDesk24",
-      "tagline": "Receptionist AI WhatsApp pentru IMM-uri",
-      "bullet1": "Rezervări 24/7",
-      "bullet2": "Multi-operator",
-      "bullet3": "Sincronizare Google Calendar",
-      "pricing": "de la 199 €/lună",
+      "tagline": "Receptionist AI pe WhatsApp pentru afaceri locale și IMM-uri",
+      "audience": "Saloane, centre de înfrumusețare, restaurante, clinici, IMM-uri",
+      "bullet1": "Conversații WhatsApp 24/7 cu memoria clientului",
+      "bullet2": "Rezervări și sincronizare calendar per operator",
+      "bullet3": "Remindere, escaladare către operator, ciclu complet",
+      "pricing": "de la 129 €/lună",
       "cta": "Descoperă AyroDesk24 →"
+    },
+    "ayrohub": {
+      "badge": "LIVE",
+      "name": "AyroHub",
+      "tagline": "Centru de comandă AI pentru operațiuni complexe",
+      "audience": "Operatori ADM, rețele gaming, rețele vânzări, enterprise",
+      "bullet1": "Voice agents și fluxuri WhatsApp orchestrate",
+      "bullet2": "Dashboard-uri real-time, CRM și control rețea",
+      "bullet3": "Reactivare automată a clienților inactivi",
+      "pricing": "de la 1.500 €/lună",
+      "cta": "Descoperă AyroHub →"
+    },
+    "ayrostay": {
+      "badge": "LIVE",
+      "name": "AyroStay",
+      "tagline": "Management AI al oaspeților pentru hospitality",
+      "audience": "B&B-uri, apartamente, hoteluri boutique, property manageri",
+      "bullet1": "Mesagerie multilingvă pentru oaspeți, 24/7",
+      "bullet2": "Check-in și coordonare curățenie automatizate",
+      "bullet3": "Solicitări recenzii și upsell ghidat de AI",
+      "pricing": "de la 99 €/lună",
+      "cta": "Descoperă AyroStay →"
     }
   },
   "processSection": {

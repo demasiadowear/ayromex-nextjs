@@ -29,9 +29,10 @@
   },
   "ayroGuide": {
     "hero": "Ciao. Sono Ayro. Entri nel mondo AYROMEX.",
-    "productsIntro": "Due prodotti. Due mondi che lavorano per te.",
-    "productAyroHub": "AyroHub orchestra il tuo network ADM.",
+    "productsIntro": "Tre prodotti. Un ecosistema che lavora per te.",
+    "productAyroHub": "AyroHub orchestra le tue operazioni complesse.",
     "productAyroDesk24": "AyroDesk24 risponde per te h24 su WhatsApp.",
+    "productAyroStay": "AyroStay gestisce gli ospiti, in ogni lingua.",
     "processIntro": "Ecco come trasformiamo le idee in sistemi.",
     "process01": "Prima scoviamo il problema insieme.",
     "process02": "Poi costruisco un prototipo.",
@@ -75,28 +76,41 @@
   },
   "productsSection": {
     "number": "01",
-    "headlineLine1": "Due prodotti.",
-    "headlineLine2": "Due mondi.",
-    "subtitle": "Due sistemi in produzione, per due mercati italiani diversi. Scelgo a seconda del tuo volume, non a seconda del mio pricing.",
-    "ayrohub": {
-      "badge": "LIVE",
-      "name": "AyroHub",
-      "tagline": "AI OS per concessionari ADM gaming",
-      "bullet1": "Compliance ADM automatizzata",
-      "bullet2": "Reactivator outbound voice",
-      "bullet3": "Insight strategici AI",
-      "pricing": "da 1.500 €/mese",
-      "cta": "Scopri AyroHub →"
-    },
+    "headlineLine1": "Tre prodotti.",
+    "headlineLine2": "Un ecosistema.",
+    "subtitle": "Tre sistemi AI verticali, ognuno costruito per un'industria specifica e tutti connessi alla stessa infrastruttura AYROMEX.",
     "ayrodesk24": {
       "badge": "LIVE",
       "name": "AyroDesk24",
-      "tagline": "AI receptionist WhatsApp per SMB",
-      "bullet1": "Prenotazioni 24/7",
-      "bullet2": "Multi-operatore",
-      "bullet3": "Google Calendar sync",
-      "pricing": "da 199 €/mese",
+      "tagline": "Receptionist AI su WhatsApp per attività locali e PMI",
+      "audience": "Estetiste, saloni, ristoranti, studi professionali, PMI",
+      "bullet1": "Conversazioni WhatsApp 24/7 con memoria cliente",
+      "bullet2": "Prenotazioni e sync calendario per operatore",
+      "bullet3": "Promemoria, escalation e gestione operatori",
+      "pricing": "da 129 €/mese",
       "cta": "Scopri AyroDesk24 →"
+    },
+    "ayrohub": {
+      "badge": "LIVE",
+      "name": "AyroHub",
+      "tagline": "Centro di comando AI per operazioni complesse",
+      "audience": "Operatori ADM, network gaming, reti vendita, enterprise",
+      "bullet1": "Voice agents e flussi WhatsApp orchestrati",
+      "bullet2": "Dashboard, CRM e controllo network in tempo reale",
+      "bullet3": "Riattivazione clienti dormienti automatizzata",
+      "pricing": "da 1.500 €/mese",
+      "cta": "Scopri AyroHub →"
+    },
+    "ayrostay": {
+      "badge": "LIVE",
+      "name": "AyroStay",
+      "tagline": "Gestione ospiti AI per l'hospitality",
+      "audience": "B&B, appartamenti, hotel boutique, property manager",
+      "bullet1": "Messaggistica ospiti multilingua 24/7",
+      "bullet2": "Check-in e coordinamento pulizie automatizzati",
+      "bullet3": "Richieste recensioni e upsell guidati dall'AI",
+      "pricing": "da 99 €/mese",
+      "cta": "Scopri AyroStay →"
     }
   },
   "processSection": {

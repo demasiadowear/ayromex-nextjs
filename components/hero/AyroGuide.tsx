@@ -26,6 +26,7 @@ export type AyroGuideHover =
   | null
   | 'ayrohub'
   | 'ayrodesk24'
+  | 'ayrostay'
   | 'process-01'
   | 'process-02'
   | 'process-03'
@@ -210,6 +211,7 @@ function resolveBubble(
 ): string | null {
   if (hover === 'ayrohub') return t('productAyroHub')
   if (hover === 'ayrodesk24') return t('productAyroDesk24')
+  if (hover === 'ayrostay') return t('productAyroStay')
   if (hover === 'process-01') return t('process01')
   if (hover === 'process-02') return t('process02')
   if (hover === 'process-03') return t('process03')

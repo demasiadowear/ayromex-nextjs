@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl'
 import SectionTransition from './SectionTransition'
 import type { AyroGuideHover } from '@/components/hero/AyroGuide'
+import { PRODUCTS, type Product } from '@/lib/products'
 
 function emitHover(value: AyroGuideHover) {
   if (typeof window === 'undefined') return
@@ -11,27 +12,13 @@ function emitHover(value: AyroGuideHover) {
   )
 }
 
-interface ProductCardProps {
-  id: 'ayrohub' | 'ayrodesk24'
-  keyPrefix: 'ayrohub' | 'ayrodesk24'
-}
-
-// Direct CTAs to live product subdomains. AyroHub points to the login app
-// (already on app.ayromex.com), AyroDesk24 points to the canonical
-// subdomain ayrodesk24.ayromex.com.
-const PRODUCT_CTA_HREF: Record<'ayrohub' | 'ayrodesk24', string> = {
-  ayrohub: 'https://app.ayromex.com',
-  ayrodesk24: 'https://ayrodesk24.ayromex.com',
-}
-
-function ProductCard({ id, keyPrefix }: ProductCardProps) {
-  const t = useTranslations(`productsSection.${keyPrefix}`)
-  const ctaHref = PRODUCT_CTA_HREF[id]
+function ProductCard({ product }: { product: Product }) {
+  const t = useTranslations(`productsSection.${product.i18nKey}`)
 
   return (
     <div
-      data-product={id}
-      onMouseEnter={() => emitHover(id)}
+      data-product={product.id}
+      onMouseEnter={() => emitHover(product.id)}
       onMouseLeave={() => emitHover(null)}
       className="group relative z-10 rounded-3xl border border-ay-border bg-ay-surface/95 backdrop-blur-xl p-10 flex flex-col gap-6 transition-all duration-300 hover:border-ay-accent hover:scale-[1.02]"
     >
@@ -62,6 +49,9 @@ function ProductCard({ id, keyPrefix }: ProductCardProps) {
           <p className="mt-3 font-body text-[16px] text-ay-text-muted">
             {t('tagline')}
           </p>
+          <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.15em] text-ay-blue/85">
+            {t('audience')}
+          </p>
         </div>
 
         {/* Bullets */}
@@ -83,7 +73,7 @@ function ProductCard({ id, keyPrefix }: ProductCardProps) {
             {t('pricing')}
           </span>
           <a
-            href={ctaHref}
+            href={product.portalUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="font-body text-[14px] font-semibold text-ay-accent hover:underline underline-offset-4"
@@ -127,14 +117,15 @@ export default function ProductsSection() {
         </h2>
 
         {/* Subtitle */}
-        <p className="mt-8 max-w-[640px] font-body text-[18px] text-ay-text-muted leading-relaxed">
+        <p className="mt-8 max-w-[720px] font-body text-[18px] text-ay-text-muted leading-relaxed">
           {t('subtitle')}
         </p>
 
         {/* Cards grid */}
-        <div className="mt-16 w-full grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-          <ProductCard id="ayrohub" keyPrefix="ayrohub" />
-          <ProductCard id="ayrodesk24" keyPrefix="ayrodesk24" />
+        <div className="mt-16 w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {PRODUCTS.map((p) => (
+            <ProductCard key={p.id} product={p} />
+          ))}
         </div>
       </div>
     </SectionTransition>
