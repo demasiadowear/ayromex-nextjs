@@ -4,11 +4,11 @@ import { useTranslations } from 'next-intl'
 import { FiArrowUpRight, FiTerminal } from 'react-icons/fi'
 import SectionTransition from './SectionTransition'
 import { PRODUCTS, type Product } from '@/lib/products'
+import { whatsappLink } from '@/lib/contact'
 
 // "Talk to AYROMEX" lands on WhatsApp — same convention as the
 // existing CTA in the homepage. No invented external booking URL.
-const TALK_HREF =
-  'https://wa.me/390808407861?text=Ciao%20AYROMEX%2C%20vorrei%20parlare%20del%20portale%20prodotto%20pi%C3%B9%20adatto%20alla%20mia%20azienda.'
+const TALK_HREF = whatsappLink('portal-advice')
 
 // Strip protocol for the display string.
 function displayHost(url: string): string {

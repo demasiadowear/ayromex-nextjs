@@ -1,4 +1,5 @@
 import { FaCheck, FaArrowRight } from 'react-icons/fa'
+import { whatsappLink } from '@/lib/contact'
 
 const STEPS = [
   { n: '01', title: 'Ascoltiamo', desc: 'Analizziamo il tuo business, i tuoi processi e i tuoi obiettivi. Gratis, senza impegno.' },
@@ -150,7 +151,7 @@ export default function ChiSiamoPage() {
             Raccontaci il tuo business. In 72 ore ti diciamo cosa possiamo automatizzare.
           </p>
           <a
-            href="https://wa.me/390808407861?text=Ciao%20AYROMEX%2C%20vorrei%20sapere%20come%20potete%20aiutare%20il%20mio%20business."
+            href={whatsappLink('business')}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary px-8 py-4 text-sm min-h-[44px] inline-flex"

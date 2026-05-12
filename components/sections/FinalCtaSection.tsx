@@ -6,12 +6,12 @@ import { FaWhatsapp } from 'react-icons/fa'
 import { FiArrowUpRight } from 'react-icons/fi'
 import SectionTransition from './SectionTransition'
 import { getProduct } from '@/lib/products'
+import { whatsappLink } from '@/lib/contact'
 
 // "Talk to AYROMEX" lands on WhatsApp. We deliberately do not
 // invent a Calendly / Cal.com URL — Christian is the inbound
 // surface and WA is the fastest path until that link exists.
-const TALK_HREF =
-  'https://wa.me/390808407861?text=Ciao%20AYROMEX%2C%20vorrei%20capire%20quale%20sistema%20AI%20fa%20al%20caso%20mio.'
+const TALK_HREF = whatsappLink('product-fit')
 
 function emitSceneIntensity(on: boolean) {
   if (typeof window === 'undefined') return
@@ -25,7 +25,8 @@ export default function FinalCtaSection() {
 
   // When the section enters the viewport, tell BackgroundScene to
   // intensify the ambient constellation traffic — same hook the
-  // legacy CtaSection used, preserved for visual continuity.
+  // homepage CTA slot has always used, preserved for visual
+  // continuity.
   const sectionRef = useRef<HTMLDivElement>(null)
   useEffect(() => {
     const node = sectionRef.current
@@ -59,7 +60,7 @@ export default function FinalCtaSection() {
         aria-hidden="true"
       />
 
-      {/* Section number — inherits the CtaSection slot at "03" */}
+      {/* Section number — final CTA sits in slot "03" */}
       <span
         data-section-number
         aria-hidden="true"

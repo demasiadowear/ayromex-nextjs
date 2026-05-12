@@ -1,5 +1,6 @@
 import { getTranslations } from 'next-intl/server'
 import { FaRobot, FaCogs, FaWhatsapp, FaLayerGroup, FaGlobe } from 'react-icons/fa'
+import { whatsappLink } from '@/lib/contact'
 
 const ICONS = [FaRobot, FaCogs, FaWhatsapp, FaLayerGroup, FaGlobe]
 
@@ -64,7 +65,7 @@ export default async function ServiziPage() {
                     ))}
                   </ul>
                   <a
-                    href="https://wa.me/390808407861?text=Ciao%20AYROMEX%2C%20vorrei%20informazioni%20sui%20vostri%20servizi."
+                    href={whatsappLink('services')}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-primary px-6 py-3 text-xs min-h-[44px] inline-flex"
@@ -86,7 +87,7 @@ export default async function ServiziPage() {
           </h2>
           <p className="text-white/60 mb-8">{t('ctaDesc')}</p>
           <a
-            href="https://wa.me/390808407861?text=Ciao%20AYROMEX%2C%20vorrei%20una%20consulenza%20gratuita%20per%20capire%20cosa%20automatizzare."
+            href={whatsappLink('consultation')}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary px-8 py-4 text-sm min-h-[44px] inline-flex"

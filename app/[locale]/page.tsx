@@ -21,6 +21,7 @@ import ProcessSection from '@/components/sections/ProcessSection';
 import ProductsSection from '@/components/sections/ProductsSection';
 import VerticalsSection from '@/components/sections/VerticalsSection';
 import { RotatingText } from '@/components/RotatingText';
+import { WHATSAPP_DISPLAY, WHATSAPP_LINK_BARE } from '@/lib/contact';
 import { EASE_OUT } from '@/lib/motion';
 
 const VIDEO_SOURCES = [
@@ -156,7 +157,7 @@ export default function HomePage() {
                   className="absolute left-0 right-0 bottom-0 h-[6px] bg-ay-accent origin-left"
                 />
               </span>
-              <span className="opacity-75">{tHero('headlineRest')}</span>
+              <span>{tHero('headlineRest')}</span>
             </motion.h1>
 
             {/* Rotating text */}
@@ -242,12 +243,12 @@ export default function HomePage() {
                   >
                     {tHero('tooltipMessage')}
                     <a
-                      href="https://wa.me/390808407861"
+                      href={WHATSAPP_LINK_BARE}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-ay-accent hover:underline"
                     >
-                      wa.me/390808407861
+                      {WHATSAPP_DISPLAY}
                     </a>
                   </motion.div>
                 )}
@@ -338,8 +339,6 @@ export default function HomePage() {
 
       {/* ══════════════════════════════════════════
           03 — FINAL CTA (video: cta.mp4)
-          Replaces the legacy CtaSection on the homepage.
-          CtaSection.tsx is preserved as a file but unused.
           ══════════════════════════════════════════ */}
       <VideoSectionSensor id="cta">
         <FinalCtaSection />

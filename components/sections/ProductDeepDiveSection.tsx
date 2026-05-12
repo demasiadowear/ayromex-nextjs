@@ -98,7 +98,7 @@ export default function ProductDeepDiveSection({
               />
 
               <div className="flex items-center justify-center w-10 h-10 rounded-xl border border-ay-accent/30 bg-ay-accent/5">
-                <Icon className="w-4.5 h-4.5 text-ay-accent" />
+                <Icon className="w-5 h-5 text-ay-accent" />
               </div>
 
               <h3 className="font-display font-extrabold text-ay-text text-[17px] leading-tight">

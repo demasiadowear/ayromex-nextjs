@@ -1,3 +1,5 @@
+import { whatsappLink } from '@/lib/contact'
+
 const ARTICLES = [
   {
     id: 1,
@@ -114,7 +116,7 @@ export default function JournalPage() {
                 </p>
               </div>
               <a
-                href="https://wa.me/390808407861?text=Ciao%20AYROMEX%2C%20ho%20letto%20il%20journal%20e%20vorrei%20parlare%20del%20mio%20caso."
+                href={whatsappLink('journal')}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary px-6 py-3 text-xs min-h-[44px] inline-flex"

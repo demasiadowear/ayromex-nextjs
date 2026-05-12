@@ -7,14 +7,6 @@ import { useRouter, usePathname } from '@/i18n/navigation'
 import { AyromexLogo } from './AyromexLogo'
 import { PRODUCTS } from '@/lib/products'
 
-// Surface a stable display name from product id.
-// Product display names are not localized (they're brand names).
-const PRODUCT_LABEL: Record<(typeof PRODUCTS)[number]['id'], string> = {
-  ayrodesk24: 'AyroDesk24',
-  ayrohub: 'AyroHub',
-  ayrostay: 'AyroStay',
-}
-
 const LANGUAGES = [
   { code: 'it', label: 'Italiano', Flag: IT },
   { code: 'en', label: 'English', Flag: GB },
@@ -83,7 +75,7 @@ export default function Footer() {
                     rel="noopener noreferrer"
                     className="text-ay-text-muted hover:text-ay-accent transition-colors"
                   >
-                    {PRODUCT_LABEL[p.id]}
+                    {p.displayName}
                   </a>
                 </li>
               ))}

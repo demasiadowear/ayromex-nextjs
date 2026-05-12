@@ -9,18 +9,21 @@ import { useRouter, usePathname } from '@/i18n/navigation'
 import { IT, GB, RO } from 'country-flag-icons/react/3x2'
 import { PRODUCTS, type ProductId } from '@/lib/products'
 
+// Per-product i18n key for the "Access {product}" mobile CTA.
+// Keys preserve Italian grammar ("Accedi ad" before vowels), so
+// they stay individually authored rather than composed from a
+// template.
+const ACCESS_KEY: Record<ProductId, string> = {
+  ayrodesk24: 'accessAyroDesk24',
+  ayrohub: 'accessAyroHub',
+  ayrostay: 'accessAyroStay',
+}
+
 const languages = [
   { code: 'it', label: 'Italiano', FlagComponent: IT },
   { code: 'en', label: 'English', FlagComponent: GB },
   { code: 'ro', label: 'Română', FlagComponent: RO },
 ] as const
-
-// Stable, non-localized brand display names.
-const PRODUCT_LABEL: Record<ProductId, string> = {
-  ayrodesk24: 'AyroDesk24',
-  ayrohub: 'AyroHub',
-  ayrostay: 'AyroStay',
-}
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -180,7 +183,7 @@ export default function Navbar() {
                       className="w-full text-left px-4 py-3 flex items-center justify-between gap-3 text-sm hover:bg-white/5 transition-colors text-ay-text/80 hover:text-ay-accent"
                     >
                       <span className="font-display font-bold">
-                        {PRODUCT_LABEL[p.id]}
+                        {p.displayName}
                       </span>
                       <span className="w-1.5 h-1.5 rounded-full bg-ay-lime" aria-hidden="true" />
                     </a>
@@ -242,7 +245,7 @@ export default function Navbar() {
                     onClick={() => setIsOpen(false)}
                     className="w-full text-center rounded-xl border border-ay-accent/50 text-ay-accent px-5 py-3 text-sm font-bold uppercase tracking-widest hover:bg-ay-accent hover:text-ay-bg transition-colors"
                   >
-                    {t(`accessAyro${p.id === 'ayrodesk24' ? 'Desk24' : p.id === 'ayrohub' ? 'Hub' : 'Stay'}`)}
+                    {t(ACCESS_KEY[p.id])}
                   </a>
                 ))}
                 <a
