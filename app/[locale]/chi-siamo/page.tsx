@@ -1,5 +1,16 @@
+import type { Metadata } from 'next'
 import { FaCheck, FaArrowRight } from 'react-icons/fa'
 import { whatsappLink } from '@/lib/contact'
+import { pageMetadata, type Locale } from '@/lib/seo'
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  return pageMetadata('chiSiamo', locale as Locale)
+}
 
 const STEPS = [
   { n: '01', title: 'Ascoltiamo', desc: 'Analizziamo il tuo business, i tuoi processi e i tuoi obiettivi. Gratis, senza impegno.' },

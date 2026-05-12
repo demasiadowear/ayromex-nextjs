@@ -1,8 +1,11 @@
+import type { Metadata } from 'next'
 import { Gugi, Syne, DM_Sans, JetBrains_Mono } from 'next/font/google'
+import { getLocale } from 'next-intl/server'
 import './globals.css'
 import CustomCursor from '@/components/CustomCursor'
 import GrainOverlay from '@/components/GrainOverlay'
 import ScrollProgressIndicator from '@/components/ScrollProgressIndicator'
+import { OG_IMAGE, SITE_NAME, SITE_URL } from '@/lib/seo'
 
 const gugi = Gugi({
   subsets: ['latin'],
@@ -32,25 +35,81 @@ const jetbrainsMono = JetBrains_Mono({
   display: 'swap',
 })
 
-export const metadata = {
-  title: 'AYROMEX — AI Products & SaaS per l\'Europa',
-  description: 'Costruiamo prodotti AI che fatturano. Agenti AI, automazioni e SaaS verticali per il mercato europeo. Sistemi reali. Zero lavoro manuale.',
+// Root-level metadata. Per-locale title/description/alternates are
+// generated in app/[locale]/layout.tsx and on each page via
+// pageMetadata(). metadataBase MUST live here so relative URLs in
+// nested generateMetadata calls resolve to the production domain.
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: 'AYROMEX — AI systems that automate business operations',
+    template: '%s',
+  },
+  description:
+    'AYROMEX builds vertical AI products, WhatsApp assistants, voice agents, dashboards and automation systems that help businesses reduce manual work and increase operational control.',
+  keywords: [
+    'AYROMEX',
+    'AI automation',
+    'business automation',
+    'AI agents',
+    'WhatsApp AI assistant',
+    'voice AI agents',
+    'AI infrastructure',
+    'business operating system',
+    'vertical SaaS',
+    'AyroDesk24',
+    'AyroHub',
+    'AyroStay',
+  ],
+  applicationName: SITE_NAME,
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   openGraph: {
-    title: 'AYROMEX — AI Products & SaaS per l\'Europa',
-    description: 'Agenti AI, automazioni e SaaS verticali per il mercato europeo. AyroHub e AyroDesk24.',
-    siteName: 'AYROMEX',
     type: 'website',
+    siteName: SITE_NAME,
+    url: SITE_URL,
+    images: [OG_IMAGE],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: [OG_IMAGE.url],
   },
   icons: {
     icon: '/brand/logos/symbol/ayromex-symbol.svg',
     apple: '/brand/logos/symbol/ayromex-symbol-1024.png',
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
+  },
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  // Resolve the active locale from the request context populated
+  // by the next-intl middleware. This makes <html lang> match the
+  // route (it/en/ro) instead of being hardcoded.
+  const locale = await getLocale()
+
   return (
     <html
-      lang="it"
+      lang={locale}
       data-scroll-behavior="smooth"
       className={`dark ${gugi.variable} ${syne.variable} ${dmSans.variable} ${jetbrainsMono.variable}`}
     >
@@ -65,9 +124,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <CustomCursor />
 
         {/* Content */}
-        <div className="relative z-10">
-          {children}
-        </div>
+        <div className="relative z-10">{children}</div>
       </body>
     </html>
   )

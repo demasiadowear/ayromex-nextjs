@@ -1,8 +1,13 @@
 import type { Metadata } from 'next'
+import { pageMetadata, type Locale } from '@/lib/seo'
 
-export const metadata: Metadata = {
-  title: 'Termini e Condizioni — AYROMEX S.R.L.',
-  description: 'Termini e Condizioni di utilizzo dei servizi AYROMEX S.R.L. — AyroHub, AyroDesk24 e servizi di AI Automation.',
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  return pageMetadata('terms', locale as Locale)
 }
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {

@@ -1,8 +1,19 @@
+import type { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
 import { FaRobot, FaCogs, FaWhatsapp, FaLayerGroup, FaGlobe } from 'react-icons/fa'
 import { whatsappLink } from '@/lib/contact'
+import { pageMetadata, type Locale } from '@/lib/seo'
 
 const ICONS = [FaRobot, FaCogs, FaWhatsapp, FaLayerGroup, FaGlobe]
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  return pageMetadata('servizi', locale as Locale)
+}
 
 export default async function ServiziPage() {
   const t = await getTranslations('serviziPage')

@@ -1,8 +1,13 @@
 import type { Metadata } from 'next'
+import { pageMetadata, type Locale } from '@/lib/seo'
 
-export const metadata: Metadata = {
-  title: 'Privacy Policy — AYROMEX S.R.L.',
-  description: 'Informativa sul trattamento dei dati personali ai sensi del GDPR — AYROMEX S.R.L., società europea con sede a Bucarest.',
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  return pageMetadata('privacy', locale as Locale)
 }
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {

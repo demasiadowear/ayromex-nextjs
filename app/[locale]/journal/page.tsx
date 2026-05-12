@@ -1,4 +1,15 @@
+import type { Metadata } from 'next'
 import { whatsappLink } from '@/lib/contact'
+import { pageMetadata, type Locale } from '@/lib/seo'
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  return pageMetadata('journal', locale as Locale)
+}
 
 const ARTICLES = [
   {
