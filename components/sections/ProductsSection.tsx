@@ -20,7 +20,7 @@ function ProductCard({ product }: { product: Product }) {
       data-product={product.id}
       onMouseEnter={() => emitHover(product.id)}
       onMouseLeave={() => emitHover(null)}
-      className="group relative z-10 rounded-3xl border border-ay-border bg-ay-surface/95 backdrop-blur-xl p-10 flex flex-col gap-6 transition-all duration-300 hover:border-ay-accent hover:scale-[1.02]"
+      className="group relative z-10 rounded-3xl border border-ay-border bg-ay-surface/95 backdrop-blur-xl p-7 md:p-8 lg:p-8 flex flex-col gap-6 transition-all duration-300 hover:border-ay-accent hover:scale-[1.02]"
     >
       {/* Hover glow */}
       <div
@@ -42,8 +42,11 @@ function ProductCard({ product }: { product: Product }) {
         </div>
 
         {/* Product lockup */}
-        <div>
-          <h3 className="font-display text-[40px] leading-none font-extrabold text-ay-text">
+        <div className="min-w-0">
+          <h3
+            className="font-display leading-[0.95] font-extrabold text-ay-text break-words"
+            style={{ fontSize: 'clamp(28px, 3.2vw, 40px)' }}
+          >
             {t('name')}
           </h3>
           <p className="mt-3 font-body text-[16px] text-ay-text-muted">
@@ -54,17 +57,21 @@ function ProductCard({ product }: { product: Product }) {
           </p>
         </div>
 
-        {/* Bullets */}
+        {/* Bullets — filter empty/whitespace values so a missing
+            translation key never renders a stray orange dot. */}
         <ul className="flex flex-col gap-3 mt-2">
-          {(['bullet1', 'bullet2', 'bullet3'] as const).map((k) => (
-            <li
-              key={k}
-              className="flex items-start gap-3 font-body text-[14px] text-ay-text/85"
-            >
-              <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-ay-accent" />
-              {t(k)}
-            </li>
-          ))}
+          {(['bullet1', 'bullet2', 'bullet3'] as const)
+            .map((k) => ({ k, text: t(k) }))
+            .filter(({ text }) => text.trim().length > 0)
+            .map(({ k, text }) => (
+              <li
+                key={k}
+                className="flex items-start gap-3 font-body text-[14px] text-ay-text/85"
+              >
+                <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-ay-accent" />
+                {text}
+              </li>
+            ))}
         </ul>
 
         {/* Footer row: price + CTA */}

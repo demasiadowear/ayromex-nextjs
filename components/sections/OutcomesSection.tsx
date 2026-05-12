@@ -69,11 +69,8 @@ export default function OutcomesSection() {
 
         {/* Subtitle */}
         <p
-          className="mt-8 max-w-[720px] font-body text-[18px] leading-relaxed"
-          style={{
-            color: '#E5E5E5',
-            textShadow: '0 1px 4px rgba(0,0,0,0.7)',
-          }}
+          className="mt-8 max-w-[720px] font-body text-[18px] leading-relaxed text-ay-text-bright"
+          style={{ textShadow: '0 1px 4px rgba(0,0,0,0.7)' }}
         >
           {t('subtitle')}
         </p>
@@ -105,10 +102,7 @@ export default function OutcomesSection() {
               <h3 className="font-display font-extrabold text-ay-text text-[19px] leading-tight">
                 {tCards(`${key}.title`)}
               </h3>
-              <p
-                className="font-body text-[14px] leading-relaxed"
-                style={{ color: '#D8D8D8' }}
-              >
+              <p className="font-body text-[14px] leading-relaxed text-ay-text-bright">
                 {tCards(`${key}.description`)}
               </p>
             </div>

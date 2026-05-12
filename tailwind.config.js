@@ -25,6 +25,10 @@ module.exports = {
         'ay-cream':        '#FFF4EC', // warm surface tint
         'ay-blue':         '#00A6F4', // Electric Blue — tech accent
         'ay-lime':         '#A8FF3E', // success / live status
+        // Bright/soft text tokens — supersede the inline #E5E5E5 /
+        // #D8D8D8 / #C5C5C5 used in several section paragraphs.
+        'ay-text-bright':  '#E5E5E5',
+        'ay-text-soft':    '#C5C5C5',
       },
       fontFamily: {
         sans:    ['var(--font-dm-sans)', 'system-ui', 'sans-serif'],

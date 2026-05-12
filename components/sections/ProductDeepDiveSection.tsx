@@ -76,11 +76,8 @@ export default function ProductDeepDiveSection({
           </h2>
 
           <p
-            className="mt-7 max-w-[720px] font-body text-[17px] leading-relaxed"
-            style={{
-              color: '#E5E5E5',
-              textShadow: '0 1px 4px rgba(0,0,0,0.7)',
-            }}
+            className="mt-7 max-w-[720px] font-body text-[17px] leading-relaxed text-ay-text-bright"
+            style={{ textShadow: '0 1px 4px rgba(0,0,0,0.7)' }}
           >
             {t('focus')}
           </p>
@@ -106,10 +103,7 @@ export default function ProductDeepDiveSection({
               <h3 className="font-display font-extrabold text-ay-text text-[17px] leading-tight">
                 {tFeatures(`${key}.title`)}
               </h3>
-              <p
-                className="font-body text-[13.5px] leading-relaxed"
-                style={{ color: '#D8D8D8' }}
-              >
+              <p className="font-body text-[13.5px] leading-relaxed text-ay-text-bright">
                 {tFeatures(`${key}.description`)}
               </p>
             </div>

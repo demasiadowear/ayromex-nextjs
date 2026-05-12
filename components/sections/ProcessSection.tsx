@@ -84,11 +84,8 @@ function Step({ index, id }: StepProps) {
           {t(`step${index}duration`)}
         </span>
         <p
-          className="font-body text-[14px] leading-relaxed max-w-[260px]"
-          style={{
-            color: '#E5E5E5',
-            textShadow: '0 1px 4px rgba(0,0,0,0.75)',
-          }}
+          className="font-body text-[14px] leading-relaxed max-w-[260px] text-ay-text-bright"
+          style={{ textShadow: '0 1px 4px rgba(0,0,0,0.75)' }}
         >
           {t(`step${index}desc`)}
         </p>

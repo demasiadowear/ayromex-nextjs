@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Gugi, Syne, DM_Sans, JetBrains_Mono } from 'next/font/google'
 import { getLocale, getTranslations } from 'next-intl/server'
 import './globals.css'
@@ -84,6 +84,9 @@ export const metadata: Metadata = {
     icon: '/brand/logos/symbol/ayromex-symbol.svg',
     apple: '/brand/logos/symbol/ayromex-symbol-1024.png',
   },
+  // referrer policy is conservative-friendly for cross-origin
+  // analytics on Vercel without leaking full URLs.
+  referrer: 'origin-when-cross-origin',
   robots: {
     index: true,
     follow: true,
@@ -95,6 +98,17 @@ export const metadata: Metadata = {
       'max-video-preview': -1,
     },
   },
+}
+
+// Viewport (split from metadata per Next 16 convention). The
+// theme color matches Ink so iOS Safari's chrome tints to the
+// site background, and colorScheme: dark prevents the white
+// flash on cold loads.
+export const viewport: Viewport = {
+  themeColor: '#0D0D0D',
+  colorScheme: 'dark',
+  width: 'device-width',
+  initialScale: 1,
 }
 
 export default async function RootLayout({

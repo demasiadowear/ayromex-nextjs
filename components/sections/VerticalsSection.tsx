@@ -58,11 +58,8 @@ export default function VerticalsSection() {
 
         {/* Subtitle */}
         <p
-          className="mt-8 max-w-[640px] font-body text-[18px] leading-relaxed"
-          style={{
-            color: '#E5E5E5',
-            textShadow: '0 1px 4px rgba(0,0,0,0.7)',
-          }}
+          className="mt-8 max-w-[640px] font-body text-[18px] leading-relaxed text-ay-text-bright"
+          style={{ textShadow: '0 1px 4px rgba(0,0,0,0.7)' }}
         >
           {t('subtitle')}
         </p>
@@ -86,10 +83,7 @@ export default function VerticalsSection() {
               >
                 {tCards(`${key}.title`)}
               </h3>
-              <p
-                className="font-body text-[14px] leading-relaxed"
-                style={{ color: '#E5E5E5' }}
-              >
+              <p className="font-body text-[14px] leading-relaxed text-ay-text-bright">
                 {tCards(`${key}.description`)}
               </p>
             </div>
@@ -107,11 +101,8 @@ export default function VerticalsSection() {
                 {tStats(valueKey)}
               </span>
               <span
-                className="font-body text-[13px] uppercase tracking-[0.15em]"
-                style={{
-                  color: '#C5C5C5',
-                  textShadow: '0 1px 4px rgba(0,0,0,0.7)',
-                }}
+                className="font-body text-[13px] uppercase tracking-[0.15em] text-ay-text-soft"
+                style={{ textShadow: '0 1px 4px rgba(0,0,0,0.7)' }}
               >
                 {tStats(labelKey)}
               </span>

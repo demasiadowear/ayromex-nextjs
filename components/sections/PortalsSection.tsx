@@ -125,11 +125,8 @@ export default function PortalsSection() {
 
         {/* Subtitle */}
         <p
-          className="mt-8 max-w-[720px] font-body text-[17px] leading-relaxed"
-          style={{
-            color: '#E5E5E5',
-            textShadow: '0 1px 4px rgba(0,0,0,0.7)',
-          }}
+          className="mt-8 max-w-[720px] font-body text-[17px] leading-relaxed text-ay-text-bright"
+          style={{ textShadow: '0 1px 4px rgba(0,0,0,0.7)' }}
         >
           {t('subtitle')}
         </p>

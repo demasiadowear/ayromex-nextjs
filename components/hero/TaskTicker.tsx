@@ -63,6 +63,7 @@ export default function TaskTicker() {
 
   const [entries, setEntries] = useState<LogEntry[]>([])
   const [visible, setVisible] = useState(false)
+  const [scrolledPast, setScrolledPast] = useState(false)
   const idRef = useRef(0)
 
   const addEntry = (text: string) => {
@@ -76,6 +77,21 @@ export default function TaskTicker() {
   useEffect(() => {
     const t = window.setTimeout(() => setVisible(true), VISIBLE_DELAY_MS)
     return () => window.clearTimeout(t)
+  }, [])
+
+  // Hide the ticker once the viewer scrolls past the hero — the
+  // cinematic effect belongs to the hero, not to the product grid.
+  // Once flipped, scrolledPast stays true so scrolling back up
+  // doesn't pop the panel in over the products.
+  useEffect(() => {
+    const HIDE_THRESHOLD = 0.85 // 85% of viewport height scrolled
+    const onScroll = () => {
+      if (window.scrollY > window.innerHeight * HIDE_THRESHOLD) {
+        setScrolledPast(true)
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
   // Initial fill: stack a few rows so the panel doesn't open empty.
@@ -122,7 +138,7 @@ export default function TaskTicker() {
     return () => window.clearTimeout(timer)
   }, [visible, reduceMotion])
 
-  if (!visible) return null
+  if (!visible || scrolledPast) return null
 
   return (
     <div

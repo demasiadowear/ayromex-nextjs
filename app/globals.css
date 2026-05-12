@@ -33,6 +33,16 @@ body {
   color: var(--ay-text);
 }
 
+/* Global focus-visible — guarantees a visible focus ring for
+   keyboard users on any interactive element that doesn't already
+   define its own focus styles. Touch / mouse interactions never
+   trigger this thanks to :focus-visible. */
+:where(a, button, [role="button"], input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--ay-accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
 /* =====================
    CUSTOM COMPONENTS
    ===================== */
@@ -46,13 +56,19 @@ body {
     @apply bg-ay-accent text-ay-bg font-bold uppercase tracking-widest text-xs rounded-full
            transition-all duration-200 hover:bg-ay-accent-hover
            hover:shadow-[0_4px_32px_rgba(255,106,0,0.45)]
-           active:scale-95 inline-flex items-center justify-center;
+           active:scale-95 inline-flex items-center justify-center
+           focus-visible:outline-none focus-visible:ring-2
+           focus-visible:ring-ay-accent focus-visible:ring-offset-2
+           focus-visible:ring-offset-ay-bg;
   }
 
   .btn-ghost {
     @apply border border-white/30 text-ay-text rounded-full font-bold uppercase tracking-widest text-xs
            transition-all duration-200 hover:border-ay-accent hover:text-ay-accent
-           active:scale-95 inline-flex items-center justify-center;
+           active:scale-95 inline-flex items-center justify-center
+           focus-visible:outline-none focus-visible:ring-2
+           focus-visible:ring-ay-accent focus-visible:ring-offset-2
+           focus-visible:ring-offset-ay-bg;
   }
 
   .card-dark {
