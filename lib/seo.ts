@@ -29,12 +29,12 @@ export const SITE_NAME = 'AYROMEX'
 
 // TODO(og): commission a proper 1200x630 Open Graph image and
 // drop it at /public/brand/og/ayromex-og.png. Until then we
-// reuse the square symbol PNG — most platforms center-crop it,
+// reuse the 512x512 brand icon — most platforms center-crop it,
 // LinkedIn/X may show it letterboxed. Functional, not optimal.
 export const OG_IMAGE = {
-  url: '/brand/logos/symbol/ayromex-symbol-1024.png',
-  width: 1024,
-  height: 1024,
+  url: '/icon-512.png',
+  width: 512,
+  height: 512,
   alt: 'AYROMEX',
 } as const
 
