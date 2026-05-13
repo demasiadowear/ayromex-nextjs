@@ -2,15 +2,17 @@
 
 import { motion, useReducedMotion } from 'framer-motion'
 
+import NetworkPulseBeams from './NetworkPulseBeams'
+
 /**
  * AYROMEX CORE — lightweight global background.
  *
  * Replaces the MP4 video-background system on the homepage. Pure
- * CSS + Framer Motion: a metallic orange grid, a slow-pulsing
- * brand-orange radial core, a secondary drifting glow, two thin
- * Electric Blue sweep lines and three tiny status nodes
- * (orange / blue / lime). A top + bottom Ink vignette keeps
- * headlines legible.
+ * CSS + Framer Motion + SVG: a metallic orange grid, a slow-pulsing
+ * brand-orange radial core, a secondary drifting glow, a tertiary
+ * Electric Blue tint, and the NetworkPulseBeams orchestration layer
+ * (sparse SVG nodes + animated comet beams). A top + bottom Ink
+ * vignette keeps headlines legible.
  *
  * Fixed full-viewport, z-0, pointer-events-none. The whole layer
  * respects prefers-reduced-motion by short-circuiting every
@@ -85,64 +87,8 @@ export default function AyromexAnimatedBackground() {
         transition={{ duration: 16, repeat: Infinity, ease: 'easeInOut' }}
       />
 
-      {/* Two Electric Blue technical sweep lines — fade in/out. */}
-      <motion.div
-        aria-hidden="true"
-        className="absolute left-0 right-0 h-px"
-        style={{
-          top: '22%',
-          background:
-            'linear-gradient(90deg, transparent, rgba(0,166,244,0.50) 50%, transparent)',
-        }}
-        animate={reduce ? undefined : { opacity: [0.25, 0.7, 0.25] }}
-        transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut' }}
-      />
-      <motion.div
-        aria-hidden="true"
-        className="absolute left-0 right-0 h-px"
-        style={{
-          bottom: '28%',
-          background:
-            'linear-gradient(90deg, transparent, rgba(0,166,244,0.35) 50%, transparent)',
-        }}
-        animate={reduce ? undefined : { opacity: [0.55, 0.2, 0.55] }}
-        transition={{ duration: 11, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-      />
-
-      {/* Three tiny floating status nodes — orange / blue / lime. */}
-      <motion.div
-        aria-hidden="true"
-        className="absolute top-[18%] left-[12%] w-2 h-2 rounded-full bg-ay-accent"
-        style={{ boxShadow: '0 0 22px rgba(255,106,0,0.7)' }}
-        animate={
-          reduce
-            ? undefined
-            : { y: [0, -14, 0], opacity: [0.6, 1, 0.6] }
-        }
-        transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut' }}
-      />
-      <motion.div
-        aria-hidden="true"
-        className="absolute top-[58%] left-[82%] w-1.5 h-1.5 rounded-full bg-ay-blue"
-        style={{ boxShadow: '0 0 18px rgba(0,166,244,0.7)' }}
-        animate={
-          reduce
-            ? undefined
-            : { y: [0, 12, 0], opacity: [0.5, 0.95, 0.5] }
-        }
-        transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut', delay: 1.5 }}
-      />
-      <motion.div
-        aria-hidden="true"
-        className="absolute top-[78%] left-[28%] w-1 h-1 rounded-full bg-ay-lime"
-        style={{ boxShadow: '0 0 14px rgba(168,255,62,0.6)' }}
-        animate={
-          reduce
-            ? undefined
-            : { y: [0, -10, 0], opacity: [0.4, 0.9, 0.4] }
-        }
-        transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut', delay: 3 }}
-      />
+      {/* AYROMEX orchestration network — nodes + animated beams. */}
+      <NetworkPulseBeams />
 
       {/* Top + bottom Ink vignette so display headlines stay
           legible regardless of where the glow lands. */}
