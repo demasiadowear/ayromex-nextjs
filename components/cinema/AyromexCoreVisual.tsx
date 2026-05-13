@@ -141,21 +141,25 @@ function Halo({ reduce }: { reduce: boolean }) {
    ────────────────────────────────────────────────────────────── */
 
 function OrbitalLayer({ reduce }: { reduce: boolean }) {
-  // Geometry in a 980x480 design space. Children chat card occupies
-  // the central 620x400 region (centred). Modules anchor on the
-  // outer flanks; connection lines bridge the 40px gap to the card.
-  const W = 980
+  // Geometry in a 880x480 design space (tightened from 980).
+  // Chat card occupies the central 620x400 region. Modules sit on
+  // the outer flanks with only a 20px gap to the card — composition
+  // reads as a tight architectural cluster rather than scattered.
+  // Lateral extension capped at -130px per side keeps every module
+  // well clear of the 1440px viewport edge.
+  const W = 880
   const H = 480
+  const MOD_W = 130
   const lines = [
-    { id: 'l-desk24', x1: 140, y1: 120, x2: 180, y2: 120, color: ORANGE, dur: 9,  delay: 0   },
-    { id: 'l-hub',    x1: 840, y1: 120, x2: 800, y2: 120, color: ORANGE, dur: 9,  delay: 4.5 },
-    { id: 'l-stay',   x1: 140, y1: 360, x2: 180, y2: 360, color: BLUE,   dur: 11, delay: 2.2 },
+    { id: 'l-desk24', x1: 130, y1: 120, x2: 150, y2: 120, color: ORANGE, dur: 9,  delay: 0   },
+    { id: 'l-hub',    x1: 750, y1: 120, x2: 730, y2: 120, color: ORANGE, dur: 9,  delay: 4.5 },
+    { id: 'l-stay',   x1: 130, y1: 360, x2: 150, y2: 360, color: BLUE,   dur: 11, delay: 2.2 },
   ]
 
   return (
     <div
       aria-hidden="true"
-      className="hidden lg:block pointer-events-none absolute -left-[180px] -right-[180px] -top-[40px] -bottom-[40px]"
+      className="hidden lg:block pointer-events-none absolute -left-[130px] -right-[130px] -top-[40px] -bottom-[40px]"
     >
       {/* Connection lines — dotted baseline + occasional comet */}
       <svg
@@ -196,26 +200,25 @@ function OrbitalLayer({ reduce }: { reduce: boolean }) {
         </g>
       </svg>
 
-      {/* Modules — absolutely positioned using the same 980x480
-          coordinate space, expressed as percentages so they stay
-          anchored if the orbital area's actual rendered size shifts
-          slightly between 1024 and 1920 viewports. */}
+      {/* Modules — anchored to the orbital extension edges so they
+          sit exactly at the connection-line origins. Percent-based
+          positioning keeps them locked across the lg→2xl range. */}
       <ModuleCard
         idx={0}
         module={MODULES[0]}
-        style={{ left: `${(0 / W) * 100}%`,    top: `${(80  / H) * 100}%`, width: 140 }}
+        style={{ left: 0,  top: `${(80  / H) * 100}%`, width: MOD_W }}
         reduce={reduce}
       />
       <ModuleCard
         idx={1}
         module={MODULES[1]}
-        style={{ right: `${(0 / W) * 100}%`,   top: `${(80  / H) * 100}%`, width: 140 }}
+        style={{ right: 0, top: `${(80  / H) * 100}%`, width: MOD_W }}
         reduce={reduce}
       />
       <ModuleCard
         idx={2}
         module={MODULES[2]}
-        style={{ left: `${(0 / W) * 100}%`,    top: `${(320 / H) * 100}%`, width: 140 }}
+        style={{ left: 0,  top: `${(320 / H) * 100}%`, width: MOD_W }}
         reduce={reduce}
       />
     </div>

@@ -6,13 +6,16 @@ import { useTranslations } from 'next-intl'
 import AyroBubble from './AyroBubble'
 
 // Scroll thresholds (in viewport heights) that drive the state
-// transitions. The guide is hidden while the hero is fully in
-// view, then appears during the hero -> products handoff.
-const TH_APPEAR = 0.7 // hero still visible but scrolling past
-const TH_PRODUCTS = 1.3
-const TH_PROCESS = 2.3
-const TH_VERTICALS = 3.1
-const TH_CTA = 3.9
+// transitions. The guide stays hidden while the hero (including
+// the AyromexCoreVisual orchestration frame) is still on screen —
+// the product modules inside the hero already communicate the
+// ecosystem, so a floating bubble there competes for attention.
+// The guide only enters once the user is fully past the hero band.
+const TH_APPEAR = 1.4 // hero must be fully off-screen
+const TH_PRODUCTS = 2.0
+const TH_PROCESS = 3.0
+const TH_VERTICALS = 3.8
+const TH_CTA = 4.6
 
 export type AyroGuideState =
   | 'hidden'
