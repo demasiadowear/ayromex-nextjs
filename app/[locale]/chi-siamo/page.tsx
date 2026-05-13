@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { getTranslations } from 'next-intl/server'
 import { FaCheck, FaArrowRight } from 'react-icons/fa'
 import { whatsappLink } from '@/lib/contact'
 import { pageMetadata, type Locale } from '@/lib/seo'
@@ -12,49 +13,46 @@ export async function generateMetadata({
   return pageMetadata('chiSiamo', locale as Locale)
 }
 
-const STEPS = [
-  { n: '01', title: 'Ascoltiamo', desc: 'Analizziamo il tuo business, i tuoi processi e i tuoi obiettivi. Gratis, senza impegno.' },
-  { n: '02', title: 'Progettiamo', desc: 'Disegniamo il sistema su misura per te. Nessuna soluzione standard, tutto custom.' },
-  { n: '03', title: 'Costruiamo', desc: 'Sviluppiamo e testiamo. Tu vedi ogni passaggio, niente scatole nere.' },
-  { n: '04', title: 'Consegniamo', desc: 'Il sistema è live. Formiamo il tuo team in meno di 2 ore.' },
-  { n: '05', title: 'Supportiamo', desc: 'Siamo operativi H24 per supporto. Il sistema evolve con il tuo business.' },
-]
+export default async function ChiSiamoPage() {
+  const t = await getTranslations('chiSiamoPage')
 
-const SECTORS = [
-  { name: 'Hospitality', desc: 'Hotel, B&B, ristoranti' },
-  { name: 'Gaming ADM', desc: 'Concessionari, poker room, betting' },
-  { name: 'F&B', desc: 'Pizzerie, bar, locali' },
-  { name: 'Retail', desc: 'Negozi, e-commerce, showroom' },
-  { name: 'PMI', desc: 'Studi professionali, agenzie, officine' },
-  { name: 'Salute & Benessere', desc: 'Centri estetici, parrucchieri, studi medici' },
-]
+  const STEPS = [1, 2, 3, 4, 5].map((n) => ({
+    n: String(n).padStart(2, '0'),
+    title: t(`step${n}title`),
+    desc: t(`step${n}desc`),
+  }))
 
-const VALUES = [
-  { title: 'Risultati concreti', desc: 'Misuriamo tutto. Se non si vede in fatturato o in tempo risparmiato, non lo facciamo.' },
-  { title: 'Zero consulenze vuote', desc: 'Non vendiamo documenti. Consegniamo sistemi attivi che funzionano dal giorno uno.' },
-  { title: 'Trasparenza totale', desc: 'Sai sempre cosa stiamo costruendo, perché e quanto costa. Nessuna sorpresa.' },
-  { title: 'Prodotti che durano', desc: 'Costruiamo per la scalabilità. I sistemi che creiamo crescono con la tua azienda.' },
-]
+  const SECTORS = [1, 2, 3, 4, 5, 6].map((n) => ({
+    name: t(`s${n}name`),
+    desc: t(`s${n}desc`),
+  }))
 
-export default function ChiSiamoPage() {
+  const VALUES = [1, 2, 3, 4].map((n) => ({
+    title: t(`v${n}title`),
+    desc: t(`v${n}desc`),
+  }))
+
+  const STATS = [1, 2, 3, 4].map((n) => ({
+    n: t(`stat${n}n`),
+    label: t(`stat${n}label`),
+  }))
+
   return (
     <main id="main" className="overflow-x-hidden pt-20">
 
       {/* HERO */}
       <section className="py-24 md:py-32 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
-          <span className="text-ay-accent text-xs font-bold uppercase tracking-widest">Chi siamo</span>
+          <span className="text-ay-accent text-xs font-bold uppercase tracking-widest">{t('eyebrow')}</span>
           <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tight text-white mt-4 mb-8 max-w-4xl leading-tight">
-            L&apos;agenzia che costruisce<br />
-            <span className="text-ay-accent">sistemi AI vendibili</span>
+            {t('title1')}<br />
+            <span className="text-ay-accent">{t('title2')}</span>
           </h1>
           <p className="text-xl text-white/60 max-w-2xl leading-relaxed mb-8">
-            AYROMEX S.R.L. è un&apos;AI Automation Agency europea con base in Puglia e sede legale a Bucarest.
-            La nostra missione è una sola: eliminare il lavoro manuale dalle PMI italiane attraverso
-            sistemi AI che funzionano davvero.
+            {t('desc')}
           </p>
           <a href="#contatti" className="btn-primary px-7 py-3.5 text-sm min-h-[44px] inline-flex">
-            Lavoriamo insieme
+            {t('mainCta')}
             <FaArrowRight className="ml-2 w-3 h-3" />
           </a>
         </div>
@@ -64,25 +62,18 @@ export default function ChiSiamoPage() {
       <section className="py-20 px-6 md:px-12 bg-ay-surface">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div>
-            <span className="text-ay-accent text-xs font-bold uppercase tracking-widest">La nostra missione</span>
+            <span className="text-ay-accent text-xs font-bold uppercase tracking-widest">{t('missionEyebrow')}</span>
             <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-white mt-4 mb-6">
-              Ogni PMI italiana<br />
-              <span className="text-ay-accent">merita un sistema AI</span>
+              {t('missionTitle1')}<br />
+              <span className="text-ay-accent">{t('missionTitle2')}</span>
             </h2>
             <p className="text-white/70 text-lg leading-relaxed">
-              Troppe piccole e medie imprese italiane perdono clienti, fatturato e tempo
-              per processi manuali che si possono automatizzare. Noi risolviamo questo problema
-              costruendo sistemi concreti, non presentazioni PowerPoint.
+              {t('missionDesc')}
             </p>
           </div>
           <div className="grid grid-cols-2 gap-4">
-            {[
-              { n: '90%', label: 'riduzione lavoro manuale' },
-              { n: '72h', label: 'analisi gratuita' },
-              { n: 'H24', label: 'sistemi attivi' },
-              { n: '5+', label: 'clienti attivi' },
-            ].map((s) => (
-              <div key={s.n} className="p-6 rounded-xl border border-white/10 bg-white/5 text-center">
+            {STATS.map((s) => (
+              <div key={s.label} className="p-6 rounded-xl border border-white/10 bg-white/5 text-center">
                 <p className="text-4xl font-black text-ay-accent mb-1">{s.n}</p>
                 <p className="text-white/50 text-xs uppercase tracking-widest">{s.label}</p>
               </div>
@@ -94,9 +85,9 @@ export default function ChiSiamoPage() {
       {/* HOW WE WORK */}
       <section className="py-24 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
-          <span className="text-ay-accent text-xs font-bold uppercase tracking-widest">Come lavoriamo</span>
+          <span className="text-ay-accent text-xs font-bold uppercase tracking-widest">{t('howEyebrow')}</span>
           <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-white mt-4 mb-16 max-w-xl">
-            Dal primo contatto<br />al sistema live
+            {t('howTitle1')}<br />{t('howTitle2')}
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
@@ -114,9 +105,9 @@ export default function ChiSiamoPage() {
       {/* SECTORS */}
       <section className="py-20 px-6 md:px-12 bg-ay-surface">
         <div className="max-w-7xl mx-auto">
-          <span className="text-ay-accent text-xs font-bold uppercase tracking-widest">Settori che serviamo</span>
+          <span className="text-ay-accent text-xs font-bold uppercase tracking-widest">{t('sectorsEyebrow')}</span>
           <h2 className="text-4xl font-black uppercase tracking-tight text-white mt-4 mb-12">
-            Verticali in cui<br /><span className="text-ay-accent">siamo specializzati</span>
+            {t('sectorsTitle1')}<br /><span className="text-ay-accent">{t('sectorsTitle2')}</span>
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
             {SECTORS.map((s) => (
@@ -132,9 +123,9 @@ export default function ChiSiamoPage() {
       {/* VALUES */}
       <section className="py-24 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
-          <span className="text-ay-accent text-xs font-bold uppercase tracking-widest">I nostri valori</span>
+          <span className="text-ay-accent text-xs font-bold uppercase tracking-widest">{t('valuesEyebrow')}</span>
           <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-white mt-4 mb-12">
-            Quello in cui<br /><span className="text-ay-accent">crediamo davvero</span>
+            {t('valuesTitle1')}<br /><span className="text-ay-accent">{t('valuesTitle2')}</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {VALUES.map((v) => (
@@ -156,10 +147,10 @@ export default function ChiSiamoPage() {
       <section id="contatti" className="py-24 px-6 md:px-12 bg-ay-surface text-center">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-white mb-4">
-            Lavoriamo<br /><span className="text-ay-accent">insieme</span>
+            {t('ctaTitle1')}<br /><span className="text-ay-accent">{t('ctaTitle2')}</span>
           </h2>
           <p className="text-white/60 text-lg mb-8">
-            Raccontaci il tuo business. In 72 ore ti diciamo cosa possiamo automatizzare.
+            {t('ctaDesc')}
           </p>
           <a
             href={whatsappLink('business')}
@@ -167,7 +158,7 @@ export default function ChiSiamoPage() {
             rel="noopener noreferrer"
             className="btn-primary px-8 py-4 text-sm min-h-[44px] inline-flex"
           >
-            Parliamo su WhatsApp
+            {t('ctaButton')}
           </a>
         </div>
       </section>
