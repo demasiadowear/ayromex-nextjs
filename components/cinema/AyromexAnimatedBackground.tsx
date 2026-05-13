@@ -2,17 +2,17 @@
 
 import { motion, useReducedMotion } from 'framer-motion'
 
-import NetworkPulseBeams from './NetworkPulseBeams'
-
 /**
  * AYROMEX CORE — lightweight global background.
  *
  * Replaces the MP4 video-background system on the homepage. Pure
- * CSS + Framer Motion + SVG: a metallic orange grid, a slow-pulsing
+ * CSS + Framer Motion: a metallic orange grid, a slow-pulsing
  * brand-orange radial core, a secondary drifting glow, a tertiary
- * Electric Blue tint, and the NetworkPulseBeams orchestration layer
- * (sparse SVG nodes + animated comet beams). A top + bottom Ink
- * vignette keeps headlines legible.
+ * Electric Blue tint, and a top + bottom Ink vignette to keep
+ * headlines legible. The orchestration framing (nodes, modules,
+ * connection lines) now lives inside the hero itself via
+ * AyromexCoreVisual — this layer stays purely ambient so the two
+ * systems do not compete for attention.
  *
  * Fixed full-viewport, z-0, pointer-events-none. The whole layer
  * respects prefers-reduced-motion by short-circuiting every
@@ -86,9 +86,6 @@ export default function AyromexAnimatedBackground() {
         animate={reduce ? undefined : { opacity: [0.5, 0.85, 0.5] }}
         transition={{ duration: 16, repeat: Infinity, ease: 'easeInOut' }}
       />
-
-      {/* AYROMEX orchestration network — nodes + animated beams. */}
-      <NetworkPulseBeams />
 
       {/* Top + bottom Ink vignette so display headlines stay
           legible regardless of where the glow lands. */}

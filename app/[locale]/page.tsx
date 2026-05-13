@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { FiArrowRight } from 'react-icons/fi';
 import AyromexAnimatedBackground from '@/components/cinema/AyromexAnimatedBackground';
-import AyromexGlowingShadow from '@/components/ui/ayromex-glowing-shadow';
+import AyromexCoreVisual from '@/components/cinema/AyromexCoreVisual';
 import AyroGuide from '@/components/hero/AyroGuide';
 import TaskTicker from '@/components/hero/TaskTicker';
 import AyroDesk24DeepDiveSection from '@/components/sections/AyroDesk24DeepDiveSection';
@@ -169,12 +169,14 @@ export default function HomePage() {
             </motion.p>
           </div>
 
-          {/* Ayro chat card — wrapped in AyromexGlowingShadow so the
-              brand-orange halo reads as the hero focal point. The
-              glow is purely decorative; parent width drives sizing
-              so mobile cannot overflow. */}
+          {/* Ayro chat card — wrapped in AyromexCoreVisual so the
+              card becomes the literal AYROMEX CORE inside the
+              product orchestration frame (CORE chip, orbital
+              product modules, capability tags). The wrapper folds
+              the previous glow halo internally and adds the
+              orbital infrastructure layer above lg. */}
           <div className="flex justify-center w-full">
-            <AyromexGlowingShadow intensity="medium" className="w-full max-w-[620px] flex flex-col rounded-2xl">
+            <AyromexCoreVisual>
               <motion.div
                 {...chatAnim}
                 className="w-full max-w-full h-[300px] md:h-[360px] lg:h-[400px] rounded-2xl border border-ay-border bg-ay-surface flex flex-col overflow-hidden text-left min-w-0"
@@ -247,7 +249,7 @@ export default function HomePage() {
                   </motion.div>
                 )}
               </AnimatePresence>
-            </AyromexGlowingShadow>
+            </AyromexCoreVisual>
           </div>
 
           {/* CTAs */}
