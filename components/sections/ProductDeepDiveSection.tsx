@@ -49,7 +49,7 @@ export default function ProductDeepDiveSection({
     <SectionTransition
       id={`${productId}-deep`}
       variant="fade-up"
-      className="relative px-6 py-28 overflow-hidden"
+      className="relative px-4 sm:px-6 py-20 md:py-28 overflow-hidden"
       ariaLabelledBy={`${productId}-deep-heading`}
     >
       <div className="relative z-10 max-w-7xl mx-auto w-full">
@@ -64,15 +64,14 @@ export default function ProductDeepDiveSection({
 
           <h2
             id={`${productId}-deep-heading`}
-            className="font-display font-extrabold text-ay-text leading-[0.98] tracking-[-0.02em]"
-            style={{
-              fontSize: 'clamp(36px, 5.4vw, 72px)',
-              textShadow: '0 2px 12px rgba(0,0,0,0.55)',
-            }}
+            className="font-display font-extrabold text-ay-text leading-[1.0] tracking-[-0.025em] break-words w-full max-w-full [font-size:clamp(26px,7.5vw,38px)] md:[font-size:clamp(40px,4.6vw,64px)]"
+            style={{ textShadow: '0 2px 12px rgba(0,0,0,0.55)' }}
           >
             <span className="text-ay-accent">{product.displayName}</span>
-            <span className="text-ay-text-muted mx-3">—</span>
-            <span>{t('tagline')}</span>
+            {/* Em-dash separator hidden on mobile to let the tagline
+                wrap onto its own line; restored inline on tablet+. */}
+            <span className="text-ay-text-muted hidden md:inline md:mx-3">—</span>
+            <span className="block md:inline">{t('tagline')}</span>
           </h2>
 
           <p
@@ -111,7 +110,7 @@ export default function ProductDeepDiveSection({
         </div>
 
         {/* Result block + CTAs row */}
-        <div className="mt-14 rounded-3xl border border-ay-border bg-ay-surface/90 backdrop-blur-xl p-8 md:p-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+        <div className="mt-14 rounded-3xl border border-ay-border bg-ay-surface/90 backdrop-blur-xl p-6 md:p-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 md:gap-8 min-w-0">
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 mb-4">
               <span
@@ -136,20 +135,23 @@ export default function ProductDeepDiveSection({
             </div>
           </div>
 
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-3 shrink-0">
+          {/* CTAs — stack on mobile (full width), inline on md+.
+              We deliberately skip the `sm:` breakpoint (which in
+              this project's tailwind.config maps to 375px) so the
+              row never appears at mobile widths. */}
+          <div className="flex flex-col md:flex-row lg:flex-col xl:flex-row gap-3 w-full md:w-auto md:shrink-0">
             <a
               href={product.portalUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-ay-accent text-ay-bg px-6 py-3.5 font-display font-bold uppercase tracking-widest text-[12px] hover:bg-ay-accent-hover hover:scale-[1.02] transition-all duration-200"
+              className="w-full md:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-ay-accent text-ay-bg px-6 py-3.5 font-display font-bold uppercase tracking-widest text-[12px] hover:bg-ay-accent-hover hover:scale-[1.02] transition-all duration-200 text-center"
             >
               {t('ctaPrimary')}
-              <FiArrowUpRight className="w-3.5 h-3.5" />
+              <FiArrowUpRight className="w-3.5 h-3.5 shrink-0" />
             </a>
             <a
               href="#contatti"
-              className="inline-flex items-center justify-center rounded-full border border-ay-accent/60 text-ay-accent px-6 py-3.5 font-display font-bold uppercase tracking-widest text-[12px] hover:bg-ay-accent hover:text-ay-bg transition-all duration-200"
+              className="w-full md:w-auto inline-flex items-center justify-center rounded-full border border-ay-accent/60 text-ay-accent px-6 py-3.5 font-display font-bold uppercase tracking-widest text-[12px] hover:bg-ay-accent hover:text-ay-bg transition-all duration-200 text-center"
             >
               {t('ctaSecondary')}
             </a>

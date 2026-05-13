@@ -20,7 +20,7 @@ function ProductCard({ product }: { product: Product }) {
       data-product={product.id}
       onMouseEnter={() => emitHover(product.id)}
       onMouseLeave={() => emitHover(null)}
-      className="group relative z-10 rounded-3xl border border-ay-border bg-ay-surface/95 backdrop-blur-xl p-7 md:p-8 lg:p-8 flex flex-col gap-6 transition-all duration-300 hover:border-ay-accent hover:scale-[1.02]"
+      className="group relative z-10 rounded-3xl border border-ay-border bg-ay-surface/95 backdrop-blur-xl p-5 md:p-8 lg:p-8 flex flex-col gap-6 transition-all duration-300 hover:border-ay-accent hover:scale-[1.02] w-full max-w-full min-w-0"
     >
       {/* Hover glow */}
       <div
@@ -74,16 +74,17 @@ function ProductCard({ product }: { product: Product }) {
             ))}
         </ul>
 
-        {/* Footer row: price + CTA */}
-        <div className="mt-auto flex items-end justify-between pt-8 border-t border-ay-border">
-          <span className="font-mono text-[13px] text-ay-text-muted">
+        {/* Footer row: price + CTA — stacks on mobile so neither
+            element clips against the card edge, rejoins one row at md+ */}
+        <div className="mt-auto flex flex-col md:flex-row md:items-end md:justify-between gap-3 pt-6 md:pt-8 border-t border-ay-border min-w-0">
+          <span className="font-mono text-[12px] md:text-[13px] text-ay-text-muted break-words">
             {t('pricing')}
           </span>
           <a
             href={product.portalUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-body text-[14px] font-semibold text-ay-accent hover:underline underline-offset-4"
+            className="font-body text-[14px] font-semibold text-ay-accent hover:underline underline-offset-4 break-words"
           >
             {t('cta')}
           </a>
@@ -100,7 +101,7 @@ export default function ProductsSection() {
     <SectionTransition
       id="prodotti"
       variant="number-reveal"
-      className="relative min-h-screen px-6 py-32 overflow-hidden"
+      className="relative min-h-screen px-4 sm:px-6 py-20 md:py-32 overflow-hidden"
       ariaLabelledBy="products-heading"
     >
       {/* Giant background number */}
@@ -117,8 +118,7 @@ export default function ProductsSection() {
         {/* Headline */}
         <h2
           id="products-heading"
-          className="font-display font-extrabold text-ay-text leading-[0.95] tracking-[-0.02em]"
-          style={{ fontSize: 'clamp(64px, 9vw, 140px)' }}
+          className="font-display font-extrabold text-ay-text leading-[0.95] tracking-[-0.025em] break-words w-full max-w-full mx-auto md:max-w-[1100px] [font-size:clamp(34px,10vw,48px)] md:[font-size:clamp(64px,7vw,104px)]"
         >
           {t('headlineLine1')}
           <br />

@@ -43,7 +43,7 @@ export default function OutcomesSection() {
     <SectionTransition
       id="risultati"
       variant="fade-up"
-      className="relative min-h-[80vh] px-6 py-32 overflow-hidden flex items-center"
+      className="relative min-h-[80vh] px-4 sm:px-6 py-20 md:py-32 overflow-hidden flex items-center"
       ariaLabelledBy="outcomes-heading"
     >
       <div className="relative z-10 max-w-7xl mx-auto w-full flex flex-col items-center text-center">
@@ -58,11 +58,8 @@ export default function OutcomesSection() {
         {/* Headline */}
         <h2
           id="outcomes-heading"
-          className="font-display font-extrabold text-ay-text leading-[0.95] tracking-[-0.02em] max-w-[18ch]"
-          style={{
-            fontSize: 'clamp(40px, 6vw, 84px)',
-            textShadow: '0 2px 12px rgba(0,0,0,0.6)',
-          }}
+          className="font-display font-extrabold text-ay-text leading-[0.95] tracking-[-0.025em] w-full max-w-full md:max-w-[20ch] mx-auto break-words [font-size:clamp(30px,9vw,42px)] md:[font-size:clamp(42px,5vw,72px)]"
+          style={{ textShadow: '0 2px 12px rgba(0,0,0,0.6)' }}
         >
           {t('headline')}
         </h2>

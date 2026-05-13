@@ -174,8 +174,11 @@ export default function AyroGuide() {
         </motion.div>
       )}
 
-      {/* Mobile follower: smaller, docked bottom-right with bubble above */}
-      {visible && (
+      {/* Mobile follower disabled: the cinematic guide adds visual
+          weight to an already-dense mobile hero. Kept in code so
+          desktop behaviour is unchanged; the wrapper class now
+          unconditionally hides the mobile branch. */}
+      {false && visible && (
         <motion.div
           key="ayro-guide-mobile"
           initial={{ opacity: 0, scale: 0.85 }}
@@ -183,7 +186,7 @@ export default function AyroGuide() {
           exit={{ opacity: 0, scale: 0.85 }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           aria-hidden="true"
-          className="md:hidden fixed bottom-24 right-6 z-40 pointer-events-none"
+          className="hidden md:hidden fixed bottom-24 right-6 z-40 pointer-events-none"
         >
           <div className="relative w-[60px] h-[60px]">
             <motion.div

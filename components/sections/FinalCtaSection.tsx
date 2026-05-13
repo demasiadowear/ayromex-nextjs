@@ -52,7 +52,7 @@ export default function FinalCtaSection() {
     <SectionTransition
       id="contatti"
       variant="number-reveal"
-      className="relative min-h-[90vh] px-6 py-32 overflow-hidden flex items-center justify-center"
+      className="relative min-h-[90vh] px-4 sm:px-6 py-20 md:py-32 overflow-hidden flex items-center justify-center"
       ariaLabelledBy="final-cta-heading"
     >
       <div
@@ -83,11 +83,8 @@ export default function FinalCtaSection() {
         {/* Headline */}
         <h2
           id="final-cta-heading"
-          className="font-display font-extrabold text-ay-text leading-[0.95] tracking-[-0.02em] max-w-[18ch]"
-          style={{
-            fontSize: 'clamp(48px, 7vw, 104px)',
-            textShadow: '0 2px 12px rgba(0,0,0,0.6)',
-          }}
+          className="font-display font-extrabold text-ay-text leading-[0.95] tracking-[-0.025em] w-full max-w-full md:max-w-[20ch] mx-auto break-words [font-size:clamp(32px,9.5vw,46px)] md:[font-size:clamp(52px,6vw,88px)]"
+          style={{ textShadow: '0 2px 12px rgba(0,0,0,0.6)' }}
         >
           {t('headline')}
         </h2>
@@ -100,8 +97,11 @@ export default function FinalCtaSection() {
           {t('subtitle')}
         </p>
 
-        {/* CTA grid: 3 product buttons + 1 talk button */}
-        <div className="mt-12 w-full max-w-[820px] grid grid-cols-1 sm:grid-cols-2 gap-3">
+        {/* CTA grid: 3 product buttons + 1 talk button.
+            Single column on mobile so 13px uppercase labels never
+            overflow the pill width; 2-col at md+ (this project's
+            `sm:` breakpoint is 375px, intentionally skipped here). */}
+        <div className="mt-12 w-full max-w-[820px] grid grid-cols-1 md:grid-cols-2 gap-3">
           <a
             href={ayrodesk24.portalUrl}
             target="_blank"

@@ -25,7 +25,7 @@ function PortalCard({ product }: { product: Product }) {
   return (
     <div
       data-portal={product.id}
-      className="group relative rounded-3xl border border-ay-border bg-ay-surface/90 backdrop-blur-xl p-8 flex flex-col gap-6 transition-all duration-300 hover:border-ay-accent/60 hover:bg-ay-surface"
+      className="group relative rounded-3xl border border-ay-border bg-ay-surface/90 backdrop-blur-xl p-6 md:p-8 flex flex-col gap-6 transition-all duration-300 hover:border-ay-accent/60 hover:bg-ay-surface w-full max-w-full min-w-0"
     >
       {/* Subtle tech-blue top line */}
       <span
@@ -53,8 +53,8 @@ function PortalCard({ product }: { product: Product }) {
       </div>
 
       {/* Product lockup */}
-      <div>
-        <h3 className="font-display text-[34px] leading-none font-extrabold text-ay-text">
+      <div className="min-w-0">
+        <h3 className="font-display leading-[1.0] font-extrabold text-ay-text break-words [font-size:clamp(26px,7vw,34px)]">
           {tName}
         </h3>
         <p className="mt-3 font-body text-[15px] text-ay-text-muted leading-relaxed">
@@ -62,27 +62,28 @@ function PortalCard({ product }: { product: Product }) {
         </p>
       </div>
 
-      {/* Portal host */}
-      <div className="mt-auto pt-6 border-t border-ay-border">
-        <p className="font-mono text-[12px] text-ay-blue/85 truncate">
+      {/* Portal host — break long URLs cleanly on mobile */}
+      <div className="mt-auto pt-6 border-t border-ay-border min-w-0">
+        <p className="font-mono text-[12px] text-ay-blue/85 break-all">
           {displayHost(product.portalUrl)}
         </p>
       </div>
 
-      {/* Actions */}
-      <div className="flex flex-col sm:flex-row gap-3">
+      {/* Actions — stack on mobile (full width), inline at md+.
+          Skip `sm:` because this project maps it to 375px. */}
+      <div className="flex flex-col md:flex-row gap-3">
         <a
           href={product.portalUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-ay-accent text-ay-bg px-5 py-3 font-display font-bold uppercase tracking-widest text-[12px] hover:bg-ay-accent-hover hover:scale-[1.02] transition-all duration-200"
+          className="md:flex-1 w-full inline-flex items-center justify-center gap-2 rounded-full bg-ay-accent text-ay-bg px-5 py-3 font-display font-bold uppercase tracking-widest text-[12px] hover:bg-ay-accent-hover hover:scale-[1.02] transition-all duration-200 text-center"
         >
           {tPortals('openPortal')}
-          <FiArrowUpRight className="w-3.5 h-3.5" />
+          <FiArrowUpRight className="w-3.5 h-3.5 shrink-0" />
         </a>
         <a
           href="#contatti"
-          className="flex-1 inline-flex items-center justify-center rounded-full border border-ay-border text-ay-text px-5 py-3 font-display font-bold uppercase tracking-widest text-[12px] hover:border-ay-accent hover:text-ay-accent transition-all duration-200"
+          className="md:flex-1 w-full inline-flex items-center justify-center rounded-full border border-ay-border text-ay-text px-5 py-3 font-display font-bold uppercase tracking-widest text-[12px] hover:border-ay-accent hover:text-ay-accent transition-all duration-200 text-center"
         >
           {demoLabel}
         </a>
@@ -99,7 +100,7 @@ export default function PortalsSection() {
     <SectionTransition
       id="portali"
       variant="fade-up"
-      className="relative min-h-[85vh] px-6 py-32 overflow-hidden flex items-center"
+      className="relative min-h-[85vh] px-4 sm:px-6 py-20 md:py-32 overflow-hidden flex items-center"
       ariaLabelledBy="portals-heading"
     >
       <div className="relative z-10 max-w-7xl mx-auto w-full flex flex-col items-center text-center">
@@ -114,11 +115,8 @@ export default function PortalsSection() {
         {/* Headline */}
         <h2
           id="portals-heading"
-          className="font-display font-extrabold text-ay-text leading-[0.95] tracking-[-0.02em] max-w-[20ch]"
-          style={{
-            fontSize: 'clamp(40px, 6vw, 84px)',
-            textShadow: '0 2px 12px rgba(0,0,0,0.6)',
-          }}
+          className="font-display font-extrabold text-ay-text leading-[0.95] tracking-[-0.025em] w-full max-w-full md:max-w-[20ch] mx-auto break-words [font-size:clamp(30px,9vw,42px)] md:[font-size:clamp(42px,5vw,72px)]"
+          style={{ textShadow: '0 2px 12px rgba(0,0,0,0.6)' }}
         >
           {t('headline')}
         </h2>

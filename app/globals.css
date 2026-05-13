@@ -20,6 +20,12 @@
   --ay-lime:         #A8FF3E;
 }
 
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 html {
   scroll-behavior: smooth;
 }

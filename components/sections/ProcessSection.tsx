@@ -109,7 +109,7 @@ export default function ProcessSection() {
     <SectionTransition
       id="processo"
       variant="number-reveal"
-      className="relative min-h-screen px-6 py-32 overflow-x-hidden overflow-y-visible"
+      className="relative min-h-screen px-4 sm:px-6 py-20 md:py-32 overflow-x-hidden overflow-y-visible"
       ariaLabelledBy="process-heading"
     >
       {/* Giant background number */}
@@ -126,8 +126,7 @@ export default function ProcessSection() {
         {/* Headline */}
         <h2
           id="process-heading"
-          className="font-display font-extrabold text-ay-text leading-[0.95] tracking-[-0.02em]"
-          style={{ fontSize: 'clamp(64px, 9vw, 140px)' }}
+          className="font-display font-extrabold text-ay-text leading-[0.95] tracking-[-0.025em] break-words w-full max-w-full mx-auto md:max-w-[1100px] [font-size:clamp(34px,10vw,48px)] md:[font-size:clamp(64px,7vw,104px)]"
         >
           {t('headlineLine1')}
           <br />

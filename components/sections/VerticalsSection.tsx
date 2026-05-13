@@ -32,7 +32,7 @@ export default function VerticalsSection() {
     <SectionTransition
       id="verticali"
       variant="fade-up"
-      className="relative min-h-[80vh] px-6 py-32 overflow-hidden flex items-center"
+      className="relative min-h-[80vh] px-4 sm:px-6 py-20 md:py-32 overflow-hidden flex items-center"
       ariaLabelledBy="verticals-heading"
     >
       <div className="relative z-10 max-w-7xl mx-auto w-full flex flex-col items-center text-center">
@@ -47,11 +47,8 @@ export default function VerticalsSection() {
         {/* Headline */}
         <h2
           id="verticals-heading"
-          className="font-display font-extrabold text-ay-text leading-[0.95] tracking-[-0.02em]"
-          style={{
-            fontSize: 'clamp(48px, 7vw, 110px)',
-            textShadow: '0 2px 12px rgba(0,0,0,0.6)',
-          }}
+          className="font-display font-extrabold text-ay-text leading-[0.95] tracking-[-0.025em] break-words w-full max-w-full md:max-w-[20ch] mx-auto [font-size:clamp(32px,9.5vw,46px)] md:[font-size:clamp(52px,6vw,88px)]"
+          style={{ textShadow: '0 2px 12px rgba(0,0,0,0.6)' }}
         >
           {t('headline')}
         </h2>

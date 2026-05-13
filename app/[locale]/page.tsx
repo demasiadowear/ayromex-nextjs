@@ -4,11 +4,7 @@ import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { FiArrowRight } from 'react-icons/fi';
-import VideoBackground from '@/components/cinema/VideoBackground';
-import {
-  VideoBackgroundProvider,
-} from '@/components/cinema/VideoBackgroundProvider';
-import VideoSectionSensor from '@/components/cinema/VideoSectionSensor';
+import AyromexAnimatedBackground from '@/components/cinema/AyromexAnimatedBackground';
 import AyroGuide from '@/components/hero/AyroGuide';
 import TaskTicker from '@/components/hero/TaskTicker';
 import AyroDesk24DeepDiveSection from '@/components/sections/AyroDesk24DeepDiveSection';
@@ -23,13 +19,6 @@ import VerticalsSection from '@/components/sections/VerticalsSection';
 import { RotatingText } from '@/components/RotatingText';
 import { WHATSAPP_DISPLAY, WHATSAPP_LINK_BARE } from '@/lib/contact';
 import { EASE_OUT } from '@/lib/motion';
-
-const VIDEO_SOURCES = [
-  { id: 'hero', src: '/videos/hero2.mp4' },
-  { id: 'products', src: '/videos/hero.mp4' },
-  { id: 'process', src: '/videos/processo.mp4' },
-  { id: 'cta', src: '/videos/cta.mp4' },
-] as const
 
 /* ─── Animation Variants ─────────────────────────────────────── */
 const fadeUp = {
@@ -98,11 +87,12 @@ export default function HomePage() {
       };
 
   return (
-    <VideoBackgroundProvider defaultId="hero">
-      <main id="main" className="relative overflow-x-hidden text-ay-text">
+    <>
+      <main id="main" className="relative overflow-x-hidden text-ay-text w-full max-w-full">
 
-      {/* Crossfading fullscreen video layer */}
-      <VideoBackground videos={[...VIDEO_SOURCES]} />
+      {/* Animated AYROMEX CORE background — replaces the legacy
+          MP4 video system. Pure CSS + Framer Motion, mobile-safe. */}
+      <AyromexAnimatedBackground />
 
       {/* Narrative follower — appears when scrolling past the hero */}
       <AyroGuide />
@@ -111,31 +101,33 @@ export default function HomePage() {
       <TaskTicker />
 
       {/* ══════════════════════════════════════════
-          HERO (video: hero2.mp4)
+          HERO
           ══════════════════════════════════════════ */}
-      <VideoSectionSensor
-        id="hero"
-        className="relative min-h-screen flex flex-col items-center justify-center pt-28 pb-24 px-6 overflow-hidden"
+      <section
+        className="relative min-h-[100svh] flex flex-col items-center justify-center pt-28 pb-24 px-4 sm:px-6 overflow-hidden"
       >
 
-        <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-center">
+        <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-center min-w-0">
 
           {/* Top: copy stack centered */}
-          <div className="flex flex-col items-center text-center max-w-5xl mx-auto">
+          <div className="flex flex-col items-center text-center w-full max-w-full md:max-w-5xl mx-auto min-w-0">
 
-            {/* Hero logo lockup — centered above eyebrow */}
+            {/* Hero logo lockup — centered above eyebrow.
+                Mobile: compact 140px box so the symbol fits with
+                generous side breathing room and never clips with
+                its drop-shadow. md+ keeps the cinematic size. */}
             <motion.img
               {...heroAnim(0.5)}
               src="/brand/logos/symbol/AYROLOGO.svg"
               alt="AYROMEX"
-              className="h-[260px] w-[260px] md:h-[360px] md:w-[360px] lg:h-[440px] lg:w-[440px] mb-4"
+              className="h-[140px] w-[140px] max-w-full md:h-[360px] md:w-[360px] lg:h-[440px] lg:w-[440px] mb-2 md:mb-4 object-contain"
               style={{ filter: 'drop-shadow(0 4px 20px rgba(0,0,0,0.85))' }}
             />
 
             {/* Eyebrow */}
             <motion.span
               {...heroAnim(1.0)}
-              className="block font-body text-[12px] font-medium uppercase tracking-[0.08em] text-ay-text-muted mb-6"
+              className="block font-body text-[11px] md:text-[12px] font-medium uppercase tracking-[0.08em] text-ay-text-muted mb-3 md:mb-6"
             >
               {tHero('eyebrow')}
             </motion.span>
@@ -143,19 +135,17 @@ export default function HomePage() {
             {/* Headline — cinema size */}
             <motion.h1
               {...heroAnim(1.3, 1.0)}
-              className="font-display font-extrabold text-ay-text leading-[0.95] tracking-[-0.02em] mb-8"
-              style={{ fontSize: 'clamp(64px, 10vw, 140px)' }}
+              className="font-display font-extrabold text-ay-text leading-[0.95] tracking-[-0.025em] mb-6 md:mb-8 break-words w-full max-w-full mx-auto md:max-w-[1180px] [font-size:clamp(34px,9.5vw,44px)] md:[font-size:clamp(72px,7vw,112px)]"
             >
               {tHero('headlineStart')}
-              <span className="relative inline-block text-ay-accent">
+              {/* Accent span: always `inline` so the long word can
+                  wrap naturally with the rest of the sentence and
+                  never produce horizontal overflow. The cinematic
+                  underline that used to anchor to an inline-block
+                  parent is dropped — the orange colour already
+                  carries the emphasis. */}
+              <span className="text-ay-accent">
                 {tHero('headlineAccent')}
-                <motion.span
-                  aria-hidden="true"
-                  initial={reduceMotion ? { scaleX: 1 } : { scaleX: 0 }}
-                  animate={{ scaleX: 1 }}
-                  transition={{ duration: 1.0, ease: EASE_OUT, delay: reduceMotion ? 0 : 2.5 }}
-                  className="absolute left-0 right-0 bottom-0 h-[6px] bg-ay-accent origin-left"
-                />
               </span>
               <span>{tHero('headlineRest')}</span>
             </motion.h1>
@@ -163,7 +153,7 @@ export default function HomePage() {
             {/* Rotating text */}
             <motion.p
               {...heroAnim(2.0)}
-              className="font-body text-[20px] md:text-[24px] text-ay-text mb-4"
+              className="font-body text-[16px] md:text-[24px] text-ay-text mb-3 md:mb-4 max-w-full"
             >
               {tHero('rotatingPrefix')}
               <RotatingText words={rotatingWords} showUnderline />
@@ -172,7 +162,7 @@ export default function HomePage() {
             {/* Supporting paragraph */}
             <motion.p
               {...heroAnim(2.3)}
-              className="font-body text-base md:text-[17px] text-ay-text-muted max-w-[640px] leading-relaxed mb-10"
+              className="font-body text-[14px] md:text-[17px] text-ay-text-muted max-w-full md:max-w-[640px] leading-relaxed mb-6 md:mb-10"
             >
               {tHero('paragraph')}
             </motion.p>
@@ -183,7 +173,7 @@ export default function HomePage() {
             <div className="w-full max-w-[620px] flex flex-col">
               <motion.div
                 {...chatAnim}
-                className="w-full h-[360px] lg:h-[400px] rounded-2xl border border-ay-border bg-ay-surface flex flex-col overflow-hidden text-left"
+                className="w-full max-w-full h-[300px] md:h-[360px] lg:h-[400px] rounded-2xl border border-ay-border bg-ay-surface flex flex-col overflow-hidden text-left min-w-0"
               >
                 {/* Card header */}
                 <div className="flex items-center gap-3 px-5 py-4 border-b border-ay-border">
@@ -259,17 +249,17 @@ export default function HomePage() {
           {/* CTAs */}
           <motion.div
             {...heroAnim(3.0)}
-            className="flex flex-wrap gap-4 justify-center mt-12 mb-20"
+            className="flex flex-col md:flex-row md:flex-wrap gap-3 md:gap-4 justify-center mt-8 md:mt-12 mb-16 md:mb-20 w-full max-w-[420px] md:max-w-none"
           >
             <a
               href="#prodotti"
-              className="inline-flex items-center justify-center font-display font-bold uppercase tracking-widest text-sm rounded-full bg-ay-accent text-ay-bg px-7 py-[14px] hover:bg-ay-accent-hover hover:scale-[1.02] transition-all duration-200"
+              className="w-full md:w-auto inline-flex items-center justify-center font-display font-bold uppercase tracking-widest text-sm rounded-full bg-ay-accent text-ay-bg px-7 py-[14px] hover:bg-ay-accent-hover hover:scale-[1.02] transition-all duration-200 text-center"
             >
               {tHero('ctaPrimary')}
             </a>
             <a
               href="#contatti"
-              className="inline-flex items-center justify-center font-display font-bold uppercase tracking-widest text-sm rounded-full border border-ay-border text-ay-text px-7 py-[14px] hover:border-ay-accent hover:text-ay-accent transition-all duration-200"
+              className="w-full md:w-auto inline-flex items-center justify-center font-display font-bold uppercase tracking-widest text-sm rounded-full border border-ay-border text-ay-text px-7 py-[14px] hover:border-ay-accent hover:text-ay-accent transition-all duration-200 text-center"
             >
               {tHero('ctaGhost')}
             </a>
@@ -284,7 +274,7 @@ export default function HomePage() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.6, ease: EASE_OUT, delay: reduceMotion ? 0 : 3.5 }}
-              className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 pointer-events-none z-10"
+              className="hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-3 pointer-events-none z-10"
             >
               <span className="font-body text-[11px] uppercase tracking-[0.15em] text-ay-text-muted">
                 {tHero('scrollHint')}
@@ -295,65 +285,46 @@ export default function HomePage() {
             </motion.div>
           )}
         </AnimatePresence>
-      </VideoSectionSensor>
+      </section>
 
       {/* ══════════════════════════════════════════
-          01 — PRODOTTI (video: hero.mp4 / neural network)
+          01 — PRODOTTI
           ══════════════════════════════════════════ */}
-      <VideoSectionSensor id="products">
-        <ProductsSection />
-      </VideoSectionSensor>
+      <ProductsSection />
 
       {/* ══════════════════════════════════════════
           OUTCOMES — operational results
-          (no dedicated video; rides the Products backdrop)
           ══════════════════════════════════════════ */}
       <OutcomesSection />
 
       {/* ══════════════════════════════════════════
           PRODUCT DEEP DIVES — one slab per product
-          (no dedicated video; rides the Products backdrop)
           ══════════════════════════════════════════ */}
       <AyroDesk24DeepDiveSection />
       <AyroHubDeepDiveSection />
       <AyroStayDeepDiveSection />
 
       {/* ══════════════════════════════════════════
-          02 — PROCESSO (video: processo.mp4)
+          02 — PROCESSO
           ══════════════════════════════════════════ */}
-      <VideoSectionSensor id="process">
-        <ProcessSection />
-      </VideoSectionSensor>
+      <ProcessSection />
 
       {/* ══════════════════════════════════════════
           SOCIAL PROOF — VERTICALI
-          (keeps the Process video underneath; no new source)
           ══════════════════════════════════════════ */}
       <VerticalsSection />
 
       {/* ══════════════════════════════════════════
           PORTALS — ecosystem access grid
-          (no dedicated video; rides the Process backdrop)
           ══════════════════════════════════════════ */}
       <PortalsSection />
 
       {/* ══════════════════════════════════════════
-          03 — FINAL CTA (video: cta.mp4)
+          03 — FINAL CTA
           ══════════════════════════════════════════ */}
-      <VideoSectionSensor id="cta">
-        <FinalCtaSection />
-      </VideoSectionSensor>
-
-      {/* Footer landing — video fades to black */}
-      <VideoSectionSensor
-        id="empty"
-        threshold={0.25}
-        className="h-px w-full"
-      >
-        <div aria-hidden="true" />
-      </VideoSectionSensor>
+      <FinalCtaSection />
 
       </main>
-    </VideoBackgroundProvider>
+    </>
   );
 }
