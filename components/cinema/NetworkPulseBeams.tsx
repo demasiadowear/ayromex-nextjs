@@ -30,32 +30,33 @@ export default function NetworkPulseBeams() {
   const LIME = '#A8FF3E'
   const BASELINE = 'rgba(255,255,255,0.06)'
 
-  // 7 anchor points across the 1000x600 viewBox. Coordinates picked
-  // to keep beams clear of the centre hero text band (y ~220-380).
+  // Anchor points on the 1000x600 viewBox. Top + bottom perimeter
+  // only — centre stays empty so the hero text band (y ~220-380)
+  // is uninterrupted and the orange CORE glow reads as the focal
+  // point. Network reads as architectural infrastructure, not as
+  // decorative ribbons.
   const N = {
-    a: { x: 120, y: 90 }, // top-left
-    b: { x: 500, y: 60 }, // top-centre (above headline)
+    a: { x: 120, y: 90 },  // top-left
+    b: { x: 500, y: 60 },  // top-centre
     c: { x: 880, y: 110 }, // top-right
-    d: { x: 80, y: 320 }, // mid-left edge
-    e: { x: 920, y: 300 }, // mid-right edge
     f: { x: 240, y: 520 }, // bottom-left
     g: { x: 760, y: 540 }, // bottom-right
   } as const
 
-  // Beam definitions. Curved with quadratic Beziers for organic feel.
+  // Beams: straight lines, not curves. Reads as schematic
+  // infrastructure rather than flowing ribbons. 3 total — top-left
+  // to top-centre (orange), top-centre to top-right (orange,
+  // delayed), bottom-left to bottom-right (single blue accent).
   const beams = [
-    { id: 'b1', d: `M${N.a.x},${N.a.y} Q 300 200 ${N.b.x},${N.b.y}`, color: ORANGE, dur: 6, delay: 0, desktop: false },
-    { id: 'b2', d: `M${N.b.x},${N.b.y} Q 700 200 ${N.c.x},${N.c.y}`, color: BLUE, dur: 7, delay: 1.4, desktop: false },
-    { id: 'b3', d: `M${N.d.x},${N.d.y} Q 200 440 ${N.f.x},${N.f.y}`, color: ORANGE, dur: 8, delay: 3, desktop: true },
-    { id: 'b4', d: `M${N.e.x},${N.e.y} Q 820 440 ${N.g.x},${N.g.y}`, color: ORANGE, dur: 7.5, delay: 2.2, desktop: true },
-    { id: 'b5', d: `M${N.f.x},${N.f.y} Q 500 580 ${N.g.x},${N.g.y}`, color: BLUE, dur: 9, delay: 4, desktop: true },
+    { id: 'b1', d: `M${N.a.x},${N.a.y} L${N.b.x},${N.b.y}`, color: ORANGE, dur: 9,  delay: 0,   desktop: false },
+    { id: 'b2', d: `M${N.b.x},${N.b.y} L${N.c.x},${N.c.y}`, color: ORANGE, dur: 9,  delay: 4.5, desktop: false },
+    { id: 'b3', d: `M${N.f.x},${N.f.y} L${N.g.x},${N.g.y}`, color: BLUE,   dur: 12, delay: 2.5, desktop: true  },
   ]
 
-  // Comet length and full path length proxy. We use a generous
-  // dash array so the gap dominates and only a short bright comet
-  // is ever visible along the stroke.
-  const COMET = 110
-  const GAP = 1400
+  // Comet length and full path length proxy. Larger gap keeps
+  // beams quiet (long dark spans between comets).
+  const COMET = 90
+  const GAP = 1600
 
   return (
     <svg
@@ -65,8 +66,9 @@ export default function NetworkPulseBeams() {
       preserveAspectRatio="xMidYMid slice"
       style={{ pointerEvents: 'none' }}
     >
-      {/* Baseline strokes — always visible, very low opacity */}
-      <g stroke={BASELINE} strokeWidth={1} fill="none">
+      {/* Baseline strokes — dotted to read as schematic
+          infrastructure rather than drawn ribbons. */}
+      <g stroke={BASELINE} strokeWidth={1} strokeDasharray="2 6" fill="none">
         {beams.map((b) =>
           b.desktop ? (
             <path key={`base-${b.id}`} d={b.d} className="hidden md:block" />
@@ -84,7 +86,7 @@ export default function NetworkPulseBeams() {
               key={`beam-${b.id}`}
               d={b.d}
               stroke={b.color}
-              strokeWidth={1.5}
+              strokeWidth={1.2}
               strokeDasharray={`${COMET} ${GAP}`}
               style={{
                 filter: `drop-shadow(0 0 6px ${b.color}aa)`,
@@ -114,16 +116,17 @@ export default function NetworkPulseBeams() {
         })}
       </g>
 
-      {/* Nodes — 3 always visible, 4 desktop-only */}
-      <Node x={N.a.x} y={N.a.y} color={ORANGE} size={4} reduce={reduce} delay={0} />
-      <Node x={N.b.x} y={N.b.y} color={ORANGE} size={5} reduce={reduce} delay={0.6} />
-      <Node x={N.c.x} y={N.c.y} color={BLUE} size={4} reduce={reduce} delay={1.2} />
+      {/* Nodes — top perimeter always visible, bottom desktop-only.
+          Top-centre is the largest, reads as the architectural
+          anchor above the hero. One lime status node on the
+          bottom-left for liveness. */}
+      <Node x={N.a.x} y={N.a.y} color={ORANGE} size={3.5} reduce={reduce} delay={0} />
+      <Node x={N.b.x} y={N.b.y} color={ORANGE} size={5}   reduce={reduce} delay={0.6} />
+      <Node x={N.c.x} y={N.c.y} color={ORANGE} size={3.5} reduce={reduce} delay={1.2} />
 
       <g className="hidden md:block">
-        <Node x={N.d.x} y={N.d.y} color={ORANGE} size={3.5} reduce={reduce} delay={1.8} />
-        <Node x={N.e.x} y={N.e.y} color={BLUE} size={3.5} reduce={reduce} delay={2.4} />
-        <Node x={N.f.x} y={N.f.y} color={LIME} size={3} reduce={reduce} delay={3} />
-        <Node x={N.g.x} y={N.g.y} color={ORANGE} size={3.5} reduce={reduce} delay={3.6} />
+        <Node x={N.f.x} y={N.f.y} color={LIME}   size={3}   reduce={reduce} delay={1.8} />
+        <Node x={N.g.x} y={N.g.y} color={BLUE}   size={3}   reduce={reduce} delay={2.4} />
       </g>
     </svg>
   )
