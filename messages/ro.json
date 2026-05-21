@@ -77,6 +77,97 @@
       "roiLabel": "zile ROI mediu"
     }
   },
+  "hubSection": {
+    "heading": "Ecosistemul AYROMEX",
+    "cassetti": {
+      "ayrohub": {
+        "tag": "PRODUS SAAS",
+        "title": "AyroHub",
+        "tagline": "Retenție și reactivare pentru operatorii ADM.",
+        "description": "Voice AI, marketing pe WhatsApp și insight-uri strategice pentru concesionarii italieni de jocuri."
+      },
+      "ayrodesk24": {
+        "tag": "PRODUS SAAS",
+        "title": "AyroDesk24",
+        "tagline": "Recepționerul AI care nu doarme niciodată.",
+        "description": "Gestionează rezervări, răspunde pe WhatsApp și califică clienții pentru saloane, studiouri și IMM."
+      },
+      "ayrostay": {
+        "tag": "PRODUS SAAS",
+        "title": "AyroStay",
+        "tagline": "OS-ul pentru structura ta de cazare.",
+        "description": "Mesagerie multilingvă, sentiment live și automatizări pentru hoteluri și B&B premium."
+      },
+      "siti": {
+        "tag": "DISPONIBIL ACUM",
+        "title": "Site-uri Web",
+        "tagline": "Prezența ta online, în 7 zile.",
+        "subtitle": "Întâi îl vezi. Apoi decizi.",
+        "description": "Construim site-ul tău și ți-l arătăm înainte de a-ți cere vreun angajament.\nDacă te convinge, mergem mai departe.\nDacă nu este ceea ce căutai, nu plătești nimic.",
+        "badge": "Ofertă gratuită",
+        "cta": "Cere site-ul tău"
+      },
+      "automazioni": {
+        "tag": "SERVICIU",
+        "title": "Automatizări",
+        "tagline": "Elimină munca repetitivă.",
+        "description": "Fluxuri automate, CRM, notificări și raportare. Tu te ocupi de ce contează."
+      },
+      "branding": {
+        "tag": "SERVICIU",
+        "title": "Branding",
+        "tagline": "Identitatea vizuală, mai întâi.",
+        "description": "Logo, paletă, materiale, social kit. Înainte să construim, definim cine ești."
+      }
+    }
+  },
+  "pmiSection": {
+    "eyebrow": "04 — IMM ITALIENE",
+    "headlineAccent": "Exiști",
+    "headlineEnd": " acolo unde te caută lumea.",
+    "subline1": "Un site care îți seamănă, online în șapte zile.",
+    "subline2": "Pentru afaceri care vor să fie văzute, nu vândute.",
+    "pillars": {
+      "google": {
+        "label": "Găsit pe Google",
+        "title": "Pe Google, primul de pe stradă.",
+        "body": "Configurăm Google Business și Google Maps, optimizăm căutările locale și activăm vorba digitală făcută din recenzii și mențiuni. Când te caută, te găsesc."
+      },
+      "identity": {
+        "label": "Identitate, nu template",
+        "title": "Niciun template. Doar tu.",
+        "body": "Fiecare site pornește de la caracterul tău, de la culorile tale, de la felul tău de a spune lucrurile. Nu alegem dintre opțiuni preconfigurate — desenăm de la zero."
+      },
+      "speed": {
+        "label": "Șapte zile, online",
+        "title": "Șapte zile. Nimic mai mult.",
+        "body": "De la primul mesaj la site-ul live, o săptămână. Briefing, scriere, design, deploy. Rapid nu înseamnă în grabă."
+      },
+      "care": {
+        "label": "Totul inclus, pentru totdeauna",
+        "title": "Domeniu, hosting, actualizări.",
+        "body": "Nu te lăsăm la jumătatea drumului. Domeniu înregistrat, hosting pe infrastructură premium, actualizări tehnice incluse. Tu îți trăiești munca, noi ne ocupăm de restul."
+      }
+    },
+    "promise": {
+      "eyebrow": "PROMISIUNEA NOASTRĂ",
+      "headline": "Întâi îl vezi.\nApoi decizi.",
+      "body": "Realizăm o primă versiune a site-ului tău și ți-o arătăm înainte de a-ți cere vreun angajament.\n\nDacă te convinge, mergem mai departe. Dacă nu este ceea ce căutai, nu plătești nimic.\n\nNiciun contract forțat. Niciun risc. Doar un site profesional, construit ca să te ajute să vinzi mai bine."
+    },
+    "portfolio": {
+      "eyebrow": "PORTFOLIU",
+      "titleStart": "Construim ",
+      "titleAccent": "ceva",
+      "titleEnd": " special.",
+      "body": "Primele proiecte sunt aproape gata. Revino curând — cele mai bune povești urmează să fie spuse.",
+      "cardLabel": "În construcție"
+    },
+    "cta": {
+      "line1": "Spune-ne despre afacerea ta.",
+      "line2": "Răspundem într-o zi.",
+      "button": "Ofertă gratuită pe WhatsApp"
+    }
+  },
   "productsSection": {
     "number": "01",
     "headlineLine1": "Trei produse.",

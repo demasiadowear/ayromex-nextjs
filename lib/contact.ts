@@ -46,6 +46,7 @@ export type WhatsAppIntent =
   | 'business'
   | 'portal-advice'
   | 'newsletter'
+  | 'web-quote'
 
 const PREFILL_MESSAGES: Record<WhatsAppIntent, string> = {
   general:
@@ -66,6 +67,8 @@ const PREFILL_MESSAGES: Record<WhatsAppIntent, string> = {
     'Ciao AYROMEX, vorrei parlare del portale prodotto più adatto alla mia azienda.',
   newsletter:
     'Ciao AYROMEX, vorrei iscrivermi agli aggiornamenti.',
+  'web-quote':
+    'Ciao AYROMEX, vorrei un preventivo gratuito per il mio sito web.',
 }
 
 /**

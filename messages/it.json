@@ -77,6 +77,97 @@
       "roiLabel": "giorni ROI medio"
     }
   },
+  "hubSection": {
+    "heading": "Ecosistema AYROMEX",
+    "cassetti": {
+      "ayrohub": {
+        "tag": "PRODOTTO SAAS",
+        "title": "AyroHub",
+        "tagline": "Retention e riattivazione per operatori ADM.",
+        "description": "Voice AI, WhatsApp marketing e insight strategici per concessionarie di gioco ADM."
+      },
+      "ayrodesk24": {
+        "tag": "PRODOTTO SAAS",
+        "title": "AyroDesk24",
+        "tagline": "Il receptionist AI che non dorme mai.",
+        "description": "Gestisce prenotazioni, risponde su WhatsApp e qualifica i clienti per saloni, studi e PMI."
+      },
+      "ayrostay": {
+        "tag": "PRODOTTO SAAS",
+        "title": "AyroStay",
+        "tagline": "L'OS per la tua struttura ricettiva.",
+        "description": "Messaggistica multilingue, sentiment live e automazioni per hotel e B&B premium."
+      },
+      "siti": {
+        "tag": "DISPONIBILE ORA",
+        "title": "Siti Web",
+        "tagline": "La tua presenza online, in 7 giorni.",
+        "subtitle": "Prima lo vedi. Poi decidi.",
+        "description": "Costruiamo il tuo sito e te lo mostriamo prima di chiederti qualsiasi impegno.\nSe ti convince, procediamo.\nSe non è quello che cercavi, non paghi nulla.",
+        "badge": "Preventivo gratuito",
+        "cta": "Richiedi il tuo sito"
+      },
+      "automazioni": {
+        "tag": "SERVIZIO",
+        "title": "Automazioni",
+        "tagline": "Elimina il lavoro ripetitivo.",
+        "description": "Flussi automatici, CRM, notifiche e reportistica. Tu lavori su ciò che conta."
+      },
+      "branding": {
+        "tag": "SERVIZIO",
+        "title": "Branding",
+        "tagline": "L'identità visiva prima di tutto.",
+        "description": "Logo, palette, materiali, social kit. Prima di costruire, definiamo chi sei."
+      }
+    }
+  },
+  "pmiSection": {
+    "eyebrow": "04 — PMI ITALIANE",
+    "headlineAccent": "Esisti",
+    "headlineEnd": " dove la gente ti cerca.",
+    "subline1": "Un sito che ti somiglia, online in sette giorni.",
+    "subline2": "Per attività che vogliono essere viste, non vendute.",
+    "pillars": {
+      "google": {
+        "label": "Trovati su Google",
+        "title": "Su Google, primo della via.",
+        "body": "Configuriamo Google Business e Google Maps, ottimizziamo le ricerche locali e attiviamo il passaparola digitale fatto di recensioni e segnalazioni. Quando ti cercano, ti trovano."
+      },
+      "identity": {
+        "label": "Identità, non template",
+        "title": "Nessun template. Solo te.",
+        "body": "Ogni sito nasce dal tuo carattere, dai tuoi colori, dal tuo modo di dire le cose. Non scegliamo tra opzioni preconfezionate — disegniamo da zero."
+      },
+      "speed": {
+        "label": "Sette giorni, online",
+        "title": "Sette giorni. Niente di più.",
+        "body": "Dal primo messaggio al sito live, una settimana. Briefing, scrittura, design, deploy. Veloce non significa frettoloso."
+      },
+      "care": {
+        "label": "Tutto compreso, per sempre",
+        "title": "Dominio, hosting, aggiornamenti.",
+        "body": "Non ti lasciamo a metà del ponte. Dominio registrato, hosting su infrastruttura premium, aggiornamenti tecnici inclusi. Tu vivi il tuo lavoro, noi pensiamo al resto."
+      }
+    },
+    "promise": {
+      "eyebrow": "LA NOSTRA PROMESSA",
+      "headline": "Prima lo vedi.\nPoi decidi.",
+      "body": "Realizziamo una prima versione del tuo sito e te la mostriamo prima di chiederti qualsiasi impegno.\n\nSe ti convince, procediamo. Se non è quello che cercavi, non paghi nulla.\n\nNessun contratto forzato. Nessun rischio. Solo un sito professionale, costruito per farti vendere meglio."
+    },
+    "portfolio": {
+      "eyebrow": "PORTFOLIO",
+      "titleStart": "Stiamo ",
+      "titleAccent": "costruendo",
+      "titleEnd": " qualcosa.",
+      "body": "I primi progetti sono in fase di completamento. Torna presto — le storie migliori stanno per essere raccontate.",
+      "cardLabel": "In costruzione"
+    },
+    "cta": {
+      "line1": "Raccontaci la tua attività.",
+      "line2": "Ti rispondiamo entro un giorno.",
+      "button": "Preventivo gratuito su WhatsApp"
+    }
+  },
   "productsSection": {
     "number": "01",
     "headlineLine1": "Tre prodotti.",

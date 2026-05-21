@@ -6,36 +6,14 @@ import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { FiArrowRight } from 'react-icons/fi';
 import AyromexAnimatedBackground from '@/components/cinema/AyromexAnimatedBackground';
 import AyromexCoreVisual from '@/components/cinema/AyromexCoreVisual';
-import AyroGuide from '@/components/hero/AyroGuide';
 import TaskTicker from '@/components/hero/TaskTicker';
-import AyroDesk24DeepDiveSection from '@/components/sections/AyroDesk24DeepDiveSection';
-import AyroHubDeepDiveSection from '@/components/sections/AyroHubDeepDiveSection';
-import AyroStayDeepDiveSection from '@/components/sections/AyroStayDeepDiveSection';
 import FinalCtaSection from '@/components/sections/FinalCtaSection';
-import OutcomesSection from '@/components/sections/OutcomesSection';
-import PortalsSection from '@/components/sections/PortalsSection';
-import ProcessSection from '@/components/sections/ProcessSection';
-import ProductsSection from '@/components/sections/ProductsSection';
-import VerticalsSection from '@/components/sections/VerticalsSection';
+import HubSection from '@/components/sections/HubSection';
+import PmiSection from '@/components/sections/PmiSection';
 import { RotatingText } from '@/components/RotatingText';
 import { WHATSAPP_DISPLAY, WHATSAPP_LINK_BARE } from '@/lib/contact';
 import { EASE_OUT } from '@/lib/motion';
 
-/* ─── Animation Variants ─────────────────────────────────────── */
-const fadeUp = {
-  initial:    { opacity: 0, y: 36 },
-  whileInView:{ opacity: 1, y: 0 },
-  viewport:   { once: true, margin: '-60px' },
-  transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] },
-};
-const stagger = (i: number) => ({
-  initial:    { opacity: 0, y: 32 },
-  whileInView:{ opacity: 1, y: 0 },
-  viewport:   { once: true },
-  transition: { duration: 0.55, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] },
-});
-
-/* ─── Static Data ────────────────────────────────────────────── */
 /* ─── Component ──────────────────────────────────────────────── */
 export default function HomePage() {
   const t = useTranslations();
@@ -95,9 +73,6 @@ export default function HomePage() {
           MP4 video system. Pure CSS + Framer Motion, mobile-safe. */}
       <AyromexAnimatedBackground />
 
-      {/* Narrative follower — appears when scrolling past the hero */}
-      <AyroGuide />
-
       {/* Live system log, pinned across the scroll */}
       <TaskTicker />
 
@@ -105,7 +80,7 @@ export default function HomePage() {
           HERO
           ══════════════════════════════════════════ */}
       <section
-        className="relative min-h-[100svh] flex flex-col items-center justify-center pt-28 pb-24 px-4 sm:px-6 overflow-hidden"
+        className="relative min-h-[60vh] flex flex-col items-center justify-center pt-28 pb-24 px-4 sm:px-6 overflow-hidden"
       >
 
         <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-center min-w-0">
@@ -258,7 +233,7 @@ export default function HomePage() {
             className="flex flex-col md:flex-row md:flex-wrap gap-3 md:gap-4 justify-center mt-8 md:mt-12 mb-16 md:mb-20 w-full max-w-[420px] md:max-w-none"
           >
             <a
-              href="#prodotti"
+              href="#cassetti"
               className="w-full md:w-auto inline-flex items-center justify-center font-display font-bold uppercase tracking-widest text-sm rounded-full bg-ay-accent text-ay-bg px-7 py-[14px] hover:bg-ay-accent-hover hover:scale-[1.02] transition-all duration-200 text-center"
             >
               {tHero('ctaPrimary')}
@@ -294,39 +269,17 @@ export default function HomePage() {
       </section>
 
       {/* ══════════════════════════════════════════
-          01 — PRODOTTI
+          HUB — six navigable drawers (entry to the whole ecosystem)
           ══════════════════════════════════════════ */}
-      <ProductsSection />
+      <HubSection />
 
       {/* ══════════════════════════════════════════
-          OUTCOMES — operational results
+          PMI ITALIANE — deep dive for drawer 04 (siti web)
           ══════════════════════════════════════════ */}
-      <OutcomesSection />
+      <PmiSection />
 
       {/* ══════════════════════════════════════════
-          PRODUCT DEEP DIVES — one slab per product
-          ══════════════════════════════════════════ */}
-      <AyroDesk24DeepDiveSection />
-      <AyroHubDeepDiveSection />
-      <AyroStayDeepDiveSection />
-
-      {/* ══════════════════════════════════════════
-          02 — PROCESSO
-          ══════════════════════════════════════════ */}
-      <ProcessSection />
-
-      {/* ══════════════════════════════════════════
-          SOCIAL PROOF — VERTICALI
-          ══════════════════════════════════════════ */}
-      <VerticalsSection />
-
-      {/* ══════════════════════════════════════════
-          PORTALS — ecosystem access grid
-          ══════════════════════════════════════════ */}
-      <PortalsSection />
-
-      {/* ══════════════════════════════════════════
-          03 — FINAL CTA
+          FINAL CTA — closing surface
           ══════════════════════════════════════════ */}
       <FinalCtaSection />
 

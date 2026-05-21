@@ -77,6 +77,97 @@
       "roiLabel": "days avg ROI"
     }
   },
+  "hubSection": {
+    "heading": "AYROMEX ecosystem",
+    "cassetti": {
+      "ayrohub": {
+        "tag": "SAAS PRODUCT",
+        "title": "AyroHub",
+        "tagline": "Retention and reactivation for ADM operators.",
+        "description": "Voice AI, WhatsApp marketing and strategic insight for Italian gaming operators."
+      },
+      "ayrodesk24": {
+        "tag": "SAAS PRODUCT",
+        "title": "AyroDesk24",
+        "tagline": "The AI receptionist that never sleeps.",
+        "description": "Handles bookings, replies on WhatsApp and qualifies clients for salons, studios and SMBs."
+      },
+      "ayrostay": {
+        "tag": "SAAS PRODUCT",
+        "title": "AyroStay",
+        "tagline": "The OS for your hospitality property.",
+        "description": "Multilingual messaging, live sentiment and automations for hotels and premium B&Bs."
+      },
+      "siti": {
+        "tag": "AVAILABLE NOW",
+        "title": "Websites",
+        "tagline": "Your online presence, in 7 days.",
+        "subtitle": "First you see it. Then you decide.",
+        "description": "We build your site and show it to you before asking for any commitment.\nIf you like it, we move forward.\nIf it's not what you were looking for, you pay nothing.",
+        "badge": "Free quote",
+        "cta": "Request your site"
+      },
+      "automazioni": {
+        "tag": "SERVICE",
+        "title": "Automations",
+        "tagline": "Cut the repetitive work.",
+        "description": "Automated flows, CRM, notifications and reporting. You focus on what matters."
+      },
+      "branding": {
+        "tag": "SERVICE",
+        "title": "Branding",
+        "tagline": "Visual identity, first.",
+        "description": "Logo, palette, materials, social kit. Before we build, we define who you are."
+      }
+    }
+  },
+  "pmiSection": {
+    "eyebrow": "04 — ITALIAN SMBs",
+    "headlineAccent": "Exist",
+    "headlineEnd": " where people look for you.",
+    "subline1": "A website that looks like you, online in seven days.",
+    "subline2": "For businesses that want to be seen, not sold.",
+    "pillars": {
+      "google": {
+        "label": "Found on Google",
+        "title": "On Google, first on the street.",
+        "body": "We set up Google Business and Google Maps, optimise local search, activate the digital word-of-mouth made of reviews and mentions. When people search, they find you."
+      },
+      "identity": {
+        "label": "Identity, not template",
+        "title": "No template. Just you.",
+        "body": "Every site starts from your character, your colours, the way you say things. We don't pick from preset options — we design from scratch."
+      },
+      "speed": {
+        "label": "Seven days, online",
+        "title": "Seven days. Nothing more.",
+        "body": "From the first message to the live site, one week. Briefing, writing, design, deploy. Fast doesn't mean rushed."
+      },
+      "care": {
+        "label": "All included, forever",
+        "title": "Domain, hosting, updates.",
+        "body": "We don't leave you halfway across the bridge. Domain registered, hosting on premium infrastructure, technical updates included. You live your work, we handle the rest."
+      }
+    },
+    "promise": {
+      "eyebrow": "OUR PROMISE",
+      "headline": "First you see it.\nThen you decide.",
+      "body": "We build a first version of your site and show it to you before asking for any commitment.\n\nIf you like it, we move forward. If it's not what you were looking for, you pay nothing.\n\nNo forced contracts. No risk. Just a professional site, built to help you sell better."
+    },
+    "portfolio": {
+      "eyebrow": "PORTFOLIO",
+      "titleStart": "We're ",
+      "titleAccent": "building",
+      "titleEnd": " something.",
+      "body": "The first projects are nearly ready. Come back soon — the best stories are about to be told.",
+      "cardLabel": "Under construction"
+    },
+    "cta": {
+      "line1": "Tell us about your business.",
+      "line2": "We reply within a day.",
+      "button": "Free quote on WhatsApp"
+    }
+  },
   "productsSection": {
     "number": "01",
     "headlineLine1": "Three products.",

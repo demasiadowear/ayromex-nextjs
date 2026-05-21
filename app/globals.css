@@ -199,6 +199,26 @@ body {
   border-color: var(--ay-accent) !important;
 }
 
+/* =====================
+   PORTFOLIO SHIMMER
+   ===================== */
+
+@keyframes shimmer {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-shimmer {
+  animation: shimmer 2.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-shimmer {
+    animation: none;
+  }
+}
+
 /* No system cursor — custom cursor handles it */
 svg {
   transition: none !important;
