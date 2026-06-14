@@ -13,7 +13,9 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/_next/', '/_vercel/', '/api/'],
       },
     ],
-    sitemap: `${SITE_URL}/sitemap.xml`,
+    // Two sitemaps under the same domain: the marketing site's own, and the
+    // AYROSEO blog mounted at /blog (served via rewrite, its own sitemap).
+    sitemap: [`${SITE_URL}/sitemap.xml`, `${SITE_URL}/blog/sitemap.xml`],
     host: SITE_URL,
   }
 }
