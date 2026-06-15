@@ -65,6 +65,9 @@ export default function Navbar() {
     { label: t('home'), href: `/${locale}`, isAnchor: false },
     { label: t('services'), href: `/${locale}/servizi`, isAnchor: false },
     { label: t('products'), href: anchorHref('#prodotti'), isAnchor: true },
+    // Blog (AYROSEO zone): NON localizzato, vive sotto /blog/:tenant fuori dal
+    // routing [locale]. Link assoluto uguale per tutte le lingue.
+    { label: t('blog'), href: '/blog/ayromex', isAnchor: false },
     { label: t('contact'), href: anchorHref('#contatti'), isAnchor: true },
   ]
 

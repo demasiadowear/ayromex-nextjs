@@ -112,6 +112,15 @@ export default function Footer() {
                   {t('companyJournal')}
                 </a>
               </li>
+              <li>
+                {/* Blog AYROSEO: zona /blog non localizzata, link assoluto. */}
+                <a
+                  href="/blog/ayromex"
+                  className="text-ay-text-muted hover:text-ay-accent transition-colors"
+                >
+                  {t('companyBlog')}
+                </a>
+              </li>
             </ul>
           </div>
 
