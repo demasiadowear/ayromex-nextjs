@@ -157,11 +157,16 @@
     },
     "portfolio": {
       "eyebrow": "PORTFOLIO",
-      "titleStart": "Stiamo ",
-      "titleAccent": "costruendo",
-      "titleEnd": " qualcosa.",
-      "body": "I primi progetti sono in fase di completamento. Torna presto — le storie migliori stanno per essere raccontate.",
-      "cardLabel": "In costruzione"
+      "titleStart": "Siti che abbiamo ",
+      "titleAccent": "costruito",
+      "titleEnd": ".",
+      "body": "Alcuni dei progetti che abbiamo progettato, sviluppato e messo online. Clicca per visitarli dal vivo.",
+      "visit": "Visita il sito",
+      "items": {
+        "rdinternational": { "category": "B2B · Sito trilingue IT/EN/SLO" },
+        "sunhouse": { "category": "Hospitality · Affitti brevi" },
+        "marilenagisonda": { "category": "Studio professionale · Psicologia" }
+      }
     },
     "cta": {
       "line1": "Raccontaci la tua attività.",

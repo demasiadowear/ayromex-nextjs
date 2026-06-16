@@ -157,11 +157,16 @@
     },
     "portfolio": {
       "eyebrow": "PORTFOLIO",
-      "titleStart": "We're ",
-      "titleAccent": "building",
-      "titleEnd": " something.",
-      "body": "The first projects are nearly ready. Come back soon — the best stories are about to be told.",
-      "cardLabel": "Under construction"
+      "titleStart": "Sites we've ",
+      "titleAccent": "built",
+      "titleEnd": ".",
+      "body": "A few of the projects we've designed, built and shipped. Click to visit them live.",
+      "visit": "Visit site",
+      "items": {
+        "rdinternational": { "category": "B2B · Trilingual site IT/EN/SLO" },
+        "sunhouse": { "category": "Hospitality · Short stays" },
+        "marilenagisonda": { "category": "Professional practice · Psychology" }
+      }
     },
     "cta": {
       "line1": "Tell us about your business.",

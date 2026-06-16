@@ -157,11 +157,16 @@
     },
     "portfolio": {
       "eyebrow": "PORTFOLIU",
-      "titleStart": "Construim ",
-      "titleAccent": "ceva",
-      "titleEnd": " special.",
-      "body": "Primele proiecte sunt aproape gata. Revino curând — cele mai bune povești urmează să fie spuse.",
-      "cardLabel": "În construcție"
+      "titleStart": "Site-uri pe care le-am ",
+      "titleAccent": "construit",
+      "titleEnd": ".",
+      "body": "Câteva dintre proiectele pe care le-am proiectat, construit și lansat. Dă clic pentru a le vizita live.",
+      "visit": "Vizitează site-ul",
+      "items": {
+        "rdinternational": { "category": "B2B · Site trilingv IT/EN/SLO" },
+        "sunhouse": { "category": "Ospitalitate · Închirieri scurte" },
+        "marilenagisonda": { "category": "Cabinet profesional · Psihologie" }
+      }
     },
     "cta": {
       "line1": "Spune-ne despre afacerea ta.",

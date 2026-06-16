@@ -1,7 +1,9 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import Image from 'next/image'
 import { useTranslations } from 'next-intl'
+import { FiArrowUpRight } from 'react-icons/fi'
 import gsap from 'gsap'
 import SectionTransition from './SectionTransition'
 import { whatsappLink } from '@/lib/contact'
@@ -12,6 +14,14 @@ const PILLARS = [
   { key: 'identity', number: '02' },
   { key: 'speed',    number: '03' },
   { key: 'care',     number: '04' },
+] as const
+
+// Siti realizzati — preview catturate in public/portfolio/. Nome e URL
+// non si traducono; la categoria arriva da messages pmiSection.portfolio.items.
+const PROJECTS = [
+  { slug: 'rdinternational', name: 'RD International Group', url: 'https://www.rdinternationalgroup.com', image: '/portfolio/rdinternational.webp' },
+  { slug: 'sunhouse',        name: 'Sun House Bari Centro', url: 'https://sunhousebari.it',              image: '/portfolio/sunhouse.webp' },
+  { slug: 'marilenagisonda', name: 'Marilena Gisonda',      url: 'https://marilenagisonda.it',           image: '/portfolio/marilenagisonda.webp' },
 ] as const
 
 export default function PmiSection() {
@@ -162,18 +172,35 @@ export default function PmiSection() {
             {tPortfolio('body')}
           </p>
 
-          {/* 3 placeholder cards with shimmer */}
+          {/* 3 siti realizzati — preview cliccabili */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full mt-8">
-            {[1, 2, 3].map((i) => (
-              <div
-                key={i}
-                className="relative aspect-video border border-ay-accent/10 bg-[#111111] overflow-hidden flex items-center justify-center"
+            {PROJECTS.map((p) => (
+              <a
+                key={p.slug}
+                href={p.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={tPortfolio('visit')}
+                className="group relative block aspect-video border border-ay-accent/15 bg-[#111111] overflow-hidden transition-all duration-300 hover:border-ay-accent/60 hover:-translate-y-1"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-ay-accent/5 to-transparent animate-shimmer pointer-events-none" />
-                <span className="font-mono text-[0.6rem] tracking-[0.4em] text-ay-text/20 uppercase relative z-10">
-                  {tPortfolio('cardLabel')}
-                </span>
-              </div>
+                <Image
+                  src={p.image}
+                  alt={`${p.name} — anteprima sito`}
+                  fill
+                  sizes="(min-width: 768px) 30vw, 100vw"
+                  className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ay-bg via-ay-bg/35 to-transparent" aria-hidden="true" />
+                <div className="absolute inset-x-0 bottom-0 p-4 flex flex-col gap-1 text-left">
+                  <span className="font-mono text-[0.58rem] tracking-[0.28em] uppercase text-ay-accent">
+                    {tPortfolio(`items.${p.slug}.category`)}
+                  </span>
+                  <span className="font-display font-bold text-ay-text text-[15px] leading-tight flex items-center gap-1.5">
+                    {p.name}
+                    <FiArrowUpRight className="w-3.5 h-3.5 text-ay-accent opacity-0 -translate-x-1 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0" />
+                  </span>
+                </div>
+              </a>
             ))}
           </div>
         </div>
