@@ -9,7 +9,12 @@
       "Bash(npm run *)",
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
-      "Bash(git --no-pager log --oneline -3)"
+      "Bash(git --no-pager log --oneline -3)",
+      "Bash(git push origin main)",
+      "Bash(git push origin restyling-2026)",
+      "Bash(git merge origin/restyling-2026*)",
+      "Bash(git stash *)",
+      "Bash(git checkout --*)"
     ]
   }
 }
