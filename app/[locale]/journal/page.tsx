@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
 import { whatsappLink } from '@/lib/contact'
+import { articleJsonLd } from '@/lib/jsonld'
 import { pageMetadata, type Locale } from '@/lib/seo'
 
 export async function generateMetadata({
@@ -12,7 +13,12 @@ export async function generateMetadata({
   return pageMetadata('journal', locale as Locale)
 }
 
-export default async function JournalPage() {
+export default async function JournalPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}) {
+  const { locale } = await params
   const t = await getTranslations('journalPage')
 
   const ARTICLES = [1, 2, 3, 4].map((n) => ({
@@ -25,8 +31,16 @@ export default async function JournalPage() {
     cta: t(`a${n}cta`),
   }))
 
+  const jsonLd = ARTICLES.map((a) =>
+    articleJsonLd({ headline: a.title, description: a.hook, locale }),
+  )
+
   return (
     <main id="main" className="overflow-x-hidden pt-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
       {/* HERO */}
       <section className="py-24 md:py-28 px-6 md:px-12">

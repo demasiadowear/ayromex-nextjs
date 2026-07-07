@@ -1,11 +1,12 @@
 import type { Metadata, Viewport } from 'next'
 import { Gugi, Syne, DM_Sans, JetBrains_Mono } from 'next/font/google'
 import { getLocale, getTranslations } from 'next-intl/server'
+import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import CustomCursor from '@/components/CustomCursor'
 import GrainOverlay from '@/components/GrainOverlay'
 import ScrollProgressIndicator from '@/components/ScrollProgressIndicator'
-import { OG_IMAGE, SITE_NAME, SITE_URL } from '@/lib/seo'
+import { SITE_NAME, SITE_URL } from '@/lib/seo'
 
 const gugi = Gugi({
   subsets: ['latin'],
@@ -70,15 +71,15 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
+  // og:image / twitter:image arrivano dalla file convention
+  // (app/opengraph-image.tsx) — non impostarle qui.
   openGraph: {
     type: 'website',
     siteName: SITE_NAME,
     url: SITE_URL,
-    images: [OG_IMAGE],
   },
   twitter: {
     card: 'summary_large_image',
-    images: [OG_IMAGE.url],
   },
   icons: {
     icon: [
@@ -156,6 +157,9 @@ export default async function RootLayout({
 
         {/* Content */}
         <div className="relative z-10">{children}</div>
+
+        {/* Vercel Analytics — cookieless, nessun consenso richiesto */}
+        <Analytics />
       </body>
     </html>
   )

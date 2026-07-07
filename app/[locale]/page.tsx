@@ -1,18 +1,24 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import dynamic from 'next/dynamic';
 import { useTranslations } from 'next-intl';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { FiArrowRight } from 'react-icons/fi';
 import AyromexAnimatedBackground from '@/components/cinema/AyromexAnimatedBackground';
 import AyromexCoreVisual from '@/components/cinema/AyromexCoreVisual';
 import TaskTicker from '@/components/hero/TaskTicker';
-import FinalCtaSection from '@/components/sections/FinalCtaSection';
 import HubSection from '@/components/sections/HubSection';
-import PmiSection from '@/components/sections/PmiSection';
 import { RotatingText } from '@/components/RotatingText';
 import { WHATSAPP_DISPLAY, WHATSAPP_LINK_BARE } from '@/lib/contact';
 import { EASE_OUT } from '@/lib/motion';
+
+// Sezioni sotto la piega: chunk separato per alleggerire il JS
+// iniziale della home (restano SSR, cambia solo lo split).
+const PmiSection = dynamic(() => import('@/components/sections/PmiSection'));
+const FinalCtaSection = dynamic(
+  () => import('@/components/sections/FinalCtaSection'),
+);
 
 /* ─── Component ──────────────────────────────────────────────── */
 export default function HomePage() {
@@ -46,6 +52,21 @@ export default function HomePage() {
       : {
           initial: { opacity: 0, y: 32 },
           animate: { opacity: 1, y: 0 },
+          transition: { duration, ease: EASE_OUT, delay },
+        };
+
+  // Variante per gli elementi LCP (logo, eyebrow, headline):
+  // SOLO transform, mai opacity. Un elemento a opacity:0 non viene
+  // dipinto e sposta il Largest Contentful Paint alla fine della
+  // sua entrance (~3.5s misurati). Con il translate-only l'elemento
+  // è dipinto al primo frame e l'LCP scatta subito; il movimento
+  // di assestamento resta identico al pacing cinematico.
+  const heroAnimPainted = (delay: number, duration = 0.8) =>
+    reduceMotion
+      ? {}
+      : {
+          initial: { y: 32 },
+          animate: { y: 0 },
           transition: { duration, ease: EASE_OUT, delay },
         };
 
@@ -93,16 +114,17 @@ export default function HomePage() {
                 generous side breathing room and never clips with
                 its drop-shadow. md+ keeps the cinematic size. */}
             <motion.img
-              {...heroAnim(0.5)}
+              {...heroAnimPainted(0.5)}
               src="/brand/logos/symbol/AYROLOGO.svg"
               alt="AYROMEX"
+              fetchPriority="high"
               className="h-[140px] w-[140px] max-w-full md:h-[360px] md:w-[360px] lg:h-[440px] lg:w-[440px] mb-2 md:mb-4 object-contain"
               style={{ filter: 'drop-shadow(0 4px 20px rgba(0,0,0,0.85))' }}
             />
 
             {/* Eyebrow */}
             <motion.span
-              {...heroAnim(1.0)}
+              {...heroAnimPainted(1.0)}
               className="block font-body text-[11px] md:text-[12px] font-medium uppercase tracking-[0.08em] text-ay-text-muted mb-3 md:mb-6"
             >
               {tHero('eyebrow')}
@@ -110,7 +132,7 @@ export default function HomePage() {
 
             {/* Headline — cinema size */}
             <motion.h1
-              {...heroAnim(1.3, 1.0)}
+              {...heroAnimPainted(1.3, 1.0)}
               className="font-display font-extrabold text-ay-text leading-[0.95] tracking-[-0.025em] mb-6 md:mb-8 break-words w-full max-w-full mx-auto md:max-w-[1180px] [font-size:clamp(34px,9.5vw,44px)] md:[font-size:clamp(72px,7vw,112px)]"
             >
               {tHero('headlineStart')}

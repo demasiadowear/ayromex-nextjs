@@ -58,17 +58,16 @@ export default function Navbar() {
     setIsOpen(false)
   }
 
-  // Anchor links go in-page if on home, else navigate home + anchor
-  const anchorHref = (hash: string) => pathname === '/' ? hash : `/${locale}${hash}`
-
   const navLinks = [
-    { label: t('home'), href: `/${locale}`, isAnchor: false },
-    { label: t('services'), href: `/${locale}/servizi`, isAnchor: false },
-    { label: t('products'), href: anchorHref('#prodotti'), isAnchor: true },
+    { label: t('home'), href: `/${locale}` },
+    { label: t('products'), href: `/${locale}/prodotti` },
+    { label: t('services'), href: `/${locale}/servizi` },
+    { label: t('about'), href: `/${locale}/chi-siamo` },
+    { label: t('journal'), href: `/${locale}/journal` },
     // Blog (AYROSEO zone): NON localizzato, vive sotto /blog/:tenant fuori dal
     // routing [locale]. Link assoluto uguale per tutte le lingue.
-    { label: t('blog'), href: '/blog/ayromex', isAnchor: false },
-    { label: t('contact'), href: anchorHref('#contatti'), isAnchor: true },
+    { label: t('blog'), href: '/blog/ayromex' },
+    { label: t('contact'), href: `/${locale}/contatti` },
   ]
 
   const navBg = isScrolled || isOpen
@@ -211,7 +210,7 @@ export default function Navbar() {
           </div>
 
           {/* Prenota demo — primary CTA */}
-          <a href={anchorHref('#contatti')} className="btn-primary px-5 py-2.5 ml-1 min-h-[44px]">
+          <a href={`/${locale}/contatti`} className="btn-primary px-5 py-2.5 ml-1 min-h-[44px]">
             {t('cta')}
           </a>
         </div>
@@ -279,7 +278,7 @@ export default function Navbar() {
                   </a>
                 ))}
                 <a
-                  href={anchorHref('#contatti')}
+                  href={`/${locale}/contatti`}
                   onClick={() => setIsOpen(false)}
                   className="w-full text-center btn-primary py-3 text-sm"
                 >

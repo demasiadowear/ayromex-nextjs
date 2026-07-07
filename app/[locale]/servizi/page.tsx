@@ -18,8 +18,21 @@ export async function generateMetadata({
 export default async function ServiziPage() {
   const t = await getTranslations('serviziPage')
 
+  // Àncore pubbliche linkate dai drawer 05/06 della home
+  // (HubSection → /servizi#automazioni, /servizi#branding).
+  // automazioni → s1 (AI Agents: qualificazione, escalation,
+  // reportistica automatica), branding → s5 (Branding).
+  const ANCHOR_IDS: (string | undefined)[] = [
+    'automazioni',
+    undefined,
+    undefined,
+    undefined,
+    'branding',
+  ]
+
   const SERVICES = [1, 2, 3, 4, 5].map((n, i) => ({
     icon: ICONS[i],
+    anchorId: ANCHOR_IDS[i],
     title: t(`s${n}title`),
     tagline: t(`s${n}tagline`),
     benefit: t(`s${n}benefit`),
@@ -50,7 +63,8 @@ export default async function ServiziPage() {
           {SERVICES.map((s, i) => (
             <div
               key={s.title}
-              className={`p-8 md:p-10 rounded-2xl border border-white/10 hover:border-ay-accent/30 transition-all ${i % 2 === 0 ? 'bg-white/5' : 'bg-ay-surface'}`}
+              id={s.anchorId}
+              className={`scroll-mt-28 p-8 md:p-10 rounded-2xl border border-white/10 hover:border-ay-accent/30 transition-all ${i % 2 === 0 ? 'bg-white/5' : 'bg-ay-surface'}`}
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
                 <div>
