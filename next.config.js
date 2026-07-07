@@ -27,6 +27,42 @@ const nextConfig = {
     return [
       // Entry point comodo: /blog → home del blog del tenant ayromex.
       { source: '/blog', destination: '/blog/ayromex', permanent: true },
+
+      // ── Redirect legacy (rotte del sito marzo 2026, ora 404 in GSC) ──
+      // Queste regole girano PRIMA del middleware next-intl, quindi
+      // intercettano anche le vecchie URL senza prefisso locale (l'IT
+      // viveva alla root nella versione precedente).
+
+      // /termini → /terms (la pagina è stata rinominata)
+      { source: '/termini', destination: '/it/terms', permanent: true },
+      {
+        source: '/:locale(it|en|ro)/termini',
+        destination: '/:locale/terms',
+        permanent: true,
+      },
+
+      // Vecchie pagine prodotto dedicate → nuova pagina /prodotti
+      // con àncora al deep dive corrispondente.
+      {
+        source: '/prodotti/ayrodesk24',
+        destination: '/it/prodotti#ayrodesk24',
+        permanent: true,
+      },
+      {
+        source: '/prodotti/ayrohub',
+        destination: '/it/prodotti#ayrohub',
+        permanent: true,
+      },
+      {
+        source: '/:locale(it|en|ro)/prodotti/ayrodesk24',
+        destination: '/:locale/prodotti#ayrodesk24',
+        permanent: true,
+      },
+      {
+        source: '/:locale(it|en|ro)/prodotti/ayrohub',
+        destination: '/:locale/prodotti#ayrohub',
+        permanent: true,
+      },
     ];
   },
   async rewrites() {

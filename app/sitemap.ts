@@ -9,8 +9,10 @@ interface PageEntry {
 
 const PAGES: PageEntry[] = [
   { page: 'home', changeFrequency: 'weekly', priority: 1.0 },
+  { page: 'prodotti', changeFrequency: 'weekly', priority: 0.9 },
   { page: 'servizi', changeFrequency: 'monthly', priority: 0.8 },
   { page: 'chiSiamo', changeFrequency: 'monthly', priority: 0.7 },
+  { page: 'contatti', changeFrequency: 'monthly', priority: 0.7 },
   { page: 'journal', changeFrequency: 'monthly', priority: 0.6 },
   { page: 'privacy', changeFrequency: 'yearly', priority: 0.3 },
   { page: 'terms', changeFrequency: 'yearly', priority: 0.3 },

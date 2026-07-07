@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl'
 import { FiArrowUpRight } from 'react-icons/fi'
 import type { IconType } from 'react-icons'
+import { Link } from '@/i18n/navigation'
 import SectionTransition from './SectionTransition'
 import { getProduct, type ProductId } from '@/lib/products'
 
@@ -149,12 +150,12 @@ export default function ProductDeepDiveSection({
               {t('ctaPrimary')}
               <FiArrowUpRight className="w-3.5 h-3.5 shrink-0" />
             </a>
-            <a
-              href="#contatti"
+            <Link
+              href="/contatti"
               className="w-full md:w-auto inline-flex items-center justify-center rounded-full border border-ay-accent/60 text-ay-accent px-6 py-3.5 font-display font-bold uppercase tracking-widest text-[12px] hover:bg-ay-accent hover:text-ay-bg transition-all duration-200 text-center"
             >
               {t('ctaSecondary')}
-            </a>
+            </Link>
           </div>
         </div>
       </div>

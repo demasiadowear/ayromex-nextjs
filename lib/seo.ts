@@ -15,9 +15,11 @@ import type { Metadata } from 'next'
 export type Locale = 'it' | 'en' | 'ro'
 export type PageKey =
   | 'home'
+  | 'prodotti'
   | 'servizi'
   | 'chiSiamo'
   | 'journal'
+  | 'contatti'
   | 'privacy'
   | 'terms'
 
@@ -27,15 +29,18 @@ export const DEFAULT_LOCALE: Locale = 'it'
 export const SITE_URL = 'https://www.ayromex.com'
 export const SITE_NAME = 'AYROMEX'
 
-// TODO(og): commission a proper 1200x630 Open Graph image and
-// drop it at /public/brand/og/ayromex-og.png. Until then we
-// reuse the 512x512 brand icon — most platforms center-crop it,
-// LinkedIn/X may show it letterboxed. Functional, not optimal.
+// Open Graph images are generated at build time via the file
+// convention: app/opengraph-image.tsx (brand, 1200x630) plus a
+// dedicated app/[locale]/prodotti/opengraph-image.tsx. The root
+// file does NOT cascade into the [locale] segment (verified on the
+// built output), so pageMetadata() references the brand image
+// explicitly; on /prodotti the segment's own file-based image
+// takes priority over this config value.
 export const OG_IMAGE = {
-  url: '/icon-512.png',
-  width: 512,
-  height: 512,
-  alt: 'AYROMEX',
+  url: '/opengraph-image',
+  width: 1200,
+  height: 630,
+  alt: 'AYROMEX — AI systems that automate business operations',
 } as const
 
 // Twitter handle is intentionally absent until the account exists.
@@ -69,6 +74,23 @@ export const SEO: Record<PageKey, Record<Locale, SeoCopy>> = {
         'AYROMEX — Sisteme AI care automatizează operațiunile de business',
       description:
         'AYROMEX construiește produse AI verticale, asistenți WhatsApp, voice agents, dashboard-uri și automatizări care ajută companiile să reducă munca manuală și să crească controlul operațional.',
+    },
+  },
+  prodotti: {
+    it: {
+      title: 'Prodotti — AyroDesk24, AyroHub, AyroStay | AYROMEX',
+      description:
+        'I tre prodotti AI di AYROMEX: AyroDesk24 (receptionist WhatsApp per PMI), AyroHub (voice + WhatsApp AI per concessionari gaming) e AyroStay (ospitalità automatizzata).',
+    },
+    en: {
+      title: 'Products — AyroDesk24, AyroHub, AyroStay | AYROMEX',
+      description:
+        'The three AYROMEX AI products: AyroDesk24 (WhatsApp receptionist for SMEs), AyroHub (voice + WhatsApp AI for gaming operators) and AyroStay (automated hospitality).',
+    },
+    ro: {
+      title: 'Produse — AyroDesk24, AyroHub, AyroStay | AYROMEX',
+      description:
+        'Cele trei produse AI AYROMEX: AyroDesk24 (recepționer WhatsApp pentru IMM-uri), AyroHub (voice + WhatsApp AI pentru operatori de gaming) și AyroStay (ospitalitate automatizată).',
     },
   },
   servizi: {
@@ -122,6 +144,23 @@ export const SEO: Record<PageKey, Record<Locale, SeoCopy>> = {
         'Studii de caz, analize de piață și reflecții despre AI și automatizare pentru IMM-urile italiene.',
     },
   },
+  contatti: {
+    it: {
+      title: 'Contatti — AYROMEX',
+      description:
+        'Parla con AYROMEX: WhatsApp diretto, email o form. Rispondiamo entro 24 ore. Consulenza gratuita per capire cosa automatizzare nel tuo business.',
+    },
+    en: {
+      title: 'Contact — AYROMEX',
+      description:
+        'Talk to AYROMEX: direct WhatsApp, email or form. We reply within 24 hours. Free consultation to understand what to automate in your business.',
+    },
+    ro: {
+      title: 'Contact — AYROMEX',
+      description:
+        'Vorbește cu AYROMEX: WhatsApp direct, email sau formular. Răspundem în 24 de ore. Consultanță gratuită pentru a înțelege ce poți automatiza.',
+    },
+  },
   privacy: {
     it: {
       title: 'Privacy Policy — AYROMEX',
@@ -168,9 +207,11 @@ export const SEO: Record<PageKey, Record<Locale, SeoCopy>> = {
 export function pagePath(page: PageKey, locale: Locale): string {
   const slug: Record<PageKey, string> = {
     home: '',
+    prodotti: '/prodotti',
     servizi: '/servizi',
     chiSiamo: '/chi-siamo',
     journal: '/journal',
+    contatti: '/contatti',
     privacy: '/privacy',
     terms: '/terms',
   }
@@ -200,6 +241,20 @@ export function pageMetadata(page: PageKey, locale: Locale): Metadata {
   const copy = SEO[page][locale]
   const canonical = pagePath(page, locale)
 
+  // /prodotti ha una OG image dedicata generata dal file convention
+  // del suo segmento; le immagini config-based qui sotto vincono
+  // sul file (verificato sull'output buildato), quindi puntiamo
+  // esplicitamente alla route del segmento.
+  const ogImage =
+    page === 'prodotti'
+      ? {
+          url: `${canonical}/opengraph-image`,
+          width: 1200,
+          height: 630,
+          alt: 'AYROMEX Products — AyroDesk24, AyroHub, AyroStay',
+        }
+      : OG_IMAGE
+
   return {
     title: copy.title,
     description: copy.description,
@@ -214,13 +269,13 @@ export function pageMetadata(page: PageKey, locale: Locale): Metadata {
       description: copy.description,
       url: canonical,
       locale,
-      images: [OG_IMAGE],
+      images: [ogImage],
     },
     twitter: {
       card: 'summary_large_image',
       title: copy.title,
       description: copy.description,
-      images: [OG_IMAGE.url],
+      images: [ogImage.url],
     },
   }
 }

@@ -8,6 +8,7 @@ import Footer from '@/components/Footer';
 import SmoothScroll from '@/components/SmoothScroll';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import { pageMetadata, type Locale } from '@/lib/seo';
+import { organizationJsonLd } from '@/lib/jsonld';
 
 type Props = {
   children: React.ReactNode;
@@ -42,6 +43,13 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <NextIntlClientProvider messages={messages}>
+      {/* Schema.org Organization — su ogni pagina del sito */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(organizationJsonLd()),
+        }}
+      />
       <SmoothScroll>
         <Navbar />
         {children}

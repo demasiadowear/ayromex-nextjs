@@ -121,6 +121,14 @@ export default function Footer() {
                   {t('companyBlog')}
                 </a>
               </li>
+              <li>
+                <a
+                  href={`/${locale}/contatti`}
+                  className="text-ay-text-muted hover:text-ay-accent transition-colors"
+                >
+                  {t('companyContact')}
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -138,14 +146,10 @@ export default function Footer() {
                   {t('legalPrivacy')}
                 </a>
               </li>
-              <li>
-                <a
-                  href={`/${locale}/privacy`}
-                  className="text-ay-text-muted hover:text-ay-accent transition-colors"
-                >
-                  {t('legalCookie')}
-                </a>
-              </li>
+              {/* Link "Cookie" rimosso: il sito non usa cookie di
+                  tracciamento (Vercel Analytics è cookieless) e non
+                  esiste una cookie policy separata — il capitolo
+                  cookie vive dentro la Privacy Policy. */}
               <li>
                 <a
                   href={`/${locale}/terms`}
