@@ -28,6 +28,15 @@ const nextConfig = {
       // Entry point comodo: /blog → home del blog del tenant ayromex.
       { source: '/blog', destination: '/blog/ayromex', permanent: true },
 
+      // /kit → WhatsApp con messaggio precompilato (card AYROMEX recensioni
+      // Google). statusCode 301 esplicito richiesto (permanent:true darebbe 308).
+      {
+        source: '/kit',
+        destination:
+          'https://wa.me/390808407861?text=Ciao%2C%20ho%20visto%20le%20card%20AYROMEX%20per%20le%20recensioni%20Google%2C%20mi%20interessano%20per%20la%20mia%20attivit%C3%A0',
+        statusCode: 301,
+      },
+
       // ── Redirect legacy (rotte del sito marzo 2026, ora 404 in GSC) ──
       // Queste regole girano PRIMA del middleware next-intl, quindi
       // intercettano anche le vecchie URL senza prefisso locale (l'IT
