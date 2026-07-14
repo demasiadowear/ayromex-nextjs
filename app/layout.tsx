@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next'
-import { Gugi, Syne, DM_Sans, JetBrains_Mono } from 'next/font/google'
+import { Syne, DM_Sans } from 'next/font/google'
 import { getLocale, getTranslations } from 'next-intl/server'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
@@ -8,37 +8,21 @@ import { SITE_NAME, SITE_URL } from '@/lib/seo'
 import { cn } from '@/lib/utils'
 
 
-// preload: false sui font secondari (Gugi: solo lockup logo; JetBrains:
-// solo eyebrow/mono piccoli) — meno byte in coda prima di Syne, che
-// determina l'LCP del titolo. Caricano on-demand via @font-face.
-const gugi = Gugi({
-  subsets: ['latin'],
-  weight: '400',
-  variable: '--font-gugi',
-  display: 'swap',
-  preload: false,
-})
-
+// SISTEMA A DUE FONT — nessun terzo font, nessun fallback di sistema
+// visibile. Syne (display, 600/700/800) per i titoli, DM Sans
+// (400/500/600/700) per body, UI e le vecchie label ex-mono.
 const syne = Syne({
   subsets: ['latin', 'latin-ext'],
-  weight: ['800'],
+  weight: ['600', '700', '800'],
   variable: '--font-syne',
   display: 'swap',
 })
 
 const dmSans = DM_Sans({
   subsets: ['latin', 'latin-ext'],
-  weight: ['400', '500', '600'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-dm-sans',
   display: 'swap',
-})
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ['latin'],
-  weight: ['400', '500'],
-  variable: '--font-jetbrains-mono',
-  display: 'swap',
-  preload: false,
 })
 
 // Root-level metadata. Per-locale title/description/alternates are
@@ -137,13 +121,7 @@ export default async function RootLayout({
     <html
       lang={locale}
       data-scroll-behavior="smooth"
-      className={cn(
-        gugi.variable,
-        syne.variable,
-        dmSans.variable,
-        jetbrainsMono.variable,
-        'font-sans',
-      )}
+      className={cn(syne.variable, dmSans.variable, 'font-sans')}
     >
       <body className="relative min-h-screen bg-ay-bg text-ay-text font-body antialiased">
         {/* Skip-to-content link — visually hidden until focused.

@@ -13,7 +13,8 @@
     "accessAyroStay": "Accesează AyroStay",
     "translateTo": "Schimbă limba",
     "about": "Despre noi",
-    "journal": "Journal"
+    "journal": "Journal",
+    "sitiWeb": "Site-uri web"
   },
   "hero": {
     "eyebrow": "AI AUTOMATION · META TECH PROVIDER",
@@ -39,9 +40,9 @@
     "liveStatus": "live"
   },
   "homeHero": {
-    "line1": "WhatsApp-ul tău lucrează pentru tine.",
-    "line2": "Chiar și când magazinul e închis.",
-    "sub": "Răspunde clienților, programează întâlniri, trimite remindere. Tu te ocupi de munca ta, el de mesaje.",
+    "line1": "<u>WhatsApp</u>-ul tău lucrează pentru tine.",
+    "line2": "Chiar și când obloanele sunt trase.",
+    "sub": "Răspundem clienților, programăm întâlnirile și trimitem reminderele în locul tău. Tu te ocupi de afacere, noi de rest.",
     "ctaWhatsApp": "Scrie-ne pe WhatsApp",
     "ctaHow": "Vezi cum funcționează",
     "badgeAlt": "Meta Tech Provider — Business API Official"
@@ -52,6 +53,47 @@
     "intro": "AYROMEX este printre companiile aprobate de Meta pentru a conecta afacerile la WhatsApp Business Platform oficial. Asta înseamnă număr protejat, reguli clare și mesaje care ajung cu adevărat.",
     "closing": "Întreabă-ți furnizorul actual dacă este Tech Provider aprobat de Meta.",
     "cta": "Află despre certificare"
+  },
+  "serviziWeb": {
+    "eyebrow": "Site-uri web & E-commerce",
+    "promiseLead": "Întâi îl vezi.",
+    "promiseAccent": "Apoi decizi.",
+    "promiseBody": "Îți construim demo-ul site-ului tău. Îl vezi live. Plătești doar dacă îți place. Fără avans, fără contract semnat pe nevăzute, fără riscuri.",
+    "steps": {
+      "s1title": "Ne povestești despre afacerea ta",
+      "s1desc": "O discuție scurtă: ce faci, cine sunt clienții tăi, ce vrei să facă site-ul pentru tine.",
+      "s2title": "Îți arătăm site-ul deja gata",
+      "s2desc": "În câteva zile îți trimitem linkul demo-ului real al site-ului tău — nu un mockup: pagini, texte, foto.",
+      "s3title": "Îți place? Este al tău",
+      "s3desc": "Dacă te convinge, mergem live cu domeniu, hosting și actualizări incluse. Dacă nu, nu plătești nimic."
+    },
+    "pillarsTitle": "Ce punem înăuntru",
+    "pillars": {
+      "google": {
+        "title": "Te găsesc pe Google",
+        "desc": "Google Business, Maps, căutări locale și recenzii: când te caută în zonă, ești acolo."
+      },
+      "identity": {
+        "title": "La comandă, nu template",
+        "desc": "Site-ul se naște din caracterul tău, culorile tale, cuvintele tale. Îl desenăm de la zero."
+      },
+      "speed": {
+        "title": "Online într-o săptămână",
+        "desc": "De la primul mesaj la site-ul live: șapte zile. Rapid, nu în grabă."
+      },
+      "care": {
+        "title": "Tot inclus, pentru totdeauna",
+        "desc": "Domeniu, hosting premium și actualizări tehnice. Nu te lăsăm la jumătate."
+      }
+    },
+    "portfolioTitle": "Site-uri pe care le-am construit deja",
+    "portfolioVisit": "Vizitează site-ul",
+    "portfolio": {
+      "rdinternational": "B2B · Site trilingv IT/EN/SLO",
+      "sunhouse": "Ospitalitate · Închirieri scurte",
+      "marilenagisonda": "Cabinet profesional · Psihologie"
+    },
+    "cta": "Cere-ți demo-ul gratuit"
   },
   "homeProducts": {
     "eyebrow": "Produse",
@@ -94,12 +136,14 @@
     "v2desc": "Mese confirmate pe WhatsApp, întrebări despre meniu și orar rezolvate singure, mai mult timp în sală.",
     "v3title": "Gaming și operatori ADM",
     "v3desc": "Clienți inactivi reactivați cu campanii conforme, toată rețeaua gestionată dintr-un singur panou.",
-    "stat1value": "200+",
-    "stat1label": "ore economisite pe lună per client",
-    "stat2value": "< 1 min",
+    "stat1value": "24/7",
+    "stat1label": "mereu activ, inclusiv sărbători",
+    "stat2value": "< 30 sec",
     "stat2label": "timp mediu de răspuns",
-    "stat3value": "15+",
-    "stat3label": "verticale servite"
+    "stat3value": "50.000+",
+    "stat3label": "mesaje gestionate pentru clienți",
+    "stat4value": "15+",
+    "stat4label": "sectoare deservite în Italia"
   },
   "homeCta": {
     "title": "Să vedem dacă ți se potrivește.",

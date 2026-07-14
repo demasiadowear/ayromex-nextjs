@@ -13,7 +13,8 @@
     "accessAyroStay": "Access AyroStay",
     "translateTo": "Change language",
     "about": "About",
-    "journal": "Journal"
+    "journal": "Journal",
+    "sitiWeb": "Websites"
   },
   "hero": {
     "eyebrow": "AI AUTOMATION · META TECH PROVIDER",
@@ -39,9 +40,9 @@
     "liveStatus": "live"
   },
   "homeHero": {
-    "line1": "Your WhatsApp works for you.",
-    "line2": "Even when the shop is closed.",
-    "sub": "It answers customers, books appointments, sends reminders. You focus on your work, it takes care of the messages.",
+    "line1": "Your <u>WhatsApp</u> works for you.",
+    "line2": "Even with the shutters down.",
+    "sub": "We answer your customers, book the appointments and send the reminders for you. You run the business, we handle the rest.",
     "ctaWhatsApp": "Message us on WhatsApp",
     "ctaHow": "See how it works",
     "badgeAlt": "Meta Tech Provider — Business API Official"
@@ -52,6 +53,47 @@
     "intro": "AYROMEX is one of the companies approved by Meta to connect businesses to the official WhatsApp Business Platform. That means a protected number, clear rules and messages that actually get delivered.",
     "closing": "Ask your current provider if they are a Meta-approved Tech Provider.",
     "cta": "Learn about the certification"
+  },
+  "serviziWeb": {
+    "eyebrow": "Websites & E-commerce",
+    "promiseLead": "See it first.",
+    "promiseAccent": "Then decide.",
+    "promiseBody": "We build the demo of your site. You see it live. You pay only if you like it. No deposit, no contract signed blind, no risk.",
+    "steps": {
+      "s1title": "Tell us about your business",
+      "s1desc": "A quick chat: what you do, who your customers are, what you want the site to do for you.",
+      "s2title": "We show you the finished site",
+      "s2desc": "In a few days we send you the link to the real demo of your site — not a mockup: pages, copy, photos.",
+      "s3title": "Like it? It's yours",
+      "s3desc": "If it works for you we go live with domain, hosting and updates included. If not, you pay nothing."
+    },
+    "pillarsTitle": "What we put inside",
+    "pillars": {
+      "google": {
+        "title": "Found on Google",
+        "desc": "Google Business, Maps, local search and reviews: when people look for you nearby, you're there."
+      },
+      "identity": {
+        "title": "Bespoke, not template",
+        "desc": "The site grows out of your character, your colours, your words. We design it from scratch."
+      },
+      "speed": {
+        "title": "Live in a week",
+        "desc": "From the first message to the live site: seven days. Fast, not rushed."
+      },
+      "care": {
+        "title": "All included, forever",
+        "desc": "Domain, premium hosting and technical updates. We don't leave you halfway."
+      }
+    },
+    "portfolioTitle": "Sites we've already built",
+    "portfolioVisit": "Visit the site",
+    "portfolio": {
+      "rdinternational": "B2B · Trilingual site IT/EN/SLO",
+      "sunhouse": "Hospitality · Short lets",
+      "marilenagisonda": "Professional practice · Psychology"
+    },
+    "cta": "Ask for your free demo"
   },
   "homeProducts": {
     "eyebrow": "Products",
@@ -94,12 +136,14 @@
     "v2desc": "Tables confirmed on WhatsApp, menu and opening-hours questions handled on their own, more time on the floor.",
     "v3title": "Gaming and ADM operators",
     "v3desc": "Dormant customers reactivated with compliant campaigns, the whole network managed from one panel.",
-    "stat1value": "200+",
-    "stat1label": "hours saved per month per client",
-    "stat2value": "< 1 min",
+    "stat1value": "24/7",
+    "stat1label": "always on, holidays included",
+    "stat2value": "< 30 sec",
     "stat2label": "average reply time",
-    "stat3value": "15+",
-    "stat3label": "verticals served"
+    "stat3value": "50,000+",
+    "stat3label": "messages handled for clients",
+    "stat4value": "15+",
+    "stat4label": "sectors served in Italy"
   },
   "homeCta": {
     "title": "Let's see if it fits.",

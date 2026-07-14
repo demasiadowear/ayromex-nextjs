@@ -34,7 +34,7 @@ export default function HomeProducts() {
   return (
     <section
       id="prodotti-home"
-      className="bg-ay-cream/50 border-y border-ay-border"
+      className="bg-ay-bg border-b border-ay-border"
       aria-labelledby="products-heading"
     >
       <SectionTransition
@@ -44,7 +44,8 @@ export default function HomeProducts() {
         className="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-24"
       >
         <div className="max-w-2xl">
-          <span className="font-body text-[13px] font-semibold text-ay-accent block mb-3">
+          <span className="inline-flex items-center gap-2 font-body text-[13px] font-semibold text-ay-accent mb-4">
+            <span className="w-6 h-px bg-ay-accent" aria-hidden="true" />
             {t('eyebrow')}
           </span>
           <h2
@@ -59,8 +60,8 @@ export default function HomeProducts() {
           {products.map(({ key, featured, img, href, badge }) => (
             <Card
               key={key}
-              className={`overflow-hidden border-ay-border bg-ay-surface shadow-none transition-all duration-300 hover:shadow-lg hover:-translate-y-1 ${
-                featured ? 'ring-1 ring-ay-accent/30' : ''
+              className={`card-lift overflow-hidden border-ay-border bg-ay-surface shadow-none ${
+                featured ? 'ring-1 ring-ay-accent/40' : ''
               }`}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}

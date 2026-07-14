@@ -66,6 +66,9 @@ module.exports = {
   			sm: 'calc(var(--radius) - 8px)'
   		},
   		fontFamily: {
+  			// SISTEMA A DUE FONT — sans/body/mono → DM Sans, display/brand → Syne.
+  			// I token brand/mono restano solo per retrocompatibilità delle classi
+  			// esistenti: risolvono a uno dei due font, nessun terzo font caricato.
   			sans: [
   				'var(--font-dm-sans)',
   				'system-ui',
@@ -82,13 +85,13 @@ module.exports = {
   				'sans-serif'
   			],
   			brand: [
-  				'var(--font-gugi)',
+  				'var(--font-syne)',
   				'sans-serif'
   			],
   			mono: [
-  				'var(--font-jetbrains-mono)',
-  				'ui-monospace',
-  				'monospace'
+  				'var(--font-dm-sans)',
+  				'system-ui',
+  				'sans-serif'
   			]
   		},
   		animation: {
@@ -104,7 +107,8 @@ module.exports = {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out',
   			'rise-in': 'riseIn 0.9s cubic-bezier(0.22,1,0.36,1) both',
-  			'fade-up-soft': 'fadeUpSoft 0.7s cubic-bezier(0.22,1,0.36,1) both'
+  			'fade-up-soft': 'fadeUpSoft 0.7s cubic-bezier(0.22,1,0.36,1) both',
+  			'pop-in': 'popIn 0.7s cubic-bezier(0.34,1.56,0.64,1) both'
   		},
   		keyframes: {
   			fadeUp: {
@@ -245,6 +249,16 @@ module.exports = {
   				from: {
   					opacity: '0',
   					transform: 'translateY(20px)'
+  				},
+  				to: {
+  					opacity: '1',
+  					transform: 'none'
+  				}
+  			},
+  			popIn: {
+  				from: {
+  					opacity: '0',
+  					transform: 'translateY(18px) scale(0.9)'
   				},
   				to: {
   					opacity: '1',

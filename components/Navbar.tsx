@@ -61,6 +61,7 @@ export default function Navbar() {
   const navLinks = [
     { label: t('home'), href: `/${locale}` },
     { label: t('products'), href: `/${locale}/prodotti` },
+    { label: t('sitiWeb'), href: `/${locale}#siti-web` },
     { label: t('services'), href: `/${locale}/servizi` },
     { label: t('about'), href: `/${locale}/chi-siamo` },
     { label: t('journal'), href: `/${locale}/journal` },

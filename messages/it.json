@@ -13,7 +13,8 @@
     "accessAyroStay": "Accedi ad AyroStay",
     "translateTo": "Cambia lingua",
     "about": "Chi Siamo",
-    "journal": "Journal"
+    "journal": "Journal",
+    "sitiWeb": "Siti web"
   },
   "hero": {
     "eyebrow": "AI AUTOMATION · META TECH PROVIDER",
@@ -39,9 +40,9 @@
     "liveStatus": "live"
   },
   "homeHero": {
-    "line1": "Il tuo WhatsApp lavora per te.",
-    "line2": "Anche quando il negozio è chiuso.",
-    "sub": "Risponde ai clienti, prende appuntamenti, manda i promemoria. Tu pensi al tuo lavoro, lui pensa ai messaggi.",
+    "line1": "Il tuo <u>WhatsApp</u> lavora per te.",
+    "line2": "Anche quando la serranda è giù.",
+    "sub": "Rispondiamo ai tuoi clienti, prendiamo gli appuntamenti e mandiamo i promemoria al posto tuo. Tu pensi al lavoro, al resto pensiamo noi.",
     "ctaWhatsApp": "Scrivici su WhatsApp",
     "ctaHow": "Guarda come funziona",
     "badgeAlt": "Meta Tech Provider — Business API Official"
@@ -52,6 +53,47 @@
     "intro": "AYROMEX è tra le aziende approvate da Meta per collegare i business alla WhatsApp Business Platform ufficiale. Vuol dire numero protetto, regole chiare e messaggi che arrivano davvero.",
     "closing": "Chiedi al tuo fornitore attuale se è Tech Provider approvato da Meta.",
     "cta": "Approfondisci la certificazione"
+  },
+  "serviziWeb": {
+    "eyebrow": "Siti web & E-commerce",
+    "promiseLead": "Prima lo vedi.",
+    "promiseAccent": "Poi decidi.",
+    "promiseBody": "Ti realizziamo la demo del tuo sito. La guardi dal vivo. Paghi solo se ti piace. Nessun anticipo, nessun contratto firmato al buio, nessun rischio.",
+    "steps": {
+      "s1title": "Ci racconti la tua attività",
+      "s1desc": "Una chiacchierata: cosa fai, chi sono i tuoi clienti, cosa vuoi che il sito faccia per te.",
+      "s2title": "Ti mostriamo il sito già fatto",
+      "s2desc": "In pochi giorni ti mandiamo il link della demo vera del tuo sito, non un mockup: pagine, testi, foto.",
+      "s3title": "Ti piace? È tuo",
+      "s3desc": "Se ti convince andiamo online con dominio, hosting e aggiornamenti inclusi. Se no, non paghi nulla."
+    },
+    "pillarsTitle": "Cosa ci mettiamo dentro",
+    "pillars": {
+      "google": {
+        "title": "Ti trovano su Google",
+        "desc": "Google Business, Maps, ricerche locali e recensioni: quando ti cercano nella tua zona, ci sei."
+      },
+      "identity": {
+        "title": "Su misura, non template",
+        "desc": "Il sito nasce dal tuo carattere, dai tuoi colori, dalle tue parole. Lo disegniamo da zero."
+      },
+      "speed": {
+        "title": "Online in una settimana",
+        "desc": "Dal primo messaggio al sito live: sette giorni. Veloce, non frettoloso."
+      },
+      "care": {
+        "title": "Tutto incluso, per sempre",
+        "desc": "Dominio, hosting su infrastruttura premium e aggiornamenti tecnici. Non ti lasciamo a metà."
+      }
+    },
+    "portfolioTitle": "Siti che abbiamo già costruito",
+    "portfolioVisit": "Visita il sito",
+    "portfolio": {
+      "rdinternational": "B2B · Sito trilingue IT/EN/SLO",
+      "sunhouse": "Hospitality · Affitti brevi",
+      "marilenagisonda": "Studio professionale · Psicologia"
+    },
+    "cta": "Chiedici la tua demo gratis"
   },
   "homeProducts": {
     "eyebrow": "Prodotti",
@@ -94,12 +136,14 @@
     "v2desc": "Tavoli confermati su WhatsApp, richieste su menu e orari gestite da sole, più tempo in sala.",
     "v3title": "Gaming e concessionari ADM",
     "v3desc": "Clienti fermi riattivati con campagne conformi, network seguito da un unico pannello.",
-    "stat1value": "200+",
-    "stat1label": "ore risparmiate al mese per cliente",
-    "stat2value": "< 1 min",
+    "stat1value": "24/7",
+    "stat1label": "sempre attivo, festivi inclusi",
+    "stat2value": "< 30 sec",
     "stat2label": "tempo medio di risposta",
-    "stat3value": "15+",
-    "stat3label": "verticali serviti"
+    "stat3value": "50.000+",
+    "stat3label": "messaggi gestiti per i clienti",
+    "stat4value": "15+",
+    "stat4label": "settori serviti in Italia"
   },
   "homeCta": {
     "title": "Vediamo se fa per te.",

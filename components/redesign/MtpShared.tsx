@@ -31,10 +31,10 @@ export function MtpBenefitsGrid() {
       {BENEFITS.map(({ key, Icon }) => (
         <Card
           key={key}
-          className="border-ay-border bg-ay-surface shadow-none transition-all duration-300 hover:shadow-md hover:-translate-y-0.5"
+          className="card-lift border-ay-border bg-ay-surface shadow-none"
         >
           <CardContent className="p-6 flex flex-col gap-3">
-            <div className="flex items-center justify-center w-11 h-11 rounded-2xl bg-ay-accent-tint">
+            <div className="flex items-center justify-center w-11 h-11 rounded-2xl bg-ay-accent/15">
               <Icon className="w-5 h-5 text-ay-accent" aria-hidden="true" />
             </div>
             <h3 className="font-display font-extrabold text-ay-text text-[17px] leading-snug">
@@ -58,7 +58,7 @@ export function MtpComparisonTable() {
     <div className="overflow-x-auto rounded-2xl border border-ay-border bg-ay-surface">
       <table className="w-full min-w-[640px] border-collapse">
         <thead>
-          <tr className="border-b border-ay-border bg-ay-bg/60">
+          <tr className="border-b border-ay-border bg-ay-accent/10">
             <th scope="col" className="text-left font-body font-semibold text-[13px] text-ay-text-muted px-5 py-4">
               {t('colCriterion')}
             </th>
