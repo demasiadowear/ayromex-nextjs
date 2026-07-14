@@ -45,8 +45,8 @@ export default function Footer() {
               <img
                 src="/brand/logos/primary/tech-light.svg"
                 alt="Meta Tech Provider — Business API Official"
-                width={720}
-                height={300}
+                width={1036}
+                height={295}
                 loading="lazy"
                 className="h-10 w-auto"
               />

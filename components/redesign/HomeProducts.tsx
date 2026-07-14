@@ -68,7 +68,7 @@ export default function HomeProducts() {
                 src={img}
                 alt=""
                 width={400}
-                height={300}
+                height={295}
                 loading="lazy"
                 className="w-full h-44 md:h-52 object-cover"
               />
@@ -106,8 +106,8 @@ export default function HomeProducts() {
                     <img
                       src="/brand/logos/primary/tech-light.svg"
                       alt="Meta Tech Provider — Business API Official"
-                      width={720}
-                      height={300}
+                      width={1036}
+                      height={295}
                       loading="lazy"
                       className="h-12 w-auto"
                     />

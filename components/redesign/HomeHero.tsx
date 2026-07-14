@@ -41,8 +41,8 @@ export default async function HomeHero() {
           <img
             src="/brand/logos/primary/tech-light.svg"
             alt={t('badgeAlt')}
-            width={720}
-            height={300}
+            width={1036}
+            height={295}
             fetchPriority="high"
             className="h-[120px] md:h-[160px] w-auto"
           />

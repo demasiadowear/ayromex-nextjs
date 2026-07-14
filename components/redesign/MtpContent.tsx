@@ -45,8 +45,8 @@ export default function MtpContent() {
           <img
             src="/brand/logos/primary/tech-light.svg"
             alt="Meta Tech Provider — Business API Official"
-            width={720}
-            height={300}
+            width={1036}
+            height={295}
             fetchPriority="high"
             className="h-[104px] md:h-[136px] w-auto shrink-0 mx-auto lg:mx-0"
           />
