@@ -54,6 +54,16 @@ export default function SectionTransition({
       return
     }
 
+    // Sezione già nel viewport al mount (above the fold): niente
+    // fade — nascondere contenuto già visibile sposta l'LCP alla
+    // fine dell'animazione (misurato) ed è comunque UX sbagliata.
+    if (
+      variant !== 'parallax' &&
+      el.getBoundingClientRect().top < window.innerHeight * 0.8
+    ) {
+      return
+    }
+
     const content = Array.from(
       el.querySelectorAll<HTMLElement>(':scope > *:not([data-section-number])'),
     )

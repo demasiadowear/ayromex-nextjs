@@ -102,7 +102,9 @@ module.exports = {
   			grain: 'grain 8s steps(10) infinite',
   			'scroll-pulse': 'scrollPulse 2s ease-in-out infinite',
   			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
+  			'accordion-up': 'accordion-up 0.2s ease-out',
+  			'rise-in': 'riseIn 0.9s cubic-bezier(0.22,1,0.36,1) both',
+  			'fade-up-soft': 'fadeUpSoft 0.7s cubic-bezier(0.22,1,0.36,1) both'
   		},
   		keyframes: {
   			fadeUp: {
@@ -229,6 +231,24 @@ module.exports = {
   				},
   				to: {
   					height: '0'
+  				}
+  			},
+  			riseIn: {
+  				from: {
+  					transform: 'translateY(44px)'
+  				},
+  				to: {
+  					transform: 'none'
+  				}
+  			},
+  			fadeUpSoft: {
+  				from: {
+  					opacity: '0',
+  					transform: 'translateY(20px)'
+  				},
+  				to: {
+  					opacity: '1',
+  					transform: 'none'
   				}
   			}
   		}
