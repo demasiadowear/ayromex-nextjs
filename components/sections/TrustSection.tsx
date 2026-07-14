@@ -1,7 +1,6 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import { FaWhatsapp } from 'react-icons/fa'
 import { FiArrowRight, FiCheck } from 'react-icons/fi'
 import { Link } from '@/i18n/navigation'
 import SectionTransition from './SectionTransition'
@@ -13,6 +12,7 @@ import SectionTransition from './SectionTransition'
  */
 export default function TrustSection() {
   const t = useTranslations('trustSection')
+  const tMeta = useTranslations('metaTechProvider')
   const points = ['point1', 'point2', 'point3'] as const
 
   return (
@@ -24,9 +24,18 @@ export default function TrustSection() {
     >
       <div className="relative z-10 max-w-7xl mx-auto w-full">
         <div className="rounded-3xl border border-ay-border bg-ay-surface/90 backdrop-blur-xl p-6 md:p-10 lg:p-12 flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-12">
-          {/* Icona WhatsApp generica — mai loghi Meta */}
-          <div className="shrink-0 flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-2xl border border-ay-accent/30 bg-ay-accent/5">
-            <FaWhatsapp className="w-8 h-8 md:w-10 md:h-10 text-ay-accent" aria-hidden="true" />
+          {/* Badge Meta Tech Provider AYROMEX (asset brand vettoriale,
+              nessun logo Meta / Meta Business Partner) */}
+          <div className="shrink-0 flex items-center justify-center">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/brand/badges/meta-tech-provider.svg"
+              alt={tMeta('badge')}
+              width={600}
+              height={470}
+              loading="lazy"
+              className="w-[170px] md:w-[210px] h-auto"
+            />
           </div>
 
           <div className="flex-1 min-w-0">

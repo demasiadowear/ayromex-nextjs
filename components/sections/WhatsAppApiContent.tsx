@@ -32,6 +32,7 @@ const ROWS = ['ban', 'badge', 'templates', 'scale', 'support'] as const
 
 export default function WhatsAppApiContent() {
   const t = useTranslations('whatsappApiPage')
+  const tMeta = useTranslations('metaTechProvider')
 
   return (
     <>
@@ -40,21 +41,33 @@ export default function WhatsAppApiContent() {
         className="relative px-4 sm:px-6 pt-16 md:pt-24 pb-10 md:pb-14"
         aria-labelledby="wab-heading"
       >
-        <div className="relative z-10 max-w-7xl mx-auto w-full">
-          <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-ay-blue/85 block mb-5">
-            {t('eyebrow')}
-          </span>
-          <h1
-            id="wab-heading"
-            className="font-display font-extrabold text-ay-text leading-[1.0] tracking-[-0.025em] break-words max-w-[980px] [font-size:clamp(32px,8.5vw,42px)] md:[font-size:clamp(52px,5.5vw,84px)]"
-          >
-            {t('h1Start')}
-            <span className="text-ay-accent">{t('h1Accent')}</span>
-            {t('h1End')}
-          </h1>
-          <p className="mt-7 max-w-[760px] font-body text-[16px] md:text-[18px] leading-relaxed text-ay-text-muted">
-            {t('intro')}
-          </p>
+        <div className="relative z-10 max-w-7xl mx-auto w-full flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-16">
+          <div className="flex-1 min-w-0">
+            <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-ay-blue/85 block mb-5">
+              {t('eyebrow')}
+            </span>
+            <h1
+              id="wab-heading"
+              className="font-display font-extrabold text-ay-text leading-[1.0] tracking-[-0.025em] break-words max-w-[980px] [font-size:clamp(32px,8.5vw,42px)] md:[font-size:clamp(48px,5vw,76px)]"
+            >
+              {t('h1Start')}
+              <span className="text-ay-accent">{t('h1Accent')}</span>
+              {t('h1End')}
+            </h1>
+            <p className="mt-7 max-w-[760px] font-body text-[16px] md:text-[18px] leading-relaxed text-ay-text-muted">
+              {t('intro')}
+            </p>
+          </div>
+
+          {/* Badge Meta Tech Provider AYROMEX (asset brand, no loghi Meta) */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/brand/badges/meta-tech-provider.svg"
+            alt={tMeta('badge')}
+            width={600}
+            height={470}
+            className="w-[210px] md:w-[250px] h-auto shrink-0 mx-auto lg:mx-0"
+          />
         </div>
       </section>
 
