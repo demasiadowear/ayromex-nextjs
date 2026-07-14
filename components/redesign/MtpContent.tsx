@@ -43,10 +43,10 @@ export default function MtpContent() {
           </div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/brand/badges/meta-tech-provider-plaque.webp"
+            src="/brand/logos/primary/tech-light.svg"
             alt="Meta Tech Provider — Business API Official"
-            width={1000}
-            height={284}
+            width={720}
+            height={300}
             fetchPriority="high"
             className="h-[104px] md:h-[136px] w-auto shrink-0 mx-auto lg:mx-0"
           />

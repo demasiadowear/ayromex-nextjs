@@ -69,10 +69,10 @@ export default function HomeHero() {
         <div data-hero-badge className="mt-9 md:mt-12 flex justify-center">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/brand/badges/meta-tech-provider-plaque.webp"
+            src="/brand/logos/primary/tech-light.svg"
             alt={t('badgeAlt')}
-            width={1000}
-            height={284}
+            width={720}
+            height={300}
             fetchPriority="high"
             className="h-[120px] md:h-[160px] w-auto"
           />

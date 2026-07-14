@@ -14,7 +14,7 @@ import HomeCta from '@/components/redesign/HomeCta'
 export default function HomePage() {
   // Il badge nel hero è candidato LCP: preload con priorità alta
   // così non accoda dietro a font e chunk JS.
-  preload('/brand/badges/meta-tech-provider-plaque.webp', {
+  preload('/brand/logos/primary/tech-light.svg', {
     as: 'image',
     fetchPriority: 'high',
   })

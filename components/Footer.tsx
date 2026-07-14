@@ -43,10 +43,10 @@ export default function Footer() {
             <a href={`/${locale}/meta-tech-provider`} className="w-fit">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/brand/badges/meta-tech-provider-plaque.webp"
+                src="/brand/logos/primary/tech-light.svg"
                 alt="Meta Tech Provider — Business API Official"
-                width={1000}
-                height={284}
+                width={720}
+                height={300}
                 loading="lazy"
                 className="h-10 w-auto"
               />
