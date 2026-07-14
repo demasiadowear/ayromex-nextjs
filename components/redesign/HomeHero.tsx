@@ -25,7 +25,7 @@ export default async function HomeHero() {
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <h1
           id="hero-heading"
-          className="font-display font-extrabold tracking-[-0.02em] text-ay-text leading-[1.06] [font-size:clamp(36px,8.5vw,48px)] md:[font-size:clamp(52px,5vw,74px)]"
+          className="font-display font-extrabold tracking-[-0.02em] text-ay-text leading-[1.08] break-words [font-size:clamp(27px,7.2vw,44px)] md:[font-size:clamp(48px,4.8vw,72px)]"
         >
           <span className="block motion-safe:animate-rise-in">
             {t.rich('line1', {
@@ -52,7 +52,7 @@ export default async function HomeHero() {
             width={1036}
             height={295}
             fetchPriority="high"
-            className="h-[124px] md:h-[168px] w-auto drop-shadow-[0_18px_40px_rgba(255,106,0,0.18)]"
+            className="h-auto w-full max-w-[340px] md:max-w-none md:h-[168px] drop-shadow-[0_18px_40px_rgba(255,106,0,0.18)]"
           />
         </div>
 
