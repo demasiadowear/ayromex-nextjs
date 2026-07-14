@@ -16,10 +16,10 @@
     "journal": "Journal"
   },
   "hero": {
-    "eyebrow": "AI INFRASTRUCTURE · ITALY",
-    "headlineStart": "AI systems that ",
-    "headlineAccent": "automate",
-    "headlineRest": " business operations.",
+    "eyebrow": "AI AUTOMATION · META TECH PROVIDER",
+    "headlineStart": "AI automation for ",
+    "headlineAccent": "Italian SMEs",
+    "headlineRest": " and ADM gaming.",
     "rotatingPrefix": "We build ",
     "rotatingWords": [
       "AI Agents",
@@ -27,7 +27,7 @@
       "Digital Products",
       "Real Systems"
     ],
-    "paragraph": "AYROMEX builds vertical AI products, WhatsApp assistants, voice agents, dashboards and automation systems that help companies reduce manual work and increase operational control.",
+    "paragraph": "WhatsApp assistants on official Meta APIs, voice agents and automations that remove repetitive work: they answer customers, take bookings, reactivate players. You keep control.",
     "chatRole": "AI Agent at AYROMEX",
     "chatGreeting": "Hi, I'm Ayro. What do you want to automate in your business?",
     "chatInputPlaceholder": "Type here...",
@@ -37,6 +37,83 @@
     "scrollHint": "Scroll",
     "systemLogTitle": "SYSTEM LOG",
     "liveStatus": "live"
+  },
+  "trustSection": {
+    "eyebrow": "TECHNOLOGY PARTNER",
+    "title": "Official Meta Tech Provider",
+    "body": "AYROMEX is a Meta-approved Tech Provider for the WhatsApp Business Platform. Our AI assistants run on official WhatsApp APIs, already live in production with real clients: verified number, approved templates, no workarounds.",
+    "point1": "Official WhatsApp Business Platform APIs",
+    "point2": "Live in production, not in beta",
+    "point3": "Direct Meta approval",
+    "cta": "Discover the official APIs"
+  },
+  "metaTechProvider": {
+    "badge": "Meta Tech Provider — official WhatsApp Business API",
+    "link": "Why official APIs matter"
+  },
+  "whatsappApiPage": {
+    "eyebrow": "META TECH PROVIDER",
+    "h1Start": "The ",
+    "h1Accent": "official",
+    "h1End": " WhatsApp Business API, without the risks.",
+    "intro": "AYROMEX is a Meta-approved Tech Provider. We connect your company to the official WhatsApp Business Platform: AI answers your customers on the channel they use every day, with Meta's rules on your side.",
+    "whatIsTitle": "What the WhatsApp Business Platform is",
+    "whatIsP1": "It is the official channel Meta provides for companies to message and answer customers on WhatsApp in an automated way: verified number, approved template messages and conversations handled by AI systems.",
+    "whatIsP2": "Being an approved Tech Provider means AYROMEX passed Meta's review and integrates these APIs directly, with no middlemen. Our systems are already in production: not demos, not betas.",
+    "benefitsTitle": "Why official APIs win",
+    "benefits": {
+      "noBan": {
+        "title": "Zero ban risk",
+        "description": "Your number does not get blocked: we work within Meta's rules, not against them. Your WhatsApp channel stays operational, always."
+      },
+      "verified": {
+        "title": "Green checkmark and verified profile",
+        "description": "Business profile with your company name visible and official Meta verification: customers know it's you, not an anonymous number."
+      },
+      "templates": {
+        "title": "Marketing and utility templates",
+        "description": "Meta-approved promotions, reminders and notifications: you can message customers first. Impossible with unofficial solutions."
+      },
+      "scale": {
+        "title": "Scale without limits",
+        "description": "From 10 to 10,000 conversations per month on the same infrastructure: no phone left on in the office, no artificial limits."
+      }
+    },
+    "comparisonTitle": "Official APIs vs unofficial solutions",
+    "comparisonSubtitle": "The difference between building on the official channel and renting a shortcut.",
+    "colCriterion": "What changes",
+    "colOfficial": "Official APIs (AYROMEX)",
+    "colUnofficial": "Unofficial solutions",
+    "rows": {
+      "ban": {
+        "label": "Number ban risk",
+        "official": "None: channel authorized by Meta",
+        "unofficial": "High: numbers blocked without notice"
+      },
+      "badge": {
+        "label": "Verification checkmark",
+        "official": "Available with a verified profile",
+        "unofficial": "Not available"
+      },
+      "templates": {
+        "label": "Marketing and utility templates",
+        "official": "Approved: you can message first",
+        "unofficial": "Forbidden: replies only, no campaigns"
+      },
+      "scale": {
+        "label": "Scalability",
+        "official": "Thousands of simultaneous conversations",
+        "unofficial": "Limited: one phone, one session"
+      },
+      "support": {
+        "label": "Support and continuity",
+        "official": "Meta infrastructure + AYROMEX support",
+        "unofficial": "No guarantee if the system breaks"
+      }
+    },
+    "ctaTitle": "Bring your company to WhatsApp, the right way",
+    "ctaBody": "Message us on WhatsApp — we reply from the same system we would install for you.",
+    "ctaButton": "Let's talk on WhatsApp"
   },
   "ayroGuide": {
     "hero": "Hi. I'm Ayro. Welcome inside AYROMEX.",
@@ -351,7 +428,7 @@
   "ayrodesk24DeepDive": {
     "eyebrow": "PRODUCT DEEP DIVE",
     "tagline": "Your AI receptionist, always online.",
-    "focus": "For local businesses that lose time answering repetitive messages, AyroDesk24 automates WhatsApp conversations, bookings, reminders and customer follow-up.",
+    "focus": "AyroDesk24 runs in production on Meta's official WhatsApp Business API — not a workaround. It automates conversations, bookings, reminders and follow-ups for local businesses that lose time on repetitive messages.",
     "features": {
       "conversations": {
         "title": "WhatsApp AI conversations",
@@ -530,6 +607,7 @@
     "companyTitle": "Company",
     "companyAbout": "About",
     "companyServices": "Services",
+    "companyWhatsappApi": "WhatsApp Business API",
     "companyJournal": "Journal",
     "companyBlog": "Blog",
     "legalTitle": "Legal",

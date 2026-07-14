@@ -9,6 +9,7 @@ import AyromexAnimatedBackground from '@/components/cinema/AyromexAnimatedBackgr
 import AyromexCoreVisual from '@/components/cinema/AyromexCoreVisual';
 import TaskTicker from '@/components/hero/TaskTicker';
 import HubSection from '@/components/sections/HubSection';
+import TrustSection from '@/components/sections/TrustSection';
 import { RotatingText } from '@/components/RotatingText';
 import { WHATSAPP_DISPLAY, WHATSAPP_LINK_BARE } from '@/lib/contact';
 import { EASE_OUT } from '@/lib/motion';
@@ -115,8 +116,10 @@ export default function HomePage() {
                 its drop-shadow. md+ keeps the cinematic size. */}
             <motion.img
               {...heroAnimPainted(0.5)}
-              src="/brand/logos/symbol/AYROLOGO.svg"
+              src="/brand/logos/symbol/AYROLOGO.webp"
               alt="AYROMEX"
+              width={880}
+              height={320}
               fetchPriority="high"
               className="h-[140px] w-[140px] max-w-full md:h-[360px] md:w-[360px] lg:h-[440px] lg:w-[440px] mb-2 md:mb-4 object-contain"
               style={{ filter: 'drop-shadow(0 4px 20px rgba(0,0,0,0.85))' }}
@@ -133,7 +136,7 @@ export default function HomePage() {
             {/* Headline — cinema size */}
             <motion.h1
               {...heroAnimPainted(1.3, 1.0)}
-              className="font-display font-extrabold text-ay-text leading-[0.95] tracking-[-0.025em] mb-6 md:mb-8 break-words w-full max-w-full mx-auto md:max-w-[1180px] [font-size:clamp(34px,9.5vw,44px)] md:[font-size:clamp(72px,7vw,112px)]"
+              className="font-display font-extrabold text-ay-text leading-[0.98] tracking-[-0.025em] mb-6 md:mb-8 break-words [text-wrap:balance] w-full max-w-full mx-auto md:max-w-[1180px] [font-size:clamp(32px,8.5vw,42px)] md:[font-size:clamp(56px,5.2vw,84px)]"
             >
               {tHero('headlineStart')}
               {/* Accent span: always `inline` so the long word can
@@ -190,6 +193,7 @@ export default function HomePage() {
                     </p>
                   </div>
                   <span
+                    role="img"
                     className="inline-block w-2 h-2 rounded-full bg-ay-lime animate-pulse"
                     title="online"
                     aria-label="online"
@@ -289,6 +293,11 @@ export default function HomePage() {
           )}
         </AnimatePresence>
       </section>
+
+      {/* ══════════════════════════════════════════
+          TRUST — Meta Tech Provider ufficiale
+          ══════════════════════════════════════════ */}
+      <TrustSection />
 
       {/* ══════════════════════════════════════════
           HUB — six navigable drawers (entry to the whole ecosystem)

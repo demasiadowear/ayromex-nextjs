@@ -25,6 +25,13 @@ export function organizationJsonLd() {
     name: `${SITE_NAME} S.R.L.`,
     url: SITE_URL,
     logo: `${SITE_URL}/icon-512.png`,
+    description:
+      'AI automation agency for Italian SMEs and ADM gaming operators. Meta Tech Provider for the WhatsApp Business Platform (official APIs, live in production).',
+    knowsAbout: [
+      'WhatsApp Business Platform',
+      'AI automation',
+      'Voice agents',
+    ],
     email: CONTACT_EMAILS.general,
     telephone: WHATSAPP_TEL,
     sameAs: SOCIAL_PROFILES,
@@ -66,6 +73,28 @@ export function productJsonLd(p: ProductJsonLdInput) {
     operatingSystem: 'Web',
     inLanguage: p.locale,
     mainEntityOfPage: `${SITE_URL}/${p.locale}/prodotti${p.pageAnchor}`,
+    provider: { '@id': `${SITE_URL}/#organization` },
+  }
+}
+
+export interface ServiceJsonLdInput {
+  name: string
+  description: string
+  url: string
+  locale: string
+}
+
+/** Service — pagina WhatsApp Business API ufficiale. */
+export function serviceJsonLd(s: ServiceJsonLdInput) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: s.name,
+    description: s.description,
+    url: s.url,
+    serviceType: 'WhatsApp Business Platform integration',
+    areaServed: { '@type': 'Country', name: 'Italy' },
+    inLanguage: s.locale,
     provider: { '@id': `${SITE_URL}/#organization` },
   }
 }

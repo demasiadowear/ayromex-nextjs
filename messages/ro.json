@@ -16,10 +16,10 @@
     "journal": "Journal"
   },
   "hero": {
-    "eyebrow": "AI INFRASTRUCTURE · ITALIA",
-    "headlineStart": "Sisteme AI care ",
-    "headlineAccent": "automatizează",
-    "headlineRest": " operațiunile de business.",
+    "eyebrow": "AI AUTOMATION · META TECH PROVIDER",
+    "headlineStart": "Automatizare AI pentru ",
+    "headlineAccent": "IMM-uri italiene",
+    "headlineRest": " și gaming ADM.",
     "rotatingPrefix": "Construim ",
     "rotatingWords": [
       "Agenți AI",
@@ -27,7 +27,7 @@
       "Produse Digitale",
       "Sisteme Reale"
     ],
-    "paragraph": "AYROMEX construiește produse AI verticale, asistenți WhatsApp, voice agents, dashboard-uri și automatizări care ajută companiile să reducă munca manuală și să crească controlul operațional.",
+    "paragraph": "Asistenți WhatsApp pe API-uri oficiale Meta, voice agents și automatizări care elimină munca repetitivă: răspund clienților, preiau rezervări, reactivează jucători. Tu păstrezi controlul.",
     "chatRole": "Agent AI AYROMEX",
     "chatGreeting": "Bună, sunt Ayro. Ce vrei să automatizezi în afacerea ta?",
     "chatInputPlaceholder": "Scrie aici...",
@@ -37,6 +37,83 @@
     "scrollHint": "Derulează",
     "systemLogTitle": "SYSTEM LOG",
     "liveStatus": "live"
+  },
+  "trustSection": {
+    "eyebrow": "PARTENER TEHNOLOGIC",
+    "title": "Meta Tech Provider oficial",
+    "body": "AYROMEX este Tech Provider aprobat de Meta pentru WhatsApp Business Platform. Asistenții noștri AI rulează pe API-urile oficiale WhatsApp, deja în producție cu clienți reali: număr verificat, template-uri aprobate, fără soluții improvizate.",
+    "point1": "API-uri oficiale WhatsApp Business Platform",
+    "point2": "În producție, nu în beta",
+    "point3": "Aprobare directă Meta",
+    "cta": "Descoperă API-urile oficiale"
+  },
+  "metaTechProvider": {
+    "badge": "Meta Tech Provider — WhatsApp Business API oficial",
+    "link": "De ce contează API-urile oficiale"
+  },
+  "whatsappApiPage": {
+    "eyebrow": "META TECH PROVIDER",
+    "h1Start": "WhatsApp Business API ",
+    "h1Accent": "oficial",
+    "h1End": ", fără riscuri.",
+    "intro": "AYROMEX este Tech Provider aprobat de Meta. Conectăm compania ta la WhatsApp Business Platform oficial: AI-ul răspunde clienților tăi pe canalul pe care îl folosesc zilnic, cu regulile Meta de partea ta.",
+    "whatIsTitle": "Ce este WhatsApp Business Platform",
+    "whatIsP1": "Este canalul oficial prin care Meta permite companiilor să scrie și să răspundă clienților pe WhatsApp în mod automatizat: număr verificat, mesaje template aprobate și conversații gestionate de sisteme AI.",
+    "whatIsP2": "A fi Tech Provider aprobat înseamnă că AYROMEX a trecut verificarea Meta și integrează aceste API-uri direct, fără intermediari. Sistemele noastre sunt deja în producție: nu demo, nu beta.",
+    "benefitsTitle": "De ce câștigi cu API-urile oficiale",
+    "benefits": {
+      "noBan": {
+        "title": "Zero risc de ban",
+        "description": "Numărul nu este blocat: lucrăm în regulile Meta, nu împotriva lor. Canalul tău WhatsApp rămâne operațional, mereu."
+      },
+      "verified": {
+        "title": "Bifă verde și profil verificat",
+        "description": "Profil business cu numele companiei vizibil și verificare oficială Meta: clienții știu că ești tu, nu un număr anonim."
+      },
+      "templates": {
+        "title": "Template-uri marketing și utility",
+        "description": "Promoții, remindere și notificări aprobate de Meta: poți scrie tu primul clienților. Imposibil cu soluțiile neoficiale."
+      },
+      "scale": {
+        "title": "Scalare fără limite",
+        "description": "De la 10 la 10.000 de conversații pe lună pe aceeași infrastructură: niciun telefon aprins în birou, nicio limită artificială."
+      }
+    },
+    "comparisonTitle": "API-uri oficiale vs soluții neoficiale",
+    "comparisonSubtitle": "Diferența dintre a construi pe canalul oficial și a închiria o scurtătură.",
+    "colCriterion": "Ce se schimbă",
+    "colOfficial": "API-uri oficiale (AYROMEX)",
+    "colUnofficial": "Soluții neoficiale",
+    "rows": {
+      "ban": {
+        "label": "Risc de ban al numărului",
+        "official": "Zero: canal autorizat de Meta",
+        "unofficial": "Ridicat: numere blocate fără preaviz"
+      },
+      "badge": {
+        "label": "Bifă de verificare",
+        "official": "Disponibilă cu profil verificat",
+        "unofficial": "Indisponibilă"
+      },
+      "templates": {
+        "label": "Template-uri marketing și utility",
+        "official": "Aprobate: poți scrie tu primul",
+        "unofficial": "Interzise: doar răspunsuri, fără campanii"
+      },
+      "scale": {
+        "label": "Scalabilitate",
+        "official": "Mii de conversații simultane",
+        "unofficial": "Limitată: un telefon, o sesiune"
+      },
+      "support": {
+        "label": "Suport și continuitate",
+        "official": "Infrastructură Meta + suport AYROMEX",
+        "unofficial": "Nicio garanție dacă sistemul cade"
+      }
+    },
+    "ctaTitle": "Adu-ți compania pe WhatsApp, în modul corect",
+    "ctaBody": "Scrie-ne pe WhatsApp — răspundem din același sistem pe care l-am instala pentru tine.",
+    "ctaButton": "Să vorbim pe WhatsApp"
   },
   "ayroGuide": {
     "hero": "Salut. Sunt Ayro. Bine ai venit în AYROMEX.",
@@ -351,7 +428,7 @@
   "ayrodesk24DeepDive": {
     "eyebrow": "PREZENTARE PRODUS",
     "tagline": "Recepționerul AI mereu activ.",
-    "focus": "Pentru afaceri locale care pierd timp răspunzând la mesaje repetitive, AyroDesk24 automatizează conversațiile WhatsApp, rezervările, remindere-le și follow-up-ul clienților.",
+    "focus": "AyroDesk24 rulează în producție pe WhatsApp Business API oficial de la Meta — nu o soluție improvizată. Automatizează conversații, rezervări, remindere și follow-up pentru afacerile locale care pierd timp cu mesaje repetitive.",
     "features": {
       "conversations": {
         "title": "Conversații WhatsApp AI",
@@ -530,6 +607,7 @@
     "companyTitle": "Companie",
     "companyAbout": "Despre noi",
     "companyServices": "Servicii",
+    "companyWhatsappApi": "WhatsApp Business API",
     "companyJournal": "Journal",
     "companyBlog": "Blog",
     "legalTitle": "Legal",

@@ -29,15 +29,19 @@ export interface ProductDeepDiveFeature {
 interface Props {
   productId: ProductId
   features: ProductDeepDiveFeature[]
+  /** Mostra il badge "Meta Tech Provider" (solo prodotti su WABA ufficiale). */
+  showMetaBadge?: boolean
 }
 
 export default function ProductDeepDiveSection({
   productId,
   features,
+  showMetaBadge = false,
 }: Props) {
   const product = getProduct(productId)
   const t = useTranslations(`${productId}DeepDive`)
   const tFeatures = useTranslations(`${productId}DeepDive.features`)
+  const tMeta = useTranslations('metaTechProvider')
 
   // Split the result sentence on periods so each clause becomes a
   // small chip. Falls back to a single block if no periods exist.
@@ -81,6 +85,26 @@ export default function ProductDeepDiveSection({
           >
             {t('focus')}
           </p>
+
+          {/* Badge Meta Tech Provider — testo + icona generica,
+              MAI loghi Meta / Meta Business Partner. */}
+          {showMetaBadge && (
+            <div className="mt-6 flex flex-col sm:flex-row sm:items-center gap-3">
+              <span className="inline-flex items-center gap-2 rounded-full border border-ay-accent/40 bg-ay-accent/5 px-4 py-2 font-body text-[13px] font-medium text-ay-text">
+                <span
+                  className="w-1.5 h-1.5 rounded-full bg-ay-lime"
+                  aria-hidden="true"
+                />
+                {tMeta('badge')}
+              </span>
+              <Link
+                href="/whatsapp-business-api"
+                className="font-body text-[13px] text-ay-accent hover:underline"
+              >
+                {tMeta('link')} →
+              </Link>
+            </div>
+          )}
         </div>
 
         {/* Feature grid */}

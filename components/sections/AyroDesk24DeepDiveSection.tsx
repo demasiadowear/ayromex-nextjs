@@ -23,6 +23,10 @@ const FEATURES: ProductDeepDiveFeature[] = [
 
 export default function AyroDesk24DeepDiveSection() {
   return (
-    <ProductDeepDiveSection productId="ayrodesk24" features={FEATURES} />
+    <ProductDeepDiveSection
+      productId="ayrodesk24"
+      features={FEATURES}
+      showMetaBadge
+    />
   )
 }

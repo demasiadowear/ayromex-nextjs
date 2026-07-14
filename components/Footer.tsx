@@ -63,9 +63,9 @@ export default function Footer() {
 
           {/* Products */}
           <div className="flex flex-col gap-4">
-            <h4 className="font-mono text-[11px] uppercase tracking-[0.15em] text-ay-accent">
+            <h3 className="font-mono text-[11px] uppercase tracking-[0.15em] text-ay-accent">
               {t('productsTitle')}
-            </h4>
+            </h3>
             <ul className="flex flex-col gap-2 font-body text-[14px]">
               {PRODUCTS.map((p) => (
                 <li key={p.id}>
@@ -84,9 +84,9 @@ export default function Footer() {
 
           {/* Company */}
           <div className="flex flex-col gap-4">
-            <h4 className="font-mono text-[11px] uppercase tracking-[0.15em] text-ay-accent">
+            <h3 className="font-mono text-[11px] uppercase tracking-[0.15em] text-ay-accent">
               {t('companyTitle')}
-            </h4>
+            </h3>
             <ul className="flex flex-col gap-2 font-body text-[14px]">
               <li>
                 <a
@@ -102,6 +102,14 @@ export default function Footer() {
                   className="text-ay-text-muted hover:text-ay-accent transition-colors"
                 >
                   {t('companyServices')}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`/${locale}/whatsapp-business-api`}
+                  className="text-ay-text-muted hover:text-ay-accent transition-colors"
+                >
+                  {t('companyWhatsappApi')}
                 </a>
               </li>
               <li>
@@ -134,9 +142,9 @@ export default function Footer() {
 
           {/* Legal */}
           <div className="flex flex-col gap-4">
-            <h4 className="font-mono text-[11px] uppercase tracking-[0.15em] text-ay-accent">
+            <h3 className="font-mono text-[11px] uppercase tracking-[0.15em] text-ay-accent">
               {t('legalTitle')}
-            </h4>
+            </h3>
             <ul className="flex flex-col gap-2 font-body text-[14px]">
               <li>
                 <a

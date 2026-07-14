@@ -23,6 +23,10 @@ const FEATURES: ProductDeepDiveFeature[] = [
 
 export default function AyroHubDeepDiveSection() {
   return (
-    <ProductDeepDiveSection productId="ayrohub" features={FEATURES} />
+    <ProductDeepDiveSection
+      productId="ayrohub"
+      features={FEATURES}
+      showMetaBadge
+    />
   )
 }
