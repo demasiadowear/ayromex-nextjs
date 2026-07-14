@@ -28,16 +28,21 @@ const nextConfig = {
       // Entry point comodo: /blog → home del blog del tenant ayromex.
       { source: '/blog', destination: '/blog/ayromex', permanent: true },
 
-      // Alias marketing: /meta-tech-provider → pagina WhatsApp Business
-      // API (slug SEO canonico). Evita una pagina duplicata.
+      // Redesign 2026: la pagina canonica è /meta-tech-provider.
+      // Il vecchio slug /whatsapp-business-api reindirizza qui.
       {
         source: '/meta-tech-provider',
-        destination: '/it/whatsapp-business-api',
+        destination: '/it/meta-tech-provider',
         permanent: true,
       },
       {
-        source: '/:locale(it|en|ro)/meta-tech-provider',
-        destination: '/:locale/whatsapp-business-api',
+        source: '/whatsapp-business-api',
+        destination: '/it/meta-tech-provider',
+        permanent: true,
+      },
+      {
+        source: '/:locale(it|en|ro)/whatsapp-business-api',
+        destination: '/:locale/meta-tech-provider',
         permanent: true,
       },
 

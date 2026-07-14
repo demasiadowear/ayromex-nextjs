@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Negozio / Retail">
+  <rect width="400" height="300" fill="#EAE6DE"/>
+  <rect x="0" y="230" width="400" height="70" fill="#D6CFC0" opacity="0.5"/>
+  <g transform="translate(100 30) scale(1.1)" fill="none" stroke="#D6CFC0" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M60 100 h80 v50 h-80 z M60 100 l10 -25 h60 l10 25"/>
+  </g>
+  <text x="200" y="268" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" fill="#6E6B60">Negozio / Retail — foto in arrivo</text>
+</svg>

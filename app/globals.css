@@ -10,14 +10,14 @@
   --ay-accent:       #FF6A00;
   --ay-accent-hover: #E65C00;
   --ay-accent-tint:  #FFF1E6;
-  --ay-bg:           #0D0D0D;
-  --ay-surface:      #141414;
-  --ay-text:         #FAFAFA;
-  --ay-text-muted:   #A1A1AA;
-  --ay-border:       #27272A;
+  --ay-bg:           #FAFAF7;
+  --ay-surface:      #FFFFFF;
+  --ay-text:         #1C1B16;
+  --ay-text-muted:   #6E6B60;
+  --ay-border:       #E8E5DC;
   --ay-cream:        #FFF4EC;
-  --ay-blue:         #00A6F4;
-  --ay-lime:         #A8FF3E;
+  --ay-blue:         #0284C7;
+  --ay-lime:         #16A34A;
 }
 
 html,
@@ -28,10 +28,6 @@ body {
 
 html {
   scroll-behavior: smooth;
-}
-
-html, body, a, button, input, textarea, select {
-  cursor: none !important;
 }
 
 body {
@@ -222,4 +218,40 @@ body {
 /* No system cursor — custom cursor handles it */
 svg {
   transition: none !important;
+}
+
+/* =====================
+   SHADCN THEME — ritematizzato AYROMEX "chiaro, caldo, umano".
+   Un solo tema (light). primary = Brand Orange, superfici calde,
+   radius generoso. NIENTE look shadcn default.
+   ===================== */
+@layer base {
+  :root {
+    --background: 60 23% 97%;            /* #FAFAF7 paper caldo */
+    --foreground: 50 12% 10%;            /* #1C1B16 quasi-nero caldo */
+    --card: 0 0% 100%;
+    --card-foreground: 50 12% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 50 12% 10%;
+    --primary: 25 100% 50%;              /* #FF6A00 — SOLO CTA/accenti */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 47 24% 93%;             /* sabbia chiara */
+    --secondary-foreground: 50 12% 10%;
+    --muted: 47 24% 93%;
+    --muted-foreground: 47 7% 40%;       /* #6E6B60 */
+    --accent: 26 100% 95%;               /* tint arancio #FFF1E6 */
+    --accent-foreground: 25 100% 35%;
+    --destructive: 0 72% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 45 21% 89%;                /* #E8E5DC */
+    --input: 45 21% 89%;
+    --ring: 25 100% 50%;
+    --radius: 1rem;
+  }
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }

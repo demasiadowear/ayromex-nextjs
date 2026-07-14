@@ -62,7 +62,6 @@ export default function ProductDeepDiveSection({
         <div className="flex flex-col items-start max-w-[920px]">
           <span
             className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-ay-blue/85 mb-5"
-            style={{ textShadow: '0 1px 4px rgba(0,0,0,0.85)' }}
           >
             {t('eyebrow')}
           </span>
@@ -70,7 +69,6 @@ export default function ProductDeepDiveSection({
           <h2
             id={`${productId}-deep-heading`}
             className="font-display font-extrabold text-ay-text leading-[1.0] tracking-[-0.025em] break-words w-full max-w-full [font-size:clamp(26px,7.5vw,38px)] md:[font-size:clamp(40px,4.6vw,64px)]"
-            style={{ textShadow: '0 2px 12px rgba(0,0,0,0.55)' }}
           >
             <span className="text-ay-accent">{product.displayName}</span>
             {/* Em-dash separator hidden on mobile to let the tagline
@@ -81,7 +79,6 @@ export default function ProductDeepDiveSection({
 
           <p
             className="mt-7 max-w-[720px] font-body text-[17px] leading-relaxed text-ay-text-bright"
-            style={{ textShadow: '0 1px 4px rgba(0,0,0,0.7)' }}
           >
             {t('focus')}
           </p>
@@ -98,7 +95,7 @@ export default function ProductDeepDiveSection({
                 {tMeta('badge')}
               </span>
               <Link
-                href="/whatsapp-business-api"
+                href="/meta-tech-provider"
                 className="font-body text-[13px] text-ay-accent hover:underline"
               >
                 {tMeta('link')} →
@@ -152,7 +149,7 @@ export default function ProductDeepDiveSection({
               {resultChunks.map((chunk, i) => (
                 <span
                   key={i}
-                  className="inline-flex items-center rounded-full border border-ay-cream/15 bg-ay-cream/5 px-4 py-2 font-body text-[14px] text-ay-cream"
+                  className="inline-flex items-center rounded-full border border-ay-border bg-ay-cream/60 px-4 py-2 font-body text-[14px] text-ay-text"
                 >
                   {chunk}
                 </span>

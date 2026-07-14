@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import WhatsAppApiContent from '@/components/sections/WhatsAppApiContent'
+import MtpContent from '@/components/redesign/MtpContent'
 import { serviceJsonLd } from '@/lib/jsonld'
 import { pageMetadata, pagePath, SEO, SITE_URL, type Locale } from '@/lib/seo'
 
@@ -9,26 +9,26 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>
 }): Promise<Metadata> {
   const { locale } = await params
-  return pageMetadata('whatsappApi', locale as Locale)
+  return pageMetadata('metaTechProvider', locale as Locale)
 }
 
 /**
- * /whatsapp-business-api — pagina Meta Tech Provider / WhatsApp
- * Business API ufficiale. Contenuto client in WhatsAppApiContent;
- * qui solo metadata + JSON-LD Service.
+ * /meta-tech-provider — approfondimento certificazione Meta Tech
+ * Provider / WhatsApp Business API ufficiale. Contenuto client in
+ * MtpContent; qui metadata + JSON-LD Service.
  */
-export default async function WhatsAppApiPage({
+export default async function MetaTechProviderPage({
   params,
 }: {
   params: Promise<{ locale: string }>
 }) {
   const { locale } = await params
-  const copy = SEO.whatsappApi[locale as Locale]
+  const copy = SEO.metaTechProvider[locale as Locale]
 
   const jsonLd = serviceJsonLd({
     name: copy.title,
     description: copy.description,
-    url: `${SITE_URL}${pagePath('whatsappApi', locale as Locale)}`,
+    url: `${SITE_URL}${pagePath('metaTechProvider', locale as Locale)}`,
     locale,
   })
 
@@ -38,7 +38,7 @@ export default async function WhatsAppApiPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <WhatsAppApiContent />
+      <MtpContent />
     </main>
   )
 }

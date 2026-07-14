@@ -38,28 +38,81 @@
     "systemLogTitle": "SYSTEM LOG",
     "liveStatus": "live"
   },
-  "trustSection": {
-    "eyebrow": "PARTENER TEHNOLOGIC",
-    "title": "Meta Tech Provider oficial",
-    "body": "AYROMEX este Tech Provider aprobat de Meta pentru WhatsApp Business Platform. Asistenții noștri AI rulează pe API-urile oficiale WhatsApp, deja în producție cu clienți reali: număr verificat, template-uri aprobate, fără soluții improvizate.",
-    "point1": "API-uri oficiale WhatsApp Business Platform",
-    "point2": "În producție, nu în beta",
-    "point3": "Aprobare directă Meta",
-    "cta": "Descoperă API-urile oficiale"
+  "homeHero": {
+    "line1": "WhatsApp-ul tău lucrează pentru tine.",
+    "line2": "Chiar și când magazinul e închis.",
+    "sub": "Răspunde clienților, programează întâlniri, trimite remindere. Tu te ocupi de munca ta, el de mesaje.",
+    "ctaWhatsApp": "Scrie-ne pe WhatsApp",
+    "ctaHow": "Vezi cum funcționează",
+    "badgeAlt": "Meta Tech Provider — Business API Official"
   },
-  "metaTechProvider": {
-    "badge": "Meta Tech Provider — WhatsApp Business API oficial",
-    "link": "De ce contează API-urile oficiale"
+  "homeTrust": {
+    "eyebrow": "Certificare",
+    "title": "Tech Provider aprobat de Meta",
+    "intro": "AYROMEX este printre companiile aprobate de Meta pentru a conecta afacerile la WhatsApp Business Platform oficial. Asta înseamnă număr protejat, reguli clare și mesaje care ajung cu adevărat.",
+    "closing": "Întreabă-ți furnizorul actual dacă este Tech Provider aprobat de Meta.",
+    "cta": "Află despre certificare"
   },
-  "whatsappApiPage": {
-    "eyebrow": "META TECH PROVIDER",
-    "h1Start": "WhatsApp Business API ",
-    "h1Accent": "oficial",
-    "h1End": ", fără riscuri.",
-    "intro": "AYROMEX este Tech Provider aprobat de Meta. Conectăm compania ta la WhatsApp Business Platform oficial: AI-ul răspunde clienților tăi pe canalul pe care îl folosesc zilnic, cu regulile Meta de partea ta.",
+  "homeProducts": {
+    "eyebrow": "Produse",
+    "title": "Două produse, o idee simplă: să nu pierzi niciun client.",
+    "desk": {
+      "name": "AyroDesk24",
+      "for": "Pentru saloane, restaurante și magazine",
+      "desc": "Recepționerul care răspunde pe WhatsApp în locul tău: programări, prețuri, orar, remindere. Activ zi și noapte, pe numărul oficial al afacerii tale.",
+      "b1": "Răspunsuri imediate, chiar și la miezul nopții",
+      "b2": "Programări direct în calendar",
+      "b3": "Remindere care reduc absențele",
+      "cta": "Descoperă AyroDesk24"
+    },
+    "hub": {
+      "name": "AyroHub",
+      "for": "Pentru operatori de gaming ADM",
+      "desc": "Voce și WhatsApp pentru reactivarea clienților inactivi și gestionarea rețelei: apeluri automate, campanii conforme, date într-un singur panou.",
+      "b1": "Reactivare clienți prin voce și WhatsApp",
+      "b2": "Conformitate ADM integrată",
+      "b3": "Un singur dashboard pentru toată rețeaua",
+      "cta": "Descoperă AyroHub"
+    }
+  },
+  "homeHow": {
+    "eyebrow": "Cum funcționează",
+    "title": "Pornim în trei pași",
+    "s1title": "Ne povestești cum lucrezi",
+    "s1desc": "O discuție de jumătate de oră: ce te întreabă clienții, cum iei programările, ce îți mănâncă timpul.",
+    "s2title": "Îți conectăm numărul",
+    "s2desc": "Activăm WhatsApp-ul tău pe API-urile oficiale Meta și pregătim răspunsurile cu cuvintele tale, prețurile tale, orarul tău.",
+    "s3title": "WhatsApp-ul tău începe să răspundă",
+    "s3desc": "Din acel moment niciun mesaj nu rămâne fără răspuns. Tu vezi tot și intervii când vrei."
+  },
+  "homeProof": {
+    "eyebrow": "Cine îl folosește",
+    "title": "Deja la lucru în afaceri ca a ta",
+    "v1title": "Saloane și centre de înfrumusețare",
+    "v1desc": "Programări făcute și în afara orarului, remindere automate, mai puține anulări de ultim moment.",
+    "v2title": "Restaurante și baruri de vinuri",
+    "v2desc": "Mese confirmate pe WhatsApp, întrebări despre meniu și orar rezolvate singure, mai mult timp în sală.",
+    "v3title": "Gaming și operatori ADM",
+    "v3desc": "Clienți inactivi reactivați cu campanii conforme, toată rețeaua gestionată dintr-un singur panou.",
+    "stat1value": "200+",
+    "stat1label": "ore economisite pe lună per client",
+    "stat2value": "< 1 min",
+    "stat2label": "timp mediu de răspuns",
+    "stat3value": "15+",
+    "stat3label": "verticale servite"
+  },
+  "homeCta": {
+    "title": "Să vedem dacă ți se potrivește.",
+    "body": "Scrie-ne pe WhatsApp: îți răspunde același sistem pe care îl instalăm pentru clienți. Două minute și înțelegi tot.",
+    "button": "Scrie-ne pe WhatsApp"
+  },
+  "mtp": {
+    "eyebrow": "Meta Tech Provider",
+    "h1": "WhatsApp Business API oficial, fără riscuri.",
+    "intro": "AYROMEX este Tech Provider aprobat de Meta. Conectăm compania ta la WhatsApp Business Platform oficial: clienții tăi primesc răspunsuri pe canalul pe care îl folosesc zilnic, cu regulile Meta de partea ta.",
     "whatIsTitle": "Ce este WhatsApp Business Platform",
-    "whatIsP1": "Este canalul oficial prin care Meta permite companiilor să scrie și să răspundă clienților pe WhatsApp în mod automatizat: număr verificat, mesaje template aprobate și conversații gestionate de sisteme AI.",
-    "whatIsP2": "A fi Tech Provider aprobat înseamnă că AYROMEX a trecut verificarea Meta și integrează aceste API-uri direct, fără intermediari. Sistemele noastre sunt deja în producție: nu demo, nu beta.",
+    "whatIsP1": "Este canalul oficial prin care Meta permite companiilor să scrie și să răspundă clienților pe WhatsApp automat: număr verificat, mesaje aprobate și conversații gestionate de sisteme care lucrează pentru tine.",
+    "whatIsP2": "A fi Tech Provider aprobat înseamnă că AYROMEX a trecut verificarea Meta și integrează aceste API-uri direct, fără intermediari. Sistemele noastre sunt deja în producție: nu demo, nu promisiuni.",
     "benefitsTitle": "De ce câștigi cu API-urile oficiale",
     "benefits": {
       "noBan": {
@@ -68,14 +121,14 @@
       },
       "verified": {
         "title": "Bifă verde și profil verificat",
-        "description": "Profil business cu numele companiei vizibil și verificare oficială Meta: clienții știu că ești tu, nu un număr anonim."
+        "description": "Numele companiei vizibil și verificare oficială Meta: clienții știu că ești tu, nu un număr anonim."
       },
       "templates": {
-        "title": "Template-uri marketing și utility",
-        "description": "Promoții, remindere și notificări aprobate de Meta: poți scrie tu primul clienților. Imposibil cu soluțiile neoficiale."
+        "title": "Template-uri marketing și utility aprobate",
+        "description": "Promoții, remindere și notificări aprobate de Meta: poți scrie tu primul clienților. Cu soluțiile neoficiale este interzis."
       },
       "scale": {
-        "title": "Scalare fără limite",
+        "title": "Scalabilitate reală",
         "description": "De la 10 la 10.000 de conversații pe lună pe aceeași infrastructură: niciun telefon aprins în birou, nicio limită artificială."
       }
     },
@@ -111,9 +164,36 @@
         "unofficial": "Nicio garanție dacă sistemul cade"
       }
     },
+    "faqTitle": "Întrebări frecvente",
+    "faq": {
+      "q1": {
+        "q": "Trebuie să schimb numărul de telefon?",
+        "a": "Nu. Conectăm numărul pe care clienții tăi îl știu deja la platforma oficială. Dacă preferi un număr dedicat, îl activăm noi."
+      },
+      "q2": {
+        "q": "Ce se întâmplă cu WhatsApp-ul pe care îl folosesc acum?",
+        "a": "Numărul trece pe WhatsApp Business Platform: conversațiile continuă din panou și din sistemele pe care le instalăm. Te ghidăm noi în toată trecerea."
+      },
+      "q3": {
+        "q": "Pot scrie eu primul clienților?",
+        "a": "Da, cu mesajele template aprobate de Meta: promoții, remindere, anunțuri. E cel mai mare avantaj față de soluțiile neoficiale, unde este interzis."
+      },
+      "q4": {
+        "q": "Cum obțin bifa verde?",
+        "a": "Ai nevoie de un profil business verificat de Meta. Ca Tech Provider pregătim noi cererea cu cerințele corecte: nume real, site activ, documente în ordine."
+      },
+      "q5": {
+        "q": "Cât costă?",
+        "a": "Depinde de volumul de conversații și de ce trebuie să facă sistemul. Scrie-ne pe WhatsApp: din două mesaje înțelegem cazul tău și îți dăm un număr clar."
+      }
+    },
     "ctaTitle": "Adu-ți compania pe WhatsApp, în modul corect",
     "ctaBody": "Scrie-ne pe WhatsApp — răspundem din același sistem pe care l-am instala pentru tine.",
     "ctaButton": "Să vorbim pe WhatsApp"
+  },
+  "metaTechProvider": {
+    "badge": "Meta Tech Provider — WhatsApp Business API oficial",
+    "link": "De ce contează API-urile oficiale"
   },
   "ayroGuide": {
     "hero": "Salut. Sunt Ayro. Bine ai venit în AYROMEX.",

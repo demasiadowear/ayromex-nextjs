@@ -30,13 +30,7 @@ export default function Footer() {
   }
 
   return (
-    <footer
-      className="relative mt-24 pt-20 pb-10 px-6"
-      style={{
-        background:
-          'linear-gradient(180deg, transparent 0%, rgba(10,10,10,0.6) 20%, rgba(10,10,10,0.92) 100%)',
-      }}
-    >
+    <footer className="relative mt-24 pt-20 pb-10 px-6 bg-ay-cream/60 border-t border-ay-border">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-12">
           {/* Brand */}
@@ -45,6 +39,18 @@ export default function Footer() {
             <p className="font-body text-[14px] text-ay-text-muted leading-relaxed max-w-[260px]">
               {t('brandTagline')}
             </p>
+            {/* Badge Meta Tech Provider — compatto, sempre in inglese */}
+            <a href={`/${locale}/meta-tech-provider`} className="w-fit">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/brand/badges/meta-tech-provider-plaque.webp"
+                alt="Meta Tech Provider — Business API Official"
+                width={1000}
+                height={284}
+                loading="lazy"
+                className="h-10 w-auto"
+              />
+            </a>
             <div className="flex items-center gap-3 mt-2">
               {SOCIAL_LINKS.map(({ href, Icon, label }) => (
                 <a
@@ -106,7 +112,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href={`/${locale}/whatsapp-business-api`}
+                  href={`/${locale}/meta-tech-provider`}
                   className="text-ay-text-muted hover:text-ay-accent transition-colors"
                 >
                   {t('companyWhatsappApi')}

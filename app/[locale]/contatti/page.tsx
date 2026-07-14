@@ -37,12 +37,12 @@ export default async function ContattiPage() {
           <span className="text-ay-accent text-xs font-bold uppercase tracking-widest">
             {t('eyebrow')}
           </span>
-          <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tight text-white mt-4 mb-6 max-w-3xl leading-tight">
+          <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tight text-ay-text mt-4 mb-6 max-w-3xl leading-tight">
             {t('title1')}
             <br />
             <span className="text-ay-accent">{t('title2')}</span>
           </h1>
-          <p className="text-lg text-white/60 max-w-xl">{t('desc')}</p>
+          <p className="text-lg text-ay-text-muted max-w-xl">{t('desc')}</p>
         </div>
       </section>
 

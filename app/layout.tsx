@@ -3,10 +3,10 @@ import { Gugi, Syne, DM_Sans, JetBrains_Mono } from 'next/font/google'
 import { getLocale, getTranslations } from 'next-intl/server'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
-import CustomCursor from '@/components/CustomCursor'
-import GrainOverlay from '@/components/GrainOverlay'
 import ScrollProgressIndicator from '@/components/ScrollProgressIndicator'
 import { SITE_NAME, SITE_URL } from '@/lib/seo'
+import { cn } from '@/lib/utils'
+
 
 // preload: false sui font secondari (Gugi: solo lockup logo; JetBrains:
 // solo eyebrow/mono piccoli) — meno byte in coda prima di Syne, che
@@ -113,13 +113,11 @@ export const metadata: Metadata = {
   },
 }
 
-// Viewport (split from metadata per Next 16 convention). The
-// theme color matches Ink so iOS Safari's chrome tints to the
-// site background, and colorScheme: dark prevents the white
-// flash on cold loads.
+// Viewport (split from metadata per Next 16 convention). Theme
+// color = paper caldo del redesign 2026, colorScheme light.
 export const viewport: Viewport = {
-  themeColor: '#0D0D0D',
-  colorScheme: 'dark',
+  themeColor: '#FAFAF7',
+  colorScheme: 'light',
   width: 'device-width',
   initialScale: 1,
 }
@@ -139,7 +137,13 @@ export default async function RootLayout({
     <html
       lang={locale}
       data-scroll-behavior="smooth"
-      className={`dark ${gugi.variable} ${syne.variable} ${dmSans.variable} ${jetbrainsMono.variable}`}
+      className={cn(
+        gugi.variable,
+        syne.variable,
+        dmSans.variable,
+        jetbrainsMono.variable,
+        'font-sans',
+      )}
     >
       <body className="relative min-h-screen bg-ay-bg text-ay-text font-body antialiased">
         {/* Skip-to-content link — visually hidden until focused.
@@ -151,14 +155,8 @@ export default async function RootLayout({
           {t('skipToContent')}
         </a>
 
-        {/* Film grain overlay */}
-        <GrainOverlay />
-
         {/* Scroll progress bar */}
         <ScrollProgressIndicator />
-
-        {/* Custom cursor */}
-        <CustomCursor />
 
         {/* Content */}
         <div className="relative z-10">{children}</div>

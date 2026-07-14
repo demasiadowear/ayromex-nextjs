@@ -22,7 +22,7 @@ export type PageKey =
   | 'contatti'
   | 'privacy'
   | 'terms'
-  | 'whatsappApi'
+  | 'metaTechProvider'
 
 export const LOCALES: readonly Locale[] = ['it', 'en', 'ro'] as const
 export const DEFAULT_LOCALE: Locale = 'it'
@@ -179,7 +179,7 @@ export const SEO: Record<PageKey, Record<Locale, SeoCopy>> = {
         'Informare privind prelucrarea datelor cu caracter personal conform GDPR — AYROMEX S.R.L., companie europeană cu sediul în București.',
     },
   },
-  whatsappApi: {
+  metaTechProvider: {
     it: {
       title: 'WhatsApp Business API ufficiale Italia | AYROMEX',
       description:
@@ -232,7 +232,7 @@ export function pagePath(page: PageKey, locale: Locale): string {
     contatti: '/contatti',
     privacy: '/privacy',
     terms: '/terms',
-    whatsappApi: '/whatsapp-business-api',
+    metaTechProvider: '/meta-tech-provider',
   }
   return `/${locale}${slug[page]}`
 }

@@ -47,11 +47,11 @@ export default async function ServiziPage() {
       <section className="py-24 md:py-32 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
           <span className="text-ay-accent text-xs font-bold uppercase tracking-widest">{t('label')}</span>
-          <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tight text-white mt-4 mb-6 max-w-3xl leading-tight">
+          <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tight text-ay-text mt-4 mb-6 max-w-3xl leading-tight">
             {t('title1')}<br />
             <span className="text-ay-accent">{t('title2')}</span>
           </h1>
-          <p className="text-xl text-white/60 max-w-xl">
+          <p className="text-xl text-ay-text-muted max-w-xl">
             {t('desc')}
           </p>
         </div>
@@ -64,7 +64,7 @@ export default async function ServiziPage() {
             <div
               key={s.title}
               id={s.anchorId}
-              className={`scroll-mt-28 p-8 md:p-10 rounded-2xl border border-white/10 hover:border-ay-accent/30 transition-all ${i % 2 === 0 ? 'bg-white/5' : 'bg-ay-surface'}`}
+              className={`scroll-mt-28 p-8 md:p-10 rounded-2xl border border-ay-border hover:border-ay-accent/30 transition-all ${i % 2 === 0 ? 'bg-ay-surface' : 'bg-ay-surface'}`}
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
                 <div>
@@ -72,10 +72,10 @@ export default async function ServiziPage() {
                     <div className="w-10 h-10 rounded-xl bg-ay-accent/10 flex items-center justify-center">
                       <s.icon className="w-5 h-5 text-ay-accent" />
                     </div>
-                    <h2 className={`text-2xl font-black ${i % 2 === 0 ? 'text-white' : 'text-white'}`}>{s.title}</h2>
+                    <h2 className={`text-2xl font-black ${i % 2 === 0 ? 'text-ay-text' : 'text-ay-text'}`}>{s.title}</h2>
                   </div>
                   <p className="text-ay-accent font-semibold text-lg mb-3">{s.tagline}</p>
-                  <p className={`text-base leading-relaxed mb-4 ${i % 2 === 0 ? 'text-white/60' : 'text-white/60'}`}>{s.benefit}</p>
+                  <p className={`text-base leading-relaxed mb-4 ${i % 2 === 0 ? 'text-ay-text-muted' : 'text-ay-text-muted'}`}>{s.benefit}</p>
                   <div className="text-sm font-semibold px-4 py-3 rounded-xl border border-ay-accent/20 bg-ay-accent/5 text-ay-accent">
                     → {s.result}
                   </div>
@@ -83,7 +83,7 @@ export default async function ServiziPage() {
                 <div>
                   <ul className="space-y-3 mb-7">
                     {s.details.map((d) => (
-                      <li key={d} className={`flex items-start gap-3 text-sm ${i % 2 === 0 ? 'text-white/70' : 'text-white/70'}`}>
+                      <li key={d} className={`flex items-start gap-3 text-sm ${i % 2 === 0 ? 'text-ay-text' : 'text-ay-text'}`}>
                         <span className="text-ay-accent mt-0.5 flex-shrink-0">✓</span>
                         {d}
                       </li>
@@ -107,10 +107,10 @@ export default async function ServiziPage() {
       {/* CTA */}
       <section className="py-20 px-6 md:px-12 bg-ay-surface text-center">
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight text-ay-text mb-4">
             {t('ctaTitle1')}<br /><span className="text-ay-accent">{t('ctaTitle2')}</span>
           </h2>
-          <p className="text-white/60 mb-8">{t('ctaDesc')}</p>
+          <p className="text-ay-text-muted mb-8">{t('ctaDesc')}</p>
           <a
             href={whatsappLink('consultation')}
             target="_blank"
