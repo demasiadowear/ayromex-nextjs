@@ -8,11 +8,15 @@ import GrainOverlay from '@/components/GrainOverlay'
 import ScrollProgressIndicator from '@/components/ScrollProgressIndicator'
 import { SITE_NAME, SITE_URL } from '@/lib/seo'
 
+// preload: false sui font secondari (Gugi: solo lockup logo; JetBrains:
+// solo eyebrow/mono piccoli) — meno byte in coda prima di Syne, che
+// determina l'LCP del titolo. Caricano on-demand via @font-face.
 const gugi = Gugi({
   subsets: ['latin'],
   weight: '400',
   variable: '--font-gugi',
   display: 'swap',
+  preload: false,
 })
 
 const syne = Syne({
@@ -34,6 +38,7 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ['400', '500'],
   variable: '--font-jetbrains-mono',
   display: 'swap',
+  preload: false,
 })
 
 // Root-level metadata. Per-locale title/description/alternates are
