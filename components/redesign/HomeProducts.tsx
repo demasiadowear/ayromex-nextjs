@@ -4,37 +4,23 @@ import { useTranslations } from 'next-intl'
 import { Check, ArrowRight } from 'lucide-react'
 import { Link } from '@/i18n/navigation'
 import { Button } from '@/components/ui/button'
-import { Card, CardContent } from '@/components/ui/card'
 import SectionTransition from '@/components/sections/SectionTransition'
+import WhatsAppChatMock from './WhatsAppChatMock'
 
 /**
- * Prodotti — AyroDesk24 in evidenza (PMI), AyroHub (gaming ADM).
- * Immagini placeholder swappabili 1:1 (stesso path, ratio 4:3).
+ * Prodotti AI — l'anima primaria. AyroDesk24 in evidenza con la
+ * conversazione WhatsApp simulata accanto: si capisce in due secondi
+ * cosa fa, senza parlare di "soluzioni AI". AyroHub sotto, per il
+ * verticale gaming ADM.
  */
 export default function HomeProducts() {
   const t = useTranslations('homeProducts')
-
-  const products = [
-    {
-      key: 'desk' as const,
-      featured: true,
-      img: '/images/placeholders/salone.svg',
-      href: '/prodotti#ayrodesk24',
-      badge: true,
-    },
-    {
-      key: 'hub' as const,
-      featured: false,
-      img: '/images/placeholders/negozio.svg',
-      href: '/prodotti#ayrohub',
-      badge: false,
-    },
-  ]
+  const bullets = ['b1', 'b2', 'b3'] as const
 
   return (
     <section
       id="prodotti-home"
-      className="bg-ay-bg border-b border-ay-border"
+      className="scroll-mt-20 bg-ay-bg border-b border-ay-border"
       aria-labelledby="products-heading"
     >
       <SectionTransition
@@ -50,73 +36,106 @@ export default function HomeProducts() {
           </span>
           <h2
             id="products-heading"
-            className="font-display font-extrabold text-ay-text tracking-[-0.02em] leading-[1.12] [font-size:clamp(28px,6vw,34px)] md:[font-size:clamp(34px,3vw,46px)]"
+            className="font-display font-extrabold text-ay-text tracking-[-0.02em] leading-[1.08] [font-size:clamp(30px,6.5vw,38px)] md:[font-size:clamp(38px,3.4vw,54px)]"
           >
             {t('title')}
           </h2>
         </div>
 
-        <div className="mt-10 md:mt-14 grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {products.map(({ key, featured, img, href, badge }) => (
-            <Card
-              key={key}
-              className={`card-lift overflow-hidden border-ay-border bg-ay-surface shadow-none ${
-                featured ? 'ring-1 ring-ay-accent/40' : ''
-              }`}
-            >
+        {/* AyroDesk24 — in evidenza, con la chat che lo spiega */}
+        <div className="mt-12 md:mt-16 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+          <div className="min-w-0">
+            <p className="font-body text-[13px] font-semibold text-ay-accent mb-2">
+              {t('desk.for')}
+            </p>
+            <h3 className="font-display font-extrabold text-ay-text text-[28px] md:text-[36px] leading-tight">
+              {t('desk.name')}
+            </h3>
+            <p className="mt-4 font-body text-[16px] md:text-[17.5px] leading-relaxed text-ay-text-muted">
+              {t('desk.desc')}
+            </p>
+
+            <ul className="mt-6 flex flex-col gap-3">
+              {bullets.map((b) => (
+                <li
+                  key={b}
+                  className="flex items-start gap-3 font-body text-[15.5px] text-ay-text"
+                >
+                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-ay-accent/12">
+                    <Check className="h-3 w-3 text-ay-accent" aria-hidden="true" />
+                  </span>
+                  {t(`desk.${b}`)}
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-8 flex flex-col sm:flex-row sm:items-center gap-5">
+              <Button
+                asChild
+                size="lg"
+                className="w-fit rounded-full bg-ay-accent hover:bg-ay-accent-hover text-white font-semibold px-7 py-6 shadow-[0_10px_30px_-8px_rgba(255,106,0,0.6)] transition-all hover:scale-[1.03]"
+              >
+                <Link href="/prodotti#ayrodesk24">
+                  {t('desk.cta')}
+                  <ArrowRight className="w-4 h-4 ml-1.5" aria-hidden="true" />
+                </Link>
+              </Button>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={img}
-                alt=""
-                width={400}
+                src="/brand/logos/primary/tech-light.svg"
+                alt="Meta Tech Provider — Business API Official"
+                width={1036}
                 height={295}
                 loading="lazy"
-                className="w-full h-44 md:h-52 object-cover"
+                className="h-11 w-auto"
               />
-              <CardContent className="p-6 md:p-8">
-                <p className="font-body text-[13px] font-semibold text-ay-accent mb-1.5">
-                  {t(`${key}.for`)}
-                </p>
-                <h3 className="font-display font-extrabold text-ay-text text-[24px] md:text-[28px] leading-tight">
-                  {t(`${key}.name`)}
-                </h3>
-                <p className="mt-3 font-body text-[15.5px] leading-relaxed text-ay-text-muted">
-                  {t(`${key}.desc`)}
-                </p>
-                <ul className="mt-5 flex flex-col gap-2.5">
-                  {(['b1', 'b2', 'b3'] as const).map((b) => (
-                    <li key={b} className="flex items-start gap-2.5 font-body text-[14.5px] text-ay-text">
-                      <Check className="w-4 h-4 text-ay-lime shrink-0 mt-0.5" aria-hidden="true" />
-                      {t(`${key}.${b}`)}
-                    </li>
-                  ))}
-                </ul>
+            </div>
+          </div>
 
-                <div className="mt-7 flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
-                  <Button
-                    asChild
-                    className="w-fit rounded-full bg-ay-text text-ay-bg hover:bg-ay-accent font-semibold px-6 py-5 transition-colors"
-                  >
-                    <Link href={href}>
-                      {t(`${key}.cta`)}
-                      <ArrowRight className="w-4 h-4 ml-1" aria-hidden="true" />
-                    </Link>
-                  </Button>
-                  {badge && (
-                    /* eslint-disable-next-line @next/next/no-img-element */
-                    <img
-                      src="/brand/logos/primary/tech-light.svg"
-                      alt="Meta Tech Provider — Business API Official"
-                      width={1036}
-                      height={295}
-                      loading="lazy"
-                      className="h-12 w-auto"
-                    />
-                  )}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+          <div className="min-w-0">
+            <WhatsAppChatMock />
+          </div>
+        </div>
+
+        {/* AyroHub — verticale gaming ADM */}
+        <div className="card-lift mt-12 md:mt-16 rounded-3xl border border-ay-border bg-ay-surface p-7 md:p-10 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+          <div className="min-w-0">
+            <p className="font-body text-[13px] font-semibold text-ay-accent mb-2">
+              {t('hub.for')}
+            </p>
+            <h3 className="font-display font-extrabold text-ay-text text-[24px] md:text-[30px] leading-tight">
+              {t('hub.name')}
+            </h3>
+            <p className="mt-4 font-body text-[15.5px] leading-relaxed text-ay-text-muted">
+              {t('hub.desc')}
+            </p>
+          </div>
+
+          <div className="min-w-0 flex flex-col justify-center">
+            <ul className="flex flex-col gap-3">
+              {bullets.map((b) => (
+                <li
+                  key={b}
+                  className="flex items-start gap-3 font-body text-[15px] text-ay-text"
+                >
+                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-ay-accent/12">
+                    <Check className="h-3 w-3 text-ay-accent" aria-hidden="true" />
+                  </span>
+                  {t(`hub.${b}`)}
+                </li>
+              ))}
+            </ul>
+            <Button
+              asChild
+              variant="outline"
+              className="mt-7 w-fit rounded-full border-ay-accent/50 text-ay-accent font-semibold px-6 py-5 hover:bg-ay-accent hover:text-white transition-all"
+            >
+              <Link href="/prodotti#ayrohub">
+                {t('hub.cta')}
+                <ArrowRight className="w-4 h-4 ml-1.5" aria-hidden="true" />
+              </Link>
+            </Button>
+          </div>
         </div>
       </SectionTransition>
     </section>

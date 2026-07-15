@@ -26,7 +26,7 @@ export default function HomeServiziWeb() {
   const steps = ['s1', 's2', 's3'] as const
 
   return (
-    <section id="siti-web" className="surface-cream relative overflow-hidden border-y border-ay-border" aria-labelledby="web-heading">
+    <section id="siti-web" className="surface-cream relative scroll-mt-20 overflow-hidden border-b border-ay-border" aria-labelledby="web-heading">
       <ShieldMotif className="shield-arc w-[300px] md:w-[460px] -top-20 -right-12 !opacity-[0.05]" />
 
       <SectionTransition

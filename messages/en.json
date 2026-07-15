@@ -40,12 +40,25 @@
     "liveStatus": "live"
   },
   "homeHero": {
-    "line1": "Your <u>WhatsApp</u> works for you.",
-    "line2": "Even with the shutters down.",
-    "sub": "We answer your customers, book the appointments and send the reminders for you. You run the business, we handle the rest.",
+    "line1": "<u>AI automation</u> for your business.",
+    "line2": "From your website to the WhatsApp that answers on its own.",
+    "sub": "Automatic bookings, replies around the clock, zero customers lost. We build the site that gets you found and the AI that answers for you.",
     "ctaWhatsApp": "Message us on WhatsApp",
     "ctaHow": "See how it works",
     "badgeAlt": "Meta Tech Provider — Business API Official"
+  },
+  "homeBivio": {
+    "eyebrow": "Where do you want to start",
+    "ai": {
+      "title": "Automate your business",
+      "desc": "The AI answers customers, takes bookings and follows up with the ones who went quiet. Day and night, on your business number.",
+      "cta": "See what the AI does"
+    },
+    "web": {
+      "title": "Your new website",
+      "desc": "See it first. Then decide. We build the demo of your site and you pay only if you like it.",
+      "cta": "See the sites we build"
+    }
   },
   "homeTrust": {
     "eyebrow": "Certification",
@@ -96,25 +109,34 @@
     "cta": "Ask for your free demo"
   },
   "homeProducts": {
-    "eyebrow": "Products",
-    "title": "Two products, one simple idea: never lose a customer.",
+    "eyebrow": "AI automation",
+    "title": "The AI that works for you.",
     "desk": {
       "name": "AyroDesk24",
       "for": "For salons, restaurants and shops",
-      "desc": "The receptionist that answers WhatsApp for you: appointments, prices, opening hours, reminders. On duty day and night, on your business's official number.",
-      "b1": "Instant replies, even at midnight",
-      "b2": "Bookings straight into your calendar",
-      "b3": "Reminders that cut no-shows",
+      "desc": "When a customer messages on WhatsApp, it answers: gives the prices, checks if there's a slot, writes the appointment into the calendar and reminds them the day before. On your shop's number, even at eleven at night.",
+      "b1": "Answers on prices, hours and availability",
+      "b2": "Takes the booking and writes it into the calendar",
+      "b3": "Reminds the customer the day before",
       "cta": "Discover AyroDesk24"
     },
     "hub": {
       "name": "AyroHub",
       "for": "For ADM gaming operators",
-      "desc": "Voice and WhatsApp to reactivate dormant customers and run your network: automated calls, compliant campaigns, data in one panel.",
+      "desc": "Calls and messages customers who've been quiet for months to bring them back, runs the whole network and keeps the data in one panel.",
       "b1": "Customer reactivation via voice and WhatsApp",
       "b2": "ADM compliance built in",
       "b3": "One dashboard for the whole network",
       "cta": "Discover AyroHub"
+    },
+    "chat": {
+      "label": "A real conversation, handled by the AI",
+      "who": "Customer",
+      "m1": "Evening, any slot tomorrow at 6pm?",
+      "m2": "Yes, tomorrow at 6pm is free. Cut and blow-dry, 45 minutes. Shall I book it in your name?",
+      "m3": "Yes please",
+      "m4": "Done. Appointment confirmed for tomorrow at 6pm. I'll send you a reminder this afternoon.",
+      "meta": "Replied in 8 seconds. At 11:47pm, with the shop closed."
     }
   },
   "homeHow": {

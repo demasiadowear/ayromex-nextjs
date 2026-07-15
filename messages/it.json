@@ -40,12 +40,25 @@
     "liveStatus": "live"
   },
   "homeHero": {
-    "line1": "Il tuo <u>WhatsApp</u> lavora per te.",
-    "line2": "Anche quando la serranda è giù.",
-    "sub": "Rispondiamo ai tuoi clienti, prendiamo gli appuntamenti e mandiamo i promemoria al posto tuo. Tu pensi al lavoro, al resto pensiamo noi.",
+    "line1": "<u>Automazione AI</u> per la tua azienda.",
+    "line2": "Dal sito web al WhatsApp che risponde da solo.",
+    "sub": "Prenotazioni automatiche, risposte 24 ore su 24, zero clienti persi. Costruiamo il sito che ti fa trovare e l'AI che risponde al posto tuo.",
     "ctaWhatsApp": "Scrivici su WhatsApp",
     "ctaHow": "Guarda come funziona",
     "badgeAlt": "Meta Tech Provider — Business API Official"
+  },
+  "homeBivio": {
+    "eyebrow": "Da dove vuoi partire",
+    "ai": {
+      "title": "Automatizza la tua azienda",
+      "desc": "L'AI risponde ai clienti, prende le prenotazioni e ricontatta chi si è fermato. Giorno e notte, sul numero della tua attività.",
+      "cta": "Vedi cosa fa l'AI"
+    },
+    "web": {
+      "title": "Il tuo nuovo sito web",
+      "desc": "Prima lo vedi. Poi decidi. Ti facciamo la demo del tuo sito e paghi solo se ti piace.",
+      "cta": "Guarda i siti che facciamo"
+    }
   },
   "homeTrust": {
     "eyebrow": "Certificazione",
@@ -96,25 +109,34 @@
     "cta": "Chiedici la tua demo gratis"
   },
   "homeProducts": {
-    "eyebrow": "Prodotti",
-    "title": "Due prodotti, un'idea semplice: non perdere mai un cliente.",
+    "eyebrow": "Automazione AI",
+    "title": "L'AI che lavora al posto tuo.",
     "desk": {
       "name": "AyroDesk24",
       "for": "Per saloni, ristoranti e negozi",
-      "desc": "Il receptionist che risponde su WhatsApp al posto tuo: appuntamenti, prezzi, orari, promemoria. Attivo giorno e notte, sul numero ufficiale del tuo negozio.",
-      "b1": "Risposte immediate, anche a mezzanotte",
-      "b2": "Prenotazioni direttamente in agenda",
-      "b3": "Promemoria che riducono i buchi in agenda",
+      "desc": "Quando un cliente scrive su WhatsApp, risponde lei: dice i prezzi, controlla se c'è posto, segna l'appuntamento in agenda e il giorno prima glielo ricorda. Sul numero del tuo negozio, anche alle undici di sera.",
+      "b1": "Risponde a prezzi, orari e disponibilità",
+      "b2": "Prende l'appuntamento e lo scrive in agenda",
+      "b3": "Ricorda l'appuntamento al cliente il giorno prima",
       "cta": "Scopri AyroDesk24"
     },
     "hub": {
       "name": "AyroHub",
       "for": "Per concessionari gaming ADM",
-      "desc": "Voce e WhatsApp per riattivare i clienti fermi e gestire il network: chiamate automatiche, campagne conformi, dati in un unico pannello.",
+      "desc": "Chiama e scrive ai clienti fermi da mesi per riportarli dentro, segue tutto il network e tiene i dati in un pannello solo.",
       "b1": "Riattivazione clienti su voce e WhatsApp",
       "b2": "Compliance ADM integrata",
       "b3": "Dashboard unica per tutto il network",
       "cta": "Scopri AyroHub"
+    },
+    "chat": {
+      "label": "Una conversazione vera, gestita dall'AI",
+      "who": "Cliente",
+      "m1": "Buonasera, avete posto domani alle 18?",
+      "m2": "Sì, domani alle 18 è libero. Taglio e piega, 45 minuti. Lo prenoto a suo nome?",
+      "m3": "Sì grazie",
+      "m4": "Fatto. Appuntamento confermato domani alle 18. Le mando un promemoria oggi pomeriggio.",
+      "meta": "Risposta in 8 secondi. Alle 23:47, a negozio chiuso."
     }
   },
   "homeHow": {

@@ -40,12 +40,25 @@
     "liveStatus": "live"
   },
   "homeHero": {
-    "line1": "<u>WhatsApp</u>-ul tău lucrează pentru tine.",
-    "line2": "Chiar și când obloanele sunt trase.",
-    "sub": "Răspundem clienților, programăm întâlnirile și trimitem reminderele în locul tău. Tu te ocupi de afacere, noi de rest.",
+    "line1": "<u>Automatizare AI</u> pentru afacerea ta.",
+    "line2": "De la site-ul web la WhatsApp-ul care răspunde singur.",
+    "sub": "Programări automate, răspunsuri 24 din 24, zero clienți pierduți. Construim site-ul care te face găsit și AI-ul care răspunde în locul tău.",
     "ctaWhatsApp": "Scrie-ne pe WhatsApp",
     "ctaHow": "Vezi cum funcționează",
     "badgeAlt": "Meta Tech Provider — Business API Official"
+  },
+  "homeBivio": {
+    "eyebrow": "De unde vrei să începi",
+    "ai": {
+      "title": "Automatizează-ți afacerea",
+      "desc": "AI-ul răspunde clienților, preia programările și recontactează pe cei care s-au oprit. Zi și noapte, pe numărul afacerii tale.",
+      "cta": "Vezi ce face AI-ul"
+    },
+    "web": {
+      "title": "Noul tău site web",
+      "desc": "Întâi îl vezi. Apoi decizi. Îți facem demo-ul site-ului și plătești doar dacă îți place.",
+      "cta": "Vezi site-urile pe care le facem"
+    }
   },
   "homeTrust": {
     "eyebrow": "Certificare",
@@ -96,25 +109,34 @@
     "cta": "Cere-ți demo-ul gratuit"
   },
   "homeProducts": {
-    "eyebrow": "Produse",
-    "title": "Două produse, o idee simplă: să nu pierzi niciun client.",
+    "eyebrow": "Automatizare AI",
+    "title": "AI-ul care lucrează în locul tău.",
     "desk": {
       "name": "AyroDesk24",
       "for": "Pentru saloane, restaurante și magazine",
-      "desc": "Recepționerul care răspunde pe WhatsApp în locul tău: programări, prețuri, orar, remindere. Activ zi și noapte, pe numărul oficial al afacerii tale.",
-      "b1": "Răspunsuri imediate, chiar și la miezul nopții",
-      "b2": "Programări direct în calendar",
-      "b3": "Remindere care reduc absențele",
+      "desc": "Când un client scrie pe WhatsApp, răspunde el: spune prețurile, verifică dacă e loc, trece programarea în calendar și i-o amintește cu o zi înainte. Pe numărul magazinului tău, chiar și la unsprezece seara.",
+      "b1": "Răspunde la prețuri, orar și disponibilitate",
+      "b2": "Preia programarea și o trece în calendar",
+      "b3": "Îi amintește clientului cu o zi înainte",
       "cta": "Descoperă AyroDesk24"
     },
     "hub": {
       "name": "AyroHub",
       "for": "Pentru operatori de gaming ADM",
-      "desc": "Voce și WhatsApp pentru reactivarea clienților inactivi și gestionarea rețelei: apeluri automate, campanii conforme, date într-un singur panou.",
+      "desc": "Sună și scrie clienților inactivi de luni de zile ca să-i aducă înapoi, gestionează toată rețeaua și ține datele într-un singur panou.",
       "b1": "Reactivare clienți prin voce și WhatsApp",
       "b2": "Conformitate ADM integrată",
       "b3": "Un singur dashboard pentru toată rețeaua",
       "cta": "Descoperă AyroHub"
+    },
+    "chat": {
+      "label": "O conversație reală, gestionată de AI",
+      "who": "Client",
+      "m1": "Bună seara, aveți loc mâine la 18?",
+      "m2": "Da, mâine la 18 este liber. Tuns și coafat, 45 de minute. Îl rezerv pe numele dumneavoastră?",
+      "m3": "Da, mulțumesc",
+      "m4": "Gata. Programare confirmată mâine la 18. Vă trimit un reminder în această după-amiază.",
+      "meta": "Răspuns în 8 secunde. La 23:47, cu magazinul închis."
     }
   },
   "homeHow": {

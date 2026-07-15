@@ -1,5 +1,6 @@
 import { preload } from 'react-dom'
 import HomeHero from '@/components/redesign/HomeHero'
+import HomeBivio from '@/components/redesign/HomeBivio'
 import HomeTrust from '@/components/redesign/HomeTrust'
 import HomeServiziWeb from '@/components/redesign/HomeServiziWeb'
 import HomeProducts from '@/components/redesign/HomeProducts'
@@ -10,10 +11,12 @@ import ScrollColorController from '@/components/redesign/ScrollColorController'
 
 /**
  * Home — redesign 2026 "chiaro, caldo, umano", con profondità e
- * movimento. Due anime commerciali: prodotti (AyroDesk24/AyroHub) e
- * web agency (Siti web). Ordine: hero → trust Meta Tech Provider →
- * siti web ("prima lo vedi, poi decidi") → prodotti → come funziona
- * → prova sociale → CTA. Sezioni alternate chiaro/scuro/arancio.
+ * movimento. Due anime commerciali a pari dignità, con l'automazione
+ * AI come identità primaria: hero che le copre entrambe (AI in
+ * testa) → bivio → trust Meta Tech Provider → prodotti AI → siti web
+ * ("prima lo vedi, poi decidi") → come funziona → prova sociale →
+ * CTA. L'AI viene prima dei siti: i siti hanno già il loro momento
+ * forte più giù. Sezioni alternate chiaro/scuro/arancio.
  */
 export default function HomePage() {
   // Il badge nel hero è candidato LCP: preload con priorità alta
@@ -26,9 +29,10 @@ export default function HomePage() {
     <main id="main" className="overflow-x-hidden">
       <ScrollColorController />
       <HomeHero />
+      <HomeBivio />
       <HomeTrust />
-      <HomeServiziWeb />
       <HomeProducts />
+      <HomeServiziWeb />
       <HomeHow />
       <HomeProof />
       <HomeCta />

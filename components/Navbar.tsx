@@ -79,13 +79,15 @@ export default function Navbar() {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navBg}`}>
       <div className="section-container flex items-center justify-between">
 
-        {/* Desktop nav links on the left */}
-        <div className="hidden md:flex items-center gap-5">
+        {/* Desktop nav links on the left — whitespace-nowrap: le voci a
+            due parole ("Siti web", "Chi siamo") andavano a capo e
+            sfalsavano la barra. */}
+        <div className="hidden md:flex items-center gap-4 lg:gap-5">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-xs font-semibold uppercase tracking-widest text-ay-text/70 hover:text-ay-accent transition-colors"
+              className="whitespace-nowrap text-xs font-semibold uppercase tracking-wide lg:tracking-widest text-ay-text/70 hover:text-ay-accent transition-colors"
             >
               {link.label}
             </a>
