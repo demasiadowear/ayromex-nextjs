@@ -15,7 +15,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
   return (
     <div className="mb-10">
       <h2 className="text-lg font-black uppercase tracking-widest text-ay-accent mb-4">{title}</h2>
-      <div className="text-white/70 text-sm leading-relaxed space-y-2">
+      <div className="text-ay-text text-sm leading-relaxed space-y-2">
         {children}
       </div>
     </div>
@@ -32,16 +32,16 @@ export default async function PrivacyPage() {
         {/* Header */}
         <div className="mb-14">
           <span className="text-ay-accent text-xs font-bold uppercase tracking-widest">{t('eyebrow')}</span>
-          <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-white mt-3 mb-4">
+          <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-ay-text mt-3 mb-4">
             {t('h1')}
           </h1>
-          <p className="text-white/50 text-sm">
+          <p className="text-ay-text-muted text-sm">
             {t('lastUpdated')}
           </p>
         </div>
 
         <Section title={t('s1title')}>
-          <p><strong className="text-white">{t('s1company')}</strong></p>
+          <p><strong className="text-ay-text">{t('s1company')}</strong></p>
           <p>{t('s1vat')}</p>
           <p>{t('s1address')}</p>
           <p>{t('s1emailLabel')} <a href="mailto:privacy@ayromex.com" className="text-ay-accent hover:underline">privacy@ayromex.com</a></p>
@@ -49,9 +49,9 @@ export default async function PrivacyPage() {
 
         <Section title={t('s2title')}>
           <ul className="space-y-1 list-none">
-            <li className="flex gap-2"><span className="text-ay-accent flex-shrink-0">—</span><span><strong className="text-white">{t('s2i1label')}</strong> {t('s2i1text')}</span></li>
-            <li className="flex gap-2"><span className="text-ay-accent flex-shrink-0">—</span><span><strong className="text-white">{t('s2i2label')}</strong> {t('s2i2text')}</span></li>
-            <li className="flex gap-2"><span className="text-ay-accent flex-shrink-0">—</span><span><strong className="text-white">{t('s2i3label')}</strong> {t('s2i3text')}</span></li>
+            <li className="flex gap-2"><span className="text-ay-accent flex-shrink-0">—</span><span><strong className="text-ay-text">{t('s2i1label')}</strong> {t('s2i1text')}</span></li>
+            <li className="flex gap-2"><span className="text-ay-accent flex-shrink-0">—</span><span><strong className="text-ay-text">{t('s2i2label')}</strong> {t('s2i2text')}</span></li>
+            <li className="flex gap-2"><span className="text-ay-accent flex-shrink-0">—</span><span><strong className="text-ay-text">{t('s2i3label')}</strong> {t('s2i3text')}</span></li>
           </ul>
         </Section>
 
@@ -74,7 +74,7 @@ export default async function PrivacyPage() {
         <Section title={t('s5title')}>
           <p>
             {t('s5bodyPart1')}{' '}
-            <strong className="text-white">{t('s5bodyHighlight')}</strong>{' '}
+            <strong className="text-ay-text">{t('s5bodyHighlight')}</strong>{' '}
             {t('s5bodyPart2')}
           </p>
         </Section>
@@ -104,14 +104,14 @@ export default async function PrivacyPage() {
           <ul className="space-y-1 list-none">
             <li className="flex gap-2"><span className="text-ay-accent flex-shrink-0">—</span>
               <span>
-                <strong className="text-white">{t('s9roLabel')}</strong>{' '}
+                <strong className="text-ay-text">{t('s9roLabel')}</strong>{' '}
                 {t('s9roBody')}{' '}
                 <a href="https://www.anspdcp.ro" target="_blank" rel="noopener noreferrer" className="text-ay-accent hover:underline">anspdcp.ro</a>
               </span>
             </li>
             <li className="flex gap-2"><span className="text-ay-accent flex-shrink-0">—</span>
               <span>
-                <strong className="text-white">{t('s9itLabel')}</strong>{' '}
+                <strong className="text-ay-text">{t('s9itLabel')}</strong>{' '}
                 {t('s9itBody')}{' '}
                 <a href="https://www.gpdp.it" target="_blank" rel="noopener noreferrer" className="text-ay-accent hover:underline">gpdp.it</a>
               </span>
@@ -119,8 +119,8 @@ export default async function PrivacyPage() {
           </ul>
         </Section>
 
-        <div className="mt-12 pt-8 border-t border-white/10">
-          <p className="text-xs text-white/40">
+        <div className="mt-12 pt-8 border-t border-ay-border">
+          <p className="text-xs text-ay-text-muted">
             {t('footerCompany')}<br />
             {t('footerContact')} <a href="mailto:privacy@ayromex.com" className="text-ay-accent hover:underline">privacy@ayromex.com</a>
           </p>

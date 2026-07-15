@@ -29,15 +29,19 @@ export interface ProductDeepDiveFeature {
 interface Props {
   productId: ProductId
   features: ProductDeepDiveFeature[]
+  /** Mostra il badge "Meta Tech Provider" (solo prodotti su WABA ufficiale). */
+  showMetaBadge?: boolean
 }
 
 export default function ProductDeepDiveSection({
   productId,
   features,
+  showMetaBadge = false,
 }: Props) {
   const product = getProduct(productId)
   const t = useTranslations(`${productId}DeepDive`)
   const tFeatures = useTranslations(`${productId}DeepDive.features`)
+  const tMeta = useTranslations('metaTechProvider')
 
   // Split the result sentence on periods so each clause becomes a
   // small chip. Falls back to a single block if no periods exist.
@@ -58,7 +62,6 @@ export default function ProductDeepDiveSection({
         <div className="flex flex-col items-start max-w-[920px]">
           <span
             className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-ay-blue/85 mb-5"
-            style={{ textShadow: '0 1px 4px rgba(0,0,0,0.85)' }}
           >
             {t('eyebrow')}
           </span>
@@ -66,7 +69,6 @@ export default function ProductDeepDiveSection({
           <h2
             id={`${productId}-deep-heading`}
             className="font-display font-extrabold text-ay-text leading-[1.0] tracking-[-0.025em] break-words w-full max-w-full [font-size:clamp(26px,7.5vw,38px)] md:[font-size:clamp(40px,4.6vw,64px)]"
-            style={{ textShadow: '0 2px 12px rgba(0,0,0,0.55)' }}
           >
             <span className="text-ay-accent">{product.displayName}</span>
             {/* Em-dash separator hidden on mobile to let the tagline
@@ -77,10 +79,29 @@ export default function ProductDeepDiveSection({
 
           <p
             className="mt-7 max-w-[720px] font-body text-[17px] leading-relaxed text-ay-text-bright"
-            style={{ textShadow: '0 1px 4px rgba(0,0,0,0.7)' }}
           >
             {t('focus')}
           </p>
+
+          {/* Badge Meta Tech Provider — testo + icona generica,
+              MAI loghi Meta / Meta Business Partner. */}
+          {showMetaBadge && (
+            <div className="mt-6 flex flex-col sm:flex-row sm:items-center gap-3">
+              <span className="inline-flex items-center gap-2 rounded-full border border-ay-accent/40 bg-ay-accent/5 px-4 py-2 font-body text-[13px] font-medium text-ay-text">
+                <span
+                  className="w-1.5 h-1.5 rounded-full bg-ay-lime"
+                  aria-hidden="true"
+                />
+                {tMeta('badge')}
+              </span>
+              <Link
+                href="/meta-tech-provider"
+                className="font-body text-[13px] text-ay-accent hover:underline"
+              >
+                {tMeta('link')} →
+              </Link>
+            </div>
+          )}
         </div>
 
         {/* Feature grid */}
@@ -128,7 +149,7 @@ export default function ProductDeepDiveSection({
               {resultChunks.map((chunk, i) => (
                 <span
                   key={i}
-                  className="inline-flex items-center rounded-full border border-ay-cream/15 bg-ay-cream/5 px-4 py-2 font-body text-[14px] text-ay-cream"
+                  className="inline-flex items-center rounded-full border border-ay-border bg-ay-cream/60 px-4 py-2 font-body text-[14px] text-ay-text"
                 >
                   {chunk}
                 </span>

@@ -5,7 +5,13 @@
       "name": "Ayromex Next.js",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev"],
-      "port": 3001
+      "port": 3000
+    },
+    {
+      "name": "Ayromex prod",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "start"],
+      "port": 3000
     }
   ]
 }

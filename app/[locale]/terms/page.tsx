@@ -15,7 +15,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
   return (
     <div className="mb-10">
       <h2 className="text-lg font-black uppercase tracking-widest text-ay-accent mb-4">{title}</h2>
-      <div className="text-white/70 text-sm leading-relaxed space-y-2">
+      <div className="text-ay-text text-sm leading-relaxed space-y-2">
         {children}
       </div>
     </div>
@@ -32,16 +32,16 @@ export default async function TermsPage() {
         {/* Header */}
         <div className="mb-14">
           <span className="text-ay-accent text-xs font-bold uppercase tracking-widest">{t('eyebrow')}</span>
-          <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-white mt-3 mb-4">
+          <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-ay-text mt-3 mb-4">
             {t('h1')}
           </h1>
-          <p className="text-white/50 text-sm">
+          <p className="text-ay-text-muted text-sm">
             {t('lastUpdated')}
           </p>
         </div>
 
         <Section title={t('s1title')}>
-          <p><strong className="text-white">{t('s1company')}</strong></p>
+          <p><strong className="text-ay-text">{t('s1company')}</strong></p>
           <p>{t('s1vat')}</p>
           <p>{t('s1address')}</p>
           <p>{t('s1emailLabel')} <a href="mailto:legal@ayromex.com" className="text-ay-accent hover:underline">legal@ayromex.com</a></p>
@@ -50,8 +50,8 @@ export default async function TermsPage() {
         <Section title={t('s2title')}>
           <p>{t('s2intro')}</p>
           <ul className="space-y-1 list-none mt-2">
-            <li className="flex gap-2"><span className="text-ay-accent flex-shrink-0">—</span><span><strong className="text-white">{t('s2i1label')}</strong> {t('s2i1text')}</span></li>
-            <li className="flex gap-2"><span className="text-ay-accent flex-shrink-0">—</span><span><strong className="text-white">{t('s2i2label')}</strong> {t('s2i2text')}</span></li>
+            <li className="flex gap-2"><span className="text-ay-accent flex-shrink-0">—</span><span><strong className="text-ay-text">{t('s2i1label')}</strong> {t('s2i1text')}</span></li>
+            <li className="flex gap-2"><span className="text-ay-accent flex-shrink-0">—</span><span><strong className="text-ay-text">{t('s2i2label')}</strong> {t('s2i2text')}</span></li>
             <li className="flex gap-2"><span className="text-ay-accent flex-shrink-0">—</span>{t('s2i3')}</li>
           </ul>
         </Section>
@@ -72,7 +72,7 @@ export default async function TermsPage() {
         <Section title={t('s6title')}>
           <p>
             {t('s6body1Part1')}{' '}
-            <strong className="text-white">{t('s6body1Highlight')}</strong>
+            <strong className="text-ay-text">{t('s6body1Highlight')}</strong>
             {t('s6body1Part2')}
           </p>
           <p>{t('s6body2')}</p>
@@ -82,7 +82,7 @@ export default async function TermsPage() {
           <p>{t('s7body1')}</p>
           <p>
             {t('s7body2Part1')}{' '}
-            <strong className="text-white">{t('s7body2Highlight')}</strong>
+            <strong className="text-ay-text">{t('s7body2Highlight')}</strong>
             {t('s7body2Part2')}
           </p>
         </Section>
@@ -94,8 +94,8 @@ export default async function TermsPage() {
           </p>
         </Section>
 
-        <div className="mt-12 pt-8 border-t border-white/10">
-          <p className="text-xs text-white/40">
+        <div className="mt-12 pt-8 border-t border-ay-border">
+          <p className="text-xs text-ay-text-muted">
             {t('footerCompany')}<br />
             {t('footerContact')} <a href="mailto:legal@ayromex.com" className="text-ay-accent hover:underline">legal@ayromex.com</a>
           </p>

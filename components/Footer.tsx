@@ -30,13 +30,7 @@ export default function Footer() {
   }
 
   return (
-    <footer
-      className="relative mt-24 pt-20 pb-10 px-6"
-      style={{
-        background:
-          'linear-gradient(180deg, transparent 0%, rgba(10,10,10,0.6) 20%, rgba(10,10,10,0.92) 100%)',
-      }}
-    >
+    <footer className="relative mt-24 pt-20 pb-10 px-6 bg-ay-cream/60 border-t border-ay-border">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-12">
           {/* Brand */}
@@ -45,6 +39,18 @@ export default function Footer() {
             <p className="font-body text-[14px] text-ay-text-muted leading-relaxed max-w-[260px]">
               {t('brandTagline')}
             </p>
+            {/* Badge Meta Tech Provider — compatto, sempre in inglese */}
+            <a href={`/${locale}/meta-tech-provider`} className="w-fit">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/brand/logos/primary/tech-light.svg"
+                alt="Meta Tech Provider — Business API Official"
+                width={1036}
+                height={295}
+                loading="lazy"
+                className="h-10 w-auto"
+              />
+            </a>
             <div className="flex items-center gap-3 mt-2">
               {SOCIAL_LINKS.map(({ href, Icon, label }) => (
                 <a
@@ -63,9 +69,9 @@ export default function Footer() {
 
           {/* Products */}
           <div className="flex flex-col gap-4">
-            <h4 className="font-mono text-[11px] uppercase tracking-[0.15em] text-ay-accent">
+            <h3 className="font-mono text-[11px] uppercase tracking-[0.15em] text-ay-accent">
               {t('productsTitle')}
-            </h4>
+            </h3>
             <ul className="flex flex-col gap-2 font-body text-[14px]">
               {PRODUCTS.map((p) => (
                 <li key={p.id}>
@@ -84,9 +90,9 @@ export default function Footer() {
 
           {/* Company */}
           <div className="flex flex-col gap-4">
-            <h4 className="font-mono text-[11px] uppercase tracking-[0.15em] text-ay-accent">
+            <h3 className="font-mono text-[11px] uppercase tracking-[0.15em] text-ay-accent">
               {t('companyTitle')}
-            </h4>
+            </h3>
             <ul className="flex flex-col gap-2 font-body text-[14px]">
               <li>
                 <a
@@ -102,6 +108,14 @@ export default function Footer() {
                   className="text-ay-text-muted hover:text-ay-accent transition-colors"
                 >
                   {t('companyServices')}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`/${locale}/meta-tech-provider`}
+                  className="text-ay-text-muted hover:text-ay-accent transition-colors"
+                >
+                  {t('companyWhatsappApi')}
                 </a>
               </li>
               <li>
@@ -134,9 +148,9 @@ export default function Footer() {
 
           {/* Legal */}
           <div className="flex flex-col gap-4">
-            <h4 className="font-mono text-[11px] uppercase tracking-[0.15em] text-ay-accent">
+            <h3 className="font-mono text-[11px] uppercase tracking-[0.15em] text-ay-accent">
               {t('legalTitle')}
-            </h4>
+            </h3>
             <ul className="flex flex-col gap-2 font-body text-[14px]">
               <li>
                 <a

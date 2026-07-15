@@ -22,6 +22,7 @@ export type PageKey =
   | 'contatti'
   | 'privacy'
   | 'terms'
+  | 'metaTechProvider'
 
 export const LOCALES: readonly Locale[] = ['it', 'en', 'ro'] as const
 export const DEFAULT_LOCALE: Locale = 'it'
@@ -60,20 +61,20 @@ interface SeoCopy {
 export const SEO: Record<PageKey, Record<Locale, SeoCopy>> = {
   home: {
     it: {
-      title: 'AYROMEX — Sistemi AI che automatizzano le operazioni aziendali',
+      title: 'AYROMEX — Automazione AI per PMI italiane e gaming ADM',
       description:
-        'AYROMEX costruisce prodotti AI verticali, assistenti WhatsApp, voice agents, dashboard e automazioni che aiutano le aziende a ridurre il lavoro manuale e aumentare il controllo operativo.',
+        'AYROMEX, Meta Tech Provider per WhatsApp Business Platform, costruisce assistenti WhatsApp su API ufficiali, voice agents e automazioni AI per PMI italiane e operatori gaming ADM.',
     },
     en: {
-      title: 'AYROMEX — AI systems that automate business operations',
+      title: 'AYROMEX — AI automation for Italian SMEs and ADM gaming',
       description:
-        'AYROMEX builds vertical AI products, WhatsApp assistants, voice agents, dashboards and automation systems that help companies reduce manual work and increase operational control.',
+        'AYROMEX, Meta Tech Provider for the WhatsApp Business Platform, builds WhatsApp assistants on official APIs, voice agents and AI automation for Italian SMEs and ADM gaming operators.',
     },
     ro: {
       title:
-        'AYROMEX — Sisteme AI care automatizează operațiunile de business',
+        'AYROMEX — Automatizare AI pentru IMM-uri italiene și gaming ADM',
       description:
-        'AYROMEX construiește produse AI verticale, asistenți WhatsApp, voice agents, dashboard-uri și automatizări care ajută companiile să reducă munca manuală și să crească controlul operațional.',
+        'AYROMEX, Meta Tech Provider pentru WhatsApp Business Platform, construiește asistenți WhatsApp pe API-uri oficiale, voice agents și automatizări AI pentru IMM-uri și operatori de gaming ADM.',
     },
   },
   prodotti: {
@@ -178,6 +179,23 @@ export const SEO: Record<PageKey, Record<Locale, SeoCopy>> = {
         'Informare privind prelucrarea datelor cu caracter personal conform GDPR — AYROMEX S.R.L., companie europeană cu sediul în București.',
     },
   },
+  metaTechProvider: {
+    it: {
+      title: 'WhatsApp Business API ufficiale Italia | AYROMEX',
+      description:
+        'AYROMEX è Tech Provider approvato da Meta: WhatsApp Business API ufficiale per PMI italiane e gaming ADM. Zero rischio ban, spunta verde, template approvati, già in produzione.',
+    },
+    en: {
+      title: 'Official WhatsApp Business API in Italy | AYROMEX',
+      description:
+        'AYROMEX is a Meta-approved Tech Provider: official WhatsApp Business API for Italian SMEs and ADM gaming. No ban risk, green checkmark, approved templates, live in production.',
+    },
+    ro: {
+      title: 'WhatsApp Business API oficial în Italia | AYROMEX',
+      description:
+        'AYROMEX este Tech Provider aprobat de Meta: WhatsApp Business API oficial pentru IMM-uri și gaming ADM. Zero risc de ban, bifă verde, template-uri aprobate, deja în producție.',
+    },
+  },
   terms: {
     it: {
       title: 'Termini e Condizioni — AYROMEX',
@@ -214,6 +232,7 @@ export function pagePath(page: PageKey, locale: Locale): string {
     contatti: '/contatti',
     privacy: '/privacy',
     terms: '/terms',
+    metaTechProvider: '/meta-tech-provider',
   }
   return `/${locale}${slug[page]}`
 }

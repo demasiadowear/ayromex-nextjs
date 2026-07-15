@@ -44,11 +44,11 @@ export default async function ChiSiamoPage() {
       <section className="py-24 md:py-32 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
           <span className="text-ay-accent text-xs font-bold uppercase tracking-widest">{t('eyebrow')}</span>
-          <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tight text-white mt-4 mb-8 max-w-4xl leading-tight">
+          <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tight text-ay-text mt-4 mb-8 max-w-4xl leading-tight">
             {t('title1')}<br />
             <span className="text-ay-accent">{t('title2')}</span>
           </h1>
-          <p className="text-xl text-white/60 max-w-2xl leading-relaxed mb-8">
+          <p className="text-xl text-ay-text-muted max-w-2xl leading-relaxed mb-8">
             {t('desc')}
           </p>
           <a href="#contatti" className="btn-primary px-7 py-3.5 text-sm min-h-[44px] inline-flex">
@@ -63,19 +63,19 @@ export default async function ChiSiamoPage() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div>
             <span className="text-ay-accent text-xs font-bold uppercase tracking-widest">{t('missionEyebrow')}</span>
-            <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-white mt-4 mb-6">
+            <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-ay-text mt-4 mb-6">
               {t('missionTitle1')}<br />
               <span className="text-ay-accent">{t('missionTitle2')}</span>
             </h2>
-            <p className="text-white/70 text-lg leading-relaxed">
+            <p className="text-ay-text text-lg leading-relaxed">
               {t('missionDesc')}
             </p>
           </div>
           <div className="grid grid-cols-2 gap-4">
             {STATS.map((s) => (
-              <div key={s.label} className="p-6 rounded-xl border border-white/10 bg-white/5 text-center">
+              <div key={s.label} className="p-6 rounded-xl border border-ay-border bg-ay-surface text-center">
                 <p className="text-4xl font-black text-ay-accent mb-1">{s.n}</p>
-                <p className="text-white/50 text-xs uppercase tracking-widest">{s.label}</p>
+                <p className="text-ay-text-muted text-xs uppercase tracking-widest">{s.label}</p>
               </div>
             ))}
           </div>
@@ -86,16 +86,16 @@ export default async function ChiSiamoPage() {
       <section className="py-24 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
           <span className="text-ay-accent text-xs font-bold uppercase tracking-widest">{t('howEyebrow')}</span>
-          <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-white mt-4 mb-16 max-w-xl">
+          <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-ay-text mt-4 mb-16 max-w-xl">
             {t('howTitle1')}<br />{t('howTitle2')}
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {STEPS.map((s) => (
-              <div key={s.n} className="p-6 rounded-2xl border border-white/10 bg-white/5 hover:border-ay-accent/30 transition-all">
+              <div key={s.n} className="p-6 rounded-2xl border border-ay-border bg-ay-surface hover:border-ay-accent/30 transition-all">
                 <span className="text-ay-accent font-black text-3xl block mb-3">{s.n}</span>
-                <h3 className="text-white font-bold text-lg mb-2">{s.title}</h3>
-                <p className="text-white/60 text-sm leading-relaxed">{s.desc}</p>
+                <h3 className="text-ay-text font-bold text-lg mb-2">{s.title}</h3>
+                <p className="text-ay-text-muted text-sm leading-relaxed">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -106,14 +106,14 @@ export default async function ChiSiamoPage() {
       <section className="py-20 px-6 md:px-12 bg-ay-surface">
         <div className="max-w-7xl mx-auto">
           <span className="text-ay-accent text-xs font-bold uppercase tracking-widest">{t('sectorsEyebrow')}</span>
-          <h2 className="text-4xl font-black uppercase tracking-tight text-white mt-4 mb-12">
+          <h2 className="text-4xl font-black uppercase tracking-tight text-ay-text mt-4 mb-12">
             {t('sectorsTitle1')}<br /><span className="text-ay-accent">{t('sectorsTitle2')}</span>
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
             {SECTORS.map((s) => (
-              <div key={s.name} className="p-5 rounded-xl border border-white/10 bg-white/5 hover:border-ay-accent/30 transition-all">
-                <h3 className="text-white font-bold mb-1">{s.name}</h3>
-                <p className="text-white/50 text-sm">{s.desc}</p>
+              <div key={s.name} className="p-5 rounded-xl border border-ay-border bg-ay-surface hover:border-ay-accent/30 transition-all">
+                <h3 className="text-ay-text font-bold mb-1">{s.name}</h3>
+                <p className="text-ay-text-muted text-sm">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -124,18 +124,18 @@ export default async function ChiSiamoPage() {
       <section className="py-24 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
           <span className="text-ay-accent text-xs font-bold uppercase tracking-widest">{t('valuesEyebrow')}</span>
-          <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-white mt-4 mb-12">
+          <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-ay-text mt-4 mb-12">
             {t('valuesTitle1')}<br /><span className="text-ay-accent">{t('valuesTitle2')}</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {VALUES.map((v) => (
-              <div key={v.title} className="p-6 rounded-2xl border border-white/10 bg-white/5 flex gap-4">
+              <div key={v.title} className="p-6 rounded-2xl border border-ay-border bg-ay-surface flex gap-4">
                 <div className="w-8 h-8 rounded-full bg-ay-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                   <FaCheck className="w-3 h-3 text-ay-accent" />
                 </div>
                 <div>
-                  <h3 className="text-white font-bold mb-1">{v.title}</h3>
-                  <p className="text-white/60 text-sm leading-relaxed">{v.desc}</p>
+                  <h3 className="text-ay-text font-bold mb-1">{v.title}</h3>
+                  <p className="text-ay-text-muted text-sm leading-relaxed">{v.desc}</p>
                 </div>
               </div>
             ))}
@@ -146,10 +146,10 @@ export default async function ChiSiamoPage() {
       {/* CTA */}
       <section id="contatti" className="py-24 px-6 md:px-12 bg-ay-surface text-center">
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-ay-text mb-4">
             {t('ctaTitle1')}<br /><span className="text-ay-accent">{t('ctaTitle2')}</span>
           </h2>
-          <p className="text-white/60 text-lg mb-8">
+          <p className="text-ay-text-muted text-lg mb-8">
             {t('ctaDesc')}
           </p>
           <a

@@ -10,6 +10,7 @@ interface PageEntry {
 const PAGES: PageEntry[] = [
   { page: 'home', changeFrequency: 'weekly', priority: 1.0 },
   { page: 'prodotti', changeFrequency: 'weekly', priority: 0.9 },
+  { page: 'metaTechProvider', changeFrequency: 'monthly', priority: 0.8 },
   { page: 'servizi', changeFrequency: 'monthly', priority: 0.8 },
   { page: 'chiSiamo', changeFrequency: 'monthly', priority: 0.7 },
   { page: 'contatti', changeFrequency: 'monthly', priority: 0.7 },

@@ -11,6 +11,8 @@ interface Props {
   children: React.ReactNode
   variant?: Variant
   delay?: number
+  /** stagger fra i figli diretti (s) — 0 = blocco unico */
+  stagger?: number
   className?: string
   /** id of the heading that labels this section (WCAG region) */
   ariaLabelledBy?: string
@@ -33,6 +35,7 @@ export default function SectionTransition({
   children,
   variant = 'fade-up',
   delay = 0,
+  stagger = 0,
   className = '',
   ariaLabelledBy,
 }: Props) {
@@ -48,6 +51,16 @@ export default function SectionTransition({
     ).matches
     if (reduceMotion) {
       // Nothing to animate — leave the block in its final state.
+      return
+    }
+
+    // Sezione già nel viewport al mount (above the fold): niente
+    // fade — nascondere contenuto già visibile sposta l'LCP alla
+    // fine dell'animazione (misurato) ed è comunque UX sbagliata.
+    if (
+      variant !== 'parallax' &&
+      el.getBoundingClientRect().top < window.innerHeight * 0.8
+    ) {
       return
     }
 
@@ -81,6 +94,7 @@ export default function SectionTransition({
         y: 0,
         duration: 1.2,
         delay,
+        stagger,
         ease: 'power3.out',
         scrollTrigger: {
           trigger: el,

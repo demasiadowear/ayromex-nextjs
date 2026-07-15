@@ -13,13 +13,14 @@
     "accessAyroStay": "Access AyroStay",
     "translateTo": "Change language",
     "about": "About",
-    "journal": "Journal"
+    "journal": "Journal",
+    "sitiWeb": "Websites"
   },
   "hero": {
-    "eyebrow": "AI INFRASTRUCTURE · ITALY",
-    "headlineStart": "AI systems that ",
-    "headlineAccent": "automate",
-    "headlineRest": " business operations.",
+    "eyebrow": "AI AUTOMATION · META TECH PROVIDER",
+    "headlineStart": "AI automation for ",
+    "headlineAccent": "Italian SMEs",
+    "headlineRest": " and ADM gaming.",
     "rotatingPrefix": "We build ",
     "rotatingWords": [
       "AI Agents",
@@ -27,7 +28,7 @@
       "Digital Products",
       "Real Systems"
     ],
-    "paragraph": "AYROMEX builds vertical AI products, WhatsApp assistants, voice agents, dashboards and automation systems that help companies reduce manual work and increase operational control.",
+    "paragraph": "WhatsApp assistants on official Meta APIs, voice agents and automations that remove repetitive work: they answer customers, take bookings, reactivate players. You keep control.",
     "chatRole": "AI Agent at AYROMEX",
     "chatGreeting": "Hi, I'm Ayro. What do you want to automate in your business?",
     "chatInputPlaceholder": "Type here...",
@@ -37,6 +38,228 @@
     "scrollHint": "Scroll",
     "systemLogTitle": "SYSTEM LOG",
     "liveStatus": "live"
+  },
+  "homeHero": {
+    "line1": "<u>AI automation</u> for your business.",
+    "line2": "From your website to the WhatsApp that answers on its own.",
+    "sub": "Automatic bookings, replies around the clock, zero customers lost. We build the site that gets you found and the AI that answers for you.",
+    "ctaWhatsApp": "Message us on WhatsApp",
+    "ctaHow": "See how it works",
+    "badgeAlt": "Meta Tech Provider — Business API Official"
+  },
+  "homeBivio": {
+    "eyebrow": "Where do you want to start",
+    "ai": {
+      "title": "Automate your business",
+      "desc": "The AI answers customers, takes bookings and follows up with the ones who went quiet. Day and night, on your business number.",
+      "cta": "See what the AI does"
+    },
+    "web": {
+      "title": "Your new website",
+      "desc": "See it first. Then decide. We build the demo of your site and you pay only if you like it.",
+      "cta": "See the sites we build"
+    }
+  },
+  "homeTrust": {
+    "eyebrow": "Certification",
+    "title": "Meta-approved Tech Provider",
+    "intro": "AYROMEX is one of the companies approved by Meta to connect businesses to the official WhatsApp Business Platform. That means a protected number, clear rules and messages that actually get delivered.",
+    "closing": "Ask your current provider if they are a Meta-approved Tech Provider.",
+    "cta": "Learn about the certification"
+  },
+  "serviziWeb": {
+    "eyebrow": "Websites & E-commerce",
+    "promiseLead": "See it first.",
+    "promiseAccent": "Then decide.",
+    "promiseBody": "We build the demo of your site. You see it live. You pay only if you like it. No deposit, no contract signed blind, no risk.",
+    "steps": {
+      "s1title": "Tell us about your business",
+      "s1desc": "A quick chat: what you do, who your customers are, what you want the site to do for you.",
+      "s2title": "We show you the finished site",
+      "s2desc": "In a few days we send you the link to the real demo of your site — not a mockup: pages, copy, photos.",
+      "s3title": "Like it? It's yours",
+      "s3desc": "If it works for you we go live with domain, hosting and updates included. If not, you pay nothing."
+    },
+    "pillarsTitle": "What we put inside",
+    "pillars": {
+      "google": {
+        "title": "Found on Google",
+        "desc": "Google Business, Maps, local search and reviews: when people look for you nearby, you're there."
+      },
+      "identity": {
+        "title": "Bespoke, not template",
+        "desc": "The site grows out of your character, your colours, your words. We design it from scratch."
+      },
+      "speed": {
+        "title": "Live in a week",
+        "desc": "From the first message to the live site: seven days. Fast, not rushed."
+      },
+      "care": {
+        "title": "All included, forever",
+        "desc": "Domain, premium hosting and technical updates. We don't leave you halfway."
+      }
+    },
+    "portfolioTitle": "Sites we've already built",
+    "portfolioVisit": "Visit the site",
+    "portfolio": {
+      "rdinternational": "B2B · Trilingual site IT/EN/SLO",
+      "sunhouse": "Hospitality · Short lets",
+      "marilenagisonda": "Professional practice · Psychology"
+    },
+    "cta": "Ask for your free demo"
+  },
+  "homeProducts": {
+    "eyebrow": "AI automation",
+    "title": "The AI that works for you.",
+    "desk": {
+      "name": "AyroDesk24",
+      "for": "For salons, restaurants and shops",
+      "desc": "When a customer messages on WhatsApp, it answers: gives the prices, checks if there's a slot, writes the appointment into the calendar and reminds them the day before. On your shop's number, even at eleven at night.",
+      "b1": "Answers on prices, hours and availability",
+      "b2": "Takes the booking and writes it into the calendar",
+      "b3": "Reminds the customer the day before",
+      "cta": "Discover AyroDesk24"
+    },
+    "hub": {
+      "name": "AyroHub",
+      "for": "For ADM gaming operators",
+      "desc": "Calls and messages customers who've been quiet for months to bring them back, runs the whole network and keeps the data in one panel.",
+      "b1": "Customer reactivation via voice and WhatsApp",
+      "b2": "ADM compliance built in",
+      "b3": "One dashboard for the whole network",
+      "cta": "Discover AyroHub"
+    },
+    "chat": {
+      "label": "A real conversation, handled by the AI",
+      "who": "Customer",
+      "m1": "Evening, any slot tomorrow at 6pm?",
+      "m2": "Yes, tomorrow at 6pm is free. Cut and blow-dry, 45 minutes. Shall I book it in your name?",
+      "m3": "Yes please",
+      "m4": "Done. Appointment confirmed for tomorrow at 6pm. I'll send you a reminder this afternoon.",
+      "meta": "Replied in 8 seconds. At 11:47pm, with the shop closed."
+    }
+  },
+  "homeHow": {
+    "eyebrow": "How it works",
+    "title": "We start in three steps",
+    "s1title": "Tell us how you work",
+    "s1desc": "A half-hour chat: what customers ask you, how you take bookings, what eats your time.",
+    "s2title": "We connect your number",
+    "s2desc": "We activate your WhatsApp on Meta's official APIs and prepare the replies with your words, your prices, your hours.",
+    "s3title": "Your WhatsApp starts answering",
+    "s3desc": "From that moment no message goes unanswered. You see everything and step in whenever you want."
+  },
+  "homeProof": {
+    "eyebrow": "Who uses it",
+    "title": "Already at work in businesses like yours",
+    "v1title": "Salons and beauty studios",
+    "v1desc": "Appointments booked after hours, automatic reminders, fewer last-minute cancellations.",
+    "v2title": "Restaurants and wine bars",
+    "v2desc": "Tables confirmed on WhatsApp, menu and opening-hours questions handled on their own, more time on the floor.",
+    "v3title": "Gaming and ADM operators",
+    "v3desc": "Dormant customers reactivated with compliant campaigns, the whole network managed from one panel.",
+    "stat1value": "24/7",
+    "stat1label": "always on, holidays included",
+    "stat2value": "< 30 sec",
+    "stat2label": "average reply time",
+    "stat3value": "50,000+",
+    "stat3label": "messages handled for clients",
+    "stat4value": "15+",
+    "stat4label": "sectors served in Italy"
+  },
+  "homeCta": {
+    "title": "Let's see if it fits.",
+    "body": "Message us on WhatsApp: the same system we install for clients will answer you. Two minutes and you'll get it.",
+    "button": "Message us on WhatsApp"
+  },
+  "mtp": {
+    "eyebrow": "Meta Tech Provider",
+    "h1": "The official WhatsApp Business API, without the risks.",
+    "intro": "AYROMEX is a Meta-approved Tech Provider. We connect your company to the official WhatsApp Business Platform: your customers get answers on the channel they use every day, with Meta's rules on your side.",
+    "whatIsTitle": "What the WhatsApp Business Platform is",
+    "whatIsP1": "It is the official channel Meta provides for companies to message and answer customers on WhatsApp automatically: verified number, approved messages and conversations handled by systems that work for you.",
+    "whatIsP2": "Being an approved Tech Provider means AYROMEX passed Meta's review and integrates these APIs directly, with no middlemen. Our systems are already in production: not demos, not promises.",
+    "benefitsTitle": "Why official APIs win",
+    "benefits": {
+      "noBan": {
+        "title": "Zero ban risk",
+        "description": "Your number does not get blocked: we work within Meta's rules, not against them. Your WhatsApp channel stays operational, always."
+      },
+      "verified": {
+        "title": "Green checkmark and verified profile",
+        "description": "Your company name visible and official Meta verification: customers know it's you, not an anonymous number."
+      },
+      "templates": {
+        "title": "Approved marketing and utility templates",
+        "description": "Meta-approved promotions, reminders and notifications: you can message customers first. With unofficial solutions it's forbidden."
+      },
+      "scale": {
+        "title": "Real scalability",
+        "description": "From 10 to 10,000 conversations per month on the same infrastructure: no phone left on in the office, no artificial limits."
+      }
+    },
+    "comparisonTitle": "Official APIs vs unofficial solutions",
+    "comparisonSubtitle": "The difference between building on the official channel and renting a shortcut.",
+    "colCriterion": "What changes",
+    "colOfficial": "Official APIs (AYROMEX)",
+    "colUnofficial": "Unofficial solutions",
+    "rows": {
+      "ban": {
+        "label": "Number ban risk",
+        "official": "None: channel authorized by Meta",
+        "unofficial": "High: numbers blocked without notice"
+      },
+      "badge": {
+        "label": "Verification checkmark",
+        "official": "Available with a verified profile",
+        "unofficial": "Not available"
+      },
+      "templates": {
+        "label": "Marketing and utility templates",
+        "official": "Approved: you can message first",
+        "unofficial": "Forbidden: replies only, no campaigns"
+      },
+      "scale": {
+        "label": "Scalability",
+        "official": "Thousands of simultaneous conversations",
+        "unofficial": "Limited: one phone, one session"
+      },
+      "support": {
+        "label": "Support and continuity",
+        "official": "Meta infrastructure + AYROMEX support",
+        "unofficial": "No guarantee if the system breaks"
+      }
+    },
+    "faqTitle": "Frequently asked questions",
+    "faq": {
+      "q1": {
+        "q": "Do I have to change my phone number?",
+        "a": "No. We connect the number your customers already know to the official platform. If you prefer a dedicated number, we activate one for you."
+      },
+      "q2": {
+        "q": "What happens to the WhatsApp I use now?",
+        "a": "Your number moves to the WhatsApp Business Platform: conversations continue from the panel and the systems we install. We guide you through the whole switch."
+      },
+      "q3": {
+        "q": "Can I message customers first?",
+        "a": "Yes, with Meta-approved template messages: promotions, reminders, notices. It's the biggest advantage over unofficial solutions, where it's forbidden."
+      },
+      "q4": {
+        "q": "How do I get the green checkmark?",
+        "a": "You need a business profile verified by Meta. As a Tech Provider we prepare the request with the right requirements: real name, active website, documents in order."
+      },
+      "q5": {
+        "q": "How much does it cost?",
+        "a": "It depends on conversation volume and what the system needs to do. Message us on WhatsApp: two messages and we'll understand your case and give you a clear number."
+      }
+    },
+    "ctaTitle": "Bring your company to WhatsApp, the right way",
+    "ctaBody": "Message us on WhatsApp — we reply from the same system we would install for you.",
+    "ctaButton": "Let's talk on WhatsApp"
+  },
+  "metaTechProvider": {
+    "badge": "Meta Tech Provider — official WhatsApp Business API",
+    "link": "Why official APIs matter"
   },
   "ayroGuide": {
     "hero": "Hi. I'm Ayro. Welcome inside AYROMEX.",
@@ -351,7 +574,7 @@
   "ayrodesk24DeepDive": {
     "eyebrow": "PRODUCT DEEP DIVE",
     "tagline": "Your AI receptionist, always online.",
-    "focus": "For local businesses that lose time answering repetitive messages, AyroDesk24 automates WhatsApp conversations, bookings, reminders and customer follow-up.",
+    "focus": "AyroDesk24 runs in production on Meta's official WhatsApp Business API — not a workaround. It automates conversations, bookings, reminders and follow-ups for local businesses that lose time on repetitive messages.",
     "features": {
       "conversations": {
         "title": "WhatsApp AI conversations",
@@ -530,6 +753,7 @@
     "companyTitle": "Company",
     "companyAbout": "About",
     "companyServices": "Services",
+    "companyWhatsappApi": "WhatsApp Business API",
     "companyJournal": "Journal",
     "companyBlog": "Blog",
     "legalTitle": "Legal",

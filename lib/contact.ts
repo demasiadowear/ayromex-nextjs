@@ -47,6 +47,7 @@ export type WhatsAppIntent =
   | 'portal-advice'
   | 'newsletter'
   | 'web-quote'
+  | 'whatsapp-api'
 
 const PREFILL_MESSAGES: Record<WhatsAppIntent, string> = {
   general:
@@ -69,6 +70,8 @@ const PREFILL_MESSAGES: Record<WhatsAppIntent, string> = {
     'Ciao AYROMEX, vorrei iscrivermi agli aggiornamenti.',
   'web-quote':
     'Ciao AYROMEX, vorrei un preventivo gratuito per il mio sito web.',
+  'whatsapp-api':
+    'Ciao AYROMEX, vorrei attivare WhatsApp Business API ufficiale per la mia azienda.',
 }
 
 /**

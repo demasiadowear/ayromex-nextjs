@@ -10,14 +10,19 @@
   --ay-accent:       #FF6A00;
   --ay-accent-hover: #E65C00;
   --ay-accent-tint:  #FFF1E6;
-  --ay-bg:           #0D0D0D;
-  --ay-surface:      #141414;
-  --ay-text:         #FAFAFA;
-  --ay-text-muted:   #A1A1AA;
-  --ay-border:       #27272A;
+  --ay-bg:           #FAFAF7;
+  --ay-surface:      #FFFFFF;
+  --ay-text:         #1C1B16;
+  --ay-text-muted:   #6E6B60;
+  --ay-border:       #E8E5DC;
   --ay-cream:        #FFF4EC;
-  --ay-blue:         #00A6F4;
-  --ay-lime:         #A8FF3E;
+  --ay-peach:        #FFE8D6; /* pesca chiaro — gradienti caldi hero */
+  --ay-ink:          #1A1712; /* quasi-nero caldo — sezioni scure */
+  --ay-ink-soft:     #26221B; /* card su sezione scura */
+  --ay-on-ink:       #FAF6EF; /* testo su scuro */
+  --ay-on-ink-muted: #B4AC9E; /* testo secondario su scuro */
+  --ay-blue:         #0284C7;
+  --ay-lime:         #16A34A;
 }
 
 html,
@@ -28,10 +33,6 @@ body {
 
 html {
   scroll-behavior: smooth;
-}
-
-html, body, a, button, input, textarea, select {
-  cursor: none !important;
 }
 
 body {
@@ -80,6 +81,93 @@ body {
   .card-dark {
     @apply bg-ay-surface border border-ay-border rounded-2xl;
   }
+}
+
+/* =====================
+   REDESIGN 2026 — CALORE, PROFONDITÀ, MOVIMENTO
+   Sezioni alternate chiaro/scuro/arancio + ombre calde + motivo scudo.
+   ===================== */
+
+/* Superfici sezione — profondità, mai bianco piatto per 6 sezioni */
+.surface-hero {
+  background:
+    radial-gradient(120% 80% at 50% -10%, var(--ay-peach) 0%, transparent 55%),
+    linear-gradient(180deg, #FFF7F0 0%, var(--ay-bg) 60%);
+}
+.surface-ink {
+  background:
+    radial-gradient(90% 60% at 85% 0%, rgba(255,106,0,0.16) 0%, transparent 60%),
+    var(--ay-ink);
+  color: var(--ay-on-ink);
+}
+.surface-orange {
+  background:
+    radial-gradient(80% 70% at 15% 110%, rgba(0,0,0,0.14) 0%, transparent 60%),
+    var(--ay-accent);
+  color: #fff;
+}
+.surface-cream {
+  background: linear-gradient(180deg, var(--ay-cream) 0%, #FFF9F3 100%);
+}
+
+/* Testo dentro sezioni scure — override token chiari */
+.surface-ink .text-ay-text        { color: var(--ay-on-ink) !important; }
+.surface-ink .text-ay-text-muted  { color: var(--ay-on-ink-muted) !important; }
+.surface-ink .border-ay-border    { border-color: rgba(255,255,255,0.12) !important; }
+.surface-ink .bg-ay-surface       { background-color: var(--ay-ink-soft) !important; }
+
+/* Testo dentro sezione arancio piena */
+.surface-orange .text-ay-text       { color: #fff !important; }
+.surface-orange .text-ay-text-muted { color: rgba(255,255,255,0.82) !important; }
+.surface-orange .text-ay-accent     { color: #fff !important; }
+.surface-orange .border-ay-border   { border-color: rgba(255,255,255,0.28) !important; }
+
+/* Card con hover vivo: sollevamento + ombra calda arancio */
+.card-lift {
+  transition: transform 0.35s cubic-bezier(0.22,1,0.36,1),
+              box-shadow 0.35s cubic-bezier(0.22,1,0.36,1),
+              border-color 0.35s ease;
+  will-change: transform;
+}
+.card-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 50px -18px rgba(255,106,0,0.45);
+  border-color: rgba(255,106,0,0.45);
+}
+
+/* Underline animato sotto l'accento del claim — vita continua discreta */
+.claim-underline {
+  position: relative;
+  display: inline-block;
+}
+.claim-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0.02em;
+  height: 0.10em;
+  width: 100%;
+  background: var(--ay-accent);
+  border-radius: 999px;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: claimUnderline 1s cubic-bezier(0.22,1,0.36,1) 0.9s forwards;
+}
+@keyframes claimUnderline {
+  to { transform: scaleX(1); }
+}
+
+/* Motivo scudo — arco/taglio diagonale ricorrente tra sezioni */
+.shield-arc {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.06;
+  color: var(--ay-accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .claim-underline::after { animation: none; transform: scaleX(1); }
+  .card-lift { transition: none; }
 }
 
 /* =====================
@@ -222,4 +310,40 @@ body {
 /* No system cursor — custom cursor handles it */
 svg {
   transition: none !important;
+}
+
+/* =====================
+   SHADCN THEME — ritematizzato AYROMEX "chiaro, caldo, umano".
+   Un solo tema (light). primary = Brand Orange, superfici calde,
+   radius generoso. NIENTE look shadcn default.
+   ===================== */
+@layer base {
+  :root {
+    --background: 60 23% 97%;            /* #FAFAF7 paper caldo */
+    --foreground: 50 12% 10%;            /* #1C1B16 quasi-nero caldo */
+    --card: 0 0% 100%;
+    --card-foreground: 50 12% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 50 12% 10%;
+    --primary: 25 100% 50%;              /* #FF6A00 — SOLO CTA/accenti */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 47 24% 93%;             /* sabbia chiara */
+    --secondary-foreground: 50 12% 10%;
+    --muted: 47 24% 93%;
+    --muted-foreground: 47 7% 40%;       /* #6E6B60 */
+    --accent: 26 100% 95%;               /* tint arancio #FFF1E6 */
+    --accent-foreground: 25 100% 35%;
+    --destructive: 0 72% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 45 21% 89%;                /* #E8E5DC */
+    --input: 45 21% 89%;
+    --ring: 25 100% 50%;
+    --radius: 1rem;
+  }
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }

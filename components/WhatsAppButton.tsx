@@ -29,7 +29,7 @@ export default function WhatsAppButton() {
       transition={{ duration: 2.4, repeat: Infinity }}
       style={{ background: '#25D366' }}
     >
-      <FaWhatsapp className="w-7 h-7 text-white" />
+      <FaWhatsapp className="w-7 h-7 text-ay-text" />
     </motion.a>
   )
 }

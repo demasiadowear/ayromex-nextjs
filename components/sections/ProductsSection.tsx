@@ -2,15 +2,7 @@
 
 import { useTranslations } from 'next-intl'
 import SectionTransition from './SectionTransition'
-import type { AyroGuideHover } from '@/components/hero/AyroGuide'
 import { PRODUCTS, type Product } from '@/lib/products'
-
-function emitHover(value: AyroGuideHover) {
-  if (typeof window === 'undefined') return
-  window.dispatchEvent(
-    new CustomEvent<AyroGuideHover>('ayro-guide:hover', { detail: value }),
-  )
-}
 
 function ProductCard({ product }: { product: Product }) {
   const t = useTranslations(`productsSection.${product.i18nKey}`)
@@ -18,8 +10,6 @@ function ProductCard({ product }: { product: Product }) {
   return (
     <div
       data-product={product.id}
-      onMouseEnter={() => emitHover(product.id)}
-      onMouseLeave={() => emitHover(null)}
       className="group relative z-10 rounded-3xl border border-ay-border bg-ay-surface/95 backdrop-blur-xl p-5 md:p-8 lg:p-8 flex flex-col gap-6 transition-all duration-300 hover:border-ay-accent hover:scale-[1.02] w-full max-w-full min-w-0"
     >
       {/* Hover glow */}

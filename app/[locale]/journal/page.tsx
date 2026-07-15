@@ -46,11 +46,11 @@ export default async function JournalPage({
       <section className="py-24 md:py-28 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
           <span className="text-ay-accent text-xs font-bold uppercase tracking-widest">{t('eyebrow')}</span>
-          <h1 className="text-5xl md:text-6xl font-black uppercase tracking-tight text-white mt-4 mb-6 max-w-3xl leading-tight">
+          <h1 className="text-5xl md:text-6xl font-black uppercase tracking-tight text-ay-text mt-4 mb-6 max-w-3xl leading-tight">
             {t('title1')}<br />
             <span className="text-ay-accent">{t('title2')}</span>
           </h1>
-          <p className="text-lg text-white/60 max-w-xl">
+          <p className="text-lg text-ay-text-muted max-w-xl">
             {t('desc')}
           </p>
         </div>
@@ -62,18 +62,18 @@ export default async function JournalPage({
           {ARTICLES.map((a) => (
             <article
               key={a.id}
-              className="border-t border-white/10 pt-12"
+              className="border-t border-ay-border pt-12"
             >
               <span className="inline-block px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-ay-accent/10 text-ay-accent mb-4">
                 {a.tag}
               </span>
-              <h2 className="text-3xl md:text-4xl font-black tracking-tight text-white mb-6 leading-tight">
+              <h2 className="text-3xl md:text-4xl font-black tracking-tight text-ay-text mb-6 leading-tight">
                 {a.title}
               </h2>
-              <p className="text-xl text-white/70 font-medium leading-relaxed mb-8 italic">
+              <p className="text-xl text-ay-text font-medium leading-relaxed mb-8 italic">
                 &ldquo;{a.hook}&rdquo;
               </p>
-              <div className="text-white/65 leading-relaxed space-y-4 mb-8 whitespace-pre-line">
+              <div className="text-ay-text-muted leading-relaxed space-y-4 mb-8 whitespace-pre-line">
                 {a.story}
               </div>
               <div className="p-5 rounded-xl border border-ay-accent/20 bg-ay-accent/5 mb-8">
@@ -97,10 +97,10 @@ export default async function JournalPage({
       {/* NEWSLETTER CTA */}
       <section className="py-20 px-6 md:px-12 bg-ay-surface text-center">
         <div className="max-w-xl mx-auto">
-          <h2 className="text-3xl font-black uppercase tracking-tight text-white mb-4">
+          <h2 className="text-3xl font-black uppercase tracking-tight text-ay-text mb-4">
             {t('newsletterTitle1')}<br /><span className="text-ay-accent">{t('newsletterTitle2')}</span>
           </h2>
-          <p className="text-white/60 mb-8">
+          <p className="text-ay-text-muted mb-8">
             {t('newsletterDesc')}
           </p>
           <a

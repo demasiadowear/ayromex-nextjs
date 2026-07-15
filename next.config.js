@@ -28,6 +28,24 @@ const nextConfig = {
       // Entry point comodo: /blog → home del blog del tenant ayromex.
       { source: '/blog', destination: '/blog/ayromex', permanent: true },
 
+      // Redesign 2026: la pagina canonica è /meta-tech-provider.
+      // Il vecchio slug /whatsapp-business-api reindirizza qui.
+      {
+        source: '/meta-tech-provider',
+        destination: '/it/meta-tech-provider',
+        permanent: true,
+      },
+      {
+        source: '/whatsapp-business-api',
+        destination: '/it/meta-tech-provider',
+        permanent: true,
+      },
+      {
+        source: '/:locale(it|en|ro)/whatsapp-business-api',
+        destination: '/:locale/meta-tech-provider',
+        permanent: true,
+      },
+
       // /kit → WhatsApp con messaggio precompilato (card AYROMEX recensioni
       // Google). statusCode 301 esplicito richiesto (permanent:true darebbe 308).
       {

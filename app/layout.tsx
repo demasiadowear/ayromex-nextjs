@@ -1,38 +1,27 @@
 import type { Metadata, Viewport } from 'next'
-import { Gugi, Syne, DM_Sans, JetBrains_Mono } from 'next/font/google'
+import { Syne, DM_Sans } from 'next/font/google'
 import { getLocale, getTranslations } from 'next-intl/server'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
-import CustomCursor from '@/components/CustomCursor'
-import GrainOverlay from '@/components/GrainOverlay'
 import ScrollProgressIndicator from '@/components/ScrollProgressIndicator'
 import { SITE_NAME, SITE_URL } from '@/lib/seo'
+import { cn } from '@/lib/utils'
 
-const gugi = Gugi({
-  subsets: ['latin'],
-  weight: '400',
-  variable: '--font-gugi',
-  display: 'swap',
-})
 
+// SISTEMA A DUE FONT — nessun terzo font, nessun fallback di sistema
+// visibile. Syne (display, 600/700/800) per i titoli, DM Sans
+// (400/500/600/700) per body, UI e le vecchie label ex-mono.
 const syne = Syne({
   subsets: ['latin', 'latin-ext'],
-  weight: ['800'],
+  weight: ['600', '700', '800'],
   variable: '--font-syne',
   display: 'swap',
 })
 
 const dmSans = DM_Sans({
   subsets: ['latin', 'latin-ext'],
-  weight: ['400', '500', '600'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-dm-sans',
-  display: 'swap',
-})
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ['latin'],
-  weight: ['400', '500'],
-  variable: '--font-jetbrains-mono',
   display: 'swap',
 })
 
@@ -108,13 +97,11 @@ export const metadata: Metadata = {
   },
 }
 
-// Viewport (split from metadata per Next 16 convention). The
-// theme color matches Ink so iOS Safari's chrome tints to the
-// site background, and colorScheme: dark prevents the white
-// flash on cold loads.
+// Viewport (split from metadata per Next 16 convention). Theme
+// color = paper caldo del redesign 2026, colorScheme light.
 export const viewport: Viewport = {
-  themeColor: '#0D0D0D',
-  colorScheme: 'dark',
+  themeColor: '#FAFAF7',
+  colorScheme: 'light',
   width: 'device-width',
   initialScale: 1,
 }
@@ -134,7 +121,7 @@ export default async function RootLayout({
     <html
       lang={locale}
       data-scroll-behavior="smooth"
-      className={`dark ${gugi.variable} ${syne.variable} ${dmSans.variable} ${jetbrainsMono.variable}`}
+      className={cn(syne.variable, dmSans.variable, 'font-sans')}
     >
       <body className="relative min-h-screen bg-ay-bg text-ay-text font-body antialiased">
         {/* Skip-to-content link — visually hidden until focused.
@@ -146,14 +133,8 @@ export default async function RootLayout({
           {t('skipToContent')}
         </a>
 
-        {/* Film grain overlay */}
-        <GrainOverlay />
-
         {/* Scroll progress bar */}
         <ScrollProgressIndicator />
-
-        {/* Custom cursor */}
-        <CustomCursor />
 
         {/* Content */}
         <div className="relative z-10">{children}</div>

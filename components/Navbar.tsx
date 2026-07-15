@@ -61,6 +61,7 @@ export default function Navbar() {
   const navLinks = [
     { label: t('home'), href: `/${locale}` },
     { label: t('products'), href: `/${locale}/prodotti` },
+    { label: t('sitiWeb'), href: `/${locale}#siti-web` },
     { label: t('services'), href: `/${locale}/servizi` },
     { label: t('about'), href: `/${locale}/chi-siamo` },
     { label: t('journal'), href: `/${locale}/journal` },
@@ -78,13 +79,15 @@ export default function Navbar() {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navBg}`}>
       <div className="section-container flex items-center justify-between">
 
-        {/* Desktop nav links on the left */}
-        <div className="hidden md:flex items-center gap-5">
+        {/* Desktop nav links on the left — whitespace-nowrap: le voci a
+            due parole ("Siti web", "Chi siamo") andavano a capo e
+            sfalsavano la barra. */}
+        <div className="hidden md:flex items-center gap-4 lg:gap-5">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-xs font-semibold uppercase tracking-widest text-ay-text/70 hover:text-ay-accent transition-colors"
+              className="whitespace-nowrap text-xs font-semibold uppercase tracking-wide lg:tracking-widest text-ay-text/70 hover:text-ay-accent transition-colors"
             >
               {link.label}
             </a>
@@ -120,7 +123,7 @@ export default function Navbar() {
               aria-label={ta('openLanguageMenu')}
               aria-expanded={isLangOpen}
               aria-haspopup="menu"
-              className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-ay-text/70 hover:text-ay-accent transition-colors px-3 py-2 rounded-lg hover:bg-white/5 min-h-[44px]"
+              className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-ay-text/70 hover:text-ay-accent transition-colors px-3 py-2 rounded-lg hover:bg-ay-surface min-h-[44px]"
             >
               <div className="w-5 h-3.5 overflow-hidden rounded-sm shadow-sm" aria-hidden="true">
                 <currentLang.FlagComponent />
@@ -144,7 +147,7 @@ export default function Navbar() {
                     <button
                       key={lang.code}
                       onClick={() => handleLanguageChange(lang.code)}
-                      className={`w-full text-left px-4 py-3 flex items-center gap-3 text-sm hover:bg-white/5 transition-colors ${locale === lang.code ? 'text-ay-accent bg-ay-accent/10' : 'text-ay-text/80'}`}
+                      className={`w-full text-left px-4 py-3 flex items-center gap-3 text-sm hover:bg-ay-surface transition-colors ${locale === lang.code ? 'text-ay-accent bg-ay-accent/10' : 'text-ay-text/80'}`}
                     >
                       <div className="w-5 h-3.5 overflow-hidden rounded-sm shadow-sm">
                         <lang.FlagComponent />
@@ -193,7 +196,7 @@ export default function Navbar() {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => setIsAccessOpen(false)}
-                      className="w-full text-left px-4 py-3 flex items-center justify-between gap-3 text-sm hover:bg-white/5 transition-colors text-ay-text/80 hover:text-ay-accent"
+                      className="w-full text-left px-4 py-3 flex items-center justify-between gap-3 text-sm hover:bg-ay-surface transition-colors text-ay-text/80 hover:text-ay-accent"
                     >
                       <span className="font-display font-bold">
                         {p.displayName}
@@ -337,7 +340,7 @@ export default function Navbar() {
                 <button
                   key={lang.code}
                   onClick={() => handleLanguageChange(lang.code)}
-                  className={`w-full text-left px-4 py-3 flex items-center gap-3 text-sm hover:bg-white/5 min-h-[44px] ${locale === lang.code ? 'text-ay-accent' : 'text-ay-text/80'}`}
+                  className={`w-full text-left px-4 py-3 flex items-center gap-3 text-sm hover:bg-ay-surface min-h-[44px] ${locale === lang.code ? 'text-ay-accent' : 'text-ay-text/80'}`}
                 >
                   <div className="w-5 h-3.5 overflow-hidden rounded-sm">
                     <lang.FlagComponent />
